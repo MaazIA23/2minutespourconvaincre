@@ -120,4 +120,4 @@ ${renderFooter(data)}
 `;
 }
 
-module.exports = { renderLayout };
+module.exports = { renderLayout, renderHeader, renderFooter };
