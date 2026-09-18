@@ -18,14 +18,20 @@
         "Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.",
         "Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation."
       ],
-      "cta": { "label": "En savoir plus", "lien": "TODO" }
+      "cta": { "label": "En savoir plus", "lien": "/a-propos" }
+    },
+    {
+      "id": "stats",
+      "chiffres": [
+        { "valeur": "+ 300", "libelle": "Participants" },
+        { "valeur": "8", "libelle": "Finalistes" },
+        { "valeur": "1", "libelle": "Vainqueur" }
+      ],
+      "_note": "Confirmé : 3 cartes (Participants, Finalistes, Vainqueur). Une 4e carte 'Partenaires' est possible plus bas sur la page, à confirmer."
     }
   ],
   "_TODO": [
-    "Section participants",
-    "Section finalistes",
-    "Section vainqueur",
-    "Section partenaires (accueil)",
+    "Section partenaires (accueil) — à confirmer si incluse dans le bloc chiffres ou section dédiée",
     "Section 'Deux minutes qui changent tout'",
     "Section 'La voix des jeunes Africains'",
     "Section 'Plus qu'un show, un tremplin'",

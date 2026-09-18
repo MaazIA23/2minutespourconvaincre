@@ -13,6 +13,13 @@
     "TODO_2027": "Actualiser date et lieu de la 3e édition"
   },
   "contact": {
-    "TODO": "À compléter (page Accueil / footer) : email, téléphone, réseaux sociaux, WhatsApp"
+    "telephoneWhatsapp": "+229 01 43 39 33 33",
+    "site": "https://2minpourconvaincre.com",
+    "reseauxSociaux": {
+      "handle": "2minpourconvaincre",
+      "plateformes": ["Facebook", "TikTok", "Instagram", "LinkedIn", "YouTube"],
+      "_note": "Handle confirmé via visuel Save the Date ; URLs exactes de chaque profil à confirmer"
+    },
+    "TODO": "Confirmer email de contact s'il existe (footer / page contact)"
   }
 }

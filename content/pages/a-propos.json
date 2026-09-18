@@ -1,0 +1,24 @@
+{
+  "edition": "2026",
+  "titre": "A propos",
+  "sousTitre": "Un micro, deux minutes… et la voix des jeunes enfin entendue !",
+  "image": {
+    "description": "Visuel 'Save the Date' 2ème édition : deux pupitres de débat face à face marqués OUI / NON, logo 02 MIN. POUR CONVAINCRE, mention '2ème Edition', date 08 AOÛT 2026, lieu Azalaï Hôtel, coordonnées de contact.",
+    "fichier": "TODO (à fournir : export de l'image réelle)"
+  },
+  "sections": [
+    {
+      "id": "concept",
+      "titre": "Le concept",
+      "paragraphes": [
+        "Deux Minutes Pour Convaincre est un concours d'improvisation oratoire qui célèbre l'excellence de l'argumentation. Sur scène, deux orateurs s'affrontent autour d'une même thématique mais avec des thèses opposées et seulement deux minutes chacun pour convaincre l'assemblée de la justesse de leur point de vue.",
+        "Organisé dans un esprit d'inclusion et de partage, l'événement accueille des profils variés : étudiants, entrepreneurs, professionnels, juristes, journalistes et passionnés de la langue française. L'objectif est de valoriser les compétences oratoires et de montrer que la parole bien maîtrisée peut rassembler, inspirer et élever.",
+        "Au-delà d'une simple compétition, cet événement met en avant des valeurs fortes : la rigueur dans la préparation, la répartie, l'esprit critique et la capacité à convaincre avec respect et élégance."
+      ]
+    }
+  ],
+  "cta": { "label": "S'inscrire", "lien": "TODO" },
+  "_TODO": [
+    "Reste de la page A propos (mission, valeurs, historique, équipe organisatrice, etc. si présents plus bas)"
+  ]
+}
