@@ -41,6 +41,31 @@ function render(data) {
   </div>
 </section>
 
+<section class="section" id="evenements-associes">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Autour de l'événement</p>
+      <h2>Événements associés</h2>
+    </div>
+    <div class="associated-grid">
+      ${programme.evenementsAssocies
+        .map(
+          (ev) => `<div class="associated-card reveal">
+        <h3>${ev.titre}</h3>
+        <p class="associated-meta">${ev.date} — ${ev.lieu}</p>
+        <p>${ev.description}</p>
+        ${
+          ev.photos
+            ? `<div class="associated-photos">${ev.photos.map((p) => `<img src="${p}" alt="${ev.titre}" loading="lazy">`).join("")}</div>`
+            : ""
+        }
+      </div>`
+        )
+        .join("\n      ")}
+    </div>
+  </div>
+</section>
+
 <section class="section alt-bg" id="marraine">
   <div class="container">
     <div class="fondatrice-layout reveal">

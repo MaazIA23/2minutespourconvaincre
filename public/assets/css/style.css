@@ -285,6 +285,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .associated-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .associated-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; }
 .associated-meta { font-weight: 700; color: var(--gold-dark); font-size: 0.85rem; }
+.associated-photos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 16px; }
+.associated-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-sm); }
 
 /* ---------- qui-sommes-nous ---------- */
 .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -381,4 +383,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .has-dropdown.is-open .dropdown-menu { max-height: 400px; }
   .has-dropdown.is-open .dropdown-caret { transform: rotate(180deg); }
   .dropdown-menu li a { padding: 12px 4px 12px 16px; border-bottom: 1px solid var(--navy-800); font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .associated-photos { grid-template-columns: repeat(3, 1fr); }
 }
