@@ -43,9 +43,12 @@ function render(data) {
 
 <section class="section alt-bg" id="marraine">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">${marraine.titre}</p>
-      <h2>${marraine.nom}</h2>
+    <div class="fondatrice-layout reveal">
+      ${marraine.photo ? `<img src="${marraine.photo}" alt="${marraine.nom}" class="fondatrice-photo">` : ""}
+      <div class="fondatrice-copy">
+        <p class="eyebrow">${marraine.titre}</p>
+        <h2>${marraine.nom}</h2>
+      </div>
     </div>
     <div class="prose reveal">
       ${marraine.bio.map((p) => `<p>${p}</p>`).join("\n      ")}
