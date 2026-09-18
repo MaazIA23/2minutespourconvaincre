@@ -11,7 +11,7 @@
   "liste": [
     { "nom": "Institut National de la Femme (INF)" },
     { "nom": "M média Afrique" },
-    { "nom": "FIGS Education" },
+    { "nom": "FIGS Education", "logo": "/assets/img/partenaires/figs-education.jpg" },
     { "nom": "Kirikou Bar", "type": "Restaurant" },
     { "nom": "Shalom Empire" },
     { "nom": "Azalaï Hôtel Cotonou", "type": "Lieu de l'événement" },
@@ -24,7 +24,7 @@
     { "nom": "Opus Corp" },
     { "nom": "3D Entertainment", "logo": "/assets/img/partenaires/3d-entertainment.jpg" },
     { "nom": "Sibelle Accessoires" },
-    { "nom": "KSP — Kids Speaker Program" },
+    { "nom": "KSP — Kids Speaker Program", "logo": "/assets/img/partenaires/ksp.jpg" },
     { "nom": "Canal Print International" },
     { "nom": "WhatsPAY" },
     { "nom": "FILEF — Forum International sur le Leadership au Féminin" },
