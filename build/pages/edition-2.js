@@ -74,7 +74,9 @@ function render(data) {
     </div>
     <div class="people-grid">
       ${jury.membres
-        .map((m) => `<div class="people-card reveal"><h3>${m.nom}</h3><p>${m.titre}</p></div>`)
+        .map(
+          (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.titre}</p></div>`
+        )
         .join("\n      ")}
     </div>
   </div>
