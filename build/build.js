@@ -19,6 +19,7 @@ function loadData() {
     intervenants: readJson("intervenants.json"),
     gagnants: readJson("gagnants.json"),
     partenaires: readJson("partenaires.json"),
+    galerie: readJson("galerie.json"),
     editionsIndex: readJson("editions-index.json"),
     accueil: readJson("pages/accueil.json"),
     aPropos: readJson("pages/a-propos.json"),

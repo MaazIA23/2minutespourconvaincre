@@ -205,6 +205,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .finalistes-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .finalistes-list li { padding: 10px 14px; background: var(--paper-alt); border-radius: var(--radius-sm); font-weight: 600; }
 
+/* ---------- Galerie ---------- */
+.galerie-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.galerie-item { margin: 0; aspect-ratio: 3 / 4; border-radius: var(--radius-md); overflow: hidden; background: var(--paper-alt); }
+.galerie-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+.galerie-item:hover img { transform: scale(1.04); }
+.galerie-credit { text-align: center; font-size: 0.82rem; color: var(--ink-soft); margin-top: 18px; }
+
 /* ---------- Partners strip / grid ---------- */
 .partner-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 30px; margin: 24px 0 30px; }
 .partner-strip li { font-family: var(--font-display); font-weight: 700; color: var(--navy-500); }
@@ -333,7 +340,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .chiffres-grid { grid-template-columns: repeat(2, 1fr); }
   .finalistes-list { grid-template-columns: 1fr; }
 }
@@ -348,7 +355,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .main-nav > ul { flex-direction: column; gap: 4px; }
   .main-nav a { display: block; padding: 14px 4px; border-bottom: 1px solid var(--navy-700); }
   .nav-toggle { display: inline-flex; }
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: 1fr; }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 60px 0; }
   .hero { padding: 44px 0 54px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }

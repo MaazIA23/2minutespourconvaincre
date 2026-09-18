@@ -1,0 +1,14 @@
+{
+  "2eme-edition": {
+    "titre": "Galerie",
+    "sousTitre": "Quelques photos de l'événement",
+    "credit": "Crédit photo : BH Studio",
+    "photos": [
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste consultant le livret du programme, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-02.jpg", "alt": "Participant dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-03.jpg", "alt": "Participante consultant le livret du programme, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-04.jpg", "alt": "Intervenante au micro sur scène, 2ème édition" }
+    ]
+  },
+  "TODO_2027": "Ajouter une entrée '1ere-edition' si des photos de la 1ère édition sont fournies, et '3eme-edition' une fois l'événement passé"
+}

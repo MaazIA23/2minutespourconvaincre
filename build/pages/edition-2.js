@@ -1,7 +1,8 @@
 function render(data) {
-  const { jury, marraine, intervenants, gagnants, programme, editionsIndex } = data;
+  const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie } = data;
   const edition2Meta = editionsIndex.editions.find((e) => e.slug === "2eme-edition");
   const edition2026 = gagnants.editions.find((e) => e.edition === "2026");
+  const galerie2026 = galerie["2eme-edition"];
 
   return `
 <section class="page-hero">
@@ -106,6 +107,21 @@ function render(data) {
       </ul>
     </div>
     <p style="text-align:center"><a href="/partenaires/" class="btn btn-outline">Voir les partenaires de cette édition →</a></p>
+  </div>
+</section>
+
+<section class="section alt-bg" id="galerie">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${galerie2026.titre}</p>
+      <h2>${galerie2026.sousTitre}</h2>
+    </div>
+    <div class="galerie-grid">
+      ${galerie2026.photos
+        .map((p) => `<figure class="galerie-item reveal"><img src="${p.fichier}" alt="${p.alt}" loading="lazy"></figure>`)
+        .join("\n      ")}
+    </div>
+    <p class="galerie-credit reveal">${galerie2026.credit}</p>
   </div>
 </section>
 `;
