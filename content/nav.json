@@ -1,0 +1,14 @@
+{
+  "menuPrincipal": [
+    { "label": "Accueil", "lien": "/" },
+    { "label": "A propos", "lien": "/a-propos" },
+    { "label": "Programme", "lien": "/programme" },
+    { "label": "Candidature", "lien": "/candidature" },
+    { "label": "Partenaires", "lien": "/partenaires" },
+    { "label": "Qui sommes-nous ?", "lien": "/qui-sommes-nous" }
+  ],
+  "_note": "Libellés confirmés par capture d'écran. URLs cibles à confirmer (slugs proposés à valider avec le site réel).",
+  "footer": {
+    "TODO": "À compléter : liens footer, mentions légales, confidentialité, CGU"
+  }
+}

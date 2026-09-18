@@ -1,0 +1,18 @@
+{
+  "_comment": "Infos globales du site. Champs à revoir en priorité pour l'édition 2027 sont marqués TODO_2027.",
+  "edition": {
+    "numero": 2,
+    "annee": "2026",
+    "TODO_2027": "Passer à numero: 3, annee: '2027' et mettre à jour date/lieu ci-dessous"
+  },
+  "nomSite": "Deux Minutes pour Convaincre",
+  "logoTexte": "02 MIN. POUR CONVAINCRE",
+  "evenement": {
+    "date": "08 août 2026",
+    "lieu": "Azalaï Hôtel, Cotonou",
+    "TODO_2027": "Actualiser date et lieu de la 3e édition"
+  },
+  "contact": {
+    "TODO": "À compléter (page Accueil / footer) : email, téléphone, réseaux sociaux, WhatsApp"
+  }
+}

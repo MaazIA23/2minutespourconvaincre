@@ -1,0 +1,39 @@
+{
+  "edition": "2026",
+  "hero": {
+    "eyebrow": "CONCOURS",
+    "titre": "D'IMPROVISATION",
+    "sousTitre": "Une scène, un micro, 120 secondes pour oser, se révéler et marquer les esprits.",
+    "sousTitreAccent": "120 secondes",
+    "date": "08 août 2026",
+    "lieu": "Azalaï Hôtel, Cotonou",
+    "cta": { "label": "S'inscrire", "lien": "TODO" }
+  },
+  "sections": [
+    {
+      "id": "presentation",
+      "titre": "Quand la parole devient conviction",
+      "paragraphes": [
+        "Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.",
+        "Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.",
+        "Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation."
+      ],
+      "cta": { "label": "En savoir plus", "lien": "TODO" }
+    }
+  ],
+  "_TODO": [
+    "Section participants",
+    "Section finalistes",
+    "Section vainqueur",
+    "Section partenaires (accueil)",
+    "Section 'Deux minutes qui changent tout'",
+    "Section 'La voix des jeunes Africains'",
+    "Section 'Plus qu'un show, un tremplin'",
+    "Section 'L'inspiration réelle et en live'",
+    "Pass: Diaspora, Candidat, Simple, VIP",
+    "FAQ",
+    "Galerie",
+    "Newsletter",
+    "Contact"
+  ]
+}
