@@ -22,13 +22,13 @@
     { "nom": "Inspir'Elles" },
     { "nom": "Eloquentia Toastmasters Club de Cotonou" },
     { "nom": "Opus Corp" },
-    { "nom": "3D Entertainment" },
+    { "nom": "3D Entertainment", "logo": "/assets/img/partenaires/3d-entertainment.jpg" },
     { "nom": "Sibelle Accessoires" },
     { "nom": "KSP — Kids Speaker Program" },
     { "nom": "Canal Print International" },
     { "nom": "WhatsPAY" },
     { "nom": "FILEF — Forum International sur le Leadership au Féminin" },
-    { "nom": "Lapaire" },
+    { "nom": "Lapaire", "logo": "/assets/img/partenaires/lapaire.png" },
     { "nom": "Smart Way" },
     { "nom": "Mata-Yara" },
     { "nom": "Dam's Concept" },
@@ -36,6 +36,6 @@
   ],
   "secteurs": "Éducation, médias, hôtellerie, technologie, engagement associatif.",
   "_source": "Rapport Général — Nos partenaires (p.29-30)",
-  "_note": "Logos identifiés visuellement sur le rapport (fichiers image non fournis) ; à remplacer par les vrais fichiers logo lors de l'intégration finale",
+  "_note": "Logos réels en cours de réception du client (fichiers dans assets/img/partenaires/) ; les partenaires sans champ 'logo' affichent encore le nom en texte en attendant leur fichier.",
   "TODO_2027": "Liste des partenaires de la 3e édition à établir (reconduction + nouveaux partenaires)"
 }

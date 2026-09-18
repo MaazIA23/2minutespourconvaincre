@@ -15,8 +15,10 @@ function render(data) {
     </div>
     <div class="partenaires-grid">
       ${partenaires.liste
-        .map(
-          (p) => `<div class="partenaire-card reveal"><span>${p.nom}</span>${p.type ? `<small>${p.type}</small>` : ""}</div>`
+        .map((p) =>
+          p.logo
+            ? `<div class="partenaire-card partenaire-card-logo reveal"><img src="${p.logo}" alt="${p.nom}" loading="lazy">${p.type ? `<small>${p.type}</small>` : ""}</div>`
+            : `<div class="partenaire-card reveal"><span>${p.nom}</span>${p.type ? `<small>${p.type}</small>` : ""}</div>`
         )
         .join("\n      ")}
     </div>
