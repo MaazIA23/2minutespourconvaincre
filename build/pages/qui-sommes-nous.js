@@ -62,10 +62,13 @@ function render(data) {
 
 <section class="section" id="fondatrice">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">La fondatrice</p>
-      <h2>${quiSommesNous.fondatrice.nom}</h2>
-      <p class="section-lead">${quiSommesNous.fondatrice.titre}</p>
+    <div class="fondatrice-layout reveal">
+      ${quiSommesNous.fondatrice.photo ? `<img src="${quiSommesNous.fondatrice.photo}" alt="${quiSommesNous.fondatrice.nom}" class="fondatrice-photo">` : ""}
+      <div class="fondatrice-copy">
+        <p class="eyebrow">La fondatrice</p>
+        <h2>${quiSommesNous.fondatrice.nom}</h2>
+        <p class="section-lead" style="text-align:left; margin:0">${quiSommesNous.fondatrice.titre}</p>
+      </div>
     </div>
     <div class="prose reveal">
       ${quiSommesNous.fondatrice.motIntroduction.map((p) => `<p>${p}</p>`).join("\n      ")}
