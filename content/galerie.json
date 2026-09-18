@@ -7,7 +7,12 @@
       { "fichier": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste consultant le livret du programme, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-02.jpg", "alt": "Participant dans le public, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-03.jpg", "alt": "Participante consultant le livret du programme, 2ème édition" },
-      { "fichier": "/assets/img/galerie/2eme-edition/photo-04.jpg", "alt": "Intervenante au micro sur scène, 2ème édition" }
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-04.jpg", "alt": "Intervenante au micro sur scène, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-05.jpg", "alt": "Public attentif dans la salle, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-06.jpg", "alt": "Participante dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-07.jpg", "alt": "Participant dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-08.jpg", "alt": "Participante dans le public, badge au cou, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-09.jpg", "alt": "Écran de la dictée intuitive sur Kahoot, 2ème édition" }
     ]
   },
   "TODO_2027": "Ajouter une entrée '1ere-edition' si des photos de la 1ère édition sont fournies, et '3eme-edition' une fois l'événement passé"

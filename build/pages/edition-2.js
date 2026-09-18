@@ -32,6 +32,7 @@ function render(data) {
         <div class="timeline-content">
           <h3>${e.titre}</h3>
           <p>${e.description}</p>
+          ${e.image ? `<img src="${e.image}" alt="${e.titre}" class="timeline-photo" loading="lazy">` : ""}
         </div>
       </li>`
         )

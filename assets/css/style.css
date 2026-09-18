@@ -280,6 +280,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800;
 }
 .timeline-content { padding-top: 6px; }
+.timeline-photo { margin-top: 14px; max-width: 340px; width: 100%; border-radius: var(--radius-md); display: block; }
 
 .associated-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .associated-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; }
