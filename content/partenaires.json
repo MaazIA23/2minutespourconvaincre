@@ -15,7 +15,7 @@
     { "nom": "Kirikou Bar", "type": "Restaurant" },
     { "nom": "Shalom Empire" },
     { "nom": "Azalaï Hôtel Cotonou", "type": "Lieu de l'événement" },
-    { "nom": "La Muse Éloquente", "type": "Agence organisatrice" },
+    { "nom": "La Muse Éloquente", "type": "Agence organisatrice", "logo": "/assets/img/partenaires/la-muse-eloquente.jpg" },
     { "nom": "La Dictée Solidaire" },
     { "nom": "La Ludothèque Family Zone" },
     { "nom": "Gloria Events & Kids" },

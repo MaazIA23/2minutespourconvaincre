@@ -178,6 +178,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .section { padding: 90px 0; }
 .section.alt-bg { background: var(--paper-alt); }
 .section-head { max-width: 680px; margin: 0 auto 48px; text-align: center; }
+.agency-logo { height: 110px; width: auto; margin: 0 auto 18px; display: block; }
 .section-lead { font-size: 1.02rem; }
 .prose { max-width: 760px; margin: 0 auto 20px; }
 .prose h3 { margin-top: 1.4em; }

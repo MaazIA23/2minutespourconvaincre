@@ -13,6 +13,7 @@ function render(data) {
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
+      <img src="/assets/img/partenaires/la-muse-eloquente.jpg" alt="${ag.nom}" class="agency-logo">
       <p class="eyebrow">L'agence organisatrice</p>
       <h2>${ag.nom}</h2>
       <p class="section-lead">${ag.description}</p>
