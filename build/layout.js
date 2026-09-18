@@ -11,8 +11,7 @@ function renderHeader(data, activeSlug) {
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label="${data.site.nomSite} — accueil">
-      <span class="logo-mark">02</span>
-      <span class="logo-text">MIN. POUR<br>CONVAINCRE</span>
+      <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
@@ -47,8 +46,7 @@ function renderFooter(data) {
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <span class="logo-mark">02</span>
-        <span class="logo-text">MIN. POUR<br>CONVAINCRE</span>
+        <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
       </a>
       <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par ${data.site.organisation.agence}.</p>
       <ul class="social-links" aria-label="Réseaux sociaux">
@@ -93,7 +91,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
