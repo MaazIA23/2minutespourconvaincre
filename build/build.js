@@ -19,10 +19,14 @@ function loadData() {
     intervenants: readJson("intervenants.json"),
     gagnants: readJson("gagnants.json"),
     partenaires: readJson("partenaires.json"),
+    editionsIndex: readJson("editions-index.json"),
     accueil: readJson("pages/accueil.json"),
     aPropos: readJson("pages/a-propos.json"),
     programme: readJson("pages/programme.json"),
     quiSommesNous: readJson("pages/qui-sommes-nous.json"),
+    candidature: readJson("pages/candidature.json"),
+    edition1: readJson("pages/edition-1.json"),
+    edition3: readJson("pages/edition-3.json"),
   };
 }
 
@@ -52,17 +56,20 @@ function main() {
 
   const accueil = require("./pages/accueil.js");
   const aPropos = require("./pages/a-propos.js");
-  const programme = require("./pages/programme.js");
   const partenaires = require("./pages/partenaires.js");
   const quiSommesNous = require("./pages/qui-sommes-nous.js");
   const candidature = require("./pages/candidature.js");
   const legal = require("./pages/legal.js");
+  const editionsIndex = require("./pages/editions-index.js");
+  const edition1 = require("./pages/edition-1.js");
+  const edition2 = require("./pages/edition-2.js");
+  const edition3 = require("./pages/edition-3.js");
 
   writePage(
     "",
     renderLayout(data, {
       title: "Accueil",
-      description: `${data.hero ? "" : ""}${data.accueil.hero.eyebrow} ${data.accueil.hero.titre} — ${data.accueil.hero.sousTitre}`,
+      description: `${data.edition3.accroche} — 3ème édition, ${data.edition3.date}.`,
       activeSlug: "",
       bodyHtml: accueil.render(data),
     })
@@ -79,12 +86,42 @@ function main() {
   );
 
   writePage(
-    "programme",
+    "editions",
     renderLayout(data, {
-      title: "Programme",
-      description: data.programme.chapeau,
-      activeSlug: "programme",
-      bodyHtml: programme.render(data),
+      title: "Éditions",
+      description: data.editionsIndex.intro,
+      activeSlug: "editions",
+      bodyHtml: editionsIndex.render(data),
+    })
+  );
+
+  writePage(
+    "editions/1ere-edition",
+    renderLayout(data, {
+      title: "1ère édition — 2025",
+      description: data.edition1.sousTitre,
+      activeSlug: "editions/1ere-edition",
+      bodyHtml: edition1.render(data),
+    })
+  );
+
+  writePage(
+    "editions/2eme-edition",
+    renderLayout(data, {
+      title: "2ème édition — 2026",
+      description: "Le palmarès, le jury et le déroulé de la 2ème édition, 08 août 2026.",
+      activeSlug: "editions/2eme-edition",
+      bodyHtml: edition2.render(data),
+    })
+  );
+
+  writePage(
+    "editions/3eme-edition",
+    renderLayout(data, {
+      title: "3ème édition — Mars 2027",
+      description: data.edition3.teaser.accroche,
+      activeSlug: "editions/3eme-edition",
+      bodyHtml: edition3.render(data),
     })
   );
 
@@ -92,7 +129,7 @@ function main() {
     "candidature",
     renderLayout(data, {
       title: "Candidature",
-      description: "Déposez votre candidature au concours d'improvisation Deux Minutes Pour Convaincre.",
+      description: data.candidature.sousTitre,
       activeSlug: "candidature",
       bodyHtml: candidature.render(data),
     })

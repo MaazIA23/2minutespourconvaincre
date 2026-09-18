@@ -1,0 +1,22 @@
+{
+  "edition": "2027",
+  "statut": "a-venir",
+  "titre": "Candidature",
+  "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
+  "nouveauFormat": {
+    "titre": "Nouveauté 2027 : la candidature se fait en vidéo",
+    "description": [
+      "Pour cette 3ème édition, le format de candidature change. Jusqu'ici basé sur une prestation d'une minute, il devient une vidéo numérique de deux minutes, sur un thème choisi librement par le candidat ou la candidate.",
+      "L'objectif reste le même que sur scène : convaincre en deux minutes. À vous de choisir le sujet qui vous permettra de démontrer votre éloquence, votre capacité à structurer une idée et à défendre une thèse avec conviction."
+    ]
+  },
+  "statutOuverture": "Les candidatures pour la 3ème édition ne sont pas encore ouvertes. Laissez votre e-mail pour être averti(e) dès l'ouverture.",
+  "ctaNotify": "Être informé(e) de l'ouverture des candidatures",
+  "_source": "Précisions données par le client (message vocal retranscrit) — à confirmer/compléter avec le document de préparation de la 3e édition annoncé",
+  "TODO_2027": [
+    "Confirmer le format exact du dossier de candidature 2025/2026 évoqué par le client (« une minute ») pour l'historique",
+    "Date d'ouverture et de clôture des candidatures 2027",
+    "Modalités précises de dépôt de la vidéo (plateforme, format, durée max, critères d'éligibilité)",
+    "Intégrer le contenu du document de préparation de la 3e édition dès réception"
+  ]
+}

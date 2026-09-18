@@ -1,13 +1,20 @@
 {
   "menuPrincipal": [
     { "label": "Accueil", "lien": "/" },
-    { "label": "A propos", "lien": "/a-propos" },
-    { "label": "Programme", "lien": "/programme" },
-    { "label": "Candidature", "lien": "/candidature" },
-    { "label": "Partenaires", "lien": "/partenaires" },
-    { "label": "Qui sommes-nous ?", "lien": "/qui-sommes-nous" }
+    {
+      "label": "Éditions",
+      "lien": "/editions/",
+      "enfants": [
+        { "label": "1ère édition — 2025", "lien": "/editions/1ere-edition/" },
+        { "label": "2ème édition — 2026", "lien": "/editions/2eme-edition/" },
+        { "label": "3ème édition — Mars 2027", "lien": "/editions/3eme-edition/" }
+      ]
+    },
+    { "label": "Candidature", "lien": "/candidature/" },
+    { "label": "Partenaires", "lien": "/partenaires/" },
+    { "label": "Qui sommes-nous ?", "lien": "/qui-sommes-nous/" }
   ],
-  "_note": "Libellés confirmés par capture d'écran. URLs cibles à confirmer (slugs proposés à valider avec le site réel).",
+  "_note": "Restructuré pour la préparation de la 3e édition (mars 2027) : 'Programme' retiré du menu principal, son contenu vit désormais dans la page de chaque édition. 'Éditions' est un menu déroulant vers les 3 éditions.",
   "footer": {
     "liensLegaux": [
       { "label": "Mentions légales", "lien": "/mentions-legales" },

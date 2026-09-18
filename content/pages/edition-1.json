@@ -1,0 +1,22 @@
+{
+  "edition": "2025",
+  "numero": 1,
+  "titre": "1ère édition",
+  "sousTitre": "Une première édition réussie",
+  "date": "Samedi 10 mai 2025",
+  "lieu": "Hôtel Azalaï, Cotonou",
+  "recit": [
+    "Le samedi 10 mai 2025, la première édition de Deux Minutes pour Convaincre a marqué les esprits à l'Hôtel Azalaï de Cotonou. Plus de 100 participants ont répondu présents pour assister à ce duel oratoire inédit où 16 orateurs se sont affrontés dans l'art subtil de l'improvisation et de la persuasion.",
+    "La dictée intuitive, première activité au programme, a offert aux participants un moment ludique et stimulant, particulièrement apprécié pour son originalité et sa capacité à mobiliser l'écoute, la concentration et la spontanéité. Le panel autour du pouvoir de la parole comme outil d'influence a ensuite ouvert un espace de réflexion et d'échange sur la manière dont la maîtrise de la parole peut contribuer à renforcer son leadership, porter ses idées et susciter l'adhésion.",
+    "Enfin, le concours d'improvisation, cœur de l'événement, a placé les candidats face au défi de construire, en quelques instants, un discours convaincant, structuré et impactant. Un exercice exigeant qui a permis de mettre en lumière leur capacité d'adaptation, leur créativité et leur aisance à l'oral."
+  ],
+  "chiffres": [
+    { "valeur": "+100", "libelle": "participants" },
+    { "valeur": "16", "libelle": "orateurs en compétition" },
+    { "valeur": "04", "libelle": "rounds d'élimination progressive (16 + 8 + 4 + 2)" },
+    { "valeur": "+700 000 FCFA", "libelle": "de lots distribués" }
+  ],
+  "rapportPdf": null,
+  "_source": "Dossier de présentation édition 3 — « Une première édition réussie » (p.3 de la section, cover interne)",
+  "TODO_2027": "Pas de rapport PDF dédié à la 1ère édition identifié à ce stade ; pas de palmarès nominatif (noms des lauréats) ni de jury/marraine pour cette édition — à demander au client si disponible"
+}

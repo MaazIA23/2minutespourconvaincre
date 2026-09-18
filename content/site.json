@@ -1,13 +1,15 @@
 {
   "_comment": "Infos globales du site. Champs à revoir en priorité pour l'édition 2027 sont marqués TODO_2027.",
   "edition": {
-    "numero": 2,
-    "annee": "2026",
+    "numero": 3,
+    "annee": "2027",
+    "statut": "a-venir",
     "historique": [
-      { "numero": 1, "annee": "2025", "note": "Édition organisée en deux mois, à Cotonou." },
-      { "numero": 2, "annee": "2026", "date": "08 août 2026", "lieu": "Azalaï Hôtel, Cotonou" }
+      { "numero": 1, "annee": "2025", "date": "10 mai 2025", "lieu": "Hôtel Azalaï, Cotonou" },
+      { "numero": 2, "annee": "2026", "date": "08 août 2026", "lieu": "Azalaï Hôtel, Cotonou" },
+      { "numero": 3, "annee": "2027", "date": "20 mars 2027", "lieu": "Cotonou", "note": "Journée internationale de la Francophonie — lieu précis à confirmer" }
     ],
-    "TODO_2027": "Passer à numero: 3, annee: '2027' et mettre à jour date/lieu ci-dessous. Perspectives déjà exprimées par la fondatrice pour la 3e édition : ouvrir le concours à des candidats d'autres pays francophones, exporter le concept (piste France / diaspora béninoise), renforcer l'écosystème (formation, coaching, communauté d'anciens finalistes), professionnaliser davantage l'expérience. Voir content/perspectives-3e-edition.json"
+    "TODO_2027": "Lieu précis (nom de la salle) à confirmer. Voir aussi content/pages/edition-3.json et content/perspectives-3e-edition.json pour le détail des nouveautés déjà actées (Grand Prix de la Francophonie, programme 300 Voix, candidature vidéo)."
   },
   "organisation": {
     "agence": "La Muse Éloquente",
@@ -17,9 +19,9 @@
   "nomSite": "Deux Minutes pour Convaincre",
   "logoTexte": "02 MIN. POUR CONVAINCRE",
   "evenement": {
-    "date": "08 août 2026",
-    "lieu": "Azalaï Hôtel, Cotonou",
-    "TODO_2027": "Actualiser date et lieu de la 3e édition"
+    "date": "20 mars 2027",
+    "lieu": "Cotonou",
+    "TODO_2027": "Lieu précis à confirmer (nom de la salle)"
   },
   "contact": {
     "telephoneWhatsapp": "+229 01 43 39 33 33",

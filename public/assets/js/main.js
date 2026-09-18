@@ -19,6 +19,16 @@
     });
   }
 
+  document.querySelectorAll(".has-dropdown > a").forEach(function (link) {
+    var caret = link.querySelector(".dropdown-caret");
+    if (!caret) return;
+    caret.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      link.parentElement.classList.toggle("is-open");
+    });
+  });
+
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     var observer = new IntersectionObserver(
@@ -43,7 +53,7 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  ["candidature-form", "contact-form"].forEach(function (id) {
+  ["candidature-form", "contact-form", "notify-form"].forEach(function (id) {
     var form = document.getElementById(id);
     var note = document.getElementById("form-note");
     if (form && note) {

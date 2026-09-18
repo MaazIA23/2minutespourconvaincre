@@ -1,15 +1,5 @@
 function render(data) {
-  const { accueil, site, gagnants, partenaires } = data;
-  const hero = accueil.hero;
-  const presentation = accueil.sections.find((s) => s.id === "presentation");
-  const stats = accueil.sections.find((s) => s.id === "stats");
-  const chiffres = accueil.sections.find((s) => s.id === "chiffresEvocateurs");
-  const edition2026 = gagnants.editions.find((e) => e.edition === "2026");
-
-  const heroSubtitleHtml = hero.sousTitre.replace(
-    hero.sousTitreAccent,
-    `<mark>${hero.sousTitreAccent}</mark>`
-  );
+  const { edition3, partenaires, editionsIndex } = data;
 
   return `
 <section class="hero" id="top">
@@ -19,16 +9,16 @@ function render(data) {
   </div>
   <div class="container hero-inner">
     <div class="hero-copy reveal">
-      <p class="eyebrow">${hero.eyebrow}</p>
-      <h1>${hero.titre}</h1>
-      <p class="hero-lead">${heroSubtitleHtml}</p>
+      <p class="eyebrow">${edition3.teaser.eyebrow} — 3ème édition</p>
+      <h1>${edition3.accroche}</h1>
+      <p class="hero-lead">${edition3.teaser.accroche}</p>
       <div class="hero-meta">
-        <span>📅 ${hero.date}</span>
-        <span>📍 ${hero.lieu}</span>
+        <span>📅 ${edition3.date} — ${edition3.dateContexte}</span>
+        <span>📍 ${edition3.lieu}</span>
       </div>
       <div class="hero-cta">
-        <a href="/candidature/" class="btn btn-primary btn-lg">${hero.cta.label}</a>
-        <a href="#presentation" class="btn btn-outline btn-lg">Découvrir le concept ↓</a>
+        <a href="/editions/3eme-edition/#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>
+        <a href="/editions/" class="btn btn-outline btn-lg">Voir les éditions précédentes ↓</a>
       </div>
     </div>
   </div>
@@ -37,64 +27,56 @@ function render(data) {
 <section class="section presentation" id="presentation">
   <div class="container presentation-inner">
     <div class="presentation-copy reveal">
-      <h2>${presentation.titre}</h2>
-      ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
-      <a href="/a-propos/" class="btn btn-outline">${presentation.cta.label}</a>
+      <h2>${edition3.nouvelleAmbition.titre}</h2>
+      ${edition3.nouvelleAmbition.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
+      <a href="/editions/3eme-edition/" class="btn btn-outline">Découvrir la 3ème édition</a>
     </div>
   </div>
 </section>
 
-<section class="stats-band">
-  <div class="container stats-grid">
-    ${stats.chiffres
-      .map(
-        (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-      )
-      .join("\n    ")}
-  </div>
-</section>
-
-<section class="section chiffres" id="chiffres">
+<section class="section alt-bg" id="nouveautes">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Édition ${chiffres.titre ? "" : ""}2026</p>
-      <h2>${chiffres.titre}</h2>
-      <p class="section-lead">${chiffres.intro}</p>
+      <p class="eyebrow">Cap sur 2027</p>
+      <h2>Ce qui change pour la 3ème édition</h2>
     </div>
-    <div class="chiffres-grid">
-      ${chiffres.chiffres
+    <div class="nouveautes-grid">
+      ${edition3.nouveautes
         .map(
-          (c) => `<div class="chiffre-item reveal"><strong>${c.valeur}</strong><span>${c.libelle}</span></div>`
+          (n) => `<div class="method-step reveal">
+        <div class="step-number">${n.numero}</div>
+        <h3>${n.titre}</h3>
+        <p>${n.description}</p>
+      </div>`
         )
         .join("\n      ")}
     </div>
   </div>
 </section>
 
-<section class="section palmares" id="palmares">
+<section class="section" id="editions">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Palmarès 2026</p>
-      <h2>Ils ont marqué cette édition</h2>
-      <p class="section-lead">${edition2026.intro}</p>
+      <p class="eyebrow">Depuis 2025</p>
+      <h2>${editionsIndex.titre}</h2>
+      <p class="section-lead">${editionsIndex.intro}</p>
     </div>
-    <div class="palmares-grid">
-      ${edition2026.palmares
+    <div class="editions-grid">
+      ${editionsIndex.editions
         .map(
-          (p) => `<article class="palmares-card reveal">
-        <p class="palmares-prix">${p.prix}</p>
-        <h3>${p.nom}</h3>
-        <p class="palmares-portrait-titre">${p.portrait.titre}</p>
-        <blockquote>« ${p.portrait.citation} »</blockquote>
+          (e) => `<article class="edition-card reveal">
+        ${e.statut === "a-venir" ? '<span class="badge badge-upcoming">À venir</span>' : '<span class="badge badge-past">Édition passée</span>'}
+        <h3>${e.label} <span class="edition-year">— ${e.annee}</span></h3>
+        <p>${e.resume}</p>
+        <a href="/editions/${e.slug}/" class="btn btn-outline">Voir la page</a>
       </article>`
         )
         .join("\n      ")}
     </div>
-    <p class="palmares-more"><a href="/a-propos/#palmares-complet" class="btn btn-outline">Voir le palmarès complet et les 8 finalistes</a></p>
   </div>
 </section>
 
-<section class="section partenaires-teaser">
+<section class="section alt-bg partenaires-teaser">
   <div class="container">
     <p class="eyebrow" style="text-align:center">Ils nous soutiennent</p>
     <ul class="partner-strip">
@@ -108,11 +90,11 @@ function render(data) {
 </section>
 
 <section class="cta-final" id="candidature-cta">
-  <div class="container cta-final-inner">
+  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
     <div class="reveal">
-      <h2>Prêt(e) à monter sur scène ?</h2>
-      <p>Le concours d'improvisation le plus attendu du Bénin revient. Envie de tenter votre chance ?</p>
-      <a href="/candidature/" class="btn btn-primary btn-lg">Déposer ma candidature</a>
+      <h2>Prêt(e) à monter sur scène en 2027 ?</h2>
+      <p>Pour cette 3ème édition, la candidature se fait en vidéo : deux minutes, sur un thème de votre choix, pour nous convaincre.</p>
+      <a href="/candidature/" class="btn btn-primary btn-lg">En savoir plus sur la candidature</a>
     </div>
   </div>
 </section>

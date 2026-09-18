@@ -1,8 +1,18 @@
 function renderHeader(data, activeSlug) {
   const links = data.nav.menuPrincipal
     .map((item) => {
-      const slug = item.lien === "/" ? "" : item.lien.replace(/^\//, "");
-      const active = slug === activeSlug ? ' class="active"' : "";
+      const slug = item.lien === "/" ? "" : item.lien.replace(/^\//, "").replace(/\/$/, "");
+      const isActive = slug === activeSlug || (item.enfants && activeSlug.startsWith(slug + "/"));
+      const active = isActive ? ' class="active"' : "";
+      if (item.enfants) {
+        const children = item.enfants
+          .map((c) => `<li><a href="${c.lien}">${c.label}</a></li>`)
+          .join("");
+        return `<li class="has-dropdown">
+          <a href="${item.lien}"${active}>${item.label} <span class="dropdown-caret">▾</span></a>
+          <ul class="dropdown-menu">${children}</ul>
+        </li>`;
+      }
       return `<li><a href="${item.lien === "/" ? "/" : "/" + slug + "/"}"${active}>${item.label}</a></li>`;
     })
     .join("\n        ");
@@ -34,7 +44,10 @@ function renderFooter(data) {
     .join("\n      ");
 
   const navLinks = data.nav.menuPrincipal
-    .map((item) => `<li><a href="${item.lien === "/" ? "/" : item.lien + "/"}">${item.label}</a></li>`)
+    .map((item) => {
+      const href = item.lien === "/" || item.lien.endsWith("/") ? item.lien : item.lien + "/";
+      return `<li><a href="${href}">${item.label}</a></li>`;
+    })
     .join("\n        ");
 
   const socials = (data.site.contact.reseauxSociaux.plateformes || [])

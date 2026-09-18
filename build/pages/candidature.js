@@ -1,22 +1,29 @@
 function render(data) {
-  const { site } = data;
+  const { candidature, edition3 } = data;
 
   return `
 <section class="page-hero">
   <div class="container">
-    <h1>Candidature</h1>
-    <p class="page-hero-lead">Envie de monter sur la scène de « ${site.nomSite} » ? Déposez votre candidature.</p>
+    <h1>${candidature.titre}</h1>
+    <p class="page-hero-lead">${candidature.sousTitre}</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="todo-banner reveal">
-      ⚠️ Contenu à confirmer : les conditions d'éligibilité, les étapes de sélection précises et le formulaire exact de cette page n'ont pas encore été fournis. Le rapport d'édition confirme le processus global (25 candidatures → présélection → coaching → 8 finalistes → 3 rounds : quarts, demi-finales, finale) mais pas le texte exact de l'appel à candidatures affiché sur le site.
+    <div class="section-head reveal">
+      <p class="eyebrow">${candidature.nouveauFormat.titre}</p>
     </div>
     <div class="prose reveal">
-      <h2>Le processus, tel que vécu par l'édition 2026</h2>
-      <p>Sur les candidatures reçues, un premier groupe de candidats est retenu à l'issue d'une phase de sélection. Suit un programme d'accompagnement et de coaching en art oratoire et en improvisation, encadré par plusieurs coachs, dont M. Georges Amlon, ancien Directeur Général de l'ORTB. À l'issue de ce parcours, les finalistes sont désignés pour la grande finale, où ils s'affrontent en duels successifs : quarts, demi-finales, puis finale.</p>
+      ${candidature.nouveauFormat.description.map((p) => `<p>${p}</p>`).join("\n      ")}
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="todo-banner reveal">
+      ⚠️ ${candidature.statutOuverture}
     </div>
     <form class="contact-form reveal" id="candidature-form" novalidate>
       <div class="form-row">
@@ -31,13 +38,17 @@ function render(data) {
         <label for="cand-phone">Téléphone / WhatsApp</label>
         <input type="tel" id="cand-phone" name="phone">
       </div>
-      <div class="form-row">
-        <label for="cand-message">Pourquoi voulez-vous participer ? (optionnel)</label>
-        <textarea id="cand-message" name="message" rows="4"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer ma candidature</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaNotify}</button>
       <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
     </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="prose reveal" style="text-align:center">
+      <p>Retrouvez comment se sont déroulées les candidatures des éditions précédentes sur la page <a href="/editions/"><strong>Éditions</strong></a>.</p>
+    </div>
   </div>
 </section>
 `;
