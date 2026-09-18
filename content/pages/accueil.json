@@ -28,6 +28,23 @@
         { "valeur": "1", "libelle": "Vainqueur" }
       ],
       "_note": "Confirmé : 3 cartes (Participants, Finalistes, Vainqueur). Une 4e carte 'Partenaires' est possible plus bas sur la page, à confirmer."
+    },
+    {
+      "id": "chiffresEvocateurs",
+      "titre": "Des chiffres évocateurs",
+      "intro": "Avant d'entrer dans le détail, quelques chiffres méritent d'être mis en lumière parce qu'ils racontent déjà beaucoup :",
+      "chiffres": [
+        { "valeur": "25", "libelle": "candidatures reçues au départ" },
+        { "valeur": "12", "libelle": "candidats présélectionnés", "_discordance": "Le rapport indique aussi '16 candidats retenus' en page 17 — à clarifier avec le client" },
+        { "valeur": "08", "libelle": "finalistes sur scène à l'hôtel Azalaï" },
+        { "valeur": "03", "libelle": "rounds pour départager les meilleurs : quarts, demi-finales, finale" },
+        { "valeur": "03", "libelle": "premiers prix décernés aux lauréats" },
+        { "valeur": "01", "libelle": "prix du leadership féminin attribué pour la première fois à la prestation féminine la plus impactante" },
+        { "valeur": "500.000 Fcfa", "libelle": "de dotations financières remises aux deux premiers lauréats" },
+        { "valeur": "+200", "libelle": "participants réunis en présentiel, et une quinzaine connectés en streaming", "_discordance": "Le rapport indique aussi 'près de 150 personnes' en page 17 — à clarifier avec le client" },
+        { "valeur": "24", "libelle": "partenaires et contributeurs mobilisés autour de cette édition" }
+      ],
+      "_source": "Rapport Général — Des chiffres évocateurs (p.6)"
     }
   ],
   "_TODO": [

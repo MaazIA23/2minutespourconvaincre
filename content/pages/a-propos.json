@@ -8,6 +8,28 @@
   },
   "sections": [
     {
+      "id": "concept-objectifs",
+      "titre": "Concept et objectifs",
+      "sousTitre": "de la 2ème édition",
+      "paragraphes": [
+        "Visualisez un instant ceci. Vous êtes seul face à une salle remplie ; caméras et projecteurs braqués sur vous. Des centaines de regards qui vous fixent. Vous avez le souffle court, la boule au ventre. Peut-être même que vous avez envie de fuir.",
+        "Et pour ne rien arranger, vous ne connaissez pas encore le sujet et la thèse à défendre vous est en plus imposée.",
+        "Votre adversaire défendra la thèse opposée à la vôtre ; dans les mêmes conditions. Et vous avez exactement 120 secondes pour convaincre.",
+        "C'est ça, « Deux Minutes Pour Convaincre ». Deux orateurs, une même thématique, deux positions contraires. Le public et le jury vous observent attentivement, écoutent et jugent en temps réel. Aucun texte préparé à l'avance ; juste la capacité à penser vite, à structurer ses idées sous pression et à tenir sa position jusqu'au bout avec éloquence."
+      ],
+      "ambitions": {
+        "chapeau": "Ce format repose sur quatre ambitions qui ont guidé cette édition :",
+        "liste": [
+          { "titre": "Développer l'éloquence", "description": "Travailler la prise de parole, la diction, la présence sur scène." },
+          { "titre": "Cultiver la répartie", "description": "Apprendre à réagir dans l'instant, à structurer une pensée sans filet." },
+          { "titre": "Aiguiser l'argumentation", "description": "Défendre une idée avec logique, force et conviction." },
+          { "titre": "Promouvoir le débat d'idées", "description": "Offrir un espace où deux thèses peuvent s'affronter avec respect, sans jamais tomber dans l'agressivité." }
+        ]
+      },
+      "cloture": "Les enseignements tirés de la première édition en 2025 ont nourri chaque décision prise pour celle-ci. Et c'est avec cette exigence de faire mieux que la 2ème édition a pris forme.",
+      "_source": "Rapport Général — Concept et objectifs de la 2ème édition (p.5)"
+    },
+    {
       "id": "concept",
       "titre": "Le concept",
       "paragraphes": [

@@ -1,0 +1,112 @@
+function renderHeader(data, activeSlug) {
+  const links = data.nav.menuPrincipal
+    .map((item) => {
+      const slug = item.lien === "/" ? "" : item.lien.replace(/^\//, "");
+      const active = slug === activeSlug ? ' class="active"' : "";
+      return `<li><a href="${item.lien === "/" ? "/" : "/" + slug + "/"}"${active}>${item.label}</a></li>`;
+    })
+    .join("\n        ");
+
+  return `
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="${data.site.nomSite} — accueil">
+      <span class="logo-mark">02</span>
+      <span class="logo-text">MIN. POUR<br>CONVAINCRE</span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <ul>
+        ${links}
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="/candidature/" class="btn btn-primary">S'inscrire</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>`;
+}
+
+function renderFooter(data) {
+  const legalLinks = data.nav.footer.liensLegaux
+    .map((l) => `<li><a href="${l.lien}/">${l.label}</a></li>`)
+    .join("\n      ");
+
+  const navLinks = data.nav.menuPrincipal
+    .map((item) => `<li><a href="${item.lien === "/" ? "/" : item.lien + "/"}">${item.label}</a></li>`)
+    .join("\n        ");
+
+  const socials = (data.site.contact.reseauxSociaux.plateformes || [])
+    .map((p) => `<li><a href="#" aria-label="${p}">${p.slice(0, 2)}</a></li>`)
+    .join("\n        ");
+
+  return `
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <span class="logo-mark">02</span>
+        <span class="logo-text">MIN. POUR<br>CONVAINCRE</span>
+      </a>
+      <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par ${data.site.organisation.agence}.</p>
+      <ul class="social-links" aria-label="Réseaux sociaux">
+        ${socials}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        ${navLinks}
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:${data.site.contact.telephoneWhatsapp.replace(/\s/g, "")}">${data.site.contact.telephoneWhatsapp}</a></li>
+        <li><a href="https://wa.me/${data.site.contact.telephoneWhatsapp.replace(/[^\d]/g, "")}" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li>${data.site.evenement.lieu}</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Légal</h4>
+      <ul>
+        ${legalLinks}
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. — ${data.site.organisation.agence}</p>
+  </div>
+</footer>`;
+}
+
+function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${title} — ${data.site.nomSite}</title>
+<meta name="description" content="${description}">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+${renderHeader(data, activeSlug)}
+<main id="main">
+${bodyHtml}
+</main>
+${renderFooter(data)}
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+`;
+}
+
+module.exports = { renderLayout };

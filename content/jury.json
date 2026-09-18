@@ -1,0 +1,38 @@
+{
+  "edition": "2026",
+  "titre": "Le jury",
+  "intro": "Quatre personnalités ont été choisies pour évaluer les prestations des finalistes :",
+  "membres": [
+    {
+      "nom": "Mme Régine Amlon",
+      "titre": "Distinguished Toastmaster et experte en communication et leadership, figure incontournable de l'art oratoire au Bénin."
+    },
+    {
+      "nom": "M. Habib Aboukhedoud",
+      "titre": "Commandant de bord, instructeur d'aviation et fondateur du mouvement citoyen « Ensemble, on décolle »."
+    },
+    {
+      "nom": "M. Dany Vodji",
+      "titre": "Producteur et acteur événementiel, voix emblématique de Radio Wéké et LC2 TV depuis la fin des années 1990."
+    },
+    {
+      "nom": "Mme Espoir Abogourin",
+      "titre": "Auteure, réalisatrice et stratège en communication, connue affectueusement sous le nom de « Tata Espoir »."
+    }
+  ],
+  "coachFinalistes": {
+    "nom": "M. Georges Amlon",
+    "titre": "Ancien Directeur Général de l'ORTB et expert reconnu de la prise de parole. Encadre, avec deux autres coachs, le programme d'accompagnement des finalistes."
+  },
+  "maitreDeCeremonie": {
+    "nom": "Ladislas Padonou",
+    "titre": "Maître de cérémonie de l'événement, pour la deuxième année consécutive."
+  },
+  "moderatricePanel": {
+    "nom": "Isis Amouzoun",
+    "age": 15,
+    "titre": "Oratrice et coach junior au Kids Speaker Program, élève en Première D et future ingénieure en intelligence artificielle."
+  },
+  "_source": "Rapport Général — Les coulisses avant la scène (p.7), Remerciements d'ensemble (p.33)",
+  "TODO_2027": "Actualiser jury, coachs, MC et modérateur/modératrice pour la 3e édition"
+}

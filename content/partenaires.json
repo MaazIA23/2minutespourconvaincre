@@ -1,0 +1,41 @@
+{
+  "edition": "2026",
+  "titre": "Nos partenaires",
+  "intro": [
+    "Une aventure collective, portée par vous.",
+    "Aucune édition ne se construit seule. Chaque duel sur scène, chaque temps fort de cette journée, chaque goodies dans les mains d'un participant : tout cela a été rendu possible par des femmes, des hommes, des entreprises et des institutions qui ont choisi de croire en cette vision avant même d'en voir le résultat.",
+    "Une vingtaine de partenaires ont répondu présent pour cette 2ème édition. Certains dès la première heure. D'autres en cours de route, convaincus par le sérieux du projet. Tous ont contribué, chacun à sa manière, à ce que cette édition existe et tienne ses promesses."
+  ],
+  "remerciement": "À toutes celles et ceux qui nous ont fait confiance, soutenus et accompagnés : merci. Votre engagement donne encore plus de sens à ce que nous construisons.",
+  "nombreAnnonce": "24 partenaires et contributeurs mobilisés (chiffre clé) — « une vingtaine » dans le texte narratif",
+  "liste": [
+    { "nom": "Institut National de la Femme (INF)" },
+    { "nom": "M média Afrique" },
+    { "nom": "FIGS Education" },
+    { "nom": "Kirikou Bar", "type": "Restaurant" },
+    { "nom": "Shalom Empire" },
+    { "nom": "Azalaï Hôtel Cotonou", "type": "Lieu de l'événement" },
+    { "nom": "La Muse Éloquente", "type": "Agence organisatrice" },
+    { "nom": "La Dictée Solidaire" },
+    { "nom": "La Ludothèque Family Zone" },
+    { "nom": "Gloria Events & Kids" },
+    { "nom": "Inspir'Elles" },
+    { "nom": "Eloquentia Toastmasters Club de Cotonou" },
+    { "nom": "Opus Corp" },
+    { "nom": "3D Entertainment" },
+    { "nom": "Sibelle Accessoires" },
+    { "nom": "KSP — Kids Speaker Program" },
+    { "nom": "Canal Print International" },
+    { "nom": "WhatsPAY" },
+    { "nom": "FILEF — Forum International sur le Leadership au Féminin" },
+    { "nom": "Lapaire" },
+    { "nom": "Smart Way" },
+    { "nom": "Mata-Yara" },
+    { "nom": "Dam's Concept" },
+    { "nom": "BH Studio" }
+  ],
+  "secteurs": "Éducation, médias, hôtellerie, technologie, engagement associatif.",
+  "_source": "Rapport Général — Nos partenaires (p.29-30)",
+  "_note": "Logos identifiés visuellement sur le rapport (fichiers image non fournis) ; à remplacer par les vrais fichiers logo lors de l'intégration finale",
+  "TODO_2027": "Liste des partenaires de la 3e édition à établir (reconduction + nouveaux partenaires)"
+}

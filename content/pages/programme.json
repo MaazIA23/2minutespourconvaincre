@@ -1,0 +1,49 @@
+{
+  "edition": "2026",
+  "titre": "Déroulé de la journée",
+  "sousTitre": "2ème édition",
+  "chapeau": "Samedi 8 août 2026. L'Hôtel Azalaï de Cotonou accueille ses premiers invités dès les premières heures de la matinée.",
+  "etapes": [
+    {
+      "titre": "L'accueil et l'ouverture",
+      "heure": "TODO — heure exacte non précisée dans le rapport",
+      "description": "Le public prend progressivement place. Le mot de bienvenue du MC, puis celui de la fondatrice, posent le cadre. On est là pour vivre quelque chose, pour participer, pas seulement pour regarder."
+    },
+    {
+      "titre": "La dictée intuitive",
+      "heure": "TODO",
+      "description": "Premier temps fort de la matinée. Via la plateforme Kahoot, participants de tous horizons et de tous profils se sont retrouvés autour d'un exercice ludique et interactif, smartphone en main, concentrés comme en salle d'examen. Un moment qui a rappelé, avec le sourire, que bien écrire reste la base de bien s'exprimer."
+    },
+    {
+      "titre": "Le panel de discussion",
+      "heure": "TODO",
+      "description": "Place ensuite à la réflexion, avec un panel consacré au thème « La parole comme levier d'influence et de leadership féminin ». Un échange dense, porté par trois intervenantes engagées, qui a ouvert un vrai espace de réflexion sur la place de la voix des femmes dans les espaces de décision."
+    },
+    {
+      "titre": "Le concours d'improvisation",
+      "heure": "TODO",
+      "description": "Puis vient l'instant que tout le monde attend. Les huit finalistes s'affrontent en duels successifs : quarts, demi-finales, puis la finale. Le jury évalue, le public vote, et chaque voix compte dans la notation. Chaque duel oppose deux orateurs sur une même thématique, chacun défendant une thèse contraire. Deux minutes chacun. Pas une de plus."
+    },
+    {
+      "titre": "La clôture et le cocktail",
+      "heure": "TODO",
+      "description": "La cérémonie s'est refermée sur la remise des prix et les derniers échanges entre la fondatrice, les jurés, les panélistes, les membres de l'équipe et le public. Puis un cocktail convivial a permis à chacun de se retrouver dans un cadre plus détendu, d'échanger librement et de prolonger les conversations entamées au cours de la journée."
+    }
+  ],
+  "evenementsAssocies": [
+    {
+      "titre": "Conférence de presse",
+      "date": "Mercredi 5 août 2026",
+      "lieu": "Centre EYA, Akpakpa-Cotonou",
+      "description": "Mazidath Bello a présenté les grandes lignes de la 2ème édition devant un parterre de journalistes, blogueurs, partenaires et invités. Relayée par plusieurs médias, dont Bip Radio, Radio Bénin et la presse écrite « Le Leader »."
+    },
+    {
+      "titre": "Afterwork — Networking et gratitude",
+      "date": "Dimanche 9 août 2026",
+      "lieu": "Emma's Garden, Fidjrossè",
+      "description": "Jury, finalistes, partenaires, participants VIP, membres de l'équipe et invités de marque réunis autour d'un cocktail. Remise de certificats de remerciement aux membres de l'équipe organisatrice et à plusieurs partenaires, et séance de dédicace du livre de la fondatrice."
+    }
+  ],
+  "_source": "Rapport Général — Déroulé de la journée : 2ème édition (p.10-11), La conférence de presse (p.9), Networking et gratitude (p.25-26)",
+  "TODO_2027": "Remplacer par le programme minute par minute de la 3e édition dès qu'il est disponible (date, lieu, horaires précis de chaque étape)"
+}

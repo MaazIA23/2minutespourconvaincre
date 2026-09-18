@@ -9,6 +9,11 @@
   ],
   "_note": "Libellés confirmés par capture d'écran. URLs cibles à confirmer (slugs proposés à valider avec le site réel).",
   "footer": {
-    "TODO": "À compléter : liens footer, mentions légales, confidentialité, CGU"
+    "liensLegaux": [
+      { "label": "Mentions légales", "lien": "/mentions-legales" },
+      { "label": "Politique de confidentialité", "lien": "/confidentialite" },
+      { "label": "Conditions générales d'utilisation", "lien": "/cgu" }
+    ],
+    "_TODO": "Contenu réel des pages légales non fourni — pages générées en placeholder à remplacer avant mise en ligne"
   }
 }
