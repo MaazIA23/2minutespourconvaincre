@@ -17,8 +17,8 @@ function render(data) {
       ${partenaires.liste
         .map((p) =>
           p.logo
-            ? `<div class="partenaire-card partenaire-card-logo reveal"><img src="${p.logo}" alt="${p.nom}" loading="lazy">${p.type ? `<small>${p.type}</small>` : ""}</div>`
-            : `<div class="partenaire-card reveal"><span>${p.nom}</span>${p.type ? `<small>${p.type}</small>` : ""}</div>`
+            ? `<div class="partenaire-card partenaire-card-logo reveal"><img src="${p.logo}" alt="${p.nom}" loading="lazy"></div>`
+            : `<div class="partenaire-card reveal"><span>${p.nom}</span></div>`
         )
         .join("\n      ")}
     </div>
