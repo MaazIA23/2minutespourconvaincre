@@ -1,6 +1,6 @@
 {
   "titre": "Les éditions",
-  "intro": "Deux éditions déjà organisées, une troisième en préparation pour le 20 mars 2027. Chaque édition a sa propre page : ce qui a été fait, le palmarès, le rapport à télécharger, ou, pour la prochaine, ce qui se prépare.",
+  "intro": "Deux éditions déjà organisées, une troisième en préparation pour mars 2027. Chaque édition a sa propre page : ce qui a été fait, le palmarès, le rapport à télécharger, ou, pour la prochaine, ce qui se prépare.",
   "editions": [
     {
       "slug": "1ere-edition",
@@ -24,7 +24,7 @@
       "label": "3ème édition",
       "annee": "2027",
       "statut": "a-venir",
-      "resume": "20 mars 2027, Palais des Congrès de Cotonou. Grand Prix de la Francophonie et programme « 300 Voix ».",
+      "resume": "Mars 2027, Palais des Congrès de Cotonou. Grand Prix de la Francophonie et programme « 300 Voix ».",
       "rapportPdf": null
     }
   ]

@@ -3,13 +3,13 @@
   "numero": 3,
   "titre": "3ème édition",
   "accroche": "La scène qui révèle les orateurs",
-  "date": "20 mars 2027",
+  "date": "Mars 2027",
   "dateContexte": "Journée internationale de la Francophonie",
   "lieu": "Palais des Congrès de Cotonou",
   "statut": "a-venir",
   "teaser": {
     "eyebrow": "Coming soon",
-    "titre": "La 3ème édition arrive le 20 mars 2027",
+    "titre": "La 3ème édition arrive en mars 2027",
     "accrocheCourte": "Le concours qui révèle les plus grands talents oratoires du Bénin change de dimension.",
     "accroche": "Après deux éditions au Bénin, Deux Minutes Pour Convaincre change de dimension. Pour sa troisième édition, le concours s'inscrit dans une ambition nouvelle : célébrer la parole francophone, révéler de nouveaux talents et faire de l'éloquence un véritable levier de transmission et de leadership."
   },
@@ -54,7 +54,7 @@
     {
       "numero": "01",
       "titre": "Une édition sous le signe de la francophonie",
-      "description": "La troisième édition sera organisée à l'occasion de la Journée internationale de la Francophonie, le 20 mars 2027. Un choix qui donne au concours une nouvelle portée : celle de célébrer la richesse des voix francophones et de mettre en lumière la capacité de la jeunesse africaine à porter ses idées, ses convictions et ses ambitions."
+      "description": "La troisième édition sera organisée à l'occasion de la Journée internationale de la Francophonie, en mars 2027. Un choix qui donne au concours une nouvelle portée : celle de célébrer la richesse des voix francophones et de mettre en lumière la capacité de la jeunesse africaine à porter ses idées, ses convictions et ses ambitions."
     },
     {
       "numero": "02",
@@ -84,7 +84,7 @@
   "TODO_2027": [
     "Contenu encore attendu d'après la table des matières du dossier mais pas encore rédigé : « Une compétition fondée sur le respect des idées », « Le défi des langues : Français × Fon », « Le grand panel », « Une expérience qui dépasse la compétition », « Les impacts attendus », « Une dynamique collective », « Le concours Deux Minutes Pour Convaincre », « La 3e édition en un coup d'œil », « Conclusion », « Contacts »",
     "Dates et modalités d'ouverture des candidatures 2027",
-    "Programme horaire du 20 mars 2027",
+    "Programme horaire de mars 2027",
     "Jury / marraine ou parrain / partenaires 2027"
   ]
 }
