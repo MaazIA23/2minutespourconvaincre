@@ -90,7 +90,9 @@ function render(data) {
     </div>
     <div class="people-grid">
       ${intervenants.panel.intervenantes
-        .map((i) => `<div class="people-card reveal"><h3>${i.nom}</h3><p>${i.titre}</p></div>`)
+        .map(
+          (i) => `<div class="people-card reveal">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" class="people-photo" loading="lazy">` : ""}<h3>${i.nom}</h3><p>${i.titre}</p></div>`
+        )
         .join("\n      ")}
     </div>
   </div>
