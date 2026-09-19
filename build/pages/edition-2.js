@@ -88,6 +88,11 @@ function render(data) {
       <p class="eyebrow">Le panel de discussion</p>
       <h2>${intervenants.panel.theme}</h2>
     </div>
+    ${
+      intervenants.panel.photo
+        ? `<div class="associated-photos panel-photo-wrap reveal"><span class="associated-photo"><img src="${intervenants.panel.photo}" alt="Le panel de discussion" loading="lazy"></span></div>`
+        : ""
+    }
     <div class="people-grid">
       ${intervenants.panel.intervenantes
         .map((i) => `<div class="people-card reveal"><h3>${i.nom}</h3><p>${i.titre}</p></div>`)
