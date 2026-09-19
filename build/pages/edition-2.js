@@ -89,6 +89,11 @@ function render(data) {
       <h2>${intervenants.panel.theme}</h2>
     </div>
     <div class="people-grid">
+      ${
+        jury.moderatricePanel
+          ? `<div class="people-card reveal">${jury.moderatricePanel.photo ? `<img src="${jury.moderatricePanel.photo}" alt="${jury.moderatricePanel.nom}" class="people-photo" loading="lazy">` : ""}<span class="badge badge-upcoming" style="margin-bottom:10px;">Modératrice</span><h3>${jury.moderatricePanel.nom}, ${jury.moderatricePanel.age} ans</h3><p>${jury.moderatricePanel.titre}</p></div>`
+          : ""
+      }
       ${intervenants.panel.intervenantes
         .map(
           (i) => `<div class="people-card reveal">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" class="people-photo" loading="lazy">` : ""}<h3>${i.nom}</h3><p>${i.titre}</p></div>`
