@@ -8,7 +8,8 @@
       "annee": "2025",
       "statut": "passee",
       "resume": "Samedi 10 mai 2025, Hôtel Azalaï, Cotonou : +100 participants, 16 orateurs en compétition.",
-      "rapportPdf": null
+      "rapportPdf": "/assets/documents/rapport-1ere-edition-2025.pdf",
+      "rapportLabel": "Télécharger le rapport général (PDF)"
     },
     {
       "slug": "2eme-edition",
