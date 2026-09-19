@@ -53,6 +53,7 @@ ${
       ${edition2025.palmares
         .map(
           (p) => `<article class="palmares-card reveal">
+        ${p.photo ? `<img src="${p.photo}" alt="${p.nom}" class="palmares-photo" loading="lazy">` : ""}
         <p class="palmares-prix">${p.prix}</p>
         <h3>${p.nom}</h3>
         <p>${p.lots}</p>
