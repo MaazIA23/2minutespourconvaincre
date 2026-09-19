@@ -81,12 +81,12 @@ function render(data) {
 <section class="section alt-bg partenaires-teaser">
   <div class="container">
     <p class="eyebrow" style="text-align:center">Ils nous soutiennent</p>
-    <ul class="partner-strip">
-      ${partenaires.liste
-        .slice(0, 10)
-        .map((p) => `<li>${p.nom}</li>`)
-        .join("\n      ")}
-    </ul>
+    <div class="partner-marquee reveal">
+      <div class="partner-marquee-track">
+        ${partenaires.liste.map((p) => `<img src="${p.logo}" alt="${p.nom}" loading="lazy">`).join("\n        ")}
+        ${partenaires.liste.map((p) => `<img src="${p.logo}" alt="" aria-hidden="true" loading="lazy">`).join("\n        ")}
+      </div>
+    </div>
     <p style="text-align:center"><a href="/partenaires/" class="btn btn-ghost">Voir tous nos partenaires →</a></p>
   </div>
 </section>
