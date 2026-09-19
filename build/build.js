@@ -28,6 +28,7 @@ function loadData() {
     candidature: readJson("pages/candidature.json"),
     edition1: readJson("pages/edition-1.json"),
     edition3: readJson("pages/edition-3.json"),
+    legalPages: readJson("pages/legal.json"),
   };
 }
 
@@ -161,13 +162,16 @@ function main() {
     ["confidentialite", "Politique de confidentialité"],
     ["cgu", "Conditions générales d'utilisation"],
   ]) {
+    const pageContent = data.legalPages[slug];
     writePage(
       slug,
       renderLayout(data, {
         title,
         description: title,
         activeSlug: slug,
-        bodyHtml: legal.renderLegalPage(title),
+        bodyHtml: pageContent
+          ? legal.renderLegalContent(title, pageContent)
+          : legal.renderLegalPage(title),
       })
     );
   }

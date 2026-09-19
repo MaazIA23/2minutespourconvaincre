@@ -1,0 +1,81 @@
+{
+  "mentions-legales": {
+    "sections": [
+      {
+        "heading": "Éditeur du site",
+        "paragraphs": [
+          "Le présent site internet, accessible à l'adresse : https://2minpourconvaincre.com (ci-après « le Site »), est édité par : La Muse Éloquente."
+        ],
+        "champs": [
+          { "label": "Forme juridique", "valeur": "Entreprise individuelle" },
+          { "label": "Siège social", "valeur": "Cinéma Concorde, Cotonou – Bénin" },
+          { "label": "Numéro d'immatriculation", "valeur": "COTONOU N° RB/COT/25 A 111296" },
+          { "label": "Représentant légal", "valeur": "Mazidath Bello, DG" },
+          { "label": "E-mail de contact", "valeur": "contact@2minpourconvaincre.com" },
+          { "label": "Téléphone", "valeur": "01 66 33 38 39" }
+        ]
+      },
+      {
+        "heading": "Direction de la publication",
+        "champs": [
+          { "label": "Directrice de la publication", "valeur": "Mazidath Bello, fondatrice de 2 Minutes pour Convaincre" }
+        ]
+      },
+      {
+        "heading": "Hébergeur du site",
+        "paragraphs": ["Le Site est hébergé par :"],
+        "champs": [
+          { "label": "Hébergeur", "valeur": "Hostinger International Ltd." },
+          { "label": "Adresse", "valeur": "61 Lordou Vironos Street, 6023 Larnaca, Chypre" },
+          { "label": "Site web", "valeur": "https://www.hostinger.com" }
+        ]
+      },
+      {
+        "heading": "Objet du site",
+        "paragraphs": [
+          "Le Site a pour objet de présenter le concept, le programme et les différentes éditions de l'événement « 2 Minutes pour Convaincre », et de permettre aux utilisateurs de :"
+        ],
+        "liste": [
+          "s'informer sur l'événement",
+          "acheter des pass pour y participer",
+          "postuler en tant que candidat",
+          "accéder à des ressources en ligne",
+          "prendre contact avec l'équipe organisatrice"
+        ]
+      },
+      {
+        "heading": "Propriété intellectuelle",
+        "paragraphs": [
+          "Sauf mention contraire, l'ensemble des éléments du Site (textes, visuels, logos, vidéos, structure, etc.) est la propriété exclusive de La Muse Éloquente ou utilisé avec autorisation.",
+          "Toute reproduction, représentation, modification, diffusion, totale ou partielle, sans autorisation écrite préalable est interdite."
+        ]
+      },
+      {
+        "heading": "Liens hypertextes",
+        "paragraphs": [
+          "Le Site peut contenir des liens vers d'autres sites. La Muse Éloquente n'est pas responsable du contenu ni du fonctionnement de ces sites tiers.",
+          "Tout lien vers le Site doit faire l'objet d'une autorisation préalable."
+        ]
+      },
+      {
+        "heading": "Responsabilité",
+        "paragraphs": [
+          "Les informations publiées sur le Site le sont à titre indicatif. La Muse Éloquente ne garantit pas l'exactitude ou l'exhaustivité des contenus et ne saurait être tenue responsable des dommages directs ou indirects liés à l'utilisation du Site."
+        ]
+      },
+      {
+        "heading": "Données personnelles",
+        "paragraphs": [
+          "Les modalités de collecte et de traitement des données personnelles sont détaillées dans la Politique de confidentialité accessible sur le Site."
+        ]
+      },
+      {
+        "heading": "Droit applicable",
+        "paragraphs": [
+          "Les présentes mentions légales sont régies par le droit béninois. En cas de litige, les tribunaux compétents de Cotonou seront seuls compétents, sauf disposition légale contraire."
+        ]
+      }
+    ]
+  },
+  "_TODO": "confidentialite et cgu restent en placeholder — contenu réel non encore fourni par le client"
+}

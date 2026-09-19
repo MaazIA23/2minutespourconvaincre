@@ -192,6 +192,9 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .section-lead { font-size: 1.02rem; text-align: center; }
 .prose { max-width: 760px; margin: 0 auto 20px; }
 .prose h3 { margin-top: 1.4em; }
+.prose ul { display: flex; flex-direction: column; gap: 8px; margin: 0 0 1em; }
+.prose ul li { padding-left: 18px; position: relative; text-align: left; color: var(--ink-soft); }
+.prose ul li::before { content: "•"; position: absolute; left: 0; color: var(--gold-dark); }
 
 /* ---------- Chiffres ---------- */
 .chiffres-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }

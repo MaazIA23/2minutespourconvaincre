@@ -21,6 +21,6 @@
       { "label": "Politique de confidentialité", "lien": "/confidentialite" },
       { "label": "Conditions générales d'utilisation", "lien": "/cgu" }
     ],
-    "_TODO": "Contenu réel des pages légales non fourni — pages générées en placeholder à remplacer avant mise en ligne"
+    "_TODO": "Mentions légales : contenu réel intégré (voir content/pages/legal.json). Politique de confidentialité et CGU restent en placeholder — à remplacer avant mise en ligne"
   }
 }
