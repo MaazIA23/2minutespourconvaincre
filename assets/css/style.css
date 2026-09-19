@@ -346,8 +346,6 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .associated-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; }
 .associated-meta { font-weight: 700; color: var(--gold-dark); font-size: 0.85rem; }
 .associated-photos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 16px; }
-.panel-photo-wrap.associated-photos { grid-template-columns: 1fr; max-width: 720px; margin: 0 auto 36px; }
-.panel-photo-wrap.associated-photos img { aspect-ratio: 16 / 10; }
 .associated-photo { position: relative; display: block; border-radius: var(--radius-sm); overflow: hidden; }
 .associated-photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transition: transform .3s ease; }
 .associated-photo:hover img { transform: scale(1.06); }
