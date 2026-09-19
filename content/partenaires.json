@@ -99,18 +99,10 @@
     {
       "nom": "Mata-Yara",
       "logo": "/assets/img/partenaires/mata-yara.jpeg"
-    },
-    {
-      "nom": "Dam's Concept",
-      "logo": "/assets/img/partenaires/dams-concept.png"
-    },
-    {
-      "nom": "BH Studio",
-      "logo": "/assets/img/partenaires/bh-studio.png"
     }
   ],
   "secteurs": "Éducation, médias, hôtellerie, technologie, engagement associatif.",
   "_source": "Rapport Général — Nos partenaires (p.29-30)",
-  "_note": "Les 24 logos réels sont intégrés (fichiers dans assets/img/partenaires/).",
+  "_note": "22 logos réels intégrés (fichiers dans assets/img/partenaires/) — BH Studio et Dam's Concept retirés à la demande du client.",
   "TODO_2027": "Liste des partenaires de la 3e édition à établir (reconduction + nouveaux partenaires)"
 }
