@@ -1,6 +1,5 @@
 function render(data) {
   const { edition3, partenaires, editionsIndex } = data;
-  const nouveautesAccueil = edition3.nouveautes.filter((n) => n.numero !== "01");
 
   return `
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
@@ -42,10 +41,10 @@ function render(data) {
         <h2>Ce qui change pour la 3ème édition</h2>
       </div>
       <div class="nouveautes-grid nouveautes-grid-compact">
-        ${nouveautesAccueil
+        ${edition3.nouveautes
           .map(
-            (n, i) => `<div class="method-step reveal">
-          <div class="step-number">${String(i + 1).padStart(2, "0")}</div>
+            (n) => `<div class="method-step reveal">
+          <div class="step-number">${n.numero}</div>
           <h3>${n.titre}</h3>
           <p>${n.description}</p>
         </div>`
