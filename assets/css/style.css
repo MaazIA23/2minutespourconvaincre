@@ -424,6 +424,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .btn { white-space: normal; text-align: center; }
 }
 
+@media (max-width: 1180px) {
+  .hero-inner-single { max-width: 540px; }
+  .hero-photo-bg { background-position: 80% 14%; }
+}
+
 @media (max-width: 720px) {
   .main-nav {
     position: fixed; inset: 76px 0 0 0; background: var(--navy-950); padding: 24px;
@@ -437,7 +442,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 60px 0; }
   .hero { padding: 56px 0 44px; min-height: 480px; display: flex; align-items: flex-end; }
-  .hero-photo-bg { background-position: 78% 10%; }
+  .hero-photo-bg { background-position: 80% 16%; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
   .hero-visual img { aspect-ratio: 16 / 10; }
