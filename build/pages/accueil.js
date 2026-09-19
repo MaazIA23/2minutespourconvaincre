@@ -1,28 +1,22 @@
 function render(data) {
   const { edition3, partenaires, editionsIndex } = data;
+  const nouveautesAccueil = edition3.nouveautes.filter((n) => n.numero !== "01");
 
   return `
-<section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="hero-glow glow-1"></div>
-    <div class="hero-glow glow-2"></div>
-  </div>
-  <div class="container hero-inner">
+<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(180deg, rgba(13,17,50,.55), rgba(13,17,50,.88)), url('/assets/img/hero/accueil.jpg')">
+  <div class="container hero-inner hero-inner-single">
     <div class="hero-copy reveal">
       <p class="eyebrow">${edition3.teaser.eyebrow} — 3ème édition</p>
       <h1>${edition3.accroche}</h1>
-      <p class="hero-lead">${edition3.teaser.accroche}</p>
+      <p class="hero-lead">${edition3.teaser.accrocheCourte}</p>
       <div class="hero-meta">
-        <span>📅 ${edition3.date} — ${edition3.dateContexte}</span>
+        <span>📅 ${edition3.date}</span>
         <span>📍 ${edition3.lieu}</span>
       </div>
       <div class="hero-cta">
         <a href="/editions/3eme-edition/#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>
         <a href="/editions/" class="btn btn-outline btn-lg">Voir les éditions précédentes ↓</a>
       </div>
-    </div>
-    <div class="hero-visual reveal">
-      <img src="/assets/img/hero/accueil.jpg" alt="Intervenante sur scène, Deux Minutes Pour Convaincre, 2ème édition">
     </div>
   </div>
 </section>
@@ -31,28 +25,33 @@ function render(data) {
   <div class="container presentation-inner">
     <div class="presentation-copy reveal">
       <h2>${edition3.nouvelleAmbition.titre}</h2>
-      ${edition3.nouvelleAmbition.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
+      <p>${edition3.nouvelleAmbition.resumeCourt}</p>
       <a href="/editions/3eme-edition/" class="btn btn-outline">Découvrir la 3ème édition</a>
     </div>
   </div>
 </section>
 
-<section class="section alt-bg" id="nouveautes">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Cap sur 2027</p>
-      <h2>Ce qui change pour la 3ème édition</h2>
+<section class="section alt-bg photo-feature" id="nouveautes">
+  <div class="container photo-feature-inner">
+    <div class="photo-feature-media reveal">
+      <img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur scène, Deux Minutes Pour Convaincre">
     </div>
-    <div class="nouveautes-grid">
-      ${edition3.nouveautes
-        .map(
-          (n) => `<div class="method-step reveal">
-        <div class="step-number">${n.numero}</div>
-        <h3>${n.titre}</h3>
-        <p>${n.description}</p>
-      </div>`
-        )
-        .join("\n      ")}
+    <div class="photo-feature-copy">
+      <div class="section-head reveal" style="text-align:left; margin-bottom:28px;">
+        <p class="eyebrow">Cap sur 2027</p>
+        <h2>Ce qui change pour la 3ème édition</h2>
+      </div>
+      <div class="nouveautes-grid nouveautes-grid-compact">
+        ${nouveautesAccueil
+          .map(
+            (n, i) => `<div class="method-step reveal">
+          <div class="step-number">${String(i + 1).padStart(2, "0")}</div>
+          <h3>${n.titre}</h3>
+          <p>${n.description}</p>
+        </div>`
+          )
+          .join("\n        ")}
+      </div>
     </div>
   </div>
 </section>

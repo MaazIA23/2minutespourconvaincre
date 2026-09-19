@@ -7,9 +7,9 @@
     "historique": [
       { "numero": 1, "annee": "2025", "date": "10 mai 2025", "lieu": "Hôtel Azalaï, Cotonou" },
       { "numero": 2, "annee": "2026", "date": "08 août 2026", "lieu": "Azalaï Hôtel, Cotonou" },
-      { "numero": 3, "annee": "2027", "date": "20 mars 2027", "lieu": "Cotonou", "note": "Journée internationale de la Francophonie — lieu précis à confirmer" }
+      { "numero": 3, "annee": "2027", "date": "20 mars 2027", "lieu": "Palais des Congrès de Cotonou" }
     ],
-    "TODO_2027": "Lieu précis (nom de la salle) à confirmer. Voir aussi content/pages/edition-3.json et content/perspectives-3e-edition.json pour le détail des nouveautés déjà actées (Grand Prix de la Francophonie, programme 300 Voix, candidature vidéo)."
+    "TODO_2027": "Voir aussi content/pages/edition-3.json et content/perspectives-3e-edition.json pour le détail des nouveautés déjà actées (Grand Prix de la Francophonie, programme 300 Voix, candidature vidéo)."
   },
   "organisation": {
     "agence": "La Muse Éloquente",
@@ -20,8 +20,7 @@
   "logoTexte": "02 MIN. POUR CONVAINCRE",
   "evenement": {
     "date": "20 mars 2027",
-    "lieu": "Cotonou",
-    "TODO_2027": "Lieu précis à confirmer (nom de la salle)"
+    "lieu": "Palais des Congrès de Cotonou"
   },
   "contact": {
     "telephoneWhatsapp": "+229 01 43 39 33 33",

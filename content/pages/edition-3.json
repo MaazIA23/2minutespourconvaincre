@@ -5,15 +5,17 @@
   "accroche": "Le concours d'éloquence qui fait de vous un orateur d'exception",
   "date": "20 mars 2027",
   "dateContexte": "Journée internationale de la Francophonie",
-  "lieu": "Cotonou",
+  "lieu": "Palais des Congrès de Cotonou",
   "statut": "a-venir",
   "teaser": {
     "eyebrow": "Coming soon",
     "titre": "La 3ème édition arrive le 20 mars 2027",
+    "accrocheCourte": "Le concours qui révèle les plus grands talents oratoires du Bénin change de dimension.",
     "accroche": "Après deux éditions au Bénin, Deux Minutes Pour Convaincre change de dimension. Pour sa troisième édition, le concours s'inscrit dans une ambition nouvelle : célébrer la parole francophone, révéler de nouveaux talents et faire de l'éloquence un véritable levier de transmission et de leadership."
   },
   "nouvelleAmbition": {
     "titre": "Une nouvelle ambition",
+    "resumeCourt": "En 2027, la troisième édition ambitionne de franchir une nouvelle étape : faire de la parole un véritable levier d'impact — transmettre des compétences, révéler des talents et rayonner au-delà de la scène.",
     "paragraphes": [
       "Né d'un live TikTok conçu pour transformer les réseaux sociaux en un espace d'apprentissage, d'élévation et d'inspiration, « Deux Minutes Pour Convaincre » est devenu un rendez-vous incontournable dédié à l'art oratoire, à la transmission et à la révélation des talents. La première édition a permis de concrétiser le concept, tandis que la deuxième a permis de le structurer, de le professionnaliser et d'élargir son écosystème.",
       "En 2027, la troisième édition ambitionne de franchir une nouvelle étape : faire de la parole un véritable levier d'impact. Il ne s'agit plus simplement d'organiser un concours d'éloquence, mais de bâtir une initiative capable de transmettre des compétences, de révéler des talents et de rayonner au-delà de la scène."
@@ -81,7 +83,6 @@
   "_source": "Dossier de présentation édition 3 (PDF fourni par le client) — pages : Une nouvelle ambition, Pourquoi la parole, Objectifs de l'évènement, Cap sur la troisième édition",
   "TODO_2027": [
     "Contenu encore attendu d'après la table des matières du dossier mais pas encore rédigé : « Une compétition fondée sur le respect des idées », « Le défi des langues : Français × Fon », « Le grand panel », « Une expérience qui dépasse la compétition », « Les impacts attendus », « Une dynamique collective », « Le concours Deux Minutes Pour Convaincre », « La 3e édition en un coup d'œil », « Conclusion », « Contacts »",
-    "Lieu précis (nom du lieu à Cotonou, au-delà de la ville)",
     "Dates et modalités d'ouverture des candidatures 2027",
     "Programme horaire du 20 mars 2027",
     "Jury / marraine ou parrain / partenaires 2027"

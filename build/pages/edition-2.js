@@ -56,7 +56,7 @@ function render(data) {
         <p>${ev.description}</p>
         ${
           ev.photos
-            ? `<div class="associated-photos">${ev.photos.map((p) => `<img src="${p}" alt="${ev.titre}" loading="lazy">`).join("")}</div>`
+            ? `<div class="associated-photos">${ev.photos.map((p) => `<span class="associated-photo"><img src="${p}" alt="${ev.titre}" loading="lazy"></span>`).join("")}</div>`
             : ""
         }
       </div>`
