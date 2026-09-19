@@ -1,0 +1,26 @@
+{
+  "menuPrincipal": [
+    { "label": "Accueil", "lien": "/" },
+    {
+      "label": "Éditions",
+      "lien": "/editions/",
+      "enfants": [
+        { "label": "1ère édition (2025)", "lien": "/editions/1ere-edition/" },
+        { "label": "2ème édition (2026)", "lien": "/editions/2eme-edition/" },
+        { "label": "3ème édition (mars 2027)", "lien": "/editions/3eme-edition/" }
+      ]
+    },
+    { "label": "Candidature", "lien": "/candidature/" },
+    { "label": "Partenaires", "lien": "/partenaires/" },
+    { "label": "Qui sommes-nous ?", "lien": "/qui-sommes-nous/" }
+  ],
+  "_note": "Restructuré pour la préparation de la 3e édition (mars 2027) : 'Programme' retiré du menu principal, son contenu vit désormais dans la page de chaque édition. 'Éditions' est un menu déroulant vers les 3 éditions.",
+  "footer": {
+    "liensLegaux": [
+      { "label": "Mentions légales", "lien": "/mentions-legales" },
+      { "label": "Politique de confidentialité", "lien": "/confidentialite" },
+      { "label": "Conditions générales d'utilisation", "lien": "/cgu" }
+    ],
+    "_TODO": "Mentions légales : contenu réel intégré (voir content/pages/legal.json). Politique de confidentialité et CGU restent en placeholder — à remplacer avant mise en ligne"
+  }
+}

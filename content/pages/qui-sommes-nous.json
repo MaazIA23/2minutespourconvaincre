@@ -1,0 +1,46 @@
+{
+  "titre": "Qui sommes-nous ?",
+  "intro": "« Deux Minutes Pour Convaincre » n'est pas né de nulle part. Ce concours est le fruit d'un travail quotidien mené par une agence qui, depuis sa création, s'est donnée pour mission d'aider les gens à mieux prendre la parole.",
+  "agence": {
+    "nom": "La Muse Éloquente",
+    "description": "Agence de communication et de conseil spécialisée dans l'accompagnement et la formation en prise de parole. Professionnels, particuliers, entreprises : chacun y trouve un cadre adapté à ses besoins pour développer sa communication orale.",
+    "vision": "D'ici 2035, La Muse Éloquente aspire à être reconnue comme l'agence de référence qui transforme la communication des individus et des organisations, créant un écosystème d'excellence oratoire à travers des formations innovantes, des événements d'envergure et des partenariats stratégiques avec les entreprises leaders.",
+    "mission": "Révéler et développer le potentiel oratoire des individus et des organisations à travers des programmes de formation sur-mesure, des accompagnements personnalisés et des événements fédérateurs.",
+    "chiffres": [
+      { "valeur": "+70K", "libelle": "abonnés sur nos réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok)" },
+      { "valeur": "+1000", "libelle": "spectateurs sur les lives 2 Minutes Pour Convaincre sur TikTok" },
+      { "valeur": "+10.000.000", "libelle": "de vues cumulées sur nos différents réseaux" }
+    ],
+    "ceQueNousProposons": [
+      {
+        "categorie": "Accompagnements privés pour particuliers",
+        "items": ["Initiation à l'art oratoire", "Parcours complet de prise de parole", "Coaching haut de gamme, intensif et ciblé"]
+      },
+      {
+        "categorie": "Programmes pour entreprises",
+        "items": ["Communication interne & externe", "Leadership et management collaboratif", "Formation du personnel (accueil, service client)", "Développement des compétences interpersonnelles (soft skills)", "Masterclass sur des thématiques ciblées"]
+      },
+      {
+        "categorie": "Prestations de l'agence",
+        "items": ["Élaboration de stratégies d'influence", "Conseil en stratégie de communication", "Organisation d'événements d'entreprise", "Représentation & égérie de marque"]
+      }
+    ],
+    "ctaTexte": "Vous souhaitez développer votre prise de parole, former vos équipes ou organiser un événement autour de la communication ? Contactez-nous."
+  },
+  "fondatrice": {
+    "nom": "Mazidath BELLO",
+    "titre": "Fondatrice de La Muse Éloquente, Initiatrice de « Deux Minutes Pour Convaincre »",
+    "photo": "/assets/img/equipe/mazidath-bello.jpg",
+    "motIntroduction": [
+      "La première édition, nous l'avions organisée en deux mois à peine. Un pari un peu fou, porté par la conviction que l'éloquence et l'improvisation méritaient leur scène d'exception au Bénin. Et le résultat a dépassé nos propres attentes.",
+      "Alors pour cette 2ème édition, le challenge était clair : faire beaucoup mieux. Plus de rigueur dans la préparation, plus d'ambition dans le format, plus d'exigence dans chaque détail."
+    ],
+    "livre": {
+      "titre": "Chroniques d'une voix qui s'est révélée, Tome 1 : De l'Ombre à la Scène",
+      "description": "Premier livre de Mazidath Bello, lancé lors de la 2ème édition. Un récit autobiographique et une méthode pour révéler sa voix, porté par la conviction que la prise de parole n'est pas un don réservé à quelques-uns mais une compétence.",
+      "disponibilite": "Disponible en version papier en France et à Cotonou, ainsi qu'en e-book."
+    }
+  },
+  "_source": "Rapport Général — Mot d'introduction (p.4), Lancement du livre de la fondatrice (p.27-28), Zoom sur l'agence La Muse Éloquente (p.38-39)",
+  "TODO_2027": "Vérifier si les chiffres agence (+70K, +1000, +10M) doivent être actualisés pour la 3e édition"
+}

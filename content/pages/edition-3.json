@@ -1,0 +1,90 @@
+{
+  "edition": "2027",
+  "numero": 3,
+  "titre": "3ème édition",
+  "accroche": "La scène qui révèle les orateurs",
+  "date": "Mars 2027",
+  "dateContexte": "Journée internationale de la Francophonie",
+  "lieu": "Palais des Congrès de Cotonou",
+  "statut": "a-venir",
+  "teaser": {
+    "eyebrow": "Coming soon",
+    "titre": "La 3ème édition arrive en mars 2027",
+    "accrocheCourte": "Le concours qui révèle les plus grands talents oratoires du Bénin change de dimension.",
+    "accroche": "Après deux éditions au Bénin, Deux Minutes Pour Convaincre change de dimension. Pour sa troisième édition, le concours s'inscrit dans une ambition nouvelle : célébrer la parole francophone, révéler de nouveaux talents et faire de l'éloquence un véritable levier de transmission et de leadership."
+  },
+  "nouvelleAmbition": {
+    "titre": "Une nouvelle ambition",
+    "resumeCourt": "En 2027, la troisième édition ambitionne de franchir une nouvelle étape : faire de la parole un véritable levier d'impact, en transmettant des compétences, en révélant des talents et en rayonnant au-delà de la scène.",
+    "paragraphes": [
+      "Né d'un live TikTok conçu pour transformer les réseaux sociaux en un espace d'apprentissage, d'élévation et d'inspiration, « Deux Minutes Pour Convaincre » est devenu un rendez-vous incontournable dédié à l'art oratoire, à la transmission et à la révélation des talents. La première édition a permis de concrétiser le concept, tandis que la deuxième a permis de le structurer, de le professionnaliser et d'élargir son écosystème.",
+      "En 2027, la troisième édition ambitionne de franchir une nouvelle étape : faire de la parole un véritable levier d'impact. Il ne s'agit plus simplement d'organiser un concours d'éloquence, mais de bâtir une initiative capable de transmettre des compétences, de révéler des talents et de rayonner au-delà de la scène."
+    ]
+  },
+  "pourquoiLaParole": {
+    "titre": "Pourquoi la parole ?",
+    "paragraphes": [
+      "Dans un monde en constante évolution où les jeunes sont appelés à devenir les acteurs principaux de leur avenir, la maîtrise de l'éloquence se révèle être un levier essentiel, voire indispensable, de confiance en soi, de leadership, d'employabilité et de participation citoyenne active. C'est cette conviction profonde, nourrie par l'observation des défis auxquels font face les jeunes aujourd'hui, qui anime le projet « Deux Minutes Pour Convaincre ». Ce projet vise à leur offrir les outils et les compétences nécessaires pour s'exprimer avec clarté et conviction, et ainsi prendre leur place dans la société.",
+      "La prise de parole ne se limite pas à une simple maîtrise du langage, à une articulation fluide ou à un vocabulaire riche. Elle implique bien plus que cela. Elle exige également la capacité à structurer sa pensée de manière cohérente et logique, à défendre une idée avec conviction et à argumenter avec rigueur, en s'appuyant sur des faits et des exemples concrets."
+    ]
+  },
+  "objectifs": {
+    "titre": "Objectifs de l'évènement",
+    "objectifGlobal": "L'objectif global de 2 minutes pour convaincre est de créer un cadre structurant, exigeant et bienveillant qui développe la maîtrise de la parole comme levier de leadership, d'opportunités et d'ascension personnelle et professionnelle.",
+    "specifiques": [
+      {
+        "titre": "Développer l'art de la persuasion",
+        "description": "Permettre aux participants d'apprendre à structurer une idée, capter l'attention et convaincre en un temps très court : une compétence clé dans les études, l'entrepreneuriat et la vie professionnelle."
+      },
+      {
+        "titre": "Renforcer la confiance en soi",
+        "description": "Mettre les candidats dans une situation exigeante mais bienveillante pour les aider à dépasser le trac, affirmer leur voix et oser prendre la parole en public."
+      },
+      {
+        "titre": "Valoriser l'excellence oratoire francophone",
+        "description": "Promouvoir la maîtrise de la langue française, la clarté d'expression et la puissance du discours comme leviers d'impact et d'ascension sociale."
+      },
+      {
+        "titre": "Révéler et propulser des talents",
+        "description": "Identifier des profils à fort potentiel et leur offrir visibilité, crédibilité et réseau pour accélérer leur parcours académique ou entrepreneurial."
+      }
+    ]
+  },
+  "nouveautes": [
+    {
+      "numero": "01",
+      "titre": "Une édition sous le signe de la francophonie",
+      "description": "La troisième édition sera organisée à l'occasion de la Journée internationale de la Francophonie, en mars 2027. Un choix qui donne au concours une nouvelle portée : celle de célébrer la richesse des voix francophones et de mettre en lumière la capacité de la jeunesse africaine à porter ses idées, ses convictions et ses ambitions."
+    },
+    {
+      "numero": "02",
+      "titre": "Un parcours plus exigeant",
+      "description": "Pour cette troisième édition, sélection plus rigoureuse, préparation renforcée et évaluations plus exigeantes : chaque étape sera pensée pour faire émerger les profils les plus solides. L'ambition est simple : offrir au public, le jour de la finale, un plateau d'un niveau inédit, avec des candidats capables de conjuguer fond, présence, argumentation, spontanéité et maîtrise de la parole."
+    },
+    {
+      "numero": "03",
+      "titre": "300 Voix",
+      "description": "Avec 300 VOIX, Deux Minutes Pour Convaincre franchit les murs de la compétition pour aller directement à la rencontre de la jeunesse. 300 élèves et étudiants d'écoles et d'universités bénéficieront d'une formation en art oratoire, à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi."
+    },
+    {
+      "numero": "04",
+      "titre": "Un nouveau Grand Prix",
+      "description": "Parce qu'une victoire doit ouvrir une porte. Le vainqueur de cette troisième édition remportera désormais le Grand Prix de la Francophonie. Un prix qui vient donner une nouvelle dimension à la récompense finale et inscrire la victoire dans une logique de mérite, de transmission et d'opportunités."
+    }
+  ],
+  "candidatureFormat": {
+    "titre": "Nouveauté : la candidature se fait en vidéo",
+    "description": [
+      "Pour cette 3ème édition, le format de candidature change. Il devient une vidéo numérique de deux minutes, sur un thème choisi librement par le candidat ou la candidate.",
+      "L'objectif reste le même que sur scène : convaincre en deux minutes."
+    ],
+    "_source": "Précision donnée oralement par le client — à confirmer/détailler dans une prochaine version du dossier de présentation"
+  },
+  "_source": "Dossier de présentation édition 3 (PDF fourni par le client) — pages : Une nouvelle ambition, Pourquoi la parole, Objectifs de l'évènement, Cap sur la troisième édition",
+  "TODO_2027": [
+    "Contenu encore attendu d'après la table des matières du dossier mais pas encore rédigé : « Une compétition fondée sur le respect des idées », « Le défi des langues : Français × Fon », « Le grand panel », « Une expérience qui dépasse la compétition », « Les impacts attendus », « Une dynamique collective », « Le concours Deux Minutes Pour Convaincre », « La 3e édition en un coup d'œil », « Conclusion », « Contacts »",
+    "Dates et modalités d'ouverture des candidatures 2027",
+    "Programme horaire de mars 2027",
+    "Jury / marraine ou parrain / partenaires 2027"
+  ]
+}

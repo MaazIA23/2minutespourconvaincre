@@ -1,0 +1,36 @@
+{
+  "1ere-edition": {
+    "titre": "Galerie",
+    "sousTitre": "Quelques photos de l'événement",
+    "credit": "Crédit photo : Harold Photo Studio",
+    "photos": [
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-01.jpg", "alt": "Public participant à la dictée intuitive sur Kahoot, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-02.jpg", "alt": "Participante dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-03.jpg", "alt": "Participant en tenue traditionnelle, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-04.jpg", "alt": "Échange entre participantes, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-05.jpg", "alt": "Le maître de cérémonie au micro, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-06.jpg", "alt": "Participant répondant à la dictée intuitive sur son téléphone, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-07.jpg", "alt": "Écran de la dictée intuitive projeté en salle, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-08.jpg", "alt": "Remise du chèque du 1er prix, 200 000 FCFA, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-09.jpg", "alt": "Intervenante au micro, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-10.jpg", "alt": "Intervenante en tenue traditionnelle au micro, 1ère édition" }
+    ]
+  },
+  "2eme-edition": {
+    "titre": "Galerie",
+    "sousTitre": "Quelques photos de l'événement",
+    "credit": "Crédit photo : BH Studio",
+    "photos": [
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste consultant le livret du programme, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-02.jpg", "alt": "Participant dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-03.jpg", "alt": "Participante consultant le livret du programme, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-04.jpg", "alt": "Intervenante au micro sur scène, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-05.jpg", "alt": "Public attentif dans la salle, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-06.jpg", "alt": "Participante dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-07.jpg", "alt": "Participant dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-08.jpg", "alt": "Participante dans le public, badge au cou, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-09.jpg", "alt": "Écran de la dictée intuitive sur Kahoot, 2ème édition" }
+    ]
+  },
+  "TODO_2027": "Ajouter une entrée '3eme-edition' une fois l'événement passé"
+}

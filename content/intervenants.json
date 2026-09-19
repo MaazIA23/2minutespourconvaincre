@@ -1,0 +1,26 @@
+{
+  "edition": "2026",
+  "panel": {
+    "theme": "La parole comme levier d'influence et de leadership féminin",
+    "intro": "Le thème n'a pas été choisi au hasard. Il s'inscrit dans la volonté de cette 2ème édition de placer les femmes au centre de la réflexion sur l'éloquence.",
+    "intervenantes": [
+      {
+        "nom": "Mme Hermyone Adjovi",
+        "titre": "Présidente de l'ONG Mata-Yara, engagée pour l'autonomisation des femmes, des filles et des enfants.",
+        "photo": "/assets/img/panel/hermyone-adjovi.jpg"
+      },
+      {
+        "nom": "Mme Arycette Kpédé",
+        "titre": "Initiatrice du FILEF (Forum International sur le Leadership au Féminin), spécialiste du leadership féminin.",
+        "photo": "/assets/img/panel/arycette-kpede.jpg"
+      },
+      {
+        "nom": "Maître Huguette Bokpè Gnacadja",
+        "titre": "Marraine de l'édition, panéliste.",
+        "photo": "/assets/img/panel/huguette-bokpe-gnacadja.jpg"
+      }
+    ]
+  },
+  "_source": "Rapport Général — La préparation du panel et le choix des intervenantes (p.8), Le panel de discussion (p.13)",
+  "TODO_2027": "Thème et intervenant(e)s du panel de la 3e édition à définir"
+}

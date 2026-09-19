@@ -1,0 +1,66 @@
+{
+  "edition": "2026",
+  "videoPresentation": {
+    "youtubeId": "nGOykpI6afc",
+    "titre": "Découvrez Deux Minutes Pour Convaincre en vidéo"
+  },
+  "hero": {
+    "eyebrow": "CONCOURS",
+    "titre": "D'IMPROVISATION",
+    "sousTitre": "Une scène, un micro, 120 secondes pour oser, se révéler et marquer les esprits.",
+    "sousTitreAccent": "120 secondes",
+    "date": "08 août 2026",
+    "lieu": "Azalaï Hôtel, Cotonou",
+    "cta": { "label": "S'inscrire", "lien": "TODO" }
+  },
+  "sections": [
+    {
+      "id": "presentation",
+      "titre": "Quand la parole devient conviction",
+      "paragraphes": [
+        "Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.",
+        "Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.",
+        "Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation."
+      ],
+      "cta": { "label": "En savoir plus", "lien": "/a-propos" }
+    },
+    {
+      "id": "stats",
+      "chiffres": [
+        { "valeur": "+ 300", "libelle": "Participants" },
+        { "valeur": "8", "libelle": "Finalistes" },
+        { "valeur": "1", "libelle": "Vainqueur" }
+      ],
+      "_note": "Confirmé : 3 cartes (Participants, Finalistes, Vainqueur). Une 4e carte 'Partenaires' est possible plus bas sur la page, à confirmer."
+    },
+    {
+      "id": "chiffresEvocateurs",
+      "titre": "Des chiffres évocateurs",
+      "intro": "Avant d'entrer dans le détail, quelques chiffres méritent d'être mis en lumière parce qu'ils racontent déjà beaucoup :",
+      "chiffres": [
+        { "valeur": "25", "libelle": "candidatures reçues au départ" },
+        { "valeur": "12", "libelle": "candidats présélectionnés" },
+        { "valeur": "08", "libelle": "finalistes sur scène à l'hôtel Azalaï" },
+        { "valeur": "03", "libelle": "rounds pour départager les meilleurs : quarts, demi-finales, finale" },
+        { "valeur": "03", "libelle": "premiers prix décernés aux lauréats" },
+        { "valeur": "01", "libelle": "prix du leadership féminin attribué pour la première fois à la prestation féminine la plus impactante" },
+        { "valeur": "500.000 Fcfa", "libelle": "de dotations financières remises aux deux premiers lauréats" },
+        { "valeur": "+200", "libelle": "participants réunis en présentiel, et une quinzaine connectés en streaming" },
+        { "valeur": "24", "libelle": "partenaires et contributeurs mobilisés autour de cette édition" }
+      ],
+      "_source": "Rapport Général — Des chiffres évocateurs (p.6). Chiffres 12 candidats présélectionnés et +200 participants confirmés (les deux incohérences relevées précédemment sont résolues) par le Dossier de présentation édition 3 (p.10-11)."
+    }
+  ],
+  "_TODO": [
+    "Section partenaires (accueil) — à confirmer si incluse dans le bloc chiffres ou section dédiée",
+    "Section 'Deux minutes qui changent tout'",
+    "Section 'La voix des jeunes Africains'",
+    "Section 'Plus qu'un show, un tremplin'",
+    "Section 'L'inspiration réelle et en live'",
+    "Pass: Diaspora, Candidat, Simple, VIP",
+    "FAQ",
+    "Galerie",
+    "Newsletter",
+    "Contact"
+  ]
+}

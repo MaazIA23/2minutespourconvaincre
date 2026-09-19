@@ -1,0 +1,27 @@
+{
+  "_usage": "Matière brute exprimée par la fondatrice dans le Rapport Général (p.36-37) pour préparer la 3e édition. À transformer en contenu publiable une fois les décisions prises avec le client — ne pas publier tel quel sur le site sans validation.",
+  "titre": "Cap sur la 3ème édition et autres perspectives",
+  "constat": "Deux éditions et une certitude qui n'a pas bougé : la parole a le pouvoir de transformer. Cette 2ème édition a confirmé ce que la première avait laissé entrevoir. Le concept fonctionne. Le public répond. Les talents sont là. Maintenant, la question n'est plus de savoir si « Deux Minutes Pour Convaincre » a sa place. Mais, c'est plutôt de savoir jusqu'où cette aventure peut aller.",
+  "pistes": [
+    {
+      "titre": "Élargir les horizons",
+      "description": "Ouvrir davantage l'événement à des candidats venus d'autres pays francophones. L'éloquence n'a pas de frontières, le concours non plus."
+    },
+    {
+      "titre": "Exporter le concept",
+      "description": "Organiser des phases ou des éditions de « Deux Minutes Pour Convaincre » dans d'autres pays. La France, où une diaspora béninoise forte et engagée est déjà présente, fait partie des premières pistes. L'ambition : faire de ce concours un rendez-vous francophone d'éloquence de référence, pas seulement béninois."
+    },
+    {
+      "titre": "Renforcer l'écosystème",
+      "description": "Consolider formation, coaching et communauté d'anciens finalistes, pour faire de l'événement plus qu'un rendez-vous annuel : un véritable écosystème au service de l'éloquence, où chaque édition alimente la suivante."
+    },
+    {
+      "titre": "Professionnaliser davantage l'expérience",
+      "description": "Écouter les retours, corriger ce qui doit l'être, et revenir avec une édition encore plus solide."
+    }
+  ],
+  "TODO_2027": [
+    "Valider avec le client lesquelles de ces pistes sont retenues pour la 3e édition",
+    "Définir : année, dates, lieu, programme, candidats, partenaires, prix/pass, jury, intervenants, infos de candidature, photos, gagnants de la 3e édition"
+  ]
+}

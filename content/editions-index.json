@@ -1,0 +1,32 @@
+{
+  "titre": "Les éditions",
+  "intro": "Deux éditions déjà organisées, une troisième en préparation pour mars 2027. Chaque édition a sa propre page : ce qui a été fait, le palmarès, le rapport à télécharger, ou, pour la prochaine, ce qui se prépare.",
+  "editions": [
+    {
+      "slug": "1ere-edition",
+      "label": "1ère édition",
+      "annee": "2025",
+      "statut": "passee",
+      "resume": "Samedi 10 mai 2025, Hôtel Azalaï, Cotonou : +100 participants, 16 orateurs en compétition.",
+      "rapportPdf": "/assets/documents/rapport-1ere-edition-2025.pdf",
+      "rapportLabel": "Télécharger le rapport général (PDF)"
+    },
+    {
+      "slug": "2eme-edition",
+      "label": "2ème édition",
+      "annee": "2026",
+      "statut": "passee",
+      "resume": "« Le pari était de faire mieux que la première édition. Le pari est réussi. » 08 août 2026, Azalaï Hôtel, Cotonou.",
+      "rapportPdf": "/assets/documents/rapport-2eme-edition-2026.pdf",
+      "rapportLabel": "Télécharger le rapport général (PDF)"
+    },
+    {
+      "slug": "3eme-edition",
+      "label": "3ème édition",
+      "annee": "2027",
+      "statut": "a-venir",
+      "resume": "Mars 2027, Palais des Congrès de Cotonou. Grand Prix de la Francophonie et programme « 300 Voix ».",
+      "rapportPdf": null
+    }
+  ]
+}

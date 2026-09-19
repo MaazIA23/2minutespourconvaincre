@@ -1,0 +1,76 @@
+{
+  "editions": [
+    {
+      "edition": "2025",
+      "numero": 1,
+      "intro": "Deux noms se sont démarqués parmi les 16 orateurs en lice, au terme de quatre rounds d'élimination progressive.",
+      "palmares": [
+        {
+          "prix": "Grande Gagnante, Championne de l'Éloquence 2025",
+          "nom": "Ezéchielle Bouet",
+          "photo": "/assets/img/palmares/1ere-edition/ezechielle-bouet.jpg",
+          "lots": "Trophée de la lauréate, enveloppe financière de 200 000 FCFA, titre de Championne de l'Éloquence 2025, lots divers."
+        },
+        {
+          "prix": "Deuxième place",
+          "nom": "Tristan Kounde",
+          "photo": "/assets/img/palmares/1ere-edition/tristan-kounde.jpg",
+          "lots": "Enveloppe financière de 100 000 FCFA, lots divers."
+        }
+      ],
+      "autresParticipants": "Tous les autres candidats ont reçu un lot de consolation ainsi qu'une attestation officielle de participation.",
+      "_source": "Rapport de la 1ère édition — Le palmarès complet, La remise des prix (p.18)"
+    },
+    {
+      "edition": "2026",
+      "numero": 2,
+      "intro": "Trois noms se sont démarqués. Trois voix qui ont su, en 120 secondes, faire pencher la salle et le jury de leur côté.",
+      "palmares": [
+        {
+          "prix": "1er prix, Grand Champion",
+          "nom": "José Pascaël Agbo",
+          "photo": "/assets/img/palmares/2eme-edition/jose-pascael-agbo.jpg",
+          "lots": "300 000 FCFA, trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
+          "portrait": {
+            "titre": "La revanche d'une conviction",
+            "citation": "J'ai participé à la première édition pour essayer. Cette fois-ci, je suis là pour gagner.",
+            "recit": "Étudiant partagé entre le droit et la communication, José n'en était pas à son premier passage sur la scène de « Deux Minutes Pour Convaincre ». Finaliste dès la première édition, il était alors venu découvrir l'expérience, se mesurer à lui-même. Cette année, il est revenu avec une intention différente : ne plus seulement participer, mais gagner. Pour lui, l'art oratoire n'a jamais été une question de ne jamais douter. C'est plutôt le courage de reprendre la parole, encore et encore, malgré le doute. Sur la scène de Deux Minutes Pour Convaincre, sa préparation plus aboutie et sa détermination lui ont permis de décrocher le titre de Grand Champion de cette 2ème édition. Une victoire qu'il tient pourtant à partager : ce succès n'est pas une supériorité sur les autres finalistes. C'est une victoire contre ses propres limites, et un hommage à tous ceux qui l'ont aidé, jour après jour, à devenir l'orateur qu'il est aujourd'hui."
+          }
+        },
+        {
+          "prix": "2ème prix",
+          "nom": "Ezékias Gbessé",
+          "lots": "200 000 FCFA, trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
+          "portrait": {
+            "titre": "La preuve l'âge n'est qu'un chiffre",
+            "citation": "Aux âmes bien nées, la valeur n'attend point le nombre des années.",
+            "recit": "Plus jeune finaliste (18 ans) de cette 2ème édition, il a dû faire face à des orateurs souvent plus expérimentés que lui. Mais il n'a jamais reculé. Pour Ezékias, la parole est un art au service de la conviction, pas un simple exercice technique. Décrocher le 2ème prix à un âge où beaucoup n'osent même pas se lancer est, en soi, une performance."
+          }
+        },
+        {
+          "prix": "Prix du leadership féminin",
+          "nom": "Audrey Bonnialy",
+          "lots": "Trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
+          "portrait": {
+            "titre": "Une voix venue d'ailleurs et déjà gagnante chez elle",
+            "citation": "Que tu penses que tu peux ou que tu ne peux pas, dans les deux cas, tu as raison.",
+            "recit": "Enseignante de physique-chimie, arrivée au Bénin depuis la Martinique il y a seulement quelques mois, Audrey n'a pas mis longtemps à trouver sa place et à faire entendre sa voix. Sur scène, elle a révélé une présence, un potentiel qui ne demandait qu'à être mis en lumière. En 120 secondes, elle a su capter l'attention, défendre ses idées et laisser une empreinte suffisamment forte pour décrocher la troisième place, ainsi que la toute première distinction consacrée au leadership féminin dans l'histoire de ce concours."
+          }
+        }
+      ],
+      "autresFinalistes": {
+        "intro": "Sur cette scène, il n'y a pas eu de perdants. Les cinq autres finalistes, chacun ayant traversé un processus de sélection exigeant pour arriver jusqu'à cette finale, ont reçu un lot de consolation ainsi qu'une attestation officielle de participation :",
+        "noms": [
+          "Anisette Toto Agbré",
+          "Liliane T. Agyemang",
+          "Anita Dadelé",
+          "Géovani De Souza",
+          "Urbain Azalou-Tingbé"
+        ]
+      },
+      "totalFinalistes": 8
+    }
+  ],
+  "_source": "Rapport Général — Le palmarès (p.20-21), Portrait des trois premiers lauréats (p.22-24)",
+  "TODO_2027": "Créer une nouvelle entrée d'édition (numero: 3, edition: '2027') une fois le palmarès de la 3e édition connu ; conserver 2026 comme historique"
+}
