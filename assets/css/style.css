@@ -153,7 +153,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .dropdown-menu li a:hover { background: var(--navy-800); color: var(--gold-text); }
 
 /* ---------- Hero (home) ---------- */
-.hero { position: relative; overflow: hidden; padding: 90px 0 70px; background: var(--navy-950); color: #fff; min-height: 620px; display: flex; align-items: flex-end; }
+.hero { position: relative; overflow: hidden; padding: 90px 0 70px; background: var(--navy-950); color: #fff; min-height: 560px; display: flex; align-items: center; }
 .hero-photo-bg { background-size: cover; background-position: 82% 15%; background-repeat: no-repeat; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-glow { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.45; }
@@ -454,7 +454,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .nav-toggle { display: inline-flex; }
   .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 60px 0; }
-  .hero { padding: 40px 0 32px; min-height: 480px; display: flex; align-items: flex-end; }
+  .hero { padding: 40px 0 32px; min-height: 460px; display: flex; align-items: center; }
   .hero-photo-bg { background-position: 80% 16%; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-meta { margin: 12px 0 18px; gap: 14px; font-size: 0.92rem; }
