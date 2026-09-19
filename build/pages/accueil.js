@@ -3,7 +3,7 @@ function render(data) {
   const nouveautesAccueil = edition3.nouveautes.filter((n) => n.numero !== "01");
 
   return `
-<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(180deg, rgba(13,17,50,.55), rgba(13,17,50,.88)), url('/assets/img/hero/accueil.jpg')">
+<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
   <div class="container hero-inner hero-inner-single">
     <div class="hero-copy reveal">
       <p class="eyebrow">${edition3.teaser.eyebrow} — 3ème édition</p>
