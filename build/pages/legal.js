@@ -27,6 +27,7 @@ function renderLegalContent(title, content) {
 <section class="section">
   <div class="container">
     <div class="prose reveal">
+      ${(content.intro || []).map((p) => `<p>${p}</p>`).join("\n      ")}
       ${content.sections
         .map(
           (s) => `<h3>${s.heading}</h3>
@@ -36,7 +37,8 @@ function renderLegalContent(title, content) {
           ? `<ul>${s.champs.map((c) => `<li><strong>${c.label} :</strong> ${c.valeur}</li>`).join("")}</ul>`
           : ""
       }
-      ${s.liste ? `<ul>${s.liste.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}`
+      ${s.liste ? `<ul>${s.liste.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+      ${(s.apresListe || []).map((p) => `<p>${p}</p>`).join("\n      ")}`
         )
         .join("\n      ")}
     </div>

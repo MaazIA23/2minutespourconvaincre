@@ -77,5 +77,88 @@
       }
     ]
   },
-  "_TODO": "confidentialite et cgu restent en placeholder — contenu réel non encore fourni par le client"
+  "cgu": {
+    "intro": [
+      "Les présentes Conditions générales d'utilisation (CGU) définissent les règles d'accès au Site et d'utilisation de ses services.",
+      "En accédant au Site, vous acceptez sans réserve ces CGU."
+    ],
+    "sections": [
+      {
+        "heading": "Accès au site",
+        "paragraphs": [
+          "Le Site est accessible 24h/24 et 7j/7, sauf interruption pour maintenance ou cas de force majeure. La Muse Éloquente ne peut garantir l'absence de coupure ou de dysfonctionnement."
+        ]
+      },
+      {
+        "heading": "Compte utilisateur",
+        "paragraphs": [
+          "Certaines fonctionnalités (achat de pass, accès à des contenus, candidature) peuvent nécessiter la création d'un compte.",
+          "Vous vous engagez à fournir des informations exactes et à conserver vos identifiants confidentiels. Toute action réalisée via votre compte est réputée effectuée par vous."
+        ]
+      },
+      {
+        "heading": "Bon usage du site",
+        "paragraphs": ["L'utilisateur s'engage à :"],
+        "liste": [
+          "ne pas utiliser le Site à des fins illégales ou contraires aux bonnes mœurs",
+          "ne pas perturber le fonctionnement du Site",
+          "ne pas tenter d'accéder de manière non autorisée aux systèmes ou données"
+        ],
+        "apresListe": [
+          "Deux Minutes pour Convaincre pourra suspendre l'accès en cas d'usage abusif ou frauduleux."
+        ]
+      },
+      {
+        "heading": "Contenus transmis par les utilisateurs",
+        "paragraphs": [
+          "Dans le cadre des candidatures ou de contributions (témoignages, commentaires…), vous pouvez transmettre des textes, vidéos ou autres contenus.",
+          "Vous garantissez disposer des droits nécessaires et que ces contenus ne portent pas atteinte aux droits de tiers.",
+          "En les transmettant, vous autorisez La Muse Éloquente, à titre non exclusif et pour les besoins liés à l'événement et à sa communication, à les utiliser et diffuser, dans le respect de la Politique de confidentialité et du droit à l'image."
+        ]
+      },
+      {
+        "heading": "Achat de pass et services",
+        "paragraphs": [
+          "L'achat de pass pour l'événement est soumis à des conditions spécifiques (prix, modalités de remboursement, modification, etc.) présentées lors de la commande.",
+          "L'utilisateur s'engage à les lire et à les accepter avant tout paiement."
+        ]
+      },
+      {
+        "heading": "Propriété intellectuelle",
+        "paragraphs": [
+          "Les contenus du Site sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou utilisation non autorisée est interdite, comme indiqué dans les Mentions légales."
+        ]
+      },
+      {
+        "heading": "Limitation de responsabilité",
+        "paragraphs": [
+          "Deux Minutes pour Convaincre ne peut être tenue responsable des dommages directs ou indirects résultant :"
+        ],
+        "liste": [
+          "de l'utilisation ou de l'impossibilité d'utiliser le Site",
+          "d'un mauvais usage par l'utilisateur",
+          "de la présence éventuelle de virus ou éléments nuisibles"
+        ]
+      },
+      {
+        "heading": "Modifications des CGU",
+        "paragraphs": [
+          "La Muse Éloquente se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs sont invités à les consulter régulièrement."
+        ]
+      },
+      {
+        "heading": "Contact",
+        "paragraphs": [
+          "Pour toute question relative au Site ou aux présentes CGU, vous pouvez écrire à : contact@2minpourconvaincre.com"
+        ]
+      },
+      {
+        "heading": "Droit applicable",
+        "paragraphs": [
+          "Les présentes CGU sont régies par le droit béninois. En cas de litige, et à défaut d'accord amiable, les tribunaux compétents de Cotonou seront saisis."
+        ]
+      }
+    ]
+  },
+  "_TODO": "confidentialite reste en placeholder — contenu réel non encore fourni par le client"
 }
