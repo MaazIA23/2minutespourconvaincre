@@ -7,14 +7,9 @@ function render(data) {
     <div class="hero-copy reveal">
       <p class="eyebrow">${edition3.teaser.eyebrow} · 3ème édition</p>
       <h1>${edition3.accroche}</h1>
-      <p class="hero-lead">${edition3.teaser.accrocheCourte}</p>
       <div class="hero-meta">
         <span>📅 ${edition3.date}</span>
         <span>📍 ${edition3.lieu}</span>
-      </div>
-      <div class="hero-cta">
-        <a href="/editions/3eme-edition/#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>
-        <a href="/editions/" class="btn btn-outline btn-lg">Voir les éditions précédentes ↓</a>
       </div>
     </div>
   </div>

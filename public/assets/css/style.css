@@ -164,9 +164,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .hero-copy h1 { color: #fff; }
 .hero-visual { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
 .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 5; }
-.hero-lead { font-size: 1.15rem; max-width: 56ch; color: rgba(255,255,255,0.9); text-align: left; }
 .hero-meta { display: flex; gap: 22px; flex-wrap: wrap; margin: 18px 0 26px; font-weight: 700; }
-.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ---------- Presentation ---------- */
 .presentation { background: var(--paper); }
@@ -459,7 +457,6 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .hero { padding: 40px 0 32px; min-height: 480px; display: flex; align-items: flex-end; }
   .hero-photo-bg { background-position: 80% 16%; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-lead, .hero-cta .btn-outline { display: none; }
   .hero-meta { margin: 12px 0 18px; gap: 14px; font-size: 0.92rem; }
   .hero h1 { font-size: 1.9rem; }
   .hero-visual { order: -1; }
