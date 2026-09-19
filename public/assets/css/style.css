@@ -428,6 +428,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
 
+  .associated-grid { grid-template-columns: 1fr; }
+
   /* Dropdown becomes an inline accordion on mobile */
   .dropdown-caret { float: right; }
   .dropdown-menu {
