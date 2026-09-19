@@ -1,5 +1,5 @@
 function render(data) {
-  const { edition3, partenaires, editionsIndex } = data;
+  const { edition3, partenaires, editionsIndex, accueil } = data;
 
   return `
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
@@ -19,6 +19,24 @@ function render(data) {
     </div>
   </div>
 </section>
+
+${
+  accueil.videoPresentation
+    ? `<section class="section video-feature" id="video">
+  <div class="container">
+    <div class="video-embed reveal">
+      <iframe
+        src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}"
+        title="${accueil.videoPresentation.titre}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>`
+    : ""
+}
 
 <section class="section presentation" id="presentation">
   <div class="container presentation-inner">

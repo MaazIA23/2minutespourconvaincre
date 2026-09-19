@@ -1,5 +1,9 @@
 {
   "edition": "2026",
+  "videoPresentation": {
+    "youtubeId": "nGOykpI6afc",
+    "titre": "Découvrez Deux Minutes Pour Convaincre en vidéo"
+  },
   "hero": {
     "eyebrow": "CONCOURS",
     "titre": "D'IMPROVISATION",
