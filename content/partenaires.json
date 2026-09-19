@@ -9,33 +9,108 @@
   "remerciement": "À toutes celles et ceux qui nous ont fait confiance, soutenus et accompagnés : merci. Votre engagement donne encore plus de sens à ce que nous construisons.",
   "nombreAnnonce": "24 partenaires et contributeurs mobilisés (chiffre clé) — « une vingtaine » dans le texte narratif",
   "liste": [
-    { "nom": "Institut National de la Femme (INF)" },
-    { "nom": "M média Afrique" },
-    { "nom": "FIGS Education", "logo": "/assets/img/partenaires/figs-education.jpg" },
-    { "nom": "Kirikou Bar", "type": "Restaurant" },
-    { "nom": "Shalom Empire" },
-    { "nom": "Azalaï Hôtel Cotonou", "type": "Lieu de l'événement" },
-    { "nom": "La Muse Éloquente", "type": "Agence organisatrice", "logo": "/assets/img/partenaires/la-muse-eloquente.jpg" },
-    { "nom": "La Dictée Solidaire" },
-    { "nom": "La Ludothèque Family Zone" },
-    { "nom": "Gloria Events & Kids" },
-    { "nom": "Inspir'Elles" },
-    { "nom": "Eloquentia Toastmasters Club de Cotonou" },
-    { "nom": "Opus Corp" },
-    { "nom": "3D Entertainment", "logo": "/assets/img/partenaires/3d-entertainment.jpg" },
-    { "nom": "Sibelle Accessoires" },
-    { "nom": "KSP — Kids Speaker Program", "logo": "/assets/img/partenaires/ksp.jpg" },
-    { "nom": "Canal Print International" },
-    { "nom": "WhatsPAY" },
-    { "nom": "FILEF — Forum International sur le Leadership au Féminin" },
-    { "nom": "Lapaire", "logo": "/assets/img/partenaires/lapaire.png" },
-    { "nom": "Smart Way" },
-    { "nom": "Mata-Yara" },
-    { "nom": "Dam's Concept" },
-    { "nom": "BH Studio" }
+    {
+      "nom": "Institut National de la Femme (INF)",
+      "logo": "/assets/img/partenaires/institut-national-femme.webp"
+    },
+    {
+      "nom": "M média Afrique",
+      "logo": "/assets/img/partenaires/m-media-afrique.jpeg"
+    },
+    {
+      "nom": "FIGS Education",
+      "logo": "/assets/img/partenaires/figs-education.jpg"
+    },
+    {
+      "nom": "Kirikou Bar",
+      "type": "Restaurant",
+      "logo": "/assets/img/partenaires/kirikou-bar.jpg"
+    },
+    {
+      "nom": "Shalom Empire",
+      "logo": "/assets/img/partenaires/shalom-empire.jpeg"
+    },
+    {
+      "nom": "Azalaï Hôtel Cotonou",
+      "type": "Lieu de l'événement",
+      "logo": "/assets/img/partenaires/azalai-hotel-cotonou.png"
+    },
+    {
+      "nom": "La Muse Éloquente",
+      "type": "Agence organisatrice",
+      "logo": "/assets/img/partenaires/la-muse-eloquente.jpg"
+    },
+    {
+      "nom": "La Dictée Solidaire",
+      "logo": "/assets/img/partenaires/la-dictee-solidaire.png"
+    },
+    {
+      "nom": "La Ludothèque Family Zone",
+      "logo": "/assets/img/partenaires/ludotheque-family-zone.jpg"
+    },
+    {
+      "nom": "Gloria Events & Kids",
+      "logo": "/assets/img/partenaires/gloria-events-kids.jpg"
+    },
+    {
+      "nom": "Inspir'Elles",
+      "logo": "/assets/img/partenaires/inspir-elles.png"
+    },
+    {
+      "nom": "Eloquentia Toastmasters Club de Cotonou",
+      "logo": "/assets/img/partenaires/eloquentia-toastmasters.jpeg"
+    },
+    {
+      "nom": "Opus Corp",
+      "logo": "/assets/img/partenaires/opus-corp.png"
+    },
+    {
+      "nom": "3D Entertainment",
+      "logo": "/assets/img/partenaires/3d-entertainment.jpg"
+    },
+    {
+      "nom": "Sibelle Accessoires",
+      "logo": "/assets/img/partenaires/sibelle-accessoires.jpg"
+    },
+    {
+      "nom": "KSP — Kids Speaker Program",
+      "logo": "/assets/img/partenaires/ksp.jpg"
+    },
+    {
+      "nom": "Canal Print International",
+      "logo": "/assets/img/partenaires/canal-print-international.png"
+    },
+    {
+      "nom": "WhatsPAY",
+      "logo": "/assets/img/partenaires/whatspay.png"
+    },
+    {
+      "nom": "FILEF — Forum International sur le Leadership au Féminin",
+      "logo": "/assets/img/partenaires/filef.png"
+    },
+    {
+      "nom": "Lapaire",
+      "logo": "/assets/img/partenaires/lapaire.png"
+    },
+    {
+      "nom": "Smart Way",
+      "logo": "/assets/img/partenaires/smart-way.jpeg"
+    },
+    {
+      "nom": "Mata-Yara",
+      "logo": "/assets/img/partenaires/mata-yara.jpeg"
+    },
+    {
+      "nom": "Dam's Concept",
+      "logo": "/assets/img/partenaires/dams-concept.png"
+    },
+    {
+      "nom": "BH Studio",
+      "logo": "/assets/img/partenaires/bh-studio.png"
+    }
   ],
   "secteurs": "Éducation, médias, hôtellerie, technologie, engagement associatif.",
   "_source": "Rapport Général — Nos partenaires (p.29-30)",
-  "_note": "Logos réels en cours de réception du client (fichiers dans assets/img/partenaires/) ; les partenaires sans champ 'logo' affichent encore le nom en texte en attendant leur fichier.",
+  "_note": "Les 24 logos réels sont intégrés (fichiers dans assets/img/partenaires/).",
   "TODO_2027": "Liste des partenaires de la 3e édition à établir (reconduction + nouveaux partenaires)"
 }
