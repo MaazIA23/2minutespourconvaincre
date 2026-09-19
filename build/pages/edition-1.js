@@ -1,7 +1,8 @@
 function render(data) {
-  const { edition1, editionsIndex, gagnants } = data;
+  const { edition1, editionsIndex, gagnants, galerie } = data;
   const edition1Meta = editionsIndex.editions.find((e) => e.slug === "1ere-edition");
   const edition2025 = gagnants.editions.find((e) => e.edition === "2025");
+  const galerie2025 = galerie["1ere-edition"];
 
   return `
 <section class="page-hero">
@@ -65,7 +66,26 @@ ${
     : ""
 }
 
-<section class="section alt-bg">
+${
+  galerie2025
+    ? `<section class="section alt-bg" id="galerie">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${galerie2025.titre}</p>
+      <h2>${galerie2025.sousTitre}</h2>
+    </div>
+    <div class="galerie-grid">
+      ${galerie2025.photos
+        .map((p) => `<figure class="galerie-item reveal"><img src="${p.fichier}" alt="${p.alt}" loading="lazy"></figure>`)
+        .join("\n      ")}
+    </div>
+    <p class="galerie-credit reveal">${galerie2025.credit}</p>
+  </div>
+</section>`
+    : ""
+}
+
+<section class="section">
   <div class="container">
     <div class="todo-banner reveal">
       ⚠️ Pas de jury ni de marraine/parrain identifiés pour cette édition à ce stade. À compléter dès que le client les fournit.
