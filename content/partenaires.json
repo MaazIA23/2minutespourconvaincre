@@ -11,24 +11,24 @@
   "liste": [
     {
       "nom": "Institut National de la Femme (INF)",
-      "logo": "/assets/img/partenaires/institut-national-femme.webp"
+      "logo": "/assets/img/partenaires/institut-national-femme.png"
     },
     {
       "nom": "M média Afrique",
-      "logo": "/assets/img/partenaires/m-media-afrique.jpeg"
+      "logo": "/assets/img/partenaires/m-media-afrique.png"
     },
     {
       "nom": "FIGS Education",
-      "logo": "/assets/img/partenaires/figs-education.jpg"
+      "logo": "/assets/img/partenaires/figs-education.png"
     },
     {
       "nom": "Kirikou Bar",
       "type": "Restaurant",
-      "logo": "/assets/img/partenaires/kirikou-bar.jpg"
+      "logo": "/assets/img/partenaires/kirikou-bar.png"
     },
     {
       "nom": "Shalom Empire",
-      "logo": "/assets/img/partenaires/shalom-empire.jpeg"
+      "logo": "/assets/img/partenaires/shalom-empire.png"
     },
     {
       "nom": "Azalaï Hôtel Cotonou",
@@ -41,11 +41,11 @@
     },
     {
       "nom": "La Ludothèque Family Zone",
-      "logo": "/assets/img/partenaires/ludotheque-family-zone.jpg"
+      "logo": "/assets/img/partenaires/ludotheque-family-zone.png"
     },
     {
       "nom": "Gloria Events & Kids",
-      "logo": "/assets/img/partenaires/gloria-events-kids.jpg"
+      "logo": "/assets/img/partenaires/gloria-events-kids.png"
     },
     {
       "nom": "Inspir'Elles",
@@ -53,23 +53,19 @@
     },
     {
       "nom": "Eloquentia Toastmasters Club de Cotonou",
-      "logo": "/assets/img/partenaires/eloquentia-toastmasters.jpeg"
+      "logo": "/assets/img/partenaires/eloquentia-toastmasters.png"
     },
     {
       "nom": "Opus Corp",
       "logo": "/assets/img/partenaires/opus-corp.png"
     },
     {
-      "nom": "3D Entertainment",
-      "logo": "/assets/img/partenaires/3d-entertainment.jpg"
-    },
-    {
       "nom": "Sibelle Accessoires",
-      "logo": "/assets/img/partenaires/sibelle-accessoires.jpg"
+      "logo": "/assets/img/partenaires/sibelle-accessoires.png"
     },
     {
       "nom": "KSP (Kids Speaker Program)",
-      "logo": "/assets/img/partenaires/ksp.jpg"
+      "logo": "/assets/img/partenaires/ksp.png"
     },
     {
       "nom": "Canal Print International",
@@ -89,11 +85,11 @@
     },
     {
       "nom": "Smart Way",
-      "logo": "/assets/img/partenaires/smart-way.jpeg"
+      "logo": "/assets/img/partenaires/smart-way.png"
     },
     {
       "nom": "Mata-Yara",
-      "logo": "/assets/img/partenaires/mata-yara.jpeg"
+      "logo": "/assets/img/partenaires/mata-yara.png"
     }
   ],
   "secteurs": "Éducation, médias, hôtellerie, technologie, engagement associatif.",
