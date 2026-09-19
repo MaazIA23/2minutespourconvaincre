@@ -5,9 +5,9 @@
       "label": "Éditions",
       "lien": "/editions/",
       "enfants": [
-        { "label": "1ère édition — 2025", "lien": "/editions/1ere-edition/" },
-        { "label": "2ème édition — 2026", "lien": "/editions/2eme-edition/" },
-        { "label": "3ème édition — Mars 2027", "lien": "/editions/3eme-edition/" }
+        { "label": "1ère édition (2025)", "lien": "/editions/1ere-edition/" },
+        { "label": "2ème édition (2026)", "lien": "/editions/2eme-edition/" },
+        { "label": "3ème édition (mars 2027)", "lien": "/editions/3eme-edition/" }
       ]
     },
     { "label": "Candidature", "lien": "/candidature/" },

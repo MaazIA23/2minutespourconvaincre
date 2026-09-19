@@ -8,7 +8,7 @@ function render(data) {
     <h1>${edition3.accroche}</h1>
     <p class="page-hero-lead">${edition3.teaser.accroche}</p>
     <div class="hero-meta">
-      <span>📅 ${edition3.date} — ${edition3.dateContexte}</span>
+      <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
       <span>📍 ${edition3.lieu}</span>
     </div>
     <a href="#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>

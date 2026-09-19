@@ -52,7 +52,7 @@ function render(data) {
         .map(
           (ev) => `<div class="associated-card reveal">
         <h3>${ev.titre}</h3>
-        <p class="associated-meta">${ev.date} — ${ev.lieu}</p>
+        <p class="associated-meta">${ev.date}, ${ev.lieu}</p>
         <p>${ev.description}</p>
         ${
           ev.photos

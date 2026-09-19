@@ -5,7 +5,7 @@ function render(data) {
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
   <div class="container hero-inner hero-inner-single">
     <div class="hero-copy reveal">
-      <p class="eyebrow">${edition3.teaser.eyebrow} — 3ème édition</p>
+      <p class="eyebrow">${edition3.teaser.eyebrow} · 3ème édition</p>
       <h1>${edition3.accroche}</h1>
       <p class="hero-lead">${edition3.teaser.accrocheCourte}</p>
       <div class="hero-meta">
@@ -85,7 +85,7 @@ ${
         .map(
           (e) => `<article class="edition-card reveal">
         ${e.statut === "a-venir" ? '<span class="badge badge-upcoming">À venir</span>' : '<span class="badge badge-past">Édition passée</span>'}
-        <h3>${e.label} <span class="edition-year">— ${e.annee}</span></h3>
+        <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
         <p>${e.resume}</p>
         <a href="/editions/${e.slug}/" class="btn btn-outline">Voir la page</a>
       </article>`

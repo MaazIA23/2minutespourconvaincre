@@ -20,7 +20,7 @@ function renderHeader(data, activeSlug) {
   return `
 <header class="site-header" id="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo" aria-label="${data.site.nomSite} — accueil">
+    <a href="/" class="logo" aria-label="${data.site.nomSite}, accueil">
       <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
@@ -88,7 +88,7 @@ function renderFooter(data) {
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. — ${data.site.organisation.agence}</p>
+    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Un projet ${data.site.organisation.agence}.</p>
   </div>
 </footer>`;
 }
@@ -99,7 +99,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} — ${data.site.nomSite}</title>
+<title>${title} | ${data.site.nomSite}</title>
 <meta name="description" content="${description}">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -22,7 +22,7 @@ function render(data) {
         .map(
           (e) => `<article class="edition-card reveal">
         ${statusBadge(e.statut)}
-        <h2>${e.label} <span class="edition-year">— ${e.annee}</span></h2>
+        <h2>${e.label} <span class="edition-year">(${e.annee})</span></h2>
         <p>${e.resume}</p>
         <a href="/editions/${e.slug}/" class="btn btn-outline">Voir la page</a>
       </article>`

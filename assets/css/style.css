@@ -61,7 +61,7 @@ h1 {
 }
 h2 { font-size: clamp(1.7rem, 2.8vw, 2.3rem); font-weight: 700; }
 h3 { font-size: 1.2rem; font-weight: 600; }
-p { margin: 0 0 1em; color: var(--ink-soft); }
+p { margin: 0 0 1em; color: var(--ink-soft); text-align: justify; hyphens: auto; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; margin: 0; padding: 0; }
 blockquote { margin: 0 0 1em; padding-left: 18px; border-left: 3px solid var(--gold); font-style: italic; color: var(--navy-950); }
@@ -364,7 +364,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .offer-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 24px; min-width: 0; }
 .offer-card ul { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
 .offer-card li { font-size: 0.9rem; color: var(--ink-soft); padding-left: 16px; position: relative; }
-.offer-card li::before { content: "—"; position: absolute; left: 0; color: var(--gold-dark); }
+.offer-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold-dark); }
 .fondatrice-layout { display: flex; align-items: center; gap: 24px; max-width: 760px; margin: 0 auto 28px; }
 .fondatrice-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .fondatrice-copy { text-align: left; }

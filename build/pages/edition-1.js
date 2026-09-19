@@ -35,7 +35,7 @@ function render(data) {
 <section class="section alt-bg">
   <div class="container">
     <div class="todo-banner reveal">
-      ⚠️ Pas de rapport PDF ni de palmarès nominatif disponibles pour cette édition à ce stade — à compléter dès que le client les fournit.
+      ⚠️ Pas de rapport PDF ni de palmarès nominatif disponibles pour cette édition à ce stade. À compléter dès que le client les fournit.
     </div>
     <p style="text-align:center"><a href="/editions/" class="btn btn-outline">← Retour aux éditions</a></p>
   </div>

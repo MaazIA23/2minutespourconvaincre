@@ -70,7 +70,7 @@ function main() {
     "",
     renderLayout(data, {
       title: "Accueil",
-      description: `${data.edition3.accroche} — 3ème édition, ${data.edition3.date}.`,
+      description: `${data.edition3.accroche}. 3ème édition, ${data.edition3.date}.`,
       activeSlug: "",
       bodyHtml: accueil.render(data),
     })
@@ -99,7 +99,7 @@ function main() {
   writePage(
     "editions/1ere-edition",
     renderLayout(data, {
-      title: "1ère édition — 2025",
+      title: "1ère édition (2025)",
       description: data.edition1.sousTitre,
       activeSlug: "editions/1ere-edition",
       bodyHtml: edition1.render(data),
@@ -109,7 +109,7 @@ function main() {
   writePage(
     "editions/2eme-edition",
     renderLayout(data, {
-      title: "2ème édition — 2026",
+      title: "2ème édition (2026)",
       description: "Le palmarès, le jury et le déroulé de la 2ème édition, 08 août 2026.",
       activeSlug: "editions/2eme-edition",
       bodyHtml: edition2.render(data),
@@ -119,7 +119,7 @@ function main() {
   writePage(
     "editions/3eme-edition",
     renderLayout(data, {
-      title: "3ème édition — Mars 2027",
+      title: "3ème édition (mars 2027)",
       description: data.edition3.teaser.accroche,
       activeSlug: "editions/3eme-edition",
       bodyHtml: edition3.render(data),
