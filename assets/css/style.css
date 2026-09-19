@@ -152,7 +152,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .dropdown-menu li a:hover { background: var(--navy-800); color: var(--gold-text); }
 
 /* ---------- Hero (home) ---------- */
-.hero { position: relative; overflow: hidden; padding: 110px 0 100px; background: var(--navy-950); color: #fff; }
+.hero { position: relative; overflow: hidden; padding: 90px 0 70px; background: var(--navy-950); color: #fff; min-height: 620px; display: flex; align-items: flex-end; }
 .hero-photo-bg { background-size: cover; background-position: 82% 15%; background-repeat: no-repeat; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-glow { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.45; }
@@ -163,18 +163,19 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .hero-copy h1 { color: #fff; }
 .hero-visual { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
 .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 5; }
-.hero-lead { font-size: 1.15rem; max-width: 56ch; color: rgba(255,255,255,0.9); }
+.hero-lead { font-size: 1.15rem; max-width: 56ch; color: rgba(255,255,255,0.9); text-align: left; }
 .hero-meta { display: flex; gap: 22px; flex-wrap: wrap; margin: 18px 0 26px; font-weight: 700; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ---------- Presentation ---------- */
 .presentation { background: var(--paper); }
 .presentation-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.presentation-copy p { text-align: center; }
 
 /* ---------- Page hero (sub pages) ---------- */
 .page-hero { background: var(--navy-950); color: #fff; padding: 64px 0 52px; }
 .page-hero h1 { color: #fff; }
-.page-hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 60ch; }
+.page-hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 60ch; text-align: left; }
 .page-hero-chapeau { font-size: 0.95rem; color: rgba(255,255,255,0.6); }
 
 /* ---------- Stats band ---------- */
@@ -189,7 +190,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .section.alt-bg { background: var(--paper-alt); }
 .section-head { max-width: 680px; margin: 0 auto 48px; text-align: center; }
 .agency-logo { height: 110px; width: auto; margin: 0 auto 18px; display: block; }
-.section-lead { font-size: 1.02rem; }
+.section-lead { font-size: 1.02rem; text-align: center; }
 .prose { max-width: 760px; margin: 0 auto 20px; }
 .prose h3 { margin-top: 1.4em; }
 
@@ -395,6 +396,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- CTA final ---------- */
 .cta-final { background: var(--navy-950); color: #fff; padding: 90px 0; text-align: center; }
+.cta-final-inner p { text-align: center; }
 .cta-final h2 { color: #fff; }
 .cta-final p { color: rgba(255,255,255,0.7); max-width: 60ch; margin: 0 auto 26px; }
 
