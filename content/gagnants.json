@@ -1,6 +1,25 @@
 {
   "editions": [
     {
+      "edition": "2025",
+      "numero": 1,
+      "intro": "Deux noms se sont démarqués parmi les 16 orateurs en lice, au terme de quatre rounds d'élimination progressive.",
+      "palmares": [
+        {
+          "prix": "Grande Gagnante, Championne de l'Éloquence 2025",
+          "nom": "Ezéchielle Bouet",
+          "lots": "Trophée de la lauréate, enveloppe financière de 200 000 FCFA, titre de Championne de l'Éloquence 2025, lots divers."
+        },
+        {
+          "prix": "Deuxième place",
+          "nom": "Tristan Kounde",
+          "lots": "Enveloppe financière de 100 000 FCFA, lots divers."
+        }
+      ],
+      "autresParticipants": "Tous les autres candidats ont reçu un lot de consolation ainsi qu'une attestation officielle de participation.",
+      "_source": "Rapport de la 1ère édition — Le palmarès complet, La remise des prix (p.18)"
+    },
+    {
       "edition": "2026",
       "numero": 2,
       "intro": "Trois noms se sont démarqués. Trois voix qui ont su, en 120 secondes, faire pencher la salle et le jury de leur côté.",

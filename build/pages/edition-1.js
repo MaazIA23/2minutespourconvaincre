@@ -1,6 +1,7 @@
 function render(data) {
-  const { edition1, editionsIndex } = data;
+  const { edition1, editionsIndex, gagnants } = data;
   const edition1Meta = editionsIndex.editions.find((e) => e.slug === "1ere-edition");
+  const edition2025 = gagnants.editions.find((e) => e.edition === "2025");
 
   return `
 <section class="page-hero">
@@ -38,10 +39,36 @@ function render(data) {
   </div>
 </section>
 
+${
+  edition2025
+    ? `<section class="section" id="palmares">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Palmarès</p>
+      <h2>Les lauréats</h2>
+      <p class="section-lead">${edition2025.intro}</p>
+    </div>
+    <div class="palmares-grid">
+      ${edition2025.palmares
+        .map(
+          (p) => `<article class="palmares-card reveal">
+        <p class="palmares-prix">${p.prix}</p>
+        <h3>${p.nom}</h3>
+        <p>${p.lots}</p>
+      </article>`
+        )
+        .join("\n      ")}
+    </div>
+    <p class="prose reveal" style="text-align:center">${edition2025.autresParticipants}</p>
+  </div>
+</section>`
+    : ""
+}
+
 <section class="section alt-bg">
   <div class="container">
     <div class="todo-banner reveal">
-      ⚠️ Pas de palmarès nominatif disponible pour cette édition à ce stade. À compléter dès que le client le fournit.
+      ⚠️ Pas de jury ni de marraine/parrain identifiés pour cette édition à ce stade. À compléter dès que le client les fournit.
     </div>
     <p style="text-align:center"><a href="/editions/" class="btn btn-outline">← Retour aux éditions</a></p>
   </div>
