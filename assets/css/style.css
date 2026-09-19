@@ -252,21 +252,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Partners strip / grid ---------- */
 .video-feature { padding-top: 40px; padding-bottom: 40px; }
-.video-card {
-  position: relative; display: block; width: 100%; max-width: 900px; margin: 0 auto;
+.video-embed {
+  position: relative; width: 100%; max-width: 900px; margin: 0 auto;
   aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);
-  background: var(--navy-950);
 }
-.video-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
-.video-card:hover img { transform: scale(1.03); }
-.video-play-btn {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 76px; height: 76px; border-radius: 50%; background: rgba(13,17,50,0.75);
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem; padding-left: 6px; border: 2px solid rgba(255,255,255,0.85);
-  transition: background .2s ease, transform .2s ease;
-}
-.video-card:hover .video-play-btn { background: var(--gold); color: var(--navy-950); border-color: var(--gold); transform: translate(-50%, -50%) scale(1.08); }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 .partner-marquee {
   overflow: hidden; margin: 28px 0 30px;

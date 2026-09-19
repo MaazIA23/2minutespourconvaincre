@@ -24,10 +24,15 @@ ${
   accueil.videoPresentation
     ? `<section class="section video-feature" id="video">
   <div class="container">
-    <a class="video-card reveal" href="https://youtu.be/${accueil.videoPresentation.youtubeId}" target="_blank" rel="noopener">
-      <img src="https://img.youtube.com/vi/${accueil.videoPresentation.youtubeId}/maxresdefault.jpg" alt="${accueil.videoPresentation.titre}" loading="lazy">
-      <span class="video-play-btn" aria-hidden="true">▶</span>
-    </a>
+    <div class="video-embed reveal">
+      <iframe
+        src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}"
+        title="${accueil.videoPresentation.titre}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </section>`
     : ""
