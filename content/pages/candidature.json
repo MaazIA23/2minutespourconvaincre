@@ -3,11 +3,32 @@
   "statut": "a-venir",
   "titre": "Candidature",
   "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
+  "parcours": {
+    "eyebrow": "Votre parcours candidat",
+    "titre": "Comment ça se passe",
+    "etapes": [
+      { "titre": "Je candidate" },
+      { "titre": "Je suis sélectionné(e)" },
+      { "titre": "Je me prépare" },
+      { "titre": "Je monte sur scène" },
+      { "titre": "Je peux remporter le Grand Prix" }
+    ]
+  },
   "nouveauFormat": {
-    "titre": "Nouveauté 2027 : la candidature se fait en vidéo",
+    "titre": "Cette année, votre candidature commence en vidéo.",
+    "accroche": "2 minutes pour nous convaincre.",
     "description": [
       "Pour cette 3ème édition, le format de candidature change. Jusqu'ici basé sur une prestation d'une minute, il devient une vidéo numérique de deux minutes, sur un thème choisi librement par le candidat ou la candidate.",
       "L'objectif reste le même que sur scène : convaincre en deux minutes. À vous de choisir le sujet qui vous permettra de démontrer votre éloquence, votre capacité à structurer une idée et à défendre une thèse avec conviction."
+    ]
+  },
+  "conseilsVideo": {
+    "eyebrow": "Conseils pour votre vidéo",
+    "liste": [
+      { "titre": "Soyez clair", "description": "Une idée forte, présentée simplement du début à la fin." },
+      { "titre": "Soyez personnel", "description": "Parlez avec vos mots, pas ceux d'un discours appris par cœur." },
+      { "titre": "Défendez une idée", "description": "Prenez position et argumentez, plutôt que de simplement informer." },
+      { "titre": "Faites-nous retenir votre voix", "description": "Votre ton, votre énergie, votre singularité : c'est ce qu'on retient." }
     ]
   },
   "statutOuverture": "Les candidatures pour la 3ème édition ne sont pas encore ouvertes. Laissez votre e-mail pour être averti(e) dès l'ouverture.",
