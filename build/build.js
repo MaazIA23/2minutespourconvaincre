@@ -153,7 +153,7 @@ function main() {
     "impact",
     renderLayout(data, {
       title: "Notre impact",
-      description: data.impact.hero.lead,
+      description: data.impact.hero.sousTitre,
       activeSlug: "impact",
       bodyHtml: impact.render(data),
     })
