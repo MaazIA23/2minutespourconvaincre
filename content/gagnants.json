@@ -63,7 +63,7 @@
       "autresFinalistes": {
         "intro": "Sur cette scène, il n'y a pas eu de perdants. Les cinq autres finalistes, chacun ayant traversé un processus de sélection exigeant pour arriver jusqu'à cette finale, ont reçu un lot de consolation ainsi qu'une attestation officielle de participation :",
         "liste": [
-          { "nom": "Anisette Toto Agbré" },
+          { "nom": "Anisette Toto Agbré", "photo": "/assets/img/palmares/2eme-edition/anisette-toto-agbre.jpg" },
           { "nom": "Liliane T. Agyemang", "photo": "/assets/img/palmares/2eme-edition/liliane-agyemang.jpg" },
           { "nom": "Anita Dadelé", "photo": "/assets/img/palmares/2eme-edition/anita-dadele.jpg" },
           { "nom": "Géovani De Souza" },
