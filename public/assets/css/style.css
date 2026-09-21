@@ -476,8 +476,14 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 720px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 60px 0; }
+  .palmares-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 16px; padding: 4px 24px 10px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .palmares-grid::-webkit-scrollbar { display: none; }
+  .palmares-card { flex: 0 0 82%; scroll-snap-align: center; }
   .hero { padding: 40px 0 48px; min-height: calc(100svh - 76px); display: flex; align-items: center; }
   .hero-photo-bg { background-position: 80% 16%; }
   .hero-inner { grid-template-columns: 1fr; }
@@ -513,5 +519,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .people-grid, .stats-grid, .offer-grid, .nouveautes-grid, .palmares-grid, .editions-grid, .partenaires-grid, .galerie-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .people-grid, .stats-grid, .offer-grid, .nouveautes-grid, .editions-grid, .partenaires-grid, .galerie-grid { grid-template-columns: 1fr; }
 }
