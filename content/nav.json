@@ -12,6 +12,7 @@
     },
     { "label": "Candidature", "lien": "/candidature/" },
     { "label": "Partenaires", "lien": "/partenaires/" },
+    { "label": "Impact", "lien": "/impact/" },
     { "label": "Qui sommes-nous ?", "lien": "/qui-sommes-nous/" }
   ],
   "_note": "Restructuré pour la préparation de la 3e édition (mars 2027) : 'Programme' retiré du menu principal, son contenu vit désormais dans la page de chaque édition. 'Éditions' est un menu déroulant vers les 3 éditions.",

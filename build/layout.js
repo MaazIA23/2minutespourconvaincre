@@ -46,7 +46,11 @@ function renderFooter(data) {
   const navLinks = data.nav.menuPrincipal
     .map((item) => {
       const href = item.lien === "/" || item.lien.endsWith("/") ? item.lien : item.lien + "/";
-      return `<li><a href="${href}">${item.label}</a></li>`;
+      const extra =
+        item.label === "Partenaires"
+          ? `<li><a href="/partenaires/#devenir-partenaire">Devenir partenaire</a></li>`
+          : "";
+      return `<li><a href="${href}">${item.label}</a></li>${extra}`;
     })
     .join("\n        ");
 

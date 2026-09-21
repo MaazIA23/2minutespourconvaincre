@@ -24,6 +24,10 @@ function render(data) {
       </div>`
           : ""
       }
+      <div class="hero-ctas reveal">
+        <a href="/editions/3eme-edition/" class="btn btn-outline">Découvrir la 3ème édition</a>
+        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -40,6 +44,23 @@ ${
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+    </div>
+  </div>
+</section>`
+    : ""
+}
+
+${
+  accueil.chiffresCles
+    ? `<section class="stats-band" id="chiffres">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${accueil.chiffresCles.eyebrow}</p>
+    <div class="stats-grid stats-grid-5">
+      ${accueil.chiffresCles.chiffres
+        .map(
+          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
+        )
+        .join("\n      ")}
     </div>
   </div>
 </section>`
@@ -73,11 +94,27 @@ ${
           <div class="step-number">${n.numero}</div>
           <h3>${n.titre}</h3>
           <p>${n.description}</p>
+          ${n.titre.includes("300 Voix") ? `<a href="/editions/3eme-edition/#nouveautes" class="method-step-link">Découvrir 300 Voix →</a>` : ""}
         </div>`
           )
           .join("\n        ")}
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section alt-bg" id="impact-teaser">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Au-delà de la scène</h2>
+      <p class="section-lead">Deux Minutes Pour Convaincre ne se limite pas à une finale. Le projet grandit pour faire de la parole une compétence, un levier d'opportunités et un outil d'émancipation.</p>
+    </div>
+    <div class="ambitions-grid">
+      <div class="ambition-card ambition-card-light reveal"><h3>Révéler les talents</h3><p>Identifier des profils à fort potentiel et leur offrir visibilité et réseau.</p></div>
+      <div class="ambition-card ambition-card-light reveal"><h3>Former la jeunesse</h3><p>Transmettre les clés de la prise de parole, de l'argumentation et de la confiance en soi.</p></div>
+      <div class="ambition-card ambition-card-light reveal"><h3>Créer des opportunités</h3><p>Inscrire chaque victoire dans une logique de mérite, de transmission et d'ascension.</p></div>
+    </div>
+    <p style="text-align:center"><a href="/impact/" class="btn btn-outline">Découvrir notre impact →</a></p>
   </div>
 </section>
 
@@ -113,11 +150,20 @@ ${
       </div>
     </div>
     <p style="text-align:center"><a href="/partenaires/" class="btn btn-ghost">Voir tous nos partenaires →</a></p>
+    <p class="partenaires-teaser-cta reveal">Vous souhaitez contribuer à la prochaine édition ?
+      <a href="/partenaires/#devenir-partenaire">Devenir partenaire →</a></p>
   </div>
 </section>
 
 <section class="cta-final" id="candidature-cta">
   <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
+    <div class="reveal cta-final-pretext">
+      <p class="eyebrow">La 3ème édition se construit maintenant.</p>
+      <div class="hero-ctas" style="justify-content: center;">
+        <a href="/candidature/" class="btn btn-outline">Candidater</a>
+        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire</a>
+      </div>
+    </div>
     <div class="reveal">
       <h2>Prêt(e) à monter sur scène en 2027 ?</h2>
       <p>Pour cette 3ème édition, la candidature se fait en vidéo : deux minutes, sur un thème de votre choix, pour nous convaincre.</p>

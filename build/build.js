@@ -28,6 +28,7 @@ function loadData() {
     candidature: readJson("pages/candidature.json"),
     edition1: readJson("pages/edition-1.json"),
     edition3: readJson("pages/edition-3.json"),
+    impact: readJson("pages/impact.json"),
     legalPages: readJson("pages/legal.json"),
   };
 }
@@ -66,6 +67,7 @@ function main() {
   const edition1 = require("./pages/edition-1.js");
   const edition2 = require("./pages/edition-2.js");
   const edition3 = require("./pages/edition-3.js");
+  const impact = require("./pages/impact.js");
 
   writePage(
     "",
@@ -144,6 +146,16 @@ function main() {
       description: data.partenaires.titre,
       activeSlug: "partenaires",
       bodyHtml: partenaires.render(data),
+    })
+  );
+
+  writePage(
+    "impact",
+    renderLayout(data, {
+      title: "Notre impact",
+      description: data.impact.hero.lead,
+      activeSlug: "impact",
+      bodyHtml: impact.render(data),
     })
   );
 
