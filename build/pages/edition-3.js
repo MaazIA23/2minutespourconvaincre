@@ -45,8 +45,16 @@ function render(data) {
     </div>
     <div class="nouveautes-grid">
       ${edition3.nouveautes
-        .map(
-          (n) => `<div class="method-step reveal">
+        .map((n) =>
+          n.titre.includes("300 Voix")
+            ? `<div class="method-step reveal">
+        <div class="step-number">${n.numero}</div>
+        <h3>${edition3.programme300Voix.titre}</h3>
+        <p>${edition3.programme300Voix.accroche}</p>
+        <a href="${edition3.programme300Voix.ctaPrincipal.lien}" class="method-step-link">${edition3.programme300Voix.ctaPrincipal.label} →</a>
+        <a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="method-step-link" style="margin-left:18px">${edition3.programme300Voix.ctaSecondaire.label} →</a>
+      </div>`
+            : `<div class="method-step reveal">
         <div class="step-number">${n.numero}</div>
         <h3>${n.titre}</h3>
         <p>${n.description}</p>
@@ -57,7 +65,32 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg">
+<section class="section alt-bg" id="300-voix">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${edition3.programme300Voix.eyebrow}</p>
+      <h2>${edition3.programme300Voix.titre}</h2>
+      <p class="section-lead"><em>${edition3.programme300Voix.accroche}</em></p>
+    </div>
+    <div class="prose reveal" style="max-width:680px; margin:0 auto 32px; text-align:center;">
+      <p>${edition3.programme300Voix.texte}</p>
+    </div>
+    <div class="mini-indicators reveal">
+      ${edition3.programme300Voix.indicateurs
+        .map((i) => `<div class="mini-indicator"><span class="mini-indicator-icon">${i.icone}</span><span>${i.libelle}</span></div>`)
+        .join("\n      ")}
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <p class="eyebrow reveal">Au programme</p>
+    </div>
+    <ul class="finalistes-list au-programme-list reveal">
+      ${edition3.programme300Voix.auProgramme.map((item) => `<li>${item}</li>`).join("\n      ")}
+    </ul>
+    <p style="text-align:center; margin-top:32px;"><a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.ctaSecondaire.label}</a></p>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">${edition3.objectifs.titre}</p>
@@ -73,7 +106,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section" id="candidature-3">
+<section class="section alt-bg" id="candidature-3">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">${edition3.candidatureFormat.titre}</p>

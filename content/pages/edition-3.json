@@ -75,6 +75,20 @@
       "description": "Parce qu'une victoire doit ouvrir une porte. Le vainqueur de cette troisième édition remportera désormais le Grand Prix de la Francophonie. Un prix qui vient donner une nouvelle dimension à la récompense finale et inscrire la victoire dans une logique de mérite, de transmission et d'opportunités."
     }
   ],
+  "programme300Voix": {
+    "eyebrow": "Impact 2027",
+    "titre": "300 VOIX",
+    "accroche": "Parce que la parole ne doit pas être réservée à ceux qui montent sur scène.",
+    "texte": "En 2027, Deux Minutes Pour Convaincre ira à la rencontre de 300 élèves et étudiants à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi.",
+    "indicateurs": [
+      { "icone": "🎯", "libelle": "300 bénéficiaires" },
+      { "icone": "🏫", "libelle": "Des établissements partenaires" },
+      { "icone": "📅", "libelle": "Des sessions de formation" }
+    ],
+    "auProgramme": ["Prise de parole", "Argumentation", "Confiance en soi", "Improvisation"],
+    "ctaPrincipal": { "label": "En savoir plus sur 300 Voix", "lien": "#300-voix" },
+    "ctaSecondaire": { "label": "Accueillir une session", "lien": "/partenaires/#devenir-partenaire" }
+  },
   "candidatureFormat": {
     "titre": "Nouveauté : la candidature se fait en vidéo",
     "description": [
