@@ -1,47 +1,64 @@
 {
   "hero": {
-    "eyebrow": "Notre impact",
-    "titre": "Au-delà de la scène",
-    "lead": "Deux Minutes Pour Convaincre ne se limite pas à une finale. Le projet grandit pour faire de la parole une compétence, un levier d'opportunités et un outil d'émancipation."
+    "titre": "Notre impact",
+    "sousTitre": "Deux Minutes Pour Convaincre est né sur une scène. Son ambition va désormais bien au-delà.",
+    "intro": "Le projet agit à travers cinq leviers : le concours, la transmission, la mise en lumière des talents, le programme 300 Voix et la création d'opportunités."
   },
-  "pourquoiLaParole": {
-    "titre": "Pourquoi la parole ?",
-    "paragraphes": [
-      "Dans un monde en constante évolution où les jeunes sont appelés à devenir les acteurs principaux de leur avenir, la maîtrise de l'éloquence se révèle être un levier essentiel, voire indispensable, de confiance en soi, de leadership, d'employabilité et de participation citoyenne active. C'est cette conviction profonde, nourrie par l'observation des défis auxquels font face les jeunes aujourd'hui, qui anime le projet « Deux Minutes Pour Convaincre »."
-    ]
+  "chiffresCles": {
+    "eyebrow": "2MPC en chiffres",
+    "chiffres": [
+      { "valeur": "2", "libelle": "éditions déjà réussies" },
+      { "valeur": "25", "libelle": "candidatures reçues (édition 2026)" },
+      { "valeur": "24", "libelle": "finalistes sur scène (16 en 2025, 8 en 2026)" },
+      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
+      { "valeur": "+300", "libelle": "participants réunis en présentiel sur les deux éditions" },
+      { "valeur": "300", "libelle": "bénéficiaires visés par 300 Voix dès 2027" }
+    ],
+    "_source": "2 éditions : editions-index.json. 25 candidatures : accueil.json chiffresEvocateurs (édition 2026, seule donnée disponible pour ce champ). 24 finalistes : 16 (edition-1.json) + 8 (gagnants.json). +10M vues : qui-sommes-nous.json agence.chiffres. +300 participants : +100 (edition-1.json) + 200 (accueil.json, édition 2026). 300 bénéficiaires 300 Voix : edition-3.json nouveautes."
   },
-  "objectifs": {
-    "eyebrow": "Nos objectifs",
-    "titre": "Un cadre structurant, exigeant et bienveillant",
-    "objectifGlobal": "L'objectif global de Deux Minutes Pour Convaincre est de créer un cadre structurant, exigeant et bienveillant qui développe la maîtrise de la parole comme levier de leadership, d'opportunités et d'ascension personnelle et professionnelle.",
-    "specifiques": [
+  "editions": {
+    "eyebrow": "Depuis 2025",
+    "titre": "Deux éditions. Une même ambition.",
+    "liste": [
       {
-        "titre": "Révéler les talents",
-        "description": "Identifier des profils à fort potentiel et leur offrir visibilité, crédibilité et réseau pour accélérer leur parcours académique ou entrepreneurial."
+        "label": "1ère édition",
+        "annee": "2025",
+        "date": "10 mai 2025",
+        "lieu": "Hôtel Azalaï, Cotonou",
+        "participants": "+100 participants, 16 orateurs en compétition",
+        "gagnant": "Ezéchielle Bouet, Championne de l'Éloquence 2025",
+        "lien": "/editions/1ere-edition/"
       },
       {
-        "titre": "Former la jeunesse",
-        "description": "Permettre aux participants d'apprendre à structurer une idée, capter l'attention et convaincre en un temps très court, tout en renforçant leur confiance en eux."
-      },
-      {
-        "titre": "Créer des opportunités",
-        "description": "Valoriser l'excellence oratoire francophone et inscrire la victoire dans une logique de mérite, de transmission et d'opportunités pour les lauréats."
+        "label": "2ème édition",
+        "annee": "2026",
+        "date": "08 août 2026",
+        "lieu": "Azalaï Hôtel, Cotonou",
+        "participants": "25 candidatures, 8 finalistes en scène",
+        "gagnant": "José Pascaël Agbo, Grand Champion",
+        "lien": "/editions/2eme-edition/"
       }
     ]
   },
-  "programme300Voix": {
-    "eyebrow": "Dès 2027",
-    "titre": "300 Voix",
-    "description": "Avec 300 Voix, Deux Minutes Pour Convaincre franchit les murs de la compétition pour aller directement à la rencontre de la jeunesse. 300 élèves et étudiants d'écoles et d'universités bénéficieront d'une formation en art oratoire, à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi.",
-    "cta": { "label": "Découvrir la 3ème édition →", "lien": "/editions/3eme-edition/#nouveautes" }
+  "ceQueLaParolePeutChanger": {
+    "eyebrow": "Notre conviction",
+    "titre": "Ce que la parole peut changer",
+    "blocs": [
+      { "titre": "Révéler", "description": "Identifier des profils à fort potentiel et leur offrir une scène, une visibilité et un réseau." },
+      { "titre": "Former", "description": "Transmettre les clés de la prise de parole, de l'argumentation et de la confiance en soi." },
+      { "titre": "Transformer", "description": "Faire de chaque victoire un levier de transmission et d'opportunités, bien au-delà de la scène." }
+    ]
   },
-  "portee": {
-    "eyebrow": "Notre portée",
-    "chiffres": [
-      { "valeur": "+70K", "libelle": "abonnés sur nos réseaux sociaux" },
-      { "valeur": "+1000", "libelle": "spectateurs sur nos lives TikTok" },
-      { "valeur": "+10M", "libelle": "vues cumulées sur nos différents réseaux" }
-    ],
-    "_source": "qui-sommes-nous.json agence.chiffres"
+  "temoignages": {
+    "eyebrow": "Ils ont pris la parole",
+    "titre": "Des voix qui inspirent",
+    "liste": [],
+    "_TODO": "Jusqu'à 3 témoignages réels à ajouter dès qu'ils sont disponibles : { photo, nom, edition, statut, citation, videoUrl (optionnel) }. Tant que cette liste est vide, la page affiche 3 emplacements réservés — ne jamais inventer de témoignage."
+  },
+  "impact2027": {
+    "eyebrow": "L'impact 2027",
+    "titre": "300 Voix",
+    "description": "300 élèves et étudiants bénéficieront d'une formation en art oratoire.",
+    "cta": { "label": "Découvrir 300 Voix →", "lien": "/editions/3eme-edition/#nouveautes" }
   }
 }
