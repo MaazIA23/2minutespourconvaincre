@@ -5,18 +5,20 @@ function render(data) {
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
   <div class="container hero-inner hero-inner-single">
     <div class="hero-copy reveal">
-      <p class="eyebrow">${edition3.teaser.eyebrow} · 3ème édition</p>
       <h1>${edition3.accroche}</h1>
       <div class="hero-meta">
         <span>📅 ${edition3.date}</span>
       </div>
       ${
         edition3.dateCountdownISO
-          ? `<div class="hero-countdown" id="hero-countdown" data-target="${edition3.dateCountdownISO}">
-        <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
-        <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
-        <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
-        <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
+          ? `<div class="hero-countdown-block">
+        <p class="eyebrow hero-countdown-label">3ème édition dans</p>
+        <div class="hero-countdown" id="hero-countdown" data-target="${edition3.dateCountdownISO}">
+          <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
+          <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
+          <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
+          <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
+        </div>
       </div>`
           : ""
       }
