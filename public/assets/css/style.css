@@ -378,6 +378,16 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .badge-upcoming { background: var(--gold-soft); color: var(--gold-dark); }
 .badge-past { background: var(--paper-alt); color: var(--ink-soft); border: 1px solid var(--line); }
 
+.actualites-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.actualite-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; }
+.actualite-photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.actualite-card-body { padding: 22px; }
+.actualite-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.actualite-meta .badge { margin-bottom: 0; }
+.actualite-date { font-size: 0.8rem; color: var(--ink-soft); font-weight: 600; }
+.actualite-resume { font-weight: 700; color: var(--navy-950); }
+.actualite-contenu { font-size: 0.92rem; }
+
 .people-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .people-grid-secondary { margin-top: 18px; }
 .people-card { background: var(--paper-alt); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; min-width: 0; }
@@ -489,7 +499,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .actualites-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .chiffres-grid { grid-template-columns: repeat(2, 1fr); }
   .finalistes-list { grid-template-columns: 1fr; }
   .photo-feature-inner { grid-template-columns: 1fr; }
@@ -532,7 +542,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 720px) {
-  .ambitions-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .actualites-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
   .form-row-pair { flex-direction: column; gap: 0; }
   .people-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -589,5 +599,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
 }

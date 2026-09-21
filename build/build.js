@@ -21,6 +21,7 @@ function loadData() {
     partenaires: readJson("partenaires.json"),
     galerie: readJson("galerie.json"),
     editionsIndex: readJson("editions-index.json"),
+    actualites: readJson("actualites.json"),
     accueil: readJson("pages/accueil.json"),
     aPropos: readJson("pages/a-propos.json"),
     programme: readJson("pages/programme.json"),
@@ -69,6 +70,7 @@ function main() {
   const edition2 = require("./pages/edition-2.js");
   const edition3 = require("./pages/edition-3.js");
   const impact = require("./pages/impact.js");
+  const actualites = require("./pages/actualites.js");
 
   writePage(
     "",
@@ -157,6 +159,16 @@ function main() {
       description: data.impact.hero.sousTitre,
       activeSlug: "impact",
       bodyHtml: impact.render(data),
+    })
+  );
+
+  writePage(
+    "actualites",
+    renderLayout(data, {
+      title: "Actualités",
+      description: data.actualites.intro,
+      activeSlug: "actualites",
+      bodyHtml: actualites.render(data),
     })
   );
 
