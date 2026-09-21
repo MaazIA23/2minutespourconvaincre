@@ -163,6 +163,9 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .hero-inner-single { grid-template-columns: 1fr; max-width: 700px; }
 .hero-copy .eyebrow { margin-bottom: 16px; }
 .hero-copy h1 { color: #fff; margin-bottom: 26px; }
+.hero-rotator-phrase { display: none; opacity: 1; transform: translateY(0); transition: opacity .35s ease, transform .35s ease; }
+.hero-rotator-phrase.is-active { display: block; }
+.hero-rotator-phrase.is-fading { opacity: 0; transform: translateY(10px); }
 .hero-visual { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
 .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 5; }
 .hero-meta { display: flex; gap: 22px; flex-wrap: wrap; margin: 0 0 6px; font-weight: 700; }

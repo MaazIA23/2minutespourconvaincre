@@ -3,6 +3,7 @@
   "numero": 3,
   "titre": "3ème édition",
   "accroche": "La scène qui révèle les orateurs",
+  "accrochesRotatives": ["La scène qui révèle les orateurs", "Un concours d'improvisation oratoire"],
   "date": "Mars 2027",
   "dateContexte": "Journée internationale de la Francophonie",
   "lieu": "Cotonou",
