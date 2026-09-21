@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Minutes Pour Convaincre — Liste d'attente 3ᵉ édition</title>
+<meta name="description" content="Rejoignez la liste d'attente de la 3ᵉ édition de « 2 Minutes Pour Convaincre ». Soyez informé(e) en priorité de l'ouverture des candidatures.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-950: #283477;
+    --navy-900: #232d68;
+    --navy-700: #303b7c;
+    --ink: #231f20;
+    --ink-soft: #524d4e;
+    --paper: #ffffff;
+    --paper-alt: #f9f9f9;
+    --line: #e4e4e4;
+    --gold: #f6cc0c;
+    --gold-text: #e1ac18;
+    --gold-dark: #c99400;
+    --gold-soft: #fdf3d3;
+    --font-display: "Anton", "Baloo 2", sans-serif;
+    --font-heading: "Baloo 2", "Anton", sans-serif;
+    --font-body: "Poppins", system-ui, -apple-system, sans-serif;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 26px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 {
+    font-family: var(--font-display);
+    color: #fff;
+    font-size: clamp(2rem, 4.6vw, 3.2rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    margin: 0 0 0.5em;
+  }
+  p { margin: 0 0 1em; }
+  .container { width: 100%; max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-text);
+    margin-bottom: 0.8em;
+  }
+  .hero { background: var(--navy-950); padding: 56px 0 48px; text-align: center; }
+  .hero .brand {
+    font-family: var(--font-heading); font-weight: 700; color: #fff;
+    font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+    opacity: 0.75; margin-bottom: 22px;
+  }
+  .hero-lead { font-size: 1.05rem; color: rgba(255,255,255,0.85); }
+  .section { padding: 48px 0 70px; background: var(--paper-alt); }
+  .todo-banner {
+    background: var(--gold-soft); border: 1px solid var(--gold);
+    border-radius: var(--radius-md); padding: 18px 22px;
+    font-size: 0.92rem; color: var(--navy-950); margin-bottom: 30px;
+  }
+  form {
+    background: var(--paper); border-radius: var(--radius-lg); padding: 32px;
+    border: 1px solid var(--line);
+  }
+  .form-row { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .form-row label { font-size: 0.85rem; font-weight: 700; color: var(--navy-950); }
+  .form-row input, .form-row textarea {
+    border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px;
+    font-family: var(--font-body); font-size: 0.95rem; color: var(--ink); resize: vertical; background: #fff;
+  }
+  .form-row input:focus, .form-row textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  fieldset.form-row { border: none; padding: 0; margin: 0 0 16px; }
+  fieldset.form-row legend { font-size: 0.85rem; font-weight: 700; color: var(--navy-950); padding: 0; margin-bottom: 6px; }
+  .radio-options { display: flex; gap: 18px; flex-wrap: wrap; }
+  .radio-option { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; cursor: pointer; }
+  .radio-option input { accent-color: var(--gold-dark); width: 16px; height: 16px; }
+  button {
+    display: block; width: 100%; padding: 16px 30px; border-radius: 999px;
+    font-weight: 700; font-size: 1rem; font-family: var(--font-body);
+    border: none; cursor: pointer; background: var(--gold); color: var(--navy-950);
+    transition: transform .15s ease, background .15s ease;
+  }
+  button:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-note { min-height: 1.4em; margin: 14px 0 0; font-size: 0.9rem; color: var(--gold-dark); text-align: center; }
+  .form-note.is-success { color: var(--navy-950); font-weight: 700; }
+  .form-note.is-error { color: #b3261e; font-weight: 700; }
+  .success-panel { display: none; text-align: center; padding: 20px 0; }
+  .success-panel.is-visible { display: block; }
+  .success-panel h2 { font-family: var(--font-heading); color: var(--navy-950); font-size: 1.4rem; margin-bottom: 0.5em; }
+  .success-panel p { color: var(--ink-soft); }
+  .honey { position: absolute; left: -9999px; }
+  footer { text-align: center; padding: 30px 24px; font-size: 0.8rem; color: var(--ink-soft); background: var(--paper-alt); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="brand">2 Minutes Pour Convaincre</div>
+    <p class="eyebrow">3ᵉ édition — Liste d'attente</p>
+    <h1>Et si votre prochaine prise de parole commençait maintenant ?</h1>
+    <p class="hero-lead">La 3ᵉ édition de « 2 Minutes Pour Convaincre » se prépare.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="todo-banner">
+      Les candidatures ne sont pas encore ouvertes. Rejoignez dès maintenant la liste d'attente pour être informé(e) en priorité du lancement officiel.
+    </div>
+
+    <form id="waitlist-form" action="https://formsubmit.co/2minpourconvaincre@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nouvelle inscription — Liste d'attente 3ᵉ édition 2 Minutes Pour Convaincre">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+
+      <div id="form-fields">
+        <div class="form-row">
+          <label for="w-name">Votre prénom et nom</label>
+          <input type="text" id="w-name" name="Prénom et nom" required>
+        </div>
+        <div class="form-row">
+          <label for="w-whatsapp">Votre numéro WhatsApp</label>
+          <input type="tel" id="w-whatsapp" name="WhatsApp" required>
+        </div>
+        <div class="form-row">
+          <label for="w-email">Votre adresse e-mail</label>
+          <input type="email" id="w-email" name="Email" required>
+        </div>
+        <div class="form-row">
+          <label for="w-ville">Votre ville / pays</label>
+          <input type="text" id="w-ville" name="Ville / pays" required>
+        </div>
+        <fieldset class="form-row">
+          <legend>Avez-vous déjà participé à « 2 Minutes Pour Convaincre » ?</legend>
+          <div class="radio-options">
+            <label class="radio-option"><input type="radio" name="A déjà participé" value="Oui" required><span>Oui</span></label>
+            <label class="radio-option"><input type="radio" name="A déjà participé" value="Non" required><span>Non</span></label>
+          </div>
+        </fieldset>
+        <div class="form-row">
+          <label for="w-motivation">Qu'est-ce qui vous donne envie de participer à la prochaine édition ?</label>
+          <textarea id="w-motivation" name="Motivation" rows="4"></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Je rejoins la liste d'attente</button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="success-panel" id="success-panel">
+        <h2>C'est enregistré.</h2>
+        <p>Vous êtes désormais sur la liste d'attente de la 3ᵉ édition de « 2 Minutes Pour Convaincre ». Restez attentif·ve : les prochaines informations vous seront communiquées en priorité.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  2 Minutes Pour Convaincre — un projet La Muse Éloquente
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("waitlist-form");
+  var fields = document.getElementById("form-fields");
+  var success = document.getElementById("success-panel");
+  var note = document.getElementById("form-note");
+  var btn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    note.classList.remove("is-error");
+    note.textContent = "";
+
+    if (!form.checkValidity()) {
+      note.textContent = "Merci de renseigner les champs obligatoires avec une adresse e-mail valide.";
+      note.classList.add("is-error");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Envoi en cours…";
+
+    var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+
+    fetch(ajaxAction, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        if (result.ok) {
+          fields.style.display = "none";
+          success.classList.add("is-visible");
+        } else {
+          throw new Error("Submission failed");
+        }
+      })
+      .catch(function () {
+        // L'envoi via JavaScript (fetch) peut être bloqué par le navigateur,
+        // notamment quand le fichier est ouvert directement (file://) plutôt
+        // qu'hébergé sur un vrai site. On se rabat alors sur un envoi
+        // classique du formulaire (rechargement de page géré par FormSubmit),
+        // pour ne jamais laisser l'utilisateur sans retour.
+        note.textContent = "Redirection en cours…";
+        btn.textContent = "Redirection…";
+        form.removeAttribute("novalidate");
+        window.setTimeout(function () { form.submit(); }, 300);
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
