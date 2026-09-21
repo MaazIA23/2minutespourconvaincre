@@ -186,7 +186,9 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .presentation-copy p { text-align: center; }
 
 /* ---------- Page hero (sub pages) ---------- */
-.page-hero { background: var(--navy-950); color: #fff; padding: 64px 0 52px; }
+.page-hero { background: var(--navy-950); color: #fff; padding: 64px 0 52px; position: relative; overflow: hidden; }
+.page-hero-photo-bg { background-size: cover; background-position: 70% 30%; background-repeat: no-repeat; }
+.page-hero-photo-bg .container { position: relative; z-index: 1; }
 .page-hero h1 { color: #fff; }
 .page-hero-lead { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 60ch; text-align: left; }
 .page-hero-chapeau { font-size: 0.95rem; color: rgba(255,255,255,0.6); }
@@ -476,7 +478,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 720px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .offer-grid, .stats-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .people-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 14px; padding: 4px 24px 10px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .people-grid::-webkit-scrollbar { display: none; }
+  .people-card { flex: 0 0 60%; scroll-snap-align: start; }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -525,5 +533,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .people-grid, .stats-grid, .offer-grid, .nouveautes-grid, .editions-grid, .partenaires-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .stats-grid, .offer-grid, .nouveautes-grid, .editions-grid, .partenaires-grid { grid-template-columns: 1fr; }
 }

@@ -5,7 +5,7 @@ function render(data) {
   const galerie2026 = galerie["2eme-edition"];
 
   return `
-<section class="page-hero">
+<section class="page-hero page-hero-photo-bg" style="background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
