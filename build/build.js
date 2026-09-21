@@ -27,6 +27,7 @@ function loadData() {
     quiSommesNous: readJson("pages/qui-sommes-nous.json"),
     candidature: readJson("pages/candidature.json"),
     edition1: readJson("pages/edition-1.json"),
+    edition2: readJson("pages/edition-2.json"),
     edition3: readJson("pages/edition-3.json"),
     impact: readJson("pages/impact.json"),
     legalPages: readJson("pages/legal.json"),

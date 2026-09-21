@@ -118,6 +118,30 @@ function render(data) {
   </div>
 </section>
 
+<section class="section" id="parcours-2027">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${edition3.parcours2027.eyebrow}</p>
+      <h2>${edition3.parcours2027.titre}</h2>
+      <p class="section-lead">${edition3.parcours2027.chapeau}</p>
+    </div>
+    <ol class="timeline">
+      ${edition3.parcours2027.etapes
+        .map(
+          (e, i) => `<li class="timeline-item reveal">
+        <div class="timeline-marker">${String(i + 1).padStart(2, "0")}</div>
+        <div class="timeline-content">
+          <span class="badge badge-upcoming" style="margin-bottom:8px;">En préparation</span>
+          <h3>${e.titre}</h3>
+          <p>${e.description}</p>
+        </div>
+      </li>`
+        )
+        .join("\n      ")}
+    </ol>
+  </div>
+</section>
+
 <section class="cta-final" id="notify">
   <div class="container cta-final-inner">
     <div class="reveal">

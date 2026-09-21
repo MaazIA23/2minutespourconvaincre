@@ -14,11 +14,6 @@ function render(data) {
       <span>📅 ${edition1.date}</span>
       <span>📍 ${edition1.lieu}</span>
     </div>
-    ${
-      edition1Meta.rapportPdf
-        ? `<a href="${edition1Meta.rapportPdf}" class="btn btn-primary" download>📄 ${edition1Meta.rapportLabel}</a>`
-        : ""
-    }
   </div>
 </section>
 
@@ -30,13 +25,16 @@ function render(data) {
   </div>
 </section>
 
-<section class="stats-band">
-  <div class="container stats-grid">
-    ${edition1.chiffres
-      .map(
-        (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-      )
-      .join("\n    ")}
+<section class="stats-band" id="chiffres">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">Chiffres clés</p>
+    <div class="stats-grid">
+      ${edition1.chiffres
+        .map(
+          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
+        )
+        .join("\n      ")}
+    </div>
   </div>
 </section>
 
@@ -80,6 +78,51 @@ ${
         .join("\n      ")}
     </div>
     <p class="galerie-credit reveal">${galerie2025.credit}</p>
+  </div>
+</section>`
+    : ""
+}
+
+<section class="section" id="temoignages">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${edition1.temoignages.eyebrow}</p>
+      <h2>${edition1.temoignages.titre}</h2>
+    </div>
+    <div class="temoignages-grid">
+      ${
+        edition1.temoignages.liste.length
+          ? edition1.temoignages.liste
+              .map(
+                (t) => `<div class="temoignage-card reveal">
+        ${t.photo ? `<img src="${t.photo}" alt="${t.nom}" class="temoignage-photo" loading="lazy">` : ""}
+        <blockquote>« ${t.citation} »</blockquote>
+        <p class="temoignage-meta"><strong>${t.nom}</strong> — ${t.edition}, ${t.statut}</p>
+        ${t.videoUrl ? `<a href="${t.videoUrl}" class="btn btn-ghost" target="_blank" rel="noopener">▶ Voir la vidéo</a>` : ""}
+      </div>`
+              )
+              .join("\n      ")
+          : [1, 2, 3]
+              .map(
+                () => `<div class="temoignage-placeholder reveal">
+        <span class="temoignage-placeholder-icon">🎥</span>
+        <p>Témoignage à venir</p>
+      </div>`
+              )
+              .join("\n      ")
+      }
+    </div>
+  </div>
+</section>
+
+${
+  edition1Meta.rapportPdf
+    ? `<section class="section alt-bg" id="rapport">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Rapport de l'édition</p>
+    </div>
+    <p style="text-align:center"><a href="${edition1Meta.rapportPdf}" class="btn btn-primary btn-lg" download>📄 ${edition1Meta.rapportLabel}</a></p>
   </div>
 </section>`
     : ""
