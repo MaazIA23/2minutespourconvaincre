@@ -63,7 +63,10 @@ function renderFooter(data) {
       '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><rect x="2" y="5.5" width="20" height="13" rx="4" fill="currentColor"/><path d="M10 9.5v5l5-2.5z" fill="var(--navy-950)"/></svg>',
   };
   const socials = (data.site.contact.reseauxSociaux.plateformes || [])
-    .map((p) => `<li><a href="#" aria-label="${p}">${socialIcons[p] || p.slice(0, 2)}</a></li>`)
+    .map(
+      (p) =>
+        `<li><a href="${p.url}" target="_blank" rel="noopener" aria-label="${p.nom}">${socialIcons[p.nom] || p.nom.slice(0, 2)}</a></li>`
+    )
     .join("\n        ");
 
   return `
