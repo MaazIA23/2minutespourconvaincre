@@ -27,8 +27,13 @@
     "site": "https://2minpourconvaincre.com",
     "reseauxSociaux": {
       "handle": "2minpourconvaincre",
-      "plateformes": ["Facebook", "TikTok", "Instagram", "LinkedIn", "YouTube"],
-      "_note": "Handle confirmé via visuel Save the Date ; URLs exactes de chaque profil à confirmer"
+      "plateformes": [
+        { "nom": "Facebook", "url": "https://www.facebook.com/share/19ZrAbSLNq/" },
+        { "nom": "TikTok", "url": "https://www.tiktok.com/@2.minutes.pour.co" },
+        { "nom": "Instagram", "url": "https://www.instagram.com/2minpourconvaincre" },
+        { "nom": "LinkedIn", "url": "https://www.linkedin.com/company/concours-2-min-pour-convaincre/" },
+        { "nom": "YouTube", "url": "https://youtube.com/@concours2minutespourconvaincre" }
+      ]
     },
     "TODO": "Confirmer email de contact s'il existe (footer / page contact)"
   }
