@@ -1,0 +1,41 @@
+{
+  "titre": "Actualités",
+  "intro": "Les dernières nouvelles de Deux Minutes Pour Convaincre.",
+  "categories": ["2MPC", "300 Voix", "Candidats", "Partenaires", "Coulisses"],
+  "liste": [
+    {
+      "dateISO": "2026-08-08",
+      "date": "08 août 2026",
+      "categorie": "2MPC",
+      "titre": "2ème édition : le pari est réussi",
+      "image": "/assets/img/galerie/2eme-edition/concours-orateur.jpg",
+      "alt": "Finaliste au micro sur la scène de la 2ème édition",
+      "resume": "« Le pari était de faire mieux que la première édition. Le pari est réussi. »",
+      "contenu": "Le 08 août 2026, l'Hôtel Azalaï de Cotonou a accueilli la 2ème édition de Deux Minutes Pour Convaincre : 25 candidatures reçues, 8 finalistes sur scène, et un plateau au niveau inédit. José Pascaël Agbo repart avec le titre de Grand Champion.",
+      "videoUrl": null
+    },
+    {
+      "dateISO": "2026-08-08",
+      "date": "08 août 2026",
+      "categorie": "Partenaires",
+      "titre": "Merci à nos 24 partenaires de la 2ème édition",
+      "image": "/assets/img/galerie/2eme-edition/conference-presse-01.jpg",
+      "alt": "Conférence de presse de la 2ème édition",
+      "resume": "Une vingtaine de partenaires ont répondu présent pour cette 2ème édition, certains dès la première heure.",
+      "contenu": "Institutions, médias, entreprises : 24 partenaires et contributeurs se sont mobilisés autour de cette 2ème édition. À toutes celles et ceux qui nous ont fait confiance, soutenus et accompagnés : merci. Votre engagement donne encore plus de sens à ce que nous construisons.",
+      "videoUrl": null
+    },
+    {
+      "dateISO": "2026-08-08",
+      "date": "08 août 2026",
+      "categorie": "Coulisses",
+      "titre": "Chroniques d'une voix qui s'est révélée : le livre de notre fondatrice",
+      "image": "/assets/img/equipe/mazidath-bello.jpg",
+      "alt": "Mazidath Bello, fondatrice de La Muse Éloquente",
+      "resume": "Mazidath Bello a lancé son premier livre à l'occasion de la 2ème édition.",
+      "contenu": "« Chroniques d'une voix qui s'est révélée, Tome 1 : De l'Ombre à la Scène » est un récit autobiographique et une méthode pour révéler sa voix, porté par la conviction que la prise de parole n'est pas un don réservé à quelques-uns mais une compétence. Disponible en version papier en France et à Cotonou, ainsi qu'en e-book.",
+      "videoUrl": null
+    }
+  ],
+  "_TODO": "Ajouter les prochaines actualités (candidature vidéo 2027, lancement 300 Voix, etc.) avec leur date réelle de publication dès qu'elle sera connue — ne jamais inventer de date."
+}

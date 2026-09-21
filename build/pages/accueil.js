@@ -1,5 +1,5 @@
 function render(data) {
-  const { edition3, partenaires, editionsIndex, accueil } = data;
+  const { edition3, partenaires, editionsIndex, accueil, actualites } = data;
 
   return `
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
@@ -154,6 +154,40 @@ ${
       <a href="/partenaires/#devenir-partenaire">Devenir partenaire →</a></p>
   </div>
 </section>
+
+${
+  actualites.liste.length
+    ? `<section class="section" id="actualites">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Actualités</p>
+      <h2>Les dernières nouvelles</h2>
+    </div>
+    <div class="actualites-grid">
+      ${actualites.liste
+        .slice()
+        .sort((a, b) => (a.dateISO < b.dateISO ? 1 : -1))
+        .slice(0, 3)
+        .map(
+          (a) => `<article class="actualite-card reveal">
+        <img src="${a.image}" alt="${a.alt}" class="actualite-photo" loading="lazy">
+        <div class="actualite-card-body">
+          <div class="actualite-meta">
+            <span class="badge badge-upcoming">${a.categorie}</span>
+            <span class="actualite-date">${a.date}</span>
+          </div>
+          <h3>${a.titre}</h3>
+          <p class="actualite-resume">${a.resume}</p>
+        </div>
+      </article>`
+        )
+        .join("\n      ")}
+    </div>
+    <p style="text-align:center"><a href="/actualites/" class="btn btn-outline">Voir toutes les actualités →</a></p>
+  </div>
+</section>`
+    : ""
+}
 
 <section class="cta-final" id="candidature-cta">
   <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">

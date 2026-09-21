@@ -49,7 +49,9 @@ function renderFooter(data) {
       const extra =
         item.label === "Partenaires"
           ? `<li><a href="/partenaires/#devenir-partenaire">Devenir partenaire</a></li>`
-          : "";
+          : item.label === "Impact"
+            ? `<li><a href="/actualites/">Actualités</a></li>`
+            : "";
       return `<li><a href="${href}">${item.label}</a></li>${extra}`;
     })
     .join("\n        ");
