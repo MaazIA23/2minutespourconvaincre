@@ -53,6 +53,24 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  /* Titre du hero qui tourne entre plusieurs accroches */
+  (function () {
+    var rotator = document.getElementById("hero-rotator");
+    if (!rotator) return;
+    var phrases = Array.prototype.slice.call(rotator.querySelectorAll(".hero-rotator-phrase"));
+    if (phrases.length < 2) return;
+    var index = 0;
+    window.setInterval(function () {
+      var current = phrases[index];
+      current.classList.add("is-fading");
+      window.setTimeout(function () {
+        current.classList.remove("is-active", "is-fading");
+        index = (index + 1) % phrases.length;
+        phrases[index].classList.add("is-active");
+      }, 350);
+    }, 3800);
+  })();
+
   /* Countdown vers la date de l'évènement (hero accueil) */
   (function () {
     var el = document.getElementById("hero-countdown");
