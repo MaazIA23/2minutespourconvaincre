@@ -240,7 +240,7 @@
     });
   })();
 
-  ["candidature-form", "contact-form", "notify-form"].forEach(function (id) {
+  ["candidature-form", "contact-form", "notify-form", "partenaire-form"].forEach(function (id) {
     var form = document.getElementById(id);
     var note = document.getElementById("form-note");
     if (form && note) {

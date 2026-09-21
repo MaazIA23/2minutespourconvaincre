@@ -44,12 +44,56 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>Nos partenaires</h1>
+    <h1>Devenir partenaire</h1>
+    <p class="page-hero-lead">Construisons ensemble une scène qui donne une voix aux talents et des opportunités à la jeunesse.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pourquoi soutenir 2MPC ?</p>
+    </div>
+    <div class="ambitions-grid">
+      <div class="ambition-card reveal"><h3>Visibilité</h3><p>Votre marque associée à un événement suivi, sur scène comme sur nos réseaux.</p></div>
+      <div class="ambition-card reveal"><h3>Engagement jeunesse</h3><p>Un accès direct à une jeunesse ambitieuse, engagée et en quête d'opportunités.</p></div>
+      <div class="ambition-card reveal"><h3>Impact social</h3><p>Un soutien concret à la formation de centaines de jeunes en art oratoire, dès 2027 avec 300 Voix.</p></div>
+      <div class="ambition-card reveal"><h3>Rayonnement francophone</h3><p>Une 3ème édition placée sous le signe de la Journée internationale de la Francophonie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-band">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">Un projet qui grandit</p>
+    <div class="stats-grid stats-grid-4">
+      <div class="stat-card reveal"><span class="stat-value">2</span><span class="stat-label">éditions déjà réussies</span></div>
+      <div class="stat-card reveal"><span class="stat-value">+10M</span><span class="stat-label">vues cumulées sur nos réseaux</span></div>
+      <div class="stat-card reveal"><span class="stat-value">+300</span><span class="stat-label">participants réunis sur les deux éditions</span></div>
+      <div class="stat-card reveal"><span class="stat-value">300</span><span class="stat-label">bénéficiaires visés par 300 Voix dès 2027</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Nos formes de partenariat</p>
+    </div>
+    <div class="nouveautes-grid">
+      <div class="method-step reveal"><h3>Partenaire financier</h3><p>Contribution financière ou dotation de prix, en échange d'une visibilité sur scène et sur nos supports de communication.</p></div>
+      <div class="method-step reveal"><h3>Partenaire média</h3><p>Couverture, diffusion ou relais de l'événement pour amplifier sa portée et celle des talents révélés.</p></div>
+      <div class="method-step reveal"><h3>Partenaire institutionnel</h3><p>Soutien institutionnel ou mise à disposition d'un cadre officiel, pour renforcer la légitimité et la portée de l'événement.</p></div>
+      <div class="method-step reveal"><h3>Partenaire technique / expertise</h3><p>Mise à disposition de compétences, de matériel ou de services (son, image, formation, logistique…).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ils-nous-font-confiance">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Ils nous font confiance</h2>
+    </div>
     <div class="prose reveal">
       <p>Une aventure collective, portée par vous.</p>
       <p>Aucune édition ne se construit seule. Chaque duel sur scène, chaque temps fort de cette journée, chaque goodies dans les mains d'un participant : tout cela a été rendu possible par des femmes, des hommes, des entreprises et des institutions qui ont choisi de croire en cette vision avant même d'en voir le résultat.</p>
@@ -81,12 +125,68 @@
   </div>
 </section>
 
-<section class="cta-final" id="devenir-partenaire">
+<section class="section alt-bg" id="devenir-partenaire">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Un projet, une idée de collaboration ?</h2>
+      <p class="section-lead">Parlez-nous de votre organisation, nous revenons vers vous rapidement.</p>
+    </div>
+    <form class="contact-form reveal" id="partenaire-form" novalidate>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="part-nom">Nom</label>
+          <input type="text" id="part-nom" name="nom" required>
+        </div>
+        <div class="form-row">
+          <label for="part-prenom">Prénom</label>
+          <input type="text" id="part-prenom" name="prenom" required>
+        </div>
+      </div>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="part-organisation">Organisation</label>
+          <input type="text" id="part-organisation" name="organisation" required>
+        </div>
+        <div class="form-row">
+          <label for="part-fonction">Fonction</label>
+          <input type="text" id="part-fonction" name="fonction">
+        </div>
+      </div>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="part-email">Email</label>
+          <input type="email" id="part-email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="part-telephone">Téléphone</label>
+          <input type="tel" id="part-telephone" name="telephone">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="part-type">Type de partenariat</label>
+        <select id="part-type" name="type" required>
+          <option value="" disabled selected>Sélectionnez une option</option>
+          <option value="Partenariat financier">Partenariat financier</option><option value="Partenariat média">Partenariat média</option><option value="Partenariat institutionnel">Partenariat institutionnel</option><option value="Partenariat technique">Partenariat technique</option><option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="part-message">Message</label>
+        <textarea id="part-message" name="message" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Échanger avec l'équipe 2MPC</button>
+      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+    </form>
+    <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">
+      Vous préférez échanger directement ? <a href="https://wa.me/2290143393333" target="_blank" rel="noopener" style="font-weight:700; color:var(--navy-950);">Écrivez-nous sur WhatsApp</a>.
+    </p>
+  </div>
+</section>
+
+<section class="cta-final">
   <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
     <div class="reveal">
-      <h2>Vous souhaitez contribuer à la prochaine édition ?</h2>
-      <p>Pour devenir partenaire de la 3ème édition, contactez-nous directement : nous étudions chaque proposition avec attention.</p>
-      <a href="https://wa.me/2290143393333" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Nous contacter sur WhatsApp</a>
+      <h2>Vous préférez découvrir notre projet avant de nous contacter ?</h2>
+      <p style="max-width:520px; margin:0 auto;">Le dossier de partenariat est en cours de préparation. En attendant, l'équipe 2MPC se fera un plaisir de vous présenter le projet en détail.</p>
     </div>
   </div>
 </section>

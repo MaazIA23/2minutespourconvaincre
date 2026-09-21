@@ -202,6 +202,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .stats-band { background: var(--paper-alt); padding: 56px 0; border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); }
 .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
 .stats-grid-5 { grid-template-columns: repeat(5, 1fr); }
+.stats-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .stat-card { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .stat-value { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--gold-dark); }
 .stat-label { font-size: 0.92rem; color: var(--ink-soft); font-weight: 600; }
@@ -431,6 +432,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   font-family: var(--font-body); font-size: 0.95rem; color: var(--ink); resize: vertical; background: #fff;
 }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.form-row-pair { display: flex; gap: 16px; }
+.form-row-pair .form-row { flex: 1; }
 .form-note { min-height: 1.4em; margin: 12px 0 0; font-size: 0.88rem; color: var(--gold-dark); text-align: center; }
 
 /* ---------- TODO banner ---------- */
@@ -471,7 +474,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
   .chiffres-grid { grid-template-columns: repeat(2, 1fr); }
   .finalistes-list { grid-template-columns: 1fr; }
   .photo-feature-inner { grid-template-columns: 1fr; }
@@ -514,7 +517,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 720px) {
-  .ambitions-grid, .offer-grid, .stats-grid, .stats-grid-5, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
+  .form-row-pair { flex-direction: column; gap: 0; }
   .people-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
     gap: 14px; padding: 4px 24px 10px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
@@ -570,5 +574,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .offer-grid, .nouveautes-grid, .editions-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
 }
