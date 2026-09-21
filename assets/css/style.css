@@ -476,14 +476,15 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 720px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .partenaires-grid, .two-col, .associated-grid, .chiffres-grid, .editions-grid, .nouveautes-grid, .ambitions-grid-light { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 60px 0; }
-  .palmares-grid {
+  .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
     gap: 16px; padding: 4px 24px 10px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   }
-  .palmares-grid::-webkit-scrollbar { display: none; }
+  .palmares-grid::-webkit-scrollbar, .galerie-grid::-webkit-scrollbar { display: none; }
   .palmares-card { flex: 0 0 82%; scroll-snap-align: center; }
+  .galerie-item { flex: 0 0 62%; scroll-snap-align: start; }
   .hero { padding: 40px 0 48px; min-height: calc(100svh - 76px); display: flex; align-items: center; }
   .hero-photo-bg { background-position: 80% 16%; }
   .hero-inner { grid-template-columns: 1fr; }
@@ -515,9 +516,14 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .has-dropdown.is-open .dropdown-menu { max-height: 400px; }
   .has-dropdown.is-open .dropdown-caret { transform: rotate(180deg); }
   .dropdown-menu li a { padding: 12px 4px 12px 16px; border-bottom: 1px solid var(--navy-800); font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-  .associated-photos { grid-template-columns: repeat(3, 1fr); }
+  .associated-photos {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 10px; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .associated-photos::-webkit-scrollbar { display: none; }
+  .associated-photo { flex: 0 0 28%; scroll-snap-align: start; }
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .people-grid, .stats-grid, .offer-grid, .nouveautes-grid, .editions-grid, .partenaires-grid, .galerie-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .people-grid, .stats-grid, .offer-grid, .nouveautes-grid, .editions-grid, .partenaires-grid { grid-template-columns: 1fr; }
 }

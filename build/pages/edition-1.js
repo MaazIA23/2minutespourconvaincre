@@ -61,7 +61,6 @@ ${
         )
         .join("\n      ")}
     </div>
-    <p class="prose reveal" style="text-align:center">${edition2025.autresParticipants}</p>
   </div>
 </section>`
     : ""
