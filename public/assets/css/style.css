@@ -389,6 +389,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
 .form-note { min-height: 1.4em; margin: 12px 0 0; font-size: 0.88rem; color: var(--gold-dark); text-align: center; }
+.form-note.is-success { color: var(--navy-950); font-weight: 700; }
+
+.form-radio-group { border: none; padding: 0; margin: 0 0 16px; }
+.form-radio-group legend { font-size: 0.85rem; font-weight: 700; color: var(--navy-950); padding: 0; margin-bottom: 6px; }
+.form-radio-options { display: flex; gap: 18px; flex-wrap: wrap; }
+.form-radio-option { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; color: var(--ink); cursor: pointer; }
+.form-radio-option input { accent-color: var(--gold-dark); width: 16px; height: 16px; }
 
 /* ---------- TODO banner ---------- */
 .todo-banner {

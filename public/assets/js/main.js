@@ -129,15 +129,20 @@
 
   ["candidature-form", "contact-form", "notify-form"].forEach(function (id) {
     var form = document.getElementById(id);
-    var note = document.getElementById("form-note");
+    var note = form ? form.querySelector("#form-note") || document.getElementById("form-note") : null;
     if (form && note) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        note.classList.remove("is-success");
         if (!form.checkValidity()) {
           note.textContent = "Merci de renseigner les champs obligatoires avec une adresse e-mail valide.";
           return;
         }
-        note.textContent = "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.";
+        var successMessage =
+          (form.dataset.successTitle ? form.dataset.successTitle + " " : "") +
+          (form.dataset.successMessage || "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.");
+        note.textContent = successMessage;
+        note.classList.add("is-success");
         form.reset();
       });
     }

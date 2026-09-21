@@ -1,8 +1,30 @@
 {
   "edition": "2027",
   "statut": "a-venir",
-  "titre": "Candidature",
-  "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
+  "eyebrow": "3ᵉ édition — Liste d'attente",
+  "titre": "Et si votre prochaine prise de parole commençait maintenant ?",
+  "sousTitre": "La 3ᵉ édition de « Deux Minutes Pour Convaincre » se prépare.",
+  "statutOuverture": "Les candidatures ne sont pas encore ouvertes. Rejoignez dès maintenant la liste d'attente pour être informé(e) en priorité du lancement officiel.",
+  "formulaire": {
+    "champs": {
+      "nom": { "label": "Votre prénom et nom" },
+      "whatsapp": { "label": "Votre numéro WhatsApp" },
+      "email": { "label": "Votre adresse e-mail" },
+      "ville": { "label": "Votre ville / pays" },
+      "dejaParticipe": {
+        "label": "Avez-vous déjà participé à « Deux Minutes Pour Convaincre » ?",
+        "options": ["Oui", "Non"]
+      },
+      "motivation": {
+        "label": "Qu'est-ce qui vous donne envie de participer à la prochaine édition ?"
+      }
+    },
+    "cta": "Je rejoins la liste d'attente",
+    "confirmation": {
+      "titre": "C'est enregistré.",
+      "texte": "Vous êtes désormais sur la liste d'attente de la 3ᵉ édition de « Deux Minutes Pour Convaincre ». Restez attentif·ve : les prochaines informations vous seront communiquées en priorité."
+    }
+  },
   "nouveauFormat": {
     "titre": "Nouveauté 2027 : la candidature se fait en vidéo",
     "description": [
@@ -10,13 +32,11 @@
       "L'objectif reste le même que sur scène : convaincre en deux minutes. À vous de choisir le sujet qui vous permettra de démontrer votre éloquence, votre capacité à structurer une idée et à défendre une thèse avec conviction."
     ]
   },
-  "statutOuverture": "Les candidatures pour la 3ème édition ne sont pas encore ouvertes. Laissez votre e-mail pour être averti(e) dès l'ouverture.",
-  "ctaNotify": "Être informé(e) de l'ouverture des candidatures",
-  "_source": "Précisions données par le client (message vocal retranscrit) — à confirmer/compléter avec le document de préparation de la 3e édition annoncé",
+  "_source": "Structure de page proposée par le client (message retranscrit, approche 'liste d'attente' plutôt que candidature directe pour mesurer l'engouement avant l'ouverture officielle)",
   "TODO_2027": [
+    "Brancher le formulaire sur un stockage réel des réponses (actuellement front-end uniquement, comme le reste du site) : intégration Tally envisagée par le client — remplacer le bloc <form> par l'iframe Tally une fois le formulaire créé sur tally.so",
     "Confirmer le format exact du dossier de candidature 2025/2026 évoqué par le client (« une minute ») pour l'historique",
     "Date d'ouverture et de clôture des candidatures 2027",
-    "Modalités précises de dépôt de la vidéo (plateforme, format, durée max, critères d'éligibilité)",
-    "Intégrer le contenu du document de préparation de la 3e édition dès réception"
+    "Modalités précises de dépôt de la vidéo (plateforme, format, durée max, critères d'éligibilité)"
   ]
 }
