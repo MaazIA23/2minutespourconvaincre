@@ -5,7 +5,9 @@
   "accroche": "La scène qui révèle les orateurs",
   "date": "Mars 2027",
   "dateContexte": "Journée internationale de la Francophonie",
-  "lieu": "Palais des Congrès de Cotonou",
+  "lieu": "Cotonou",
+  "dateCountdownISO": "2027-03-20T00:00:00",
+  "_dateCountdown_note": "Date hypothèse (20 mars 2027) utilisée uniquement pour le décompte du hero — le texte affiché reste volontairement vague (« Mars 2027 ») tant que la date exacte n'est pas confirmée par le client.",
   "statut": "a-venir",
   "teaser": {
     "eyebrow": "Coming soon",

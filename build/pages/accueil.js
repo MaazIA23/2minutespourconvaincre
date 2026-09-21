@@ -9,8 +9,17 @@ function render(data) {
       <h1>${edition3.accroche}</h1>
       <div class="hero-meta">
         <span>📅 ${edition3.date}</span>
-        <span>📍 ${edition3.lieu}</span>
       </div>
+      ${
+        edition3.dateCountdownISO
+          ? `<div class="hero-countdown" id="hero-countdown" data-target="${edition3.dateCountdownISO}">
+        <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
+        <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
+        <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
+        <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
+      </div>`
+          : ""
+      }
     </div>
   </div>
 </section>
