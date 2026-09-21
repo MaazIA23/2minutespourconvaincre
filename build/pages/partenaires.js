@@ -1,5 +1,5 @@
 function render(data) {
-  const { partenaires } = data;
+  const { partenaires, site } = data;
 
   return `
 <section class="page-hero">
@@ -23,6 +23,16 @@ function render(data) {
         .join("\n      ")}
     </div>
     <p class="prose reveal remerciement">${partenaires.remerciement}</p>
+  </div>
+</section>
+
+<section class="cta-final" id="devenir-partenaire">
+  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
+    <div class="reveal">
+      <h2>Vous souhaitez contribuer à la prochaine édition ?</h2>
+      <p>Pour devenir partenaire de la 3ème édition, contactez-nous directement : nous étudions chaque proposition avec attention.</p>
+      <a href="https://wa.me/${site.contact.telephoneWhatsapp.replace(/[^\d]/g, "")}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Nous contacter sur WhatsApp</a>
+    </div>
   </div>
 </section>
 `;
