@@ -1,5 +1,5 @@
 function render(data) {
-  const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie } = data;
+  const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie, edition2, partenaires } = data;
   const edition2Meta = editionsIndex.editions.find((e) => e.slug === "2eme-edition");
   const edition2026 = gagnants.editions.find((e) => e.edition === "2026");
   const galerie2026 = galerie["2eme-edition"];
@@ -10,11 +10,19 @@ function render(data) {
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
     <p class="page-hero-lead">${edition2Meta.resume}</p>
-    ${
-      edition2Meta.rapportPdf
-        ? `<a href="${edition2Meta.rapportPdf}" class="btn btn-primary" download>📄 ${edition2Meta.rapportLabel}</a>`
-        : ""
-    }
+  </div>
+</section>
+
+<section class="stats-band" id="chiffres">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${edition2.chiffresCles.eyebrow}</p>
+    <div class="stats-grid stats-grid-4">
+      ${edition2.chiffresCles.chiffres
+        .map(
+          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
+        )
+        .join("\n      ")}
+    </div>
   </div>
 </section>
 
@@ -139,17 +147,16 @@ function render(data) {
         )
         .join("\n      ")}
     </div>
-    <div class="section-head reveal" style="margin-top:48px">
-      <p class="section-lead" style="text-align:center">${edition2026.autresFinalistes.intro}</p>
+    <div class="prose reveal">
+      <h3>${edition2026.autresFinalistes.intro}</h3>
+      <div class="people-grid people-grid-secondary">
+        ${edition2026.autresFinalistes.liste
+          .map(
+            (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3></div>`
+          )
+          .join("\n      ")}
+      </div>
     </div>
-    <div class="people-grid people-grid-secondary">
-      ${edition2026.autresFinalistes.liste
-        .map(
-          (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3></div>`
-        )
-        .join("\n      ")}
-    </div>
-    <p style="text-align:center"><a href="/partenaires/" class="btn btn-outline">Voir les partenaires de cette édition →</a></p>
   </div>
 </section>
 
@@ -165,6 +172,70 @@ function render(data) {
         .join("\n      ")}
     </div>
     <p class="galerie-credit reveal">${galerie2026.credit}</p>
+  </div>
+</section>
+
+<section class="section" id="temoignages">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${edition2.temoignages.eyebrow}</p>
+      <h2>${edition2.temoignages.titre}</h2>
+    </div>
+    <div class="temoignages-grid">
+      ${
+        edition2.temoignages.liste.length
+          ? edition2.temoignages.liste
+              .map(
+                (t) => `<div class="temoignage-card reveal">
+        ${t.photo ? `<img src="${t.photo}" alt="${t.nom}" class="temoignage-photo" loading="lazy">` : ""}
+        <blockquote>« ${t.citation} »</blockquote>
+        <p class="temoignage-meta"><strong>${t.nom}</strong> — ${t.edition}, ${t.statut}</p>
+        ${t.videoUrl ? `<a href="${t.videoUrl}" class="btn btn-ghost" target="_blank" rel="noopener">▶ Voir la vidéo</a>` : ""}
+      </div>`
+              )
+              .join("\n      ")
+          : [1, 2, 3]
+              .map(
+                () => `<div class="temoignage-placeholder reveal">
+        <span class="temoignage-placeholder-icon">🎥</span>
+        <p>Témoignage à venir</p>
+      </div>`
+              )
+              .join("\n      ")
+      }
+    </div>
+  </div>
+</section>
+
+${
+  edition2Meta.rapportPdf
+    ? `<section class="section alt-bg" id="rapport">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Rapport de l'édition</p>
+    </div>
+    <p style="text-align:center"><a href="${edition2Meta.rapportPdf}" class="btn btn-primary btn-lg" download>📄 ${edition2Meta.rapportLabel}</a></p>
+  </div>
+</section>`
+    : ""
+}
+
+<section class="section" id="partenaires-edition">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Partenaires de l'édition</p>
+      <h2>Ils ont rendu cette édition possible</h2>
+    </div>
+    <div class="partenaires-grid">
+      ${partenaires.liste
+        .map((p) =>
+          p.logo
+            ? `<div class="partenaire-card partenaire-card-logo reveal"><img src="${p.logo}" alt="${p.nom}" loading="lazy"></div>`
+            : `<div class="partenaire-card reveal"><span>${p.nom}</span></div>`
+        )
+        .join("\n      ")}
+    </div>
+    <p style="text-align:center"><a href="/partenaires/" class="btn btn-outline">Voir tous nos partenaires →</a></p>
   </div>
 </section>
 `;

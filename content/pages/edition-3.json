@@ -75,6 +75,19 @@
       "description": "Parce qu'une victoire doit ouvrir une porte. Le vainqueur de cette troisième édition remportera désormais le Grand Prix de la Francophonie. Un prix qui vient donner une nouvelle dimension à la récompense finale et inscrire la victoire dans une logique de mérite, de transmission et d'opportunités."
     }
   ],
+  "parcours2027": {
+    "eyebrow": "Le parcours 2027",
+    "titre": "Comment se déroulera la 3ème édition",
+    "chapeau": "Le format évolue pour cette 3ème édition. Les grandes étapes sont posées ; leurs modalités précises restent en cours de finalisation.",
+    "etapes": [
+      { "titre": "Candidature", "description": "Une vidéo de deux minutes, sur un thème choisi librement par le candidat ou la candidate." },
+      { "titre": "Sélection", "description": "Une sélection plus rigoureuse pour ne retenir que les profils les plus solides." },
+      { "titre": "Préparation", "description": "Un accompagnement renforcé des candidats retenus, avant la scène." },
+      { "titre": "Demi-finales", "description": "Des duels d'argumentation pour départager les meilleurs profils." },
+      { "titre": "Finale", "description": "La grande finale, avec le Grand Prix de la Francophonie à la clé." }
+    ],
+    "_note": "Toutes les étapes sont marquées « En préparation » : le format global est confirmé, mais dates, critères précis et modalités détaillées de chaque étape restent à arrêter officiellement."
+  },
   "programme300Voix": {
     "eyebrow": "Impact 2027",
     "titre": "300 VOIX",
