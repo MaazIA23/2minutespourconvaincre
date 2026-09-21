@@ -421,7 +421,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .footer-inner { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid var(--navy-700); }
 .footer-inner > * { min-width: 0; }
 .footer-brand .logo-text { color: #fff; }
-.footer-brand p { margin: 14px 0 18px; font-size: 0.88rem; }
+.footer-brand p { margin: 14px 0 18px; font-size: 0.88rem; color: #fff; }
 .social-links { display: flex; gap: 10px; }
 .social-links a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--navy-700);
@@ -432,6 +432,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; }
 .footer-col a:hover { color: #fff; }
 .footer-bottom { display: flex; align-items: center; justify-content: center; padding: 22px 0; font-size: 0.78rem; }
+.footer-bottom p { color: rgba(255,255,255,0.6); margin: 0; }
 
 /* ---------- Reveal ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
