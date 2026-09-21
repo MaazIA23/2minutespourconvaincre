@@ -201,12 +201,21 @@
 
     var ajaxAction = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
 
+    var controller = ("AbortController" in window) ? new AbortController() : null;
+    var timeoutId = window.setTimeout(function () {
+      if (controller) controller.abort();
+    }, 8000);
+
     fetch(ajaxAction, {
       method: "POST",
       body: new FormData(form),
-      headers: { Accept: "application/json" }
+      headers: { Accept: "application/json" },
+      signal: controller ? controller.signal : undefined
     })
-      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (res) {
+        window.clearTimeout(timeoutId);
+        return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+      })
       .then(function (result) {
         if (result.ok) {
           fields.style.display = "none";
@@ -216,6 +225,7 @@
         }
       })
       .catch(function () {
+        window.clearTimeout(timeoutId);
         // L'envoi via JavaScript (fetch) peut être bloqué par le navigateur,
         // notamment quand le fichier est ouvert directement (file://) plutôt
         // qu'hébergé sur un vrai site. On se rabat alors sur un envoi
