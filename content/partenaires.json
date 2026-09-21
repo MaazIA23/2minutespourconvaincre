@@ -1,6 +1,51 @@
 {
   "edition": "2026",
   "titre": "Nos partenaires",
+  "hero": {
+    "titre": "Devenir partenaire",
+    "sousTitre": "Construisons ensemble une scène qui donne une voix aux talents et des opportunités à la jeunesse."
+  },
+  "pourquoiSoutenir": {
+    "eyebrow": "Pourquoi soutenir 2MPC ?",
+    "liste": [
+      { "titre": "Visibilité", "description": "Votre marque associée à un événement suivi, sur scène comme sur nos réseaux." },
+      { "titre": "Engagement jeunesse", "description": "Un accès direct à une jeunesse ambitieuse, engagée et en quête d'opportunités." },
+      { "titre": "Impact social", "description": "Un soutien concret à la formation de centaines de jeunes en art oratoire, dès 2027 avec 300 Voix." },
+      { "titre": "Rayonnement francophone", "description": "Une 3ème édition placée sous le signe de la Journée internationale de la Francophonie." }
+    ]
+  },
+  "chiffresCles": {
+    "eyebrow": "Un projet qui grandit",
+    "chiffres": [
+      { "valeur": "2", "libelle": "éditions déjà réussies" },
+      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
+      { "valeur": "+300", "libelle": "participants réunis sur les deux éditions" },
+      { "valeur": "300", "libelle": "bénéficiaires visés par 300 Voix dès 2027" }
+    ],
+    "_source": "Mêmes sources que content/pages/impact.json chiffresCles."
+  },
+  "formesPartenariat": {
+    "eyebrow": "Nos formes de partenariat",
+    "liste": [
+      { "titre": "Partenaire financier", "description": "Contribution financière ou dotation de prix, en échange d'une visibilité sur scène et sur nos supports de communication." },
+      { "titre": "Partenaire média", "description": "Couverture, diffusion ou relais de l'événement pour amplifier sa portée et celle des talents révélés." },
+      { "titre": "Partenaire institutionnel", "description": "Soutien institutionnel ou mise à disposition d'un cadre officiel, pour renforcer la légitimité et la portée de l'événement." },
+      { "titre": "Partenaire technique / expertise", "description": "Mise à disposition de compétences, de matériel ou de services (son, image, formation, logistique…)." }
+    ],
+    "_note": "Pas de tarifs fixes affichés tant qu'ils ne sont pas validés par le client — chaque partenariat se construit sur mesure."
+  },
+  "formulaire": {
+    "titre": "Un projet, une idée de collaboration ?",
+    "sousTitre": "Parlez-nous de votre organisation, nous revenons vers vous rapidement.",
+    "typesPartenariat": ["Partenariat financier", "Partenariat média", "Partenariat institutionnel", "Partenariat technique", "Autre"],
+    "cta": "Échanger avec l'équipe 2MPC"
+  },
+  "sectionFinale": {
+    "titre": "Vous préférez découvrir notre projet avant de nous contacter ?",
+    "ctaLabel": "Télécharger le dossier de partenariat",
+    "dossierPdf": null,
+    "_note": "Aucun dossier de partenariat PDF fourni pour l'instant — dossierPdf reste null tant que le client ne l'a pas transmis. Le bouton de téléchargement n'apparaît que si ce champ est renseigné."
+  },
   "intro": [
     "Une aventure collective, portée par vous.",
     "Aucune édition ne se construit seule. Chaque duel sur scène, chaque temps fort de cette journée, chaque goodies dans les mains d'un participant : tout cela a été rendu possible par des femmes, des hommes, des entreprises et des institutions qui ont choisi de croire en cette vision avant même d'en voir le résultat.",
