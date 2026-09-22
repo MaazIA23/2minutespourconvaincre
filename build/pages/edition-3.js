@@ -41,7 +41,7 @@ function render(data) {
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Cap sur la 3ème édition</p>
-      <h2>Ce qui change pour 2027</h2>
+      <h2>Ce qui change pour la 3ème édition</h2>
     </div>
     <div class="nouveautes-grid">
       ${edition3.nouveautes

@@ -94,7 +94,7 @@ function render(data) {
 <section class="section alt-bg photo-feature" id="impact-2027">
   <div class="container photo-feature-inner">
     <div class="photo-feature-media reveal">
-      <img src="/assets/img/galerie/2eme-edition/photo-09.jpg" alt="Participants lors de la dictée intuitive, Deux Minutes Pour Convaincre">
+      <img src="/assets/img/galerie/2eme-edition/photo-09.jpg" alt="Participants lors de la dictée intuitive, Deux Minutes Pour Convaincre" loading="lazy">
     </div>
     <div class="photo-feature-copy">
       <div class="section-head reveal" style="text-align:left; margin-bottom:20px;">
