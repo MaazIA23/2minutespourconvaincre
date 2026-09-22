@@ -1,5 +1,12 @@
 function render(data) {
-  const { candidature, site } = data;
+  const { candidature, site, gagnants } = data;
+  const edition2026 = gagnants.editions.find((e) => e.numero === 2);
+  const scenePhotos = edition2026
+    ? [
+        ...edition2026.palmares.map((p) => ({ nom: p.nom, photo: p.photo })),
+        ...edition2026.autresFinalistes.liste,
+      ]
+    : [];
 
   return `
 <section class="page-hero page-hero-photo-bg" style="background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
@@ -19,6 +26,13 @@ function render(data) {
       <span class="prize-icon">🏆</span>
       <h2>${candidature.prix.titre}</h2>
       <p>${candidature.prix.description}</p>
+      <div class="prize-ticket">
+        <span class="prize-ticket-icon">✈️</span>
+        <div class="prize-ticket-text">
+          <strong>${candidature.prix.recompense}</strong>
+          <span>Paris, France 🇫🇷</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -70,15 +84,21 @@ function render(data) {
 </section>
 
 ${
-  candidature.photosIllustration
+  scenePhotos.length
     ? `<section class="section">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Elles et ils étaient sur cette scène</p>
+      <h2>Les 8 finalistes de la 2ème édition</h2>
     </div>
     <div class="candidature-photos">
-      ${candidature.photosIllustration
-        .map((p) => `<img src="${p.src}" alt="${p.alt}" loading="lazy" class="reveal">`)
+      ${scenePhotos
+        .map(
+          (p) => `<figure class="reveal">
+        <img src="${p.photo}" alt="${p.nom}" loading="lazy">
+        <figcaption>${p.nom}</figcaption>
+      </figure>`
+        )
         .join("\n      ")}
     </div>
   </div>
