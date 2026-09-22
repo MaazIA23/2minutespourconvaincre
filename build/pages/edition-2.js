@@ -151,7 +151,7 @@ function render(data) {
     </div>
     <div class="prose reveal">
       <h3>${edition2026.autresFinalistes.intro}</h3>
-      <div class="people-grid people-grid-secondary">
+      <div class="people-grid people-grid-secondary${edition2026.autresFinalistes.liste.length === 5 ? " people-grid-5" : ""}">
         ${edition2026.autresFinalistes.liste
           .map(
             (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3></div>`
