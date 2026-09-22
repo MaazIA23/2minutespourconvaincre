@@ -55,7 +55,7 @@ function render(data) {
       <p class="eyebrow">Autour de l'événement</p>
       <h2>Événements associés</h2>
     </div>
-    <div class="associated-grid">
+    <div class="associated-grid${programme.evenementsAssocies.length === 3 ? " associated-grid-3" : ""}">
       ${programme.evenementsAssocies
         .map(
           (ev) => `<div class="associated-card reveal">

@@ -75,8 +75,8 @@ function render(data) {
     </div>
     <div class="book-card reveal">
       <h3>${quiSommesNous.fondatrice.livre.titre}</h3>
-      <p>${quiSommesNous.fondatrice.livre.description}</p>
       <p><em>${quiSommesNous.fondatrice.livre.disponibilite}</em></p>
+      <a href="/editions/2eme-edition/#evenements-associes" class="btn btn-outline">Voir le lancement du livre →</a>
     </div>
   </div>
 </section>
