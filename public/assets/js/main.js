@@ -169,12 +169,14 @@
   /* Lightbox for gallery-style images (galerie, événements associés) */
   (function () {
     var groups = [];
+    var containerGroupIndex = [];
     document.querySelectorAll(".galerie-grid, .associated-photos").forEach(function (container) {
       var imgs = Array.prototype.slice.call(container.querySelectorAll("img"));
       if (!imgs.length) return;
       var group = imgs.map(function (img) { return { src: img.currentSrc || img.src, alt: img.alt || "" }; });
       groups.push(group);
       var groupIndex = groups.length - 1;
+      containerGroupIndex.push({ container: container, groupIndex: groupIndex });
       imgs.forEach(function (img, i) {
         img.classList.add("lightbox-trigger");
         img.tabIndex = 0;
@@ -220,6 +222,12 @@
       overlay.classList.remove("is-open");
       document.body.style.overflow = "";
     }
+
+    containerGroupIndex.forEach(function (entry) {
+      var moreBtn = entry.container.nextElementSibling;
+      if (!moreBtn || !moreBtn.classList.contains("associated-photos-more")) return;
+      moreBtn.addEventListener("click", function () { openLightbox(entry.groupIndex, 0); });
+    });
     function step(delta) {
       var group = groups[current.group];
       current.index = (current.index + delta + group.length) % group.length;
