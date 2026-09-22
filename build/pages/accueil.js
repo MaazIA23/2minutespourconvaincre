@@ -6,12 +6,11 @@ function render(data) {
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
   <div class="container hero-inner hero-inner-single">
     <div class="hero-copy reveal">
-      <p class="eyebrow">${edition3.teaser.eyebrow}</p>
       <h1 class="hero-rotator" id="hero-rotator">${(edition3.accrochesRotatives || [edition3.accroche])
         .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
         .join("")}</h1>
       <div class="hero-meta">
-        <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
+        <span>📅 ${edition3.date}</span>
         <span>📍 ${edition3.lieu}</span>
       </div>
       ${
