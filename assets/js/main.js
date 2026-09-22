@@ -259,6 +259,21 @@
     });
   });
 
+  /* Bouton "remonter en haut" qui apparaît après un certain scroll */
+  (function () {
+    var btn = document.getElementById("back-to-top");
+    if (!btn) return;
+    function toggle() {
+      btn.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+    }
+    toggle();
+    window.addEventListener("scroll", toggle, { passive: true });
+    btn.addEventListener("click", function () {
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  })();
+
   ["candidature-form", "contact-form", "notify-form", "partenaire-form"].forEach(function (id) {
     var form = document.getElementById(id);
     var note = document.getElementById("form-note");

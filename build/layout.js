@@ -135,6 +135,7 @@ ${renderHeader(data, activeSlug)}
 ${bodyHtml}
 </main>
 ${renderFooter(data)}
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
 <script src="/assets/js/main.js"></script>
 </body>
 </html>
