@@ -399,6 +399,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .actualite-contenu { font-size: 0.92rem; }
 
 .people-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.people-grid-5 { grid-template-columns: repeat(5, 1fr); }
 .people-grid-secondary { margin-top: 18px; }
 .people-card { background: var(--paper-alt); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; min-width: 0; }
 .people-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }
