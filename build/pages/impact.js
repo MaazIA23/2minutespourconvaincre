@@ -51,7 +51,7 @@ function render(data) {
       <p class="eyebrow">${impact.ceQueLaParolePeutChanger.eyebrow}</p>
       <h2>${impact.ceQueLaParolePeutChanger.titre}</h2>
     </div>
-    <div class="ambitions-grid">
+    <div class="ambitions-grid${impact.ceQueLaParolePeutChanger.blocs.length === 3 ? " ambitions-grid-3" : ""}">
       ${impact.ceQueLaParolePeutChanger.blocs
         .map((b) => `<div class="ambition-card ambition-card-light reveal"><h3>${b.titre}</h3><p>${b.description}</p></div>`)
         .join("\n      ")}
@@ -91,7 +91,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg photo-feature" id="impact-2027">
+<section class="section alt-bg photo-feature photo-feature-compact" id="impact-2027">
   <div class="container photo-feature-inner">
     <div class="photo-feature-media reveal">
       <img src="/assets/img/galerie/2eme-edition/photo-09.jpg" alt="Participants lors de la dictée intuitive, Deux Minutes Pour Convaincre" loading="lazy">
