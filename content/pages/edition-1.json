@@ -17,6 +17,15 @@
     { "valeur": "+700 000 FCFA", "libelle": "de lots distribués" }
   ],
   "rapportPdf": null,
+  "jury": {
+    "titre": "Le jury de la première édition",
+    "intro": "Ils sont experts, juristes, journalistes et leaders… Convaincre ce jury, c'est obtenir une certification de compétence reconnue par tout le marché. Ils vous attendent au tournant. Préparez-vous à l'excellence.",
+    "membres": [
+      { "nom": "Dr Mylène Grimaud", "titre": "Médecin néphrologue et néphropédiatre, Distinguée Toastmaster", "photo": "/assets/img/jury/mylene-grimaud.jpg" },
+      { "nom": "Junior Deguenon", "titre": "Juriste - Auteur - Consultant - Formateur", "photo": "/assets/img/jury/junior-deguenon.jpg" },
+      { "nom": "Donklam Abalo", "titre": "Directeur Général de EDEN TV - Journaliste - Maître de cérémonie - Formateur", "photo": "/assets/img/jury/donklam-abalo.jpg" }
+    ]
+  },
   "temoignages": {
     "eyebrow": "Témoignages",
     "titre": "Ils y étaient",
@@ -24,5 +33,5 @@
     "_TODO": "Jusqu'à 3 témoignages réels à ajouter dès qu'ils sont disponibles : { photo, nom, edition, statut, citation, videoUrl (optionnel) }. Tant que cette liste est vide, la page affiche des emplacements réservés — ne jamais inventer de témoignage."
   },
   "_source": "Dossier de présentation édition 3 — « Une première édition réussie » (p.3 de la section, cover interne)",
-  "TODO_2027": "Palmarès et rapport PDF de la 1ère édition intégrés. Pas de jury/marraine identifiés pour cette édition à ce stade — à demander au client si disponible"
+  "TODO_2027": "Palmarès, rapport PDF et jury de la 1ère édition intégrés. Pas de marraine/parrain identifié(e) pour cette édition à ce stade — à demander au client si disponible"
 }

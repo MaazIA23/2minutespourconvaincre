@@ -39,6 +39,27 @@ function render(data) {
 </section>
 
 ${
+  edition1.jury
+    ? `<section class="section" id="jury">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>${edition1.jury.titre}</h2>
+      <p class="section-lead">${edition1.jury.intro}</p>
+    </div>
+    <div class="people-grid${edition1.jury.membres.length === 3 ? " people-grid-3" : ""}">
+      ${edition1.jury.membres
+        .map(
+          (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.titre}</p></div>`
+        )
+        .join("\n      ")}
+    </div>
+    <p style="text-align:center; margin-top:36px"><a href="/candidature/" class="btn btn-primary btn-lg">Candidater maintenant</a></p>
+  </div>
+</section>`
+    : ""
+}
+
+${
   edition2025
     ? `<section class="section" id="palmares">
   <div class="container">
@@ -130,9 +151,6 @@ ${
 
 <section class="section">
   <div class="container">
-    <div class="todo-banner reveal">
-      ⚠️ Pas de jury ni de marraine/parrain identifiés pour cette édition à ce stade. À compléter dès que le client les fournit.
-    </div>
     <p style="text-align:center"><a href="/editions/" class="btn btn-outline">← Retour aux éditions</a></p>
   </div>
 </section>
