@@ -149,16 +149,17 @@ function render(data) {
         )
         .join("\n      ")}
     </div>
-    <div class="prose reveal">
-      <h3>${edition2026.autresFinalistes.intro}</h3>
-      <div class="people-grid people-grid-secondary${edition2026.autresFinalistes.liste.length === 5 ? " people-grid-5" : ""}">
+    <div class="section-head reveal" style="margin-top:56px;">
+      <h3>${edition2026.autresFinalistes.titre}</h3>
+      <p class="section-lead">${edition2026.autresFinalistes.description}</p>
+    </div>
+    <div class="people-grid people-grid-secondary${edition2026.autresFinalistes.liste.length === 5 ? " people-grid-5" : ""}">
         ${edition2026.autresFinalistes.liste
           .map(
             (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3></div>`
           )
           .join("\n      ")}
       </div>
-    </div>
   </div>
 </section>
 
