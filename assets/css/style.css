@@ -312,8 +312,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
 
 /* ---------- Back to top ---------- */
+/* Positionné à gauche : Netlify injecte son propre badge "Powered by
+   Netlify" en bas à droite sur les sites en offre gratuite, ce qui
+   recouvrait complètement le bouton à cet endroit. */
 .back-to-top {
-  position: fixed; right: 20px; bottom: 20px; z-index: 90;
+  position: fixed; left: 20px; bottom: 20px; z-index: 90;
   width: 46px; height: 46px; border-radius: 50%; border: none;
   background: var(--navy-950); color: #fff; font-size: 1.2rem; cursor: pointer;
   display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md);
