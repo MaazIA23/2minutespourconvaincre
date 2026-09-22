@@ -170,7 +170,7 @@
   (function () {
     var groups = [];
     var containerGroupIndex = [];
-    document.querySelectorAll(".galerie-grid, .associated-photos").forEach(function (container) {
+    document.querySelectorAll(".galerie-grid, .associated-photos, .candidature-photos").forEach(function (container) {
       var imgs = Array.prototype.slice.call(container.querySelectorAll("img"));
       if (!imgs.length) return;
       var group = imgs.map(function (img) { return { src: img.currentSrc || img.src, alt: img.alt || "" }; });

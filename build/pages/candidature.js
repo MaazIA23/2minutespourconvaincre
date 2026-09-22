@@ -2,7 +2,7 @@ function render(data) {
   const { candidature, site } = data;
 
   return `
-<section class="page-hero">
+<section class="page-hero page-hero-photo-bg" style="background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
   <div class="container">
     <h1>${candidature.titre}</h1>
     <p class="page-hero-lead">${candidature.sousTitre}</p>
@@ -11,6 +11,19 @@ function render(data) {
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${candidature.prix.eyebrow}</p>
+    </div>
+    <div class="prize-card reveal">
+      <span class="prize-icon">🏆</span>
+      <h2>${candidature.prix.titre}</h2>
+      <p>${candidature.prix.description}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">${candidature.parcours.eyebrow}</p>
@@ -32,6 +45,18 @@ function render(data) {
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${candidature.criteres.eyebrow}</p>
+      <h2>${candidature.criteres.titre}</h2>
+    </div>
+    <ul class="criteres-list reveal">
+      ${candidature.criteres.liste.map((c) => `<li>${c}</li>`).join("\n      ")}
+    </ul>
+  </div>
+</section>
+
 <section class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
@@ -44,7 +69,24 @@ function render(data) {
   </div>
 </section>
 
-<section class="section">
+${
+  candidature.photosIllustration
+    ? `<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Elles et ils étaient sur cette scène</p>
+    </div>
+    <div class="candidature-photos">
+      ${candidature.photosIllustration
+        .map((p) => `<img src="${p.src}" alt="${p.alt}" loading="lazy" class="reveal">`)
+        .join("\n      ")}
+    </div>
+  </div>
+</section>`
+    : ""
+}
+
+<section class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">${candidature.conseilsVideo.eyebrow}</p>
@@ -57,7 +99,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg" id="formulaire">
+<section class="section" id="formulaire">
   <div class="container">
     <div class="todo-banner reveal">
       ⚠️ ${candidature.statutOuverture}
@@ -84,7 +126,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section">
+<section class="section alt-bg">
   <div class="container">
     <div class="prose reveal" style="text-align:center">
       <p>Retrouvez comment se sont déroulées les candidatures des éditions précédentes sur la page <a href="/editions/"><strong>Éditions</strong></a>.</p>

@@ -3,6 +3,26 @@
   "statut": "a-venir",
   "titre": "Candidature",
   "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
+  "criteres": {
+    "eyebrow": "Qui peut candidater ?",
+    "titre": "Critères de sélection",
+    "liste": [
+      "Être âgé(e) de 18 à 30 ans",
+      "Résider sur le territoire béninois",
+      "Avoir déjà quelques bases en prise de parole"
+    ]
+  },
+  "prix": {
+    "eyebrow": "La récompense",
+    "titre": "Grand Prix de la Francophonie",
+    "description": "Le grand gagnant ou la grande gagnante de cette 3ème édition remportera un séjour d'une semaine en France.",
+    "_note": "Annoncé par le client (message vocal retranscrit, 23/09/2026) — reprend le Grand Prix de la Francophonie déjà annoncé sur la page 3ème édition, avec la précision de la récompense. Le client reste prudent sur ce point (« on va rêver grand et on verra ce que ça donne ») : à reconfirmer avant l'ouverture officielle des candidatures."
+  },
+  "photosIllustration": [
+    { "src": "/assets/img/galerie/2eme-edition/photo-11.jpg", "alt": "Finaliste au micro sur la scène de Deux Minutes Pour Convaincre" },
+    { "src": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste de la 2ème édition" },
+    { "src": "/assets/img/galerie/2eme-edition/photo-13.jpg", "alt": "Finaliste de la 2ème édition" }
+  ],
   "parcours": {
     "eyebrow": "Votre parcours candidat",
     "titre": "Comment ça se passe",
