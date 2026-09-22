@@ -19,7 +19,7 @@
   "2eme-edition": {
     "titre": "Moments forts",
     "sousTitre": "Quelques photos de l'événement",
-    "credit": "Crédit photo : BH Studio",
+    "credit": "Crédit photo : BH Studio, Noris, INF",
     "photos": [
       { "fichier": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste consultant le livret du programme, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-02.jpg", "alt": "Participant dans le public, 2ème édition" },
@@ -29,7 +29,12 @@
       { "fichier": "/assets/img/galerie/2eme-edition/photo-06.jpg", "alt": "Participante dans le public, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-07.jpg", "alt": "Participant dans le public, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-08.jpg", "alt": "Participante dans le public, badge au cou, 2ème édition" },
-      { "fichier": "/assets/img/galerie/2eme-edition/photo-09.jpg", "alt": "Écran de la dictée intuitive sur Kahoot, 2ème édition" }
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-09.jpg", "alt": "Écran de la dictée intuitive sur Kahoot, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-10.jpg", "alt": "Intervenante au micro lors d'un panel, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-11.jpg", "alt": "Panel sur le thème du leadership féminin, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-12.jpg", "alt": "Finaliste embrassant son trophée, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-13.jpg", "alt": "Finaliste dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-14.jpg", "alt": "Remise des chèques aux lauréats sur scène, 2ème édition" }
     ]
   },
   "TODO_2027": "Ajouter une entrée '3eme-edition' une fois l'événement passé"
