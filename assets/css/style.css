@@ -362,9 +362,15 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Method / nouveautés steps ---------- */
 .nouveautes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.nouveautes-grid.nouveautes-grid-compact { grid-template-columns: 1fr; gap: 16px; }
+.nouveautes-grid.nouveautes-grid-compact {
+  display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: 16px; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.nouveautes-grid.nouveautes-grid-compact::-webkit-scrollbar { display: none; }
+.nouveautes-grid-compact .method-step { flex: 0 0 82%; scroll-snap-align: start; }
 
 .photo-feature-inner { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; }
+.photo-feature-copy { min-width: 0; }
 .photo-feature-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: block; }
 .photo-feature-compact .photo-feature-media img { aspect-ratio: 4 / 3; }
 .method-step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
