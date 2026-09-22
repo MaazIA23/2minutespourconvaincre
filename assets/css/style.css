@@ -235,6 +235,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Palmarès ---------- */
 .palmares-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.palmares-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
 .palmares-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 18px; }
 .palmares-card {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);

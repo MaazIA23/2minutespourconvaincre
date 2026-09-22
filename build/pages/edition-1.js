@@ -47,7 +47,7 @@ ${
       <h2>Les lauréats</h2>
       <p class="section-lead">${edition2025.intro}</p>
     </div>
-    <div class="palmares-grid">
+    <div class="palmares-grid${edition2025.palmares.length < 3 ? " palmares-grid-2" : ""}">
       ${edition2025.palmares
         .map(
           (p) => `<article class="palmares-card reveal">
