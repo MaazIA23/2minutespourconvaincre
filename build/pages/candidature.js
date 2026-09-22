@@ -122,22 +122,48 @@ ${
 <section class="section" id="formulaire">
   <div class="container">
     <div class="todo-banner reveal">
-      ⚠️ ${candidature.statutOuverture}
+      📅 Candidatures ouvertes jusqu'au <strong>${candidature.dateLimiteCandidatures}</strong>
     </div>
     <form class="contact-form reveal" id="candidature-form" novalidate>
-      <div class="form-row">
-        <label for="cand-name">Nom complet</label>
-        <input type="text" id="cand-name" name="name" required>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="cand-nom">Nom</label>
+          <input type="text" id="cand-nom" name="nom" required>
+        </div>
+        <div class="form-row">
+          <label for="cand-prenom">Prénom</label>
+          <input type="text" id="cand-prenom" name="prenom" required>
+        </div>
+      </div>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="cand-profession">Profession</label>
+          <select id="cand-profession" name="profession" required>
+            <option value="" disabled selected>Sélectionnez une option</option>
+            ${candidature.formulaire.professions.map((p) => `<option value="${p}">${p}</option>`).join("")}
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="cand-pays">Pays de résidence</label>
+          <input type="text" id="cand-pays" name="pays" placeholder="Bénin" required>
+        </div>
+      </div>
+      <div class="form-row-pair">
+        <div class="form-row">
+          <label for="cand-email">Adresse e-mail</label>
+          <input type="email" id="cand-email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="cand-phone">Numéro WhatsApp</label>
+          <input type="tel" id="cand-phone" name="phone" required>
+        </div>
       </div>
       <div class="form-row">
-        <label for="cand-email">Adresse e-mail</label>
-        <input type="email" id="cand-email" name="email" required>
+        <label for="cand-video">Lien de votre vidéo</label>
+        <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft);">${candidature.formulaire.videoInstructions}</p>
+        <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
       </div>
-      <div class="form-row">
-        <label for="cand-phone">Téléphone / WhatsApp</label>
-        <input type="tel" id="cand-phone" name="phone">
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaNotify}</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>
       <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
     </form>
     <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">
