@@ -7,42 +7,42 @@
       "montant": "5 000 000 FCFA",
       "avantages": [
         "Titre exclusif de Sponsor Officiel de l'événement",
+        "Possibilité de « naming de prix »",
+        "Distinction officielle",
         "Logo en tête de tous les supports de communication (affiches, kakémonos, site web, rapport officiel)",
         "Logo animé dans les vidéos de communication",
         "2 kakémonos premiums placés à l'entrée principale et dans la salle",
         "20 publications sur les réseaux sociaux (environ 7 par mois sur 3 mois)",
         "1 vidéo promotionnelle dédiée au Sponsor Officiel",
-        "Mentions orales répétées par le MC pendant l'événement",
         "Intégration du sponsor dans les communications avant, pendant et après l'événement",
+        "Mentions orales répétées par le MC pendant l'événement",
         "5 min de prise de parole pendant l'événement",
         "Projection d'une vidéo corporate pendant l'événement",
         "6 places VIP réservées",
         "Accès VIP Afterwork & networking ciblé",
         "Mise en relation avec partenaires et invités stratégiques",
         "Goodies personnalisés",
-        "Distinction officielle",
-        "Rapport détaillé de l'événement",
-        "Possibilité de « naming de prix »"
+        "Rapport détaillé de l'événement"
       ]
     },
     {
       "nom": "Sponsor Platinum",
       "montant": "3 500 000 FCFA",
       "avantages": [
+        "Distinction officielle",
         "Logo en position prioritaire sur tous les supports de communication (affiches, kakémonos, site web, rapport officiel)",
         "Logo animé dans les vidéos de communication",
         "1 kakémono premium à l'entrée principale",
         "15 publications sur les réseaux sociaux (5 par mois sur 3 mois)",
         "1 vidéo promotionnelle dédiée au sponsor",
-        "Mentions orales par le MC pendant l'événement",
         "Intégration du sponsor avant, pendant et après l'événement",
+        "Mentions orales par le MC pendant l'événement",
         "Prise de parole de 2 min pendant l'événement",
         "Projection d'une vidéo corporate pendant l'événement",
         "4 places VIP réservées",
         "Accès VIP Afterwork & networking ciblé",
         "Mise en relation avec partenaires stratégiques",
         "Goodies personnalisés",
-        "Distinction officielle",
         "Rapport détaillé de l'événement"
       ]
     },
@@ -54,8 +54,8 @@
         "Logo dans les vidéos de communication",
         "1 kakémono placé dans l'espace événementiel",
         "10 publications sur les réseaux sociaux (environ 3 par mois sur 3 mois)",
-        "Mentions orales par le MC pendant l'événement",
         "Intégration du sponsor pendant l'événement",
+        "Mentions orales par le MC pendant l'événement",
         "3 places VIP réservées",
         "Accès VIP Afterwork & networking",
         "Mise en relation avec partenaires",
@@ -69,8 +69,8 @@
       "montant": "1 200 000 FCFA",
       "avantages": [
         "Logo sur les supports de communication clés (affiches, site web)",
-        "3 publications sur les réseaux sociaux",
         "1 kakémono dans l'espace événementiel",
+        "3 publications sur les réseaux sociaux",
         "Mentions orales par le MC",
         "2 places VIP réservées",
         "Accès Afterwork & networking",
@@ -87,8 +87,8 @@
         "1 publication sur les réseaux sociaux",
         "Mention orale par le MC",
         "1 place VIP réservée",
-        "Goodies de l'événement",
         "Accès Afterwork & networking",
+        "Goodies de l'événement",
         "Certificat de reconnaissance"
       ]
     },
