@@ -46,6 +46,7 @@ function render(data) {
         .map((f) => `<div class="method-step reveal"><h3>${f.titre}</h3><p>${f.description}</p></div>`)
         .join("\n      ")}
     </div>
+    <p style="text-align:center; margin-top:30px"><a href="/partenaires/sponsoring/" class="btn btn-outline">Découvrir nos offres de sponsoring →</a></p>
   </div>
 </section>
 

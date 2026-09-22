@@ -19,6 +19,7 @@ function loadData() {
     intervenants: readJson("intervenants.json"),
     gagnants: readJson("gagnants.json"),
     partenaires: readJson("partenaires.json"),
+    sponsoring: readJson("pages/sponsoring.json"),
     galerie: readJson("galerie.json"),
     editionsIndex: readJson("editions-index.json"),
     actualites: readJson("actualites.json"),
@@ -62,6 +63,7 @@ function main() {
   const accueil = require("./pages/accueil.js");
   const aPropos = require("./pages/a-propos.js");
   const partenaires = require("./pages/partenaires.js");
+  const sponsoring = require("./pages/sponsoring.js");
   const quiSommesNous = require("./pages/qui-sommes-nous.js");
   const candidature = require("./pages/candidature.js");
   const legal = require("./pages/legal.js");
@@ -149,6 +151,16 @@ function main() {
       description: data.partenaires.titre,
       activeSlug: "partenaires",
       bodyHtml: partenaires.render(data),
+    })
+  );
+
+  writePage(
+    "partenaires/sponsoring",
+    renderLayout(data, {
+      title: "Nos offres de sponsoring",
+      description: data.sponsoring.sousTitre,
+      activeSlug: "partenaires",
+      bodyHtml: sponsoring.render(data),
     })
   );
 
