@@ -23,6 +23,7 @@ function render(data) {
         <div class="timeline-marker">${String(i + 1).padStart(2, "0")}</div>
         <div class="timeline-content">
           <h3>${e.titre}</h3>
+          ${e.description ? `<p>${e.description}</p>` : ""}
         </div>
       </li>`
         )
