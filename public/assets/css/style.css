@@ -439,6 +439,22 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .people-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }
 .people-card p { margin: 0; font-size: 0.88rem; }
 
+/* ---------- Candidature : prix, critères, photos ---------- */
+.prize-card {
+  max-width: 640px; margin: 0 auto; background: var(--navy-950); color: #fff;
+  border-radius: var(--radius-lg); padding: 44px 30px; text-align: center; box-shadow: var(--shadow-lg);
+}
+.prize-card .prize-icon { display: block; font-size: 2.4rem; margin-bottom: 12px; }
+.prize-card h2 { color: var(--gold-text); margin-bottom: 10px; }
+.prize-card p { color: rgba(255,255,255,0.85); margin: 0; max-width: 480px; margin-inline: auto; }
+
+.criteres-list { list-style: none; margin: 0 auto; padding: 0; max-width: 620px; display: flex; flex-direction: column; gap: 14px; }
+.criteres-list li { position: relative; padding-left: 32px; font-size: 1.05rem; color: var(--ink); }
+.criteres-list li::before { content: "✓"; position: absolute; left: 0; top: 1px; color: var(--gold-dark); font-weight: 800; font-size: 1.1rem; }
+
+.candidature-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.candidature-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: block; }
+
 /* ---------- Témoignages ---------- */
 .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .temoignage-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
@@ -583,7 +599,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .actualites-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .actualites-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid, .candidature-photos { grid-template-columns: repeat(2, 1fr); }
   .chiffres-grid { grid-template-columns: repeat(2, 1fr); }
   .finalistes-list { grid-template-columns: 1fr; }
   .photo-feature-inner { grid-template-columns: 1fr; }
@@ -689,5 +705,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid, .candidature-photos { grid-template-columns: 1fr; }
 }
