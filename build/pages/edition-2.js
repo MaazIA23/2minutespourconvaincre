@@ -142,7 +142,8 @@ function render(data) {
         <h3>${p.nom}</h3>
         <p class="palmares-portrait-titre">${p.portrait.titre}</p>
         <blockquote>« ${p.portrait.citation} »</blockquote>
-        <p>${p.portrait.recit}</p>
+        <p class="palmares-recit">${p.portrait.recit}</p>
+        <button type="button" class="palmares-readmore" aria-expanded="false">Lire la suite →</button>
       </article>`
         )
         .join("\n      ")}

@@ -240,6 +240,17 @@
     });
   })();
 
+  /* "Lire la suite" pour les récits de finalistes (palmarès) */
+  document.querySelectorAll(".palmares-readmore").forEach(function (btn) {
+    var recit = btn.previousElementSibling;
+    if (!recit || !recit.classList.contains("palmares-recit")) return;
+    btn.addEventListener("click", function () {
+      var expanded = recit.classList.toggle("is-expanded");
+      btn.setAttribute("aria-expanded", String(expanded));
+      btn.textContent = expanded ? "Voir moins ↑" : "Lire la suite →";
+    });
+  });
+
   ["candidature-form", "contact-form", "notify-form", "partenaire-form"].forEach(function (id) {
     var form = document.getElementById(id);
     var note = document.getElementById("form-note");
