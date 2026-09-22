@@ -7,10 +7,12 @@
     "eyebrow": "Votre parcours candidat",
     "titre": "Comment ça se passe",
     "etapes": [
-      { "titre": "Je candidate" },
-      { "titre": "Je suis sélectionné(e)" },
-      { "titre": "Je me prépare" },
-      { "titre": "Je monte sur scène" },
+      { "titre": "Je candidate", "description": "En vidéo, sur un thème de mon choix." },
+      { "titre": "Je suis présélectionné(e)" },
+      { "titre": "Je me prépare", "description": "Coaching, accompagnement, sessions de formation." },
+      { "titre": "Je passe la demi-finale" },
+      { "titre": "Je suis retenu(e) pour la finale" },
+      { "titre": "Je me prépare à monter sur scène" },
       { "titre": "Je peux remporter le Grand Prix" }
     ]
   },
