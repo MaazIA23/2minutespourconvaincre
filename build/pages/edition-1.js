@@ -28,7 +28,7 @@ function render(data) {
 <section class="stats-band" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">Chiffres clés</p>
-    <div class="stats-grid">
+    <div class="stats-grid${edition1.chiffres.length === 4 ? " stats-grid-4" : ""}">
       ${edition1.chiffres
         .map(
           (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
