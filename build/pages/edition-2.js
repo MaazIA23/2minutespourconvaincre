@@ -77,7 +77,7 @@ function render(data) {
 <section class="section alt-bg" id="marraine">
   <div class="container">
     <div class="fondatrice-layout reveal">
-      ${marraine.photo ? `<img src="${marraine.photo}" alt="${marraine.nom}" class="fondatrice-photo">` : ""}
+      ${marraine.photo ? `<img src="${marraine.photo}" alt="${marraine.nom}" class="fondatrice-photo" loading="lazy">` : ""}
       <div class="fondatrice-copy">
         <p class="eyebrow">${marraine.titre}</p>
         <h2>${marraine.nom}</h2>

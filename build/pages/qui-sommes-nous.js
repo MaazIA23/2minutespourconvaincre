@@ -13,7 +13,7 @@ function render(data) {
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <img src="/assets/img/partenaires/la-muse-eloquente.jpg" alt="${ag.nom}" class="agency-logo">
+      <img src="/assets/img/partenaires/la-muse-eloquente.jpg" alt="${ag.nom}" class="agency-logo" loading="lazy">
       <p class="eyebrow">L'agence organisatrice</p>
       <h2>${ag.nom}</h2>
       <p class="section-lead">${ag.description}</p>
@@ -63,7 +63,7 @@ function render(data) {
 <section class="section" id="fondatrice">
   <div class="container">
     <div class="fondatrice-layout reveal">
-      ${quiSommesNous.fondatrice.photo ? `<img src="${quiSommesNous.fondatrice.photo}" alt="${quiSommesNous.fondatrice.nom}" class="fondatrice-photo">` : ""}
+      ${quiSommesNous.fondatrice.photo ? `<img src="${quiSommesNous.fondatrice.photo}" alt="${quiSommesNous.fondatrice.nom}" class="fondatrice-photo" loading="lazy">` : ""}
       <div class="fondatrice-copy">
         <p class="eyebrow">La fondatrice</p>
         <h2>${quiSommesNous.fondatrice.nom}</h2>

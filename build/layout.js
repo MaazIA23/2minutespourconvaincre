@@ -29,7 +29,7 @@ function renderHeader(data, activeSlug) {
       </ul>
     </nav>
     <div class="header-actions">
-      <a href="/candidature/" class="btn btn-primary">S'inscrire</a>
+      <a href="/candidature/" class="btn btn-primary">Candidater</a>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>

@@ -1,5 +1,6 @@
 function render(data) {
   const { edition3, partenaires, editionsIndex, accueil, actualites } = data;
+  const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
 
   return `
 <section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
@@ -31,6 +32,23 @@ function render(data) {
     </div>
   </div>
 </section>
+
+${
+  presentation
+    ? `<section class="section" id="quest-ce-que">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Qu'est-ce que 2MPC ?</p>
+      <h2>${presentation.titre}</h2>
+    </div>
+    <div class="prose reveal">
+      ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
+    </div>
+    <p style="text-align:center"><a href="${presentation.cta.lien}/" class="btn btn-outline">${presentation.cta.label} →</a></p>
+  </div>
+</section>`
+    : ""
+}
 
 ${
   accueil.videoPresentation
@@ -80,7 +98,7 @@ ${
 <section class="section alt-bg photo-feature" id="nouveautes">
   <div class="container photo-feature-inner">
     <div class="photo-feature-media reveal">
-      <img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur scène, Deux Minutes Pour Convaincre">
+      <img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur scène, Deux Minutes Pour Convaincre" loading="lazy">
     </div>
     <div class="photo-feature-copy">
       <div class="section-head reveal" style="text-align:left; margin-bottom:28px;">
