@@ -8,8 +8,17 @@ function slugForPalier(nom) {
   return "";
 }
 
+/* Met en avant la quantité en tête d'un avantage ("2 kakémonos premiums...",
+   "20 publications...") sans toucher au texte — laisse tel quel si aucune
+   quantité n'est trouvée en début de phrase. */
+function highlightQuantity(text) {
+  const match = text.match(/^(\+?\d[\d\s]*\s+\S+(?:\s+(?:VIP|premiums?))?)/);
+  if (!match) return text;
+  return `<strong>${match[1]}</strong>${text.slice(match[1].length)}`;
+}
+
 function render(data) {
-  const { sponsoring } = data;
+  const { sponsoring, partenaires } = data;
 
   return `
 <section class="page-hero">
@@ -19,6 +28,21 @@ function render(data) {
     <p class="page-hero-lead">${sponsoring.sousTitre}</p>
   </div>
 </section>
+
+${
+  partenaires.chiffresCles
+    ? `<section class="stats-band">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${partenaires.chiffresCles.eyebrow}</p>
+    <div class="stats-grid stats-grid-4">
+      ${partenaires.chiffresCles.chiffres
+        .map((c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`)
+        .join("\n      ")}
+    </div>
+  </div>
+</section>`
+    : ""
+}
 
 <section class="section">
   <div class="container">
@@ -31,7 +55,7 @@ function render(data) {
           <p class="sponsoring-price">${p.montant}</p>
         </div>
         <ul>
-          ${p.avantages.map((a) => `<li>${a}</li>`).join("\n          ")}
+          ${p.avantages.map((a) => `<li>${highlightQuantity(a)}</li>`).join("\n          ")}
         </ul>
       </article>`
         )
