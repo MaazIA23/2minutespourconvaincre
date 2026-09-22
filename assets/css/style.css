@@ -118,6 +118,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .hero .btn-ghost, .page-hero .btn-ghost, .cta-final .btn-ghost { color: rgba(255,255,255,0.75); }
 .hero .btn-ghost:hover, .page-hero .btn-ghost:hover, .cta-final .btn-ghost:hover { color: #fff; }
 .btn-lg { padding: 16px 30px; font-size: 1rem; }
+.btn:disabled { opacity: .5; cursor: not-allowed; box-shadow: none; }
+.btn:disabled:hover { transform: none; }
 .btn-block { width: 100%; }
 
 /* ---------- Header ---------- */
@@ -472,6 +474,36 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .offer-card ul { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
 .offer-card li { font-size: 0.9rem; color: var(--ink-soft); padding-left: 16px; position: relative; }
 .offer-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold-dark); }
+
+/* ---------- Sponsoring tiers ---------- */
+.sponsoring-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.sponsoring-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 28px; min-width: 0; border-top: 6px solid var(--gold); box-shadow: var(--shadow-md);
+}
+.sponsoring-card-head { margin-bottom: 18px; }
+.sponsoring-badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 10px; background: var(--paper-alt); color: var(--ink-soft);
+}
+.sponsoring-price { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy-950); margin: 0; }
+.sponsoring-card ul { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.sponsoring-card li { font-size: 0.92rem; color: var(--ink-soft); padding-left: 20px; position: relative; }
+.sponsoring-card li::before { content: "✦"; position: absolute; left: 0; top: 0; color: var(--gold-dark); font-size: 0.8em; }
+
+.sponsoring-card-officiel { border-top-color: #b8860b; }
+.sponsoring-card-officiel .sponsoring-badge { background: #b8860b; color: #fff; }
+.sponsoring-card-platinum { border-top-color: #6b7a99; }
+.sponsoring-card-platinum .sponsoring-badge { background: #6b7a99; color: #fff; }
+.sponsoring-card-or { border-top-color: #d4af37; }
+.sponsoring-card-or .sponsoring-badge { background: #d4af37; color: var(--navy-950); }
+.sponsoring-card-argent { border-top-color: #9aa1ab; }
+.sponsoring-card-argent .sponsoring-badge { background: #9aa1ab; color: #fff; }
+.sponsoring-card-topaze { border-top-color: #4fb8c4; }
+.sponsoring-card-topaze .sponsoring-badge { background: #4fb8c4; color: var(--navy-950); }
+.sponsoring-card-contributeur { border-top-color: #526088; }
+.sponsoring-card-contributeur .sponsoring-badge { background: #526088; color: #fff; }
+
 .fondatrice-layout { display: flex; align-items: center; gap: 24px; max-width: 760px; margin: 0 auto 28px; }
 .fondatrice-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .fondatrice-copy { text-align: left; }
@@ -635,5 +667,5 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 }
 
 @media (max-width: 480px) {
-  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid { grid-template-columns: 1fr; }
+  .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid, .sponsoring-grid { grid-template-columns: 1fr; }
 }
