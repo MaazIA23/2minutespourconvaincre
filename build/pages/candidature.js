@@ -1,5 +1,5 @@
 function render(data) {
-  const { candidature, site, gagnants } = data;
+  const { candidature, site, gagnants, edition3 } = data;
   const edition2026 = gagnants.editions.find((e) => e.numero === 2);
   const scenePhotos = edition2026
     ? [
@@ -40,6 +40,21 @@ function render(data) {
 <section class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
+      <p class="eyebrow">La 3ème édition</p>
+      <h2>Pourquoi participer ?</h2>
+      <p class="section-lead">${edition3.objectifs.objectifGlobal}</p>
+    </div>
+    <div class="ambitions-grid">
+      ${edition3.objectifs.specifiques
+        .map((o) => `<div class="ambition-card reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`)
+        .join("\n      ")}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
       <p class="eyebrow">${candidature.parcours.eyebrow}</p>
       <h2>${candidature.parcours.titre}</h2>
     </div>
@@ -59,7 +74,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section">
+<section class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">${candidature.criteres.eyebrow}</p>
@@ -68,6 +83,21 @@ function render(data) {
     <ul class="criteres-list reveal">
       ${candidature.criteres.liste.map((c) => `<li>${c}</li>`).join("\n      ")}
     </ul>
+  </div>
+</section>
+
+<section class="section photo-feature">
+  <div class="container photo-feature-inner">
+    <div class="photo-feature-media reveal">
+      <img src="/assets/img/galerie/2eme-edition/photo-10.jpg" alt="Intervenante au micro lors d'un panel, 2ème édition" loading="lazy">
+    </div>
+    <div class="photo-feature-copy">
+      <div class="section-head reveal" style="text-align:left; margin-bottom:20px;">
+        <p class="eyebrow">L'énergie de la scène</p>
+        <h2>Une scène qui vous ressemble</h2>
+      </div>
+      <p class="reveal">Deux orateurs, une même thématique, deux thèses opposées, et seulement 120 secondes pour convaincre le public et le jury. C'est l'énergie qui vous attend si vous montez sur cette scène.</p>
+    </div>
   </div>
 </section>
 
