@@ -184,29 +184,34 @@ function render(data) {
       <p class="eyebrow">${edition2.temoignages.eyebrow}</p>
       <h2>${edition2.temoignages.titre}</h2>
     </div>
-    <div class="temoignages-grid">
-      ${
-        edition2.temoignages.liste.length
-          ? edition2.temoignages.liste
-              .map(
-                (t) => `<div class="temoignage-card reveal">
+    ${
+      edition2.temoignages.liste.length
+        ? (() => {
+            const card = (t) => `<div class="temoignage-card reveal">
         ${t.photo ? `<img src="${t.photo}" alt="${t.nom}" class="temoignage-photo" loading="lazy">` : ""}
         <blockquote>« ${t.citation} »</blockquote>
         <p class="temoignage-meta"><strong>${t.nom}</strong> — ${t.edition}, ${t.statut}</p>
         ${t.videoUrl ? `<a href="${t.videoUrl}" class="btn btn-ghost" target="_blank" rel="noopener">▶ Voir la vidéo</a>` : ""}
-      </div>`
-              )
-              .join("\n      ")
-          : [1, 2, 3]
-              .map(
-                () => `<div class="temoignage-placeholder reveal">
+      </div>`;
+            const cards = edition2.temoignages.liste.map(card).join("\n      ");
+            return `<div class="temoignages-marquee reveal">
+      <div class="temoignages-marquee-track">
+        ${cards}
+        ${cards}
+      </div>
+    </div>`;
+          })()
+        : `<div class="temoignages-grid">
+      ${[1, 2, 3]
+        .map(
+          () => `<div class="temoignage-placeholder reveal">
         <span class="temoignage-placeholder-icon">🎥</span>
         <p>Témoignage à venir</p>
       </div>`
-              )
-              .join("\n      ")
-      }
-    </div>
+        )
+        .join("\n      ")}
+    </div>`
+    }
   </div>
 </section>
 

@@ -29,8 +29,44 @@
   "temoignages": {
     "eyebrow": "Témoignages",
     "titre": "Ils y étaient",
-    "liste": [],
-    "_TODO": "Jusqu'à 3 témoignages réels à ajouter dès qu'ils sont disponibles : { photo, nom, edition, statut, citation, videoUrl (optionnel) }. Tant que cette liste est vide, la page affiche des emplacements réservés — ne jamais inventer de témoignage."
+    "liste": [
+      {
+        "nom": "Ezéchielle Bouet",
+        "photo": "/assets/img/temoignages/ezechielle-bouet.jpg",
+        "edition": "1ère édition",
+        "statut": "Gagnante",
+        "citation": "Pour ma part, les félicitations reviennent à la Muse Éloquente qui a bien voulu relever ce défi avec nous. Mais aussi à chacun de vous qui avait honoré de sa présence ce concours. À vous tous, mes félicitations les plus sincères. Je souhaite plein succès aux nombreux vols que deux minutes pour convaincre prendra après cette première édition. Merci à vous pour cette belle initiative."
+      },
+      {
+        "nom": "David Kelly Akin",
+        "photo": "/assets/img/temoignages/david-kelly-akin.jpg",
+        "edition": "1ère édition",
+        "statut": "Finaliste",
+        "citation": "Vraiment, très belle expérience et de belles rencontres. Merci à la promotrice. C'est avec un grand plaisir que je reviendrai, en tant qu'orateur ou spectateur, si d'autres éditions sont organisées. Deux minutes pour convaincre m'a véritablement marqué et j'en ressors grandi. Une initiative à encourager et à soutenir."
+      },
+      {
+        "nom": "Euphoria Ameodjrana",
+        "photo": "/assets/img/temoignages/euphoria-ameodjrana.jpg",
+        "edition": "1ère édition",
+        "statut": "Finaliste",
+        "citation": "J'ai été satisfaite sur toute la ligne du début jusqu'à la fin. L'initiative de la dictée interactive était très créative et originale, et je conseille de la pérenniser toujours en l'intégrant à l'entame de l'événement. Merci à vous pour l'organisation de ce concours mémorable qui a marqué le début de plusieurs autres éditions à venir."
+      },
+      {
+        "nom": "Dr Mylène Grimaud",
+        "photo": "/assets/img/jury/mylene-grimaud.jpg",
+        "edition": "1ère édition",
+        "statut": "Jurée",
+        "citation": "Chère Mazidath, félicitations à toi pour cette belle initiative et son succès d'aujourd'hui. Ce fut un plaisir de contribuer à cette belle aventure et de rencontrer de si belles personnes. Bravo et bon vent à l'événement. J'ai hâte de voir les prochaines éditions se développer et grandir."
+      },
+      {
+        "nom": "Tristan Kounde",
+        "photo": "/assets/img/temoignages/tristan-kounde.jpg",
+        "edition": "1ère édition",
+        "statut": "Finaliste",
+        "citation": "Je tiens à remercier chaleureusement la Muse Éloquente pour l'initiative exceptionnelle et l'originalité du concours d'éloquence « 2 minutes pour convaincre ». Connaissant son sens de l'engagement et de l'innovation, je suis persuadé que la deuxième édition sera d'un tout autre calibre. Toutes mes félicitations pour cette belle réussite et bon courage pour la suite. N'hésite surtout pas à nous solliciter si nous pouvons contribuer à son succès."
+      }
+    ],
+    "_source": "Mêmes témoignages réels que la page Impact (content/pages/impact.json), transmis par le client (captures d'écran du site 2minpourconvaincre.com, 25/09/2026) — réutilisés ici tels quels puisqu'ils concernent tous la 1ère édition."
   },
   "_source": "Dossier de présentation édition 3 — « Une première édition réussie » (p.3 de la section, cover interne)",
   "TODO_2027": "Palmarès, rapport PDF et jury de la 1ère édition intégrés. Pas de marraine/parrain identifié(e) pour cette édition à ce stade — à demander au client si disponible"

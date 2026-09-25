@@ -13,7 +13,22 @@
   "temoignages": {
     "eyebrow": "Témoignages",
     "titre": "Ils y étaient",
-    "liste": [],
-    "_TODO": "Jusqu'à 3 témoignages réels à ajouter dès qu'ils sont disponibles : { photo, nom, edition, statut, citation, videoUrl (optionnel) }. Tant que cette liste est vide, la page affiche des emplacements réservés — ne jamais inventer de témoignage."
+    "liste": [
+      {
+        "nom": "José Pascaël Agbo",
+        "photo": "/assets/img/palmares/2eme-edition/jose-pascael-agbo.jpg",
+        "edition": "2ème édition",
+        "statut": "Grand Champion",
+        "citation": "Merci de nous offrir une tribune aussi exigeante que prestigieuse. En tant que lauréat de cette édition, je repars non seulement avec un trophée, mais avec une exigence renouvelée envers moi-même et envers la parole que je porte. Avoir un profil féminin qui repousse ainsi les limites de l'art oratoire au Bénin, c'est rare, presque unique. Vous pouvez compter sur moi pour porter cette initiative très haut, avec vous."
+      },
+      {
+        "nom": "Ezékias Gbessé",
+        "photo": "/assets/img/palmares/2eme-edition/ezekias-gbesse.jpg",
+        "edition": "2ème édition",
+        "statut": "2ème prix",
+        "citation": "Un immense merci pour cette belle initiative qu'est Deux Minutes pour Convaincre. Cette expérience m'a énormément apporté, tant sur le plan oratoire qu'humain. Merci pour votre disponibilité, votre engagement et pour la confiance que vous accordez aux jeunes : c'est une vraie chance d'évoluer dans un cadre aussi enrichissant. Je confirme ma détermination à vous aider pour les éditions à venir, si le besoin se fait sentir."
+      }
+    ],
+    "_source": "Mêmes témoignages réels que la page Impact (content/pages/impact.json), transmis par le client le 25/09/2026 — réutilisés ici tels quels puisqu'ils concernent tous la 2ème édition."
   }
 }
