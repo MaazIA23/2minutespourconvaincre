@@ -362,7 +362,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .partner-marquee-track { gap: 36px; animation-duration: 26s; }
   .partner-marquee-track img { height: 34px; max-width: 100px; }
   .temoignages-marquee { margin: 0 -16px; padding: 4px 16px; }
-  .temoignages-marquee-track { gap: 16px; animation-duration: 34s; }
+  .temoignages-marquee-track { gap: 16px; }
   .temoignages-marquee-track .temoignage-card { width: 280px; }
 }
 .partenaires-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
@@ -442,6 +442,25 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .people-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }
 .people-card p { margin: 0; font-size: 0.88rem; }
 
+/* ---------- Jury : photo plein cadre, légende au survol ---------- */
+.jury-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.jury-grid-3 { grid-template-columns: repeat(3, 1fr); max-width: 860px; margin: 0 auto; }
+.jury-card {
+  position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 3 / 4;
+  box-shadow: var(--shadow-md); min-width: 0; outline: none;
+}
+.jury-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.jury-card:hover img, .jury-card:focus img { transform: scale(1.06); }
+.jury-overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px; color: #fff;
+  background: linear-gradient(to top, rgba(13,17,50,.92) 0%, rgba(13,17,50,.55) 45%, transparent 75%);
+  opacity: 0; transition: opacity .3s ease;
+}
+.jury-card:hover .jury-overlay, .jury-card:focus .jury-overlay { opacity: 1; }
+.jury-overlay h3 { color: #fff; margin: 0 0 4px; font-size: 1rem; }
+.jury-overlay p { margin: 0; color: rgba(255,255,255,0.85); font-size: 0.82rem; }
+
 /* ---------- Candidature : prix, critères, photos ---------- */
 .prize-card {
   position: relative; overflow: hidden;
@@ -489,23 +508,15 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 /* ---------- Témoignages ---------- */
 .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .temoignages-marquee {
-  overflow: hidden; margin: 0 -24px; padding: 4px 24px;
+  overflow-x: auto; margin: 0 -24px; padding: 4px 24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
+.temoignages-marquee::-webkit-scrollbar { display: none; }
 .temoignages-marquee-track {
   display: flex; align-items: stretch; gap: 24px; width: max-content;
-  animation: temoignages-scroll 50s linear infinite;
 }
-.temoignages-marquee:hover .temoignages-marquee-track { animation-play-state: paused; }
 .temoignages-marquee-track .temoignage-card { width: 340px; flex-shrink: 0; }
-@keyframes temoignages-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .temoignages-marquee-track { animation: none; overflow-x: auto; }
-}
 .temoignage-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
 .temoignage-photo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
 .temoignage-card blockquote { font-size: 0.95rem; margin-bottom: 16px; }
@@ -648,7 +659,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .actualites-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid { grid-template-columns: repeat(2, 1fr); }
+  .ambitions-grid, .people-grid, .offer-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .palmares-grid, .partenaires-grid, .two-col, .associated-grid, .editions-grid, .actualites-grid, .temoignages-grid, .nouveautes-grid, .ambitions-grid-light, .galerie-grid, .jury-grid { grid-template-columns: repeat(2, 1fr); }
   .chiffres-grid { grid-template-columns: repeat(2, 1fr); }
   .finalistes-list { grid-template-columns: 1fr; }
   .photo-feature-inner { grid-template-columns: 1fr; }
@@ -699,6 +710,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .people-grid::-webkit-scrollbar { display: none; }
   .people-card { flex: 0 0 60%; scroll-snap-align: start; }
+  .jury-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 14px; padding: 4px 24px 10px; margin: 0 -24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .jury-grid::-webkit-scrollbar { display: none; }
+  .jury-card { flex: 0 0 62%; scroll-snap-align: start; }
+  .jury-overlay { opacity: 1; background: linear-gradient(to top, rgba(13,17,50,.92) 0%, rgba(13,17,50,.3) 65%, transparent 100%); }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;

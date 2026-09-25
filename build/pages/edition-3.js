@@ -6,7 +6,6 @@ function render(data) {
   <div class="container">
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
     <h1>${edition3.accroche}</h1>
-    <p class="page-hero-lead">${edition3.teaser.accroche}</p>
     <div class="hero-meta">
       <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
       <span>📍 ${edition3.lieu}</span>

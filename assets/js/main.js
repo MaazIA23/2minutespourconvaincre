@@ -248,6 +248,52 @@
     });
   })();
 
+  /* Carrousel témoignages : défile tout seul, mais reste swipable/glissable
+     à la souris ou au doigt — l'utilisateur reprend la main dès qu'il
+     touche le carrousel, l'auto-scroll reprend après une pause. */
+  document.querySelectorAll(".temoignages-marquee").forEach(function (container) {
+    var track = container.querySelector(".temoignages-marquee-track");
+    if (!track) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var paused = false;
+    var resumeTimer = null;
+    var half = track.scrollWidth / 2;
+    window.addEventListener("resize", function () { half = track.scrollWidth / 2; });
+
+    function pause() {
+      paused = true;
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+    }
+    function scheduleResume() {
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(function () { paused = false; }, 2500);
+    }
+
+    container.addEventListener("mouseenter", pause);
+    container.addEventListener("mouseleave", function () { paused = false; });
+    container.addEventListener("touchstart", pause, { passive: true });
+    container.addEventListener("touchend", scheduleResume, { passive: true });
+    container.addEventListener("pointerdown", pause);
+    container.addEventListener("pointerup", scheduleResume);
+
+    // Boucle infinie : le contenu est dupliqué une fois, on revient
+    // discrètement au début dès qu'on atteint la moitié du parcours.
+    container.addEventListener("scroll", function () {
+      if (half > 0 && container.scrollLeft >= half) {
+        container.scrollLeft -= half;
+      }
+    });
+
+    if (reduceMotion || !half) return;
+
+    function step() {
+      if (!paused) container.scrollLeft += 0.6;
+      window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  });
+
   /* Accordéon FAQ */
   document.querySelectorAll(".faq-question").forEach(function (btn) {
     var item = btn.closest(".faq-item");
