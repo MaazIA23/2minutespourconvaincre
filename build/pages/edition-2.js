@@ -9,7 +9,6 @@ function render(data) {
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
-    <p class="page-hero-lead">${edition2Meta.resume}</p>
   </div>
 </section>
 

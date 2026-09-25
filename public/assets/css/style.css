@@ -362,7 +362,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .partner-marquee-track { gap: 36px; animation-duration: 26s; }
   .partner-marquee-track img { height: 34px; max-width: 100px; }
   .temoignages-marquee { margin: 0 -16px; padding: 4px 16px; }
-  .temoignages-marquee-track { gap: 16px; animation-duration: 34s; }
+  .temoignages-marquee-track { gap: 16px; }
   .temoignages-marquee-track .temoignage-card { width: 280px; }
 }
 .partenaires-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
@@ -508,23 +508,15 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 /* ---------- Témoignages ---------- */
 .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .temoignages-marquee {
-  overflow: hidden; margin: 0 -24px; padding: 4px 24px;
+  overflow-x: auto; margin: 0 -24px; padding: 4px 24px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 }
+.temoignages-marquee::-webkit-scrollbar { display: none; }
 .temoignages-marquee-track {
   display: flex; align-items: stretch; gap: 24px; width: max-content;
-  animation: temoignages-scroll 50s linear infinite;
 }
-.temoignages-marquee:hover .temoignages-marquee-track { animation-play-state: paused; }
 .temoignages-marquee-track .temoignage-card { width: 340px; flex-shrink: 0; }
-@keyframes temoignages-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .temoignages-marquee-track { animation: none; overflow-x: auto; }
-}
 .temoignage-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
 .temoignage-photo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
 .temoignage-card blockquote { font-size: 0.95rem; margin-bottom: 16px; }

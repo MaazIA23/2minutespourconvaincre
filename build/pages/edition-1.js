@@ -9,7 +9,6 @@ function render(data) {
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>${edition1.titre}</h1>
-    <p class="page-hero-lead">${edition1.sousTitre}</p>
     <div class="hero-meta">
       <span>📅 ${edition1.date}</span>
       <span>📍 ${edition1.lieu}</span>
