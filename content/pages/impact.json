@@ -55,7 +55,7 @@
     "liste": [
       {
         "nom": "Ezéchielle Bouet",
-        "photo": "/assets/img/palmares/1ere-edition/ezechielle-bouet.jpg",
+        "photo": "/assets/img/temoignages/ezechielle-bouet.jpg",
         "edition": "1ère édition",
         "statut": "Gagnante",
         "citation": "Pour ma part, les félicitations reviennent à la Muse Éloquente qui a bien voulu relever ce défi avec nous. Mais aussi à chacun de vous qui avait honoré de sa présence ce concours. À vous tous, mes félicitations les plus sincères. Je souhaite plein succès aux nombreux vols que deux minutes pour convaincre prendra après cette première édition. Merci à vous pour cette belle initiative."
@@ -80,9 +80,16 @@
         "edition": "1ère édition",
         "statut": "Jurée",
         "citation": "Chère Mazidath, félicitations à toi pour cette belle initiative et son succès d'aujourd'hui. Ce fut un plaisir de contribuer à cette belle aventure et de rencontrer de si belles personnes. Bravo et bon vent à l'événement. J'ai hâte de voir les prochaines éditions se développer et grandir."
+      },
+      {
+        "nom": "Tristan Kounde",
+        "photo": "/assets/img/temoignages/tristan-kounde.jpg",
+        "edition": "1ère édition",
+        "statut": "Finaliste",
+        "citation": "Je tiens à remercier chaleureusement la Muse Éloquente pour l'initiative exceptionnelle et l'originalité du concours d'éloquence « 2 minutes pour convaincre ». Connaissant son sens de l'engagement et de l'innovation, je suis persuadé que la deuxième édition sera d'un tout autre calibre. Toutes mes félicitations pour cette belle réussite et bon courage pour la suite. N'hésite surtout pas à nous solliciter si nous pouvons contribuer à son succès."
       }
     ],
-    "_source": "Témoignages réels de la 1ère édition, transmis par le client (captures d'écran du site 2minpourconvaincre.com, 25/09/2026). Photos de David Kelly Akin et Euphoria Ameodjrana extraites de ces captures (qualité modeste mais suffisante pour l'affichage en petit format circulaire)."
+    "_source": "Témoignages réels de la 1ère édition, transmis par le client (captures d'écran du site 2minpourconvaincre.com, 25/09/2026). Photos de David Kelly Akin et Euphoria Ameodjrana extraites de ces captures (qualité modeste mais suffisante pour l'affichage en petit format circulaire). Photos d'Ezéchielle Bouet et Tristan Kounde : recadrages solo à partir de photos déjà présentes dans les assets (palmarès de groupe), distincts des photos utilisées sur le palmarès de la 1ère édition."
   },
   "impact2027": {
     "eyebrow": "L'impact 2027",
