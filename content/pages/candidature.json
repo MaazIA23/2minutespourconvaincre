@@ -49,6 +49,7 @@
       { "titre": "Faites-nous retenir votre voix", "description": "Votre ton, votre énergie, votre singularité : c'est ce qu'on retient." }
     ]
   },
+  "dateOuvertureCandidatures": "15 janvier 2027",
   "dateLimiteCandidatures": "30 janvier 2027 à 23h59",
   "ctaSubmit": "Envoyer ma candidature",
   "formulaire": {

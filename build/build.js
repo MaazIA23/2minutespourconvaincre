@@ -32,6 +32,7 @@ function loadData() {
     edition2: readJson("pages/edition-2.json"),
     edition3: readJson("pages/edition-3.json"),
     impact: readJson("pages/impact.json"),
+    faq: readJson("faq.json"),
     legalPages: readJson("pages/legal.json"),
   };
 }
@@ -73,6 +74,7 @@ function main() {
   const edition3 = require("./pages/edition-3.js");
   const impact = require("./pages/impact.js");
   const actualites = require("./pages/actualites.js");
+  const faq = require("./pages/faq.js");
 
   writePage(
     "",
@@ -191,6 +193,16 @@ function main() {
       description: data.quiSommesNous.intro,
       activeSlug: "qui-sommes-nous",
       bodyHtml: quiSommesNous.render(data),
+    })
+  );
+
+  writePage(
+    "faq",
+    renderLayout(data, {
+      title: "Questions fréquentes",
+      description: data.faq.sousTitre,
+      activeSlug: "faq",
+      bodyHtml: faq.render(data),
     })
   );
 

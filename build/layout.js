@@ -51,7 +51,9 @@ function renderFooter(data) {
           ? `<li><a href="/partenaires/#devenir-partenaire">Devenir partenaire</a></li>`
           : item.label === "Impact"
             ? `<li><a href="/actualites/">Actualités</a></li>`
-            : "";
+            : item.label === "Candidature"
+              ? `<li><a href="/faq/">FAQ</a></li>`
+              : "";
       return `<li><a href="${href}">${item.label}</a></li>${extra}`;
     })
     .join("\n        ");

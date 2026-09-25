@@ -122,7 +122,7 @@ ${
 <section class="section" id="formulaire">
   <div class="container">
     <div class="todo-banner reveal">
-      📅 Candidatures ouvertes jusqu'au <strong>${candidature.dateLimiteCandidatures}</strong>
+      📅 Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
     </div>
     <form class="contact-form reveal" id="candidature-form" novalidate>
       <div class="form-row-pair">
@@ -167,7 +167,7 @@ ${
       <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
     </form>
     <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">
-      Une question ? <a href="https://wa.me/${site.contact.telephoneWhatsapp.replace(/[^\d]/g, "")}" target="_blank" rel="noopener" style="font-weight:700; color:var(--navy-950);">Contactez-nous sur WhatsApp</a>.
+      Une question ? Consultez notre <a href="/faq/" style="font-weight:700; color:var(--navy-950);">FAQ</a> ou <a href="https://wa.me/${site.contact.telephoneWhatsapp.replace(/[^\d]/g, "")}" target="_blank" rel="noopener" style="font-weight:700; color:var(--navy-950);">contactez-nous sur WhatsApp</a>.
     </p>
   </div>
 </section>

@@ -1,0 +1,60 @@
+{
+  "titre": "Questions fréquentes",
+  "sousTitre": "Tout ce qu'il faut savoir sur le concours et la candidature.",
+  "categories": [
+    {
+      "titre": "La candidature",
+      "questions": [
+        {
+          "question": "Qui peut candidater à la 3ème édition ?",
+          "reponse": "Il faut être âgé(e) de 18 à 30 ans, résider sur le territoire béninois, et avoir déjà quelques bases en prise de parole."
+        },
+        {
+          "question": "Comment candidater ?",
+          "reponse": "Cette année, la candidature se fait entièrement en vidéo : une prestation de deux minutes sur un thème choisi librement, dans laquelle vous devez nous convaincre comme si vous étiez déjà sur scène."
+        },
+        {
+          "question": "Comment envoyer ma vidéo de candidature ?",
+          "reponse": "Publiez votre vidéo sur Facebook ou TikTok avec le hashtag #DeuxMinutesPourConvaincre, en taguant notre page, puis partagez-nous le lien dans le formulaire de candidature."
+        },
+        {
+          "question": "Quelle est la date limite pour candidater ?",
+          "reponse": "Les candidatures pour la 3ème édition sont ouvertes du 15 au 30 janvier 2027, 23h59."
+        },
+        {
+          "question": "Que se passe-t-il après l'envoi de ma candidature ?",
+          "reponse": "Les candidats présélectionnés bénéficient d'une préparation (coaching, accompagnement, sessions de formation) avant d'affronter une demi-finale, puis la finale."
+        },
+        {
+          "question": "Qu'est-ce que je peux gagner ?",
+          "reponse": "Le grand gagnant ou la grande gagnante de cette 3ème édition remporte le Grand Prix de la Francophonie, avec à la clé un séjour d'une semaine en France."
+        }
+      ]
+    },
+    {
+      "titre": "Le concours",
+      "questions": [
+        {
+          "question": "Qu'est-ce que Deux Minutes Pour Convaincre ?",
+          "reponse": "Un concours d'improvisation oratoire : deux orateurs s'affrontent autour d'une même thématique, mais avec des thèses opposées, et seulement deux minutes chacun pour convaincre l'assemblée de la justesse de leur point de vue."
+        },
+        {
+          "question": "Où et quand se déroule la 3ème édition ?",
+          "reponse": "À Cotonou, en mars 2027. La date précise sera communiquée dès qu'elle sera confirmée."
+        },
+        {
+          "question": "Qui organise Deux Minutes Pour Convaincre ?",
+          "reponse": "L'événement est organisé par La Muse Éloquente, agence de communication et de conseil spécialisée dans l'accompagnement et la formation en prise de parole, fondée par Mazidath Bello."
+        },
+        {
+          "question": "Comment devenir partenaire ou sponsor ?",
+          "reponse": "Toutes les offres de partenariat et de sponsoring sont détaillées sur notre page Partenaires — vous pouvez aussi nous contacter directement sur WhatsApp."
+        }
+      ]
+    }
+  ],
+  "_source": "Toutes les réponses reprennent des informations déjà présentes ailleurs sur le site (candidature.json, a-propos.json, site.json, qui-sommes-nous.json) — aucune information nouvelle inventée. Date d'ouverture des candidatures (15 janvier 2027) confirmée par le client le 25/09/2026.",
+  "TODO_2027": [
+    "Ajouter d'autres questions au fil des retours réels des candidats/partenaires (ex. candidature payante ou gratuite, durée exacte de l'événement, âge minimum pour assister en tant que spectateur) dès que les réponses seront confirmées par le client — ne jamais inventer."
+  ]
+}
