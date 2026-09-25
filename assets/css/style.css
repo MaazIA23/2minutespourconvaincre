@@ -744,7 +744,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .countdown-label { font-size: 0.62rem; }
   .hero-visual { order: -1; }
   .hero-visual img { aspect-ratio: 16 / 10; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
   .fondatrice-layout { gap: 16px; }
   .fondatrice-photo { width: 84px; height: 84px; }
   .lightbox-close, .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 1.1rem; }

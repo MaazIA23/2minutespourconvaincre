@@ -89,7 +89,7 @@ function render(data) {
 <section class="section photo-feature">
   <div class="container photo-feature-inner">
     <div class="photo-feature-media reveal">
-      <img src="/assets/img/galerie/2eme-edition/photo-10.jpg" alt="Intervenante au micro lors d'un panel, 2ème édition" loading="lazy">
+      <img src="/assets/img/palmares/2eme-edition/anisette-toto-agbre.jpg" alt="Anisette Toto Agbré, finaliste de la 2ème édition, sur scène" loading="lazy">
     </div>
     <div class="photo-feature-copy">
       <div class="section-head reveal" style="text-align:left; margin-bottom:20px;">

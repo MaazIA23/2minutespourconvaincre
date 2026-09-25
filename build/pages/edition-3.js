@@ -5,7 +5,7 @@ function render(data) {
 <section class="page-hero coming-soon-hero">
   <div class="container">
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
-    <h1>${edition3.accroche}</h1>
+    <h1>3ème édition</h1>
     <div class="hero-meta">
       <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
       <span>📍 ${edition3.lieu}</span>

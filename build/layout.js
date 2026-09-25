@@ -43,19 +43,15 @@ function renderFooter(data) {
     .map((l) => `<li><a href="${l.lien}/">${l.label}</a></li>`)
     .join("\n      ");
 
-  const navLinks = data.nav.menuPrincipal
-    .map((item) => {
-      const href = item.lien === "/" || item.lien.endsWith("/") ? item.lien : item.lien + "/";
-      const extra =
-        item.label === "Partenaires"
-          ? `<li><a href="/partenaires/#devenir-partenaire">Devenir partenaire</a></li>`
-          : item.label === "Impact"
-            ? `<li><a href="/actualites/">Actualités</a></li>`
-            : item.label === "Candidature"
-              ? `<li><a href="/faq/">FAQ</a></li>`
-              : "";
-      return `<li><a href="${href}">${item.label}</a></li>${extra}`;
-    })
+  const footerShortcuts = [
+    { label: "Accueil", lien: "/" },
+    { label: "Candidature", lien: "/candidature/" },
+    { label: "Partenaires", lien: "/partenaires/" },
+    { label: "Impact", lien: "/impact/" },
+    { label: "Qui sommes-nous ?", lien: "/qui-sommes-nous/" },
+  ];
+  const navLinks = footerShortcuts
+    .map((item) => `<li><a href="${item.lien}">${item.label}</a></li>`)
     .join("\n        ");
 
   const socialIcons = {
