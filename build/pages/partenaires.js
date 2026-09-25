@@ -135,7 +135,7 @@ function render(data) {
       ${
         partenaires.sectionFinale.dossierPdf
           ? `<a href="${partenaires.sectionFinale.dossierPdf}" class="btn btn-primary btn-lg" download>📄 ${partenaires.sectionFinale.ctaLabel}</a>`
-          : `<p style="max-width:520px; margin:0 auto;">Le dossier de partenariat est en cours de préparation. En attendant, l'équipe 2MPC se fera un plaisir de vous présenter le projet en détail.</p>`
+          : `<p style="max-width:520px; margin:0 auto;">Le dossier de partenariat est en cours de préparation. En attendant, notre équipe se fera un plaisir de vous présenter le projet en détail.</p>`
       }
     </div>
   </div>

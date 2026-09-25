@@ -1,12 +1,12 @@
 {
   "titre": "Actualités",
   "intro": "Les dernières nouvelles de Deux Minutes Pour Convaincre.",
-  "categories": ["2MPC", "300 Voix", "Candidats", "Partenaires", "Coulisses"],
+  "categories": ["Concours", "300 Voix", "Candidats", "Partenaires", "Coulisses"],
   "liste": [
     {
       "dateISO": "2026-08-08",
       "date": "08 août 2026",
-      "categorie": "2MPC",
+      "categorie": "Concours",
       "titre": "2ème édition : le pari est réussi",
       "image": "/assets/img/galerie/2eme-edition/concours-orateur.jpg",
       "alt": "Finaliste au micro sur la scène de la 2ème édition",

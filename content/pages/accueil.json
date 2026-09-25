@@ -14,7 +14,7 @@
     "cta": { "label": "S'inscrire", "lien": "TODO" }
   },
   "chiffresCles": {
-    "eyebrow": "2MPC en chiffres",
+    "eyebrow": "Le concours en chiffres",
     "chiffres": [
       { "valeur": "2", "libelle": "éditions déjà réussies" },
       { "valeur": "24", "libelle": "finalistes sur scène (16 en 2025, 8 en 2026)" },
@@ -22,7 +22,7 @@
       { "valeur": "24", "libelle": "partenaires mobilisés en 2026" },
       { "valeur": "300", "libelle": "jeunes visés dès 2027 avec 300 Voix" }
     ],
-    "_source": "2 éditions : editions-index.json. 24 finalistes : 16 orateurs (edition-1.json chiffres) + 8 finalistes (gagnants.json totalFinalistes 2026). +10M vues : qui-sommes-nous.json agence.chiffres (vues cumulées agence, réseaux La Muse Éloquente/2MPC confondus). 24 partenaires : partenaires.json nombreAnnonce / accueil.json chiffresEvocateurs (édition 2026 uniquement). 300 jeunes : edition-3.json nouveautes '300 Voix'."
+    "_source": "2 éditions : editions-index.json. 24 finalistes : 16 orateurs (edition-1.json chiffres) + 8 finalistes (gagnants.json totalFinalistes 2026). +10M vues : qui-sommes-nous.json agence.chiffres (vues cumulées agence, réseaux La Muse Éloquente/Deux Minutes Pour Convaincre confondus). 24 partenaires : partenaires.json nombreAnnonce / accueil.json chiffresEvocateurs (édition 2026 uniquement). 300 jeunes : edition-3.json nouveautes '300 Voix'."
   },
   "sections": [
     {
