@@ -87,9 +87,25 @@
         "edition": "1ère édition",
         "statut": "Finaliste",
         "citation": "Je tiens à remercier chaleureusement la Muse Éloquente pour l'initiative exceptionnelle et l'originalité du concours d'éloquence « 2 minutes pour convaincre ». Connaissant son sens de l'engagement et de l'innovation, je suis persuadé que la deuxième édition sera d'un tout autre calibre. Toutes mes félicitations pour cette belle réussite et bon courage pour la suite. N'hésite surtout pas à nous solliciter si nous pouvons contribuer à son succès."
+      },
+      {
+        "nom": "José Pascaël Agbo",
+        "photo": "/assets/img/palmares/2eme-edition/jose-pascael-agbo.jpg",
+        "edition": "2ème édition",
+        "statut": "Grand Champion",
+        "citation": "Merci de nous offrir une tribune aussi exigeante que prestigieuse. En tant que lauréat de cette édition, je repars non seulement avec un trophée, mais avec une exigence renouvelée envers moi-même et envers la parole que je porte. Avoir un profil féminin qui repousse ainsi les limites de l'art oratoire au Bénin, c'est rare, presque unique. Vous pouvez compter sur moi pour porter cette initiative très haut, avec vous."
+      },
+      {
+        "nom": "Ezékias Gbessé",
+        "photo": "/assets/img/palmares/2eme-edition/ezekias-gbesse.jpg",
+        "edition": "2ème édition",
+        "statut": "2ème prix",
+        "citation": "Un immense merci pour cette belle initiative qu'est Deux Minutes pour Convaincre. Cette expérience m'a énormément apporté, tant sur le plan oratoire qu'humain. Merci pour votre disponibilité, votre engagement et pour la confiance que vous accordez aux jeunes : c'est une vraie chance d'évoluer dans un cadre aussi enrichissant. Je confirme ma détermination à vous aider pour les éditions à venir, si le besoin se fait sentir."
       }
     ],
-    "_source": "Témoignages réels de la 1ère édition, transmis par le client (captures d'écran du site 2minpourconvaincre.com, 25/09/2026). Photos de David Kelly Akin et Euphoria Ameodjrana extraites de ces captures (qualité modeste mais suffisante pour l'affichage en petit format circulaire). Photos d'Ezéchielle Bouet et Tristan Kounde : recadrages solo à partir de photos déjà présentes dans les assets (palmarès de groupe), distincts des photos utilisées sur le palmarès de la 1ère édition."
+    "_source": "Témoignages réels transmis par le client (25/09/2026). 1ère édition : captures d'écran du site 2minpourconvaincre.com. Photos de David Kelly Akin et Euphoria Ameodjrana extraites de ces captures (qualité modeste mais suffisante pour l'affichage en petit format circulaire). Photos d'Ezéchielle Bouet et Tristan Kounde : recadrages solo à partir de photos déjà présentes dans les assets (palmarès de groupe), distincts des photos utilisées sur le palmarès de la 1ère édition. Témoignages de José Pascaël Agbo et Ezékias Gbessé (2ème édition) : messages retranscrits et condensés par souci de lisibilité en carrousel, en conservant le sens et les formulations originales — textes intégraux conservés ci-dessous par transparence.",
+    "_citationOriginaleJosePascaelAgbo": "Bonsoir La Muse… J'espère que vous allez très bien et que vous vous remettez bien de la fatigue. Vraiment félicitations pour tout le travail abattu, de nous prêter une tribune, certes exigeante… mais prestigieuse. Vous n'imaginez pas combien vous m'inspirez au point même de m'intimider. Quand je vous regarde, oh combien j'ai envie de me donner pour cette foi inébranlable que j'ai en l'art oratoire. Combien tellement vous la ravivez. Et ça, vous devez en être fière. D'autant plus que de profils féminins avec de telles réalisations dans le domaine de la prise de parole en public au Bénin, c'est rare… ou simplement disons-le en toute sincérité : c'est unique ! Mieux, quand on entend les perspectives, on voit que l'ambition est bien plus grande et magnifique… En tant que lauréat de cette édition, je repars avec la fierté d'avoir foulé une scène portée par une telle vision. Et non seulement avec un trophée, je repars surtout avec une exigence renouvelée envers moi-même et envers la parole que je porte... Avec la certitude qu'il me reste bien beaucoup à faire, quand on regarde des profils comme vous qui ne cessez de repousser les limites. Vous pouvez entièrement compter sur moi pour porter très haut cette initiative avec vous. Merci d'exister... Merci pour l'initiative... Merci de nous inspirer... Merci d'élever les standards de l'art oratoire dans notre pays. Merci pour tout et encore bravo à vous et à toute l'équipe !",
+    "_citationOriginaleEzekiasGbesse": "Bonjour Madame ! Je tenais simplement à vous adresser un immense merci pour cette belle initiative qu'est Deux Minutes pour Convaincre. Cette expérience m'a énormément apporté, tant sur le plan oratoire qu'humain. Merci pour votre disponibilité, votre engagement et pour la confiance que vous accordez aux jeunes. C'est une véritable chance de pouvoir évoluer dans un cadre aussi enrichissant. Je suis très heureux d'avoir vécu cette aventure et surtout d'avoir pu en sortir grandi. Je confirme ma détermination à vous aider et vous assister pour les fois à venir si le besoin se fait sentir. Avec toute ma reconnaissance et mon profond respect. Ezékias GBESSE"
   },
   "impact2027": {
     "eyebrow": "L'impact 2027",
