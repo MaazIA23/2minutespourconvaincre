@@ -6,7 +6,7 @@
     "sousTitre": "Construisons ensemble une scène qui donne une voix aux talents et des opportunités à la jeunesse."
   },
   "pourquoiSoutenir": {
-    "eyebrow": "Pourquoi soutenir 2MPC ?",
+    "eyebrow": "Pourquoi soutenir Deux Minutes Pour Convaincre ?",
     "liste": [
       { "titre": "Visibilité", "description": "Votre marque associée à un événement suivi, sur scène comme sur nos réseaux." },
       { "titre": "Engagement jeunesse", "description": "Un accès direct à une jeunesse ambitieuse, engagée et en quête d'opportunités." },
@@ -38,7 +38,7 @@
     "titre": "Un projet, une idée de collaboration ?",
     "sousTitre": "Parlez-nous de votre organisation, nous revenons vers vous rapidement.",
     "typesPartenariat": ["Partenariat financier", "Partenariat média", "Partenariat institutionnel", "Partenariat technique", "Autre"],
-    "cta": "Échanger avec l'équipe 2MPC"
+    "cta": "Échanger avec notre équipe"
   },
   "sectionFinale": {
     "titre": "Vous préférez découvrir notre projet avant de nous contacter ?",

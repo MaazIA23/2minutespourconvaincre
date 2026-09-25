@@ -1,6 +1,6 @@
 {
   "edition": "2027",
-  "statut": "a-venir",
+  "statut": "ouvert",
   "titre": "Candidature",
   "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
   "criteres": {
@@ -49,12 +49,23 @@
       { "titre": "Faites-nous retenir votre voix", "description": "Votre ton, votre énergie, votre singularité : c'est ce qu'on retient." }
     ]
   },
-  "statutOuverture": "Les candidatures pour la 3ème édition ne sont pas encore ouvertes. Laissez votre e-mail pour être averti(e) dès l'ouverture.",
-  "ctaNotify": "Être informé(e) de l'ouverture des candidatures",
+  "dateOuvertureCandidatures": "15 janvier 2027",
+  "dateLimiteCandidatures": "30 janvier 2027 à 23h59",
+  "ctaSubmit": "Envoyer ma candidature",
+  "formulaire": {
+    "professions": [
+      "Étudiant(e)",
+      "Salarié(e) — secteur privé",
+      "Salarié(e) — secteur public",
+      "Indépendant(e) / Entrepreneur(e)",
+      "Sans emploi",
+      "Autre"
+    ],
+    "videoInstructions": "Publiez votre vidéo sur Facebook ou TikTok avec le hashtag #DeuxMinutesPourConvaincre, en taguant notre page, puis partagez-nous le lien ci-dessous."
+  },
   "_source": "Précisions données par le client (message vocal retranscrit) — à confirmer/compléter avec le document de préparation de la 3e édition annoncé",
   "TODO_2027": [
     "Confirmer le format exact du dossier de candidature 2025/2026 évoqué par le client (« une minute ») pour l'historique",
-    "Date d'ouverture et de clôture des candidatures 2027",
     "Modalités précises de dépôt de la vidéo (plateforme, format, durée max, critères d'éligibilité)",
     "Intégrer le contenu du document de préparation de la 3e édition dès réception"
   ]

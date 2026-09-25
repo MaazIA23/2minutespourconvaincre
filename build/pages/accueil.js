@@ -39,7 +39,7 @@ ${
     ? `<section class="section" id="quest-ce-que">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Qu'est-ce que 2MPC ?</p>
+      <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
       <h2>${presentation.titre}</h2>
     </div>
     <div class="prose reveal">

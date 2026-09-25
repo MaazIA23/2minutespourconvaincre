@@ -248,6 +248,17 @@
     });
   })();
 
+  /* Accordéon FAQ */
+  document.querySelectorAll(".faq-question").forEach(function (btn) {
+    var item = btn.closest(".faq-item");
+    var answer = item.querySelector(".faq-answer");
+    btn.addEventListener("click", function () {
+      var isOpen = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+      answer.style.maxHeight = isOpen ? answer.scrollHeight + "px" : null;
+    });
+  });
+
   /* "Lire la suite" pour les récits de finalistes (palmarès) */
   document.querySelectorAll(".palmares-readmore").forEach(function (btn) {
     var recit = btn.previousElementSibling;
