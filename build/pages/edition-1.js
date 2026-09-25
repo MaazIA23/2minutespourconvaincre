@@ -46,10 +46,10 @@ ${
       <h2>${edition1.jury.titre}</h2>
       <p class="section-lead">${edition1.jury.intro}</p>
     </div>
-    <div class="people-grid${edition1.jury.membres.length === 3 ? " people-grid-3" : ""}">
+    <div class="jury-grid${edition1.jury.membres.length === 3 ? " jury-grid-3" : ""}">
       ${edition1.jury.membres
         .map(
-          (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.titre}</p></div>`
+          (m) => `<div class="jury-card reveal" tabindex="0">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" loading="lazy">` : ""}<div class="jury-overlay"><h3>${m.nom}</h3><p>${m.titre}</p></div></div>`
         )
         .join("\n      ")}
     </div>

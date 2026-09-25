@@ -117,10 +117,10 @@ function render(data) {
     <div class="section-head reveal">
       <p class="eyebrow">${jury.titre}</p>
     </div>
-    <div class="people-grid">
+    <div class="jury-grid${jury.membres.length === 3 ? " jury-grid-3" : ""}">
       ${jury.membres
         .map(
-          (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.titre}</p></div>`
+          (m) => `<div class="jury-card reveal" tabindex="0">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" loading="lazy">` : ""}<div class="jury-overlay"><h3>${m.nom}</h3><p>${m.titre}</p></div></div>`
         )
         .join("\n      ")}
     </div>
