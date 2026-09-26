@@ -338,18 +338,6 @@
     });
   })();
 
-  /* Bulle WhatsApp : affiche le message d'accroche quelques secondes après le chargement */
-  (function () {
-    var waFloat = document.getElementById("whatsapp-float");
-    if (!waFloat) return;
-    window.setTimeout(function () {
-      waFloat.classList.add("is-greeting");
-    }, 1500);
-    window.setTimeout(function () {
-      waFloat.classList.remove("is-greeting");
-    }, 7000);
-  })();
-
   /* Bouton "remonter en haut" qui apparaît après un certain scroll */
   (function () {
     var btn = document.getElementById("back-to-top");
