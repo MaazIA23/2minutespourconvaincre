@@ -43,12 +43,12 @@
       { threshold: 0, rootMargin: "0px 0px 80px 0px" }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
-    // Safety net: never leave content permanently invisible (e.g. if an
-    // element is observed after it has already scrolled past, or on a
-    // browser/automation quirk where the observer misses a fast jump).
+    // Safety net for genuine edge cases only (e.g. a browser/automation quirk
+    // where the observer misses a fast jump) — long enough to never fire
+    // during normal scrolling, so it doesn't defeat the progressive reveal.
     window.setTimeout(function () {
       revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-    }, 2500);
+    }, 15000);
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
