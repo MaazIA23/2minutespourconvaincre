@@ -520,7 +520,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 /* ---------- Candidature : prix, critères, photos ---------- */
 .prize-card {
   position: relative; overflow: hidden;
-  max-width: 640px; margin: 0 auto; background: radial-gradient(circle at 25% 15%, rgba(246,204,12,0.18), transparent 60%), var(--navy-950); color: #fff;
+  max-width: 640px; margin: 0 auto; color: #fff;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(246,204,12,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.82) 55%, rgba(13,17,50,.92) 100%),
+    url('/assets/img/candidature/paris.jpg');
+  background-size: auto, auto, cover;
+  background-position: center, center, center 30%;
   border-radius: var(--radius-lg); padding: 44px 30px; text-align: center; box-shadow: var(--shadow-lg);
 }
 .prize-card .prize-icon { display: block; font-size: 2.4rem; margin-bottom: 12px; }
