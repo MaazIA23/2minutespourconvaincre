@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conditions générales d'utilisation | Deux Minutes pour Convaincre</title>
-<meta name="description" content="Conditions générales d'utilisation">
+<title>Soutenir l'événement | Deux Minutes pour Convaincre</title>
+<meta name="description" content="Votre don aide à faire grandir Deux Minutes Pour Convaincre et à offrir une scène plus grande aux prochains orateurs.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,70 +44,43 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>Conditions générales d'utilisation</h1>
+    <h1>Soutenir l'événement</h1>
+    <p class="page-hero-lead">Votre don aide à faire grandir Deux Minutes Pour Convaincre et à offrir une scène plus grande aux prochains orateurs.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="don">
   <div class="container">
-    <div class="prose reveal">
-      <p>Les présentes Conditions générales d'utilisation (CGU) définissent les règles d'accès au Site et d'utilisation de ses services.</p>
-      <p>En accédant au Site, vous acceptez sans réserve ces CGU.</p>
-      <h3>Accès au site</h3>
-      <p>Le Site est accessible 24h/24 et 7j/7, sauf interruption pour maintenance ou cas de force majeure. La Muse Éloquente ne peut garantir l'absence de coupure ou de dysfonctionnement.</p>
-      
-      
-      
-      <h3>Compte utilisateur</h3>
-      <p>Certaines fonctionnalités (achat de pass, accès à des contenus, candidature) peuvent nécessiter la création d'un compte.</p>
-      <p>Vous vous engagez à fournir des informations exactes et à conserver vos identifiants confidentiels. Toute action réalisée via votre compte est réputée effectuée par vous.</p>
-      
-      
-      
-      <h3>Bon usage du site</h3>
-      <p>L'utilisateur s'engage à :</p>
-      
-      <ul><li>ne pas utiliser le Site à des fins illégales ou contraires aux bonnes mœurs</li><li>ne pas perturber le fonctionnement du Site</li><li>ne pas tenter d'accéder de manière non autorisée aux systèmes ou données</li></ul>
-      <p>Deux Minutes pour Convaincre pourra suspendre l'accès en cas d'usage abusif ou frauduleux.</p>
-      <h3>Contenus transmis par les utilisateurs</h3>
-      <p>Dans le cadre des candidatures ou de contributions (témoignages, commentaires…), vous pouvez transmettre des textes, vidéos ou autres contenus.</p>
-      <p>Vous garantissez disposer des droits nécessaires et que ces contenus ne portent pas atteinte aux droits de tiers.</p>
-      <p>En les transmettant, vous autorisez La Muse Éloquente, à titre non exclusif et pour les besoins liés à l'événement et à sa communication, à les utiliser et diffuser, dans le respect de la Politique de confidentialité et du droit à l'image.</p>
-      
-      
-      
-      <h3>Achat de pass et services</h3>
-      <p>L'achat de pass pour l'événement est soumis à des conditions spécifiques (prix, modalités de remboursement, modification, etc.) présentées lors de la commande.</p>
-      <p>L'utilisateur s'engage à les lire et à les accepter avant tout paiement.</p>
-      
-      
-      
-      <h3>Propriété intellectuelle</h3>
-      <p>Les contenus du Site sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou utilisation non autorisée est interdite, comme indiqué dans les Mentions légales.</p>
-      
-      
-      
-      <h3>Limitation de responsabilité</h3>
-      <p>Deux Minutes pour Convaincre ne peut être tenue responsable des dommages directs ou indirects résultant :</p>
-      
-      <ul><li>de l'utilisation ou de l'impossibilité d'utiliser le Site</li><li>d'un mauvais usage par l'utilisateur</li><li>de la présence éventuelle de virus ou éléments nuisibles</li></ul>
-      
-      <h3>Modifications des CGU</h3>
-      <p>La Muse Éloquente se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs sont invités à les consulter régulièrement.</p>
-      
-      
-      
-      <h3>Contact</h3>
-      <p>Pour toute question relative au Site ou aux présentes CGU, vous pouvez écrire à : contact@2minpourconvaincre.com</p>
-      
-      
-      
-      <h3>Droit applicable</h3>
-      <p>Les présentes CGU sont régies par le droit béninois. En cas de litige, et à défaut d'accord amiable, les tribunaux compétents de Cotonou seront saisis.</p>
-      
-      
-      
-    </div>
+    <form class="contact-form reveal" id="don-form" novalidate style="max-width:520px; margin:0 auto;">
+      <div class="form-row">
+        <label for="don-montant">Montant du don (FCFA)</label>
+        <input type="number" id="don-montant" name="montant" min="2000" step="100" value="2000" required>
+      </div>
+      <div class="form-row">
+        <label>Type de don</label>
+        <div class="form-radio-group">
+          <label class="form-radio"><input type="radio" name="don-mode" value="anonyme" required> Don anonyme</label>
+          <label class="form-radio"><input type="radio" name="don-mode" value="nominatif" required> Don en mon nom</label>
+        </div>
+      </div>
+      <div id="don-identite" class="form-row-pair" hidden>
+        <div class="form-row">
+          <label for="don-prenom">Prénom</label>
+          <input type="text" id="don-prenom" name="prenom">
+        </div>
+        <div class="form-row">
+          <label for="don-nom">Nom</label>
+          <input type="text" id="don-nom" name="nom">
+        </div>
+      </div>
+      <div id="don-email-row" class="form-row" hidden>
+        <label for="don-email">Adresse e-mail</label>
+        <input type="email" id="don-email" name="email">
+        <p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--ink-soft);">Pour vous adresser un merci automatique.</p>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="don-submit">Faire un don</button>
+      <p class="form-note" id="don-note" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 

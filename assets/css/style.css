@@ -674,6 +674,10 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .form-row-pair { display: flex; gap: 16px; }
 .form-row-pair .form-row { flex: 1; }
 .form-note { min-height: 1.4em; margin: 12px 0 0; font-size: 0.88rem; color: var(--gold-dark); text-align: center; }
+.form-row[hidden], .form-row-pair[hidden] { display: none; }
+.form-radio-group { display: flex; gap: 18px; flex-wrap: wrap; }
+.form-radio { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 600; color: var(--ink); cursor: pointer; }
+.form-radio input[type="radio"] { accent-color: var(--navy-950); width: 18px; height: 18px; cursor: pointer; }
 
 /* ---------- TODO banner ---------- */
 .todo-banner {
@@ -695,6 +699,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .footer-inner > * { min-width: 0; }
 .footer-brand .logo-text { color: #fff; }
 .footer-brand p { margin: 14px 0 18px; font-size: 0.88rem; color: #fff; }
+.footer-support-cta { margin-bottom: 22px; }
 .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .social-links a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--navy-700);

@@ -34,6 +34,7 @@ function loadData() {
     impact: readJson("pages/impact.json"),
     faq: readJson("faq.json"),
     legalPages: readJson("pages/legal.json"),
+    soutenir: readJson("pages/soutenir.json"),
   };
 }
 
@@ -75,6 +76,8 @@ function main() {
   const impact = require("./pages/impact.js");
   const actualites = require("./pages/actualites.js");
   const faq = require("./pages/faq.js");
+  const soutenir = require("./pages/soutenir.js");
+  const soutenirMerci = require("./pages/soutenir-merci.js");
 
   writePage(
     "",
@@ -203,6 +206,26 @@ function main() {
       description: data.faq.sousTitre,
       activeSlug: "faq",
       bodyHtml: faq.render(data),
+    })
+  );
+
+  writePage(
+    "soutenir",
+    renderLayout(data, {
+      title: "Soutenir l'événement",
+      description: data.soutenir.sousTitre,
+      activeSlug: "soutenir",
+      bodyHtml: soutenir.render(data),
+    })
+  );
+
+  writePage(
+    "soutenir/merci",
+    renderLayout(data, {
+      title: "Merci pour votre soutien",
+      description: "Merci pour votre don en soutien à Deux Minutes Pour Convaincre.",
+      activeSlug: "soutenir",
+      bodyHtml: soutenirMerci.render(),
     })
   );
 
