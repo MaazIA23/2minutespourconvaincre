@@ -98,10 +98,10 @@ function render(data) {
       <p class="eyebrow">${edition3.objectifs.titre}</p>
       <p class="section-lead">${edition3.objectifs.objectifGlobal}</p>
     </div>
-    <div class="ambitions-grid ambitions-grid-light">
+    <div class="ambitions-grid ambitions-grid-swipe">
       ${edition3.objectifs.specifiques
         .map(
-          (o) => `<div class="ambition-card ambition-card-light reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`
+          (o) => `<div class="ambition-card reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`
         )
         .join("\n      ")}
     </div>

@@ -802,6 +802,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .au-programme-list::-webkit-scrollbar { display: none; }
   .au-programme-list li { flex: 0 0 55%; scroll-snap-align: start; }
+  .ambitions-grid-swipe {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 14px; padding: 4px 24px 10px; margin: 0 -24px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .ambitions-grid-swipe::-webkit-scrollbar { display: none; }
+  .ambitions-grid-swipe .ambition-card { flex: 0 0 78%; scroll-snap-align: start; }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
