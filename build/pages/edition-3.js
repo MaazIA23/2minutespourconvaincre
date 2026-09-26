@@ -7,10 +7,9 @@ function render(data) {
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
     <h1>3ème édition</h1>
     <div class="hero-meta">
-      <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
+      <span>📅 ${edition3.date}</span>
       <span>📍 ${edition3.lieu}</span>
     </div>
-    <a href="#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>
   </div>
 </section>
 

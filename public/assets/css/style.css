@@ -474,9 +474,12 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .editions-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto; }
 .edition-card {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
-  padding: 28px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0;
+  overflow: hidden; display: flex; flex-direction: column; min-width: 0;
 }
-.edition-card .btn { margin-top: 14px; }
+.edition-card-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.edition-card-body { padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.edition-card-link { margin-top: 12px; font-weight: 700; font-size: 0.9rem; color: var(--navy-950); }
+.edition-card-link:hover { color: var(--gold-dark); }
 .edition-year { color: var(--ink-soft); font-weight: 400; font-size: 0.7em; }
 .badge {
   display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;

@@ -21,10 +21,15 @@ function render(data) {
       ${editionsIndex.editions
         .map(
           (e) => `<article class="edition-card reveal">
-        ${statusBadge(e.statut)}
-        <h2>${e.label} <span class="edition-year">(${e.annee})</span></h2>
-        <p>${e.resume}</p>
-        <a href="/editions/${e.slug}/" class="btn btn-outline">Voir la page</a>
+        <div class="edition-card-media">
+          <img src="${e.photo}" alt="${e.label}" loading="lazy">
+        </div>
+        <div class="edition-card-body">
+          ${statusBadge(e.statut)}
+          <h2>${e.label} <span class="edition-year">(${e.annee})</span></h2>
+          <p>${e.resume}</p>
+          <a href="/editions/${e.slug}/" class="edition-card-link">Voir la page →</a>
+        </div>
       </article>`
         )
         .join("\n      ")}

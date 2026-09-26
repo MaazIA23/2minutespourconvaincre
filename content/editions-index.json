@@ -7,7 +7,8 @@
       "label": "1ère édition",
       "annee": "2025",
       "statut": "passee",
-      "resume": "Samedi 10 mai 2025, Hôtel Azalaï, Cotonou : +100 participants, 16 orateurs en compétition.",
+      "photo": "/assets/img/galerie/1ere-edition/photo-09.jpg",
+      "resume": "La toute première scène de « Deux Minutes Pour Convaincre », et une championne de l'éloquence est née.",
       "rapportPdf": "/assets/documents/rapport-1ere-edition-2025.pdf",
       "rapportLabel": "Consulter le rapport"
     },
@@ -16,7 +17,8 @@
       "label": "2ème édition",
       "annee": "2026",
       "statut": "passee",
-      "resume": "« Le pari était de faire mieux que la première édition. Le pari est réussi. » 08 août 2026, Azalaï Hôtel, Cotonou.",
+      "photo": "/assets/img/galerie/2eme-edition/concours-orateur.jpg",
+      "resume": "« Le pari était de faire mieux que la première édition. Le pari est réussi. »",
       "rapportPdf": "/assets/documents/rapport-2eme-edition-2026.pdf",
       "rapportLabel": "Consulter le rapport"
     },
@@ -25,7 +27,8 @@
       "label": "3ème édition",
       "annee": "2027",
       "statut": "a-venir",
-      "resume": "Mars 2027, Cotonou. Grand Prix de la Francophonie et programme « 300 Voix ».",
+      "photo": "/assets/img/impact/300-voix.jpg",
+      "resume": "Grand Prix de la Francophonie et programme « 300 Voix » : une nouvelle dimension pour le concours.",
       "rapportPdf": null
     }
   ]
