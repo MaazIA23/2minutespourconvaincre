@@ -37,20 +37,28 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg">
+<section class="section">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">La 3ème édition</p>
       <h2>Pourquoi participer ?</h2>
       <p class="section-lead">${edition3.objectifs.objectifGlobal}</p>
     </div>
-    <div class="ambitions-grid">
-      ${edition3.objectifs.specifiques
-        .map((o) => `<div class="ambition-card reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`)
-        .join("\n      ")}
-    </div>
   </div>
 </section>
+
+<div class="reasons-stack">
+  ${edition3.objectifs.specifiques
+    .map(
+      (o, i) => `<div class="reason-block ${i % 2 === 0 ? "reason-block--navy" : "reason-block--light"} reveal">
+    <div class="container reason-block-inner">
+      <h3>${o.titre}</h3>
+      <p>${o.description}</p>
+    </div>
+  </div>`
+    )
+    .join("\n  ")}
+</div>
 
 <section class="section">
   <div class="container">

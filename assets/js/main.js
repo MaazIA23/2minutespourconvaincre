@@ -43,12 +43,12 @@
       { threshold: 0, rootMargin: "0px 0px 80px 0px" }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
-    // Safety net: never leave content permanently invisible (e.g. if an
-    // element is observed after it has already scrolled past, or on a
-    // browser/automation quirk where the observer misses a fast jump).
+    // Safety net for genuine edge cases only (e.g. a browser/automation quirk
+    // where the observer misses a fast jump) — long enough to never fire
+    // during normal scrolling, so it doesn't defeat the progressive reveal.
     window.setTimeout(function () {
       revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-    }, 2500);
+    }, 15000);
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
@@ -316,16 +316,26 @@
     });
   });
 
-  /* Bulle WhatsApp : affiche le message d'accroche quelques secondes après le chargement */
+  /* Cartes jury : au tactile (pas de survol), un tap révèle le nom/titre, un tap ailleurs le masque */
   (function () {
-    var waFloat = document.getElementById("whatsapp-float");
-    if (!waFloat) return;
-    window.setTimeout(function () {
-      waFloat.classList.add("is-greeting");
-    }, 1500);
-    window.setTimeout(function () {
-      waFloat.classList.remove("is-greeting");
-    }, 7000);
+    var cards = document.querySelectorAll(".jury-card");
+    if (!cards.length) return;
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        var wasActive = card.classList.contains("is-active");
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
+        });
+        if (!wasActive) card.classList.add("is-active");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".jury-card")) {
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
+        });
+      }
+    });
   })();
 
   /* Bouton "remonter en haut" qui apparaît après un certain scroll */
