@@ -777,6 +777,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .jury-grid::-webkit-scrollbar { display: none; }
   .jury-card { flex: 0 0 62%; scroll-snap-align: start; }
+  .au-programme-list {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 10px; padding: 4px 24px 10px; margin: 16px -24px 0; max-width: none;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .au-programme-list::-webkit-scrollbar { display: none; }
+  .au-programme-list li { flex: 0 0 55%; scroll-snap-align: start; }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
