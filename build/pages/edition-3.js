@@ -42,7 +42,7 @@ function render(data) {
       <p class="eyebrow">Cap sur la 3ème édition</p>
       <h2>Ce qui change pour la 3ème édition</h2>
     </div>
-    <div class="nouveautes-grid">
+    <div class="nouveautes-grid nouveautes-grid-compact">
       ${edition3.nouveautes
         .map((n) =>
           n.titre.includes("300 Voix")
