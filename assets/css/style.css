@@ -423,6 +423,21 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .ambition-card-light.ambition-card h3 { color: var(--navy-950); }
 .ambition-card-light.ambition-card p { color: var(--ink-soft); }
 
+/* ---------- Reasons stack (blocs pleine largeur alternés, page candidature) ---------- */
+.reason-block { padding: 64px 0; }
+.reason-block--navy { background: var(--navy-950); }
+.reason-block--light { background: var(--paper-alt); }
+.reason-block-inner { max-width: 640px; }
+.reason-block h3 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); margin: 0 0 14px; }
+.reason-block p { margin: 0; font-size: 1.02rem; }
+.reason-block--navy h3 { color: var(--gold-text); }
+.reason-block--navy p { color: rgba(255,255,255,0.85); }
+.reason-block--light h3 { color: var(--navy-950); }
+.reason-block--light p { color: var(--ink-soft); }
+@media (max-width: 720px) {
+  .reason-block { padding: 40px 0; }
+}
+
 /* ---------- Method / nouveautés steps ---------- */
 .nouveautes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .nouveautes-grid.nouveautes-grid-compact {
