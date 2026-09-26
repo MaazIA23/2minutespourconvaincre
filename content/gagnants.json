@@ -64,11 +64,11 @@
         "titre": "Sur cette scène, il n'y a pas eu de perdants.",
         "description": "Les cinq autres finalistes, chacun ayant traversé un processus de sélection exigeant pour arriver jusqu'à cette finale, ont reçu un lot de consolation ainsi qu'une attestation officielle de participation :",
         "liste": [
-          { "nom": "Anisette Toto Agbré", "photo": "/assets/img/palmares/2eme-edition/anisette-toto-agbre.jpg" },
-          { "nom": "Liliane T. Agyemang", "photo": "/assets/img/palmares/2eme-edition/liliane-agyemang.jpg" },
-          { "nom": "Anita Dadelé", "photo": "/assets/img/palmares/2eme-edition/anita-dadele.jpg" },
-          { "nom": "Géovani De Souza", "photo": "/assets/img/palmares/2eme-edition/geovani-de-souza.jpg" },
-          { "nom": "Urbain Azalou-Tingbé", "photo": "/assets/img/palmares/2eme-edition/urbain-azalou-tingbe.jpg" }
+          { "nom": "Anisette Toto Agbré", "profession": "Assistante comptable", "photo": "/assets/img/palmares/2eme-edition/anisette-toto-agbre.jpg" },
+          { "nom": "Liliane T. Agyemang", "profession": "Écrivaine et employée à Erevan", "photo": "/assets/img/palmares/2eme-edition/liliane-agyemang.jpg" },
+          { "nom": "Anita Dadelé", "profession": "Experte en sécurité informatique", "photo": "/assets/img/palmares/2eme-edition/anita-dadele.jpg" },
+          { "nom": "Géovani De Souza", "profession": "Écrivain, interprète de conférence et traducteur", "photo": "/assets/img/palmares/2eme-edition/geovani-de-souza.jpg" },
+          { "nom": "Urbain Azalou-Tingbé", "profession": "Analyste en stratégie et gouvernance", "photo": "/assets/img/palmares/2eme-edition/urbain-azalou-tingbe.jpg" }
         ]
       },
       "totalFinalistes": 8
