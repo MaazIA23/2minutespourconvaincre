@@ -66,6 +66,9 @@ function render(data) {
 
 <section class="section alt-bg" id="300-voix">
   <div class="container">
+    <div class="photo-banner reveal">
+      <img src="${edition3.programme300Voix.photo}" alt="Une élève prend la parole au micro devant ses camarades de classe, programme 300 Voix" loading="lazy">
+    </div>
     <div class="section-head reveal">
       <p class="eyebrow">${edition3.programme300Voix.eyebrow}</p>
       <h2>${edition3.programme300Voix.titre}</h2>
