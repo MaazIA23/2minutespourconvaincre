@@ -2,8 +2,7 @@
   "edition": "2027",
   "numero": 3,
   "titre": "3ème édition",
-  "accroche": "La scène qui révèle les orateurs",
-  "accrochesRotatives": ["La scène qui révèle les orateurs", "Le plus grand concours d'improvisation au Bénin"],
+  "accroche": "Le plus grand concours d'improvisation au Bénin",
   "date": "Mars 2027",
   "dateContexte": "Journée internationale de la Francophonie",
   "lieu": "Cotonou",
@@ -91,6 +90,7 @@
   "programme300Voix": {
     "eyebrow": "Impact 2027",
     "titre": "300 VOIX",
+    "photo": "/assets/img/impact/300-voix.jpg",
     "accroche": "Parce que la parole ne doit pas être réservée à ceux qui montent sur scène.",
     "texte": "En 2027, Deux Minutes Pour Convaincre ira à la rencontre de 300 élèves et étudiants à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi.",
     "indicateurs": [

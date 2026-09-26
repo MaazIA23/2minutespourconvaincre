@@ -81,6 +81,7 @@ function renderFooter(data) {
         <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
       </a>
       <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par ${data.site.organisation.agence}.</p>
+      <a href="/soutenir/" class="btn btn-primary footer-support-cta">❤️ Soutenir l'événement</a>
       <ul class="social-links" aria-label="Réseaux sociaux">
         ${socials}
       </ul>

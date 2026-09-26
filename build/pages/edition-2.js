@@ -1,14 +1,19 @@
 function render(data) {
-  const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie, edition2, partenaires } = data;
+  const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie, edition2, partenaires, site } = data;
   const edition2Meta = editionsIndex.editions.find((e) => e.slug === "2eme-edition");
   const edition2026 = gagnants.editions.find((e) => e.edition === "2026");
   const galerie2026 = galerie["2eme-edition"];
+  const edition2Historique = site.edition.historique.find((e) => e.numero === 2);
 
   return `
-<section class="page-hero page-hero-photo-bg" style="background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
+<section class="page-hero page-hero-photo-bg" style="background-position: 65% 12%; background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
+    <div class="hero-meta">
+      <span>📅 ${edition2Historique.date}</span>
+      <span>📍 ${edition2Historique.lieu}</span>
+    </div>
   </div>
 </section>
 
@@ -155,7 +160,7 @@ function render(data) {
     <div class="people-grid people-grid-secondary${edition2026.autresFinalistes.liste.length === 5 ? " people-grid-5" : ""}">
         ${edition2026.autresFinalistes.liste
           .map(
-            (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3></div>`
+            (f) => `<div class="people-card reveal">${f.photo ? `<img src="${f.photo}" alt="${f.nom}" class="people-photo" loading="lazy">` : ""}<h3>${f.nom}</h3>${f.profession ? `<p>${f.profession}</p>` : ""}</div>`
           )
           .join("\n      ")}
       </div>

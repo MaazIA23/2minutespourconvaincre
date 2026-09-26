@@ -457,6 +457,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .photo-feature-copy { min-width: 0; }
 .photo-feature-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: block; }
 .photo-feature-compact .photo-feature-media img { aspect-ratio: 4 / 3; }
+.photo-banner { max-width: 900px; margin: 0 auto 40px; }
+.photo-banner img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: block; }
 .method-step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
 .step-number { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold-dark); margin-bottom: 10px; }
 .method-step-link { display: inline-block; margin-top: 10px; font-weight: 700; font-size: 0.88rem; color: var(--navy-950); }
@@ -518,7 +520,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 /* ---------- Candidature : prix, critères, photos ---------- */
 .prize-card {
   position: relative; overflow: hidden;
-  max-width: 640px; margin: 0 auto; background: radial-gradient(circle at 25% 15%, rgba(246,204,12,0.18), transparent 60%), var(--navy-950); color: #fff;
+  max-width: 640px; margin: 0 auto; color: #fff;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(246,204,12,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.82) 55%, rgba(13,17,50,.92) 100%),
+    url('/assets/img/candidature/paris.jpg');
+  background-size: auto, auto, cover;
+  background-position: center, center, center 30%;
   border-radius: var(--radius-lg); padding: 44px 30px; text-align: center; box-shadow: var(--shadow-lg);
 }
 .prize-card .prize-icon { display: block; font-size: 2.4rem; margin-bottom: 12px; }
@@ -674,6 +682,10 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .form-row-pair { display: flex; gap: 16px; }
 .form-row-pair .form-row { flex: 1; }
 .form-note { min-height: 1.4em; margin: 12px 0 0; font-size: 0.88rem; color: var(--gold-dark); text-align: center; }
+.form-row[hidden], .form-row-pair[hidden] { display: none; }
+.form-radio-group { display: flex; gap: 18px; flex-wrap: wrap; }
+.form-radio { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 600; color: var(--ink); cursor: pointer; }
+.form-radio input[type="radio"] { accent-color: var(--navy-950); width: 18px; height: 18px; cursor: pointer; }
 
 /* ---------- TODO banner ---------- */
 .todo-banner {
@@ -695,6 +707,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .footer-inner > * { min-width: 0; }
 .footer-brand .logo-text { color: #fff; }
 .footer-brand p { margin: 14px 0 18px; font-size: 0.88rem; color: #fff; }
+.footer-support-cta { margin-bottom: 22px; }
 .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .social-links a {
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--navy-700);
@@ -770,6 +783,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .jury-grid::-webkit-scrollbar { display: none; }
   .jury-card { flex: 0 0 62%; scroll-snap-align: start; }
+  .au-programme-list {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 10px; padding: 4px 24px 10px; margin: 16px -24px 0; max-width: none;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .au-programme-list::-webkit-scrollbar { display: none; }
+  .au-programme-list li { flex: 0 0 55%; scroll-snap-align: start; }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;

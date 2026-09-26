@@ -338,6 +338,82 @@
     });
   })();
 
+  /* Formulaire de don (page /soutenir/) : bascule anonyme/nominatif + paiement FedaPay */
+  (function () {
+    var form = document.getElementById("don-form");
+    if (!form) return;
+    var identiteRow = document.getElementById("don-identite");
+    var emailRow = document.getElementById("don-email-row");
+    var prenomInput = document.getElementById("don-prenom");
+    var nomInput = document.getElementById("don-nom");
+    var emailInput = document.getElementById("don-email");
+    var note = document.getElementById("don-note");
+    var submitBtn = document.getElementById("don-submit");
+
+    form.querySelectorAll('input[name="don-mode"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        var isNominatif = radio.value === "nominatif" && radio.checked;
+        identiteRow.hidden = !isNominatif;
+        emailRow.hidden = !isNominatif;
+        prenomInput.required = isNominatif;
+        nomInput.required = isNominatif;
+        emailInput.required = isNominatif;
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        note.textContent = "Merci de renseigner les champs obligatoires.";
+        return;
+      }
+      var modeInput = form.querySelector('input[name="don-mode"]:checked');
+      var isAnonymous = modeInput && modeInput.value === "anonyme";
+      var amount = parseInt(document.getElementById("don-montant").value, 10);
+
+      submitBtn.disabled = true;
+      note.textContent = "Redirection vers le paiement sécurisé...";
+
+      fetch("/.netlify/functions/create-transaction", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: amount,
+          isAnonymous: isAnonymous,
+          prenom: isAnonymous ? "" : prenomInput.value,
+          nom: isAnonymous ? "" : nomInput.value,
+          email: isAnonymous ? "" : emailInput.value,
+        }),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.data.url) {
+            window.location.href = result.data.url;
+          } else {
+            note.textContent = (result.data && result.data.error) || "Une erreur est survenue. Merci de réessayer.";
+            submitBtn.disabled = false;
+          }
+        })
+        .catch(function () {
+          note.textContent = "Impossible de contacter le service de paiement. Merci de réessayer.";
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+
+  /* Page de remerciement du don : personnalise le titre si un prénom est fourni */
+  (function () {
+    var title = document.getElementById("merci-title");
+    if (!title) return;
+    var params = new URLSearchParams(window.location.search);
+    var prenom = params.get("prenom");
+    if (prenom) title.textContent = "Merci " + prenom + " !";
+  })();
+
   /* Bouton "remonter en haut" qui apparaît après un certain scroll */
   (function () {
     var btn = document.getElementById("back-to-top");
