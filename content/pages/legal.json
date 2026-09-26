@@ -160,5 +160,103 @@
       }
     ]
   },
-  "_TODO": "confidentialite reste en placeholder — contenu réel non encore fourni par le client"
+  "confidentialite": {
+    "intro": [
+      "La présente Politique de confidentialité décrit comment La Muse Éloquente traite les données personnelles collectées via le Site https://2minpourconvaincre.com.",
+      "En utilisant le Site et en communiquant vos données, vous acceptez cette Politique."
+    ],
+    "sections": [
+      {
+        "heading": "Données collectées",
+        "paragraphs": ["Peuvent être collectées :"],
+        "liste": [
+          "Données d'identité : nom, prénom",
+          "Coordonnées : adresse e-mail, numéro de téléphone, pays, ville",
+          "Données liées aux commandes : type de pass, date, montant, référence",
+          "Données de candidature : informations fournies dans le formulaire, lien vidéo, motivations",
+          "Données de navigation : adresse IP, navigateur, pages visitées, date et heure",
+          "Données newsletter : adresse e-mail et préférences de communication"
+        ]
+      },
+      {
+        "heading": "Finalités",
+        "paragraphs": ["Vos données sont utilisées pour :"],
+        "liste": [
+          "gérer les commandes de pass et les paiements",
+          "gérer les candidatures au concours",
+          "vous adresser les informations liées à l'événement (confirmation, rappel, infos pratiques)",
+          "vous envoyer, avec votre accord, des newsletters et informations sur les prochaines éditions",
+          "répondre à vos demandes via le formulaire de contact",
+          "améliorer le Site et mesurer son audience"
+        ]
+      },
+      {
+        "heading": "Base légale",
+        "paragraphs": ["Les traitements sont fondés sur :"],
+        "liste": [
+          "l'exécution d'un contrat (achat de pass, participation à l'événement, candidature)",
+          "votre consentement (newsletter, certains champs facultatifs)",
+          "l'intérêt légitime de La Muse Éloquente (sécurité du Site, amélioration des services)",
+          "le respect d'obligations légales (facturation, comptabilité)"
+        ]
+      },
+      {
+        "heading": "Destinataires",
+        "paragraphs": [
+          "Les données sont destinées aux équipes habilitées de La Muse Éloquente et à ses prestataires techniques (hébergeur, solution de paiement, e-mailing, billetterie) uniquement pour les besoins des services.",
+          "Les données ne sont pas vendues à des tiers."
+        ]
+      },
+      {
+        "heading": "Durée de conservation",
+        "paragraphs": ["Les données sont conservées pendant la durée nécessaire aux finalités poursuivies, par exemple :"],
+        "liste": [
+          "données de commande : durée légale de conservation comptable",
+          "données de candidature : durée de l'édition + archivage raisonnable",
+          "données newsletter : jusqu'à désinscription",
+          "données de navigation : durée limitée pour les statistiques"
+        ]
+      },
+      {
+        "heading": "Cookies",
+        "paragraphs": ["Le Site peut utiliser des cookies pour :"],
+        "liste": [
+          "faciliter la navigation",
+          "mesurer l'audience",
+          "améliorer l'expérience utilisateur"
+        ],
+        "apresListe": [
+          "Vous pouvez refuser les cookies via les paramètres de votre navigateur. Certains services peuvent alors être dégradés."
+        ]
+      },
+      {
+        "heading": "Vos droits",
+        "paragraphs": ["Selon la réglementation applicable, vous disposez notamment des droits :"],
+        "liste": [
+          "d'accès, de rectification, de mise à jour",
+          "d'effacement (dans les limites légales)",
+          "de limitation du traitement",
+          "d'opposition",
+          "de portabilité (dans certains cas)"
+        ],
+        "apresListe": [
+          "Pour exercer vos droits, vous pouvez écrire à contact@2minpourconvaincre.com ou à l'adresse postale : Cinéma Concorde, Cotonou – Bénin.",
+          "Une preuve d'identité peut être demandée."
+        ]
+      },
+      {
+        "heading": "Sécurité",
+        "paragraphs": [
+          "La Muse Éloquente met en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre l'accès non autorisé, la perte, l'altération ou la divulgation."
+        ]
+      },
+      {
+        "heading": "Mise à jour",
+        "paragraphs": [
+          "La présente Politique peut être modifiée. La version à jour est celle publiée sur le Site."
+        ]
+      }
+    ],
+    "_source": "Texte transmis par le client (26/09/2026). Champs génériques [Nom de l'organisme] et [Adresse complète de l'organisme] remplacés par La Muse Éloquente / Cinéma Concorde, Cotonou – Bénin, déjà utilisés dans les Mentions légales ; e-mail de contact confirmé par le client."
+  }
 }

@@ -43,19 +43,15 @@ function renderFooter(data) {
     .map((l) => `<li><a href="${l.lien}/">${l.label}</a></li>`)
     .join("\n      ");
 
-  const navLinks = data.nav.menuPrincipal
-    .map((item) => {
-      const href = item.lien === "/" || item.lien.endsWith("/") ? item.lien : item.lien + "/";
-      const extra =
-        item.label === "Partenaires"
-          ? `<li><a href="/partenaires/#devenir-partenaire">Devenir partenaire</a></li>`
-          : item.label === "Impact"
-            ? `<li><a href="/actualites/">Actualités</a></li>`
-            : item.label === "Candidature"
-              ? `<li><a href="/faq/">FAQ</a></li>`
-              : "";
-      return `<li><a href="${href}">${item.label}</a></li>${extra}`;
-    })
+  const footerShortcuts = [
+    { label: "Accueil", lien: "/" },
+    { label: "Candidature", lien: "/candidature/" },
+    { label: "Partenaires", lien: "/partenaires/" },
+    { label: "Impact", lien: "/impact/" },
+    { label: "Qui sommes-nous ?", lien: "/qui-sommes-nous/" },
+  ];
+  const navLinks = footerShortcuts
+    .map((item) => `<li><a href="${item.lien}">${item.label}</a></li>`)
     .join("\n        ");
 
   const socialIcons = {
@@ -116,6 +112,18 @@ function renderFooter(data) {
 </footer>`;
 }
 
+function renderWhatsappFloat(data) {
+  const phoneDigits = data.site.contact.telephoneWhatsapp.replace(/[^\d]/g, "");
+  const message = encodeURIComponent("Bonjour, j'ai une question à propos de Deux Minutes Pour Convaincre.");
+  return `
+<a href="https://wa.me/${phoneDigits}?text=${message}" target="_blank" rel="noopener" class="whatsapp-float" id="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+  <span class="whatsapp-float-tooltip">Une question ? 👋</span>
+  <svg class="whatsapp-float-icon" viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
+    <path d="M16.04 3C9.373 3 3.98 8.394 3.98 15.06c0 2.65.87 5.1 2.35 7.1L3.5 29l7-1.79a11.98 11.98 0 0 0 5.54 1.35h.005c6.667 0 12.06-5.394 12.06-12.06C28.1 8.394 22.706 3 16.04 3zm0 21.86h-.004a9.9 9.9 0 0 1-5.05-1.39l-.362-.215-3.75.96 1-3.653-.236-.375a9.86 9.86 0 0 1-1.51-5.23c0-5.46 4.446-9.9 9.917-9.9 2.65 0 5.14 1.033 7.01 2.905a9.84 9.84 0 0 1 2.9 6.997c0 5.46-4.447 9.9-9.916 9.9zm5.43-7.41c-.297-.148-1.758-.868-2.03-.967-.272-.099-.47-.148-.668.148-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.148-1.254-.462-2.388-1.472-.883-.787-1.48-1.76-1.653-2.058-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.668-1.61-.915-2.205-.24-.577-.485-.5-.668-.51l-.57-.01c-.198 0-.52.075-.792.372-.272.298-1.04 1.017-1.04 2.48s1.065 2.876 1.213 3.074c.148.198 2.096 3.2 5.08 4.487.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347z"/>
+  </svg>
+</a>`;
+}
+
 function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -137,6 +145,7 @@ ${renderHeader(data, activeSlug)}
 ${bodyHtml}
 </main>
 ${renderFooter(data)}
+${renderWhatsappFloat(data)}
 <button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
 <script src="/assets/js/main.js"></script>
 </body>
@@ -144,4 +153,4 @@ ${renderFooter(data)}
 `;
 }
 
-module.exports = { renderLayout, renderHeader, renderFooter };
+module.exports = { renderLayout, renderHeader, renderFooter, renderWhatsappFloat };

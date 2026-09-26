@@ -2,7 +2,7 @@
   "1ere-edition": {
     "titre": "Moments forts",
     "sousTitre": "Quelques photos de l'événement",
-    "credit": "Crédit photo : Harold Photo Studio",
+    "credit": "Crédit photo : Harold Photo Studio, BH Studio",
     "photos": [
       { "fichier": "/assets/img/galerie/1ere-edition/photo-01.jpg", "alt": "Public participant à la dictée intuitive sur Kahoot, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-02.jpg", "alt": "Participante dans le public, 1ère édition" },
@@ -13,13 +13,18 @@
       { "fichier": "/assets/img/galerie/1ere-edition/photo-07.jpg", "alt": "Écran de la dictée intuitive projeté en salle, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-08.jpg", "alt": "Remise du chèque du 1er prix, 200 000 FCFA, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-09.jpg", "alt": "Intervenante au micro, 1ère édition" },
-      { "fichier": "/assets/img/galerie/1ere-edition/photo-10.jpg", "alt": "Intervenante en tenue traditionnelle au micro, 1ère édition" }
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-10.jpg", "alt": "Intervenante en tenue traditionnelle au micro, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-11.jpg", "alt": "Participant portant le badge 02 Min. pour Convaincre dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-12.jpg", "alt": "Participante consultant son téléphone dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-13.jpg", "alt": "Panéliste souriant dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-14.jpg", "alt": "Panel de discussion sur scène, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-15.jpg", "alt": "Orateur au micro sur scène, 1ère édition" }
     ]
   },
   "2eme-edition": {
     "titre": "Moments forts",
     "sousTitre": "Quelques photos de l'événement",
-    "credit": "Crédit photo : BH Studio, Noris, INF",
+    "credit": "Crédit photo : BH Studio, Noris, INF, Giresse Frames",
     "photos": [
       { "fichier": "/assets/img/galerie/2eme-edition/photo-01.jpg", "alt": "Finaliste consultant le livret du programme, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-02.jpg", "alt": "Participant dans le public, 2ème édition" },
@@ -34,7 +39,12 @@
       { "fichier": "/assets/img/galerie/2eme-edition/photo-11.jpg", "alt": "Panel sur le thème du leadership féminin, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-12.jpg", "alt": "Finaliste embrassant son trophée, 2ème édition" },
       { "fichier": "/assets/img/galerie/2eme-edition/photo-13.jpg", "alt": "Finaliste dans le public, 2ème édition" },
-      { "fichier": "/assets/img/galerie/2eme-edition/photo-14.jpg", "alt": "Remise des chèques aux lauréats sur scène, 2ème édition" }
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-14.jpg", "alt": "Remise des chèques aux lauréats sur scène, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-15.jpg", "alt": "Public assis en salle, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-16.jpg", "alt": "Panéliste dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-17.jpg", "alt": "Salle comble pendant l'événement, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-18.jpg", "alt": "Participante attentive dans le public, 2ème édition" },
+      { "fichier": "/assets/img/galerie/2eme-edition/photo-19.jpg", "alt": "Participants attentifs dans le public, 2ème édition" }
     ]
   },
   "TODO_2027": "Ajouter une entrée '3eme-edition' une fois l'événement passé"
