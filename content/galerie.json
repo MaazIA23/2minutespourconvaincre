@@ -2,7 +2,7 @@
   "1ere-edition": {
     "titre": "Moments forts",
     "sousTitre": "Quelques photos de l'événement",
-    "credit": "Crédit photo : Harold Photo Studio",
+    "credit": "Crédit photo : Harold Photo Studio, BH Studio",
     "photos": [
       { "fichier": "/assets/img/galerie/1ere-edition/photo-01.jpg", "alt": "Public participant à la dictée intuitive sur Kahoot, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-02.jpg", "alt": "Participante dans le public, 1ère édition" },
@@ -13,7 +13,12 @@
       { "fichier": "/assets/img/galerie/1ere-edition/photo-07.jpg", "alt": "Écran de la dictée intuitive projeté en salle, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-08.jpg", "alt": "Remise du chèque du 1er prix, 200 000 FCFA, 1ère édition" },
       { "fichier": "/assets/img/galerie/1ere-edition/photo-09.jpg", "alt": "Intervenante au micro, 1ère édition" },
-      { "fichier": "/assets/img/galerie/1ere-edition/photo-10.jpg", "alt": "Intervenante en tenue traditionnelle au micro, 1ère édition" }
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-10.jpg", "alt": "Intervenante en tenue traditionnelle au micro, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-11.jpg", "alt": "Participant portant le badge 02 Min. pour Convaincre dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-12.jpg", "alt": "Participante consultant son téléphone dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-13.jpg", "alt": "Panéliste souriant dans le public, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-14.jpg", "alt": "Panel de discussion sur scène, 1ère édition" },
+      { "fichier": "/assets/img/galerie/1ere-edition/photo-15.jpg", "alt": "Orateur au micro sur scène, 1ère édition" }
     ]
   },
   "2eme-edition": {
