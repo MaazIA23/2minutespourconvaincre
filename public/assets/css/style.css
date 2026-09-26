@@ -491,7 +491,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   background: linear-gradient(to top, rgba(13,17,50,.92) 0%, rgba(13,17,50,.55) 45%, transparent 75%);
   opacity: 0; transition: opacity .3s ease;
 }
-.jury-card:hover .jury-overlay, .jury-card:focus .jury-overlay { opacity: 1; }
+.jury-card:hover .jury-overlay, .jury-card:focus .jury-overlay, .jury-card.is-active .jury-overlay { opacity: 1; }
 .jury-overlay h3 { color: #fff; margin: 0 0 4px; font-size: 1rem; }
 .jury-overlay p { margin: 0; color: rgba(255,255,255,0.85); font-size: 0.82rem; }
 
@@ -750,7 +750,6 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .jury-grid::-webkit-scrollbar { display: none; }
   .jury-card { flex: 0 0 62%; scroll-snap-align: start; }
-  .jury-overlay { opacity: 1; background: linear-gradient(to top, rgba(13,17,50,.92) 0%, rgba(13,17,50,.3) 65%, transparent 100%); }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;

@@ -316,6 +316,28 @@
     });
   });
 
+  /* Cartes jury : au tactile (pas de survol), un tap révèle le nom/titre, un tap ailleurs le masque */
+  (function () {
+    var cards = document.querySelectorAll(".jury-card");
+    if (!cards.length) return;
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        var wasActive = card.classList.contains("is-active");
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
+        });
+        if (!wasActive) card.classList.add("is-active");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".jury-card")) {
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
+        });
+      }
+    });
+  })();
+
   /* Bulle WhatsApp : affiche le message d'accroche quelques secondes après le chargement */
   (function () {
     var waFloat = document.getElementById("whatsapp-float");
