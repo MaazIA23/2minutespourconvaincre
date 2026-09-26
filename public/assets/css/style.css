@@ -137,6 +137,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .main-nav a:hover, .main-nav a.active { color: var(--gold-text); }
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
+.btn-header-support {
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.35); color: #fff;
+  padding: 10px 16px;
+}
+.btn-header-support:hover { border-color: var(--gold); color: var(--gold-text); }
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px;
   width: 38px; height: 38px; border: 1px solid var(--navy-700); border-radius: 10px;
@@ -739,6 +744,12 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .header-actions { gap: 6px; }
   .logo-img { height: 36px; }
   .header-actions .btn-primary { padding: 9px 12px; font-size: 0.82rem; white-space: nowrap; }
+  .btn-header-support { padding: 9px 11px; }
+  .header-support-label { display: none; }
+}
+
+@media (max-width: 340px) {
+  .btn-header-support { display: none; }
 }
 
 @media (max-width: 1180px) {
@@ -753,10 +764,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .main-nav > ul { gap: 14px; }
 }
 
-/* The full desktop nav (6 links + S'inscrire) doesn't fit between 721px
-   and ~905px, causing the header to overflow — switch to the mobile nav
-   toggle a bit earlier than the main 720px breakpoint to cover that gap. */
-@media (max-width: 920px) {
+/* The full desktop nav (6 links + Soutenir + Candidater) doesn't fit
+   between 721px and ~1030px, causing the header to overflow — switch to
+   the mobile nav toggle a bit earlier than the main 720px breakpoint to
+   cover that gap. */
+@media (max-width: 1040px) {
   .main-nav {
     position: fixed; inset: 76px 0 0 0; background: var(--navy-950); padding: 24px;
     transform: translateY(-12px); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
