@@ -133,7 +133,6 @@ function render(data) {
           (e, i) => `<li class="timeline-item reveal">
         <div class="timeline-marker">${String(i + 1).padStart(2, "0")}</div>
         <div class="timeline-content">
-          <span class="badge badge-upcoming" style="margin-bottom:8px;">En préparation</span>
           <h3>${e.titre}</h3>
           <p>${e.description}</p>
         </div>
