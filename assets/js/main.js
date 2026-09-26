@@ -305,6 +305,17 @@
     });
   });
 
+  /* "Lire la suite" pour les témoignages trop longs (déséquilibre visuel entre cartes) */
+  document.querySelectorAll(".temoignage-readmore").forEach(function (btn) {
+    var quote = btn.previousElementSibling;
+    if (!quote || quote.tagName !== "BLOCKQUOTE") return;
+    btn.addEventListener("click", function () {
+      var expanded = quote.classList.toggle("is-expanded");
+      btn.setAttribute("aria-expanded", String(expanded));
+      btn.textContent = expanded ? "Voir moins ↑" : "Lire la suite →";
+    });
+  });
+
   /* "Lire la suite" pour les récits de finalistes (palmarès) */
   document.querySelectorAll(".palmares-readmore").forEach(function (btn) {
     var recit = btn.previousElementSibling;

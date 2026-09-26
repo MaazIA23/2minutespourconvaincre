@@ -115,6 +115,7 @@ ${
             const card = (t) => `<div class="temoignage-card reveal">
         ${t.photo ? `<img src="${t.photo}" alt="${t.nom}" class="temoignage-photo" loading="lazy">` : ""}
         <blockquote>« ${t.citation} »</blockquote>
+        ${t.citation.length > 220 ? `<button type="button" class="temoignage-readmore" aria-expanded="false">Lire la suite →</button>` : ""}
         <p class="temoignage-meta"><strong>${t.nom}</strong> — ${t.edition}, ${t.statut}</p>
         ${t.videoUrl ? `<a href="${t.videoUrl}" class="btn btn-ghost" target="_blank" rel="noopener">▶ Voir la vidéo</a>` : ""}
       </div>`;

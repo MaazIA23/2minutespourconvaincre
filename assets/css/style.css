@@ -586,7 +586,16 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .temoignages-marquee-track .temoignage-card { width: 340px; flex-shrink: 0; }
 .temoignage-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
 .temoignage-photo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
-.temoignage-card blockquote { font-size: 0.95rem; margin-bottom: 16px; }
+.temoignage-card blockquote {
+  font-size: 0.95rem; margin-bottom: 16px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+.temoignage-card blockquote.is-expanded { -webkit-line-clamp: unset; overflow: visible; }
+.temoignage-readmore {
+  background: none; border: none; padding: 0; margin: 0 0 14px; cursor: pointer;
+  font-weight: 700; font-size: 0.85rem; color: var(--gold-dark); display: inline-block;
+}
+.temoignage-readmore:hover { color: var(--navy-950); }
 .temoignage-meta { font-size: 0.85rem; color: var(--ink-soft); margin: 0 0 14px; }
 .temoignage-placeholder {
   border: 1px dashed var(--line); border-radius: var(--radius-md); padding: 44px 20px;
