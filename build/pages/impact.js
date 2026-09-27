@@ -1,5 +1,6 @@
 function render(data) {
-  const { impact } = data;
+  const { impact, editionsIndex } = data;
+  const editionsPassees = editionsIndex.editions.filter((e) => e.statut === "passee");
 
   return `
 <section class="page-hero">
@@ -28,17 +29,17 @@ function render(data) {
       <h2>${impact.editions.titre}</h2>
     </div>
     <div class="editions-grid editions-grid-2">
-      ${impact.editions.liste
+      ${editionsPassees
         .map(
           (e) => `<article class="edition-card reveal">
+        <div class="edition-card-media">
+          <img src="${e.photo}" alt="${e.label}" loading="lazy">
+        </div>
         <div class="edition-card-body">
           <span class="badge badge-past">Édition passée</span>
           <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
-          <p style="margin:4px 0">📅 ${e.date} · 📍 ${e.lieu}</p>
-          <p style="margin:0 0 10px">${e.participants}</p>
-          <p class="palmares-prix" style="margin-bottom:4px">Gagnant</p>
-          <p style="margin:0 0 14px; font-weight:700; color:var(--navy-950)">${e.gagnant}</p>
-          <a href="${e.lien}" class="btn btn-outline">Voir la page</a>
+          <p>${e.resume}</p>
+          <a href="/editions/${e.slug}/" class="edition-card-link">Voir la page →</a>
         </div>
       </article>`
         )
