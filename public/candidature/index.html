@@ -304,7 +304,12 @@
       <div class="todo-banner reveal">
         📅 Candidatures ouvertes du <strong>15 janvier 2027</strong> au <strong>30 janvier 2027 à 23h59</strong>
       </div>
-      <form class="contact-form reveal" id="candidature-form" novalidate>
+      <form class="contact-form reveal" id="candidature-form" data-netlify="true" name="candidature" netlify-honeypot="societe" novalidate>
+        <input type="hidden" name="form-name" value="candidature">
+        <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="cand-societe">Ne pas remplir</label>
+          <input type="text" id="cand-societe" name="societe" tabindex="-1" autocomplete="off">
+        </p>
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-nom">Nom</label>

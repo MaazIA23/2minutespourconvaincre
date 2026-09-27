@@ -327,26 +327,27 @@
     });
   });
 
-  /* Cartes jury : au tactile (pas de survol), un tap révèle le nom/titre, un tap ailleurs le masque */
+  /* Cartes jury : le nom/titre apparaît au survol (desktop) et automatiquement
+     dès que la carte défile dans l'écran (mobile), sans nécessiter de tap. */
   (function () {
     var cards = document.querySelectorAll(".jury-card");
     if (!cards.length) return;
-    cards.forEach(function (card) {
-      card.addEventListener("click", function () {
-        var wasActive = card.classList.contains("is-active");
-        cards.forEach(function (c) {
-          c.classList.remove("is-active");
+    if (!("IntersectionObserver" in window)) {
+      cards.forEach(function (c) { c.classList.add("is-active"); });
+      return;
+    }
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-active");
+            observer.unobserve(entry.target);
+          }
         });
-        if (!wasActive) card.classList.add("is-active");
-      });
-    });
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".jury-card")) {
-        cards.forEach(function (c) {
-          c.classList.remove("is-active");
-        });
-      }
-    });
+      },
+      { threshold: 0.4 }
+    );
+    cards.forEach(function (c) { observer.observe(c); });
   })();
 
   /* Formulaire de don (page /soutenir/) : bascule anonyme/nominatif + paiement FedaPay */
@@ -440,7 +441,7 @@
     });
   })();
 
-  ["candidature-form", "contact-form", "notify-form", "partenaire-form"].forEach(function (id) {
+  ["contact-form", "notify-form"].forEach(function (id) {
     var form = document.getElementById(id);
     var note = document.getElementById("form-note");
     if (form && note) {
@@ -467,9 +468,11 @@
     }
   })();
 
-  (function () {
-    var form = document.getElementById("waitlist-form");
-    var note = document.getElementById("waitlist-form-note");
+  /* Formulaires branchés sur Netlify Forms : soumission réelle (visible dans
+     l'onglet Forms du dashboard Netlify, avec notification email possible). */
+  function wireNetlifyForm(formId, noteId, successMessage) {
+    var form = document.getElementById(formId);
+    var note = document.getElementById(noteId);
     if (!form || !note) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -480,12 +483,16 @@
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body })
         .then(function () {
-          note.textContent = "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.";
+          note.textContent = successMessage;
           form.reset();
         })
         .catch(function () {
           note.textContent = "Une erreur est survenue, merci de réessayer ou de nous contacter directement.";
         });
     });
-  })();
+  }
+
+  wireNetlifyForm("waitlist-form", "waitlist-form-note", "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.");
+  wireNetlifyForm("candidature-form", "form-note", "Merci ! Votre candidature a bien été envoyée, nous revenons vers vous rapidement.");
+  wireNetlifyForm("partenaire-form", "form-note", "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.");
 })();
