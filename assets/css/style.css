@@ -574,6 +574,7 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .candidature-photos figure { flex: 0 0 200px; margin: 0; scroll-snap-align: start; }
 .candidature-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: block; }
 .candidature-photos figcaption { margin-top: 10px; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--ink-soft); }
+.candidature-photo-profession { display: block; margin-top: 4px; font-size: 0.78rem; font-weight: 400; color: var(--ink-mute); }
 
 /* ---------- Témoignages ---------- */
 .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

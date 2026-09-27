@@ -29,6 +29,7 @@
         {
           "prix": "1er prix, Grand Champion",
           "nom": "José Pascaël Agbo",
+          "profession": "Étudiant en droit",
           "photo": "/assets/img/palmares/2eme-edition/jose-pascael-agbo.jpg",
           "lots": "300 000 FCFA, trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
           "portrait": {
@@ -40,6 +41,7 @@
         {
           "prix": "2ème prix",
           "nom": "Ezékias Gbessé",
+          "profession": "Étudiant en administration du travail et de la sécurité sociale",
           "photo": "/assets/img/palmares/2eme-edition/ezekias-gbesse.jpg",
           "lots": "200 000 FCFA, trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
           "portrait": {
@@ -51,6 +53,7 @@
         {
           "prix": "Prix du leadership féminin",
           "nom": "Audrey Bonnialy",
+          "profession": "Enseignante de physique-chimie",
           "photo": "/assets/img/palmares/2eme-edition/audrey-bonnialy.jpg",
           "lots": "Trophée, lots partenaires, gadgets à l'effigie du concours, attestation officielle de participation.",
           "portrait": {
