@@ -148,10 +148,15 @@ ${
       ${editionsIndex.editions
         .map(
           (e) => `<article class="edition-card reveal">
-        ${e.statut === "a-venir" ? '<span class="badge badge-upcoming">À venir</span>' : '<span class="badge badge-past">Édition passée</span>'}
-        <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
-        <p>${e.resume}</p>
-        <a href="/editions/${e.slug}/" class="btn btn-outline">Voir la page</a>
+        <div class="edition-card-media">
+          <img src="${e.photo}" alt="${e.label}" loading="lazy">
+        </div>
+        <div class="edition-card-body">
+          ${e.statut === "a-venir" ? '<span class="badge badge-upcoming">À venir</span>' : '<span class="badge badge-past">Édition passée</span>'}
+          <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
+          <p>${e.resume}</p>
+          <a href="/editions/${e.slug}/" class="edition-card-link">Voir la page →</a>
+        </div>
       </article>`
         )
         .join("\n      ")}

@@ -7,10 +7,9 @@ function render(data) {
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
     <h1>3ème édition</h1>
     <div class="hero-meta">
-      <span>📅 ${edition3.date} (${edition3.dateContexte})</span>
+      <span>📅 ${edition3.date}</span>
       <span>📍 ${edition3.lieu}</span>
     </div>
-    <a href="#notify" class="btn btn-primary btn-lg">Être informé(e) du lancement</a>
   </div>
 </section>
 
@@ -42,7 +41,7 @@ function render(data) {
       <p class="eyebrow">Cap sur la 3ème édition</p>
       <h2>Ce qui change pour la 3ème édition</h2>
     </div>
-    <div class="nouveautes-grid">
+    <div class="nouveautes-grid nouveautes-grid-compact">
       ${edition3.nouveautes
         .map((n) =>
           n.titre.includes("300 Voix")
@@ -98,10 +97,10 @@ function render(data) {
       <p class="eyebrow">${edition3.objectifs.titre}</p>
       <p class="section-lead">${edition3.objectifs.objectifGlobal}</p>
     </div>
-    <div class="ambitions-grid ambitions-grid-light">
+    <div class="ambitions-grid ambitions-grid-swipe">
       ${edition3.objectifs.specifiques
         .map(
-          (o) => `<div class="ambition-card ambition-card-light reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`
+          (o) => `<div class="ambition-card reveal"><h3>${o.titre}</h3><p>${o.description}</p></div>`
         )
         .join("\n      ")}
     </div>
@@ -133,7 +132,6 @@ function render(data) {
           (e, i) => `<li class="timeline-item reveal">
         <div class="timeline-marker">${String(i + 1).padStart(2, "0")}</div>
         <div class="timeline-content">
-          <span class="badge badge-upcoming" style="margin-bottom:8px;">En préparation</span>
           <h3>${e.titre}</h3>
           <p>${e.description}</p>
         </div>

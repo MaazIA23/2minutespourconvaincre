@@ -137,6 +137,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .main-nav a:hover, .main-nav a.active { color: var(--gold-text); }
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
+.btn-header-support {
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.35); color: #fff;
+  padding: 10px 16px;
+}
+.btn-header-support:hover { border-color: var(--gold); color: var(--gold-text); }
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px;
   width: 38px; height: 38px; border: 1px solid var(--navy-700); border-radius: 10px;
@@ -469,9 +474,12 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .editions-grid-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto; }
 .edition-card {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg);
-  padding: 28px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-width: 0;
+  overflow: hidden; display: flex; flex-direction: column; min-width: 0;
 }
-.edition-card .btn { margin-top: 14px; }
+.edition-card-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.edition-card-body { padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.edition-card-link { margin-top: 12px; font-weight: 700; font-size: 0.9rem; color: var(--navy-950); }
+.edition-card-link:hover { color: var(--gold-dark); }
 .edition-year { color: var(--ink-soft); font-weight: 400; font-size: 0.7em; }
 .badge {
   display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
@@ -581,7 +589,16 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .temoignages-marquee-track .temoignage-card { width: 340px; flex-shrink: 0; }
 .temoignage-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; min-width: 0; }
 .temoignage-photo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
-.temoignage-card blockquote { font-size: 0.95rem; margin-bottom: 16px; }
+.temoignage-card blockquote {
+  font-size: 0.95rem; margin-bottom: 16px;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+.temoignage-card blockquote.is-expanded { -webkit-line-clamp: unset; overflow: visible; }
+.temoignage-readmore {
+  background: none; border: none; padding: 0; margin: 0 0 14px; cursor: pointer;
+  font-weight: 700; font-size: 0.85rem; color: var(--gold-dark); display: inline-block;
+}
+.temoignage-readmore:hover { color: var(--navy-950); }
 .temoignage-meta { font-size: 0.85rem; color: var(--ink-soft); margin: 0 0 14px; }
 .temoignage-placeholder {
   border: 1px dashed var(--line); border-radius: var(--radius-md); padding: 44px 20px;
@@ -739,6 +756,12 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .header-actions { gap: 6px; }
   .logo-img { height: 36px; }
   .header-actions .btn-primary { padding: 9px 12px; font-size: 0.82rem; white-space: nowrap; }
+  .btn-header-support { padding: 9px 11px; }
+  .header-support-label { display: none; }
+}
+
+@media (max-width: 340px) {
+  .btn-header-support { display: none; }
 }
 
 @media (max-width: 1180px) {
@@ -753,10 +776,11 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   .main-nav > ul { gap: 14px; }
 }
 
-/* The full desktop nav (6 links + S'inscrire) doesn't fit between 721px
-   and ~905px, causing the header to overflow — switch to the mobile nav
-   toggle a bit earlier than the main 720px breakpoint to cover that gap. */
-@media (max-width: 920px) {
+/* The full desktop nav (6 links + Soutenir + Candidater) doesn't fit
+   between 721px and ~1030px, causing the header to overflow — switch to
+   the mobile nav toggle a bit earlier than the main 720px breakpoint to
+   cover that gap. */
+@media (max-width: 1040px) {
   .main-nav {
     position: fixed; inset: 76px 0 0 0; background: var(--navy-950); padding: 24px;
     transform: translateY(-12px); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
@@ -790,6 +814,13 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
   }
   .au-programme-list::-webkit-scrollbar { display: none; }
   .au-programme-list li { flex: 0 0 55%; scroll-snap-align: start; }
+  .ambitions-grid-swipe {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 14px; padding: 4px 24px 10px; margin: 0 -24px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .ambitions-grid-swipe::-webkit-scrollbar { display: none; }
+  .ambitions-grid-swipe .ambition-card { flex: 0 0 78%; scroll-snap-align: start; }
   .section { padding: 60px 0; }
   .palmares-grid, .galerie-grid {
     display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
