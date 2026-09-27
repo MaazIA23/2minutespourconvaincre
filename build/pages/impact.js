@@ -31,13 +31,15 @@ function render(data) {
       ${impact.editions.liste
         .map(
           (e) => `<article class="edition-card reveal">
-        <span class="badge badge-past">Édition passée</span>
-        <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
-        <p style="margin:4px 0">📅 ${e.date} · 📍 ${e.lieu}</p>
-        <p style="margin:0 0 10px">${e.participants}</p>
-        <p class="palmares-prix" style="margin-bottom:4px">Gagnant</p>
-        <p style="margin:0 0 14px; font-weight:700; color:var(--navy-950)">${e.gagnant}</p>
-        <a href="${e.lien}" class="btn btn-outline">Voir la page</a>
+        <div class="edition-card-body">
+          <span class="badge badge-past">Édition passée</span>
+          <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
+          <p style="margin:4px 0">📅 ${e.date} · 📍 ${e.lieu}</p>
+          <p style="margin:0 0 10px">${e.participants}</p>
+          <p class="palmares-prix" style="margin-bottom:4px">Gagnant</p>
+          <p style="margin:0 0 14px; font-weight:700; color:var(--navy-950)">${e.gagnant}</p>
+          <a href="${e.lien}" class="btn btn-outline">Voir la page</a>
+        </div>
       </article>`
         )
         .join("\n      ")}
@@ -100,7 +102,7 @@ function render(data) {
 <section class="section alt-bg photo-feature photo-feature-compact" id="impact-2027">
   <div class="container photo-feature-inner">
     <div class="photo-feature-media reveal">
-      <img src="/assets/img/galerie/2eme-edition/photo-09.jpg" alt="Participants lors de la dictée intuitive, Deux Minutes Pour Convaincre" loading="lazy">
+      <img src="/assets/img/impact/300-voix.jpg" alt="Une élève prend la parole au micro devant ses camarades de classe, programme 300 Voix" loading="lazy">
     </div>
     <div class="photo-feature-copy">
       <div class="section-head reveal" style="text-align:left; margin-bottom:20px;">
