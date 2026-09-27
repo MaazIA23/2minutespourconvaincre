@@ -3,7 +3,7 @@ function render(data) {
   const edition2026 = gagnants.editions.find((e) => e.numero === 2);
   const scenePhotos = edition2026
     ? [
-        ...edition2026.palmares.map((p) => ({ nom: p.nom, photo: p.photo })),
+        ...edition2026.palmares.map((p) => ({ nom: p.nom, profession: p.profession, photo: p.photo })),
         ...edition2026.autresFinalistes.liste,
       ]
     : [];
@@ -134,7 +134,7 @@ ${
         .map(
           (p) => `<figure class="reveal">
         <img src="${p.photo}" alt="${p.nom}" loading="lazy">
-        <figcaption>${p.nom}</figcaption>
+        <figcaption>${p.nom}${p.profession ? `<span class="candidature-photo-profession">${p.profession}</span>` : ""}</figcaption>
       </figure>`
         )
         .join("\n      ")}

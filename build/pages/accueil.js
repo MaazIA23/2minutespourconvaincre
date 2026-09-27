@@ -27,7 +27,7 @@ function render(data) {
           : ""
       }
       <div class="hero-ctas reveal">
-        <a href="/editions/3eme-edition/" class="btn btn-outline">Découvrir la 3ème édition</a>
+        <a href="/candidature/" class="btn btn-primary">Candidater</a>
         <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
       </div>
     </div>

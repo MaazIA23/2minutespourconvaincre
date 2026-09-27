@@ -93,14 +93,50 @@
     "photo": "/assets/img/impact/300-voix.jpg",
     "accroche": "Parce que la parole ne doit pas être réservée à ceux qui montent sur scène.",
     "texte": "En 2027, Deux Minutes Pour Convaincre ira à la rencontre de 300 élèves et étudiants à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi.",
-    "indicateurs": [
-      { "icone": "🎯", "libelle": "300 bénéficiaires" },
-      { "icone": "🏫", "libelle": "Des établissements partenaires" },
-      { "icone": "📅", "libelle": "Des sessions de formation" }
+    "ctaPrincipal": { "label": "Accueillir une session", "lien": "/partenaires/#devenir-partenaire" },
+    "ctaSecondaire": { "label": "Découvrir le programme", "lien": "#voix-snapshot" },
+    "pourquoi": {
+      "titre": "La scène ne doit pas être la seule porte d'entrée vers l'éloquence.",
+      "texte": "Deux Minutes Pour Convaincre est né sur une scène. Avec 300 Voix, nous faisons un pas de plus : aller directement à la rencontre des jeunes, dans leurs établissements, pour leur transmettre les outils qui permettent de prendre leur place, défendre leurs idées et faire entendre leur voix."
+    },
+    "snapshot": {
+      "chiffre": "300",
+      "libelle": "Élèves & étudiants",
+      "tags": ["Prise de parole", "Argumentation", "Confiance en soi", "Improvisation"]
+    },
+    "transmission": [
+      { "numero": "01", "titre": "Prendre la parole", "description": "S'exprimer avec clarté, présence et assurance." },
+      { "numero": "02", "titre": "Argumenter", "description": "Structurer une idée et défendre son point de vue avec conviction." },
+      { "numero": "03", "titre": "Oser", "description": "Dépasser le trac et prendre sa place face aux autres." },
+      { "numero": "04", "titre": "Improviser", "description": "Apprendre à réagir, penser rapidement et construire une réponse." }
     ],
-    "auProgramme": ["Prise de parole", "Argumentation", "Confiance en soi", "Improvisation"],
-    "ctaPrincipal": { "label": "En savoir plus sur 300 Voix", "lien": "#300-voix" },
-    "ctaSecondaire": { "label": "Accueillir une session", "lien": "/partenaires/#devenir-partenaire" }
+    "parcoursSession": [
+      { "titre": "Comprendre", "description": "Les principes essentiels de la prise de parole." },
+      { "titre": "Expérimenter", "description": "Exercices, mises en situation et prises de parole." },
+      { "titre": "Recevoir", "description": "Feedback et conseils personnalisés." },
+      { "titre": "Oser", "description": "Repartir avec des outils directement mobilisables." }
+    ],
+    "impactPreview": {
+      "titre": "Former une voix, c'est ouvrir une possibilité.",
+      "texte": "Confiance, expression, argumentation, leadership : les compétences transmises par 300 Voix dépassent la session elle-même et nourrissent un véritable parcours de projection académique et professionnelle.",
+      "cta": { "label": "Voir notre démarche d'impact", "lien": "/impact/" }
+    },
+    "etablissements": {
+      "titre": "Votre établissement souhaite accueillir 300 Voix ?",
+      "texte": "Nous organisons des sessions directement au sein des établissements partenaires afin de permettre à davantage de jeunes d'accéder à une formation pratique et exigeante à la prise de parole.",
+      "cta": { "label": "Accueillir une session", "lien": "/partenaires/#devenir-partenaire" }
+    },
+    "partenaires": {
+      "titre": "Vous souhaitez contribuer au déploiement de 300 Voix ?",
+      "texte": "Entreprises, fondations et organisations engagées peuvent soutenir le déploiement du programme et contribuer à élargir son impact.",
+      "cta": { "label": "Découvrir nos partenariats", "lien": "/partenaires/" }
+    },
+    "conclusion": {
+      "lignes": ["300 voix.", "300 occasions d'oser.", "300 possibilités de faire entendre ses idées."],
+      "sousLigne": "En 2027, la parole sort de la scène.",
+      "ctaPrincipal": { "label": "Accueillir une session", "lien": "/partenaires/#devenir-partenaire" },
+      "ctaSecondaire": { "label": "Découvrir l'impact", "lien": "/impact/" }
+    }
   },
   "candidatureFormat": {
     "titre": "Nouveauté : la candidature se fait en vidéo",

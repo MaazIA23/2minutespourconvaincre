@@ -63,31 +63,112 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg" id="300-voix">
+<section class="voix-hero" id="300-voix" style="background-image: linear-gradient(100deg, rgba(13,17,50,.92) 0%, rgba(13,17,50,.72) 45%, rgba(13,17,50,.4) 80%), url('${edition3.programme300Voix.photo}')">
+  <div class="container voix-hero-inner">
+    <p class="eyebrow reveal">${edition3.programme300Voix.eyebrow}</p>
+    <h2 class="reveal">${edition3.programme300Voix.titre}</h2>
+    <p class="voix-hero-accroche reveal">« ${edition3.programme300Voix.accroche} »</p>
+    <p class="reveal">${edition3.programme300Voix.texte}</p>
+    <div class="hero-ctas reveal">
+      <a href="${edition3.programme300Voix.ctaPrincipal.lien}" class="btn btn-primary">${edition3.programme300Voix.ctaPrincipal.label} →</a>
+      <a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="btn btn-ghost">${edition3.programme300Voix.ctaSecondaire.label} ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container voix-pourquoi reveal">
+    <h2>${edition3.programme300Voix.pourquoi.titre}</h2>
+    <p>${edition3.programme300Voix.pourquoi.texte}</p>
+  </div>
+</section>
+
+<section class="section alt-bg" id="voix-snapshot">
+  <div class="container voix-snapshot reveal">
+    <span class="voix-number">${edition3.programme300Voix.snapshot.chiffre}</span>
+    <span class="voix-number-label">${edition3.programme300Voix.snapshot.libelle}</span>
+    <div class="voix-tags">
+      ${edition3.programme300Voix.snapshot.tags.map((t) => `<span class="voix-tag">${t}</span>`).join("\n      ")}
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
-    <div class="photo-banner reveal">
-      <img src="${edition3.programme300Voix.photo}" alt="Une élève prend la parole au micro devant ses camarades de classe, programme 300 Voix" loading="lazy">
-    </div>
     <div class="section-head reveal">
-      <p class="eyebrow">${edition3.programme300Voix.eyebrow}</p>
-      <h2>${edition3.programme300Voix.titre}</h2>
-      <p class="section-lead"><em>${edition3.programme300Voix.accroche}</em></p>
+      <p class="eyebrow">Ce que nous transmettons</p>
+      <h2>Quatre compétences, une même ambition</h2>
     </div>
-    <div class="prose reveal" style="max-width:680px; margin:0 auto 32px; text-align:center;">
-      <p>${edition3.programme300Voix.texte}</p>
-    </div>
-    <div class="mini-indicators reveal">
-      ${edition3.programme300Voix.indicateurs
-        .map((i) => `<div class="mini-indicator"><span class="mini-indicator-icon">${i.icone}</span><span>${i.libelle}</span></div>`)
+    <div class="voix-transmet-grid">
+      ${edition3.programme300Voix.transmission
+        .map(
+          (t) => `<div class="voix-transmet-card reveal">
+        <span class="voix-transmet-number">${t.numero}</span>
+        <h3>${t.titre}</h3>
+        <p>${t.description}</p>
+      </div>`
+        )
         .join("\n      ")}
     </div>
-    <div style="text-align:center; margin-top:36px;">
-      <p class="eyebrow reveal">Au programme</p>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Concrètement</p>
+      <h2>Une session 300 Voix, concrètement ?</h2>
     </div>
-    <ul class="finalistes-list au-programme-list reveal">
-      ${edition3.programme300Voix.auProgramme.map((item) => `<li>${item}</li>`).join("\n      ")}
-    </ul>
-    <p style="text-align:center; margin-top:32px;"><a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.ctaSecondaire.label}</a></p>
+    <ol class="timeline">
+      ${edition3.programme300Voix.parcoursSession
+        .map(
+          (e, i) => `<li class="timeline-item reveal">
+        <div class="timeline-marker">${String(i + 1).padStart(2, "0")}</div>
+        <div class="timeline-content">
+          <h3>${e.titre}</h3>
+          <p>${e.description}</p>
+        </div>
+      </li>`
+        )
+        .join("\n      ")}
+    </ol>
+  </div>
+</section>
+
+<div class="reason-block reason-block--navy">
+  <div class="container reason-block-inner reveal voix-reason-inner">
+    <h3>${edition3.programme300Voix.impactPreview.titre}</h3>
+    <p>${edition3.programme300Voix.impactPreview.texte}</p>
+    <p style="margin-top:18px;"><a href="${edition3.programme300Voix.impactPreview.cta.lien}" class="method-step-link voix-link-on-navy">${edition3.programme300Voix.impactPreview.cta.label} →</a></p>
+  </div>
+</div>
+
+<div class="reason-block reason-block--light">
+  <div class="container reason-block-inner reveal voix-reason-inner">
+    <h3>${edition3.programme300Voix.etablissements.titre}</h3>
+    <p>${edition3.programme300Voix.etablissements.texte}</p>
+    <p style="margin-top:22px;"><a href="${edition3.programme300Voix.etablissements.cta.lien}" class="btn btn-primary">${edition3.programme300Voix.etablissements.cta.label} →</a></p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container voix-pourquoi reveal">
+    <h3>${edition3.programme300Voix.partenaires.titre}</h3>
+    <p>${edition3.programme300Voix.partenaires.texte}</p>
+    <p><a href="${edition3.programme300Voix.partenaires.cta.lien}" class="method-step-link">${edition3.programme300Voix.partenaires.cta.label} →</a></p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
+    <div class="reveal">
+      <h2>${edition3.programme300Voix.conclusion.lignes.join("<br>")}</h2>
+      <p>${edition3.programme300Voix.conclusion.sousLigne}</p>
+      <div class="hero-ctas" style="justify-content:center;">
+        <a href="${edition3.programme300Voix.conclusion.ctaPrincipal.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.conclusion.ctaPrincipal.label}</a>
+        <a href="${edition3.programme300Voix.conclusion.ctaSecondaire.lien}" class="btn btn-outline">${edition3.programme300Voix.conclusion.ctaSecondaire.label}</a>
+      </div>
+    </div>
   </div>
 </section>
 
