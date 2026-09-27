@@ -8,13 +8,13 @@
     "eyebrow": "Le concours en chiffres",
     "chiffres": [
       { "valeur": "2", "libelle": "éditions déjà réussies" },
-      { "valeur": "25", "libelle": "candidatures reçues (édition 2026)" },
-      { "valeur": "24", "libelle": "finalistes sur scène (16 en 2025, 8 en 2026)" },
+      { "valeur": "41", "libelle": "candidatures reçues" },
+      { "valeur": "24", "libelle": "finalistes sur scène" },
       { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
       { "valeur": "+300", "libelle": "participants réunis en présentiel sur les deux éditions" },
       { "valeur": "300", "libelle": "bénéficiaires visés par 300 Voix dès 2027" }
     ],
-    "_source": "2 éditions : editions-index.json. 25 candidatures : accueil.json chiffresEvocateurs (édition 2026, seule donnée disponible pour ce champ). 24 finalistes : 16 (edition-1.json) + 8 (gagnants.json). +10M vues : qui-sommes-nous.json agence.chiffres. +300 participants : +100 (edition-1.json) + 200 (accueil.json, édition 2026). 300 bénéficiaires 300 Voix : edition-3.json nouveautes."
+    "_source": "2 éditions : editions-index.json. 41 candidatures : 16 (1ère édition) + 25 (2ème édition, accueil.json chiffresEvocateurs), confirmé par le client (27/09/2026). 24 finalistes : 16 (edition-1.json) + 8 (gagnants.json). +10M vues : qui-sommes-nous.json agence.chiffres. +300 participants : +100 (edition-1.json) + 200 (accueil.json, édition 2026). 300 bénéficiaires 300 Voix : edition-3.json nouveautes."
   },
   "editions": {
     "eyebrow": "Depuis 2025",
