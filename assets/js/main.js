@@ -455,4 +455,37 @@
       });
     }
   });
+
+  (function () {
+    var gate = document.getElementById("formulaire");
+    var before = document.getElementById("candidature-avant-ouverture");
+    var after = document.getElementById("candidature-formulaire-ouvert");
+    if (!gate || !before || !after || !gate.dataset.openDate) return;
+    if (new Date() >= new Date(gate.dataset.openDate)) {
+      before.hidden = true;
+      after.hidden = false;
+    }
+  })();
+
+  (function () {
+    var form = document.getElementById("waitlist-form");
+    var note = document.getElementById("waitlist-form-note");
+    if (!form || !note) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        note.textContent = "Merci de renseigner les champs obligatoires avec une adresse e-mail valide.";
+        return;
+      }
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body })
+        .then(function () {
+          note.textContent = "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.";
+          form.reset();
+        })
+        .catch(function () {
+          note.textContent = "Une erreur est survenue, merci de réessayer ou de nous contacter directement.";
+        });
+    });
+  })();
 })();
