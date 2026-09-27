@@ -77,7 +77,12 @@ function render(data) {
       <h2>${partenaires.formulaire.titre}</h2>
       <p class="section-lead">${partenaires.formulaire.sousTitre}</p>
     </div>
-    <form class="contact-form reveal" id="partenaire-form" novalidate>
+    <form class="contact-form reveal" id="partenaire-form" data-netlify="true" name="demande-partenariat" netlify-honeypot="societe" novalidate>
+      <input type="hidden" name="form-name" value="demande-partenariat">
+      <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label for="part-societe">Ne pas remplir</label>
+        <input type="text" id="part-societe" name="societe" tabindex="-1" autocomplete="off">
+      </p>
       <div class="form-row-pair">
         <div class="form-row">
           <label for="part-nom">Nom</label>

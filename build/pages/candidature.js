@@ -13,7 +13,6 @@ function render(data) {
   <div class="container">
     <h1>${candidature.titre}</h1>
     <p class="page-hero-lead">${candidature.sousTitre}</p>
-    <a href="#formulaire" class="btn btn-primary btn-lg">Je veux candidater →</a>
   </div>
 </section>
 
@@ -157,53 +156,94 @@ ${
   </div>
 </section>
 
-<section class="section" id="formulaire">
+<section class="section" id="formulaire" data-open-date="${candidature.dateOuvertureCandidaturesISO}">
   <div class="container">
-    <div class="todo-banner reveal">
-      📅 Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
+    <div id="candidature-avant-ouverture">
+      <div class="todo-banner reveal">
+        📅 Les candidatures ouvrent le <strong>${candidature.dateOuvertureCandidatures}</strong>
+      </div>
+      <div class="section-head reveal" style="margin-top:28px;">
+        <h2>${candidature.listeAttente.titre}</h2>
+        <p class="section-lead">${candidature.listeAttente.texte}</p>
+      </div>
+      <form class="contact-form reveal" id="waitlist-form" data-netlify="true" name="liste-attente-candidature" netlify-honeypot="societe" novalidate>
+        <input type="hidden" name="form-name" value="liste-attente-candidature">
+        <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="wait-societe">Ne pas remplir</label>
+          <input type="text" id="wait-societe" name="societe" tabindex="-1" autocomplete="off">
+        </p>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="wait-nom">Nom</label>
+            <input type="text" id="wait-nom" name="nom" required>
+          </div>
+          <div class="form-row">
+            <label for="wait-prenom">Prénom</label>
+            <input type="text" id="wait-prenom" name="prenom" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="wait-email">Adresse e-mail</label>
+          <input type="email" id="wait-email" name="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.listeAttente.ctaLabel}</button>
+        <p class="form-note" id="waitlist-form-note" role="status" aria-live="polite"></p>
+      </form>
     </div>
-    <form class="contact-form reveal" id="candidature-form" novalidate>
-      <div class="form-row-pair">
-        <div class="form-row">
-          <label for="cand-nom">Nom</label>
-          <input type="text" id="cand-nom" name="nom" required>
-        </div>
-        <div class="form-row">
-          <label for="cand-prenom">Prénom</label>
-          <input type="text" id="cand-prenom" name="prenom" required>
-        </div>
+
+    <div id="candidature-formulaire-ouvert" hidden>
+      <div class="todo-banner reveal">
+        📅 Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
       </div>
-      <div class="form-row-pair">
-        <div class="form-row">
-          <label for="cand-profession">Profession</label>
-          <select id="cand-profession" name="profession" required>
-            <option value="" disabled selected>Sélectionnez une option</option>
-            ${candidature.formulaire.professions.map((p) => `<option value="${p}">${p}</option>`).join("")}
-          </select>
+      <form class="contact-form reveal" id="candidature-form" data-netlify="true" name="candidature" netlify-honeypot="societe" novalidate>
+        <input type="hidden" name="form-name" value="candidature">
+        <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="cand-societe">Ne pas remplir</label>
+          <input type="text" id="cand-societe" name="societe" tabindex="-1" autocomplete="off">
+        </p>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="cand-nom">Nom</label>
+            <input type="text" id="cand-nom" name="nom" required>
+          </div>
+          <div class="form-row">
+            <label for="cand-prenom">Prénom</label>
+            <input type="text" id="cand-prenom" name="prenom" required>
+          </div>
+        </div>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="cand-profession">Profession</label>
+            <select id="cand-profession" name="profession" required>
+              <option value="" disabled selected>Sélectionnez une option</option>
+              ${candidature.formulaire.professions.map((p) => `<option value="${p}">${p}</option>`).join("")}
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="cand-pays">Pays de résidence</label>
+            <input type="text" id="cand-pays" name="pays" placeholder="Bénin" required>
+          </div>
+        </div>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="cand-email">Adresse e-mail</label>
+            <input type="email" id="cand-email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="cand-phone">Numéro WhatsApp</label>
+            <input type="tel" id="cand-phone" name="phone" required>
+          </div>
         </div>
         <div class="form-row">
-          <label for="cand-pays">Pays de résidence</label>
-          <input type="text" id="cand-pays" name="pays" placeholder="Bénin" required>
+          <label for="cand-video">Lien de votre vidéo</label>
+          <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft);">${candidature.formulaire.videoInstructions}</p>
+          <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
         </div>
-      </div>
-      <div class="form-row-pair">
-        <div class="form-row">
-          <label for="cand-email">Adresse e-mail</label>
-          <input type="email" id="cand-email" name="email" required>
-        </div>
-        <div class="form-row">
-          <label for="cand-phone">Numéro WhatsApp</label>
-          <input type="tel" id="cand-phone" name="phone" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <label for="cand-video">Lien de votre vidéo</label>
-        <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft);">${candidature.formulaire.videoInstructions}</p>
-        <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>
-      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-    </form>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
     <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">
       Une question ? Consultez notre <a href="/faq/" style="font-weight:700; color:var(--navy-950);">FAQ</a> ou <a href="https://wa.me/${site.contact.telephoneWhatsapp.replace(/[^\d]/g, "")}" target="_blank" rel="noopener" style="font-weight:700; color:var(--navy-950);">contactez-nous sur WhatsApp</a>.
     </p>

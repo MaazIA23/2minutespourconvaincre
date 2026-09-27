@@ -50,8 +50,14 @@
     ]
   },
   "dateOuvertureCandidatures": "15 janvier 2027",
+  "dateOuvertureCandidaturesISO": "2027-01-15T00:00:00",
   "dateLimiteCandidatures": "30 janvier 2027 à 23h59",
   "ctaSubmit": "Envoyer ma candidature",
+  "listeAttente": {
+    "titre": "Les candidatures ne sont pas encore ouvertes",
+    "texte": "Les candidatures pour la 3ème édition ouvriront le 15 janvier 2027. Inscrivez-vous dès maintenant pour être informé(e) en priorité dès l'ouverture.",
+    "ctaLabel": "Rejoindre la liste d'attente"
+  },
   "formulaire": {
     "professions": [
       "Étudiant(e)",
