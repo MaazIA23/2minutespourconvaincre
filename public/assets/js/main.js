@@ -327,24 +327,26 @@
     });
   });
 
-  /* Cartes jury : le nom/titre apparaît au survol (desktop) et automatiquement
-     dès que la carte défile dans l'écran (mobile), sans nécessiter de tap. */
+  /* Cartes jury : au tactile (pas de survol), un tap révèle le nom/titre, un tap ailleurs le masque */
   (function () {
     var cards = document.querySelectorAll(".jury-card");
     if (!cards.length) return;
-    if (!("IntersectionObserver" in window)) {
-      cards.forEach(function (c) { c.classList.add("is-active"); });
-      return;
-    }
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          entry.target.classList.toggle("is-active", entry.isIntersecting);
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        var wasActive = card.classList.contains("is-active");
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
         });
-      },
-      { threshold: 0.4 }
-    );
-    cards.forEach(function (c) { observer.observe(c); });
+        if (!wasActive) card.classList.add("is-active");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".jury-card")) {
+        cards.forEach(function (c) {
+          c.classList.remove("is-active");
+        });
+      }
+    });
   })();
 
   /* Formulaire de don (page /soutenir/) : bascule anonyme/nominatif + paiement FedaPay */
