@@ -29,7 +29,7 @@ function render(data) {
         <span class="prize-ticket-icon">✈️</span>
         <div class="prize-ticket-text">
           <strong>${candidature.prix.recompense}</strong>
-          <span>Paris, France 🇫🇷</span>
+          <span>Destination France 🇫🇷</span>
         </div>
       </div>
     </div>

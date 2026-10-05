@@ -8,7 +8,7 @@ function render(data) {
   <div class="container hero-inner">
     <figure class="hero-visual reveal">
       <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
-      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine à Paris pour le lauréat</span></figcaption>
+      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine en France pour le lauréat</span></figcaption>
     </figure>
     <div class="hero-copy reveal">
       <p class="hero-kicker"><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
