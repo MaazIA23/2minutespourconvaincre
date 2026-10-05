@@ -15,26 +15,8 @@ function render(data) {
       <h1 class="hero-rotator" id="hero-rotator">${(edition3.accrochesRotatives || [edition3.accroche])
         .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
         .join("")}</h1>
-      <div class="hero-meta">
-        <span>📅 ${edition3.date}</span>
-        <span>📍 ${edition3.lieu}</span>
-      </div>
-      ${
-        edition3.dateCountdownISO
-          ? `<div class="hero-countdown-block">
-        <p class="eyebrow hero-countdown-label">3ème édition dans</p>
-        <div class="hero-countdown" id="hero-countdown" data-target="${edition3.dateCountdownISO}">
-          <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
-        </div>
-      </div>`
-          : ""
-      }
       <div class="hero-ctas reveal">
         <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-outline btn-lg">Devenir partenaire →</a>
       </div>
     </div>
   </div>
@@ -177,8 +159,10 @@ ${
       </div>
     </div>
     <p style="text-align:center"><a href="/partenaires/" class="btn btn-ghost">Voir tous nos partenaires →</a></p>
-    <p class="partenaires-teaser-cta reveal">Vous souhaitez contribuer à la prochaine édition ?
-      <a href="/partenaires/#devenir-partenaire">Devenir partenaire →</a></p>
+    <div class="partenaires-teaser-devenir reveal">
+      <p>Vous souhaitez associer votre marque à la 3ème édition ?</p>
+      <a href="/partenaires/#devenir-partenaire" class="btn btn-primary btn-lg">Devenir partenaire</a>
+    </div>
   </div>
 </section>
 

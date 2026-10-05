@@ -1112,3 +1112,7 @@ html, body { overflow-x: clip; }
   .photo-feature-media { position: sticky; top: 110px; }
 }
 .photo-feature-copy .section-head h2::after { margin-left: 0; }
+.partenaires-teaser-devenir { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: clamp(24px, 3vw, 40px); text-align: center; }
+.partenaires-teaser-devenir p { margin: 0; text-align: center; font-weight: 600; color: var(--navy-950); font-size: var(--t-lead); }
+.hero-split .hero-ctas { margin-top: clamp(24px, 3vw, 40px); }
+@media (max-width: 899px) { .hero-split .hero-ctas .btn { flex: 0 1 auto; min-width: 220px; } }
