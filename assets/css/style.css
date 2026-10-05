@@ -928,3 +928,187 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 @media (max-width: 480px) {
   .two-col, .ambitions-grid, .stats-grid, .stats-grid-5, .stats-grid-4, .offer-grid, .nouveautes-grid, .editions-grid, .actualites-grid, .editions-grid-2, .temoignages-grid, .partenaires-grid, .voix-transmet-grid { grid-template-columns: 1fr; }
 }
+
+/* =====================================================================
+   Refonte responsive (2026) : tailles fluides, mise en page qui occupe
+   toute la largeur des grands écrans, bandeau d'accueil en deux colonnes.
+   Mêmes couleurs et polices que la charte 2MPC.
+   ===================================================================== */
+:root {
+  --container: 1320px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-y: clamp(64px, 9vw, 136px);
+  --t-h1: clamp(2.5rem, 5.6vw, 5.4rem);
+  --t-h2: clamp(1.9rem, 3.4vw, 3.1rem);
+  --t-lead: clamp(1.02rem, 1.1vw + .6rem, 1.22rem);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --gold-grad: linear-gradient(100deg, #fbe27a 0%, #f6cc0c 45%, #c99400 100%);
+}
+
+body { font-size: clamp(.98rem, .2vw + .93rem, 1.06rem); }
+.container { max-width: var(--container); padding-inline: var(--gutter); }
+.section { padding-block: var(--section-y); }
+h1 { font-size: var(--t-h1); line-height: 1.02; }
+h2 { font-size: var(--t-h2); line-height: 1.08; text-wrap: balance; }
+.section-head { max-width: 860px; margin-bottom: clamp(32px, 4.5vw, 64px); }
+.section-head h2::after {
+  content: ""; display: block; width: 64px; height: 4px; border-radius: 4px;
+  background: var(--gold-grad); margin: 18px auto 0;
+}
+.section-head-left { text-align: left; margin-left: 0; }
+.section-head-left h2::after { margin-left: 0; }
+.section-lead { font-size: var(--t-lead); }
+.prose { max-width: 860px; }
+.prose-left { margin-left: 0; }
+.eyebrow { font-size: clamp(.74rem, .3vw + .66rem, .86rem); letter-spacing: .14em; }
+.btn { transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .2s ease, color .2s ease, border-color .2s ease; }
+.btn-lg { padding: clamp(14px, 1.2vw, 18px) clamp(26px, 2.4vw, 36px); font-size: clamp(.95rem, .3vw + .88rem, 1.05rem); }
+.reveal { transition: opacity .9s var(--ease), transform .9s var(--ease); }
+
+/* ---------- En-tête ---------- */
+.header-inner { min-height: clamp(68px, 6vw, 84px); }
+.logo-img { height: clamp(38px, 3.4vw, 50px); }
+.main-nav > ul { gap: clamp(16px, 2vw, 34px); }
+.main-nav a { font-size: clamp(.86rem, .3vw + .78rem, .98rem); position: relative; }
+@media (min-width: 1041px) {
+  .main-nav > ul > li > a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; border-radius: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease);
+  }
+  .main-nav > ul > li > a:hover::after, .main-nav > ul > li > a.active::after { transform: scaleX(1); }
+}
+.btn-header-cta { padding: 10px 20px; font-size: .9rem; box-shadow: none; }
+@media (max-width: 1240px) { .btn-header-cta { display: none; } }
+@media (max-width: 1040px) { .main-nav { inset: clamp(68px, 6vw, 84px) 0 0 0; } }
+
+/* ---------- Bandeau d'accueil en deux colonnes ---------- */
+.hero.hero-split {
+  min-height: auto; padding-block: clamp(28px, 5vw, 72px) clamp(48px, 6vw, 88px);
+  background:
+    radial-gradient(60% 70% at 85% 10%, rgba(246,204,12,.20) 0%, transparent 60%),
+    radial-gradient(50% 60% at 0% 100%, rgba(102,112,163,.35) 0%, transparent 70%),
+    var(--navy-950);
+}
+.hero-motif {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .09;
+  background-image: radial-gradient(rgba(255,255,255,.9) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 70%); mask-image: linear-gradient(90deg, #000 0%, transparent 70%);
+}
+.hero-split .hero-inner { display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4vw, 48px); align-items: center; }
+.hero-split .hero-copy { min-width: 0; }
+.hero-kicker {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(.78rem, .35vw + .7rem, .95rem); font-weight: 600; color: rgba(255,255,255,.82); text-align: left;
+}
+.hero-kicker span {
+  background: var(--gold); color: var(--navy-950); font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+  padding: 6px 14px; border-radius: 999px; font-size: .9em;
+}
+.hero-split h1 { font-size: clamp(2.4rem, 5.4vw, 5.6rem); line-height: .98; margin-bottom: clamp(18px, 2.4vw, 30px); }
+.hero-split .hero-meta { font-size: clamp(.95rem, .4vw + .85rem, 1.1rem); }
+.hero-split .hero-visual {
+  position: relative; margin: 0; border-radius: clamp(18px, 2vw, 30px); overflow: visible; box-shadow: none;
+}
+.hero-split .hero-visual img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%;
+  border-radius: inherit; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); position: relative; z-index: 1;
+}
+.hero-split .hero-visual::before {
+  content: ""; position: absolute; inset: 0; transform: translate(clamp(10px, 1.4vw, 22px), clamp(10px, 1.4vw, 22px));
+  border: 2px solid var(--gold); border-radius: inherit; z-index: 0;
+}
+.hero-badge {
+  position: absolute; z-index: 2; left: clamp(-10px, -1vw, 0px); bottom: clamp(-22px, -2vw, -14px);
+  display: flex; align-items: center; gap: 12px; max-width: 86%;
+  background: #fff; color: var(--navy-950); border-radius: 16px; padding: 12px 16px;
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,.5); font-size: clamp(.78rem, .3vw + .7rem, .92rem); line-height: 1.35;
+}
+.hero-badge strong { display: block; font-family: var(--font-heading); font-size: 1.08em; }
+.hero-badge-icon { font-size: 1.6em; }
+.hero-split .hero-countdown { gap: clamp(8px, 1vw, 14px); }
+.hero-split .countdown-item { min-width: clamp(62px, 6vw, 92px); padding: clamp(10px, 1vw, 16px) clamp(10px, 1.2vw, 18px); border-radius: 14px; }
+.hero-split .countdown-value { font-size: clamp(1.5rem, 2.6vw, 2.6rem); }
+.hero-split .hero-ctas { gap: 14px; }
+.hero-split .hero-ctas .btn { padding: clamp(14px, 1.2vw, 18px) clamp(24px, 2.2vw, 34px); font-size: clamp(.92rem, .3vw + .86rem, 1.04rem); }
+
+@media (min-width: 900px) {
+  .hero.hero-split { min-height: calc(100svh - clamp(68px, 6vw, 84px)); display: flex; align-items: center; }
+  .hero-split .hero-inner { grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 110px); }
+  .hero-split .hero-visual { order: 2; }
+  .hero-split .hero-visual img { aspect-ratio: 4 / 5; max-height: 74svh; }
+}
+@media (max-width: 899px) {
+  .hero-split .hero-ctas .btn { flex: 1 1 100%; }
+  .hero-split .hero-visual { margin-bottom: 22px; }
+}
+@media (max-width: 720px) {
+  .hero.hero-split { min-height: auto; display: block; }
+  .hero-split h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+}
+
+/* ---------- Présentation + vidéo côte à côte ---------- */
+.intro-split-inner { display: grid; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.intro-split-copy .prose { margin-bottom: 24px; }
+.intro-split-video { max-width: none; margin: 0; }
+@media (min-width: 1000px) { .intro-split-inner { grid-template-columns: 1fr 1.1fr; } }
+
+/* ---------- En-têtes des pages intérieures ---------- */
+.page-hero { padding-block: clamp(56px, 8vw, 120px) clamp(48px, 7vw, 104px); }
+.page-hero h1 { font-size: clamp(2.3rem, 5vw, 4.8rem); max-width: 18ch; }
+.page-hero-lead { font-size: var(--t-lead); max-width: 62ch; }
+.page-hero:not(.page-hero-photo-bg) {
+  background:
+    radial-gradient(55% 80% at 100% 0%, rgba(246,204,12,.16) 0%, transparent 60%),
+    radial-gradient(45% 70% at 0% 100%, rgba(102,112,163,.3) 0%, transparent 70%),
+    var(--navy-950);
+}
+.page-hero-photo-bg { min-height: clamp(360px, 52svh, 620px); display: flex; align-items: center; }
+.page-hero-photo-bg .container { width: 100%; }
+
+/* ---------- Chiffres clés ---------- */
+.stats-band { padding-block: clamp(48px, 6vw, 88px); }
+.stat-value { font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1; }
+.stat-label { font-size: clamp(.86rem, .3vw + .8rem, 1rem); }
+@media (min-width: 981px) {
+  .stats-grid > .stat-card + .stat-card { border-left: 1px solid var(--line); }
+}
+
+/* ---------- Cartes : relief et survol plus doux ---------- */
+.edition-card, .actualite-card, .method-step, .ambition-card-light, .temoignage-card, .sponsoring-card, .offer-card, .palmares-card {
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .3s ease;
+}
+@media (hover: hover) {
+  .edition-card:hover, .actualite-card:hover, .method-step:hover, .ambition-card-light:hover, .offer-card:hover {
+    transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(246,204,12,.6);
+  }
+}
+.edition-card-media { overflow: hidden; }
+.edition-card-media img { transition: transform .8s var(--ease); }
+.edition-card:hover .edition-card-media img { transform: scale(1.05); }
+.editions-grid, .actualites-grid, .palmares-grid, .temoignages-grid, .offer-grid { gap: clamp(18px, 2.2vw, 32px); }
+.photo-feature-inner { gap: clamp(32px, 6vw, 96px); }
+
+/* ---------- Appel final ---------- */
+.cta-final { padding-block: var(--section-y); background:
+  radial-gradient(50% 80% at 50% 0%, rgba(246,204,12,.16) 0%, transparent 65%), var(--navy-950); }
+.cta-final h2 { font-size: clamp(2rem, 4.2vw, 3.6rem); }
+
+/* ---------- Pied de page ---------- */
+.site-footer { padding-top: clamp(48px, 6vw, 88px); }
+.footer-inner { gap: clamp(28px, 4vw, 64px); }
+.hero-split h1 { font-size: clamp(2.2rem, 4.3vw, 4.7rem); overflow-wrap: normal; hyphens: none; }
+.hero-split .hero-visual img { object-position: 50% 12%; }
+@media (max-width: 720px) { .hero-split h1 { font-size: clamp(2rem, 8.4vw, 2.6rem); } }
+@media (min-width: 1000px) {
+  .nouveautes-grid.nouveautes-grid-compact { display: grid; grid-template-columns: repeat(2, 1fr); overflow: visible; gap: clamp(16px, 1.6vw, 24px); }
+  .nouveautes-grid-compact .method-step { flex: none; }
+}
+/* Aucun défilement horizontal parasite sur téléphone */
+html, body { overflow-x: clip; }
+/* « Ce qui change » : la photo reste en haut, à côté des cartes */
+@media (min-width: 981px) {
+  .photo-feature-inner { align-items: start; }
+  .photo-feature-media { position: sticky; top: 110px; }
+}
+.photo-feature-copy .section-head h2::after { margin-left: 0; }

@@ -34,6 +34,7 @@
     </nav>
     <div class="header-actions">
       <a href="/soutenir/" class="btn btn-header-support"><span aria-hidden="true">❤️</span> <span class="header-support-label">Soutenir</span></a>
+      <a href="/candidature/" class="btn btn-primary btn-header-cta">Candidater</a>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
@@ -42,9 +43,15 @@
 </header>
 <main id="main">
 
-<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
-  <div class="container hero-inner hero-inner-single">
+<section class="hero hero-split" id="top">
+  <div class="hero-motif" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <figure class="hero-visual reveal">
+      <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
+      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine à Paris pour le lauréat</span></figcaption>
+    </figure>
     <div class="hero-copy reveal">
+      <p class="hero-kicker"><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
       <h1 class="hero-rotator" id="hero-rotator"><span class="hero-rotator-phrase is-active">Le plus grand concours d'improvisation au Bénin</span></h1>
       <div class="hero-meta">
         <span>📅 Mars 2027</span>
@@ -60,31 +67,28 @@
         </div>
       </div>
       <div class="hero-ctas reveal">
-        <a href="/candidature/" class="btn btn-primary">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
+        <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
+        <a href="/partenaires/#devenir-partenaire" class="btn btn-outline btn-lg">Devenir partenaire →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="quest-ce-que">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
-      <h2>Quand la parole devient conviction</h2>
+<section class="section intro-split" id="quest-ce-que">
+  <div class="container intro-split-inner">
+    <div class="intro-split-copy">
+      <div class="section-head section-head-left reveal">
+        <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
+        <h2>Quand la parole devient conviction</h2>
+      </div>
+      <div class="prose prose-left reveal">
+        <p>Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.</p>
+        <p>Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.</p>
+        <p>Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation.</p>
+      </div>
+      <p><a href="/a-propos/" class="btn btn-outline">En savoir plus →</a></p>
     </div>
-    <div class="prose reveal">
-      <p>Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.</p>
-      <p>Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.</p>
-      <p>Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation.</p>
-    </div>
-    <p style="text-align:center"><a href="/a-propos/" class="btn btn-outline">En savoir plus →</a></p>
-  </div>
-</section>
-
-<section class="section video-feature" id="video">
-  <div class="container">
-    <div class="video-embed reveal">
+    <div class="video-embed intro-split-video reveal" id="video">
       <iframe
         src="https://www.youtube.com/embed/nGOykpI6afc"
         title="Découvrez Deux Minutes Pour Convaincre en vidéo"

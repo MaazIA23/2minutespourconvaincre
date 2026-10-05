@@ -3,9 +3,15 @@ function render(data) {
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
 
   return `
-<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
-  <div class="container hero-inner hero-inner-single">
+<section class="hero hero-split" id="top">
+  <div class="hero-motif" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <figure class="hero-visual reveal">
+      <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
+      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine à Paris pour le lauréat</span></figcaption>
+    </figure>
     <div class="hero-copy reveal">
+      <p class="hero-kicker"><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
       <h1 class="hero-rotator" id="hero-rotator">${(edition3.accrochesRotatives || [edition3.accroche])
         .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
         .join("")}</h1>
@@ -27,8 +33,8 @@ function render(data) {
           : ""
       }
       <div class="hero-ctas reveal">
-        <a href="/candidature/" class="btn btn-primary">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
+        <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
+        <a href="/partenaires/#devenir-partenaire" class="btn btn-outline btn-lg">Devenir partenaire →</a>
       </div>
     </div>
   </div>
@@ -36,26 +42,21 @@ function render(data) {
 
 ${
   presentation
-    ? `<section class="section" id="quest-ce-que">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
-      <h2>${presentation.titre}</h2>
+    ? `<section class="section intro-split" id="quest-ce-que">
+  <div class="container intro-split-inner">
+    <div class="intro-split-copy">
+      <div class="section-head section-head-left reveal">
+        <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
+        <h2>${presentation.titre}</h2>
+      </div>
+      <div class="prose prose-left reveal">
+        ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n        ")}
+      </div>
+      <p><a href="${presentation.cta.lien}/" class="btn btn-outline">${presentation.cta.label} →</a></p>
     </div>
-    <div class="prose reveal">
-      ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
-    </div>
-    <p style="text-align:center"><a href="${presentation.cta.lien}/" class="btn btn-outline">${presentation.cta.label} →</a></p>
-  </div>
-</section>`
-    : ""
-}
-
-${
-  accueil.videoPresentation
-    ? `<section class="section video-feature" id="video">
-  <div class="container">
-    <div class="video-embed reveal">
+    ${
+      accueil.videoPresentation
+        ? `<div class="video-embed intro-split-video reveal" id="video">
       <iframe
         src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}"
         title="${accueil.videoPresentation.titre}"
@@ -63,7 +64,9 @@ ${
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
-    </div>
+    </div>`
+        : ""
+    }
   </div>
 </section>`
     : ""
