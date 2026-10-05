@@ -9,6 +9,10 @@ function render(data) {
   <div class="container">
     <h1>${partenaires.hero.titre}</h1>
     <p class="page-hero-lead">${partenaires.hero.sousTitre}</p>
+    <div class="hero-ctas">
+      <a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="btn btn-primary btn-lg" download>📄 Télécharger le dossier de sponsoring 2027</a>
+      <a href="#devenir-partenaire" class="btn btn-outline btn-lg">Nous contacter</a>
+    </div>
   </div>
 </section>
 
@@ -76,6 +80,7 @@ function render(data) {
     <div class="section-head reveal">
       <h2>${partenaires.formulaire.titre}</h2>
       <p class="section-lead">${partenaires.formulaire.sousTitre}</p>
+      <p style="text-align:center"><a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="btn btn-outline" download>📄 Dossier de sponsoring 2027 (PDF)</a></p>
     </div>
     <form class="contact-form reveal" id="partenaire-form" data-netlify="true" name="demande-partenariat" netlify-honeypot="societe" novalidate>
       <input type="hidden" name="form-name" value="demande-partenariat">

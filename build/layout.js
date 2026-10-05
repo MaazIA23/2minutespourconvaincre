@@ -21,7 +21,7 @@ function renderHeader(data, activeSlug) {
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label="${data.site.nomSite}, accueil">
-      <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
+      <img src="/assets/img/logo-640.png" alt="${data.site.nomSite}" class="logo-img">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
@@ -30,6 +30,7 @@ function renderHeader(data, activeSlug) {
     </nav>
     <div class="header-actions">
       <a href="/soutenir/" class="btn btn-header-support"><span aria-hidden="true">❤️</span> <span class="header-support-label">Soutenir</span></a>
+      <a href="/candidature/" class="btn btn-primary btn-header-cta">Candidater</a>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
@@ -78,7 +79,7 @@ function renderFooter(data) {
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <img src="/assets/img/logo.png" alt="${data.site.nomSite}" class="logo-img">
+        <img src="/assets/img/logo-640.png" alt="${data.site.nomSite}" class="logo-img">
       </a>
       <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par ${data.site.organisation.agence}.</p>
       <a href="/soutenir/" class="btn btn-primary footer-support-cta">❤️ Soutenir l'événement</a>
@@ -133,7 +134,23 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title} | ${data.site.nomSite}</title>
 <meta name="description" content="${description}">
-<link rel="icon" href="data:,">
+<link rel="canonical" href="__URL_PAGE__">
+<meta name="theme-color" content="#283477">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="${data.site.nomSite}">
+<meta property="og:title" content="${title} | ${data.site.nomSite}">
+<meta property="og:description" content="${description}">
+<meta property="og:url" content="__URL_PAGE__">
+<meta property="og:image" content="${data.site.contact.site}/assets/img/partage-2mpc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deux Minutes Pour Convaincre, 3ème édition, mars 2027">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icones/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icones/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">

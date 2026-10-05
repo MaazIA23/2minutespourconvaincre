@@ -5,7 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accueil | Deux Minutes pour Convaincre</title>
 <meta name="description" content="Le plus grand concours d'improvisation au Bénin. 3ème édition, Mars 2027.">
-<link rel="icon" href="data:,">
+<link rel="canonical" href="https://2minpourconvaincre.com/">
+<meta name="theme-color" content="#283477">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Deux Minutes pour Convaincre">
+<meta property="og:title" content="Accueil | Deux Minutes pour Convaincre">
+<meta property="og:description" content="Le plus grand concours d'improvisation au Bénin. 3ème édition, Mars 2027.">
+<meta property="og:url" content="https://2minpourconvaincre.com/">
+<meta property="og:image" content="https://2minpourconvaincre.com/assets/img/partage-2mpc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deux Minutes Pour Convaincre, 3ème édition, mars 2027">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icones/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icones/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +33,7 @@
 <header class="site-header" id="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label="Deux Minutes pour Convaincre, accueil">
-      <img src="/assets/img/logo.png" alt="Deux Minutes pour Convaincre" class="logo-img">
+      <img src="/assets/img/logo-640.png" alt="Deux Minutes pour Convaincre" class="logo-img">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
@@ -34,6 +50,7 @@
     </nav>
     <div class="header-actions">
       <a href="/soutenir/" class="btn btn-header-support"><span aria-hidden="true">❤️</span> <span class="header-support-label">Soutenir</span></a>
+      <a href="/candidature/" class="btn btn-primary btn-header-cta">Candidater</a>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
@@ -42,57 +59,74 @@
 </header>
 <main id="main">
 
-<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
-  <div class="container hero-inner hero-inner-single">
+<section class="hero hero-split" id="top">
+  <div class="hero-motif" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <figure class="hero-visual reveal">
+      <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
+      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine en France pour le lauréat</span></figcaption>
+    </figure>
     <div class="hero-copy reveal">
+      <p class="hero-kicker"><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
       <h1 class="hero-rotator" id="hero-rotator"><span class="hero-rotator-phrase is-active">Le plus grand concours d'improvisation au Bénin</span></h1>
-      <div class="hero-meta">
-        <span>📅 Mars 2027</span>
-        <span>📍 Cotonou</span>
-      </div>
-      <div class="hero-countdown-block">
-        <p class="eyebrow hero-countdown-label">3ème édition dans</p>
-        <div class="hero-countdown" id="hero-countdown" data-target="2027-03-20T00:00:00">
-          <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
-        </div>
-      </div>
       <div class="hero-ctas reveal">
-        <a href="/candidature/" class="btn btn-primary">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
+        <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="quest-ce-que">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
-      <h2>Quand la parole devient conviction</h2>
+<section class="section intro-split" id="quest-ce-que">
+  <div class="container intro-split-inner">
+    <div class="intro-split-copy">
+      <div class="section-head section-head-left reveal">
+        <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
+        <h2>Quand la parole devient conviction</h2>
+      </div>
+      <div class="prose prose-left reveal">
+        <p>Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.</p>
+        <p>Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.</p>
+        <p>Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation.</p>
+      </div>
+      <p><a href="/a-propos/" class="btn btn-outline">En savoir plus →</a></p>
     </div>
-    <div class="prose reveal">
-      <p>Deux Minutes pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.</p>
-      <p>Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.</p>
-      <p>Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation.</p>
-    </div>
-    <p style="text-align:center"><a href="/a-propos/" class="btn btn-outline">En savoir plus →</a></p>
-  </div>
-</section>
-
-<section class="section video-feature" id="video">
-  <div class="container">
-    <div class="video-embed reveal">
+    <figure class="intro-split-media reveal" id="video">
+      <div class="video-embed intro-split-video">
       <iframe
         src="https://www.youtube.com/embed/nGOykpI6afc"
-        title="Découvrez Deux Minutes Pour Convaincre en vidéo"
+        title="Le récap de la 2ème édition en vidéo"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+      </div>
+      <figcaption class="video-legende"><span aria-hidden="true">▶</span> Le récap de la 2ème édition en vidéo</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+<section class="section alerte-candidature" id="liste-attente" data-masquer-apres="2027-01-15T00:00:00">
+  <div class="container alerte-inner">
+    <div class="alerte-copy reveal">
+      <p class="eyebrow">Candidatures 2027</p>
+      <h2>Ouverture le 15 janvier 2027</h2>
+      <p>Laissez votre e-mail : vous recevrez une confirmation tout de suite, puis une alerte le jour de l'ouverture des candidatures.</p>
     </div>
+    <form class="alerte-form reveal" id="waitlist-form-accueil" data-netlify="true" name="liste-attente-candidature" netlify-honeypot="societe" novalidate>
+      <input type="hidden" name="form-name" value="liste-attente-candidature">
+      <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label for="acc-societe">Ne pas remplir</label>
+        <input type="text" id="acc-societe" name="societe" tabindex="-1" autocomplete="off">
+      </p>
+      <div class="form-row-pair">
+        <div class="form-row"><label for="acc-prenom">Prénom</label><input type="text" id="acc-prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="form-row"><label for="acc-nom">Nom</label><input type="text" id="acc-nom" name="nom" autocomplete="family-name" required></div>
+      </div>
+      <div class="form-row"><label for="acc-email">Adresse e-mail</label><input type="email" id="acc-email" name="email" autocomplete="email" required></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Prévenez-moi à l'ouverture</button>
+      <p class="form-note" id="waitlist-accueil-note" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -267,8 +301,10 @@
       </div>
     </div>
     <p style="text-align:center"><a href="/partenaires/" class="btn btn-ghost">Voir tous nos partenaires →</a></p>
-    <p class="partenaires-teaser-cta reveal">Vous souhaitez contribuer à la prochaine édition ?
-      <a href="/partenaires/#devenir-partenaire">Devenir partenaire →</a></p>
+    <div class="partenaires-teaser-devenir reveal">
+      <p>Vous souhaitez associer votre marque à la 3ème édition ?</p>
+      <a href="/partenaires/#devenir-partenaire" class="btn btn-primary btn-lg">Devenir partenaire</a>
+    </div>
   </div>
 </section>
 
@@ -340,7 +376,7 @@
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <img src="/assets/img/logo.png" alt="Deux Minutes pour Convaincre" class="logo-img">
+        <img src="/assets/img/logo-640.png" alt="Deux Minutes pour Convaincre" class="logo-img">
       </a>
       <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par La Muse Éloquente.</p>
       <a href="/soutenir/" class="btn btn-primary footer-support-cta">❤️ Soutenir l'événement</a>

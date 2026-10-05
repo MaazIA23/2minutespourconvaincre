@@ -103,7 +103,7 @@
       ]
     }
   ],
-  "dossierSponsoringPdf": null,
+  "dossierSponsoringPdf": "/assets/documents/dossier-sponsoring-2mpc-2027.pdf",
   "ctaLabel": "Télécharger le dossier de sponsoring",
   "_note": "Contenu repris du 'Dossier de Présentation' fourni par le client (p.9-10 sur 12) — remplace la précédente version basée sur un autre document interne dont les paliers/tarifs ne correspondaient pas. Exception : le tarif du palier Contributeur a été relevé de 150 000 à 200 000 FCFA à la demande du client (22/09/2026) pour resserrer l'écart avec Topaze Bleue (500 000 FCFA). dossierSponsoringPdf reste null tant que le PDF n'est pas transmis — le bouton de téléchargement reste affiché mais inactif en attendant.",
   "_source": "Dossier de Présentation 2 Min Pour Convaincre, pages 9-10 sur 12"
