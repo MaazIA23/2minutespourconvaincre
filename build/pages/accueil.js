@@ -38,7 +38,8 @@ ${
     </div>
     ${
       accueil.videoPresentation
-        ? `<div class="video-embed intro-split-video reveal" id="video">
+        ? `<figure class="intro-split-media reveal" id="video">
+      <div class="video-embed intro-split-video">
       <iframe
         src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}"
         title="${accueil.videoPresentation.titre}"
@@ -46,7 +47,9 @@ ${
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
-    </div>`
+      </div>
+      <figcaption class="video-legende"><span aria-hidden="true">▶</span> ${accueil.videoPresentation.titre}</figcaption>
+    </figure>`
         : ""
     }
   </div>

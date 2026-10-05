@@ -495,3 +495,13 @@
   wireNetlifyForm("candidature-form", "form-note", "Merci ! Votre candidature a bien été envoyée, nous revenons vers vous rapidement.");
   wireNetlifyForm("partenaire-form", "form-note", "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.");
 })();
+
+/* Accueil : sur téléphone, le bouton WhatsApp flottant apparaît une fois le bandeau d'accueil dépassé. */
+(function () {
+  var hero = document.querySelector(".hero-split");
+  if (!hero) return;
+  document.body.classList.add("has-hero-split");
+  function maj() { document.body.classList.toggle("is-past-hero", window.scrollY > hero.offsetHeight * 0.5); }
+  window.addEventListener("scroll", maj, { passive: true });
+  maj();
+})();
