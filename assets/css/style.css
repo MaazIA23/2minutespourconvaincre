@@ -1147,3 +1147,12 @@ html, body { overflow-x: clip; }
   .hero-split .hero-visual img { height: clamp(150px, 32svh, 260px); }
   .hero-split h1 { font-size: clamp(1.8rem, 7.6vw, 2.2rem); }
 }
+/* ---------- Liste d'attente (accueil) ---------- */
+.alerte-candidature { background: var(--paper-alt); border-block: 1px solid var(--line); }
+.alerte-candidature[hidden] { display: none; }
+.alerte-inner { display: grid; gap: clamp(28px, 4vw, 64px); align-items: center; }
+.alerte-copy h2 { margin-bottom: 14px; }
+.alerte-copy p { font-size: var(--t-lead); max-width: 52ch; text-align: left; }
+.alerte-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 36px); box-shadow: var(--shadow-md); min-width: 0; }
+.alerte-form .form-row input { width: 100%; }
+@media (min-width: 900px) { .alerte-inner { grid-template-columns: 1fr 1fr; } }

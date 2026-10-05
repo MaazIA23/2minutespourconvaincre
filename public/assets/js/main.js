@@ -491,6 +491,7 @@
     });
   }
 
+  wireNetlifyForm("waitlist-form-accueil", "waitlist-accueil-note", "Merci ! Vous êtes inscrit(e). Un e-mail de confirmation vient de vous être envoyé, et nous vous préviendrons le jour de l'ouverture.");
   wireNetlifyForm("waitlist-form", "waitlist-form-note", "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.");
   wireNetlifyForm("candidature-form", "form-note", "Merci ! Votre candidature a bien été envoyée, nous revenons vers vous rapidement.");
   wireNetlifyForm("partenaire-form", "form-note", "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.");
@@ -504,4 +505,12 @@
   function maj() { document.body.classList.toggle("is-past-hero", window.scrollY > hero.offsetHeight * 0.5); }
   window.addEventListener("scroll", maj, { passive: true });
   maj();
+})();
+
+/* Accueil : le bloc « liste d'attente » disparaît une fois les candidatures ouvertes. */
+(function () {
+  var bloc = document.querySelector("[data-masquer-apres]");
+  if (!bloc) return;
+  var date = new Date(bloc.getAttribute("data-masquer-apres") + "+01:00");
+  if (!isNaN(date) && Date.now() >= date.getTime()) bloc.hidden = true;
 })();

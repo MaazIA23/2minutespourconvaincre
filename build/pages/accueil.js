@@ -1,5 +1,5 @@
 function render(data) {
-  const { edition3, partenaires, editionsIndex, accueil, actualites } = data;
+  const { edition3, partenaires, editionsIndex, accueil, actualites, candidature } = data;
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
 
   return `
@@ -56,6 +56,31 @@ ${
 </section>`
     : ""
 }
+
+
+<section class="section alerte-candidature" id="liste-attente" data-masquer-apres="${candidature.dateOuvertureCandidaturesISO}">
+  <div class="container alerte-inner">
+    <div class="alerte-copy reveal">
+      <p class="eyebrow">Candidatures 2027</p>
+      <h2>Ouverture le ${candidature.dateOuvertureCandidatures}</h2>
+      <p>Laissez votre e-mail : vous recevrez une confirmation tout de suite, puis une alerte le jour de l'ouverture des candidatures.</p>
+    </div>
+    <form class="alerte-form reveal" id="waitlist-form-accueil" data-netlify="true" name="liste-attente-candidature" netlify-honeypot="societe" novalidate>
+      <input type="hidden" name="form-name" value="liste-attente-candidature">
+      <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label for="acc-societe">Ne pas remplir</label>
+        <input type="text" id="acc-societe" name="societe" tabindex="-1" autocomplete="off">
+      </p>
+      <div class="form-row-pair">
+        <div class="form-row"><label for="acc-prenom">Prénom</label><input type="text" id="acc-prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="form-row"><label for="acc-nom">Nom</label><input type="text" id="acc-nom" name="nom" autocomplete="family-name" required></div>
+      </div>
+      <div class="form-row"><label for="acc-email">Adresse e-mail</label><input type="email" id="acc-email" name="email" autocomplete="email" required></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Prévenez-moi à l'ouverture</button>
+      <p class="form-note" id="waitlist-accueil-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
 ${
   accueil.chiffresCles
