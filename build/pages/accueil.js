@@ -18,9 +18,7 @@ function render(data) {
       <h1 class="hero-rotator" id="hero-rotator" data-reveal ${delai(2)}>${(edition3.accrochesRotatives || [edition3.accroche])
         .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
         .join("")}</h1>
-      <div class="hero-ctas" data-reveal ${delai(3)}>
-        <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
-      </div>
+
     </div>
   </div>
 </section>

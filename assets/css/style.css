@@ -1398,3 +1398,5 @@ html, body { overflow-x: clip; }
 /* Surtitres sans trait décoratif */
 .acc-surtitre::before, .eyebrow::before { content: none; display: none; }
 .acc-surtitre, .eyebrow { gap: 0; }
+/* Le bouton Candidater reste accessible : dans l'en-tête sur ordinateur, dans la barre du bas ailleurs */
+@media (min-width: 900px) and (max-width: 1240px) { .acc-barre-mobile { display: flex; } .acc-barre-mobile .btn { flex: 0 1 280px; } .acc-barre-mobile { justify-content: center; } }
