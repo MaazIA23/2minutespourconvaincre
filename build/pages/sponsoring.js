@@ -70,8 +70,8 @@ ${
       <h2>Envie d'en savoir plus ?</h2>
       ${
         sponsoring.dossierSponsoringPdf
-          ? `<a href="${sponsoring.dossierSponsoringPdf}" class="btn btn-primary btn-lg" download>📄 ${sponsoring.ctaLabel}</a>`
-          : `<button type="button" class="btn btn-primary btn-lg" disabled>📄 ${sponsoring.ctaLabel}</button>
+          ? `<a href="${sponsoring.dossierSponsoringPdf}" class="btn btn-primary btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${sponsoring.ctaLabel}</a>`
+          : `<button type="button" class="btn btn-primary btn-lg" disabled><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${sponsoring.ctaLabel}</button>
       <p style="max-width:480px; margin:16px auto 0; font-size:0.88rem; color:var(--ink-soft);">Dossier disponible très prochainement.</p>`
       }
       <p style="margin-top:24px"><a href="/partenaires/#devenir-partenaire" class="btn btn-outline">Devenir partenaire →</a></p>

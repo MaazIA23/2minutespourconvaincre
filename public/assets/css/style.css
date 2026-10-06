@@ -1378,3 +1378,15 @@ html, body { overflow-x: clip; }
 /* Fil doré courbe retiré (accueil et bandeaux des pages) */
 .acc-fil { display: none; }
 .page-hero::after { content: none; }
+/* Boutons de téléchargement : icône sobre, boutons de même taille côte à côte */
+.btn-ico { flex-shrink: 0; }
+.page-hero .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(22px, 3vw, 34px); }
+@media (max-width: 599px) {
+  .page-hero .hero-ctas { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .page-hero .hero-ctas .btn { width: 100%; padding: 15px 18px; font-size: .95rem; white-space: nowrap; }
+}
+.btn-blanc { background: #fff; color: var(--navy-950); border-color: #fff; }
+.btn-blanc:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-950); transform: translateY(-2px); }
+.page-hero .hero-ctas .btn { padding: clamp(14px, 1.2vw, 17px) clamp(24px, 2.2vw, 32px); font-size: clamp(.92rem, .3vw + .86rem, 1.02rem); }
+.eyebrow, p.eyebrow { text-align: left; hyphens: none; }
+.section-head p.eyebrow { text-align: center; }
