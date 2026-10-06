@@ -519,6 +519,14 @@
 (function () {
   var doc = document.documentElement;
   doc.classList.add("js");
+  // Les anciens blocs « .reveal » adoptent les nouvelles apparitions, échelonnées entre voisins.
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    el.classList.remove("reveal");
+    el.setAttribute("data-reveal", "");
+    var rang = 0, prec = el.previousElementSibling;
+    while (prec && rang < 4) { if (prec.hasAttribute("data-reveal")) rang++; prec = prec.previousElementSibling; }
+    if (rang && !el.style.getPropertyValue("--delai")) el.style.setProperty("--delai", (rang * 0.1).toFixed(2) + "s");
+  });
   var reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var cibles = document.querySelectorAll("[data-reveal], .acc-fil");
   if (reduit || !("IntersectionObserver" in window)) {
@@ -558,7 +566,8 @@
   window.addEventListener("scroll", surDefilement, { passive: true });
 
   // Barre « Candidater / Devenir partenaire » sur téléphone, entre le bandeau et l'appel final.
-  var barre = document.getElementById("acc-barre-mobile"), hero = document.querySelector(".hero-split"), fin = document.getElementById("candidature-cta");
+  var barre = document.getElementById("acc-barre-mobile"), hero = document.querySelector(".hero-split, .page-hero"), fin = document.querySelector("#candidature-cta, .cta-final, .site-footer");
+  if (barre && /^\/(candidature|partenaires|soutenir)/.test(location.pathname)) barre.remove(), barre = null;
   if (barre && hero && "IntersectionObserver" in window) {
     var apresHero = false, finVisible = false;
     var maj = function () {

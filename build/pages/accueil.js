@@ -222,10 +222,7 @@ ${
   </div>
 </section>
 
-<div class="acc-barre-mobile" id="acc-barre-mobile" aria-hidden="true">
-  <a href="/candidature/" class="btn btn-primary" tabindex="-1">Candidater</a>
-  <a href="/partenaires/#devenir-partenaire" class="btn btn-outline" tabindex="-1">Devenir partenaire</a>
-</div>
+
 `;
 }
 

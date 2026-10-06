@@ -44,6 +44,8 @@ const pagesEcrites = [];
 function writePage(slug, html) {
   const url = `${SITE_URL}/${slug ? slug.replace(/\/$/, "") + "/" : ""}`;
   html = html.split("__URL_PAGE__").join(url);
+  // Titres : espace insécable avant « ? ! : ; » et après « (la ponctuation ne passe jamais seule à la ligne).
+  html = html.replace(/(<h[1-3][^>]*>)([\s\S]*?)(<\/h[1-3]>)/g, (m, a, b, c) => a + b.replace(/ ([?!:;»])/g, "\u00a0$1").replace(/« /g, "«\u00a0") + c);
   if (!/^soutenir\/merci/.test(slug)) pagesEcrites.push(url);
   const dir = slug === "" ? PUBLIC_DIR : path.join(PUBLIC_DIR, slug);
   fs.mkdirSync(dir, { recursive: true });
