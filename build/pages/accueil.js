@@ -4,8 +4,6 @@ function render(data) {
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
   const voix = edition3.programme300Voix;
   const delai = (i, pas = 0.12) => `style="--delai:${(i * pas).toFixed(2)}s"`;
-  // Fil doré qui se dessine entre deux sections.
-  const fil = (sens = 1) => `<svg class="acc-fil" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="${sens > 0 ? "M0,90 C260,10 520,110 760,50 S1100,30 1200,70" : "M0,40 C300,110 560,10 820,70 S1080,100 1200,30"}"/></svg>`;
 
   return `
 <section class="hero hero-split" id="top">
@@ -52,7 +50,6 @@ ${
         : ""
     }
   </div>
-  ${fil(1)}
 </section>`
     : ""
 }
@@ -210,7 +207,6 @@ ${
 }
 
 <section class="acc-final" id="candidature-cta">
-  ${fil(-1)}
   <div class="container acc-final-in">
     <p class="acc-surtitre acc-surtitre-or acc-surtitre-centre" data-reveal>La 3ème édition se construit maintenant</p>
     <h2 data-reveal ${delai(1)}>Prêt(e) à monter<br>sur scène en 2027 ?</h2>

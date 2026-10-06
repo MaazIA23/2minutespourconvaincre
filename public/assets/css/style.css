@@ -1375,3 +1375,6 @@ html, body { overflow-x: clip; }
 .cta-final h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(2.4rem, 5.6vw, 5.2rem); line-height: .96; }
 .cta-final .eyebrow { color: var(--gold); }
 .page-hero h1 { max-width: 22ch; hyphens: none; }
+/* Fil doré courbe retiré (accueil et bandeaux des pages) */
+.acc-fil { display: none; }
+.page-hero::after { content: none; }
