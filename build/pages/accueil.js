@@ -1,6 +1,8 @@
 // Accueil : mise en page aérée, apparitions douces au défilement (data-reveal), peu de cadres.
 function render(data) {
-  const { edition3, partenaires, editionsIndex, accueil, actualites, candidature } = data;
+  const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
+  const fondatrice = quiSommesNous.fondatrice;
+  const temoins = ["José Pascaël Agbo", "Maître Huguette Bokpè Gnacadja", "Ezéchielle Bouet"].map((n) => impact.temoignages.liste.find((t) => t.nom === n)).filter(Boolean);
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
   const voix = edition3.programme300Voix;
   const delai = (i, pas = 0.12) => `style="--delai:${(i * pas).toFixed(2)}s"`;
@@ -67,6 +69,24 @@ ${
     : ""
 }
 
+<section class="acc-section acc-fondatrice" id="fondatrice">
+  <div class="container acc-fondatrice-grille">
+    <figure class="acc-fondatrice-photo" data-reveal><img src="${fondatrice.photo}" alt="${fondatrice.nom}" loading="lazy"></figure>
+    <div class="acc-fondatrice-texte">
+      <p class="acc-surtitre" data-reveal>Portée par</p>
+      <h2 data-reveal ${delai(1)}>Mazidath Bello</h2>
+      <p class="acc-chapo" data-reveal ${delai(2)}>Fondatrice de La Muse Éloquente et initiatrice de Deux Minutes Pour Convaincre.</p>
+      <ul class="acc-fondatrice-faits" data-reveal ${delai(3)}>
+        <li><strong>15 ans</strong> de prise de parole publique</li>
+        <li><strong>+100</strong> personnes accompagnées, de tous secteurs</li>
+        <li><strong>Championne</strong> d'un concours national d'éloquence en France</li>
+        <li><strong>Autrice</strong> de « Chroniques d'une voix qui s'est révélée »</li>
+      </ul>
+      <a href="/qui-sommes-nous/" class="acc-lien" data-reveal ${delai(4)}>Qui sommes-nous <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="acc-section acc-nouveautes" id="nouveautes">
   <div class="container acc-nouveautes-grille">
     <div class="acc-nouveautes-tete">
@@ -130,6 +150,27 @@ ${
     </div>
   </div>
 </section>
+
+${
+  temoins.length
+    ? `<section class="acc-section acc-temoins" id="temoignages">
+  <div class="container">
+    <p class="acc-surtitre" data-reveal>${impact.temoignages.eyebrow}</p>
+    <figure class="acc-temoin-vedette" data-reveal ${delai(1)}>
+      <blockquote><p>« ${temoins[0].citation} »</p></blockquote>
+      <figcaption><img src="${temoins[0].photo}" alt="" loading="lazy"><span><strong>${temoins[0].nom}</strong>${temoins[0].statut}, ${temoins[0].edition}</span></figcaption>
+    </figure>
+    <div class="acc-temoins-liste">
+      ${temoins.slice(1).map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 2)}>
+        <blockquote><p>« ${t.citation} »</p></blockquote>
+        <figcaption><img src="${t.photo}" alt="" loading="lazy"><span><strong>${t.nom}</strong>${t.statut}, ${t.edition}</span></figcaption>
+      </figure>`).join("\n      ")}
+    </div>
+    <a href="/impact/#temoignages" class="acc-lien" data-reveal>Tous les témoignages <span aria-hidden="true">→</span></a>
+  </div>
+</section>`
+    : ""
+}
 
 <section class="acc-section alerte-candidature" id="liste-attente" data-masquer-apres="${candidature.dateOuvertureCandidaturesISO}">
   <div class="container alerte-inner">

@@ -17,8 +17,8 @@
     "eyebrow": "Le concours en chiffres",
     "chiffres": [
       { "valeur": "2", "libelle": "éditions déjà réussies" },
-      { "valeur": "24", "libelle": "finalistes sur scène (16 en 2025, 8 en 2026)" },
-      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
+      { "valeur": "24", "libelle": "orateurs sur scène (16 en 2025, 8 en 2026)" },
+      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux (La Muse Éloquente et 2MPC)" },
       { "valeur": "24", "libelle": "partenaires mobilisés en 2026" },
       { "valeur": "300", "libelle": "jeunes visés dès 2027 avec 300 Voix" }
     ],
