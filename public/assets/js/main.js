@@ -514,3 +514,70 @@
   var date = new Date(bloc.getAttribute("data-masquer-apres") + "+01:00");
   if (!isNaN(date) && Date.now() >= date.getTime()) bloc.hidden = true;
 })();
+
+/* Apparitions douces au défilement, fil doré, compteurs, en-tête et barre mobile (accueil). */
+(function () {
+  var doc = document.documentElement;
+  doc.classList.add("js");
+  // Les anciens blocs « .reveal » adoptent les nouvelles apparitions, échelonnées entre voisins.
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    el.classList.remove("reveal");
+    el.setAttribute("data-reveal", "");
+    var rang = 0, prec = el.previousElementSibling;
+    while (prec && rang < 4) { if (prec.hasAttribute("data-reveal")) rang++; prec = prec.previousElementSibling; }
+    if (rang && !el.style.getPropertyValue("--delai")) el.style.setProperty("--delai", (rang * 0.1).toFixed(2) + "s");
+  });
+  var reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cibles = document.querySelectorAll("[data-reveal], .acc-fil");
+  if (reduit || !("IntersectionObserver" in window)) {
+    cibles.forEach(function (el) { el.classList.add("est-visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("est-visible"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    cibles.forEach(function (el) { io.observe(el); });
+    window.addEventListener("beforeprint", function () { cibles.forEach(function (el) { el.classList.add("est-visible"); }); });
+  }
+
+  // Compteurs : « 24 », « 300 », « +10M » comptent depuis zéro.
+  var compteurs = document.querySelectorAll("[data-compteur]");
+  if (!reduit && "IntersectionObserver" in window) {
+    var ioc = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        ioc.unobserve(e.target);
+        var el = e.target, final = el.textContent, m = final.match(/^(\D*)(\d+)(\D*)$/);
+        if (!m) return;
+        var cible = +m[2], debut = performance.now(), duree = 1500;
+        (function pas(t) {
+          var k = Math.min(1, (t - debut) / duree), v = Math.round(cible * (1 - Math.pow(1 - k, 3)));
+          el.textContent = m[1] + v + m[3];
+          if (k < 1) requestAnimationFrame(pas); else el.textContent = final;
+        })(debut);
+      });
+    }, { threshold: 0.6 });
+    compteurs.forEach(function (el) { ioc.observe(el); });
+  }
+
+  // En-tête : ombre légère dès qu'on défile.
+  var entete = document.getElementById("site-header");
+  function surDefilement() { if (entete) entete.classList.toggle("est-defile", window.scrollY > 8); }
+  surDefilement();
+  window.addEventListener("scroll", surDefilement, { passive: true });
+
+  // Barre « Candidater / Devenir partenaire » sur téléphone, entre le bandeau et l'appel final.
+  var barre = document.getElementById("acc-barre-mobile"), hero = document.querySelector(".hero-split, .page-hero"), fin = document.querySelector("#candidature-cta, .cta-final, .site-footer");
+  if (barre && /^\/(candidature|partenaires|soutenir)/.test(location.pathname)) barre.remove(), barre = null;
+  if (barre && hero && "IntersectionObserver" in window) {
+    var apresHero = false, finVisible = false;
+    var maj = function () {
+      var voir = apresHero && !finVisible;
+      barre.classList.toggle("est-visible", voir);
+      barre.setAttribute("aria-hidden", voir ? "false" : "true");
+      barre.querySelectorAll("a").forEach(function (a) { a.tabIndex = voir ? 0 : -1; });
+      document.body.classList.toggle("barre-visible", voir);
+    };
+    new IntersectionObserver(function (e) { apresHero = !e[0].isIntersecting; maj(); }).observe(hero);
+    if (fin) new IntersectionObserver(function (e) { finVisible = e[0].isIntersecting; maj(); }).observe(fin);
+  }
+})();

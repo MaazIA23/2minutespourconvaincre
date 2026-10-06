@@ -163,6 +163,10 @@ ${renderHeader(data, activeSlug)}
 ${bodyHtml}
 </main>
 ${renderFooter(data)}
+<div class="acc-barre-mobile" id="acc-barre-mobile" aria-hidden="true">
+  <a href="/candidature/" class="btn btn-primary" tabindex="-1">Candidater</a>
+  <a href="/partenaires/#devenir-partenaire" class="btn btn-outline" tabindex="-1">Devenir partenaire</a>
+</div>
 ${renderWhatsappFloat(data)}
 <button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
 <script src="/assets/js/main.js"></script>
