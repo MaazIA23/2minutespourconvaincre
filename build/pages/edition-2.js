@@ -227,7 +227,7 @@ ${
     <div class="section-head reveal">
       <p class="eyebrow">Rapport de l'édition</p>
     </div>
-    <p style="text-align:center"><a href="${edition2Meta.rapportPdf}" class="btn btn-primary btn-lg" download>📄 ${edition2Meta.rapportLabel}</a></p>
+    <p style="text-align:center"><a href="${edition2Meta.rapportPdf}" class="btn btn-primary btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${edition2Meta.rapportLabel}</a></p>
   </div>
 </section>`
     : ""

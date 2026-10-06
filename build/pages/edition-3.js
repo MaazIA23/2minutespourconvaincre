@@ -76,24 +76,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section">
-  <div class="container voix-pourquoi reveal">
-    <h2>${edition3.programme300Voix.pourquoi.titre}</h2>
-    <p>${edition3.programme300Voix.pourquoi.texte}</p>
-  </div>
-</section>
-
-<section class="section alt-bg" id="voix-snapshot">
-  <div class="container voix-snapshot reveal">
-    <span class="voix-number">${edition3.programme300Voix.snapshot.chiffre}</span>
-    <span class="voix-number-label">${edition3.programme300Voix.snapshot.libelle}</span>
-    <div class="voix-tags">
-      ${edition3.programme300Voix.snapshot.tags.map((t) => `<span class="voix-tag">${t}</span>`).join("\n      ")}
-    </div>
-  </div>
-</section>
-
-<section class="section">
+<section class="section" id="competences">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Ce que nous transmettons</p>
@@ -135,39 +118,17 @@ function render(data) {
   </div>
 </section>
 
-<div class="reason-block reason-block--navy">
-  <div class="container reason-block-inner reveal voix-reason-inner">
-    <h3>${edition3.programme300Voix.impactPreview.titre}</h3>
-    <p>${edition3.programme300Voix.impactPreview.texte}</p>
-    <p style="margin-top:18px;"><a href="${edition3.programme300Voix.impactPreview.cta.lien}" class="method-step-link voix-link-on-navy">${edition3.programme300Voix.impactPreview.cta.label} →</a></p>
-  </div>
-</div>
-
-<div class="reason-block reason-block--light">
-  <div class="container reason-block-inner reveal voix-reason-inner">
-    <h3>${edition3.programme300Voix.etablissements.titre}</h3>
-    <p>${edition3.programme300Voix.etablissements.texte}</p>
-    <p style="margin-top:22px;"><a href="${edition3.programme300Voix.etablissements.cta.lien}" class="btn btn-primary">${edition3.programme300Voix.etablissements.cta.label} →</a></p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="container voix-pourquoi reveal">
-    <h3>${edition3.programme300Voix.partenaires.titre}</h3>
-    <p>${edition3.programme300Voix.partenaires.texte}</p>
-    <p><a href="${edition3.programme300Voix.partenaires.cta.lien}" class="method-step-link">${edition3.programme300Voix.partenaires.cta.label} →</a></p>
-  </div>
-</section>
-
-<section class="cta-final">
-  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
-    <div class="reveal">
-      <h2>${edition3.programme300Voix.conclusion.lignes.join("<br>")}</h2>
-      <p>${edition3.programme300Voix.conclusion.sousLigne}</p>
-      <div class="hero-ctas" style="justify-content:center;">
-        <a href="${edition3.programme300Voix.conclusion.ctaPrincipal.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.conclusion.ctaPrincipal.label}</a>
-        <a href="${edition3.programme300Voix.conclusion.ctaSecondaire.lien}" class="btn btn-outline">${edition3.programme300Voix.conclusion.ctaSecondaire.label}</a>
-      </div>
+<section class="section voix-engager" id="300-voix-engager">
+  <div class="container voix-engager-grille">
+    <div class="voix-engager-bloc reveal">
+      <h3>${edition3.programme300Voix.etablissements.titre}</h3>
+      <p>${edition3.programme300Voix.etablissements.texte}</p>
+      <a href="${edition3.programme300Voix.etablissements.cta.lien}" class="btn btn-primary">${edition3.programme300Voix.etablissements.cta.label}</a>
+    </div>
+    <div class="voix-engager-bloc reveal">
+      <h3>${edition3.programme300Voix.partenaires.titre}</h3>
+      <p>${edition3.programme300Voix.partenaires.texte}</p>
+      <a href="${edition3.programme300Voix.partenaires.cta.lien}" class="btn btn-outline">${edition3.programme300Voix.partenaires.cta.label}</a>
     </div>
   </div>
 </section>
@@ -227,15 +188,18 @@ function render(data) {
   <div class="container cta-final-inner">
     <div class="reveal">
       <h2>Soyez averti(e) dès l'ouverture</h2>
-      <p>Programme complet, dates précises et ouverture des candidatures seront annoncés prochainement.</p>
+      <p>Les candidatures ouvrent le 15 janvier 2027. Laissez votre e-mail : vous recevrez une confirmation, puis une alerte le jour de l'ouverture.</p>
     </div>
-    <form class="contact-form reveal" id="notify-form" novalidate>
-      <div class="form-row">
-        <label for="notify-email">Votre e-mail</label>
-        <input type="email" id="notify-email" name="email" required placeholder="vous@exemple.com">
+    <form class="contact-form reveal" id="waitlist-form-e3" data-netlify="true" name="liste-attente-candidature" netlify-honeypot="societe" novalidate>
+      <input type="hidden" name="form-name" value="liste-attente-candidature">
+      <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true"><label for="e3-societe">Ne pas remplir</label><input type="text" id="e3-societe" name="societe" tabindex="-1" autocomplete="off"></p>
+      <div class="form-row-pair">
+        <div class="form-row"><label for="e3-prenom">Prénom</label><input type="text" id="e3-prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="form-row"><label for="e3-nom">Nom</label><input type="text" id="e3-nom" name="nom" autocomplete="family-name" required></div>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">M'avertir</button>
-      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      <div class="form-row"><label for="e3-email">Adresse e-mail</label><input type="email" id="e3-email" name="email" autocomplete="email" required></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Prévenez-moi à l'ouverture</button>
+      <p class="form-note" id="waitlist-e3-note" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>

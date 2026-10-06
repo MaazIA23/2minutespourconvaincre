@@ -491,6 +491,7 @@
     });
   }
 
+  wireNetlifyForm("waitlist-form-e3", "waitlist-e3-note", "Merci ! Vous êtes inscrit(e). Un e-mail de confirmation vient de vous être envoyé, et nous vous préviendrons le jour de l'ouverture.");
   wireNetlifyForm("waitlist-form-accueil", "waitlist-accueil-note", "Merci ! Vous êtes inscrit(e). Un e-mail de confirmation vient de vous être envoyé, et nous vous préviendrons le jour de l'ouverture.");
   wireNetlifyForm("waitlist-form", "waitlist-form-note", "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.");
   wireNetlifyForm("candidature-form", "form-note", "Merci ! Votre candidature a bien été envoyée, nous revenons vers vous rapidement.");
