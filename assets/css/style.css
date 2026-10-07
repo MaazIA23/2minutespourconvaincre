@@ -1437,3 +1437,5 @@ html, body { overflow-x: clip; }
 @media (min-width: 900px) { .voix-engager-grille { grid-template-columns: 1fr 1fr; } }
 #notify .contact-form { max-width: 560px; margin-top: 28px; }
 #notify .contact-form label { color: var(--navy-950); }
+/* Le flou d'arrière-plan sur l'en-tête enfermait le menu mobile (position fixe) dans la hauteur de l'en-tête : retiré. */
+.site-header.est-defile { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--navy-950); }
