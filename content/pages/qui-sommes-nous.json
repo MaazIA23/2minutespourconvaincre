@@ -49,10 +49,10 @@
       { "nom": "Élie Ladedji", "role": "Growth manager", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
       { "nom": "Lolita Ouinsavi", "role": "Création de contenu et communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
       { "nom": "Gracia Ahro", "role": "Logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
-      { "nom": "Amadou Ibrahim", "role": "Innovation technologique", "photo": null },
+      { "nom": "Amadou Ibrahim", "role": "Innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
       { "nom": "Carine Gnamou", "role": "Médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" }
     ]
   },
   "_source": "Rapport Général — Mot d'introduction (p.4), Lancement du livre de la fondatrice (p.27-28), Zoom sur l'agence La Muse Éloquente (p.38-39). Équipe : Dossier de sponsoring 2027 (p.25).",
-  "TODO_2027": "Vérifier si les chiffres agence (+70K, +1000, +10M) doivent être actualisés pour la 3e édition. Il reste à ajouter la photo d'Amadou Ibrahim dès qu'elle est disponible (content/pages/qui-sommes-nous.json → equipe.membres[].photo)."
+  "TODO_2027": "Vérifier si les chiffres agence (+70K, +1000, +10M) doivent être actualisés pour la 3e édition."
 }
