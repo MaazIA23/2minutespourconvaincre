@@ -1222,6 +1222,7 @@ html, body { overflow-x: clip; }
 .acc-chiffres-liste li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 @media (max-width: 720px) {
   .acc-chiffres-liste { grid-template-columns: 1fr; }
+  .acc-chiffres-liste li { align-items: center; text-align: center; }
   .acc-chiffres-liste strong { font-size: clamp(3.4rem, 15vw, 4.4rem); }
   .acc-chiffres-liste span { font-size: clamp(1rem, 1vw + .9rem, 1.1rem); }
 }
