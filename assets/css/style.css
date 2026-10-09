@@ -731,6 +731,8 @@ mark { background: var(--gold-soft); color: var(--navy-950); padding: 0 6px; bor
 .book-card h3 { color: var(--gold-text); }
 .book-card p { color: rgba(255,255,255,0.8); }
 .book-card .btn { margin-top: 16px; }
+.book-card-cta-only { text-align: center; }
+.book-card-cta-only .btn { margin-top: 0; }
 
 /* ---------- Forms ---------- */
 .contact-form { max-width: 640px; margin: 0 auto; background: var(--paper-alt); border-radius: var(--radius-lg); padding: 32px; border: 1px solid var(--line); }
@@ -1218,6 +1220,11 @@ html, body { overflow-x: clip; }
 .acc-chiffres-liste strong { font: 400 clamp(2.8rem, 5.4vw, 5rem)/1 var(--font-display); color: var(--gold); font-variant-numeric: tabular-nums; }
 .acc-chiffres-liste span { color: rgba(255,255,255,.82); font-size: clamp(.86rem, .3vw + .8rem, 1rem); line-height: 1.45; }
 .acc-chiffres-liste li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 720px) {
+  .acc-chiffres-liste { grid-template-columns: 1fr; }
+  .acc-chiffres-liste strong { font-size: clamp(3.4rem, 15vw, 4.4rem); }
+  .acc-chiffres-liste span { font-size: clamp(1rem, 1vw + .9rem, 1.1rem); }
+}
 @media (min-width: 1000px) {
   .acc-chiffres-liste { grid-template-columns: repeat(5, 1fr); }
   .acc-chiffres-liste li { border-top: 0; border-left: 1px solid rgba(255,255,255,.16); }

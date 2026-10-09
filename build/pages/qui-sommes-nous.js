@@ -73,9 +73,7 @@ function render(data) {
     <div class="prose reveal">
       ${quiSommesNous.fondatrice.motIntroduction.map((p) => `<p>${p}</p>`).join("\n      ")}
     </div>
-    <div class="book-card reveal">
-      <h3>${quiSommesNous.fondatrice.livre.titre}</h3>
-      <p><em>${quiSommesNous.fondatrice.livre.disponibilite}</em></p>
+    <div class="book-card book-card-cta-only reveal">
       <a href="/editions/2eme-edition/#evenements-associes" class="btn btn-outline">Voir le lancement du livre →</a>
     </div>
   </div>
