@@ -1,69 +1,54 @@
+// Accueil : mise en page aérée, apparitions douces au défilement (data-reveal), peu de cadres.
 function render(data) {
-  const { edition3, partenaires, editionsIndex, accueil, actualites } = data;
+  const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
+  const fondatrice = quiSommesNous.fondatrice;
+  const temoins = ["José Pascaël Agbo", "Maître Huguette Bokpè Gnacadja", "Ezéchielle Bouet"].map((n) => impact.temoignages.liste.find((t) => t.nom === n)).filter(Boolean);
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
+  const voix = edition3.programme300Voix;
+  const delai = (i, pas = 0.12) => `style="--delai:${(i * pas).toFixed(2)}s"`;
 
   return `
-<section class="hero hero-photo-bg" id="top" style="background-image: linear-gradient(100deg, rgba(13,17,50,.8) 0%, rgba(13,17,50,.55) 40%, rgba(13,17,50,.1) 62%, rgba(13,17,50,0) 78%), url('/assets/img/hero/accueil.jpg')">
-  <div class="container hero-inner hero-inner-single">
-    <div class="hero-copy reveal">
-      <h1 class="hero-rotator" id="hero-rotator">${(edition3.accrochesRotatives || [edition3.accroche])
+<section class="hero hero-split" id="top">
+  <div class="hero-motif" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <figure class="hero-visual" data-reveal>
+      <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
+      <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine en France pour le lauréat</span></figcaption>
+    </figure>
+    <div class="hero-copy">
+      <p class="hero-kicker" data-reveal ${delai(1)}><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
+      <h1 class="hero-rotator" id="hero-rotator" data-reveal ${delai(2)}>${(edition3.accrochesRotatives || [edition3.accroche])
         .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
         .join("")}</h1>
-      <div class="hero-meta">
-        <span>📅 ${edition3.date}</span>
-        <span>📍 ${edition3.lieu}</span>
-      </div>
-      ${
-        edition3.dateCountdownISO
-          ? `<div class="hero-countdown-block">
-        <p class="eyebrow hero-countdown-label">3ème édition dans</p>
-        <div class="hero-countdown" id="hero-countdown" data-target="${edition3.dateCountdownISO}">
-          <div class="countdown-item"><span class="countdown-value" data-unit="days">00</span><span class="countdown-label">Jours</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="hours">00</span><span class="countdown-label">Heures</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="minutes">00</span><span class="countdown-label">Min</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-unit="seconds">00</span><span class="countdown-label">Sec</span></div>
-        </div>
-      </div>`
-          : ""
-      }
-      <div class="hero-ctas reveal">
-        <a href="/candidature/" class="btn btn-primary">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire →</a>
-      </div>
+
     </div>
   </div>
 </section>
 
 ${
   presentation
-    ? `<section class="section" id="quest-ce-que">
+    ? `<section class="acc-section acc-manifeste" id="quest-ce-que">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
-      <h2>${presentation.titre}</h2>
+    <p class="acc-surtitre" data-reveal>Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
+    <div class="acc-manifeste-grille">
+      <h2 class="acc-grand" data-reveal ${delai(1)}>Deux minutes.<br>Une thèse imposée.<br><em>Une salle à convaincre.</em></h2>
+      <div class="acc-manifeste-texte" data-reveal ${delai(2)}>
+        <p class="acc-chapo">${presentation.titre}</p>
+        ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n        ")}
+        <a href="${presentation.cta.lien}/" class="acc-lien">${presentation.cta.label} <span aria-hidden="true">→</span></a>
+      </div>
     </div>
-    <div class="prose reveal">
-      ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
-    </div>
-    <p style="text-align:center"><a href="${presentation.cta.lien}/" class="btn btn-outline">${presentation.cta.label} →</a></p>
-  </div>
-</section>`
-    : ""
-}
-
-${
-  accueil.videoPresentation
-    ? `<section class="section video-feature" id="video">
-  <div class="container">
-    <div class="video-embed reveal">
-      <iframe
-        src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}"
-        title="${accueil.videoPresentation.titre}"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
+    ${
+      accueil.videoPresentation
+        ? `<figure class="acc-video" id="video" data-reveal>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}" title="${accueil.videoPresentation.titre}" loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <figcaption><span aria-hidden="true">▶</span> ${accueil.videoPresentation.titre}</figcaption>
+    </figure>`
+        : ""
+    }
   </div>
 </section>`
     : ""
@@ -71,164 +56,208 @@ ${
 
 ${
   accueil.chiffresCles
-    ? `<section class="stats-band" id="chiffres">
+    ? `<section class="acc-chiffres" id="chiffres">
   <div class="container">
-    <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${accueil.chiffresCles.eyebrow}</p>
-    <div class="stats-grid stats-grid-5">
+    <p class="acc-surtitre acc-surtitre-centre" data-reveal>${accueil.chiffresCles.eyebrow}</p>
+    <ul class="acc-chiffres-liste">
       ${accueil.chiffresCles.chiffres
-        .map(
-          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-        )
+        .map((c, i) => `<li data-reveal ${delai(i, 0.1)}><strong data-compteur>${c.valeur}</strong><span>${c.libelle}</span></li>`)
         .join("\n      ")}
-    </div>
+    </ul>
   </div>
 </section>`
     : ""
 }
 
-<section class="section presentation" id="presentation">
-  <div class="container presentation-inner">
-    <div class="presentation-copy reveal">
-      <h2>${edition3.nouvelleAmbition.titre}</h2>
-      <p>${edition3.nouvelleAmbition.resumeCourt}</p>
-      <a href="/editions/3eme-edition/" class="btn btn-outline">Découvrir la 3ème édition</a>
+<section class="acc-section acc-fondatrice" id="fondatrice">
+  <div class="container acc-fondatrice-grille">
+    <figure class="acc-fondatrice-photo" data-reveal><img src="${fondatrice.photo}" alt="${fondatrice.nom}" loading="lazy"></figure>
+    <div class="acc-fondatrice-texte">
+      <p class="acc-surtitre" data-reveal>Portée par</p>
+      <h2 data-reveal ${delai(1)}>Mazidath Bello</h2>
+      <p class="acc-chapo" data-reveal ${delai(2)}>Fondatrice de La Muse Éloquente et initiatrice de Deux Minutes Pour Convaincre.</p>
+      <ul class="acc-fondatrice-faits" data-reveal ${delai(3)}>
+        <li><strong>15 ans</strong> de prise de parole publique</li>
+        <li><strong>+100</strong> personnes accompagnées, de tous secteurs</li>
+        <li><strong>Championne</strong> d'un concours national d'éloquence en France</li>
+        <li><strong>Autrice</strong> de « Chroniques d'une voix qui s'est révélée »</li>
+      </ul>
+      <a href="/qui-sommes-nous/" class="acc-lien" data-reveal ${delai(4)}>Qui sommes-nous <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="section alt-bg photo-feature" id="nouveautes">
-  <div class="container photo-feature-inner">
-    <div class="photo-feature-media reveal">
-      <img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur scène, Deux Minutes Pour Convaincre" loading="lazy">
+<section class="acc-section acc-nouveautes" id="nouveautes">
+  <div class="container acc-nouveautes-grille">
+    <div class="acc-nouveautes-tete">
+      <p class="acc-surtitre" data-reveal>Cap sur 2027</p>
+      <h2 data-reveal ${delai(1)}>${edition3.nouvelleAmbition.titre}</h2>
+      <p class="acc-chapo" data-reveal ${delai(2)}>${edition3.nouvelleAmbition.resumeCourt}</p>
+      <figure class="acc-nouveautes-photo" data-reveal ${delai(3)}><img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur la scène de Deux Minutes Pour Convaincre" loading="lazy"></figure>
     </div>
-    <div class="photo-feature-copy">
-      <div class="section-head reveal" style="text-align:left; margin-bottom:28px;">
-        <p class="eyebrow">Cap sur 2027</p>
-        <h2>Ce qui change pour la 3ème édition</h2>
-      </div>
-      <div class="nouveautes-grid nouveautes-grid-compact">
-        ${edition3.nouveautes
-          .map(
-            (n) => `<div class="method-step reveal">
-          <div class="step-number">${n.numero}</div>
-          <h3>${n.titre}</h3>
-          <p>${n.description}</p>
-          ${n.titre.includes("300 Voix") ? `<a href="/editions/3eme-edition/#nouveautes" class="method-step-link">Découvrir 300 Voix →</a>` : ""}
-        </div>`
-          )
-          .join("\n        ")}
-      </div>
+    <ol class="acc-nouveautes-liste">
+      ${edition3.nouveautes
+        .map((n, i) => `<li data-reveal ${delai(i, 0.08)}>
+        <span class="acc-num">${n.numero}</span>
+        <div><h3>${n.titre}</h3><p>${n.description}</p></div>
+      </li>`)
+        .join("\n      ")}
+    </ol>
+  </div>
+</section>
+
+<section class="acc-pleine acc-voix" id="trois-cents-voix">
+  <img src="${voix.photo}" alt="Une jeune femme prend la parole devant ses camarades" loading="lazy" class="acc-pleine-photo">
+  <div class="container acc-pleine-texte" data-reveal>
+    <p class="acc-surtitre acc-surtitre-or">${voix.eyebrow}</p>
+    <h2>${voix.titre}</h2>
+    <p class="acc-chapo">${voix.accroche}</p>
+    <p>${voix.texte}</p>
+    <a href="/editions/3eme-edition/#nouveautes" class="btn btn-primary btn-lg">Découvrir 300 Voix</a>
+  </div>
+</section>
+
+<section class="acc-section acc-prix" id="grand-prix">
+  <div class="container acc-prix-grille">
+    <figure class="acc-prix-photo" data-reveal><img src="/assets/img/candidature/paris.jpg" alt="La Tour Eiffel au coucher du soleil" loading="lazy"></figure>
+    <div class="acc-prix-texte">
+      <p class="acc-surtitre" data-reveal>La récompense</p>
+      <h2 data-reveal ${delai(1)}>Le Grand Prix<br><em>de la Francophonie</em></h2>
+      <p class="acc-chapo" data-reveal ${delai(2)}>Parce qu'une victoire doit ouvrir une porte : le lauréat de la 3ème édition remporte une semaine en France.</p>
+      <a href="/candidature/" class="acc-lien" data-reveal ${delai(3)}>Tout savoir sur la candidature <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="section alt-bg" id="impact-teaser">
+<section class="acc-section acc-editions" id="editions">
   <div class="container">
-    <div class="section-head reveal">
-      <h2>Au-delà de la scène</h2>
-      <p class="section-lead">Deux Minutes Pour Convaincre ne se limite pas à une finale. Le projet grandit pour faire de la parole une compétence, un levier d'opportunités et un outil d'émancipation.</p>
+    <div class="acc-tete-ligne">
+      <div>
+        <p class="acc-surtitre" data-reveal>Depuis 2025</p>
+        <h2 data-reveal ${delai(1)}>${editionsIndex.titre}</h2>
+      </div>
+      <a href="/editions/" class="acc-lien" data-reveal ${delai(2)}>Toutes les éditions <span aria-hidden="true">→</span></a>
     </div>
-    <div class="ambitions-grid ambitions-grid-3">
-      <div class="ambition-card ambition-card-light reveal"><h3>Révéler les talents</h3><p>Identifier des profils à fort potentiel et leur offrir visibilité et réseau.</p></div>
-      <div class="ambition-card ambition-card-light reveal"><h3>Former la jeunesse</h3><p>Transmettre les clés de la prise de parole, de l'argumentation et de la confiance en soi.</p></div>
-      <div class="ambition-card ambition-card-light reveal"><h3>Créer des opportunités</h3><p>Inscrire chaque victoire dans une logique de mérite, de transmission et d'ascension.</p></div>
-    </div>
-    <p style="text-align:center"><a href="/impact/" class="btn btn-outline">Découvrir notre impact →</a></p>
-  </div>
-</section>
-
-<section class="section" id="editions">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Depuis 2025</p>
-      <h2>${editionsIndex.titre}</h2>
-      <p class="section-lead">${editionsIndex.intro}</p>
-    </div>
-    <div class="editions-grid">
+    <div class="acc-editions-liste">
       ${editionsIndex.editions
-        .map(
-          (e) => `<article class="edition-card reveal">
-        <div class="edition-card-media">
-          <img src="${e.photo}" alt="${e.label}" loading="lazy">
-        </div>
-        <div class="edition-card-body">
-          ${e.statut === "a-venir" ? '<span class="badge badge-upcoming">À venir</span>' : '<span class="badge badge-past">Édition passée</span>'}
-          <h3>${e.label} <span class="edition-year">(${e.annee})</span></h3>
-          <p>${e.resume}</p>
-          <a href="/editions/${e.slug}/" class="edition-card-link">Voir la page →</a>
-        </div>
-      </article>`
-        )
+        .map((e, i) => `<a class="acc-edition" href="/editions/${e.slug}/" data-reveal ${delai(i)}>
+        <span class="acc-edition-photo"><img src="${e.photo}" alt="${e.label}" loading="lazy"></span>
+        <span class="acc-edition-meta">${e.statut === "a-venir" ? "À venir" : "Édition passée"} · ${e.annee}</span>
+        <span class="acc-edition-titre">${e.label}</span>
+        <span class="acc-edition-resume">${e.resume}</span>
+      </a>`)
         .join("\n      ")}
     </div>
   </div>
 </section>
 
-<section class="section alt-bg partenaires-teaser">
+${
+  temoins.length
+    ? `<section class="acc-section acc-temoins" id="temoignages">
   <div class="container">
-    <p class="eyebrow" style="text-align:center">Ils nous soutiennent</p>
-    <div class="partner-marquee reveal">
+    <p class="acc-surtitre" data-reveal>${impact.temoignages.eyebrow}</p>
+    <figure class="acc-temoin-vedette" data-reveal ${delai(1)}>
+      <blockquote><p>« ${temoins[0].citation} »</p></blockquote>
+      <figcaption><img src="${temoins[0].photo}" alt="" loading="lazy"><span><strong>${temoins[0].nom}</strong>${temoins[0].statut}, ${temoins[0].edition}</span></figcaption>
+    </figure>
+    <div class="acc-temoins-liste">
+      ${temoins.slice(1).map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 2)}>
+        <blockquote><p>« ${t.citation} »</p></blockquote>
+        <figcaption><img src="${t.photo}" alt="" loading="lazy"><span><strong>${t.nom}</strong>${t.statut}, ${t.edition}</span></figcaption>
+      </figure>`).join("\n      ")}
+    </div>
+    <a href="/impact/#temoignages" class="acc-lien" data-reveal>Tous les témoignages <span aria-hidden="true">→</span></a>
+  </div>
+</section>`
+    : ""
+}
+
+<section class="acc-section alerte-candidature" id="liste-attente" data-masquer-apres="${candidature.dateOuvertureCandidaturesISO}">
+  <div class="container alerte-inner">
+    <div class="alerte-copy">
+      <p class="acc-surtitre" data-reveal>Candidatures 2027</p>
+      <h2 data-reveal ${delai(1)}>Ouverture le ${candidature.dateOuvertureCandidatures}</h2>
+      <p data-reveal ${delai(2)}>Laissez votre e-mail : vous recevrez une confirmation tout de suite, puis une alerte le jour de l'ouverture des candidatures.</p>
+    </div>
+    <form class="alerte-form" data-reveal ${delai(2)} id="waitlist-form-accueil" data-netlify="true" name="liste-attente-candidature" netlify-honeypot="societe" novalidate>
+      <input type="hidden" name="form-name" value="liste-attente-candidature">
+      <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label for="acc-societe">Ne pas remplir</label>
+        <input type="text" id="acc-societe" name="societe" tabindex="-1" autocomplete="off">
+      </p>
+      <div class="form-row-pair">
+        <div class="form-row"><label for="acc-prenom">Prénom</label><input type="text" id="acc-prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="form-row"><label for="acc-nom">Nom</label><input type="text" id="acc-nom" name="nom" autocomplete="family-name" required></div>
+      </div>
+      <div class="form-row"><label for="acc-email">Adresse e-mail</label><input type="email" id="acc-email" name="email" autocomplete="email" required></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Prévenez-moi à l'ouverture</button>
+      <p class="form-note" id="waitlist-accueil-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="acc-section acc-partenaires partenaires-teaser">
+  <div class="container">
+    <p class="acc-surtitre acc-surtitre-centre" data-reveal>Ils nous soutiennent</p>
+    <div class="partner-marquee" data-reveal ${delai(1)}>
       <div class="partner-marquee-track">
         ${partenaires.liste.map((p) => `<img src="${p.logo}" alt="${p.nom}" loading="lazy">`).join("\n        ")}
         ${partenaires.liste.map((p) => `<img src="${p.logo}" alt="" aria-hidden="true" loading="lazy">`).join("\n        ")}
       </div>
     </div>
-    <p style="text-align:center"><a href="/partenaires/" class="btn btn-ghost">Voir tous nos partenaires →</a></p>
-    <p class="partenaires-teaser-cta reveal">Vous souhaitez contribuer à la prochaine édition ?
-      <a href="/partenaires/#devenir-partenaire">Devenir partenaire →</a></p>
+    <div class="acc-devenir" data-reveal ${delai(2)}>
+      <h2>Associez votre marque à la 3ème édition</h2>
+      <p>Visibilité, engagement jeunesse et impact mesurable : six niveaux de partenariat, de 200 000 à 5 000 000 FCFA.</p>
+      <div class="acc-devenir-actions">
+        <a href="/partenaires/#devenir-partenaire" class="btn btn-primary btn-lg">Devenir partenaire</a>
+        <a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="acc-lien" download>Télécharger le dossier de sponsoring <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
 ${
   actualites.liste.length
-    ? `<section class="section" id="actualites">
+    ? `<section class="acc-section acc-actus" id="actualites">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Actualités</p>
-      <h2>Les dernières nouvelles</h2>
+    <div class="acc-tete-ligne">
+      <div>
+        <p class="acc-surtitre" data-reveal>Actualités</p>
+        <h2 data-reveal ${delai(1)}>Les dernières nouvelles</h2>
+      </div>
+      <a href="/actualites/" class="acc-lien" data-reveal ${delai(2)}>Toutes les actualités <span aria-hidden="true">→</span></a>
     </div>
-    <div class="actualites-grid">
+    <div class="acc-actus-liste">
       ${actualites.liste
         .slice()
         .sort((a, b) => (a.dateISO < b.dateISO ? 1 : -1))
         .slice(0, 3)
-        .map(
-          (a) => `<article class="actualite-card reveal">
-        <img src="${a.image}" alt="${a.alt}" class="actualite-photo" loading="lazy">
-        <div class="actualite-card-body">
-          <div class="actualite-meta">
-            <span class="badge badge-upcoming">${a.categorie}</span>
-            <span class="actualite-date">${a.date}</span>
-          </div>
-          <h3>${a.titre}</h3>
-          <p class="actualite-resume">${a.resume}</p>
-        </div>
-      </article>`
-        )
+        .map((a, i) => `<article class="acc-actu" data-reveal ${delai(i)}>
+        <span class="acc-actu-photo"><img src="${a.image}" alt="${a.alt}" loading="lazy"></span>
+        <p class="acc-actu-meta">${a.categorie} · ${a.date}</p>
+        <h3>${a.titre}</h3>
+        <p>${a.resume}</p>
+      </article>`)
         .join("\n      ")}
     </div>
-    <p style="text-align:center"><a href="/actualites/" class="btn btn-outline">Voir toutes les actualités →</a></p>
   </div>
 </section>`
     : ""
 }
 
-<section class="cta-final" id="candidature-cta">
-  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
-    <div class="reveal cta-final-pretext">
-      <p class="eyebrow">La 3ème édition se construit maintenant.</p>
-      <div class="hero-ctas" style="justify-content: center;">
-        <a href="/candidature/" class="btn btn-outline">Candidater</a>
-        <a href="/partenaires/#devenir-partenaire" class="btn btn-ghost">Devenir partenaire</a>
-      </div>
-    </div>
-    <div class="reveal">
-      <h2>Prêt(e) à monter sur scène en 2027 ?</h2>
-      <p>Pour cette 3ème édition, la candidature se fait en vidéo : deux minutes, sur un thème de votre choix, pour nous convaincre.</p>
-      <a href="/candidature/" class="btn btn-primary btn-lg">En savoir plus sur la candidature</a>
+<section class="acc-final" id="candidature-cta">
+  <div class="container acc-final-in">
+    <p class="acc-surtitre acc-surtitre-or acc-surtitre-centre" data-reveal>La 3ème édition se construit maintenant</p>
+    <h2 data-reveal ${delai(1)}>Prêt(e) à monter<br>sur scène en 2027 ?</h2>
+    <p data-reveal ${delai(2)}>Pour cette 3ème édition, la candidature se fait en vidéo : deux minutes, sur un thème de votre choix, pour nous convaincre.</p>
+    <div class="acc-final-actions" data-reveal ${delai(3)}>
+      <a href="/candidature/" class="btn btn-primary btn-lg">Candidater</a>
+      <a href="/partenaires/#devenir-partenaire" class="btn btn-outline btn-lg">Devenir partenaire</a>
     </div>
   </div>
 </section>
+
+
 `;
 }
 

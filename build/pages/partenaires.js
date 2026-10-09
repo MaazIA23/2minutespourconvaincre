@@ -9,6 +9,10 @@ function render(data) {
   <div class="container">
     <h1>${partenaires.hero.titre}</h1>
     <p class="page-hero-lead">${partenaires.hero.sousTitre}</p>
+    <div class="hero-ctas">
+      <a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="btn btn-blanc btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> Dossier de sponsoring</a>
+      <a href="#devenir-partenaire" class="btn btn-outline btn-lg">Nous contacter</a>
+    </div>
   </div>
 </section>
 
@@ -76,6 +80,7 @@ function render(data) {
     <div class="section-head reveal">
       <h2>${partenaires.formulaire.titre}</h2>
       <p class="section-lead">${partenaires.formulaire.sousTitre}</p>
+      <p style="text-align:center"><a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="btn btn-outline" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> Dossier de sponsoring 2027 (PDF)</a></p>
     </div>
     <form class="contact-form reveal" id="partenaire-form" data-netlify="true" name="demande-partenariat" netlify-honeypot="societe" novalidate>
       <input type="hidden" name="form-name" value="demande-partenariat">
@@ -139,7 +144,7 @@ function render(data) {
       <h2>${partenaires.sectionFinale.titre}</h2>
       ${
         partenaires.sectionFinale.dossierPdf
-          ? `<a href="${partenaires.sectionFinale.dossierPdf}" class="btn btn-primary btn-lg" download>📄 ${partenaires.sectionFinale.ctaLabel}</a>`
+          ? `<a href="${partenaires.sectionFinale.dossierPdf}" class="btn btn-primary btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${partenaires.sectionFinale.ctaLabel}</a>`
           : `<p style="max-width:520px; margin:0 auto;">Le dossier de partenariat est en cours de préparation. En attendant, notre équipe se fera un plaisir de vous présenter le projet en détail.</p>`
       }
     </div>

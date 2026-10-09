@@ -38,7 +38,15 @@ function loadData() {
   };
 }
 
+const SITE_URL = "https://2minpourconvaincre.com";
+const pagesEcrites = [];
+
 function writePage(slug, html) {
+  const url = `${SITE_URL}/${slug ? slug.replace(/\/$/, "") + "/" : ""}`;
+  html = html.split("__URL_PAGE__").join(url);
+  // Titres : espace insécable avant « ? ! : ; » et après « (la ponctuation ne passe jamais seule à la ligne).
+  html = html.replace(/(<h[1-3][^>]*>)([\s\S]*?)(<\/h[1-3]>)/g, (m, a, b, c) => a + b.replace(/ ([?!:;»])/g, "\u00a0$1").replace(/« /g, "«\u00a0") + c);
+  if (!/^soutenir\/merci/.test(slug)) pagesEcrites.push(url);
   const dir = slug === "" ? PUBLIC_DIR : path.join(PUBLIC_DIR, slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), html, "utf8");
@@ -250,6 +258,15 @@ function main() {
 
   copyDir(ASSETS_DIR, path.join(PUBLIC_DIR, "assets"));
   console.log("  ✓ assets/");
+
+  // Plan du site et consignes pour les moteurs de recherche
+  const jour = new Date().toISOString().slice(0, 10);
+  fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    pagesEcrites.map((u) => `  <url><loc>${u}</loc><lastmod>${jour}</lastmod></url>`).join("\n") + `\n</urlset>\n`);
+  fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  fs.copyFileSync(path.join(ASSETS_DIR, "img/icones/favicon.ico"), path.join(PUBLIC_DIR, "favicon.ico"));
+  console.log("  ✓ sitemap.xml, robots.txt, favicon.ico");
   console.log("Build complete → public/");
 }
 
