@@ -45,13 +45,13 @@
     "eyebrow": "L'équipe",
     "titre": "Une équipe",
     "membres": [
-      { "nom": "Mazidath Bello", "role": "Fondatrice, direction du projet", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
-      { "nom": "Élie Ladedji", "role": "Growth manager", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
-      { "nom": "Lolita Ouinsavi", "role": "Création de contenu et communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
-      { "nom": "Gracia Ahro", "role": "Logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
-      { "nom": "Amadou Ibrahim", "role": "Innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
-      { "nom": "Carine Gnamou", "role": "Médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
-      { "nom": "Marielle Adjalla", "role": "Orchestration événementielle", "photo": "/assets/img/equipe/marielle-adjalla.jpg" }
+      { "nom": "Mazidath Bello", "role": "Fondatrice & directrice générale", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
+      { "nom": "Élie Ladedji", "role": "Responsable croissance & stratégie", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
+      { "nom": "Lolita Ouinsavi", "role": "Responsable création & communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
+      { "nom": "Gracia Ahro", "role": "Responsable logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
+      { "nom": "Amadou Ibrahim", "role": "Responsable innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
+      { "nom": "Carine Gnamou", "role": "Responsable médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
+      { "nom": "Marielle Adjalla", "role": "Cheffe d'orchestre événementiel", "photo": "/assets/img/equipe/marielle-adjalla.jpg" }
     ]
   },
   "_source": "Rapport Général — Mot d'introduction (p.4), Lancement du livre de la fondatrice (p.27-28), Zoom sur l'agence La Muse Éloquente (p.38-39). Équipe : Dossier de sponsoring 2027 (p.25).",
