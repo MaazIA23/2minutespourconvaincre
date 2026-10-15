@@ -27,7 +27,7 @@ function render(data) {
           <p class="actualite-contenu">${a.contenu}</p>
           ${
             a.videoUrl
-              ? `<a href="${a.videoUrl}" class="btn btn-ghost" target="_blank" rel="noopener">▶ Voir la vidéo</a>`
+              ? `<a href="${a.videoUrl}" class="btn btn-ghost"${/^https?:/.test(a.videoUrl) ? ' target="_blank" rel="noopener"' : ""}>▶ Voir la vidéo</a>`
               : ""
           }
         </div>

@@ -4,6 +4,39 @@
   "categories": ["Concours", "300 Voix", "Candidats", "Partenaires", "Coulisses"],
   "liste": [
     {
+      "dateISO": "2026-10-15",
+      "date": "15 octobre 2026",
+      "categorie": "Concours",
+      "titre": "Le spot de la 3ème édition est en ligne",
+      "image": "/assets/video/spot-3e-edition.jpg",
+      "alt": "Image du spot de la 3ème édition de Deux Minutes Pour Convaincre",
+      "resume": "Deux orateurs, une thématique, aucune seconde chance : la 3ème édition a son spot.",
+      "contenu": "En 34 secondes, le spot de la 3ème édition donne le ton : une scène où les mots deviennent des armes, deux minutes pour faire basculer un destin, et à la clé le Grand Prix de la Francophonie, une semaine en France. Il est à voir sur la page Candidature.",
+      "videoUrl": "/candidature/#spot"
+    },
+    {
+      "dateISO": "2026-10-15",
+      "date": "15 octobre 2026",
+      "categorie": "Candidats",
+      "titre": "Candidatures 2027 : cette année, tout commence en vidéo",
+      "image": "/assets/img/galerie/2eme-edition/orateur-scene-2e.jpg",
+      "alt": "Un orateur au micro sur la scène de la 2ème édition",
+      "resume": "Du 15 au 30 janvier 2027, la candidature à la 3ème édition se fera en vidéo.",
+      "contenu": "Pour la 3ème édition, le format de candidature change : une vidéo de deux minutes, sur une thématique de votre choix, pour nous convaincre. Les candidatures seront ouvertes du 15 janvier au 30 janvier 2027 à 23h59. Pour être prévenu(e) dès l'ouverture, inscrivez-vous sur la liste d'attente de la page Candidature.",
+      "videoUrl": null
+    },
+    {
+      "dateISO": "2026-10-15",
+      "date": "15 octobre 2026",
+      "categorie": "300 Voix",
+      "titre": "300 Voix : la prise de parole va à la rencontre des jeunes",
+      "image": "/assets/img/impact/300-voix.jpg",
+      "alt": "Une jeune femme prend la parole devant ses camarades",
+      "resume": "« Parce que la parole ne doit pas être réservée à ceux qui montent sur scène. »",
+      "contenu": "En 2027, Deux Minutes Pour Convaincre ira à la rencontre de 300 élèves et étudiants à travers des sessions dédiées à la prise de parole, à l'argumentation et à la confiance en soi. Établissements et partenaires peuvent dès maintenant proposer d'accueillir une session.",
+      "videoUrl": null
+    },
+    {
       "dateISO": "2026-08-08",
       "date": "08 août 2026",
       "categorie": "Concours",
@@ -37,5 +70,5 @@
       "videoUrl": null
     }
   ],
-  "_TODO": "Ajouter les prochaines actualités (candidature vidéo 2027, lancement 300 Voix, etc.) avec leur date réelle de publication dès qu'elle sera connue — ne jamais inventer de date."
+  "_TODO": "Ajouter les prochaines actualités avec leur date réelle de publication — ne jamais inventer de date. Les trois actualités du 15 octobre 2026 ont été publiées ce jour-là, à partir de contenus déjà annoncés sur le site."
 }
