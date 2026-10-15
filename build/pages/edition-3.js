@@ -63,7 +63,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="voix-hero" id="300-voix" style="background-image: linear-gradient(100deg, rgba(13,17,50,.92) 0%, rgba(13,17,50,.72) 45%, rgba(13,17,50,.4) 80%), url('${edition3.programme300Voix.photo}')">
+<section class="voix-hero" id="300-voix" style="background-image: linear-gradient(100deg, rgba(4,11,82,.92) 0%, rgba(4,11,82,.72) 45%, rgba(4,11,82,.4) 80%), url('${edition3.programme300Voix.photo}')">
   <div class="container voix-hero-inner">
     <p class="eyebrow reveal">${edition3.programme300Voix.eyebrow}</p>
     <h2 class="reveal">${edition3.programme300Voix.titre}</h2>
