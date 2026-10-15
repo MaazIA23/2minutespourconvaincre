@@ -78,7 +78,7 @@ ${
       <p class="acc-chapo" data-reveal ${delai(2)}>Fondatrice de La Muse Éloquente et initiatrice de Deux Minutes Pour Convaincre.</p>
       <ul class="acc-fondatrice-faits" data-reveal ${delai(3)}>
         <li><strong>15 ans</strong> de prise de parole publique</li>
-        <li><strong>+100</strong> personnes accompagnées, de tous secteurs</li>
+        <li><strong>Des centaines</strong> de personnes accompagnées, de tous secteurs</li>
         <li><strong>Championne</strong> d'un concours national d'éloquence en France</li>
         <li><strong>Autrice</strong> de « Chroniques d'une voix qui s'est révélée »</li>
       </ul>
@@ -93,7 +93,7 @@ ${
       <p class="acc-surtitre" data-reveal>Cap sur 2027</p>
       <h2 data-reveal ${delai(1)}>${edition3.nouvelleAmbition.titre}</h2>
       <p class="acc-chapo" data-reveal ${delai(2)}>${edition3.nouvelleAmbition.resumeCourt}</p>
-      <figure class="acc-nouveautes-photo" data-reveal ${delai(3)}><img src="/assets/img/galerie/2eme-edition/orateur-scene-2e.jpg" style="object-position: 40% 0%" alt="Un orateur au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
+      <figure class="acc-nouveautes-photo" data-reveal ${delai(3)}><img src="/assets/img/galerie/2eme-edition/orateur-scene-2e.jpg" alt="Un orateur au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
     </div>
     <ol class="acc-nouveautes-liste">
       ${edition3.nouveautes

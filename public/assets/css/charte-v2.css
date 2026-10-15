@@ -124,9 +124,6 @@
 /* ---------- Barre mobile ---------- */
 .charte-v2 .acc-barre-mobile .btn-outline { color: var(--navy-950); border-color: var(--navy-950); }
 
-/* Sur téléphone, texte aligné à gauche : la justification creuse de grands blancs dans les colonnes étroites. */
-@media (max-width: 599px) { .charte-v2 p { text-align: left; hyphens: manual; } }
-
 /* =====================================================================
    Pages intérieures
    ===================================================================== */
@@ -180,3 +177,11 @@
 .charte-v2 .ambition-card:not(.ambition-card-light), .charte-v2 .reason-block--navy { background: var(--scene); }
 .charte-v2 .ambition-card:not(.ambition-card-light) h3, .charte-v2 .reason-block--navy h3 { color: var(--gold-text); }
 @media (max-width: 1040px) { .charte-v2 .main-nav { background: var(--scene); } }
+
+/* Tous les paragraphes du contenu sont justifiés, sur ordinateur comme sur mobile (césure française pour éviter les grands blancs).
+   Restent centrés : en-têtes de section centrés et appels finaux. */
+.charte-v2 main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.charte-v2 main :is(.section-head, .acc-final, .cta-final) p, .charte-v2 main p.section-lead,
+.charte-v2 main :is(.eyebrow, .acc-surtitre, .hero-kicker, .acc-actu-meta, .form-note) { text-align: inherit; -webkit-hyphens: manual; hyphens: manual; }
+.charte-v2 main :is(.acc-surtitre, .eyebrow, .hero-kicker, .acc-actu-meta) { text-align: left; }
+.charte-v2 main :is(.acc-surtitre-centre, .section-head .eyebrow) { text-align: center; }
