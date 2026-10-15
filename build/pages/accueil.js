@@ -93,7 +93,7 @@ ${
       <p class="acc-surtitre" data-reveal>Cap sur 2027</p>
       <h2 data-reveal ${delai(1)}>${edition3.nouvelleAmbition.titre}</h2>
       <p class="acc-chapo" data-reveal ${delai(2)}>${edition3.nouvelleAmbition.resumeCourt}</p>
-      <figure class="acc-nouveautes-photo" data-reveal ${delai(3)}><img src="/assets/img/galerie/2eme-edition/photo-04.jpg" alt="Intervenante au micro sur la scène de Deux Minutes Pour Convaincre" loading="lazy"></figure>
+      <figure class="acc-nouveautes-photo" data-reveal ${delai(3)}><img src="/assets/img/galerie/2eme-edition/orateur-scene-2e.jpg" style="object-position: 40% 0%" alt="Un orateur au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
     </div>
     <ol class="acc-nouveautes-liste">
       ${edition3.nouveautes
