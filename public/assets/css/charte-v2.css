@@ -240,3 +240,15 @@
 
 /* Panel : même présentation que le jury (description au clic / survol), petit libellé de rôle */
 .charte-v2 .jury-role { display: inline-block; margin-bottom: 6px; padding: 3px 10px; border-radius: 999px; background: var(--gold-grad); color: #10154a; font-size: .7rem; font-weight: 600; }
+
+/* Accueil : compte à rebours vers l'ouverture des candidatures, cases dorées du chrono de scène */
+.charte-v2 .acc-rebours { padding-block: clamp(40px, 6vw, 88px) 0; text-align: center; }
+.charte-v2 .acc-rebours h2 { font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.1; margin: 0 0 clamp(20px, 3vw, 34px); color: var(--navy-950); }
+.charte-v2 .rebours { display: flex; justify-content: center; gap: clamp(8px, 1.6vw, 18px); }
+.charte-v2 .rebours-case { flex: 0 1 150px; min-width: 0; padding: clamp(12px, 1.6vw, 20px) 4px clamp(10px, 1.2vw, 16px); border-radius: clamp(14px, 1.8vw, 26px);
+  background: radial-gradient(75% 85% at 50% 48%, #e9c95a 0%, #c99a2e 55%, #8f6a17 100%); box-shadow: 0 18px 40px -22px rgba(143, 106, 23, .8), inset 0 2px 0 rgba(255, 255, 255, .45);
+  display: flex; flex-direction: column; align-items: center; color: #fff; }
+.charte-v2 .rebours-valeur { font: 500 clamp(2rem, 6vw, 4rem)/1 var(--font-body); font-variant-numeric: tabular-nums; text-shadow: 0 2px 8px rgba(130, 90, 0, .35); }
+.charte-v2 .rebours-unite { margin-top: 6px; font: 500 clamp(.68rem, .5vw + .55rem, .9rem)/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.charte-v2 main .rebours-date { margin: clamp(16px, 2vw, 24px) 0 0; text-align: center; color: var(--ink-soft); font-weight: 500; }
+.charte-v2 .rebours-date a { color: var(--navy-950); font-weight: 700; border-bottom: 2px solid var(--gold); }

@@ -508,12 +508,12 @@
   maj();
 })();
 
-/* Accueil : le bloc « liste d'attente » disparaît une fois les candidatures ouvertes. */
+/* Accueil : la liste d'attente et le compte à rebours disparaissent une fois les candidatures ouvertes. */
 (function () {
-  var bloc = document.querySelector("[data-masquer-apres]");
-  if (!bloc) return;
-  var date = new Date(bloc.getAttribute("data-masquer-apres") + "+01:00");
-  if (!isNaN(date) && Date.now() >= date.getTime()) bloc.hidden = true;
+  document.querySelectorAll("[data-masquer-apres]").forEach(function (bloc) {
+    var date = new Date(bloc.getAttribute("data-masquer-apres") + "+01:00");
+    if (!isNaN(date) && Date.now() >= date.getTime()) bloc.hidden = true;
+  });
 })();
 
 /* Apparitions douces au défilement, fil doré, compteurs, en-tête et barre mobile (accueil). */
