@@ -82,6 +82,18 @@ function render(data) {
         </div>
       </div>
     </div>
+    ${
+      livre.temoignages && livre.temoignages.length
+        ? `<div class="livre-avis">
+      <p class="eyebrow reveal">Premiers retours de lecture</p>
+      <div class="livre-avis-liste">
+        ${livre.temoignages
+          .map((t) => `<figure class="livre-avis-carte reveal"><blockquote><p>« ${t.texte} »</p></blockquote><figcaption>${t.nom}<span>Lectrice</span></figcaption></figure>`)
+          .join("\n        ")}
+      </div>
+    </div>`
+        : ""
+    }
   </div>
 </section>
 

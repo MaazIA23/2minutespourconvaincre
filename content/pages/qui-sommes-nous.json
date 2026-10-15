@@ -41,7 +41,13 @@
       "description": "Premier livre de Mazidath Bello, lancé lors de la 2ème édition. Un récit autobiographique et une méthode pour révéler sa voix, porté par la conviction que la prise de parole n'est pas un don réservé à quelques-uns mais une compétence.",
       "disponibilite": "Disponible en version papier en France et à Cotonou, ainsi qu'en e-book.",
     "photo": "/assets/img/livre/chroniques-maquette.jpg",
-    "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee"
+    "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee",
+    "temoignages": [
+      { "nom": "Bernice Houssou", "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose." },
+      { "nom": "Gisèle Ahonto", "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer." },
+      { "nom": "Aurelle Faro", "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre." }
+    ],
+    "_sourceTemoignages": "Repris des témoignages du site La Muse Éloquente (noms communiqués par Mazidath pour publication)."
     }
   },
   "equipe": {
