@@ -1,3 +1,4 @@
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { impact, editionsIndex } = data;
   const editionsPassees = editionsIndex.editions.filter((e) => e.statut === "passee");
@@ -14,11 +15,7 @@ function render(data) {
 <section class="stats-band" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${impact.chiffresCles.eyebrow}</p>
-    <div class="stats-grid">
-      ${impact.chiffresCles.chiffres
-        .map((c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`)
-        .join("\n      ")}
-    </div>
+    ${listeChiffres(impact.chiffresCles.chiffres)}
   </div>
 </section>
 

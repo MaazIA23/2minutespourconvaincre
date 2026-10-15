@@ -9,13 +9,15 @@
           "prix": "Grande Gagnante, Championne de l'Éloquence 2025",
           "nom": "Ezéchielle Bouet",
           "photo": "/assets/img/palmares/1ere-edition/ezechielle-bouet.jpg",
-          "lots": "Trophée de la lauréate, enveloppe financière de 200 000 FCFA, titre de Championne de l'Éloquence 2025, lots divers."
+          "lots": "Trophée de la lauréate, enveloppe financière de 200 000 FCFA, titre de Championne de l'Éloquence 2025, lots divers.",
+          "citation": "Pour ma part, les félicitations reviennent à la Muse Éloquente qui a bien voulu relever ce défi avec nous."
         },
         {
           "prix": "Deuxième place",
           "nom": "Tristan Kounde",
           "photo": "/assets/img/palmares/1ere-edition/tristan-kounde.jpg",
-          "lots": "Enveloppe financière de 100 000 FCFA, lots divers."
+          "lots": "Enveloppe financière de 100 000 FCFA, lots divers.",
+          "citation": "Je tiens à remercier chaleureusement la Muse Éloquente pour l'initiative exceptionnelle et l'originalité du concours d'éloquence « 2 minutes pour convaincre »."
         }
       ],
       "autresParticipants": "Tous les autres candidats ont reçu un lot de consolation ainsi qu'une attestation officielle de participation.",

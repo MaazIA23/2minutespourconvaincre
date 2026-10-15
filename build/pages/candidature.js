@@ -1,3 +1,4 @@
+const { icoDate, icoLieu } = require("../icones");
 function render(data) {
   const { candidature, site, gagnants, edition3 } = data;
   const edition2026 = gagnants.editions.find((e) => e.numero === 2);
@@ -155,7 +156,7 @@ ${
   <div class="container">
     <div id="candidature-avant-ouverture">
       <div class="todo-banner reveal">
-        📅 Les candidatures ouvrent le <strong>${candidature.dateOuvertureCandidatures}</strong>
+        ${icoDate} Les candidatures ouvrent le <strong>${candidature.dateOuvertureCandidatures}</strong>
       </div>
       <div class="section-head reveal" style="margin-top:28px;">
         <h2>${candidature.listeAttente.titre}</h2>
@@ -188,7 +189,7 @@ ${
 
     <div id="candidature-formulaire-ouvert" hidden>
       <div class="todo-banner reveal">
-        📅 Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
+        ${icoDate} Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
       </div>
       <form class="contact-form reveal" id="candidature-form" data-netlify="true" name="candidature" netlify-honeypot="societe" novalidate>
         <input type="hidden" name="form-name" value="candidature">

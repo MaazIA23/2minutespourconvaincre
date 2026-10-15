@@ -13,8 +13,8 @@
   "chiffres": [
     { "valeur": "+100", "libelle": "participants" },
     { "valeur": "16", "libelle": "orateurs en compétition" },
-    { "valeur": "04", "libelle": "rounds d'élimination progressive (16 + 8 + 4 + 2)" },
-    { "valeur": "+700 000 FCFA", "libelle": "de lots distribués" }
+    { "valeur": "4", "libelle": "rounds d'élimination progressive" },
+    { "valeur": "+700K", "libelle": "FCFA de lots distribués" }
   ],
   "rapportPdf": null,
   "jury": {

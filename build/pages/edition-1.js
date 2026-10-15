@@ -1,3 +1,5 @@
+const { icoDate, icoLieu } = require("../icones");
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { edition1, editionsIndex, gagnants, galerie } = data;
   const edition1Meta = editionsIndex.editions.find((e) => e.slug === "1ere-edition");
@@ -10,8 +12,8 @@ function render(data) {
     <p class="eyebrow">Édition passée</p>
     <h1>${edition1.titre}</h1>
     <div class="hero-meta">
-      <span>📅 ${edition1.date}</span>
-      <span>📍 ${edition1.lieu}</span>
+      <span>${icoDate} ${edition1.date}</span>
+      <span>${icoLieu} ${edition1.lieu}</span>
     </div>
   </div>
 </section>
@@ -27,13 +29,7 @@ function render(data) {
 <section class="stats-band" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">Chiffres clés</p>
-    <div class="stats-grid${edition1.chiffres.length === 4 ? " stats-grid-4" : ""}">
-      ${edition1.chiffres
-        .map(
-          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-        )
-        .join("\n      ")}
-    </div>
+    ${listeChiffres(edition1.chiffres)}
   </div>
 </section>
 
@@ -75,6 +71,7 @@ ${
         <p class="palmares-prix">${p.prix}</p>
         <h3>${p.nom}</h3>
         <p>${p.lots}</p>
+        ${p.citation ? `<blockquote class="palmares-citation"><p>« ${p.citation} »</p></blockquote>` : ""}
       </article>`
         )
         .join("\n      ")}

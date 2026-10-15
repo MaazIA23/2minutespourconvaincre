@@ -1,3 +1,5 @@
+const { icoDate, icoLieu } = require("../icones");
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie, edition2, partenaires, site } = data;
   const edition2Meta = editionsIndex.editions.find((e) => e.slug === "2eme-edition");
@@ -11,8 +13,8 @@ function render(data) {
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
     <div class="hero-meta">
-      <span>📅 ${edition2Historique.date}</span>
-      <span>📍 ${edition2Historique.lieu}</span>
+      <span>${icoDate} ${edition2Historique.date}</span>
+      <span>${icoLieu} ${edition2Historique.lieu}</span>
     </div>
   </div>
 </section>
@@ -20,13 +22,7 @@ function render(data) {
 <section class="stats-band" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${edition2.chiffresCles.eyebrow}</p>
-    <div class="stats-grid stats-grid-4">
-      ${edition2.chiffresCles.chiffres
-        .map(
-          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-        )
-        .join("\n      ")}
-    </div>
+    ${listeChiffres(edition2.chiffresCles.chiffres)}
   </div>
 </section>
 
@@ -101,15 +97,15 @@ function render(data) {
       <p class="eyebrow">Le panel de discussion</p>
       <h2>${intervenants.panel.theme}</h2>
     </div>
-    <div class="people-grid">
+    <div class="jury-grid">
       ${
         jury.moderatricePanel
-          ? `<div class="people-card reveal">${jury.moderatricePanel.photo ? `<img src="${jury.moderatricePanel.photo}" alt="${jury.moderatricePanel.nom}" class="people-photo" loading="lazy">` : ""}<span class="badge badge-upcoming" style="margin-bottom:10px;">Modératrice</span><h3>${jury.moderatricePanel.nom}, ${jury.moderatricePanel.age} ans</h3><p>${jury.moderatricePanel.titre}</p></div>`
+          ? `<div class="jury-card reveal" tabindex="0">${jury.moderatricePanel.photo ? `<img src="${jury.moderatricePanel.photo}" alt="${jury.moderatricePanel.nom}" loading="lazy">` : ""}<div class="jury-overlay"><span class="jury-role">Modératrice</span><h3>${jury.moderatricePanel.nom}, ${jury.moderatricePanel.age} ans</h3><p>${jury.moderatricePanel.titre}</p></div></div>`
           : ""
       }
       ${intervenants.panel.intervenantes
         .map(
-          (i) => `<div class="people-card reveal">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" class="people-photo" loading="lazy">` : ""}<h3>${i.nom}</h3><p>${i.titre}</p></div>`
+          (i) => `<div class="jury-card reveal" tabindex="0">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" loading="lazy">` : ""}<div class="jury-overlay"><h3>${i.nom}</h3><p>${i.titre}</p></div></div>`
         )
         .join("\n      ")}
     </div>

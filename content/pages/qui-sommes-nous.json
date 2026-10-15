@@ -7,9 +7,9 @@
     "vision": "D'ici 2035, La Muse Éloquente aspire à être reconnue comme l'agence de référence qui transforme la communication des individus et des organisations, créant un écosystème d'excellence oratoire à travers des formations innovantes, des événements d'envergure et des partenariats stratégiques avec les entreprises leaders.",
     "mission": "Révéler et développer le potentiel oratoire des individus et des organisations à travers des programmes de formation sur-mesure, des accompagnements personnalisés et des événements fédérateurs.",
     "chiffres": [
-      { "valeur": "+70K", "libelle": "abonnés sur nos réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok)" },
-      { "valeur": "+1000", "libelle": "spectateurs sur les lives 2 Minutes Pour Convaincre sur TikTok" },
-      { "valeur": "+10.000.000", "libelle": "de vues cumulées sur nos différents réseaux" }
+      { "valeur": "+70K", "libelle": "abonnés sur nos réseaux sociaux" },
+      { "valeur": "+1000", "libelle": "spectateurs sur nos lives TikTok" },
+      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" }
     ],
     "ceQueNousProposons": [
       {
@@ -39,7 +39,15 @@
     "livre": {
       "titre": "Chroniques d'une voix qui s'est révélée, Tome 1 : De l'Ombre à la Scène",
       "description": "Premier livre de Mazidath Bello, lancé lors de la 2ème édition. Un récit autobiographique et une méthode pour révéler sa voix, porté par la conviction que la prise de parole n'est pas un don réservé à quelques-uns mais une compétence.",
-      "disponibilite": "Disponible en version papier en France et à Cotonou, ainsi qu'en e-book."
+      "disponibilite": "Disponible en version papier en France et à Cotonou, ainsi qu'en e-book.",
+    "photo": "/assets/img/livre/chroniques-maquette.jpg",
+    "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee",
+    "temoignages": [
+      { "nom": "Bernice Houssou", "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose." },
+      { "nom": "Gisèle Ahonto", "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer." },
+      { "nom": "Aurelle Faro", "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre." }
+    ],
+    "_sourceTemoignages": "Repris des témoignages du site La Muse Éloquente (noms communiqués par Mazidath pour publication)."
     }
   },
   "equipe": {

@@ -1,3 +1,4 @@
+const { listeChiffres } = require("../chiffres");
 // Accueil : mise en page aérée, apparitions douces au défilement (data-reveal), peu de cadres.
 function render(data) {
   const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
@@ -59,11 +60,7 @@ ${
     ? `<section class="acc-chiffres" id="chiffres">
   <div class="container">
     <p class="acc-surtitre acc-surtitre-centre" data-reveal>${accueil.chiffresCles.eyebrow}</p>
-    <ul class="acc-chiffres-liste">
-      ${accueil.chiffresCles.chiffres
-        .map((c, i) => `<li data-reveal ${delai(i, 0.1)}><strong data-compteur>${c.valeur}</strong><span>${c.libelle}</span></li>`)
-        .join("\n      ")}
-    </ul>
+    ${listeChiffres(accueil.chiffresCles.chiffres)}
   </div>
 </section>`
     : ""
@@ -84,6 +81,19 @@ ${
       </ul>
       <a href="/qui-sommes-nous/" class="acc-lien" data-reveal ${delai(4)}>Qui sommes-nous <span aria-hidden="true">→</span></a>
     </div>
+  </div>
+</section>
+
+<section class="acc-rebours" id="compte-a-rebours" data-masquer-apres="${candidature.dateOuvertureCandidaturesISO}">
+  <div class="container">
+    <p class="acc-surtitre acc-surtitre-centre" data-reveal>Candidatures 2027</p>
+    <h2 data-reveal ${delai(1)}>Ouverture des candidatures dans</h2>
+    <div class="rebours" id="hero-countdown" data-target="${candidature.dateOuvertureCandidaturesISO}+01:00" role="timer" aria-label="Temps restant avant l'ouverture des candidatures, le ${candidature.dateOuvertureCandidatures}" data-reveal ${delai(2)}>
+      ${[["days", "jours"], ["hours", "heures"], ["minutes", "min"], ["seconds", "sec"]]
+        .map(([u, l]) => `<div class="rebours-case"><span class="rebours-valeur" data-unit="${u}">00</span><span class="rebours-unite">${l}</span></div>`)
+        .join("")}
+    </div>
+    <p class="rebours-date" data-reveal ${delai(3)}>Le ${candidature.dateOuvertureCandidatures} · <a href="#liste-attente">Être prévenu(e) à l'ouverture</a></p>
   </div>
 </section>
 
