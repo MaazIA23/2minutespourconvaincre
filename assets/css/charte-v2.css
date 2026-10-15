@@ -98,6 +98,15 @@
 .charte-v2 .acc-chiffres-liste li:last-child { border-bottom: 1px solid rgba(110, 170, 255, .3); }
 .charte-v2 .acc-chiffres-liste strong { font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .charte-v2 .acc-chiffres-liste span { font-size: clamp(.95rem, .5vw + .8rem, 1.15rem); line-height: 1.4; font-weight: 500; color: #e6eaff; text-wrap: balance; }
+/* Sur ordinateur, les chiffres passent en ligne sur toute la largeur, séparés par des filets verticaux. */
+@media (min-width: 900px) {
+  .charte-v2 .acc-chiffres-liste { display: flex; max-width: none; justify-content: space-between; }
+  .charte-v2 .acc-chiffres-liste li,
+  .charte-v2 .acc-chiffres-liste li:first-child,
+  .charte-v2 .acc-chiffres-liste li:last-child,
+  .charte-v2 .acc-chiffres-liste li:last-child:nth-child(odd) { flex: 1 1 0; min-width: 0; padding: 8px clamp(10px, 1.6vw, 24px); border: 0; border-left: 1px solid rgba(110, 170, 255, .3); }
+  .charte-v2 .acc-chiffres-liste li:first-child { border-left: 0; }
+}
 
 /* ---------- Nouveautés ---------- */
 .charte-v2 .acc-num { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--gold-dark); }
@@ -246,3 +255,39 @@
 .charte-v2 .rebours-unite { margin-top: 6px; font: 500 clamp(.68rem, .5vw + .55rem, .9rem)/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
 .charte-v2 main .rebours-date { margin: clamp(16px, 2vw, 24px) 0 0; text-align: center; color: var(--ink-soft); font-weight: 500; }
 .charte-v2 .rebours-date a { color: var(--navy-950); font-weight: 700; border-bottom: 2px solid var(--gold); }
+
+/* =====================================================================
+   Grand écran : remplir la largeur au lieu d'empiler des colonnes étroites au centre.
+   ===================================================================== */
+@media (min-width: 1000px) {
+  /* Sections « titre + texte ou liste » : titre à gauche (qui reste à l'écran), contenu à droite. */
+  .charte-v2 .section > .container:has(> .section-head + *):not(:has(> [class*="-grid"], > .ambitions-block, > .temoignages-marquee, > .candidature-photos, > .two-col, > .contact-form, > .partenaires-grid, > .galerie-grid, > .section-head ~ .section-head)),
+  .charte-v2 .section > .container:has(> .fondatrice-layout + .prose:last-child) {
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: clamp(48px, 6vw, 112px); align-items: start;
+  }
+  .charte-v2 .section > .container:has(> .section-head + *):not(:has(> [class*="-grid"], > .ambitions-block, > .temoignages-marquee, > .candidature-photos, > .two-col, > .contact-form, > .partenaires-grid, > .galerie-grid, > .section-head ~ .section-head)) > .section-head,
+  .charte-v2 .section > .container:has(> .fondatrice-layout + .prose:last-child) > .fondatrice-layout {
+    grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 120px; max-width: none; margin: 0; text-align: left;
+  }
+  .charte-v2 .section > .container:has(> .section-head + *):not(:has(> [class*="-grid"], > .ambitions-block, > .temoignages-marquee, > .candidature-photos, > .two-col, > .contact-form, > .partenaires-grid, > .galerie-grid, > .section-head ~ .section-head)) > .section-head :is(p, .eyebrow) { text-align: left !important; margin-left: 0; justify-content: flex-start; }
+  .charte-v2 .section > .container:has(> .section-head + *):not(:has(> [class*="-grid"], > .ambitions-block, > .temoignages-marquee, > .candidature-photos, > .two-col, > .contact-form, > .partenaires-grid, > .galerie-grid, > .section-head ~ .section-head)) > .section-head h2::after { margin-left: 0; }
+  .charte-v2 .section > .container:has(> .section-head + *):not(:has(> [class*="-grid"], > .ambitions-block, > .temoignages-marquee, > .candidature-photos, > .two-col, > .contact-form, > .partenaires-grid, > .galerie-grid, > .section-head ~ .section-head)) > :not(.section-head),
+  .charte-v2 .section > .container:has(> .fondatrice-layout + .prose:last-child) > .prose {
+    grid-column: 2; max-width: none; margin-left: 0; margin-right: 0; text-align: justify;
+  }
+  .charte-v2 .section > .container:has(> .fondatrice-layout + .prose:last-child) > .fondatrice-layout { flex-direction: column; align-items: flex-start; }
+
+  /* Section réduite à un titre et un paragraphe : titre à gauche, paragraphe à droite. */
+  .charte-v2 .section > .container > .section-head:only-child:has(> h2 + p) { max-width: none; margin: 0; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: clamp(48px, 6vw, 112px); align-items: start; text-align: left; }
+  .charte-v2 .section > .container > .section-head:only-child:has(> h2 + p) > :not(h2 ~ *) { grid-column: 1; }
+  .charte-v2 .section > .container > .section-head:only-child:has(> h2 + p) > h2 ~ * { grid-column: 2; grid-row: 1 / span 3; margin: 0; text-align: justify; font-size: var(--t-lead); }
+  .charte-v2 .section > .container > .section-head:only-child:has(> h2 + p) h2::after { margin-left: 0; }
+  .charte-v2 .section > .container > .section-head:only-child:has(> h2 + p) .eyebrow { text-align: left !important; justify-content: flex-start; }
+
+  /* Texte seul : deux colonnes de lecture. */
+  .charte-v2 .section > .container > .prose:only-child:has(> :nth-child(3)) { max-width: none; column-count: 2; column-gap: clamp(48px, 5vw, 96px); }
+  .charte-v2 .section > .container > .prose:only-child:has(> :nth-child(3)) > * { break-inside: avoid; }
+
+  /* Grilles bridées trop étroites. */
+  .charte-v2 .people-grid-3, .charte-v2 .jury-grid-3, .charte-v2 .palmares-grid-2 { max-width: 1060px; }
+}
