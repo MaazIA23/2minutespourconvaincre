@@ -180,6 +180,3 @@
 .charte-v2 .ambition-card:not(.ambition-card-light), .charte-v2 .reason-block--navy { background: var(--scene); }
 .charte-v2 .ambition-card:not(.ambition-card-light) h3, .charte-v2 .reason-block--navy h3 { color: var(--gold-text); }
 @media (max-width: 1040px) { .charte-v2 .main-nav { background: var(--scene); } }
-
-/* Photo du bandeau d'accueil (portrait au micro) : cadrage sur le visage et le micro */
-.charte-v2 .hero-split .hero-visual img { object-position: 50% 30%; }
