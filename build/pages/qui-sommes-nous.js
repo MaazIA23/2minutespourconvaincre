@@ -80,6 +80,22 @@ function render(data) {
     </div>
   </div>
 </section>
+
+<section class="section alt-bg" id="equipe">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${quiSommesNous.equipe.eyebrow}</p>
+      <h2>${quiSommesNous.equipe.titre}</h2>
+    </div>
+    <div class="people-grid people-grid-3">
+      ${quiSommesNous.equipe.membres
+        .map(
+          (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.role}</p></div>`
+        )
+        .join("\n      ")}
+    </div>
+  </div>
+</section>
 `;
 }
 

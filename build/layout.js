@@ -161,6 +161,13 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml, cha
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
 ${polices}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F9NTNXR5N3');
+</script>
 </head>
 <body${charteV2 ? ' class="charte-v2"' : ""}>
 <a class="skip-link" href="#main">Aller au contenu</a>
