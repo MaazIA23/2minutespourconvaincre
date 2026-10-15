@@ -97,15 +97,15 @@ function render(data) {
       <p class="eyebrow">Le panel de discussion</p>
       <h2>${intervenants.panel.theme}</h2>
     </div>
-    <div class="people-grid">
+    <div class="jury-grid">
       ${
         jury.moderatricePanel
-          ? `<div class="people-card reveal">${jury.moderatricePanel.photo ? `<img src="${jury.moderatricePanel.photo}" alt="${jury.moderatricePanel.nom}" class="people-photo" loading="lazy">` : ""}<span class="badge badge-upcoming" style="margin-bottom:10px;">Modératrice</span><h3>${jury.moderatricePanel.nom}, ${jury.moderatricePanel.age} ans</h3><p>${jury.moderatricePanel.titre}</p></div>`
+          ? `<div class="jury-card reveal" tabindex="0">${jury.moderatricePanel.photo ? `<img src="${jury.moderatricePanel.photo}" alt="${jury.moderatricePanel.nom}" loading="lazy">` : ""}<div class="jury-overlay"><span class="jury-role">Modératrice</span><h3>${jury.moderatricePanel.nom}, ${jury.moderatricePanel.age} ans</h3><p>${jury.moderatricePanel.titre}</p></div></div>`
           : ""
       }
       ${intervenants.panel.intervenantes
         .map(
-          (i) => `<div class="people-card reveal">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" class="people-photo" loading="lazy">` : ""}<h3>${i.nom}</h3><p>${i.titre}</p></div>`
+          (i) => `<div class="jury-card reveal" tabindex="0">${i.photo ? `<img src="${i.photo}" alt="${i.nom}" loading="lazy">` : ""}<div class="jury-overlay"><h3>${i.nom}</h3><p>${i.titre}</p></div></div>`
         )
         .join("\n      ")}
     </div>

@@ -237,3 +237,6 @@
 .charte-v2 .palmares-card { display: flex; flex-direction: column; }
 .charte-v2 .palmares-citation { margin: auto 0 0; padding: 16px 0 0 16px; border-left: 3px solid var(--gold); font-style: normal; }
 .charte-v2 .palmares-citation p { margin: 0; color: var(--navy-950); font-weight: 500; font-size: .98rem; line-height: 1.55; }
+
+/* Panel : même présentation que le jury (description au clic / survol), petit libellé de rôle */
+.charte-v2 .jury-role { display: inline-block; margin-bottom: 6px; padding: 3px 10px; border-radius: 999px; background: var(--gold-grad); color: #10154a; font-size: .7rem; font-weight: 600; }
