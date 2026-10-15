@@ -291,3 +291,11 @@
   /* Grilles bridées trop étroites. */
   .charte-v2 .people-grid-3, .charte-v2 .jury-grid-3, .charte-v2 .palmares-grid-2 { max-width: 1060px; }
 }
+
+/* Candidature : spot vidéo de la 3ème édition */
+.charte-v2 .spot-grille { display: grid; gap: clamp(24px, 4vw, 64px); align-items: center; }
+.charte-v2 .spot-texte h2 { margin: 0 0 16px; }
+.charte-v2 .or-fonce { color: var(--gold-dark); }
+.charte-v2 .spot-video { margin: 0; border-radius: clamp(16px, 2vw, 26px); overflow: hidden; box-shadow: 0 40px 80px -45px rgba(4, 11, 82, .6); background: #040b52; }
+.charte-v2 .spot-video video { display: block; width: 100%; aspect-ratio: 16 / 9; }
+@media (min-width: 1000px) { .charte-v2 .spot-grille { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
