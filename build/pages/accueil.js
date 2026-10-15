@@ -12,7 +12,7 @@ function render(data) {
   <div class="hero-motif" aria-hidden="true"></div>
   <div class="container hero-inner">
     <figure class="hero-visual" data-reveal>
-      <img src="/assets/img/galerie/2eme-edition/concours-orateur.jpg" alt="Un orateur sur la scène de Deux Minutes Pour Convaincre" fetchpriority="high">
+      <img src="/assets/img/galerie/2eme-edition/fondatrice-micro.jpg" alt="Mazidath Bello au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" fetchpriority="high">
       <figcaption class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">✈️</span><span><strong>Grand Prix de la Francophonie</strong>Une semaine en France pour le lauréat</span></figcaption>
     </figure>
     <div class="hero-copy">
