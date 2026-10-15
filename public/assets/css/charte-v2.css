@@ -87,8 +87,23 @@
 /* ---------- Chiffres clés ---------- */
 .charte-v2 .acc-chiffres { background: var(--scene); }
 .charte-v2 .acc-chiffres .acc-surtitre { color: var(--gold-text); }
-.charte-v2 .acc-chiffres-liste strong { font-size: clamp(2.2rem, 4vw, 3.8rem); }
-.charte-v2 .acc-chiffres-liste li { border-top-color: rgba(110, 170, 255, .3); }
+/* Un chiffre par ligne, en très grand, alignés verticalement ; ils comptent depuis zéro à l'apparition (data-compteur). */
+.charte-v2 .acc-chiffres-liste { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 1000px; margin: clamp(28px, 4vw, 56px) auto 0; }
+.charte-v2 .acc-chiffres-liste li,
+.charte-v2 .acc-chiffres-liste li:first-child,
+.charte-v2 .acc-chiffres-liste li:last-child:nth-child(odd) {
+  grid-column: auto; display: grid; grid-template-columns: 3.2em 1fr; align-items: center; column-gap: clamp(20px, 4vw, 64px);
+  font-size: clamp(4rem, 10vw, 8.5rem); padding: clamp(16px, 2.2vw, 30px) 0; border: 0; border-top: 1px solid rgba(110, 170, 255, .3);
+}
+.charte-v2 .acc-chiffres-liste li:last-child { border-bottom: 1px solid rgba(110, 170, 255, .3); }
+.charte-v2 .acc-chiffres-liste strong { font-size: 1em; line-height: 1; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.charte-v2 .acc-chiffres-liste span { font-size: clamp(1.05rem, 1.2vw + .7rem, 1.7rem); line-height: 1.35; font-weight: 500; color: #e6eaff; text-wrap: balance; }
+@media (max-width: 599px) {
+  .charte-v2 .acc-chiffres-liste li,
+  .charte-v2 .acc-chiffres-liste li:first-child,
+  .charte-v2 .acc-chiffres-liste li:last-child:nth-child(odd) { grid-template-columns: 1fr; row-gap: 8px; font-size: clamp(3.6rem, 21vw, 5.6rem); padding-block: 22px; }
+  .charte-v2 .acc-chiffres-liste strong { text-align: left; }
+}
 
 /* ---------- Nouveautés ---------- */
 .charte-v2 .acc-num { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--gold-dark); }
