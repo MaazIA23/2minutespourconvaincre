@@ -197,7 +197,7 @@
    Restent centrés : en-têtes de section centrés et appels finaux. */
 .charte-v2 main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
 .charte-v2 main :is(.section-head, .acc-final, .cta-final) p, .charte-v2 main p.section-lead,
-.charte-v2 main :is(.eyebrow, .acc-surtitre, .hero-kicker, .acc-actu-meta, .form-note) { text-align: inherit; -webkit-hyphens: manual; hyphens: manual; }
+.charte-v2 main :is(.eyebrow, .acc-surtitre, .hero-kicker, .acc-actu-meta, .form-note, .palmares-prix) { text-align: inherit; -webkit-hyphens: manual; hyphens: manual; }
 .charte-v2 main :is(.acc-surtitre, .eyebrow, .hero-kicker, .acc-actu-meta) { text-align: left; }
 .charte-v2 main :is(.acc-surtitre-centre, .section-head .eyebrow) { text-align: center; }
 
@@ -232,3 +232,8 @@
 .charte-v2 .livre-avis-carte figcaption { font-weight: 700; color: var(--navy-950); display: flex; flex-direction: column; }
 .charte-v2 .livre-avis-carte figcaption span { font-weight: 500; font-size: .85rem; color: var(--gold-dark); }
 @media (min-width: 900px) { .charte-v2 .livre-avis-liste { grid-template-columns: repeat(3, 1fr); } }
+
+/* Palmarès : courte citation du lauréat, calée en bas de carte pour des cartes équilibrées */
+.charte-v2 .palmares-card { display: flex; flex-direction: column; }
+.charte-v2 .palmares-citation { margin: auto 0 0; padding: 16px 0 0 16px; border-left: 3px solid var(--gold); font-style: normal; }
+.charte-v2 .palmares-citation p { margin: 0; color: var(--navy-950); font-weight: 500; font-size: .98rem; line-height: 1.55; }

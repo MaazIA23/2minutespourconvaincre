@@ -71,6 +71,7 @@ ${
         <p class="palmares-prix">${p.prix}</p>
         <h3>${p.nom}</h3>
         <p>${p.lots}</p>
+        ${p.citation ? `<blockquote class="palmares-citation"><p>« ${p.citation} »</p></blockquote>` : ""}
       </article>`
         )
         .join("\n      ")}
