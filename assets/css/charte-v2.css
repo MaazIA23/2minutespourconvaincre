@@ -1,6 +1,6 @@
 /* =====================================================================
    Charte v2 « écran de scène » (octobre 2026).
-   Chargée après style.css, uniquement sur les pages rendues avec charteV2 (body.charte-v2).
+   Chargée après style.css sur toutes les pages (body.charte-v2).
    Fond bleu roi épuré, Poppins partout, or dégradé, accents manuscrits Kalam.
    ===================================================================== */
 
@@ -124,5 +124,64 @@
 /* ---------- Barre mobile ---------- */
 .charte-v2 .acc-barre-mobile .btn-outline { color: var(--navy-950); border-color: var(--navy-950); }
 
-/* Sur téléphone, texte aligné à gauche : la justification creuse de grands blancs dans les colonnes étroites. */
-@media (max-width: 599px) { .charte-v2 p { text-align: left; hyphens: manual; } }
+/* =====================================================================
+   Pages intérieures
+   ===================================================================== */
+
+/* Chiffres et numéros en Poppins ExtraBold (ex-Anton) */
+.charte-v2 .countdown-value, .charte-v2 .stat-value, .charte-v2 .chiffre-item strong, .charte-v2 .step-number,
+.charte-v2 .callout-statement, .charte-v2 .voix-hero-inner h2, .charte-v2 .voix-number, .charte-v2 .voix-transmet-number,
+.charte-v2 .timeline-marker, .charte-v2 .sponsoring-price, .charte-v2 .cta-final h2 {
+  font-family: var(--font-display); font-weight: 800; text-transform: none; letter-spacing: -.02em;
+}
+.charte-v2 .callout-statement { font-size: clamp(1.4rem, 2.8vw, 2rem); }
+.charte-v2 .voix-number { font-size: clamp(3.6rem, 11vw, 6.6rem); }
+.charte-v2 .voix-transmet-number { font-size: 2.2rem; }
+.charte-v2 .timeline-marker { font-size: .95rem; letter-spacing: 0; }
+
+/* Bandeaux des pages : l'écran de scène */
+.charte-v2 .page-hero h1 { font-size: clamp(2.2rem, 4.6vw, 4.2rem); line-height: 1.05; letter-spacing: -.02em; }
+.charte-v2 .page-hero:not(.page-hero-photo-bg) { background: var(--scene); }
+.charte-v2 .page-hero-photo-bg { background-color: #040b52; }
+.charte-v2 .page-hero .eyebrow, .charte-v2 .voix-hero .eyebrow, .charte-v2 .cta-final .eyebrow { color: var(--gold-text); }
+.charte-v2 .page-hero-lead { color: #e6eaff; }
+.charte-v2 .eyebrow { font-family: var(--font-body); font-weight: 600; letter-spacing: .2em; }
+
+/* Bandes bleues : chiffres, 300 Voix, appel final, blocs bleus */
+.charte-v2 .stats-band { background: var(--scene); }
+.charte-v2 .stats-band .eyebrow { color: var(--gold-text); }
+.charte-v2 .stats-band .stat-value {
+  font-weight: 800; font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  background: var(--or-texte); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.charte-v2 .stats-band .stat-card + .stat-card { border-color: rgba(110, 170, 255, .3); }
+.charte-v2 .voix-hero { background-color: #040b52; }
+.charte-v2 .voix-hero-inner h2 { font-size: clamp(2.2rem, 5.6vw, 3.6rem); line-height: 1.04; }
+.charte-v2 .cta-final { background: var(--scene); }
+.charte-v2 .cta-final h2 { font-size: clamp(2.1rem, 4.4vw, 4rem); line-height: 1.05; }
+.charte-v2 .cta-final .btn-outline, .charte-v2 .page-hero .btn-outline, .charte-v2 .voix-hero .btn-outline { color: #fff; border-color: var(--gold); }
+.charte-v2 .cta-final .btn-outline:hover, .charte-v2 .page-hero .btn-outline:hover, .charte-v2 .voix-hero .btn-outline:hover { background: rgba(227, 195, 90, .12); border-color: var(--gold); }
+.charte-v2 .voix-engager-bloc:first-child { background: var(--scene); border-color: rgba(110, 170, 255, .3); }
+.charte-v2 .voix-engager-bloc:first-child h3 { color: var(--gold-text); }
+.charte-v2 .btn-blanc:hover { background: var(--gold-grad); color: #10154a; }
+
+/* Titres de section et cartes */
+.charte-v2 .section h2 { font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.08; }
+.charte-v2 .section h2 em, .charte-v2 .page-hero h1 em { font-style: normal; }
+.charte-v2 .section h2 em { color: var(--gold-dark); }
+.charte-v2 .page-hero h1 em { background: var(--or-texte); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.charte-v2 .countdown-value { color: var(--gold-text); }
+.charte-v2 .site-header.est-defile { background: linear-gradient(100deg, #0b1fa8, #071487 60%, #061272); }
+
+/* Blocs bleus pleins : dégradé de scène */
+.charte-v2 .ambition-card:not(.ambition-card-light), .charte-v2 .reason-block--navy { background: var(--scene); }
+.charte-v2 .ambition-card:not(.ambition-card-light) h3, .charte-v2 .reason-block--navy h3 { color: var(--gold-text); }
+@media (max-width: 1040px) { .charte-v2 .main-nav { background: var(--scene); } }
+
+/* Tous les paragraphes du contenu sont justifiés, sur ordinateur comme sur mobile (césure française pour éviter les grands blancs).
+   Restent centrés : en-têtes de section centrés et appels finaux. */
+.charte-v2 main p { text-align: justify; -webkit-hyphens: auto; hyphens: auto; }
+.charte-v2 main :is(.section-head, .acc-final, .cta-final) p, .charte-v2 main p.section-lead,
+.charte-v2 main :is(.eyebrow, .acc-surtitre, .hero-kicker, .acc-actu-meta, .form-note) { text-align: inherit; -webkit-hyphens: manual; hyphens: manual; }
+.charte-v2 main :is(.acc-surtitre, .eyebrow, .hero-kicker, .acc-actu-meta) { text-align: left; }
+.charte-v2 main :is(.acc-surtitre-centre, .section-head .eyebrow) { text-align: center; }

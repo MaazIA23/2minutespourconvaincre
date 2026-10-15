@@ -6,7 +6,7 @@ function render(data) {
   const edition2Historique = site.edition.historique.find((e) => e.numero === 2);
 
   return `
-<section class="page-hero page-hero-photo-bg" style="background-position: 65% 12%; background-image: linear-gradient(100deg, rgba(13,17,50,.88) 0%, rgba(13,17,50,.65) 40%, rgba(13,17,50,.25) 62%, rgba(13,17,50,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
+<section class="page-hero page-hero-photo-bg" style="background-position: 65% 12%; background-image: linear-gradient(100deg, rgba(4,11,82,.88) 0%, rgba(4,11,82,.65) 40%, rgba(4,11,82,.25) 62%, rgba(4,11,82,.1) 100%), url('/assets/img/galerie/2eme-edition/concours-orateur.jpg')">
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
