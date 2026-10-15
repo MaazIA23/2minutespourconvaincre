@@ -516,7 +516,7 @@
   });
 })();
 
-/* Apparitions douces au défilement, fil doré, compteurs, en-tête et barre mobile (accueil). */
+/* Apparitions douces au défilement, fil doré, compteurs et en-tête (accueil). */
 (function () {
   var doc = document.documentElement;
   doc.classList.add("js");
@@ -566,19 +566,40 @@
   surDefilement();
   window.addEventListener("scroll", surDefilement, { passive: true });
 
-  // Barre « Candidater / Devenir partenaire » sur téléphone, entre le bandeau et l'appel final.
-  var barre = document.getElementById("acc-barre-mobile"), hero = document.querySelector(".hero-split, .page-hero"), fin = document.querySelector("#candidature-cta, .cta-final, .site-footer");
-  if (barre && /^\/(candidature|partenaires|soutenir)/.test(location.pathname)) barre.remove(), barre = null;
-  if (barre && hero && "IntersectionObserver" in window) {
-    var apresHero = false, finVisible = false;
-    var maj = function () {
-      var voir = apresHero && !finVisible;
-      barre.classList.toggle("est-visible", voir);
-      barre.setAttribute("aria-hidden", voir ? "false" : "true");
-      barre.querySelectorAll("a").forEach(function (a) { a.tabIndex = voir ? 0 : -1; });
-      document.body.classList.toggle("barre-visible", voir);
-    };
-    new IntersectionObserver(function (e) { apresHero = !e[0].isIntersecting; maj(); }).observe(hero);
-    if (fin) new IntersectionObserver(function (e) { finVisible = e[0].isIntersecting; maj(); }).observe(fin);
+})();
+
+/* Bandeau cookies : la mesure d'audience ne se charge qu'après « Accepter » ; le choix est gardé
+   dans le navigateur et peut être changé à tout moment par « Gérer les cookies » (pied de page). */
+(function () {
+  var bandeau = document.getElementById("cookies");
+  if (!bandeau) return;
+  var CLE = "2mpc-cookies";
+  function lire() { try { return localStorage.getItem(CLE); } catch (e) { return null; } }
+  function ecrire(v) { try { localStorage.setItem(CLE, v); } catch (e) {} }
+  function effacerCookiesMesure() {
+    document.cookie.split(";").forEach(function (c) {
+      var nom = c.split("=")[0].trim();
+      if (/^_ga/.test(nom)) {
+        var domaine = location.hostname.replace(/^www\./, "");
+        ["", "; domain=" + domaine, "; domain=." + domaine].forEach(function (d) {
+          document.cookie = nom + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + d;
+        });
+      }
+    });
   }
+  function montrer() { bandeau.hidden = false; requestAnimationFrame(function () { bandeau.classList.add("est-visible"); }); }
+  function cacher() { bandeau.classList.remove("est-visible"); bandeau.hidden = true; }
+  if (!lire()) montrer();
+  bandeau.querySelectorAll("[data-cookies]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var choix = b.getAttribute("data-cookies");
+      var avant = lire();
+      ecrire(choix);
+      cacher();
+      if (choix === "acceptes" && window.chargerMesureAudience) window.chargerMesureAudience();
+      if (choix === "refuses") { effacerCookiesMesure(); if (avant === "acceptes") location.reload(); }
+    });
+  });
+  var gerer = document.getElementById("gerer-cookies");
+  if (gerer) gerer.addEventListener("click", montrer);
 })();

@@ -226,7 +226,8 @@
           "améliorer l'expérience utilisateur"
         ],
         "apresListe": [
-          "Vous pouvez refuser les cookies via les paramètres de votre navigateur. Certains services peuvent alors être dégradés."
+          "Les cookies de mesure d'audience (Google Analytics) ne sont déposés qu'après votre accord, donné dans le bandeau qui s'affiche lors de votre première visite. Vous pouvez changer d'avis à tout moment grâce au lien « Gérer les cookies » en bas de chaque page.",
+          "Vous pouvez aussi refuser les cookies via les paramètres de votre navigateur. Certains services peuvent alors être dégradés."
         ]
       },
       {

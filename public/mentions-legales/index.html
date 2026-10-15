@@ -25,12 +25,17 @@
 <link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/charte-v2.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"></script>
 <script>
+  // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F9NTNXR5N3');
+  window.chargerMesureAudience = function () {
+    if (window.mesureAudienceChargee) return;
+    window.mesureAudienceChargee = true;
+    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
+  };
+  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
 </script>
 </head>
 <body class="charte-v2">
@@ -162,12 +167,13 @@
         <li>Cotonou</li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="footer-col footer-legal">
       <h4>Légal</h4>
       <ul>
         <li><a href="/mentions-legales/">Mentions légales</a></li>
       <li><a href="/confidentialite/">Politique de confidentialité</a></li>
       <li><a href="/cgu/">Conditions générales d'utilisation</a></li>
+        <li><button type="button" class="lien-cookies" id="gerer-cookies">Gérer les cookies</button></li>
       </ul>
     </div>
   </div>
@@ -175,9 +181,12 @@
     <p>© <span id="year"></span> Deux Minutes pour Convaincre. Tous droits réservés. Un projet La Muse Éloquente.</p>
   </div>
 </footer>
-<div class="acc-barre-mobile" id="acc-barre-mobile" aria-hidden="true">
-  <a href="/candidature/" class="btn btn-primary" tabindex="-1">Candidater</a>
-  <a href="/partenaires/#devenir-partenaire" class="btn btn-outline" tabindex="-1">Devenir partenaire</a>
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
+  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+  <div class="cookies-actions">
+    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
+    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+  </div>
 </div>
 
 <a href="https://wa.me/2290143393333?text=Bonjour%2C%20j'ai%20une%20question%20%C3%A0%20propos%20de%20Deux%20Minutes%20Pour%20Convaincre." target="_blank" rel="noopener" class="whatsapp-float" id="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">

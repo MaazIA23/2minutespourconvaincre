@@ -101,10 +101,11 @@ function renderFooter(data) {
         <li>${data.site.evenement.lieu}</li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="footer-col footer-legal">
       <h4>Légal</h4>
       <ul>
         ${legalLinks}
+        <li><button type="button" class="lien-cookies" id="gerer-cookies">Gérer les cookies</button></li>
       </ul>
     </div>
   </div>
@@ -155,12 +156,17 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/charte-v2.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"></script>
 <script>
+  // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F9NTNXR5N3');
+  window.chargerMesureAudience = function () {
+    if (window.mesureAudienceChargee) return;
+    window.mesureAudienceChargee = true;
+    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
+  };
+  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
 </script>
 </head>
 <body class="charte-v2">
@@ -170,9 +176,12 @@ ${renderHeader(data, activeSlug)}
 ${bodyHtml}
 </main>
 ${renderFooter(data)}
-<div class="acc-barre-mobile" id="acc-barre-mobile" aria-hidden="true">
-  <a href="/candidature/" class="btn btn-primary" tabindex="-1">Candidater</a>
-  <a href="/partenaires/#devenir-partenaire" class="btn btn-outline" tabindex="-1">Devenir partenaire</a>
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
+  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+  <div class="cookies-actions">
+    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
+    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+  </div>
 </div>
 ${renderWhatsappFloat(data)}
 <button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
