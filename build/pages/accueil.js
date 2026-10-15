@@ -18,7 +18,7 @@ function render(data) {
     <div class="hero-copy">
       <p class="hero-kicker" data-reveal ${delai(1)}><span>3ème édition</span> Mars 2027 · Journée de la Francophonie</p>
       <h1 class="hero-rotator" id="hero-rotator" data-reveal ${delai(2)}>${(edition3.accrochesRotatives || [edition3.accroche])
-        .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase}</span>`)
+        .map((phrase, i) => `<span class="hero-rotator-phrase${i === 0 ? " is-active" : ""}">${phrase.replace("improvisation", '<span class="or-texte">improvisation</span>')}</span>`)
         .join("")}</h1>
 
     </div>

@@ -126,7 +126,16 @@ function renderWhatsappFloat(data) {
 </a>`;
 }
 
-function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
+// charteV2 : page passée à la charte « écran de scène » (Poppins + Kalam auto-hébergées, feuille charte-v2.css).
+function renderLayout(data, { title, description, activeSlug = "", bodyHtml, charteV2 = false }) {
+  const polices = charteV2
+    ? `<link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/charte-v2.css">`
+    : `<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">`;
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -135,7 +144,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <title>${title} | ${data.site.nomSite}</title>
 <meta name="description" content="${description}">
 <link rel="canonical" href="__URL_PAGE__">
-<meta name="theme-color" content="#283477">
+<meta name="theme-color" content="${charteV2 ? "#071487" : "#283477"}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="${data.site.nomSite}">
@@ -151,10 +160,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icones/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+${polices}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -163,7 +169,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
   gtag('config', 'G-F9NTNXR5N3');
 </script>
 </head>
-<body>
+<body${charteV2 ? ' class="charte-v2"' : ""}>
 <a class="skip-link" href="#main">Aller au contenu</a>
 ${renderHeader(data, activeSlug)}
 <main id="main">

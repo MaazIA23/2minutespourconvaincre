@@ -1,0 +1,128 @@
+/* =====================================================================
+   Charte v2 « écran de scène » (octobre 2026).
+   Chargée après style.css, uniquement sur les pages rendues avec charteV2 (body.charte-v2).
+   Fond bleu roi épuré, Poppins partout, or dégradé, accents manuscrits Kalam.
+   ===================================================================== */
+
+@font-face { font-family: "Poppins"; font-weight: 400; font-display: swap; src: url(/assets/fonts/poppins-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; font-display: swap; src: url(/assets/fonts/poppins-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; font-display: swap; src: url(/assets/fonts/poppins-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 700; font-display: swap; src: url(/assets/fonts/poppins-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 800; font-display: swap; src: url(/assets/fonts/poppins-latin-800-normal.woff2) format("woff2"); }
+@font-face { font-family: "Kalam"; font-weight: 700; font-display: swap; src: url(/assets/fonts/kalam-latin-700-normal.woff2) format("woff2"); }
+
+.charte-v2 {
+  --navy-950: #071487;
+  --navy-900: #061272;
+  --navy-800: #050f5e;
+  --navy-700: rgba(110, 170, 255, .28);
+  --navy-500: #8ea0ff;
+  --gold: #e3c35a;
+  --gold-text: #f6e27a;
+  --gold-dark: #b8892a;
+  --gold-soft: #fbf3d9;
+  --gold-grad: linear-gradient(90deg, #f3e3a0, #d9b54a 50%, #c99a2e);
+  --acc-filet: #e7e6e7;
+  --or-texte: linear-gradient(180deg, #fff1b8, #e3c35a 55%, #b8892a);
+  --scene:
+    radial-gradient(70% 45% at 75% 18%, rgba(70, 110, 255, .55), transparent 70%),
+    radial-gradient(80% 50% at 20% 85%, rgba(30, 60, 220, .5), transparent 70%),
+    linear-gradient(160deg, #0b1fa8 0%, #071487 45%, #040b52 100%);
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-main: "Kalam", cursive;
+}
+
+/* ---------- Typographie : Poppins ExtraBold en minuscules ---------- */
+.charte-v2 h1, .charte-v2 h2, .charte-v2 h3, .charte-v2 h4 { font-family: var(--font-heading); text-wrap: balance; }
+.charte-v2 h1, .charte-v2 h2 { font-weight: 800; text-transform: none; letter-spacing: -.015em; }
+.charte-v2 .acc-grand, .charte-v2 .acc-pleine h2, .charte-v2 .acc-final h2, .charte-v2 .acc-num, .charte-v2 .acc-chiffres-liste strong {
+  font-family: var(--font-display) !important; font-weight: 800 !important; text-transform: none !important; letter-spacing: -.02em !important;
+}
+.charte-v2 .acc-section h2 { font-size: clamp(1.9rem, 3.4vw, 3.2rem); line-height: 1.08; }
+.charte-v2 .acc-grand { font-size: clamp(2rem, 4.2vw, 4rem) !important; line-height: 1.04 !important; }
+.charte-v2 .acc-section h2 em, .charte-v2 .acc-grand em { color: var(--gold-dark); }
+.charte-v2 .acc-surtitre { font-family: var(--font-body); font-weight: 600; letter-spacing: .2em; }
+.charte-v2 blockquote { border-left-color: var(--gold); }
+
+/* Or dégradé sur les mots forts posés sur le bleu */
+.charte-v2 .or-texte, .charte-v2 .acc-prix h2 em, .charte-v2 .acc-chiffres-liste strong {
+  background: var(--or-texte); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.charte-v2 .manuscrit { font-family: var(--font-main); font-weight: 700; color: var(--gold-text); letter-spacing: 0; text-transform: none; }
+
+/* ---------- Boutons : capsule dorée, capsule filaire ---------- */
+.charte-v2 .btn { font-family: var(--font-body); font-weight: 600; }
+.charte-v2 .btn-primary { background: var(--gold-grad); color: #10154a; box-shadow: 0 10px 26px -12px rgba(201, 154, 46, .7); }
+.charte-v2 .btn-primary:hover { background: var(--gold-grad); filter: brightness(1.06); }
+.charte-v2 .btn-outline { border: 1.5px solid var(--navy-950); color: var(--navy-950); }
+.charte-v2 .btn-outline:hover { background: rgba(7, 20, 135, .06); border-color: var(--navy-950); }
+.charte-v2 .hero .btn-outline, .charte-v2 .acc-final .btn-outline, .charte-v2 .acc-devenir .btn-outline { color: #fff; border-color: var(--gold); }
+.charte-v2 .hero .btn-outline:hover, .charte-v2 .acc-final .btn-outline:hover { background: rgba(227, 195, 90, .12); border-color: var(--gold); }
+.charte-v2 .acc-lien { background-image: linear-gradient(var(--gold), var(--gold)); }
+
+/* ---------- En-tête et pied de page ---------- */
+.charte-v2 .site-header { background: linear-gradient(100deg, #0b1fa8, #071487 60%, #061272); border-bottom: 1px solid rgba(110, 170, 255, .25); }
+.charte-v2 .main-nav a { font-weight: 500; }
+.charte-v2 .main-nav a:hover, .charte-v2 .main-nav a.active { color: var(--gold-text); }
+.charte-v2 .btn-header-support { border-color: rgba(227, 195, 90, .55); }
+.charte-v2 .nav-toggle { background: rgba(4, 11, 82, .45); border-color: rgba(110, 170, 255, .4); }
+.charte-v2 .site-footer { background: linear-gradient(170deg, #071487 0%, #040b52 70%); }
+.charte-v2 .footer-col h4 { color: var(--gold-text); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+
+/* ---------- Bandeau d'accueil : l'écran de scène ---------- */
+.charte-v2 .hero.hero-split { background: var(--scene); }
+.charte-v2 .hero-motif { display: none; }
+.charte-v2 .hero-kicker { font-weight: 500; color: #c9d2ff; }
+.charte-v2 .hero-kicker span { background: var(--gold-grad); color: #10154a; font-weight: 600; text-transform: none; letter-spacing: 0; padding: 7px 18px; font-size: 1em; }
+.charte-v2 .hero-split h1 { font-size: clamp(2rem, 3.7vw, 3.9rem); line-height: 1.06; letter-spacing: -.02em; }
+.charte-v2 .hero-split .hero-visual img { border-radius: clamp(18px, 2vw, 30px); border: 1px solid rgba(110, 170, 255, .45); }
+.charte-v2 .hero-split .hero-visual::before { display: none; }
+.charte-v2 .hero-badge { background: rgba(4, 11, 82, .82); color: #fff; border: 1.5px solid var(--gold); backdrop-filter: blur(8px); }
+.charte-v2 .hero-badge strong { color: var(--gold-text); font-weight: 600; }
+@media (max-width: 720px) { .charte-v2 .hero-split h1 { font-size: clamp(1.75rem, 7.4vw, 2.3rem); } }
+@media (min-width: 600px) and (max-width: 899px) { .charte-v2 .hero-split h1 { font-size: clamp(2.1rem, 5.4vw, 2.9rem); } }
+
+/* ---------- Chiffres clés ---------- */
+.charte-v2 .acc-chiffres { background: var(--scene); }
+.charte-v2 .acc-chiffres .acc-surtitre { color: var(--gold-text); }
+.charte-v2 .acc-chiffres-liste strong { font-size: clamp(2.2rem, 4vw, 3.8rem); }
+.charte-v2 .acc-chiffres-liste li { border-top-color: rgba(110, 170, 255, .3); }
+
+/* ---------- Nouveautés ---------- */
+.charte-v2 .acc-num { font-size: clamp(1.9rem, 3vw, 2.8rem); color: var(--gold-dark); }
+
+/* ---------- 300 Voix : photo sous voile bleu ---------- */
+.charte-v2 .acc-pleine::after { background: linear-gradient(180deg, rgba(7, 20, 135, .08) 20%, rgba(7, 20, 135, .6) 55%, rgba(4, 11, 82, .94) 100%); }
+.charte-v2 .acc-pleine h2 { font-size: clamp(2.6rem, 6.5vw, 5.6rem); line-height: 1; }
+.charte-v2 .acc-pleine .acc-chapo { color: var(--gold-text); }
+.charte-v2 .acc-surtitre-or { color: var(--gold-text); }
+
+/* ---------- Grand Prix : sur le bleu de scène ---------- */
+.charte-v2 .acc-prix { background: var(--scene); color: #fff; }
+.charte-v2 .acc-prix h2 { color: #fff; }
+.charte-v2 .acc-prix .acc-surtitre { color: var(--gold-text); }
+.charte-v2 .acc-prix .acc-chapo { color: #e6eaff; font-weight: 500; }
+.charte-v2 .acc-prix .acc-lien { color: #fff; }
+.charte-v2 .acc-prix .acc-lien:hover { color: var(--gold-text); }
+.charte-v2 .acc-prix-photo img { border: 1px solid rgba(110, 170, 255, .45); border-radius: inherit; }
+
+/* ---------- Partenaires et appel final ---------- */
+.charte-v2 .acc-devenir { background: var(--scene); border: 1px solid rgba(110, 170, 255, .3); }
+.charte-v2 .acc-devenir .acc-lien:hover { color: var(--gold-text); }
+.charte-v2 .acc-final { background: var(--scene); }
+.charte-v2 .acc-final h2 { font-size: clamp(2.2rem, 4.8vw, 4.4rem); line-height: 1.04; }
+.charte-v2 .acc-final .acc-surtitre { font: 700 clamp(1.15rem, .8vw + .9rem, 1.6rem)/1.3 var(--font-main); letter-spacing: 0; text-transform: none; color: var(--gold-text); }
+.charte-v2 .acc-final .acc-surtitre::before { display: none; }
+
+/* ---------- Liste d'attente ---------- */
+.charte-v2 .alerte-candidature.acc-section { background: #f8f7f7; }
+.charte-v2 .alerte-form { border-color: var(--acc-filet); }
+.charte-v2 .alerte-form input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+/* ---------- Barre mobile ---------- */
+.charte-v2 .acc-barre-mobile .btn-outline { color: var(--navy-950); border-color: var(--navy-950); }
+
+/* Sur téléphone, texte aligné à gauche : la justification creuse de grands blancs dans les colonnes étroites. */
+@media (max-width: 599px) { .charte-v2 p { text-align: left; hyphens: manual; } }

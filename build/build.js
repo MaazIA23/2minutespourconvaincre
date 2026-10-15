@@ -94,6 +94,7 @@ function main() {
       description: `${data.edition3.accroche}. 3ème édition, ${data.edition3.date}.`,
       activeSlug: "",
       bodyHtml: accueil.render(data),
+      charteV2: true,
     })
   );
 
