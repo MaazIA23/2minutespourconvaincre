@@ -200,3 +200,25 @@
 .charte-v2 main :is(.eyebrow, .acc-surtitre, .hero-kicker, .acc-actu-meta, .form-note) { text-align: inherit; -webkit-hyphens: manual; hyphens: manual; }
 .charte-v2 main :is(.acc-surtitre, .eyebrow, .hero-kicker, .acc-actu-meta) { text-align: left; }
 .charte-v2 main :is(.acc-surtitre-centre, .section-head .eyebrow) { text-align: center; }
+
+/* Icônes au trait or (date, lieu) */
+.charte-v2 .ico-meta { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -.16em; margin-right: .35em; color: var(--gold); flex-shrink: 0; }
+.charte-v2 .page-hero .ico-meta { color: var(--gold-text); }
+
+/* Qui sommes-nous : présentation du livre de la fondatrice */
+.charte-v2 .livre-bloc { margin-top: clamp(32px, 4vw, 56px); display: grid; gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(22px, 3.4vw, 48px);
+  background: var(--scene); border: 1px solid rgba(110, 170, 255, .3); border-radius: clamp(20px, 2.4vw, 32px); color: #fff; }
+.charte-v2 .livre-photo { margin: 0; border-radius: clamp(14px, 1.6vw, 22px); overflow: hidden; }
+.charte-v2 .livre-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 55% 50%; display: block; }
+.charte-v2 .livre-texte h3 { font: 800 clamp(1.7rem, 2.8vw, 2.6rem)/1.1 var(--font-heading); color: #fff; margin: 4px 0 6px; letter-spacing: -.015em; }
+.charte-v2 .livre-tome { font-size: clamp(1.1rem, .6vw + .95rem, 1.4rem); margin: 0 0 16px; }
+.charte-v2 .livre-texte p { color: #e6eaff; }
+.charte-v2 .livre-texte .eyebrow { color: var(--gold-text); }
+.charte-v2 .livre-dispo { font-weight: 600; color: #fff !important; }
+.charte-v2 .livre-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.charte-v2 .livre-bloc .btn-outline { color: #fff; border-color: var(--gold); }
+.charte-v2 .livre-bloc .btn-outline:hover { background: rgba(227, 195, 90, .12); }
+@media (min-width: 900px) { .charte-v2 .livre-bloc { grid-template-columns: 1fr 1.1fr; } }
+
+/* Témoignage vedette : police réduite */
+.charte-v2 .acc-temoin-vedette blockquote p { font-size: clamp(1.05rem, 1vw + .8rem, 1.55rem); line-height: 1.5; font-weight: 600; }

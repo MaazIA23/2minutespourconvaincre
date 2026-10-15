@@ -1,6 +1,8 @@
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { quiSommesNous } = data;
   const ag = quiSommesNous.agence;
+  const livre = quiSommesNous.fondatrice.livre;
 
   return `
 <section class="page-hero">
@@ -32,12 +34,8 @@ function render(data) {
 </section>
 
 <section class="stats-band">
-  <div class="container stats-grid">
-    ${ag.chiffres
-      .map(
-        (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-      )
-      .join("\n    ")}
+  <div class="container">
+    ${listeChiffres(ag.chiffres)}
   </div>
 </section>
 
@@ -70,13 +68,19 @@ function render(data) {
         <p class="section-lead" style="text-align:left; margin:0">${quiSommesNous.fondatrice.titre}</p>
       </div>
     </div>
-    <div class="prose reveal">
-      ${quiSommesNous.fondatrice.motIntroduction.map((p) => `<p>${p}</p>`).join("\n      ")}
-    </div>
-    <div class="book-card reveal">
-      <h3>${quiSommesNous.fondatrice.livre.titre}</h3>
-      <p><em>${quiSommesNous.fondatrice.livre.disponibilite}</em></p>
-      <a href="/editions/2eme-edition/#evenements-associes" class="btn btn-outline">Voir le lancement du livre →</a>
+    <div class="livre-bloc reveal">
+      <figure class="livre-photo"><img src="${livre.photo}" alt="Le livre Chroniques d'une voix qui s'est révélée, de Mazidath Bello" loading="lazy"></figure>
+      <div class="livre-texte">
+        <p class="eyebrow">Son livre</p>
+        <h3>Chroniques d'une voix<br>qui s'est <span class="or-texte">révélée</span></h3>
+        <p class="manuscrit livre-tome">Tome 1 : De l'Ombre à la Scène</p>
+        <p>${livre.description}</p>
+        <p class="livre-dispo">${livre.disponibilite}</p>
+        <div class="livre-actions">
+          <a href="${livre.lienAchat}" class="btn btn-primary" target="_blank" rel="noopener">Se procurer le livre</a>
+          <a href="/editions/2eme-edition/#evenements-associes" class="btn btn-outline">Voir le lancement</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

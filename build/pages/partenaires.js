@@ -1,3 +1,4 @@
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { partenaires, site } = data;
   const typeOptions = partenaires.formulaire.typesPartenariat
@@ -32,11 +33,7 @@ function render(data) {
 <section class="stats-band">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${partenaires.chiffresCles.eyebrow}</p>
-    <div class="stats-grid stats-grid-4">
-      ${partenaires.chiffresCles.chiffres
-        .map((c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`)
-        .join("\n      ")}
-    </div>
+    ${listeChiffres(partenaires.chiffresCles.chiffres)}
   </div>
 </section>
 

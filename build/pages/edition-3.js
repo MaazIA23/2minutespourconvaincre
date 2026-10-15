@@ -1,3 +1,4 @@
+const { icoDate, icoLieu } = require("../icones");
 function render(data) {
   const { edition3 } = data;
 
@@ -7,8 +8,8 @@ function render(data) {
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
     <h1>3ème édition</h1>
     <div class="hero-meta">
-      <span>📅 ${edition3.date}</span>
-      <span>📍 ${edition3.lieu}</span>
+      <span>${icoDate} ${edition3.date}</span>
+      <span>${icoLieu} ${edition3.lieu}</span>
     </div>
   </div>
 </section>

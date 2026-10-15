@@ -1,3 +1,4 @@
+const { listeChiffres } = require("../chiffres");
 // Accueil : mise en page aérée, apparitions douces au défilement (data-reveal), peu de cadres.
 function render(data) {
   const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
@@ -59,11 +60,7 @@ ${
     ? `<section class="acc-chiffres" id="chiffres">
   <div class="container">
     <p class="acc-surtitre acc-surtitre-centre" data-reveal>${accueil.chiffresCles.eyebrow}</p>
-    <ul class="acc-chiffres-liste">
-      ${accueil.chiffresCles.chiffres
-        .map((c, i) => `<li data-reveal ${delai(i, 0.1)}><strong data-compteur>${c.valeur}</strong><span>${c.libelle}</span></li>`)
-        .join("\n      ")}
-    </ul>
+    ${listeChiffres(accueil.chiffresCles.chiffres)}
   </div>
 </section>`
     : ""

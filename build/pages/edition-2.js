@@ -1,3 +1,5 @@
+const { icoDate, icoLieu } = require("../icones");
+const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { jury, marraine, intervenants, gagnants, programme, editionsIndex, galerie, edition2, partenaires, site } = data;
   const edition2Meta = editionsIndex.editions.find((e) => e.slug === "2eme-edition");
@@ -11,8 +13,8 @@ function render(data) {
     <p class="eyebrow">Édition passée</p>
     <h1>2ème édition</h1>
     <div class="hero-meta">
-      <span>📅 ${edition2Historique.date}</span>
-      <span>📍 ${edition2Historique.lieu}</span>
+      <span>${icoDate} ${edition2Historique.date}</span>
+      <span>${icoLieu} ${edition2Historique.lieu}</span>
     </div>
   </div>
 </section>
@@ -20,13 +22,7 @@ function render(data) {
 <section class="stats-band" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${edition2.chiffresCles.eyebrow}</p>
-    <div class="stats-grid stats-grid-4">
-      ${edition2.chiffresCles.chiffres
-        .map(
-          (c) => `<div class="stat-card reveal"><span class="stat-value">${c.valeur}</span><span class="stat-label">${c.libelle}</span></div>`
-        )
-        .join("\n      ")}
-    </div>
+    ${listeChiffres(edition2.chiffresCles.chiffres)}
   </div>
 </section>
 

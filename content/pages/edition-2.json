@@ -4,7 +4,7 @@
     "eyebrow": "Chiffres clés",
     "chiffres": [
       { "valeur": "25", "libelle": "candidatures reçues" },
-      { "valeur": "08", "libelle": "finalistes sur scène" },
+      { "valeur": "8", "libelle": "finalistes sur scène" },
       { "valeur": "+200", "libelle": "participants en présentiel" },
       { "valeur": "24", "libelle": "partenaires mobilisés" }
     ],
