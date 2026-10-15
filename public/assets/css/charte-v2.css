@@ -323,7 +323,7 @@
   .charte-v2 .footer-brand { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px 18px; }
   .charte-v2 .footer-brand p { grid-column: 1 / -1; margin: 0; text-align: left; }
   .charte-v2 .footer-support-cta { margin: 0; padding: 10px 16px; font-size: .85rem; justify-self: start; }
-  .charte-v2 .footer-brand .social-links { justify-content: flex-end; }
+  .charte-v2 .footer-brand .social-links { grid-column: 1 / -1; justify-content: flex-start; flex-wrap: nowrap; gap: 10px; }
   .charte-v2 .footer-brand .logo { grid-row: 1; }
   .charte-v2 .footer-col h4 { margin-bottom: 10px; }
   .charte-v2 .footer-col ul { gap: 8px; font-size: .85rem; }
