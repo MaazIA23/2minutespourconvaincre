@@ -110,7 +110,7 @@ function renderFooter(data) {
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Un projet ${data.site.organisation.agence}.</p>
+    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Une création de ${data.site.organisation.agence}.</p>
   </div>
 </footer>`;
 }
