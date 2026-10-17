@@ -136,18 +136,6 @@ function render(data) {
   </div>
 </section>
 
-<section class="cta-final">
-  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
-    <div class="reveal">
-      <h2>${partenaires.sectionFinale.titre}</h2>
-      ${
-        partenaires.sectionFinale.dossierPdf
-          ? `<a href="${partenaires.sectionFinale.dossierPdf}" class="btn btn-primary btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${partenaires.sectionFinale.ctaLabel}</a>${partenaires.sectionFinale.dossierEssentielPdf ? ` <a href="${partenaires.sectionFinale.dossierEssentielPdf}" class="btn btn-outline btn-lg" download><svg class="btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg> ${partenaires.sectionFinale.ctaEssentielLabel}</a>` : ""}`
-          : `<p style="max-width:520px; margin:0 auto;">Le dossier de partenariat est en cours de préparation. En attendant, notre équipe se fera un plaisir de vous présenter le projet en détail.</p>`
-      }
-    </div>
-  </div>
-</section>
 `;
 }
 
