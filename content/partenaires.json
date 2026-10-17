@@ -42,9 +42,10 @@
   },
   "sectionFinale": {
     "titre": "Vous préférez découvrir notre projet avant de nous contacter ?",
-    "ctaLabel": "Télécharger le dossier de partenariat",
-    "dossierPdf": null,
-    "_note": "Aucun dossier de partenariat PDF fourni pour l'instant — dossierPdf reste null tant que le client ne l'a pas transmis. Le bouton de téléchargement n'apparaît que si ce champ est renseigné."
+    "ctaLabel": "Télécharger le dossier de sponsoring",
+    "dossierPdf": "/assets/documents/dossier-sponsoring-2mpc-2027.pdf",
+    "ctaEssentielLabel": "Version essentielle (8 pages)",
+    "dossierEssentielPdf": "/assets/documents/dossier-sponsoring-2mpc-2027-essentiel.pdf"
   },
   "intro": [
     "Une aventure collective, portée par vous.",
