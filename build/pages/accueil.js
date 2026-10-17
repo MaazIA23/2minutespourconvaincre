@@ -221,6 +221,7 @@ ${
       <div class="acc-devenir-actions">
         <a href="/partenaires/#devenir-partenaire" class="btn btn-primary btn-lg">Devenir partenaire</a>
         <a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="acc-lien" download>Télécharger le dossier de sponsoring <span aria-hidden="true">↓</span></a>
+        <a href="/assets/documents/dossier-sponsoring-2mpc-2027-essentiel.pdf" class="acc-lien" download>Version essentielle (8 pages) <span aria-hidden="true">↓</span></a>
       </div>
     </div>
   </div>
