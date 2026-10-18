@@ -148,6 +148,23 @@
     verifier();
   })();
 
+  /* ---------------- Retrouver mes billets ---------------- */
+  (function () {
+    var form = $("retrouver-form");
+    if (!form) return;
+    var note = $("retrouver-note"), bouton = $("retrouver-envoyer");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { note.textContent = "Merci d'indiquer une adresse e-mail valide."; return; }
+      bouton.disabled = true;
+      note.textContent = "Envoi en cours…";
+      appel("billetterie-retrouver", { email: $("retrouver-email").value }).then(function (r) {
+        note.textContent = r.message || r.error || "L'envoi n'a pas pu aboutir. Merci de réessayer dans quelques instants.";
+        bouton.disabled = false;
+      }).catch(function () { note.textContent = "Connexion impossible. Vérifiez votre réseau, puis réessayez."; bouton.disabled = false; });
+    });
+  })();
+
   /* ---------------- Dessin du billet (format horizontal, 1620 × 620) ---------------- */
   function chargerImage(src) {
     return new Promise(function (ok, ko) { var i = new Image(); i.onload = function () { ok(i); }; i.onerror = ko; i.src = src; });
@@ -275,7 +292,7 @@
     var n = p.get("n") || "", c = p.get("c") || "";
     var qrSrc = API + "billetterie-billet?n=" + encodeURIComponent(n) + "&c=" + encodeURIComponent(c) + "&format=qr";
     appel("billetterie-billet?n=" + encodeURIComponent(n) + "&c=" + encodeURIComponent(c)).then(function (b) {
-      if (!b._ok) { statut.textContent = "Billet introuvable. Vérifiez le lien reçu par e-mail, ou écrivez-nous à contact@2minpourconvaincre.com."; return; }
+      if (!b._ok) { statut.innerHTML = "Billet introuvable. Vérifiez le lien reçu par e-mail, ou <a href=\"/billetterie/retrouver/\">recevez à nouveau vos billets</a>."; return; }
       document.title = (b.invitation ? "Invitation " : "Billet ") + b.categorie + " · " + b.prenom + " " + b.nom.toUpperCase();
       return dessinerBillet(b, qrSrc).then(function (canvas) {
         var url = canvas.toDataURL("image/png");

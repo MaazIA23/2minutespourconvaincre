@@ -37,6 +37,8 @@
 .invites-intro { margin: 8px 0 12px; font-size: .92rem; text-align: justify; }
 .billetterie-total { margin: 18px 0 14px; font-size: 1.05rem; text-align: center; }
 .billetterie-rassurance { margin-top: 14px; font-size: .85rem; color: var(--ink-soft); text-align: justify; }
+.billetterie-retrouver-lien { max-width: 640px; margin: 22px auto 0; text-align: center !important; font-size: .92rem; }
+.billetterie-retrouver-lien a { color: var(--navy-950); font-weight: 600; }
 .billetterie-actions { text-align: center; margin-top: 24px; }
 
 /* ---------- Confirmation ---------- */

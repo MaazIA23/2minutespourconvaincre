@@ -83,6 +83,7 @@ function vente(data) {
         <p class="billetterie-rassurance">Paiement sécurisé par FedaPay : MTN Mobile Money, Moov Money ou carte bancaire. Chaque billet est nominatif, valable pour une personne et une seule entrée.</p>
       </div>
     </form>
+    <p class="billetterie-retrouver-lien">Vous avez déjà vos billets et ne les retrouvez plus ? <a href="/billetterie/retrouver/">Retrouver mes billets</a></p>
   </div>
 </section>
 `;
@@ -101,6 +102,31 @@ function merci() {
   <div class="container">
     <div class="billets-liste" id="merci-billets"></div>
     <p class="billetterie-actions"><a href="/billetterie/" class="btn btn-outline" id="merci-retour" hidden>Retour à la billetterie</a></p>
+  </div>
+</section>
+`;
+}
+
+function retrouver() {
+  return `
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Billetterie</p>
+    <h1>Retrouver mes billets</h1>
+    <p class="page-hero-lead">Indiquez l'adresse e-mail utilisée lors de l'achat ou de l'invitation : nous vous renvoyons aussitôt tous vos billets.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <form class="contact-form billetterie-coordonnees" id="retrouver-form" novalidate>
+      <div class="form-row">
+        <label for="retrouver-email">Adresse e-mail</label>
+        <input type="email" id="retrouver-email" autocomplete="email" maxlength="120" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="retrouver-envoyer">Recevoir mes billets</button>
+      <p class="form-note" id="retrouver-note" role="status" aria-live="polite"></p>
+      <p class="billetterie-rassurance">Pour protéger vos billets, ils sont envoyés uniquement à cette adresse, jamais affichés sur cette page. Toujours rien ? Écrivez-nous à contact@2minpourconvaincre.com.</p>
+    </form>
   </div>
 </section>
 `;
@@ -225,4 +251,4 @@ function controle() {
 `;
 }
 
-module.exports = { vente, merci, billet, espace, controle };
+module.exports = { vente, merci, retrouver, billet, espace, controle };
