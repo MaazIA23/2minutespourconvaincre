@@ -362,3 +362,8 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .footer-bottom a:hover, .charte-v2 .footer-brand p a:hover { color: #fff; }
 .charte-v2 .footer-bottom { flex-direction: column; gap: 6px; }
 .charte-v2 .footer-bottom .footer-signature { margin-top: 2px; }
+
+/* Case à cocher des formulaires (âge, conditions) */
+.charte-v2 .form-case { display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 18px; font-size: .9rem; line-height: 1.45; text-align: left; cursor: pointer; }
+.charte-v2 .form-case input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--navy-950); }
+.charte-v2 .form-case a { color: var(--navy-950); font-weight: 600; }

@@ -95,7 +95,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
-        note.textContent = "Merci de remplir tous les champs : votre fonction, une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
+        note.textContent = "Merci de remplir tous les champs et d'accepter les conditions de vente : votre fonction, une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
         return;
       }
       bouton.disabled = true;
@@ -104,6 +104,7 @@
         categorie: categorie(),
         quantite: parseInt(quantite.value, 10),
         acheteur: { prenom: $("acheteur-prenom").value, nom: $("acheteur-nom").value, email: $("acheteur-email").value, whatsapp: $("acheteur-whatsapp").value, fonction: $("acheteur-fonction").value },
+        cgv: $("acheteur-cgv").checked,
         invites: Array.prototype.map.call(invites.querySelectorAll(".invite"), function (d) {
           return { prenom: d.querySelector("[data-prenom]").value, nom: d.querySelector("[data-nom]").value };
         }),
@@ -393,7 +394,7 @@
           "<td>" + echappe(b.prenom + " " + b.nom.toUpperCase()) + "</td><td>" + echappe(donnees.categories[b.categorie]) + "</td><td>" + echappe(libelle[b.type === "invitation" ? "invitation" : b.tarif]) + (b.prix ? "<br><small>" + fcfa(b.prix) + "</small>" : "") + "</td>" +
           "<td>" + echappe(b.email) + (b.whatsapp ? "<br>" + echappe(b.whatsapp) : "") + (b.fonction ? "<br><small>" + echappe(b.fonction) + "</small>" : "") + "</td><td>" + (b.annule ? "Annulé" : b.entree ? heure(b.entree.le) : "–") + "</td>" +
           '<td class="outil-actions"><button type="button" data-copier="' + echappe(b.lien) + '">Copier le lien</button>' + (wa ? '<a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : "") +
-          '<button type="button" data-renvoyer="' + echappe(b.numero) + '">Renvoyer</button><button type="button" data-' + (b.annule ? "retablir" : "annuler") + '="' + echappe(b.numero) + '">' + (b.annule ? "Rétablir" : "Annuler") + "</button></td></tr>";
+          '<button type="button" data-renvoyer="' + echappe(b.numero) + '">Renvoyer</button>' + (b.entree || b.annule ? "" : '<button type="button" data-renommer="' + echappe(b.numero) + '">Changer le nom</button>') + '<button type="button" data-' + (b.annule ? "retablir" : "annuler") + '="' + echappe(b.numero) + '">' + (b.annule ? "Rétablir" : "Annuler") + "</button></td></tr>";
       }).join("") || '<tr><td colspan="7">Aucun billet pour le moment.</td></tr>';
     }
 
@@ -427,7 +428,7 @@
         (navigator.clipboard ? navigator.clipboard.writeText(t.dataset.copier) : Promise.reject()).then(function () { t.textContent = "Copié ✓"; }, function () { window.prompt("Copiez le lien :", t.dataset.copier); });
         return;
       }
-      var action = t.dataset.renvoyer ? "renvoyer" : t.dataset.annuler ? "annuler" : t.dataset.retablir ? "retablir" : null;
+      var action = t.dataset.renvoyer ? "renvoyer" : t.dataset.renommer ? "renommer" : t.dataset.annuler ? "annuler" : t.dataset.retablir ? "retablir" : null;
       if (!action) return;
       var numero = t.dataset[action];
       var corps = { motdepasse: mdp, action: action, numero: numero };
@@ -436,11 +437,22 @@
         var email = window.prompt("Renvoyer le billet " + numero + " à l'adresse :", b.email || "");
         if (!email) return; corps.email = email;
       }
+      if (action === "renommer") {
+        var prenom = window.prompt("Billet " + numero + " : prénom du nouveau titulaire");
+        if (!prenom) return;
+        var nom = window.prompt("Billet " + numero + " : nom du nouveau titulaire");
+        if (!nom) return;
+        var ancienEmail = donnees.billets.filter(function (x) { return x.numero === numero; })[0].email;
+        var dest = window.prompt("Adresse e-mail à laquelle envoyer le billet corrigé :", ancienEmail || "");
+        if (dest === null) return;
+        corps.prenom = prenom; corps.nom = nom; corps.email = dest;
+      }
       if (action === "annuler" && !window.confirm("Annuler le billet " + numero + " ? Il sera refusé à l'entrée. (Le remboursement éventuel se fait depuis FedaPay.)")) return;
       t.disabled = true;
       appel("billetterie-admin", corps).then(function (r) {
         if (!r._ok) window.alert(r.error || "Action impossible.");
         else if (action === "renvoyer") window.alert("Billet renvoyé à " + r.email + ".");
+        else if (action === "renommer") window.alert("Nom changé. " + (r.envoye ? "Le billet corrigé a été envoyé à " + r.email + "." : "Copiez le nouveau lien pour l'envoyer au titulaire.") + " L'ancien billet n'est plus valable.");
         return charger();
       }).catch(function () { window.alert("Connexion impossible."); t.disabled = false; });
     });

@@ -7,27 +7,59 @@
           "Le présent site internet, accessible à l'adresse : https://2minpourconvaincre.com (ci-après « le Site »), est édité par : La Muse Éloquente."
         ],
         "champs": [
-          { "label": "Forme juridique", "valeur": "Entreprise individuelle" },
-          { "label": "Siège social", "valeur": "Cinéma Concorde, Cotonou – Bénin" },
-          { "label": "Numéro d'immatriculation", "valeur": "COTONOU N° RB/COT/25 A 111296" },
-          { "label": "Représentant légal", "valeur": "Mazidath Bello, DG" },
-          { "label": "E-mail de contact", "valeur": "contact@2minpourconvaincre.com" },
-          { "label": "Téléphone", "valeur": "01 66 33 38 39" }
+          {
+            "label": "Forme juridique",
+            "valeur": "Entreprise individuelle"
+          },
+          {
+            "label": "Siège social",
+            "valeur": "Cinéma Concorde, Cotonou – Bénin"
+          },
+          {
+            "label": "Numéro d'immatriculation",
+            "valeur": "COTONOU N° RB/COT/25 A 111296"
+          },
+          {
+            "label": "Représentant légal",
+            "valeur": "Mazidath Bello, DG"
+          },
+          {
+            "label": "E-mail de contact",
+            "valeur": "contact@2minpourconvaincre.com"
+          },
+          {
+            "label": "Téléphone",
+            "valeur": "01 66 33 38 39"
+          }
         ]
       },
       {
         "heading": "Direction de la publication",
         "champs": [
-          { "label": "Directrice de la publication", "valeur": "Mazidath Bello, fondatrice de 2 Minutes pour Convaincre" }
+          {
+            "label": "Directrice de la publication",
+            "valeur": "Mazidath Bello, fondatrice de 2 Minutes pour Convaincre"
+          }
         ]
       },
       {
         "heading": "Hébergeur du site",
-        "paragraphs": ["Le Site est hébergé par :"],
+        "paragraphs": [
+          "Le Site est hébergé par :"
+        ],
         "champs": [
-          { "label": "Hébergeur", "valeur": "Hostinger International Ltd." },
-          { "label": "Adresse", "valeur": "61 Lordou Vironos Street, 6023 Larnaca, Chypre" },
-          { "label": "Site web", "valeur": "https://www.hostinger.com" }
+          {
+            "label": "Hébergeur",
+            "valeur": "Netlify, Inc."
+          },
+          {
+            "label": "Adresse",
+            "valeur": "San Francisco, Californie, États-Unis"
+          },
+          {
+            "label": "Site web",
+            "valeur": "https://www.netlify.com"
+          }
         ]
       },
       {
@@ -37,7 +69,7 @@
         ],
         "liste": [
           "s'informer sur l'événement",
-          "acheter des pass pour y participer",
+          "acheter des billets pour la grande finale",
           "postuler en tant que candidat",
           "accéder à des ressources en ligne",
           "prendre contact avec l'équipe organisatrice"
@@ -90,15 +122,10 @@
         ]
       },
       {
-        "heading": "Compte utilisateur",
-        "paragraphs": [
-          "Certaines fonctionnalités (achat de pass, accès à des contenus, candidature) peuvent nécessiter la création d'un compte.",
-          "Vous vous engagez à fournir des informations exactes et à conserver vos identifiants confidentiels. Toute action réalisée via votre compte est réputée effectuée par vous."
-        ]
-      },
-      {
         "heading": "Bon usage du site",
-        "paragraphs": ["L'utilisateur s'engage à :"],
+        "paragraphs": [
+          "L'utilisateur s'engage à :"
+        ],
         "liste": [
           "ne pas utiliser le Site à des fins illégales ou contraires aux bonnes mœurs",
           "ne pas perturber le fonctionnement du Site",
@@ -106,6 +133,13 @@
         ],
         "apresListe": [
           "Deux Minutes pour Convaincre pourra suspendre l'accès en cas d'usage abusif ou frauduleux."
+        ]
+      },
+      {
+        "heading": "Candidature au concours",
+        "paragraphs": [
+          "La candidature au concours est réservée aux personnes âgées d'au moins 18 ans à la date de leur candidature. En envoyant le formulaire, le candidat certifie remplir cette condition et fournir des informations exactes.",
+          "Aucun compte n'est nécessaire pour candidater."
         ]
       },
       {
@@ -117,10 +151,9 @@
         ]
       },
       {
-        "heading": "Achat de pass et services",
+        "heading": "Achat de billets",
         "paragraphs": [
-          "L'achat de pass pour l'événement est soumis à des conditions spécifiques (prix, modalités de remboursement, modification, etc.) présentées lors de la commande.",
-          "L'utilisateur s'engage à les lire et à les accepter avant tout paiement."
+          "L'achat de billets pour la grande finale est régi par les <a href=\"/conditions-de-vente/\">Conditions générales de vente</a>, que l'acheteur accepte avant tout paiement. Aucun compte n'est nécessaire : les billets sont envoyés par e-mail."
         ]
       },
       {
@@ -162,102 +195,187 @@
   },
   "confidentialite": {
     "intro": [
-      "La présente Politique de confidentialité décrit comment La Muse Éloquente traite les données personnelles collectées via le Site https://2minpourconvaincre.com.",
-      "En utilisant le Site et en communiquant vos données, vous acceptez cette Politique."
+      "La présente Politique de confidentialité décrit comment La Muse Éloquente traite les données personnelles collectées via le site https://2minpourconvaincre.com (le « Site »).",
+      "En utilisant le Site et en nous communiquant vos données, vous reconnaissez avoir pris connaissance de cette Politique."
     ],
     "sections": [
       {
         "heading": "Données collectées",
-        "paragraphs": ["Peuvent être collectées :"],
+        "paragraphs": [
+          "Selon les services que vous utilisez, nous pouvons collecter :"
+        ],
         "liste": [
-          "Données d'identité : nom, prénom",
-          "Coordonnées : adresse e-mail, numéro de téléphone, pays, ville",
-          "Données liées aux commandes : type de pass, date, montant, référence",
-          "Données de candidature : informations fournies dans le formulaire, lien vidéo, motivations",
-          "Données de navigation : adresse IP, navigateur, pages visitées, date et heure",
-          "Données newsletter : adresse e-mail et préférences de communication"
+          "<strong>Identité</strong> : prénom, nom, et fonction ou profession",
+          "<strong>Coordonnées</strong> : adresse e-mail, numéro WhatsApp, pays de résidence",
+          "<strong>Billetterie</strong> : catégorie et nombre de billets, nom de chaque titulaire, tarif, montant, référence du paiement FedaPay, heure d'entrée le jour de l'événement",
+          "<strong>Candidature</strong> : informations du formulaire et lien de votre vidéo",
+          "<strong>Liste d'attente</strong> : prénom, nom, e-mail et WhatsApp",
+          "<strong>Dons</strong> : montant et, si vous ne donnez pas anonymement, prénom, nom et e-mail",
+          "<strong>Navigation</strong> : pages visitées, appareil et navigateur, uniquement si vous acceptez la mesure d'audience"
+        ],
+        "apresListe": [
+          "Nous ne collectons jamais vos coordonnées bancaires ni votre code Mobile Money : ils sont saisis directement chez FedaPay."
         ]
       },
       {
         "heading": "Finalités",
-        "paragraphs": ["Vos données sont utilisées pour :"],
+        "paragraphs": [
+          "Vos données servent à :"
+        ],
         "liste": [
-          "gérer les commandes de pass et les paiements",
-          "gérer les candidatures au concours",
-          "vous adresser les informations liées à l'événement (confirmation, rappel, infos pratiques)",
-          "vous envoyer, avec votre accord, des newsletters et informations sur les prochaines éditions",
-          "répondre à vos demandes via le formulaire de contact",
-          "améliorer le Site et mesurer son audience"
+          "gérer vos commandes, émettre et envoyer vos billets, contrôler l'accès le jour de l'événement",
+          "étudier les candidatures au concours et vous informer de la suite donnée",
+          "vous prévenir de l'ouverture des candidatures si vous vous êtes inscrit(e) à la liste d'attente",
+          "vous adresser les informations pratiques liées à l'événement (confirmation, rappel, changement éventuel)",
+          "traiter vos dons et vous remercier",
+          "répondre à vos demandes",
+          "mesurer l'audience du Site et l'améliorer, avec votre accord"
         ]
       },
       {
         "heading": "Base légale",
-        "paragraphs": ["Les traitements sont fondés sur :"],
-        "liste": [
-          "l'exécution d'un contrat (achat de pass, participation à l'événement, candidature)",
-          "votre consentement (newsletter, certains champs facultatifs)",
-          "l'intérêt légitime de La Muse Éloquente (sécurité du Site, amélioration des services)",
-          "le respect d'obligations légales (facturation, comptabilité)"
+        "paragraphs": [
+          "Ces traitements reposent sur l'exécution de votre commande ou de votre candidature, sur votre consentement (liste d'attente, mesure d'audience), sur l'intérêt légitime de La Muse Éloquente (sécurité du Site et de l'événement) et sur le respect de ses obligations légales (comptabilité)."
         ]
       },
       {
-        "heading": "Destinataires",
+        "heading": "Destinataires et prestataires",
         "paragraphs": [
-          "Les données sont destinées aux équipes habilitées de La Muse Éloquente et à ses prestataires techniques (hébergeur, solution de paiement, e-mailing, billetterie) uniquement pour les besoins des services.",
-          "Les données ne sont pas vendues à des tiers."
+          "Vos données sont destinées aux seules personnes habilitées de l'équipe de La Muse Éloquente. Elles ne sont jamais vendues. Pour faire fonctionner le Site, nous faisons appel aux prestataires suivants, qui n'utilisent vos données que pour nous rendre ce service :"
+        ],
+        "liste": [
+          "<strong>Netlify</strong> : hébergement du Site, réception des formulaires et stockage des données de la billetterie",
+          "<strong>FedaPay</strong> : paiement des billets et des dons",
+          "<strong>Resend</strong> : envoi des e-mails (confirmations, billets, informations)",
+          "<strong>Google Analytics</strong> : mesure d'audience, uniquement après votre accord",
+          "<strong>WhatsApp</strong> : lorsque nous vous contactons sur le numéro que vous nous avez indiqué"
+        ],
+        "apresListe": [
+          "Certains de ces prestataires sont établis hors du Bénin, notamment aux États-Unis et dans l'Union européenne. Ils sont choisis pour les garanties de sécurité qu'ils offrent."
         ]
       },
       {
         "heading": "Durée de conservation",
-        "paragraphs": ["Les données sont conservées pendant la durée nécessaire aux finalités poursuivies, par exemple :"],
         "liste": [
-          "données de commande : durée légale de conservation comptable",
-          "données de candidature : durée de l'édition + archivage raisonnable",
-          "données newsletter : jusqu'à désinscription",
-          "données de navigation : durée limitée pour les statistiques"
+          "données de commande et de billetterie : le temps de l'événement, puis la durée légale de conservation comptable",
+          "données de candidature : la durée de l'édition, puis un archivage limité pour le suivi des éditions",
+          "liste d'attente : jusqu'à l'ouverture des candidatures de l'édition concernée, ou jusqu'à votre demande de suppression",
+          "données de navigation : 14 mois au plus"
         ]
       },
       {
         "heading": "Cookies",
-        "paragraphs": ["Le Site peut utiliser des cookies pour :"],
-        "liste": [
-          "faciliter la navigation",
-          "mesurer l'audience",
-          "améliorer l'expérience utilisateur"
-        ],
-        "apresListe": [
-          "Les cookies de mesure d'audience (Google Analytics) ne sont déposés qu'après votre accord, donné dans le bandeau qui s'affiche lors de votre première visite. Vous pouvez changer d'avis à tout moment grâce au lien « Gérer les cookies » en bas de chaque page.",
-          "Vous pouvez aussi refuser les cookies via les paramètres de votre navigateur. Certains services peuvent alors être dégradés."
+        "paragraphs": [
+          "Les cookies de mesure d'audience (Google Analytics) ne sont déposés qu'après votre accord, donné dans le bandeau qui s'affiche lors de votre première visite. Vous pouvez changer d'avis à tout moment grâce au lien « Gérer les cookies » en bas de chaque page, ou refuser les cookies dans les réglages de votre navigateur."
         ]
       },
       {
         "heading": "Vos droits",
-        "paragraphs": ["Selon la réglementation applicable, vous disposez notamment des droits :"],
-        "liste": [
-          "d'accès, de rectification, de mise à jour",
-          "d'effacement (dans les limites légales)",
-          "de limitation du traitement",
-          "d'opposition",
-          "de portabilité (dans certains cas)"
-        ],
-        "apresListe": [
-          "Pour exercer vos droits, vous pouvez écrire à contact@2minpourconvaincre.com ou à l'adresse postale : Cinéma Concorde, Cotonou – Bénin.",
-          "Une preuve d'identité peut être demandée."
+        "paragraphs": [
+          "Conformément à la loi béninoise (Code du numérique), vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition au traitement de vos données, ainsi que du droit de retirer votre consentement à tout moment.",
+          "Pour exercer ces droits, écrivez à contact@2minpourconvaincre.com ou à l'adresse postale : Cinéma Concorde, Cotonou – Bénin. Une preuve d'identité peut vous être demandée.",
+          "Vous pouvez également adresser une réclamation à l'Autorité de Protection des Données à caractère Personnel (APDP) du Bénin."
         ]
       },
       {
         "heading": "Sécurité",
         "paragraphs": [
-          "La Muse Éloquente met en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre l'accès non autorisé, la perte, l'altération ou la divulgation."
+          "La Muse Éloquente met en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données : connexion chiffrée (HTTPS), accès à l'espace billetterie protégé par mot de passe, billets protégés par un code unique."
         ]
       },
       {
         "heading": "Mise à jour",
         "paragraphs": [
-          "La présente Politique peut être modifiée. La version à jour est celle publiée sur le Site."
+          "La présente Politique peut être modifiée, notamment lorsque de nouveaux services sont proposés sur le Site. La version en vigueur est celle publiée sur cette page."
         ]
       }
     ],
-    "_source": "Texte transmis par le client (26/09/2026). Champs génériques [Nom de l'organisme] et [Adresse complète de l'organisme] remplacés par La Muse Éloquente / Cinéma Concorde, Cotonou – Bénin, déjà utilisés dans les Mentions légales ; e-mail de contact confirmé par le client."
+    "_source": "Texte initial transmis par la cliente (26/09/2026), réécrit en octobre 2026 avec les données et prestataires réels du Site (billetterie FedaPay, Netlify, Resend, WhatsApp, fonction)."
+  },
+  "conditions-de-vente": {
+    "intro": [
+      "Les présentes Conditions générales de vente (CGV) s'appliquent à l'achat de billets pour la grande finale de la 3ème édition de Deux Minutes Pour Convaincre, organisée par La Muse Éloquente, sur le site https://2minpourconvaincre.com.",
+      "Toute commande implique l'acceptation des présentes conditions, que l'acheteur confirme en cochant la case prévue avant le paiement."
+    ],
+    "sections": [
+      {
+        "heading": "Billets et tarifs",
+        "paragraphs": [
+          "Deux catégories de billets sont proposées : Standard et VIP. Leur prix, en francs CFA, est indiqué sur la page de la billetterie au moment de la commande. Un tarif de prévente peut s'appliquer pendant une période limitée, annoncée sur la page.",
+          "Le nombre de places est limité. La vente s'arrête lorsque toutes les places d'une catégorie sont vendues."
+        ]
+      },
+      {
+        "heading": "Paiement",
+        "paragraphs": [
+          "Le paiement s'effectue en ligne par l'intermédiaire de FedaPay (Mobile Money MTN, Moov Money ou carte bancaire). La Muse Éloquente n'a jamais accès à vos coordonnées bancaires ni à votre code Mobile Money.",
+          "La commande est définitive dès que FedaPay confirme le paiement."
+        ]
+      },
+      {
+        "heading": "Billets nominatifs",
+        "paragraphs": [
+          "Chaque billet porte le prénom et le nom de son titulaire, ainsi qu'un QR code unique. Il est envoyé par e-mail à l'adresse indiquée lors de la commande et peut être présenté sur téléphone ou imprimé.",
+          "Un billet est valable pour une seule personne et une seule entrée : un billet déjà scanné est refusé. La revente des billets est interdite."
+        ]
+      },
+      {
+        "heading": "Changement de nom",
+        "paragraphs": [
+          "Le nom inscrit sur un billet peut être modifié gratuitement, une seule fois, sur demande écrite envoyée à contact@2minpourconvaincre.com au plus tard le samedi 13 mars 2027, en indiquant le numéro du billet et le nom du nouveau titulaire. Le billet corrigé est renvoyé par e-mail ; l'ancien n'est plus valable."
+        ]
+      },
+      {
+        "heading": "Absence de remboursement",
+        "paragraphs": [
+          "Les billets ne sont ni remboursables ni échangeables, sauf en cas d'annulation de l'événement par l'organisateur (voir ci-dessous). Un billet non utilisé le jour de l'événement ne donne lieu à aucun remboursement."
+        ]
+      },
+      {
+        "heading": "Annulation ou report de l'événement",
+        "paragraphs": [
+          "En cas d'annulation de l'événement par l'organisateur, le prix des billets est remboursé aux acheteurs. Les modalités de remboursement leur sont communiquées par e-mail.",
+          "En cas de report, les billets restent valables pour la nouvelle date et ne sont pas remboursés. La nouvelle date est communiquée par e-mail et sur le site."
+        ]
+      },
+      {
+        "heading": "Accès à l'événement",
+        "paragraphs": [
+          "L'événement est ouvert à tous, sans condition d'âge, avec un billet Standard ou VIP. Les mineurs y assistent sous la responsabilité de leurs parents ou de l'adulte qui les accompagne.",
+          "Le titulaire présente son billet à l'accueil. L'organisateur peut refuser l'accès ou faire sortir toute personne dont le comportement trouble le bon déroulement de l'événement ou ne respecte pas les consignes de sécurité, sans remboursement."
+        ]
+      },
+      {
+        "heading": "Billet VIP",
+        "paragraphs": [
+          "Le billet VIP donne accès à une entrée et une file dédiées, à l'espace VIP et à un accès privilégié aux panélistes et personnalités présentes, en plus des avantages du billet Standard."
+        ]
+      },
+      {
+        "heading": "Photos, vidéos et droit à l'image",
+        "paragraphs": [
+          "L'événement est photographié et filmé pour sa communication. Une charte du droit à l'image est adressée à chaque acheteur ; elle précise l'utilisation qui peut être faite des images du public."
+        ]
+      },
+      {
+        "heading": "Billet perdu ou non reçu",
+        "paragraphs": [
+          "Si vous ne retrouvez pas votre billet, vérifiez vos courriers indésirables, puis utilisez la page <a href=\"/billetterie/retrouver/\">Retrouver mes billets</a> ou écrivez à contact@2minpourconvaincre.com."
+        ]
+      },
+      {
+        "heading": "Données personnelles",
+        "paragraphs": [
+          "Les données recueillies lors de la commande sont traitées conformément à la <a href=\"/confidentialite/\">Politique de confidentialité</a>."
+        ]
+      },
+      {
+        "heading": "Contact et droit applicable",
+        "paragraphs": [
+          "Pour toute question relative à votre commande : contact@2minpourconvaincre.com.",
+          "Les présentes conditions sont régies par le droit béninois. En cas de litige, et à défaut d'accord amiable, les tribunaux compétents de Cotonou seront saisis."
+        ]
+      }
+    ]
   }
 }

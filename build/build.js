@@ -252,6 +252,7 @@ function main() {
     ["mentions-legales", "Mentions légales"],
     ["confidentialite", "Politique de confidentialité"],
     ["cgu", "Conditions générales d'utilisation"],
+    ["conditions-de-vente", "Conditions générales de vente"],
   ]) {
     const pageContent = data.legalPages[slug];
     writePage(

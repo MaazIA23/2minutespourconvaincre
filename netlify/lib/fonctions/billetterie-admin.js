@@ -48,6 +48,24 @@ exports.handler = async function (event) {
     return envoye ? B.reponse(200, { ok: true, email }) : B.reponse(502, { error: "L'e-mail n'a pas pu être envoyé." });
   }
 
+  // Changement de nom (conditions de vente) : nouvelle clé, donc l'ancien billet et son QR code ne sont plus valables.
+  if (corps.action === "renommer") {
+    const prenom = B.propre(corps.prenom), nom = B.propre(corps.nom);
+    if (!prenom || !nom) return B.reponse(400, { error: "Prénom et nom du nouveau titulaire obligatoires." });
+    if (billet.entree) return B.reponse(400, { error: "Ce billet a déjà été utilisé à l'entrée." });
+    const ancien = `${billet.prenom} ${billet.nom}`;
+    billet.prenom = prenom; billet.nom = nom;
+    billet.cle = require("crypto").randomBytes(12).toString("hex");
+    billet.renomme = { le: new Date().toISOString(), ancien };
+    await store.setJSON(`billets/${numero}`, billet);
+    await B.majIndex(store, (index) => {
+      if (index.billets[numero]) Object.assign(index.billets[numero], { prenom, nom, lien: B.lienBillet(billet), renomme: billet.renomme });
+    });
+    const email = B.propre(corps.email || billet.email, 120).toLowerCase();
+    const envoye = B.emailValide(email) ? await B.envoyerEmail({ to: [email], ...B.emailBillets([billet], { invitation: billet.type === "invitation" }) }) : false;
+    return B.reponse(200, { ok: true, lien: B.lienBillet(billet), envoye, email });
+  }
+
   if (corps.action === "annuler" || corps.action === "retablir") {
     billet.annule = corps.action === "annuler";
     await store.setJSON(`billets/${numero}`, billet);
