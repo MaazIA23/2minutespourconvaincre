@@ -81,6 +81,7 @@ function vente(data) {
           <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
         </div>
         <div id="billetterie-invites"></div>
+        <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</label>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
         <p class="form-note" id="billetterie-note" role="status" aria-live="polite"></p>

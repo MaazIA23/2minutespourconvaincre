@@ -130,7 +130,7 @@ function renderWhatsappFloat(data) {
 
 // Toutes les pages suivent la charte v2 « écran de scène » : Poppins + Kalam auto-hébergées, feuille charte-v2.css après style.css.
 // Options des pages de billetterie : robots (noindex), feuilles et scripts en plus, bare (sans en-tête ni pied de page, pour les outils internes).
-function renderLayout(data, { title, description, activeSlug = "", bodyHtml, robots = "", styles = [], scripts = [], bare = false }) {
+function renderLayout(data, { title, description, activeSlug = "", bodyHtml, robots = "", styles = [], scripts = [], bare = false, jsonLd = [] }) {
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -156,7 +156,7 @@ ${robots ? `<meta name="robots" content="${robots}">\n` : ""}<link rel="canonica
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.css">
+${jsonLd.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>\n`).join("")}<link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/charte-v2.css">${styles.map((f) => `\n<link rel="stylesheet" href="${f}">`).join("")}
 <script>
   // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).

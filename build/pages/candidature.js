@@ -249,6 +249,7 @@ ${
           <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft); text-align: left;">${candidature.formulaire.videoInstructions}</p>
           <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
         </div>
+        <label class="form-case"><input type="checkbox" name="majeur" value="oui" required> Je certifie avoir au moins 18 ans et j'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>.</label>
         <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>

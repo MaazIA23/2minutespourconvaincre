@@ -491,7 +491,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
-        note.textContent = "Merci de vérifier les champs obligatoires : une adresse e-mail valide et, si demandé, un numéro avec l'indicatif du pays (ex. +229).";
+        note.textContent = "Merci de vérifier les champs obligatoires : une adresse e-mail valide et, si demandé, un numéro avec l'indicatif du pays (ex. +229), et les cases à cocher.";
         return;
       }
       var champEmail = form.querySelector('input[name="email"]');

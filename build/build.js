@@ -64,6 +64,29 @@ function copyDir(src, dest) {
   }
 }
 
+// Données structurées pour Google : l'organisation, et la fiche « Événement » une fois la date confirmée.
+function donneesStructurees(data) {
+  const site = data.site, b = data.billetterie, url = "https://2minpourconvaincre.com";
+  const organisation = {
+    "@context": "https://schema.org", "@type": "Organization", name: "Deux Minutes Pour Convaincre", alternateName: "2MPC", url,
+    logo: `${url}/assets/img/logo-640.png`, email: "contact@2minpourconvaincre.com",
+    sameAs: (site.contact.reseauxSociaux.plateformes || []).map((p) => p.url).filter(Boolean),
+    parentOrganization: { "@type": "Organization", name: site.organisation.agence, url: site.organisation.siteAgence },
+  };
+  if (!b.ficheGoogleActive) return { organisation, evenement: null };
+  const evenement = {
+    "@context": "https://schema.org", "@type": "Event",
+    name: "Deux Minutes Pour Convaincre · Grande finale de la 3ème édition", startDate: b.evenement.dateISO,
+    eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: { "@type": "Place", name: `${b.evenement.lieu} (${b.evenement.salle})`, address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" } },
+    image: [`${url}/assets/img/partage-2mpc.jpg`],
+    description: "La grande finale du plus grand concours d'improvisation oratoire du Bénin.",
+    organizer: { "@type": "Organization", name: site.organisation.agence, url: site.organisation.siteAgence },
+    offers: { "@type": "Offer", url: `${url}/billetterie/`, priceCurrency: "XOF", availability: "https://schema.org/InStock", validFrom: b.ouverture },
+  };
+  return { organisation, evenement };
+}
+
 function main() {
   console.log("Building 2 Minutes Pour Convaincre...");
   const data = loadData();
@@ -71,6 +94,7 @@ function main() {
 
   fs.rmSync(PUBLIC_DIR, { recursive: true, force: true });
 
+  const { organisation, evenement } = donneesStructurees(data);
   const accueil = require("./pages/accueil.js");
   const aPropos = require("./pages/a-propos.js");
   const partenaires = require("./pages/partenaires.js");
@@ -91,8 +115,9 @@ function main() {
   writePage(
     "",
     renderLayout(data, {
-      title: "Accueil",
-      description: `${data.edition3.accroche}. 3ème édition, ${data.edition3.date}.`,
+      title: "Concours d'éloquence au Bénin, 3ème édition",
+      description: `Deux Minutes Pour Convaincre, le plus grand concours d'improvisation oratoire du Bénin. 3ème édition en ${data.edition3.date.toLowerCase()} : candidatures en vidéo, Grand Prix de la Francophonie.`,
+      jsonLd: [organisation, evenement].filter(Boolean),
       activeSlug: "",
       bodyHtml: accueil.render(data),
     })
@@ -162,7 +187,7 @@ function main() {
     "partenaires",
     renderLayout(data, {
       title: "Partenaires",
-      description: data.partenaires.titre,
+      description: "Les entreprises et institutions qui soutiennent Deux Minutes Pour Convaincre, et comment devenir partenaire de la 3ème édition.",
       activeSlug: "partenaires",
       bodyHtml: partenaires.render(data),
     })
@@ -233,6 +258,7 @@ function main() {
     renderLayout(data, {
       title: "Merci pour votre soutien",
       description: "Merci pour votre don en soutien à Deux Minutes Pour Convaincre.",
+      robots: "noindex, nofollow",
       activeSlug: "soutenir",
       bodyHtml: soutenirMerci.render(),
     })
@@ -241,7 +267,7 @@ function main() {
   // Billetterie : pages en noindex, absentes du menu et du plan du site.
   const billetterie = require("./pages/billetterie.js");
   const outil = { activeSlug: "billetterie", robots: "noindex, nofollow", styles: ["/assets/css/billetterie.css"], scripts: ["/assets/js/billetterie.js"] };
-  writePage("billetterie", renderLayout(data, { ...outil, title: "Billetterie", description: `Billetterie de la grande finale, ${data.billetterie.evenement.date}.`, bodyHtml: billetterie.vente(data) }));
+  writePage("billetterie", renderLayout(data, { ...outil, jsonLd: evenement ? [evenement] : [], title: "Billetterie", description: `Billetterie de la grande finale, ${data.billetterie.evenement.date}.`, bodyHtml: billetterie.vente(data) }));
   writePage("billetterie/merci", renderLayout(data, { ...outil, title: "Vos billets", description: "Confirmation de votre achat de billets.", bodyHtml: billetterie.merci() }));
   writePage("billetterie/retrouver", renderLayout(data, { ...outil, title: "Retrouver mes billets", description: "Recevez à nouveau vos billets par e-mail.", bodyHtml: billetterie.retrouver() }));
   writePage("billet", renderLayout(data, { ...outil, title: "Votre billet", description: "Votre billet pour la grande finale.", bodyHtml: billetterie.billet() }));
@@ -252,13 +278,19 @@ function main() {
     ["mentions-legales", "Mentions légales"],
     ["confidentialite", "Politique de confidentialité"],
     ["cgu", "Conditions générales d'utilisation"],
+    ["conditions-de-vente", "Conditions générales de vente"],
   ]) {
     const pageContent = data.legalPages[slug];
     writePage(
       slug,
       renderLayout(data, {
         title,
-        description: title,
+        description: {
+          "mentions-legales": "Mentions légales du site Deux Minutes Pour Convaincre : éditeur, directrice de la publication, hébergeur et propriété intellectuelle.",
+          confidentialite: "Comment La Muse Éloquente collecte, utilise et protège vos données sur le site Deux Minutes Pour Convaincre, et comment exercer vos droits.",
+          cgu: "Conditions générales d'utilisation du site Deux Minutes Pour Convaincre : accès, candidature, contenus transmis et responsabilité.",
+          "conditions-de-vente": "Conditions générales de vente des billets de la grande finale de Deux Minutes Pour Convaincre : paiement, billets nominatifs, remboursement, accès.",
+        }[slug] || title,
         activeSlug: slug,
         bodyHtml: pageContent
           ? legal.renderLegalContent(title, pageContent)
@@ -266,6 +298,27 @@ function main() {
       })
     );
   }
+
+  // Page d'erreur 404 (servie par Netlify pour toute adresse inexistante), hors plan du site.
+  fs.writeFileSync(path.join(PUBLIC_DIR, "404.html"), renderLayout(data, {
+    title: "Page introuvable",
+    description: "Cette page n'existe pas ou a été déplacée.",
+    robots: "noindex",
+    bodyHtml: `
+<section class="page-hero page-erreur">
+  <div class="container">
+    <p class="eyebrow">Erreur 404</p>
+    <h1>Cette page est restée sans voix.</h1>
+    <p class="page-hero-lead">L'adresse que vous avez suivie n'existe pas ou a été déplacée. Reprenons la parole là où tout se joue.</p>
+    <div class="page-erreur-actions">
+      <a href="/" class="btn btn-primary btn-lg">Retour à l'accueil</a>
+      <a href="/editions/3eme-edition/" class="btn btn-outline btn-lg">La 3ème édition</a>
+      <a href="/candidature/" class="btn btn-outline btn-lg">Candidater</a>
+    </div>
+  </div>
+</section>`,
+  }).split("__URL_PAGE__").join(`${SITE_URL}/404.html`), "utf8");
+  console.log("  ✓ 404.html");
 
   copyDir(ASSETS_DIR, path.join(PUBLIC_DIR, "assets"));
   console.log("  ✓ assets/");

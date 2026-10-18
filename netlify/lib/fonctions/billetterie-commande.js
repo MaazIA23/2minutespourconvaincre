@@ -21,6 +21,7 @@ exports.handler = async function (event) {
   if (!(quantite >= 1 && quantite <= B.config.maxParCommande)) return B.reponse(400, { error: `Vous pouvez commander de 1 à ${B.config.maxParCommande} billets.` });
   if (!acheteur.prenom || !acheteur.nom) return B.reponse(400, { error: "Merci d'indiquer votre prénom et votre nom." });
   if (!B.emailValide(acheteur.email)) return B.reponse(400, { error: "Merci d'indiquer une adresse e-mail valide : vos billets y seront envoyés." });
+  if (corps.cgv !== true) return B.reponse(400, { error: "Merci d'accepter les conditions générales de vente." });
   if (!acheteur.fonction) return B.reponse(400, { error: "Merci d'indiquer votre fonction ou profession." });
   if (!/^\+[0-9][0-9 ]{6,18}$/.test(acheteur.whatsapp)) return B.reponse(400, { error: "Merci d'indiquer votre numéro WhatsApp avec l'indicatif du pays (ex. +229)." });
 
@@ -56,7 +57,7 @@ exports.handler = async function (event) {
     if (!transaction || !transaction.id) throw new Error("Réponse FedaPay inattendue lors de la création de la transaction.");
     await store.setJSON(`commandes/${id}`, {
       id, statut: "attente", categorie, quantite, tarif: p, prixUnitaire, montant, acheteur, titulaires,
-      transactionId: transaction.id, creee: new Date().toISOString(), test: !!B.modeTest(),
+      transactionId: transaction.id, creee: new Date().toISOString(), cgvAcceptees: new Date().toISOString(), test: !!B.modeTest(),
     });
     await store.setJSON(`transactions/${transaction.id}`, { commande: id });
     const jeton = await B.fedapay(`/transactions/${transaction.id}/token`, "POST");

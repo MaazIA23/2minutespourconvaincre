@@ -7,7 +7,10 @@
   "finPreventeTexte": "dimanche 7 février 2027",
   "fermetureTexte": "dimanche 28 février 2027",
   "maxParCommande": 10,
+  "_ficheGoogle": "Mettre ficheGoogleActive à true quand la date et le lieu sont officiels : la fiche « Événement » (date, lieu, billetterie) est alors ajoutée à l'accueil et à la billetterie pour Google.",
+  "ficheGoogleActive": false,
   "evenement": {
+    "dateISO": "2027-03-20",
     "nom": "Grande finale",
     "date": "Samedi 20 mars 2027",
     "lieu": "Palais des Congrès de Cotonou",
@@ -18,16 +21,16 @@
       "nom": "Standard",
       "prefixe": "S",
       "sousTitre": "Accès à la grande finale",
-      "places": null,
+      "places": 200,
       "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge et goodies personnalisés"]
     },
     "vip": {
       "nom": "VIP",
       "prefixe": "V",
       "sousTitre": "Entrée dédiée · Espace VIP · Accès aux personnalités",
-      "places": null,
+      "places": 150,
       "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge VIP et goodies personnalisés", "Entrée et file dédiées", "Espace VIP", "Accès privilégié aux panélistes et personnalités"]
     }
   },
-  "_places": "Nombre de places par catégorie (null = pas de limite). À renseigner quand la jauge de la salle sera connue."
+  "_places": "Nombre de places par catégorie, invitations comprises (null = pas de limite). Jauge indicative fixée par la cliente : 200 Standard, 150 VIP."
 }
