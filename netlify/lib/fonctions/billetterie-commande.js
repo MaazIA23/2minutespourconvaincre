@@ -1,6 +1,6 @@
 // Crée la commande et la transaction FedaPay ; les billets sont générés une fois le paiement confirmé.
 const crypto = require("crypto");
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") return B.reponse(405, { error: "Méthode non autorisée" });

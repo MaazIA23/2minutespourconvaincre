@@ -1,6 +1,6 @@
 // Données d'un billet pour son affichage (?n=…&c=…), ou son QR code en image (&format=qr), utilisé dans les e-mails.
 const QRCode = require("qrcode");
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 exports.handler = async function (event) {
   const q = event.queryStringParameters || {};

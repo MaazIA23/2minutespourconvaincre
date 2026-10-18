@@ -1,5 +1,5 @@
 // Contrôle à l'entrée (page /controle/, code BILLETTERIE_CODE_ACCUEIL) : scan, recherche par nom ou numéro, validation.
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 const heure = (iso) => new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Porto-Novo" });
 const sansAccents = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();

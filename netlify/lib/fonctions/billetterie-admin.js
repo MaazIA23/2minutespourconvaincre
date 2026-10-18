@@ -1,6 +1,6 @@
 // Espace billetterie (page /espace-billetterie/, mot de passe BILLETTERIE_MOT_DE_PASSE) :
 // tableau de bord, liste des billets et des entrées, invitations, renvoi et annulation de billets.
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") return B.reponse(405, { error: "Méthode non autorisée" });

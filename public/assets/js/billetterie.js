@@ -108,7 +108,7 @@
         }),
       }).then(function (r) {
         if (r._ok && r.url) { window.location.href = r.url; return; }
-        note.textContent = r.error || "Le paiement n'a pas pu être lancé. Merci de réessayer dans quelques instants.";
+        note.textContent = r.error || "Le paiement n'a pas pu être lancé (erreur " + r._statut + "). Merci de réessayer dans quelques instants.";
         bouton.disabled = false;
       }).catch(function () {
         note.textContent = "Connexion impossible. Vérifiez votre réseau, puis réessayez.";

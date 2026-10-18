@@ -1,5 +1,5 @@
 // Page de confirmation : vérifie le paiement auprès de FedaPay (si le webhook n'est pas encore passé) et renvoie les billets.
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 exports.handler = async function (event) {
   const id = String((event.queryStringParameters || {}).commande || "");
