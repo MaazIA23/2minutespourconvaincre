@@ -110,7 +110,8 @@ function renderFooter(data) {
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Une création de <a href="${data.site.organisation.siteAgence}" target="_blank" rel="noopener">${data.site.organisation.agence}</a>.</p>
+    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés.</p>
+    <p class="footer-signature">Une création de <a href="${data.site.organisation.siteAgence}" target="_blank" rel="noopener">${data.site.organisation.agence}</a>.</p>
   </div>
 </footer>`;
 }
