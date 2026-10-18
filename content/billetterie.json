@@ -1,0 +1,33 @@
+{
+  "_comment": "Billetterie de la 3ème édition. Les prix ne sont PAS ici (dépôt public) : ils sont dans la variable Netlify BILLETTERIE_TARIFS. Heures de Cotonou (UTC+1).",
+  "ouverture": "2027-02-01T00:00:00+01:00",
+  "finPrevente": "2027-02-07T23:59:59+01:00",
+  "fermeture": "2027-02-28T23:59:59+01:00",
+  "ouvertureTexte": "lundi 1er février 2027",
+  "finPreventeTexte": "dimanche 7 février 2027",
+  "fermetureTexte": "dimanche 28 février 2027",
+  "maxParCommande": 10,
+  "evenement": {
+    "nom": "Grande finale",
+    "date": "Samedi 20 mars 2027",
+    "lieu": "Palais des Congrès de Cotonou",
+    "salle": "Salle bleue"
+  },
+  "categories": {
+    "standard": {
+      "nom": "Standard",
+      "prefixe": "S",
+      "sousTitre": "Accès à la grande finale",
+      "places": null,
+      "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge et goodies personnalisés"]
+    },
+    "vip": {
+      "nom": "VIP",
+      "prefixe": "V",
+      "sousTitre": "Entrée dédiée · Espace VIP · Accès aux personnalités",
+      "places": null,
+      "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge VIP et goodies personnalisés", "Entrée et file dédiées", "Espace VIP", "Accès privilégié aux panélistes et personnalités"]
+    }
+  },
+  "_places": "Nombre de places par catégorie (null = pas de limite). À renseigner quand la jauge de la salle sera connue."
+}

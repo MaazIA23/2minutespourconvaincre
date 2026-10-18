@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const B = require("../lib/billetterie");
 
 const TOLERANCE_SECONDS = 300;
 
@@ -110,7 +111,17 @@ exports.handler = async function (event) {
   const eventName = fedapayEvent && fedapayEvent.name;
   const entity = fedapayEvent && fedapayEvent.entity;
   if (eventName === "transaction.approved" || (entity && entity.status === "approved")) {
-    await sendNotificationEmail(entity);
+    // Paiement d'une commande de la billetterie : on génère et envoie les billets ; sinon, c'est un don.
+    let commande = null;
+    try {
+      const store = B.magasin(event);
+      const lien = entity && entity.id ? await store.get(`transactions/${entity.id}`, { type: "json" }) : null;
+      if (lien) commande = await B.finaliserCommande(store, lien.commande, entity);
+    } catch (err) {
+      console.error("Billetterie webhook :", err.message);
+      return { statusCode: 500, body: "Erreur billetterie" };
+    }
+    if (!commande) await sendNotificationEmail(entity);
   }
 
   return { statusCode: 200, body: "OK" };

@@ -128,7 +128,8 @@ function renderWhatsappFloat(data) {
 }
 
 // Toutes les pages suivent la charte v2 « écran de scène » : Poppins + Kalam auto-hébergées, feuille charte-v2.css après style.css.
-function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
+// Options des pages de billetterie : robots (noindex), feuilles et scripts en plus, bare (sans en-tête ni pied de page, pour les outils internes).
+function renderLayout(data, { title, description, activeSlug = "", bodyHtml, robots = "", styles = [], scripts = [], bare = false }) {
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -136,7 +137,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title} | ${data.site.nomSite}</title>
 <meta name="description" content="${description}">
-<link rel="canonical" href="__URL_PAGE__">
+${robots ? `<meta name="robots" content="${robots}">\n` : ""}<link rel="canonical" href="__URL_PAGE__">
 <meta name="theme-color" content="#071487">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -155,7 +156,7 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
 <link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/charte-v2.css">
+<link rel="stylesheet" href="/assets/css/charte-v2.css">${styles.map((f) => `\n<link rel="stylesheet" href="${f}">`).join("")}
 <script>
   // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).
   window.dataLayer = window.dataLayer || [];
@@ -169,13 +170,13 @@ function renderLayout(data, { title, description, activeSlug = "", bodyHtml }) {
   try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
 </script>
 </head>
-<body class="charte-v2">
+<body class="charte-v2${bare ? " page-outil" : ""}">
 <a class="skip-link" href="#main">Aller au contenu</a>
-${renderHeader(data, activeSlug)}
+${bare ? "" : renderHeader(data, activeSlug)}
 <main id="main">
 ${bodyHtml}
 </main>
-${renderFooter(data)}
+${bare ? "" : renderFooter(data)}
 <div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
   <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
   <div class="cookies-actions">
@@ -183,9 +184,9 @@ ${renderFooter(data)}
     <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
   </div>
 </div>
-${renderWhatsappFloat(data)}
+${bare ? "" : renderWhatsappFloat(data)}
 <button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>${scripts.map((f) => `\n<script src="${f}"></script>`).join("")}
 </body>
 </html>
 `;

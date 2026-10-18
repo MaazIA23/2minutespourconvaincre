@@ -35,6 +35,7 @@ function loadData() {
     faq: readJson("faq.json"),
     legalPages: readJson("pages/legal.json"),
     soutenir: readJson("pages/soutenir.json"),
+    billetterie: readJson("billetterie.json"),
   };
 }
 
@@ -46,7 +47,7 @@ function writePage(slug, html) {
   html = html.split("__URL_PAGE__").join(url);
   // Titres : espace insécable avant « ? ! : ; » et après « (la ponctuation ne passe jamais seule à la ligne).
   html = html.replace(/(<h[1-3][^>]*>)([\s\S]*?)(<\/h[1-3]>)/g, (m, a, b, c) => a + b.replace(/ ([?!:;»])/g, "\u00a0$1").replace(/« /g, "«\u00a0") + c);
-  if (!/^soutenir\/merci/.test(slug)) pagesEcrites.push(url);
+  if (!/^(soutenir\/merci|billetterie|billet|espace-billetterie|controle)(\/|$)/.test(slug)) pagesEcrites.push(url);
   const dir = slug === "" ? PUBLIC_DIR : path.join(PUBLIC_DIR, slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), html, "utf8");
@@ -237,6 +238,15 @@ function main() {
     })
   );
 
+  // Billetterie : pages en noindex, absentes du menu et du plan du site.
+  const billetterie = require("./pages/billetterie.js");
+  const outil = { activeSlug: "billetterie", robots: "noindex, nofollow", styles: ["/assets/css/billetterie.css"], scripts: ["/assets/js/billetterie.js"] };
+  writePage("billetterie", renderLayout(data, { ...outil, title: "Billetterie", description: `Billetterie de la grande finale, ${data.billetterie.evenement.date}.`, bodyHtml: billetterie.vente(data) }));
+  writePage("billetterie/merci", renderLayout(data, { ...outil, title: "Vos billets", description: "Confirmation de votre achat de billets.", bodyHtml: billetterie.merci() }));
+  writePage("billet", renderLayout(data, { ...outil, title: "Votre billet", description: "Votre billet pour la grande finale.", bodyHtml: billetterie.billet() }));
+  writePage("espace-billetterie", renderLayout(data, { ...outil, bare: true, title: "Espace billetterie", description: "Espace billetterie.", bodyHtml: billetterie.espace() }));
+  writePage("controle", renderLayout(data, { ...outil, bare: true, scripts: ["/assets/js/vendor/jsQR.js", ...outil.scripts], title: "Contrôle des billets", description: "Contrôle des billets.", bodyHtml: billetterie.controle() }));
+
   for (const [slug, title] of [
     ["mentions-legales", "Mentions légales"],
     ["confidentialite", "Politique de confidentialité"],
@@ -264,7 +274,7 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC_DIR, "sitemap.xml"),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     pagesEcrites.map((u) => `  <url><loc>${u}</loc><lastmod>${jour}</lastmod></url>`).join("\n") + `\n</urlset>\n`);
-  fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /billet/\nDisallow: /billetterie/merci/\nDisallow: /espace-billetterie/\nDisallow: /controle/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   fs.copyFileSync(path.join(ASSETS_DIR, "img/icones/favicon.ico"), path.join(PUBLIC_DIR, "favicon.ico"));
   console.log("  ✓ sitemap.xml, robots.txt, favicon.ico");
   console.log("Build complete → public/");
