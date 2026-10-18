@@ -18,16 +18,16 @@
       "nom": "Standard",
       "prefixe": "S",
       "sousTitre": "Accès à la grande finale",
-      "places": null,
+      "places": 200,
       "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge et goodies personnalisés"]
     },
     "vip": {
       "nom": "VIP",
       "prefixe": "V",
       "sousTitre": "Entrée dédiée · Espace VIP · Accès aux personnalités",
-      "places": null,
+      "places": 150,
       "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge VIP et goodies personnalisés", "Entrée et file dédiées", "Espace VIP", "Accès privilégié aux panélistes et personnalités"]
     }
   },
-  "_places": "Nombre de places par catégorie (null = pas de limite). À renseigner quand la jauge de la salle sera connue."
+  "_places": "Nombre de places par catégorie, invitations comprises (null = pas de limite). Jauge indicative fixée par la cliente : 200 Standard, 150 VIP."
 }
