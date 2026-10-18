@@ -199,7 +199,7 @@ function render(data) {
         <div class="form-row"><label for="e3-nom">Nom</label><input type="text" id="e3-nom" name="nom" autocomplete="family-name" required></div>
       </div>
       <div class="form-row"><label for="e3-email">Adresse e-mail</label><input type="email" id="e3-email" name="email" autocomplete="email" required></div>
-      <div class="form-row"><label for="e3-whatsapp">Numéro WhatsApp</label><input type="tel" id="e3-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays : +229 pour le Bénin, +33 pour la France…</small></div>
+      <div class="form-row"><label for="e3-whatsapp">Numéro WhatsApp</label><input type="tel" id="e3-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small></div>
       <button type="submit" class="btn btn-primary btn-lg btn-block">Prévenez-moi à l'ouverture</button>
       <p class="form-note" id="waitlist-e3-note" role="status" aria-live="polite"></p>
     </form>

@@ -197,7 +197,7 @@ ${
           <label for="wait-email">Adresse e-mail</label>
           <input type="email" id="wait-email" name="email" required>
         </div>
-        <div class="form-row"><label for="wait-whatsapp">Numéro WhatsApp</label><input type="tel" id="wait-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays : +229 pour le Bénin, +33 pour la France…</small></div>
+        <div class="form-row"><label for="wait-whatsapp">Numéro WhatsApp</label><input type="tel" id="wait-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small></div>
         <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.listeAttente.ctaLabel}</button>
         <p class="form-note" id="waitlist-form-note" role="status" aria-live="polite"></p>
       </form>
