@@ -102,7 +102,7 @@ async function creerBillets(store, { categorie, type, tarif, prix, titulaires, c
   const maintenant = new Date().toISOString();
   const billets = titulaires.map((t) => ({
     numero: null, cle: crypto.randomBytes(12).toString("hex"), categorie, type, tarif, prix: prix || 0, test,
-    prenom: t.prenom, nom: t.nom, email: contact.email || "", whatsapp: contact.whatsapp || "", commande: commande || null,
+    prenom: t.prenom, nom: t.nom, email: contact.email || "", whatsapp: contact.whatsapp || "", fonction: contact.fonction || "", commande: commande || null,
     cree: maintenant, annule: false, entree: null,
   }));
   await majIndex(store, (index) => {
@@ -234,6 +234,7 @@ async function finaliserCommande(store, idCommande, transaction) {
     await envoyerEmail({ to: [commande.acheteur.email], ...emailBillets(billets) });
     await notifierEquipe(`Billetterie : ${billets.length} billet(s) ${config.categories[commande.categorie].nom} vendu(s)${modeTest() ? " [TEST]" : ""}`, [
       `Acheteur : ${commande.acheteur.prenom} ${commande.acheteur.nom} (${commande.acheteur.email}, ${commande.acheteur.whatsapp})`,
+      `Fonction : ${commande.acheteur.fonction || "non indiquée"}`,
       `Billets : ${billets.map((b) => `${b.numero} ${b.prenom} ${b.nom}`).join(", ")}`,
       `Montant : ${commande.montant} FCFA (${libelleTarif[commande.tarif]})`,
       `Référence FedaPay : ${transaction.id}`,

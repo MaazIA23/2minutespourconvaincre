@@ -197,7 +197,7 @@ ${
           <label for="wait-email">Adresse e-mail</label>
           <input type="email" id="wait-email" name="email" required>
         </div>
-        <div class="form-row"><label for="wait-whatsapp">Numéro WhatsApp</label><input type="tel" id="wait-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small></div>
+        <div class="form-row"><label for="wait-whatsapp">Numéro WhatsApp</label><input type="tel" id="wait-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+229 01 23 45 67 89" pattern="\\+[0-9][0-9 ]{6,18}" required><small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small></div>
         <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.listeAttente.ctaLabel}</button>
         <p class="form-note" id="waitlist-form-note" role="status" aria-live="polite"></p>
       </form>
@@ -225,11 +225,8 @@ ${
         </div>
         <div class="form-row-pair">
           <div class="form-row">
-            <label for="cand-profession">Profession</label>
-            <select id="cand-profession" name="profession" required>
-              <option value="" disabled selected>Sélectionnez une option</option>
-              ${candidature.formulaire.professions.map((p) => `<option value="${p}">${p}</option>`).join("")}
-            </select>
+            <label for="cand-fonction">Fonction ou profession</label>
+            <input type="text" id="cand-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : étudiant(e), juriste, chef d'entreprise" required>
           </div>
           <div class="form-row">
             <label for="cand-pays">Pays de résidence</label>
@@ -243,7 +240,8 @@ ${
           </div>
           <div class="form-row">
             <label for="cand-phone">Numéro WhatsApp</label>
-            <input type="tel" id="cand-phone" name="phone" required>
+            <input type="tel" id="cand-phone" name="whatsapp" autocomplete="tel" placeholder="+229 01 23 45 67 89" pattern="\\+[0-9][0-9 ]{6,18}" required>
+            <small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small>
           </div>
         </div>
         <div class="form-row">

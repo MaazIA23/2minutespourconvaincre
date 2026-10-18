@@ -95,7 +95,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
-        note.textContent = "Merci de remplir tous les champs : une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
+        note.textContent = "Merci de remplir tous les champs : votre fonction, une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
         return;
       }
       bouton.disabled = true;
@@ -103,7 +103,7 @@
       appel("billetterie-commande", {
         categorie: categorie(),
         quantite: parseInt(quantite.value, 10),
-        acheteur: { prenom: $("acheteur-prenom").value, nom: $("acheteur-nom").value, email: $("acheteur-email").value, whatsapp: $("acheteur-whatsapp").value },
+        acheteur: { prenom: $("acheteur-prenom").value, nom: $("acheteur-nom").value, email: $("acheteur-email").value, whatsapp: $("acheteur-whatsapp").value, fonction: $("acheteur-fonction").value },
         invites: Array.prototype.map.call(invites.querySelectorAll(".invite"), function (d) {
           return { prenom: d.querySelector("[data-prenom]").value, nom: d.querySelector("[data-nom]").value };
         }),
@@ -385,13 +385,13 @@
     function afficherBillets() {
       var q = $("espace-recherche").value.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
       var liste = donnees.billets.filter(function (b) {
-        return !q || (b.prenom + " " + b.nom + " " + b.email + " " + b.numero + " " + b.whatsapp).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().indexOf(q) >= 0;
+        return !q || (b.prenom + " " + b.nom + " " + b.email + " " + b.numero + " " + b.whatsapp + " " + (b.fonction || "")).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().indexOf(q) >= 0;
       });
       $("espace-billets").innerHTML = liste.map(function (b) {
         var wa = b.whatsapp ? "https://wa.me/" + b.whatsapp.replace(/[^\d]/g, "") + "?text=" + encodeURIComponent("Bonjour " + b.prenom + ", voici votre " + (b.type === "invitation" ? "invitation" : "billet") + " pour la grande finale de Deux Minutes Pour Convaincre : " + b.lien) : "";
         return '<tr class="' + (b.annule ? "annule" : "") + '"><td><a href="' + b.lien + '" target="_blank" rel="noopener">' + echappe(b.numero) + "</a>" + (b.test ? " <small>TEST</small>" : "") + "<br><small>" + jour(b.cree) + "</small></td>" +
           "<td>" + echappe(b.prenom + " " + b.nom.toUpperCase()) + "</td><td>" + echappe(donnees.categories[b.categorie]) + "</td><td>" + echappe(libelle[b.type === "invitation" ? "invitation" : b.tarif]) + (b.prix ? "<br><small>" + fcfa(b.prix) + "</small>" : "") + "</td>" +
-          "<td>" + echappe(b.email) + (b.whatsapp ? "<br>" + echappe(b.whatsapp) : "") + "</td><td>" + (b.annule ? "Annulé" : b.entree ? heure(b.entree.le) : "–") + "</td>" +
+          "<td>" + echappe(b.email) + (b.whatsapp ? "<br>" + echappe(b.whatsapp) : "") + (b.fonction ? "<br><small>" + echappe(b.fonction) + "</small>" : "") + "</td><td>" + (b.annule ? "Annulé" : b.entree ? heure(b.entree.le) : "–") + "</td>" +
           '<td class="outil-actions"><button type="button" data-copier="' + echappe(b.lien) + '">Copier le lien</button>' + (wa ? '<a href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' : "") +
           '<button type="button" data-renvoyer="' + echappe(b.numero) + '">Renvoyer</button><button type="button" data-' + (b.annule ? "retablir" : "annuler") + '="' + echappe(b.numero) + '">' + (b.annule ? "Rétablir" : "Annuler") + "</button></td></tr>";
       }).join("") || '<tr><td colspan="7">Aucun billet pour le moment.</td></tr>';
@@ -449,7 +449,7 @@
       e.preventDefault();
       var f = e.target, note = $("espace-inviter-note");
       var corps = { motdepasse: mdp, action: "inviter" };
-      ["categorie", "prenom", "nom", "email", "whatsapp"].forEach(function (k) { corps[k] = f.elements[k].value; });
+      ["categorie", "prenom", "nom", "email", "whatsapp", "fonction"].forEach(function (k) { corps[k] = f.elements[k].value; });
       note.textContent = "Création de l'invitation…";
       appel("billetterie-admin", corps).then(function (r) {
         if (!r._ok) { note.textContent = r.error || "Création impossible."; return; }
@@ -460,10 +460,10 @@
 
     $("espace-export").addEventListener("click", function () {
       if (!donnees) return;
-      var col = ["Numéro", "Catégorie", "Type", "Tarif", "Prix (FCFA)", "Prénom", "Nom", "E-mail", "WhatsApp", "Acheté le", "Entrée", "Porte", "Annulé", "Test", "Lien"];
+      var col = ["Numéro", "Catégorie", "Type", "Tarif", "Prix (FCFA)", "Prénom", "Nom", "E-mail", "WhatsApp", "Fonction", "Acheté le", "Entrée", "Porte", "Annulé", "Test", "Lien"];
       var cell = function (v) { v = String(v == null ? "" : v); return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
       var lignes = donnees.billets.map(function (b) {
-        return [b.numero, donnees.categories[b.categorie], b.type === "invitation" ? "Invitation" : "Vente", libelle[b.type === "invitation" ? "invitation" : b.tarif], b.prix || 0, b.prenom, b.nom, b.email, b.whatsapp, jour(b.cree), b.entree ? jour(b.entree.le) : "", b.entree ? b.entree.porte : "", b.annule ? "oui" : "", b.test ? "oui" : "", b.lien].map(cell).join(";");
+        return [b.numero, donnees.categories[b.categorie], b.type === "invitation" ? "Invitation" : "Vente", libelle[b.type === "invitation" ? "invitation" : b.tarif], b.prix || 0, b.prenom, b.nom, b.email, b.whatsapp, b.fonction || "", jour(b.cree), b.entree ? jour(b.entree.le) : "", b.entree ? b.entree.porte : "", b.annule ? "oui" : "", b.test ? "oui" : "", b.lien].map(cell).join(";");
       });
       var blob = new Blob(["﻿" + [col.join(";")].concat(lignes).join("\r\n")], { type: "text/csv;charset=utf-8" });
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "billetterie-2mpc-" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();

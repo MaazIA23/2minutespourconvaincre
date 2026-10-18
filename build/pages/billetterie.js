@@ -76,6 +76,10 @@ function vente(data) {
           <input type="tel" id="acheteur-whatsapp" name="whatsapp" autocomplete="tel" placeholder="+229 01 23 45 67 89" pattern="\\+[0-9][0-9 ]{6,18}" required>
           <small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small>
         </div>
+        <div class="form-row">
+          <label for="acheteur-fonction">Fonction ou profession</label>
+          <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : étudiant(e), juriste, chef d'entreprise" required>
+        </div>
         <div id="billetterie-invites"></div>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
@@ -184,7 +188,7 @@ function espace() {
         <button type="button" class="btn btn-outline" id="espace-export">Télécharger en Excel (CSV)</button>
         <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
       </div>
-      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact et fonction</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
     </div>
 
     <div class="outil-panneau" data-panneau="entrees" hidden>
@@ -206,6 +210,7 @@ function espace() {
         <label>Nom <input name="nom" required maxlength="60"></label>
         <label>E-mail (facultatif) <input name="email" type="email" maxlength="120"></label>
         <label>WhatsApp (facultatif) <input name="whatsapp" type="tel" maxlength="30" placeholder="+229…"></label>
+        <label>Fonction (facultatif) <input name="fonction" maxlength="80" placeholder="Par exemple : directrice de la communication"></label>
         <button type="submit" class="btn btn-primary">Créer l'invitation</button>
         <p class="form-note" id="espace-inviter-note" role="status"></p>
       </form>

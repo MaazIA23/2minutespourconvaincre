@@ -154,6 +154,10 @@
           <input type="tel" id="acheteur-whatsapp" name="whatsapp" autocomplete="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required>
           <small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small>
         </div>
+        <div class="form-row">
+          <label for="acheteur-fonction">Fonction ou profession</label>
+          <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : étudiant(e), juriste, chef d'entreprise" required>
+        </div>
         <div id="billetterie-invites"></div>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
