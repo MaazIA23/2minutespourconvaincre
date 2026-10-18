@@ -1400,17 +1400,17 @@ html, body { overflow-x: clip; }
 .acc-surtitre, .eyebrow { gap: 0; }
 /* Le bouton Candidater reste accessible : dans l'en-tête sur ordinateur, dans la barre du bas ailleurs */
 @media (min-width: 900px) and (max-width: 1240px) { .acc-barre-mobile { display: flex; } .acc-barre-mobile .btn { flex: 0 1 280px; } .acc-barre-mobile { justify-content: center; } }
-/* Fondatrice */
-.acc-fondatrice { padding-top: clamp(64px, 8vw, 120px); }
-.acc-fondatrice-grille { display: grid; gap: clamp(28px, 5vw, 96px); align-items: center; }
-.acc-fondatrice-photo { margin: 0; border-radius: clamp(18px, 2vw, 30px); overflow: hidden; max-width: 520px; }
-.acc-fondatrice-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; display: block; }
-.acc-fondatrice-faits { list-style: none; padding: 0; margin: 8px 0 22px; display: grid; gap: 0; }
-.acc-fondatrice-faits li { padding: 14px 0; border-top: 1px solid var(--acc-filet); color: var(--ink-soft); font-size: clamp(.95rem, .3vw + .9rem, 1.05rem); }
-.acc-fondatrice-faits li:last-child { border-bottom: 1px solid var(--acc-filet); }
-.acc-fondatrice-faits strong { color: var(--navy-950); font-family: var(--font-heading); font-size: 1.1em; margin-right: 6px; }
-@media (min-width: 900px) { .acc-fondatrice-grille { grid-template-columns: .85fr 1.15fr; } }
-@media (max-width: 899px) { .acc-fondatrice-photo { max-width: none; } .acc-fondatrice-photo img { aspect-ratio: 4 / 3.4; } }
+/* Équipe */
+.acc-equipe { padding-top: clamp(64px, 8vw, 120px); text-align: center; }
+.acc-equipe h2 { margin: 0 auto; max-width: 22ch; }
+.acc-equipe-chapo { max-width: 62ch; margin: 18px auto 0; text-align: center !important; }
+.acc-equipe-liste { list-style: none; padding: 0; margin: clamp(36px, 5vw, 64px) auto 0; max-width: 1080px; display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(22px, 3vw, 40px) clamp(14px, 2.5vw, 34px); }
+.acc-equipe-liste li { flex: 0 0 clamp(140px, 20%, 200px); display: grid; justify-items: center; align-content: start; gap: 6px; }
+.acc-equipe-liste img { width: clamp(108px, 12vw, 150px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--gold); margin-bottom: 8px; }
+.acc-equipe-liste strong { color: var(--navy-950); font-family: var(--font-heading); font-size: 1.02rem; line-height: 1.25; }
+.acc-equipe-liste span { color: var(--ink-soft); font-size: .86rem; line-height: 1.35; max-width: 20ch; }
+.acc-equipe-lien { margin: clamp(32px, 4vw, 52px) 0 0; display: flex; justify-content: center; }
+@media (max-width: 520px) { .acc-equipe-liste li { flex-basis: calc(50% - 12px); } }
 
 /* Témoignages */
 .acc-temoins { background: var(--paper-alt); }
