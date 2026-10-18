@@ -7,7 +7,7 @@ function render(data) {
   const galerie2025 = galerie["1ere-edition"];
 
   return `
-<section class="page-hero page-hero-photo-bg" style="background-image: linear-gradient(100deg, rgba(4,11,82,.88) 0%, rgba(4,11,82,.65) 40%, rgba(4,11,82,.25) 62%, rgba(4,11,82,.1) 100%), url('/assets/img/galerie/1ere-edition/photo-09.jpg')">
+<section class="page-hero page-hero-photo-bg hero-edition" style="background-image: linear-gradient(100deg, rgba(4,11,82,.88) 0%, rgba(4,11,82,.65) 40%, rgba(4,11,82,.25) 62%, rgba(4,11,82,.1) 100%), url('/assets/img/galerie/1ere-edition/photo-09.jpg')">
   <div class="container">
     <p class="eyebrow">Édition passée</p>
     <h1>${edition1.titre}</h1>
