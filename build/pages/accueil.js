@@ -2,7 +2,8 @@ const { listeChiffres } = require("../chiffres");
 // Accueil : mise en page aérée, apparitions douces au défilement (data-reveal), peu de cadres.
 function render(data) {
   const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
-  const equipe = quiSommesNous.equipe.membres;
+  // Accueil : les 4 premiers membres ; le reste de l'équipe est sur Qui sommes-nous.
+  const equipe = quiSommesNous.equipe.membres.slice(0, 4);
   const temoins = ["José Pascaël Agbo", "Maître Huguette Bokpè Gnacadja", "Ezéchielle Bouet"].map((n) => impact.temoignages.liste.find((t) => t.nom === n)).filter(Boolean);
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
   const voix = edition3.programme300Voix;
@@ -73,6 +74,7 @@ ${
     <ul class="acc-equipe-liste">
       ${equipe.map((m, i) => `<li data-reveal ${delai(i % 4, 0.08)}><img src="${m.photo}" alt="${m.nom}" loading="lazy"><strong>${m.nom}</strong><span>${m.role}</span></li>`).join("\n      ")}
     </ul>
+    <p class="acc-equipe-lien" data-reveal><a href="/qui-sommes-nous/#equipe" class="acc-lien">Découvrir toute l'équipe <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 

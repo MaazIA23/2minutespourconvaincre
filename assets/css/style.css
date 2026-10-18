@@ -1408,6 +1408,7 @@ html, body { overflow-x: clip; }
 .acc-equipe-liste img { width: clamp(108px, 12vw, 150px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--gold); margin-bottom: 8px; }
 .acc-equipe-liste strong { color: var(--navy-950); font-family: var(--font-heading); font-size: 1.02rem; line-height: 1.25; }
 .acc-equipe-liste span { color: var(--ink-soft); font-size: .86rem; line-height: 1.35; max-width: 20ch; }
+.acc-equipe-lien { margin: clamp(32px, 4vw, 52px) 0 0; display: flex; justify-content: center; }
 @media (max-width: 520px) { .acc-equipe-liste li { flex-basis: calc(50% - 12px); } }
 
 /* Témoignages */
