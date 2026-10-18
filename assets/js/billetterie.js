@@ -59,6 +59,7 @@
     }
 
     appel("billetterie-infos").then(function (d) {
+      if (!d._ok || !d.periode) throw new Error("infos");
       infos = d;
       $("billetterie-chargement").hidden = true;
       if (d.test) $("billetterie-test").hidden = false;
