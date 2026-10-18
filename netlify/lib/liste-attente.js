@@ -44,10 +44,10 @@ function gabarit(titre, paragraphes, bouton, accroche, options = {}) {
     ${RESEAUX.map((r) => `<td style="padding:0 6px"><a href="${r.url}" style="text-decoration:none"><img src="${SITE_URL}/assets/img/email/reseau-${r.nom.toLowerCase()}.png" width="40" height="40" alt="${r.nom}" style="display:block;border:0;width:40px;height:40px"></a></td>`).join("")}
   </tr></table></td></tr>
   <tr><td style="padding:18px 32px 26px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#6b6f85;text-align:center;border-top:1px solid #eceef4">
-    ${options.mention || "Vous recevez cet e-mail car vous vous êtes inscrit(e) à la liste d'attente sur"} <a href="${SITE_URL}" style="color:#071487">${SITE_URL.replace("https://", "")}</a>.<br>Une création de La Muse Éloquente.
+    ${options.mention || "Vous recevez cet e-mail car vous vous êtes inscrit(e) à la liste d'attente sur"} <a href="${SITE_URL}" style="color:#071487">${SITE_URL.replace("https://", "")}</a>.<br>Une création de <a href="${site.organisation.siteAgence}" style="color:#071487">La Muse Éloquente</a>.
   </td></tr>
 </table></td></tr></table></body></html>`;
-  const text = [titre, "", ...paragraphes.map((p) => p.replace(/<[^>]+>/g, "")), options.texteBlocs || "", accroche ? `\n${accroche}` : "", bouton ? `\n${bouton.texte} : ${bouton.lien}` : "", "", "Suivez-nous pour ne rien manquer de l'aventure :", ...RESEAUX.map((r) => `${r.nom} : ${r.url}`), "", "Une création de La Muse Éloquente."].join("\n");
+  const text = [titre, "", ...paragraphes.map((p) => p.replace(/<[^>]+>/g, "")), options.texteBlocs || "", accroche ? `\n${accroche}` : "", bouton ? `\n${bouton.texte} : ${bouton.lien}` : "", "", "Suivez-nous pour ne rien manquer de l'aventure :", ...RESEAUX.map((r) => `${r.nom} : ${r.url}`), "", `Une création de La Muse Éloquente : ${site.organisation.siteAgence}`].join("\n");
   return { html, text };
 }
 

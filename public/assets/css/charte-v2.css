@@ -356,3 +356,9 @@
 
 /* Aide sous un champ de formulaire (ex. indicatif WhatsApp) */
 body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; line-height: 1.4; color: inherit; opacity: .75; }
+
+/* Lien vers le site de La Muse Éloquente, en pied de page */
+.charte-v2 .footer-bottom a, .charte-v2 .footer-brand p a { color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.charte-v2 .footer-bottom a:hover, .charte-v2 .footer-brand p a:hover { color: #fff; }
+.charte-v2 .footer-bottom { flex-direction: column; gap: 6px; }
+.charte-v2 .footer-bottom .footer-signature { margin-top: 2px; }
