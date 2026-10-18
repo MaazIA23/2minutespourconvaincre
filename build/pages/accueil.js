@@ -70,11 +70,9 @@ ${
   <div class="container">
     <p class="acc-surtitre acc-surtitre-centre" data-reveal>L'équipe</p>
     <h2 data-reveal ${delai(1)}>Une équipe engagée derrière le concours</h2>
-    <p class="acc-chapo acc-equipe-chapo" data-reveal ${delai(2)}>${["Deux", "Trois", "Quatre", "Cinq", "Six", "Sept", "Huit", "Neuf", "Dix"][equipe.length - 2] || equipe.length} personnes réunies au sein de La Muse Éloquente préparent chaque édition : direction du concours, stratégie, finances, technologie, communication, logistique et relations extérieures.</p>
     <ul class="acc-equipe-liste">
       ${equipe.map((m, i) => `<li data-reveal ${delai(i % 4, 0.08)}><img src="${m.photo}" alt="${m.nom}" loading="lazy"><strong>${m.nom}</strong><span>${m.role}</span></li>`).join("\n      ")}
     </ul>
-    <p class="acc-equipe-lien" data-reveal><a href="/qui-sommes-nous/#equipe" class="acc-lien">Découvrir l'équipe <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
