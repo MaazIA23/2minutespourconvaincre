@@ -56,10 +56,10 @@
     "membres": [
       { "nom": "Mazidath Bello", "role": "Fondatrice & directrice du concours", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
       { "nom": "Élie Ladedji", "role": "Responsable croissance & stratégie", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
-      { "nom": "Lolita Ouinsavi", "role": "Chargée création & communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
-      { "nom": "Gracia Ahro", "role": "Chargée logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
-      { "nom": "Amadou Ibrahim", "role": "Chargé innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
-      { "nom": "Carine Gnamou", "role": "Chargée médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
+      { "nom": "Lolita Ouinsavi", "role": "Chargée de la création & de la communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
+      { "nom": "Gracia Ahro", "role": "Chargée de la logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
+      { "nom": "Amadou Ibrahim", "role": "Chargé de l'innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
+      { "nom": "Carine Gnamou", "role": "Chargée des médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
       { "nom": "Marielle Adjalla", "role": "Chargée de la coordination événementielle", "photo": "/assets/img/equipe/marielle-adjalla.jpg" }
     ]
   },
