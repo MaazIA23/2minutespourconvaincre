@@ -22,7 +22,7 @@ const RESEAUX = (site.contact.reseauxSociaux.plateformes || []).filter((r) => r.
 
 const echappe = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-function gabarit(titre, paragraphes, bouton, accroche) {
+function gabarit(titre, paragraphes, bouton, accroche, options = {}) {
   // Charte v2 : bandeau en image (Gmail ne recolore jamais les images, même en mode sombre),
   // corps en couleurs neutres qui restent lisibles quand la messagerie inverse les couleurs.
   const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark"></head>
@@ -34,6 +34,7 @@ function gabarit(titre, paragraphes, bouton, accroche) {
     <h1 style="margin:0 0 18px;font-size:24px;line-height:1.25;font-weight:700;color:#071487">${titre}</h1>
     ${paragraphes.map((p) => `<p style="margin:0 0 14px;font-size:16px;line-height:1.6;color:#1d1f33;text-align:justify">${p}</p>`).join("")}
   </td></tr>
+  ${options.blocs || ""}
   ${accroche ? `<tr><td style="padding:6px 32px 14px;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.45;font-style:italic;color:#b8892a">${accroche}</td></tr>` : ""}
   ${bouton ? `<tr><td style="padding:10px 32px 8px"><a href="${bouton.lien}" style="text-decoration:none"><img src="${SITE_URL}/assets/img/email/${bouton.image}" width="${bouton.largeur}" height="51" alt="${bouton.texte}" style="display:block;border:0;width:${bouton.largeur}px;height:51px;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#071487"></a></td></tr>` : ""}
   <tr><td style="padding:26px 32px 6px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#1d1f33;text-align:center;border-top:1px solid #eceef4">
@@ -43,10 +44,10 @@ function gabarit(titre, paragraphes, bouton, accroche) {
     ${RESEAUX.map((r) => `<td style="padding:0 6px"><a href="${r.url}" style="text-decoration:none"><img src="${SITE_URL}/assets/img/email/reseau-${r.nom.toLowerCase()}.png" width="40" height="40" alt="${r.nom}" style="display:block;border:0;width:40px;height:40px"></a></td>`).join("")}
   </tr></table></td></tr>
   <tr><td style="padding:18px 32px 26px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#6b6f85;text-align:center;border-top:1px solid #eceef4">
-    Vous recevez cet e-mail car vous vous êtes inscrit(e) à la liste d'attente sur <a href="${SITE_URL}" style="color:#071487">${SITE_URL.replace("https://", "")}</a>.<br>Une création de La Muse Éloquente.
+    ${options.mention || "Vous recevez cet e-mail car vous vous êtes inscrit(e) à la liste d'attente sur"} <a href="${SITE_URL}" style="color:#071487">${SITE_URL.replace("https://", "")}</a>.<br>Une création de La Muse Éloquente.
   </td></tr>
 </table></td></tr></table></body></html>`;
-  const text = [titre, "", ...paragraphes.map((p) => p.replace(/<[^>]+>/g, "")), accroche ? `\n${accroche}` : "", bouton ? `\n${bouton.texte} : ${bouton.lien}` : "", "", "Suivez-nous pour ne rien manquer de l'aventure :", ...RESEAUX.map((r) => `${r.nom} : ${r.url}`), "", "Une création de La Muse Éloquente."].join("\n");
+  const text = [titre, "", ...paragraphes.map((p) => p.replace(/<[^>]+>/g, "")), options.texteBlocs || "", accroche ? `\n${accroche}` : "", bouton ? `\n${bouton.texte} : ${bouton.lien}` : "", "", "Suivez-nous pour ne rien manquer de l'aventure :", ...RESEAUX.map((r) => `${r.nom} : ${r.url}`), "", "Une création de La Muse Éloquente."].join("\n");
   return { html, text };
 }
 
@@ -120,4 +121,4 @@ async function inscrits() {
   return [...vus.values()];
 }
 
-module.exports = { FORM_NAME, candidature, emailConfirmation, emailOuverture, envoyer, inscrits };
+module.exports = { FORM_NAME, candidature, emailConfirmation, emailOuverture, envoyer, inscrits, gabarit, echappe, SITE_URL };

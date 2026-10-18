@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrôle des billets | Deux Minutes pour Convaincre</title>
+<meta name="description" content="Contrôle des billets.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://2minpourconvaincre.com/controle/">
+<meta name="theme-color" content="#071487">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Deux Minutes pour Convaincre">
+<meta property="og:title" content="Contrôle des billets | Deux Minutes pour Convaincre">
+<meta property="og:description" content="Contrôle des billets.">
+<meta property="og:url" content="https://2minpourconvaincre.com/controle/">
+<meta property="og:image" content="https://2minpourconvaincre.com/assets/img/partage-2mpc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deux Minutes Pour Convaincre, 3ème édition, mars 2027">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icones/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icones/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/charte-v2.css">
+<link rel="stylesheet" href="/assets/css/billetterie.css">
+<script>
+  // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.chargerMesureAudience = function () {
+    if (window.mesureAudienceChargee) return;
+    window.mesureAudienceChargee = true;
+    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
+  };
+  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
+</script>
+</head>
+<body class="charte-v2 page-outil">
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<main id="main">
+
+<section class="outil outil-controle">
+  <div class="outil-tete"><img src="/assets/img/logo-640.png" alt="Deux Minutes Pour Convaincre"><span>Contrôle des billets</span></div>
+
+  <form class="outil-connexion" id="controle-connexion">
+    <label for="controle-code">Code d'accueil</label>
+    <input type="password" id="controle-code" inputmode="numeric" autocomplete="off" required>
+    <label for="controle-porte">Votre poste</label>
+    <select id="controle-porte">
+      <option value="vip">Porte VIP (file de gauche)</option>
+      <option value="standard">Porte Standard (file de droite)</option>
+      <option value="">Accueil unique (toutes catégories)</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Commencer</button>
+    <p class="form-note" id="controle-connexion-note" role="status"></p>
+  </form>
+
+  <div id="controle" hidden>
+    <p class="controle-poste"><span id="controle-poste"></span> · <span id="controle-compteur"></span> <button type="button" id="controle-quitter">Changer</button></p>
+    <div class="controle-resultat" id="controle-resultat" data-etat="attente">
+      <strong id="controle-message">Scannez un billet</strong>
+      <span id="controle-detail"></span>
+    </div>
+    <div class="controle-camera"><video id="controle-video" playsinline muted></video><canvas id="controle-canvas" hidden></canvas></div>
+    <button type="button" class="btn btn-primary btn-block" id="controle-camera-btn">Activer la caméra</button>
+    <form class="controle-recherche" id="controle-recherche">
+      <label for="controle-q">Billet illisible ? Recherchez par nom ou numéro</label>
+      <div><input type="search" id="controle-q" placeholder="Nom ou numéro de billet"><button type="submit" class="btn btn-outline">Chercher</button></div>
+      <ul id="controle-resultats"></ul>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
+  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+  <div class="cookies-actions">
+    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
+    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+  </div>
+</div>
+
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/vendor/jsQR.js"></script>
+<script src="/assets/js/billetterie.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace billetterie | Deux Minutes pour Convaincre</title>
+<meta name="description" content="Espace billetterie.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://2minpourconvaincre.com/espace-billetterie/">
+<meta name="theme-color" content="#071487">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Deux Minutes pour Convaincre">
+<meta property="og:title" content="Espace billetterie | Deux Minutes pour Convaincre">
+<meta property="og:description" content="Espace billetterie.">
+<meta property="og:url" content="https://2minpourconvaincre.com/espace-billetterie/">
+<meta property="og:image" content="https://2minpourconvaincre.com/assets/img/partage-2mpc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deux Minutes Pour Convaincre, 3ème édition, mars 2027">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icones/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icones/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icones/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icones/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/charte-v2.css">
+<link rel="stylesheet" href="/assets/css/billetterie.css">
+<script>
+  // Google Analytics ne se charge qu'après accord de l'internaute (bandeau cookies, voir assets/js/main.js).
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.chargerMesureAudience = function () {
+    if (window.mesureAudienceChargee) return;
+    window.mesureAudienceChargee = true;
+    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
+  };
+  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
+</script>
+</head>
+<body class="charte-v2 page-outil">
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<main id="main">
+
+<section class="outil">
+  <div class="outil-tete"><img src="/assets/img/logo-640.png" alt="Deux Minutes Pour Convaincre"><span>Espace billetterie</span></div>
+
+  <form class="outil-connexion" id="espace-connexion">
+    <label for="espace-mdp">Mot de passe</label>
+    <input type="password" id="espace-mdp" autocomplete="current-password" required>
+    <button type="submit" class="btn btn-primary">Entrer</button>
+    <p class="form-note" id="espace-connexion-note" role="status"></p>
+  </form>
+
+  <div id="espace" hidden>
+    <nav class="outil-onglets" aria-label="Sections">
+      <button type="button" data-onglet="tableau" class="actif">Tableau de bord</button>
+      <button type="button" data-onglet="billets">Billets</button>
+      <button type="button" data-onglet="entrees">Entrées</button>
+      <button type="button" data-onglet="inviter">Inviter</button>
+    </nav>
+    <p class="outil-alerte" id="espace-alertes" hidden></p>
+
+    <div class="outil-panneau" data-panneau="tableau">
+      <div class="outil-cartes" id="espace-cartes"></div>
+      <p class="outil-maj" id="espace-maj"></p>
+    </div>
+
+    <div class="outil-panneau" data-panneau="billets" hidden>
+      <div class="outil-barre">
+        <input type="search" id="espace-recherche" placeholder="Rechercher un nom, un e-mail, un numéro…">
+        <button type="button" class="btn btn-outline" id="espace-export">Télécharger en Excel (CSV)</button>
+        <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
+      </div>
+      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+    </div>
+
+    <div class="outil-panneau" data-panneau="entrees" hidden>
+      <div class="outil-cartes" id="espace-cartes-entrees"></div>
+      <h3>Entrées validées</h3>
+      <div class="outil-tableau"><table><thead><tr><th>Heure</th><th>Porte</th><th>Billet</th><th>Titulaire</th><th>Catégorie</th></tr></thead><tbody id="espace-entrees"></tbody></table></div>
+      <h3>Pas encore arrivés</h3>
+      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>WhatsApp</th></tr></thead><tbody id="espace-absents"></tbody></table></div>
+      <h3>Tentatives refusées</h3>
+      <div class="outil-tableau"><table><thead><tr><th>Heure</th><th>Porte</th><th>Motif</th><th>Billet</th><th>Titulaire</th></tr></thead><tbody id="espace-refus"></tbody></table></div>
+    </div>
+
+    <div class="outil-panneau" data-panneau="inviter" hidden>
+      <form class="outil-formulaire" id="espace-inviter">
+        <p>L'invité reçoit son invitation nominative par e-mail, avec son QR code. Sans e-mail, copiez le lien et envoyez-le par WhatsApp.</p>
+        <label>Catégorie
+          <select name="categorie"><option value="standard">Invitation Standard</option><option value="vip">Invitation VIP</option></select></label>
+        <label>Prénom <input name="prenom" required maxlength="60"></label>
+        <label>Nom <input name="nom" required maxlength="60"></label>
+        <label>E-mail (facultatif) <input name="email" type="email" maxlength="120"></label>
+        <label>WhatsApp (facultatif) <input name="whatsapp" type="tel" maxlength="30" placeholder="+229…"></label>
+        <button type="submit" class="btn btn-primary">Créer l'invitation</button>
+        <p class="form-note" id="espace-inviter-note" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
+  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+  <div class="cookies-actions">
+    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
+    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+  </div>
+</div>
+
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Remonter en haut de la page">↑</button>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/billetterie.js"></script>
+</body>
+</html>

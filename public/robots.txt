@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /billet/
+Disallow: /billetterie/merci/
+Disallow: /espace-billetterie/
+Disallow: /controle/
 
 Sitemap: https://2minpourconvaincre.com/sitemap.xml
