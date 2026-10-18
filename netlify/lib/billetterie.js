@@ -12,7 +12,7 @@
 //   BILLETTERIE_TEST          « prevente » ou « vente » : ouvre la billetterie hors dates, billets marqués TEST
 //   FEDAPAY_SECRET_KEY, FEDAPAY_ENV, RESEND_API_KEY, NOTIFICATION_FROM_EMAIL, NOTIFICATION_EMAIL (déjà utilisées pour les dons)
 const crypto = require("crypto");
-const { getStore, connectLambda } = require("@netlify/blobs");
+const { getStore, connectLambda } = globalThis.__2mpcBlobs || require("@netlify/blobs");
 const config = require("../../content/billetterie.json");
 const { gabarit, echappe, SITE_URL } = require("./liste-attente");
 
