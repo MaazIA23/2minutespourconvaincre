@@ -226,7 +226,7 @@ ${
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-fonction">Fonction ou profession</label>
-            <input type="text" id="cand-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : étudiant(e), juriste, chef d'entreprise" required>
+            <input type="text" id="cand-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
           </div>
           <div class="form-row">
             <label for="cand-pays">Pays de résidence</label>
@@ -246,7 +246,7 @@ ${
         </div>
         <div class="form-row">
           <label for="cand-video">Lien de votre vidéo</label>
-          <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft);">${candidature.formulaire.videoInstructions}</p>
+          <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft); text-align: left;">${candidature.formulaire.videoInstructions}</p>
           <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>

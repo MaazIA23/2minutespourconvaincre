@@ -78,7 +78,7 @@ function vente(data) {
         </div>
         <div class="form-row">
           <label for="acheteur-fonction">Fonction ou profession</label>
-          <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : étudiant(e), juriste, chef d'entreprise" required>
+          <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
         </div>
         <div id="billetterie-invites"></div>
         <p class="billetterie-total" id="billetterie-total"></p>
