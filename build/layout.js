@@ -81,7 +81,7 @@ function renderFooter(data) {
       <a href="/" class="logo">
         <img src="/assets/img/logo-640.png" alt="${data.site.nomSite}" class="logo-img">
       </a>
-      <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par ${data.site.organisation.agence}.</p>
+      <p>Le plus grand concours d'improvisation oratoire du Bénin, organisé par <a href="${data.site.organisation.siteAgence}" target="_blank" rel="noopener">${data.site.organisation.agence}</a>.</p>
       <a href="/soutenir/" class="btn btn-primary footer-support-cta">❤️ Soutenir l'événement</a>
       <ul class="social-links" aria-label="Réseaux sociaux">
         ${socials}
@@ -110,7 +110,7 @@ function renderFooter(data) {
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Une création de ${data.site.organisation.agence}.</p>
+    <p>© <span id="year"></span> ${data.site.nomSite}. Tous droits réservés. Une création de <a href="${data.site.organisation.siteAgence}" target="_blank" rel="noopener">${data.site.organisation.agence}</a>.</p>
   </div>
 </footer>`;
 }
