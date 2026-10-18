@@ -353,3 +353,6 @@
 .charte-v2 .don-points li::before { content: ""; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; border-radius: 50%; background: var(--gold-grad); }
 .charte-v2 #don-form { max-width: none; margin: 0; }
 @media (min-width: 1000px) { .charte-v2 .don-grille { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); } .charte-v2 #don-form { position: sticky; top: 110px; } }
+
+/* Aide sous un champ de formulaire (ex. indicatif WhatsApp) */
+body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; line-height: 1.4; color: inherit; opacity: .75; }

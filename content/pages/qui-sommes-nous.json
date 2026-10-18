@@ -43,9 +43,9 @@
     "photo": "/assets/img/livre/chroniques-maquette.jpg",
     "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee",
     "temoignages": [
-      { "nom": "Bernice Houssou", "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose." },
-      { "nom": "Gisèle Ahonto", "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer." },
-      { "nom": "Aurelle Faro", "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre." }
+      { "nom": "Bernice H.", "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose." },
+      { "nom": "Gisèle A.", "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer." },
+      { "nom": "Aurelle F.", "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre." }
     ],
     "_sourceTemoignages": "Repris des témoignages du site La Muse Éloquente (noms communiqués par Mazidath pour publication)."
     }
@@ -54,13 +54,13 @@
     "eyebrow": "L'équipe",
     "titre": "Une équipe",
     "membres": [
-      { "nom": "Mazidath Bello", "role": "Fondatrice & directrice générale", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
+      { "nom": "Mazidath Bello", "role": "Fondatrice & directrice du concours", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
       { "nom": "Élie Ladedji", "role": "Responsable croissance & stratégie", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
-      { "nom": "Lolita Ouinsavi", "role": "Responsable création & communication", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" },
-      { "nom": "Gracia Ahro", "role": "Responsable logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
-      { "nom": "Amadou Ibrahim", "role": "Responsable innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
-      { "nom": "Carine Gnamou", "role": "Responsable médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
-      { "nom": "Marielle Adjalla", "role": "Cheffe d'orchestre événementiel", "photo": "/assets/img/equipe/marielle-adjalla.jpg" }
+      { "nom": "Marielle Adjalla", "role": "Chargée des finances & de la coordination", "photo": "/assets/img/equipe/marielle-adjalla.jpg" },
+      { "nom": "Amadou Ibrahim", "role": "Chargé de l'innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
+      { "nom": "Carine Gnamou", "role": "Chargée de la communication & des médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
+      { "nom": "Gracia Ahro", "role": "Chargée de la logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
+      { "nom": "Lolita Ouinsavi", "role": "Chargée des relations extérieures", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" }
     ]
   },
   "_source": "Rapport Général — Mot d'introduction (p.4), Lancement du livre de la fondatrice (p.27-28), Zoom sur l'agence La Muse Éloquente (p.38-39). Équipe : Dossier de sponsoring 2027 (p.25).",
