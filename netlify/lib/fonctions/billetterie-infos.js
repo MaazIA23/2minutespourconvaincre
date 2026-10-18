@@ -1,5 +1,5 @@
 // Ce que la page billetterie affiche : période en cours, prix (seulement quand la vente est ouverte) et places restantes.
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 exports.handler = async function (event) {
   const p = B.periode();

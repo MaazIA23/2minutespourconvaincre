@@ -1,5 +1,5 @@
 const crypto = require("crypto");
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 const TOLERANCE_SECONDS = 300;
 

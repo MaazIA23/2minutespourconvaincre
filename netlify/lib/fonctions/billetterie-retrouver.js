@@ -1,7 +1,7 @@
 // « Retrouver mes billets » : renvoie à une adresse e-mail les billets achetés ou reçus avec elle.
 // La réponse est toujours la même, pour ne jamais révéler si une adresse a des billets.
 const crypto = require("crypto");
-const B = require("../lib/billetterie");
+const B = require("../billetterie");
 
 const DELAI_MINUTES = 5;
 const MESSAGE = "Si des billets sont associés à cette adresse, ils viennent de vous être envoyés par e-mail. Pensez à regarder dans vos courriers indésirables.";
