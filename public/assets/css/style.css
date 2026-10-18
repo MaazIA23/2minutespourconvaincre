@@ -1403,7 +1403,6 @@ html, body { overflow-x: clip; }
 /* Équipe */
 .acc-equipe { padding-top: clamp(64px, 8vw, 120px); text-align: center; }
 .acc-equipe h2 { margin: 0 auto; max-width: 22ch; }
-.acc-equipe-chapo { max-width: 62ch; margin: 18px auto 0; text-align: center !important; }
 .acc-equipe-liste { list-style: none; padding: 0; margin: clamp(36px, 5vw, 64px) auto 0; max-width: 1080px; display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(22px, 3vw, 40px) clamp(14px, 2.5vw, 34px); }
 .acc-equipe-liste li { flex: 0 0 clamp(140px, 20%, 200px); display: grid; justify-items: center; align-content: start; gap: 6px; }
 .acc-equipe-liste img { width: clamp(108px, 12vw, 150px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--gold); margin-bottom: 8px; }
