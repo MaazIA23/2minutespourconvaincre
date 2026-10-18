@@ -16,11 +16,12 @@ exports.handler = async function (event) {
   const categorie = B.CATEGORIES.includes(corps.categorie) ? corps.categorie : null;
   const quantite = Math.floor(Number(corps.quantite));
   const a = corps.acheteur || {};
-  const acheteur = { prenom: B.propre(a.prenom), nom: B.propre(a.nom), email: B.propre(a.email, 120).toLowerCase(), whatsapp: B.propre(a.whatsapp, 30) };
+  const acheteur = { prenom: B.propre(a.prenom), nom: B.propre(a.nom), email: B.propre(a.email, 120).toLowerCase(), whatsapp: B.propre(a.whatsapp, 30), fonction: B.propre(a.fonction, 80) };
   if (!categorie) return B.reponse(400, { error: "Merci de choisir une catégorie de billet." });
   if (!(quantite >= 1 && quantite <= B.config.maxParCommande)) return B.reponse(400, { error: `Vous pouvez commander de 1 à ${B.config.maxParCommande} billets.` });
   if (!acheteur.prenom || !acheteur.nom) return B.reponse(400, { error: "Merci d'indiquer votre prénom et votre nom." });
   if (!B.emailValide(acheteur.email)) return B.reponse(400, { error: "Merci d'indiquer une adresse e-mail valide : vos billets y seront envoyés." });
+  if (!acheteur.fonction) return B.reponse(400, { error: "Merci d'indiquer votre fonction ou profession." });
   if (!/^\+[0-9][0-9 ]{6,18}$/.test(acheteur.whatsapp)) return B.reponse(400, { error: "Merci d'indiquer votre numéro WhatsApp avec l'indicatif du pays (ex. +229)." });
 
   const autres = Array.isArray(corps.invites) ? corps.invites : [];

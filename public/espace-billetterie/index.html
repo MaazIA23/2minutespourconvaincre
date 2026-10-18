@@ -75,7 +75,7 @@
         <button type="button" class="btn btn-outline" id="espace-export">Télécharger en Excel (CSV)</button>
         <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
       </div>
-      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+      <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact et fonction</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
     </div>
 
     <div class="outil-panneau" data-panneau="entrees" hidden>
@@ -97,6 +97,7 @@
         <label>Nom <input name="nom" required maxlength="60"></label>
         <label>E-mail (facultatif) <input name="email" type="email" maxlength="120"></label>
         <label>WhatsApp (facultatif) <input name="whatsapp" type="tel" maxlength="30" placeholder="+229…"></label>
+        <label>Fonction (facultatif) <input name="fonction" maxlength="80" placeholder="Par exemple : directrice de la communication"></label>
         <button type="submit" class="btn btn-primary">Créer l'invitation</button>
         <p class="form-note" id="espace-inviter-note" role="status"></p>
       </form>

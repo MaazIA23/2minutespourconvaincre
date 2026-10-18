@@ -28,9 +28,10 @@ exports.handler = async function (event) {
     const prenom = B.propre(corps.prenom), nom = B.propre(corps.nom);
     const email = B.propre(corps.email, 120).toLowerCase();
     const whatsapp = B.propre(corps.whatsapp, 30);
+    const fonction = B.propre(corps.fonction, 80);
     if (!categorie || !prenom || !nom) return B.reponse(400, { error: "Catégorie, prénom et nom sont obligatoires." });
     if (email && !B.emailValide(email)) return B.reponse(400, { error: "Adresse e-mail invalide." });
-    const [billet] = await B.creerBillets(store, { categorie, type: "invitation", tarif: "invitation", prix: 0, titulaires: [{ prenom, nom }], contact: { email, whatsapp } });
+    const [billet] = await B.creerBillets(store, { categorie, type: "invitation", tarif: "invitation", prix: 0, titulaires: [{ prenom, nom }], contact: { email, whatsapp, fonction } });
     const envoye = email ? await B.envoyerEmail({ to: [email], ...B.emailBillets([billet], { invitation: true }) }) : false;
     return B.reponse(200, { numero: billet.numero, lien: B.lienBillet(billet), envoye });
   }
