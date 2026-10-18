@@ -469,24 +469,49 @@
 
   /* Formulaires branchés sur Netlify Forms : soumission réelle (visible dans
      l'onglet Forms du dashboard Netlify, avec notification email possible). */
+  /* Liste d'attente : on garde en mémoire, sur cet appareil, les adresses déjà
+     inscrites pour afficher un message clair si la personne se réinscrit. */
+  var CLE_LISTE_ATTENTE = "2mpc-liste-attente";
+  function adressesInscrites() {
+    try { return JSON.parse(localStorage.getItem(CLE_LISTE_ATTENTE)) || []; } catch (err) { return []; }
+  }
+  function memoriserAdresse(email) {
+    try {
+      var liste = adressesInscrites();
+      if (liste.indexOf(email) === -1) liste.push(email);
+      localStorage.setItem(CLE_LISTE_ATTENTE, JSON.stringify(liste));
+    } catch (err) {}
+  }
+
   function wireNetlifyForm(formId, noteId, successMessage) {
     var form = document.getElementById(formId);
     var note = document.getElementById(noteId);
     if (!form || !note) return;
+    var listeAttente = form.getAttribute("name") === "liste-attente-candidature";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         note.textContent = "Merci de vérifier les champs obligatoires : une adresse e-mail valide et, si demandé, un numéro avec l'indicatif du pays (ex. +229).";
         return;
       }
+      var champEmail = form.querySelector('input[name="email"]');
+      var email = champEmail ? champEmail.value.trim().toLowerCase() : "";
+      if (listeAttente && email && adressesInscrites().indexOf(email) !== -1) {
+        note.textContent = "Vous êtes déjà inscrit(e) sur la liste d'attente avec cette adresse e-mail. Nous vous préviendrons le 15 janvier 2027, jour de l'ouverture des candidatures.";
+        return;
+      }
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body })
-        .then(function () {
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          if (listeAttente && email) memoriserAdresse(email);
           note.textContent = successMessage;
           form.reset();
         })
         .catch(function () {
-          note.textContent = "Une erreur est survenue, merci de réessayer ou de nous contacter directement.";
+          note.textContent = listeAttente
+            ? "Votre inscription n'a pas pu être enregistrée. Si vous vous êtes déjà inscrit(e) avec cette adresse e-mail, votre place est bien réservée : inutile de recommencer. Sinon, merci de réessayer dans quelques instants ou de nous écrire à contact@2minpourconvaincre.com."
+            : "Votre envoi n'a pas pu aboutir. Merci de réessayer dans quelques instants ou de nous écrire à contact@2minpourconvaincre.com.";
         });
     });
   }
