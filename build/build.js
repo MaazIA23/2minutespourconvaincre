@@ -88,7 +88,7 @@ function donneesStructurees(data) {
 }
 
 function main() {
-  console.log("Building 2 Minutes Pour Convaincre...");
+  console.log("Building Deux Minutes Pour Convaincre...");
   const data = loadData();
   const { renderLayout } = require("./layout.js");
 

@@ -372,3 +372,12 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .page-erreur { min-height: 62vh; display: flex; align-items: center; }
 .charte-v2 .page-erreur-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .charte-v2 .page-erreur .btn-outline { color: #fff; border-color: var(--gold); }
+
+/* En-tête des pages d'édition : moins haut, textes plus aérés (surtitre, titre, date et lieu) */
+.charte-v2 .hero-edition.page-hero-photo-bg { min-height: clamp(280px, 38svh, 460px); }
+.charte-v2 .hero-edition { padding-block: clamp(48px, 6vw, 88px); }
+.charte-v2 .hero-edition .container { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(16px, 2vw, 24px); }
+.charte-v2 .hero-edition .eyebrow, .charte-v2 .hero-edition h1, .charte-v2 .hero-edition .hero-meta { margin: 0; }
+.charte-v2 .hero-edition .hero-meta { gap: 12px 26px; line-height: 1.5; }
+.charte-v2 .hero-edition .hero-meta span { display: inline-flex; align-items: center; gap: 10px; }
+@media (max-width: 600px) { .charte-v2 .hero-edition .hero-meta { flex-direction: column; gap: 10px; } }

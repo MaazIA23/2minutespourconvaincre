@@ -3,7 +3,7 @@ function render(data) {
   const { edition3 } = data;
 
   return `
-<section class="page-hero coming-soon-hero">
+<section class="page-hero coming-soon-hero hero-edition">
   <div class="container">
     <p class="eyebrow">${edition3.teaser.eyebrow}</p>
     <h1>3ème édition</h1>
