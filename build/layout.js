@@ -146,7 +146,7 @@ ${robots ? `<meta name="robots" content="${robots}">\n` : ""}<link rel="canonica
 <meta property="og:title" content="${title} | ${data.site.nomSite}">
 <meta property="og:description" content="${description}">
 <meta property="og:url" content="__URL_PAGE__">
-<meta property="og:image" content="${data.site.contact.site}/assets/img/partage-2mpc.jpg">
+<meta property="og:image" content="${data.site.contact.site}/assets/img/partage-2mpc-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Deux Minutes Pour Convaincre, 3ème édition, mars 2027">
