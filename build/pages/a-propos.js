@@ -14,8 +14,7 @@ function render(data) {
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">${conceptObjectifs.titre}</p>
-      <h2>${conceptObjectifs.sousTitre}</h2>
+      <h2>${conceptObjectifs.titre}</h2>
     </div>
     <div class="apropos-intro">
       <div class="prose reveal">
@@ -33,7 +32,7 @@ function render(data) {
           .join("\n        ")}
       </div>
     </div>
-    <p class="prose reveal">${conceptObjectifs.cloture}</p>
+    ${conceptObjectifs.cloture ? `<p class="prose reveal">${conceptObjectifs.cloture}</p>` : ""}
   </div>
 </section>
 
@@ -51,18 +50,10 @@ function render(data) {
     <div class="prose reveal">
       ${leConcept.paragraphes.map((p) => `<p>${p}</p>`).join("\n      ")}
     </div>
+    <p class="apropos-editions reveal"><a href="/editions/" class="acc-lien">Voir les éditions <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
-<section class="cta-final">
-  <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
-    <div class="reveal">
-      <h2>Jury, marraine, palmarès…</h2>
-      <p>Le jury, la marraine, le panel et le palmarès complet sont propres à chaque édition. Retrouvez-les sur la page de l'édition qui vous intéresse.</p>
-      <a href="/editions/" class="btn btn-primary btn-lg">Voir les éditions</a>
-    </div>
-  </div>
-</section>
 `;
 }
 

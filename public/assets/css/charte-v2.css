@@ -417,3 +417,24 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
   .charte-v2 .duel-pour::after { background: linear-gradient(0deg, transparent 55%, rgba(4, 11, 82, .55)); }
 }
 @media (prefers-reduced-motion: reduce) { .charte-v2 .duel-cote img { transition: none; } }
+
+/* Chiffres : icônes des réseaux sous « abonnés sur nos réseaux sociaux » */
+.charte-v2 .chiffre-reseaux { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
+.charte-v2 .chiffre-reseaux a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; border: 1.5px solid rgba(227, 195, 90, .7); transition: background .2s, color .2s; }
+.charte-v2 .chiffre-reseaux a:hover, .charte-v2 .chiffre-reseaux a:focus-visible { background: var(--gold-grad); color: #10154a; border-color: transparent; }
+/* Qui sommes-nous : appel à contacter La Muse Éloquente */
+.charte-v2 .offre-cta { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: clamp(32px, 4vw, 48px); text-align: center; }
+.charte-v2 .offre-cta p { margin: 0; max-width: 62ch; text-align: center !important; color: var(--navy-950); }
+
+/* Qui sommes-nous : l'équipe défile aussi sur tablette et ordinateur (7 membres, pas de case vide) */
+.charte-v2 .equipe-defile { position: relative; max-width: 1180px; margin: 0 auto; }
+.charte-v2 .equipe-piste { display: flex !important; grid-template-columns: none; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 6px 4px 14px; max-width: none; margin: 0; }
+.charte-v2 .equipe-piste::-webkit-scrollbar { display: none; }
+.charte-v2 .equipe-piste .people-card { flex: 0 0 calc((100% - 3 * 20px) / 4); scroll-snap-align: start; }
+.charte-v2 .equipe-fleche { position: absolute; top: 38%; z-index: 2; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--navy-950); color: var(--gold-text); font: 700 30px/1 var(--font-heading); cursor: pointer; box-shadow: 0 10px 24px -8px rgba(4, 11, 82, .5); display: grid; place-items: center; padding-bottom: 4px; }
+.charte-v2 .equipe-fleche:disabled { opacity: .3; cursor: default; }
+.charte-v2 .equipe-prec { left: -24px; } .charte-v2 .equipe-suiv { right: -24px; }
+@media (max-width: 1100px) { .charte-v2 .equipe-piste .people-card { flex-basis: calc((100% - 2 * 20px) / 3); } .charte-v2 .equipe-prec { left: -6px; } .charte-v2 .equipe-suiv { right: -6px; } }
+@media (max-width: 720px) { .charte-v2 .equipe-piste .people-card { flex-basis: 60%; } .charte-v2 .equipe-fleche { display: none; } .charte-v2 .equipe-piste { padding: 4px 24px 10px; margin: 0 -24px; } }
+.charte-v2 .equipe-piste .people-card p { text-align: left !important; }
+.charte-v2 .apropos-editions { display: flex; justify-content: center; margin: clamp(28px, 4vw, 44px) 0 0; }

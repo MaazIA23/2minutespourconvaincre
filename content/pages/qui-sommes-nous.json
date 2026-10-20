@@ -7,25 +7,88 @@
     "vision": "D'ici 2035, La Muse Éloquente aspire à être reconnue comme l'agence de référence qui transforme la communication des individus et des organisations, créant un écosystème d'excellence oratoire à travers des formations innovantes, des événements d'envergure et des partenariats stratégiques avec les entreprises leaders.",
     "mission": "Révéler et développer le potentiel oratoire des individus et des organisations à travers des programmes de formation sur-mesure, des accompagnements personnalisés et des événements fédérateurs.",
     "chiffres": [
-      { "valeur": "+70K", "libelle": "abonnés sur nos réseaux sociaux" },
-      { "valeur": "+1000", "libelle": "spectateurs sur nos lives TikTok" },
-      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" }
+      {
+        "valeur": "+70K",
+        "libelle": "abonnés sur nos réseaux sociaux",
+        "reseaux": [
+          {
+            "nom": "TikTok",
+            "url": "https://www.tiktok.com/@lamuse.eloquente"
+          },
+          {
+            "nom": "Facebook",
+            "url": "https://www.facebook.com/p/La-muse-%C3%A9loquente-100063060920079/"
+          },
+          {
+            "nom": "Instagram",
+            "url": "https://www.instagram.com/la_muse_eloquente/"
+          }
+        ]
+      },
+      {
+        "valeur": "+1000",
+        "libelle": "spectateurs sur nos lives TikTok",
+        "reseaux": [
+          {
+            "nom": "TikTok",
+            "url": "https://www.tiktok.com/@lamuse.eloquente"
+          }
+        ]
+      },
+      {
+        "valeur": "+10M",
+        "libelle": "vues cumulées sur nos réseaux",
+        "reseaux": [
+          {
+            "nom": "TikTok",
+            "url": "https://www.tiktok.com/@lamuse.eloquente"
+          },
+          {
+            "nom": "Facebook",
+            "url": "https://www.facebook.com/p/La-muse-%C3%A9loquente-100063060920079/"
+          },
+          {
+            "nom": "Instagram",
+            "url": "https://www.instagram.com/la_muse_eloquente/"
+          }
+        ]
+      }
     ],
     "ceQueNousProposons": [
       {
         "categorie": "Accompagnements privés pour particuliers",
-        "items": ["Initiation à l'art oratoire", "Parcours complet de prise de parole", "Coaching haut de gamme, intensif et ciblé"]
+        "items": [
+          "Initiation à l'art oratoire",
+          "Parcours complet de prise de parole",
+          "Coaching haut de gamme, intensif et ciblé"
+        ]
       },
       {
         "categorie": "Programmes pour entreprises",
-        "items": ["Communication interne & externe", "Leadership et management collaboratif", "Formation du personnel (accueil, service client)", "Développement des compétences interpersonnelles (soft skills)", "Masterclass sur des thématiques ciblées"]
+        "items": [
+          "Communication interne & externe",
+          "Leadership et management collaboratif",
+          "Formation du personnel (accueil, service client)",
+          "Développement des compétences interpersonnelles (soft skills)",
+          "Masterclass sur des thématiques ciblées"
+        ]
       },
       {
         "categorie": "Prestations de l'agence",
-        "items": ["Élaboration de stratégies d'influence", "Conseil en stratégie de communication", "Organisation d'événements d'entreprise", "Représentation & égérie de marque"]
+        "items": [
+          "Élaboration de stratégies d'influence",
+          "Conseil en stratégie de communication",
+          "Maîtrise de cérémonie (événements, galas, conférences)",
+          "Organisation d'événements d'entreprise",
+          "Représentation & égérie de marque"
+        ]
       }
     ],
-    "ctaTexte": "Vous souhaitez développer votre prise de parole, former vos équipes ou organiser un événement autour de la communication ? Contactez-nous."
+    "ctaTexte": "Vous souhaitez développer votre prise de parole, former vos équipes ou organiser un événement autour de la communication ?",
+    "cta": {
+      "label": "Contactez La Muse Éloquente",
+      "lien": "https://lamuseeloquente.fr/travailler-avec-moi/#devis"
+    }
   },
   "fondatrice": {
     "nom": "Mazidath BELLO",
@@ -40,27 +103,64 @@
       "titre": "Chroniques d'une voix qui s'est révélée, Tome 1 : De l'Ombre à la Scène",
       "description": "Premier livre de Mazidath Bello, lancé lors de la 2ème édition. Un récit autobiographique et une méthode pour révéler sa voix, porté par la conviction que la prise de parole n'est pas un don réservé à quelques-uns mais une compétence.",
       "disponibilite": "Disponible en version papier en France et à Cotonou, ainsi qu'en e-book.",
-    "photo": "/assets/img/livre/chroniques-maquette.jpg",
-    "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee",
-    "temoignages": [
-      { "nom": "Bernice H.", "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose." },
-      { "nom": "Gisèle A.", "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer." },
-      { "nom": "Aurelle F.", "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre." }
-    ],
-    "_sourceTemoignages": "Repris des témoignages du site La Muse Éloquente (noms communiqués par Mazidath pour publication)."
+      "photo": "/assets/img/livre/chroniques-maquette.jpg",
+      "lienAchat": "https://www.lamuseeloquente.fr/boutique/#chroniques-d-une-voix-qui-s-est-revelee",
+      "temoignages": [
+        {
+          "nom": "Bernice H.",
+          "texte": "Ça faisait un moment que j'avais perdu le goût de la lecture, et pourtant, avec ton livre, j'ai retrouvé cette envie. C'est vraiment attractif, très instructif et tellement riche. Grâce à toi, j'ai compris une chose importante : devenir éloquent ou éloquente, ça se travaille, comme toute autre chose."
+        },
+        {
+          "nom": "Gisèle A.",
+          "texte": "Je viens de terminer votre livre et c'est très agréable à lire. Cela m'a rappelé les romans autobiographiques que je lisais au collège et au lycée, de ces célèbres écrivains et écrivaines. J'ai retrouvé cette sensation en lisant votre livre. Ce livre nous montre encore une fois que notre voix peut se faire entendre et qu'il faut juste commencer."
+        },
+        {
+          "nom": "Aurelle F.",
+          "texte": "Le livre se laisse lire comme du vin, et vraiment bravo. J'ai compris qu'il ne faut pas se laisser trop berner par les réussites et perdre son vrai chemin. Toujours repartir vers la source et savoir vraiment qui on veut être ! Merci pour ce livre."
+        }
+      ],
+      "_sourceTemoignages": "Repris des témoignages du site La Muse Éloquente (noms communiqués par Mazidath pour publication)."
     }
   },
   "equipe": {
     "eyebrow": "L'équipe",
     "titre": "Une équipe",
     "membres": [
-      { "nom": "Mazidath Bello", "role": "Fondatrice & directrice du concours", "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg" },
-      { "nom": "Élie Ladedji", "role": "Responsable croissance & stratégie", "photo": "/assets/img/equipe/elie-ladedji.jpg" },
-      { "nom": "Marielle Adjalla", "role": "Chargée des finances & de la coordination", "photo": "/assets/img/equipe/marielle-adjalla.jpg" },
-      { "nom": "Amadou Ibrahim", "role": "Chargé de l'innovation technologique", "photo": "/assets/img/equipe/amadou-ibrahim.jpg" },
-      { "nom": "Carine Gnamou", "role": "Chargée de la communication & des médias", "photo": "/assets/img/equipe/carine-gnamou.jpg" },
-      { "nom": "Gracia Ahro", "role": "Chargée de la logistique", "photo": "/assets/img/equipe/gracia-ahro.jpg" },
-      { "nom": "Lolita Ouinsavi", "role": "Chargée des relations extérieures", "photo": "/assets/img/equipe/lolita-ouinsavi.jpg" }
+      {
+        "nom": "Mazidath Bello",
+        "role": "Fondatrice & directrice du concours",
+        "photo": "/assets/img/equipe/mazidath-bello-equipe.jpg"
+      },
+      {
+        "nom": "Élie Ladedji",
+        "role": "Responsable croissance & stratégie",
+        "photo": "/assets/img/equipe/elie-ladedji.jpg"
+      },
+      {
+        "nom": "Marielle Adjalla",
+        "role": "Chargée des finances & de la coordination",
+        "photo": "/assets/img/equipe/marielle-adjalla.jpg"
+      },
+      {
+        "nom": "Amadou Ibrahim",
+        "role": "Chargé de l'innovation technologique",
+        "photo": "/assets/img/equipe/amadou-ibrahim.jpg"
+      },
+      {
+        "nom": "Carine Gnamou",
+        "role": "Chargée de la communication & des médias",
+        "photo": "/assets/img/equipe/carine-gnamou.jpg"
+      },
+      {
+        "nom": "Gracia Ahro",
+        "role": "Chargée de la logistique",
+        "photo": "/assets/img/equipe/gracia-ahro.jpg"
+      },
+      {
+        "nom": "Lolita Ouinsavi",
+        "role": "Chargée des relations extérieures",
+        "photo": "/assets/img/equipe/lolita-ouinsavi.jpg"
+      }
     ]
   },
   "_source": "Rapport Général — Mot d'introduction (p.4), Lancement du livre de la fondatrice (p.27-28), Zoom sur l'agence La Muse Éloquente (p.38-39). Équipe : Dossier de sponsoring 2027 (p.25).",
