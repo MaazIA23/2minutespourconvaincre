@@ -129,19 +129,13 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg photo-feature photo-feature-compact" id="impact-2027">
-  <div class="container photo-feature-inner">
-    <div class="photo-feature-media reveal">
-      <img src="/assets/img/impact/300-voix.jpg" alt="Une élève prend la parole au micro devant ses camarades de classe, programme 300 Voix" loading="lazy">
-    </div>
-    <div class="photo-feature-copy">
-      <div class="section-head reveal" style="text-align:left; margin-bottom:20px;">
-        <p class="eyebrow">${impact.impact2027.eyebrow}</p>
-        <h2>${impact.impact2027.titre}</h2>
-      </div>
-      <p class="reveal">${impact.impact2027.description}</p>
-      <a href="${impact.impact2027.cta.lien}" class="btn btn-outline">${impact.impact2027.cta.label}</a>
-    </div>
+<section class="acc-pleine acc-voix" id="impact-2027">
+  <img src="${data.edition3.programme300Voix.photo}" alt="Une jeune femme prend la parole devant ses camarades" loading="lazy" class="acc-pleine-photo">
+  <div class="container acc-pleine-texte" data-reveal>
+    <p class="acc-surtitre acc-surtitre-or">${data.edition3.programme300Voix.eyebrow}</p>
+    <h2>${data.edition3.programme300Voix.titre}</h2>
+    <p class="acc-chapo">${data.edition3.programme300Voix.accroche}</p>
+    <a href="/editions/3eme-edition/#300-voix" class="btn btn-primary btn-lg">Découvrir 300 Voix</a>
   </div>
 </section>
 
