@@ -117,18 +117,17 @@ ${
     <p class="acc-surtitre acc-surtitre-or">${voix.eyebrow}</p>
     <h2>${voix.titre}</h2>
     <p class="acc-chapo">${voix.accroche}</p>
-    <p>${voix.texte}</p>
     <a href="/editions/3eme-edition/#nouveautes" class="btn btn-primary btn-lg">Découvrir 300 Voix</a>
   </div>
 </section>
 
 <section class="acc-section acc-prix" id="grand-prix">
   <div class="container acc-prix-grille">
-    <figure class="acc-prix-photo" data-reveal><img src="/assets/img/candidature/paris.jpg" alt="La Tour Eiffel au coucher du soleil" loading="lazy"></figure>
+    <figure class="acc-prix-photo" data-reveal><img src="/assets/img/candidature/paris.jpg" alt="La Tour Eiffel au coucher du soleil" loading="lazy"><figcaption class="acc-prix-badge"><span>Destination</span>France</figcaption></figure>
     <div class="acc-prix-texte">
       <p class="acc-surtitre" data-reveal>La récompense</p>
       <h2 data-reveal ${delai(1)}>Le Grand Prix<br><em>de la Francophonie</em></h2>
-      <p class="acc-chapo" data-reveal ${delai(2)}>Parce qu'une victoire doit ouvrir une porte : le lauréat de la 3ème édition remporte une semaine en France.</p>
+      <p class="acc-chapo" data-reveal ${delai(2)}>Parce qu'une victoire doit ouvrir une porte&nbsp;: le lauréat de la 3ème édition remporte une semaine en France.</p>
       <a href="/candidature/" class="acc-lien" data-reveal ${delai(3)}>Tout savoir sur la candidature <span aria-hidden="true">→</span></a>
     </div>
   </div>
@@ -163,7 +162,7 @@ ${
     <p class="acc-surtitre" data-reveal>${impact.temoignages.eyebrow}</p>
     <div class="acc-temoins-liste">
       ${temoins.map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 1)}>
-        <blockquote><p>« ${t.citation} »</p></blockquote>
+        <blockquote><p>« ${t.citationAccueil || t.citation} »</p></blockquote>
         <figcaption><img src="${t.photo}" alt="" loading="lazy"><span><strong>${t.nom}</strong>${t.statut}, ${t.edition}</span></figcaption>
       </figure>`).join("\n      ")}
     </div>
