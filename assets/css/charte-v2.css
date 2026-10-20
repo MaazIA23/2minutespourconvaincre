@@ -472,3 +472,4 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 @media (min-width: 600px) and (max-width: 899px) { .charte-v2 .leviers-liste { grid-template-columns: repeat(2, 1fr); } }
 .charte-v2 .frise-etape p { text-align: left !important; }
 .charte-v2 .offres-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }
+.charte-v2 .apropos-intro-seul { grid-template-columns: 1fr !important; }

@@ -16,11 +16,10 @@ function render(data) {
     <div class="section-head reveal">
       <h2>${conceptObjectifs.titre}</h2>
     </div>
-    <div class="apropos-intro">
+    <div class="apropos-intro apropos-intro-seul">
       <div class="prose reveal">
         ${conceptObjectifs.paragraphes.map((p) => `<p>${p}</p>`).join("\n        ")}
       </div>
-      <figure class="apropos-photo reveal"><img src="/assets/img/palmares/2eme-edition/audrey-bonnialy.jpg" alt="Audrey Bonnialy, finaliste, au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
     </div>
     <div class="ambitions-block reveal">
       <p class="ambitions-chapeau">${conceptObjectifs.ambitions.chapeau}</p>
