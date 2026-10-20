@@ -123,7 +123,7 @@ ${
 
 <section class="acc-section acc-prix" id="grand-prix">
   <div class="container acc-prix-grille">
-    <figure class="acc-prix-photo" data-reveal><img src="/assets/img/candidature/paris.jpg" alt="La Tour Eiffel au coucher du soleil" loading="lazy"></figure>
+    <figure class="acc-prix-photo" data-reveal><img src="/assets/img/candidature/paris.jpg" alt="La Tour Eiffel au coucher du soleil" loading="lazy"><figcaption class="acc-prix-badge"><span>Destination</span>France</figcaption></figure>
     <div class="acc-prix-texte">
       <p class="acc-surtitre" data-reveal>La récompense</p>
       <h2 data-reveal ${delai(1)}>Le Grand Prix<br><em>de la Francophonie</em></h2>
