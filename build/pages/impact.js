@@ -62,7 +62,7 @@ function render(data) {
         .map(
           (e) => `<article class="edition-card reveal">
         <div class="edition-card-media">
-          <img src="${e.photo}" alt="${e.label}" loading="lazy">
+          <img src="${e.photo}" alt="${e.label}" loading="lazy"${e.photoPosition ? ` style="object-position:${e.photoPosition}"` : ""}>
         </div>
         <div class="edition-card-body">
           <span class="badge badge-past">Édition passée</span>

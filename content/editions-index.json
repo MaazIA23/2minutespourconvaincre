@@ -7,10 +7,11 @@
       "label": "1ère édition",
       "annee": "2025",
       "statut": "passee",
-      "photo": "/assets/img/temoignages/ezechielle-bouet.jpg",
+      "photo": "/assets/img/palmares/1ere-edition/ezechielle-bouet-trophee.jpg",
       "resume": "La toute première scène de « Deux Minutes Pour Convaincre », et une championne de l'éloquence est née.",
       "rapportPdf": "/assets/documents/rapport-1ere-edition-2025.pdf",
-      "rapportLabel": "Consulter le rapport"
+      "rapportLabel": "Consulter le rapport",
+      "photoPosition": "50% 8%"
     },
     {
       "slug": "2eme-edition",
