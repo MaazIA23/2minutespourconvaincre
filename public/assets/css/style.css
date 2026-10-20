@@ -1217,8 +1217,13 @@ html, body { overflow-x: clip; }
   .acc-manifeste-grille { grid-template-columns: 1.1fr .9fr; grid-template-areas: "titre photo" "texte photo"; column-gap: clamp(40px, 5vw, 96px); row-gap: 28px; align-items: start; }
   .acc-manifeste-titre { grid-area: titre; }
   .acc-manifeste-texte { grid-area: texte; }
-  .acc-manifeste-photo { grid-area: photo; max-width: 440px; justify-self: end; align-self: start; }
-  .acc-manifeste-photo img { aspect-ratio: 4 / 5; }
+  .acc-manifeste-photo { grid-area: photo; max-width: 440px; width: 100%; justify-self: end; align-self: stretch; }
+  .acc-manifeste-photo img { aspect-ratio: auto; height: 100%; object-position: 50% 10%; }
+  /* Texte resserré pour finir à la hauteur de la photo */
+  .charte-v2 .acc-manifeste-titre.acc-grand { font-size: clamp(2.2rem, 3.3vw, 3.2rem) !important; }
+  .acc-manifeste-grille { row-gap: 20px; }
+  .acc-manifeste-texte { gap: 12px; padding-top: 0 !important; }
+  .acc-manifeste-texte p:not(.acc-chapo) { font-size: .95rem; line-height: 1.6; }
 }
 
 /* Chiffres : grands nombres, filets fins, pas de cartes */
