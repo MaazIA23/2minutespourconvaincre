@@ -1103,6 +1103,8 @@ h2 { font-size: var(--t-h2); line-height: 1.08; text-wrap: balance; }
 @media (min-width: 1000px) {
   .nouveautes-grid.nouveautes-grid-compact { display: grid; grid-template-columns: repeat(2, 1fr); overflow: visible; gap: clamp(16px, 1.6vw, 24px); }
   .nouveautes-grid-compact .method-step { flex: none; }
+  /* Nombre impair de nouveautés : la dernière carte prend toute la largeur, sans case vide à côté */
+  .nouveautes-grid-compact > .method-step:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 /* Aucun défilement horizontal parasite sur téléphone */
 html, body { overflow-x: clip; }
