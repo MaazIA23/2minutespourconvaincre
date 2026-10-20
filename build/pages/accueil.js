@@ -33,7 +33,7 @@ ${
   <div class="container">
     <p class="acc-surtitre" data-reveal>Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
     <div class="acc-manifeste-grille">
-      <h2 class="acc-grand acc-manifeste-titre" data-reveal ${delai(1)}>Deux minutes.<br>Une thèse imposée.<br><em>Une salle à convaincre.</em></h2>
+      <h2 class="acc-grand acc-manifeste-titre" data-reveal ${delai(1)}>Deux minutes.<br>Une même thématique.<br><em>Deux thèses opposées.</em></h2>
       <figure class="acc-manifeste-photo" data-reveal ${delai(2)}><img src="/assets/img/palmares/2eme-edition/audrey-bonnialy.jpg" alt="Audrey Bonnialy, finaliste, au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
       <div class="acc-manifeste-texte" data-reveal ${delai(2)}>
         <p class="acc-chapo">${presentation.titre}</p>
