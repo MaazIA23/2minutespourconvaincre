@@ -4,7 +4,7 @@ function render(data) {
   const { edition3, partenaires, editionsIndex, accueil, actualites, candidature, impact, quiSommesNous } = data;
   // Accueil : les 4 premiers membres ; le reste de l'équipe est sur Qui sommes-nous.
   const equipe = quiSommesNous.equipe.membres.slice(0, 4);
-  const temoins = ["José Pascaël Agbo", "Maître Huguette Bokpè Gnacadja", "Ezéchielle Bouet"].map((n) => impact.temoignages.liste.find((t) => t.nom === n)).filter(Boolean);
+  const temoins = ["José Pascaël Agbo", "Maître Huguette Bokpè Gnacadja"].map((n) => impact.temoignages.liste.find((t) => t.nom === n)).filter(Boolean);
   const presentation = (accueil.sections || []).find((s) => s.id === "presentation");
   const voix = edition3.programme300Voix;
   const delai = (i, pas = 0.12) => `style="--delai:${(i * pas).toFixed(2)}s"`;
@@ -161,12 +161,8 @@ ${
     ? `<section class="acc-section acc-temoins" id="temoignages">
   <div class="container">
     <p class="acc-surtitre" data-reveal>${impact.temoignages.eyebrow}</p>
-    <figure class="acc-temoin-vedette" data-reveal ${delai(1)}>
-      <blockquote><p>« ${temoins[0].citation} »</p></blockquote>
-      <figcaption><img src="${temoins[0].photo}" alt="" loading="lazy"><span><strong>${temoins[0].nom}</strong>${temoins[0].statut}, ${temoins[0].edition}</span></figcaption>
-    </figure>
     <div class="acc-temoins-liste">
-      ${temoins.slice(1).map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 2)}>
+      ${temoins.map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 1)}>
         <blockquote><p>« ${t.citation} »</p></blockquote>
         <figcaption><img src="${t.photo}" alt="" loading="lazy"><span><strong>${t.nom}</strong>${t.statut}, ${t.edition}</span></figcaption>
       </figure>`).join("\n      ")}
