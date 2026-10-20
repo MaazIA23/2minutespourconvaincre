@@ -628,3 +628,26 @@
   var gerer = document.getElementById("gerer-cookies");
   if (gerer) gerer.addEventListener("click", montrer);
 })();
+
+/* Qui sommes-nous : flèches de l'équipe qui défile (ordinateur et tablette) */
+(function () {
+  document.querySelectorAll(".equipe-defile").forEach(function (bloc) {
+    var piste = bloc.querySelector(".equipe-piste");
+    var prec = bloc.querySelector(".equipe-prec"), suiv = bloc.querySelector(".equipe-suiv");
+    if (!piste || !prec || !suiv) return;
+    function maj() {
+      prec.disabled = piste.scrollLeft <= 2;
+      suiv.disabled = piste.scrollLeft + piste.clientWidth >= piste.scrollWidth - 2;
+    }
+    bloc.querySelectorAll("[data-defile]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var carte = piste.querySelector(".people-card");
+        var pas = carte ? carte.getBoundingClientRect().width + 20 : piste.clientWidth / 2;
+        piste.scrollBy({ left: pas * Number(b.getAttribute("data-defile")), behavior: "smooth" });
+      });
+    });
+    piste.addEventListener("scroll", maj, { passive: true });
+    window.addEventListener("resize", maj);
+    maj();
+  });
+})();

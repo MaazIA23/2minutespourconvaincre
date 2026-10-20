@@ -54,7 +54,10 @@ function render(data) {
         )
         .join("\n      ")}
     </div>
-    <p class="prose reveal" style="text-align:center"><strong>${ag.ctaTexte}</strong></p>
+    <div class="offre-cta reveal">
+      <p><strong>${ag.ctaTexte}</strong></p>
+      ${ag.cta ? `<a href="${ag.cta.lien}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">${ag.cta.label} <span aria-hidden="true">↗</span></a>` : ""}
+    </div>
   </div>
 </section>
 
@@ -103,12 +106,16 @@ function render(data) {
       <p class="eyebrow">${quiSommesNous.equipe.eyebrow}</p>
       <h2>${quiSommesNous.equipe.titre}</h2>
     </div>
-    <div class="people-grid people-grid-3">
+    <div class="equipe-defile equipe-grid">
+    <button type="button" class="equipe-fleche equipe-prec" aria-label="Membres précédents" data-defile="-1">‹</button>
+    <div class="people-grid equipe-piste" tabindex="0" aria-label="L'équipe, faites défiler">
       ${quiSommesNous.equipe.membres
         .map(
           (m) => `<div class="people-card reveal">${m.photo ? `<img src="${m.photo}" alt="${m.nom}" class="people-photo" loading="lazy">` : ""}<h3>${m.nom}</h3><p>${m.role}</p></div>`
         )
         .join("\n      ")}
+    </div>
+    <button type="button" class="equipe-fleche equipe-suiv" aria-label="Membres suivants" data-defile="1">›</button>
     </div>
   </div>
 </section>

@@ -381,3 +381,94 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .hero-edition .hero-meta { gap: 12px 26px; line-height: 1.5; }
 .charte-v2 .hero-edition .hero-meta span { display: inline-flex; align-items: center; gap: 10px; }
 @media (max-width: 600px) { .charte-v2 .hero-edition .hero-meta { flex-direction: column; gap: 10px; } }
+
+/* À propos : texte d'introduction et photo d'une oratrice côte à côte sur ordinateur */
+.charte-v2 .apropos-intro { display: grid; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.charte-v2 .apropos-intro .prose { margin: 0; }
+.charte-v2 .apropos-photo { margin: 0; border-radius: clamp(16px, 1.8vw, 26px); overflow: hidden; }
+.charte-v2 .apropos-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; }
+@media (min-width: 960px) { .charte-v2 .apropos-intro { grid-template-columns: 1.15fr .85fr; } }
+@media (max-width: 959px) { .charte-v2 .apropos-photo { max-width: 520px; } .charte-v2 .apropos-photo img { aspect-ratio: 4 / 4.2; } }
+
+/* À propos : les cartes des ambitions alternent bleu et blanc */
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(7, 20, 135, .14); }
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) h3 { color: var(--navy-950); }
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) p { color: var(--ink-soft); }
+
+/* À propos, « Le concept » : deux orateurs face à face, pour et contre (comme dans le teaser) */
+.charte-v2 .duel { position: relative; display: grid; grid-template-columns: 1fr 1fr; max-width: 1040px; margin: 0 auto; border-radius: clamp(18px, 2vw, 28px); overflow: hidden; box-shadow: 0 30px 60px -30px rgba(4, 11, 82, .55); }
+.charte-v2 .duel-cote { position: relative; margin: 0; aspect-ratio: 4 / 5; overflow: hidden; }
+.charte-v2 .duel-cote img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; filter: saturate(.9); transition: transform .9s var(--ease, ease); }
+.charte-v2 .duel-cote::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(4, 11, 82, .55)); }
+.charte-v2 .duel-cote figcaption { position: absolute; left: 50%; bottom: clamp(16px, 3vw, 32px); transform: translateX(-50%); z-index: 1; padding: .5em 1.6em; border-radius: 999px; color: #fff; font: 800 clamp(1.1rem, 2.4vw, 1.9rem)/1 var(--font-heading); letter-spacing: .02em; }
+.charte-v2 .duel-pour figcaption { background: #1f9d55; }
+.charte-v2 .duel-contre figcaption { background: #d93a2b; }
+.charte-v2 .duel::before { content: ""; position: absolute; z-index: 1; left: 50%; top: 0; bottom: 0; width: 6px; margin-left: -3px; background: var(--gold-grad); }
+.charte-v2 .duel-vs { position: absolute; z-index: 2; left: 50%; top: 50%; width: clamp(64px, 9vw, 104px); aspect-ratio: 1; transform: translate(-50%, -50%); display: grid; place-items: center; border-radius: 50%; background: var(--navy-950); color: var(--gold-text); font: 800 clamp(1.1rem, 2.4vw, 1.9rem)/1 var(--font-heading); box-shadow: 0 0 0 5px #fff, 0 0 0 9px var(--gold); }
+.charte-v2 .duel-legende { margin: clamp(20px, 3vw, 32px) auto clamp(28px, 4vw, 48px); text-align: center !important; font: 600 clamp(1.1rem, 1.6vw, 1.45rem)/1.4 var(--font-heading); color: var(--navy-950); }
+.charte-v2 .duel-legende strong { color: var(--gold-dark); }
+@media (hover: hover) { .charte-v2 .duel:hover .duel-cote img { transform: scale(1.04); } }
+@media (max-width: 640px) {
+  .charte-v2 .duel { grid-template-columns: 1fr; }
+  .charte-v2 .duel-cote { aspect-ratio: 4 / 3.2; }
+  .charte-v2 .duel::before { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 6px; margin: -3px 0 0; }
+  .charte-v2 .duel-pour figcaption { bottom: auto; top: 16px; left: 16px; transform: none; }
+  .charte-v2 .duel-pour img { object-position: 50% 4%; }
+  .charte-v2 .duel-pour::after { background: linear-gradient(0deg, transparent 55%, rgba(4, 11, 82, .55)); }
+}
+@media (prefers-reduced-motion: reduce) { .charte-v2 .duel-cote img { transition: none; } }
+
+/* Chiffres : icônes des réseaux sous « abonnés sur nos réseaux sociaux » */
+.charte-v2 .chiffre-reseaux { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
+.charte-v2 .chiffre-reseaux a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; border: 1.5px solid rgba(227, 195, 90, .7); transition: background .2s, color .2s; }
+.charte-v2 .chiffre-reseaux a:hover, .charte-v2 .chiffre-reseaux a:focus-visible { background: var(--gold-grad); color: #10154a; border-color: transparent; }
+/* Qui sommes-nous : appel à contacter La Muse Éloquente */
+.charte-v2 .offre-cta { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: clamp(32px, 4vw, 48px); text-align: center; }
+.charte-v2 .offre-cta p { margin: 0; max-width: 62ch; text-align: center !important; color: var(--navy-950); }
+
+/* Qui sommes-nous : l'équipe défile aussi sur tablette et ordinateur (7 membres, pas de case vide) */
+.charte-v2 .equipe-defile { position: relative; max-width: 1180px; margin: 0 auto; }
+.charte-v2 .equipe-piste { display: flex !important; grid-template-columns: none; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding: 6px 4px 14px; max-width: none; margin: 0; }
+.charte-v2 .equipe-piste::-webkit-scrollbar { display: none; }
+.charte-v2 .equipe-piste .people-card { flex: 0 0 calc((100% - 3 * 20px) / 4); scroll-snap-align: start; }
+.charte-v2 .equipe-fleche { position: absolute; top: 38%; z-index: 2; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--navy-950); color: var(--gold-text); font: 700 30px/1 var(--font-heading); cursor: pointer; box-shadow: 0 10px 24px -8px rgba(4, 11, 82, .5); display: grid; place-items: center; padding-bottom: 4px; }
+.charte-v2 .equipe-fleche:disabled { opacity: .3; cursor: default; }
+.charte-v2 .equipe-prec { left: -24px; } .charte-v2 .equipe-suiv { right: -24px; }
+@media (max-width: 1100px) { .charte-v2 .equipe-piste .people-card { flex-basis: calc((100% - 2 * 20px) / 3); } .charte-v2 .equipe-prec { left: -6px; } .charte-v2 .equipe-suiv { right: -6px; } }
+@media (max-width: 720px) { .charte-v2 .equipe-piste .people-card { flex-basis: 60%; } .charte-v2 .equipe-fleche { display: none; } .charte-v2 .equipe-piste { padding: 4px 24px 10px; margin: 0 -24px; } }
+.charte-v2 .equipe-piste .people-card p { text-align: left !important; }
+.charte-v2 .apropos-editions { display: flex; justify-content: center; margin: clamp(28px, 4vw, 44px) 0 0; }
+
+/* Bande de chiffres en version claire, quand elle suit un bloc bleu (pages Impact et Partenaires) */
+.charte-v2 .stats-band.stats-band-clair { background: #fff; border-block: 1px solid #eceef4; }
+.charte-v2 .stats-band-clair .eyebrow { color: var(--gold-dark); }
+.charte-v2 .stats-band-clair .acc-chiffres-liste strong { background: linear-gradient(180deg, #0b1fa8, #071487 60%, #040b52); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.charte-v2 .stats-band-clair .acc-chiffres-liste span { color: var(--ink-soft); }
+.charte-v2 .stats-band-clair .acc-chiffres-liste li { border-color: #e3e6f0 !important; }
+.charte-v2 .stats-band-clair .chiffre-reseaux a { color: var(--navy-950); border-color: rgba(7, 20, 135, .25); }
+
+/* Impact : frise « Du live à la rencontre » */
+.charte-v2 .frise { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; counter-reset: frise; }
+.charte-v2 .frise-etape { position: relative; padding: 26px 24px 24px; border-radius: 20px; background: #fff; box-shadow: 0 18px 40px -28px rgba(4, 11, 82, .45); }
+.charte-v2 .frise-etape::before { content: ""; position: absolute; left: 24px; top: 0; width: 56px; height: 4px; border-radius: 0 0 4px 4px; background: var(--gold-grad); }
+.charte-v2 .frise-repere { display: inline-block; font: 700 .78rem/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; }
+.charte-v2 .frise-etape h3 { margin: 0 0 10px; color: var(--navy-950); font-size: 1.25rem; }
+.charte-v2 .frise-etape p { margin: 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.6; }
+@media (min-width: 900px) {
+  .charte-v2 .frise { grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+  .charte-v2 .frise::before { content: ""; position: absolute; left: 4%; right: 4%; top: -18px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+}
+
+/* Impact : cinq leviers, sur fond bleu (entre deux sections claires) */
+.charte-v2 .section.leviers { background: var(--scene); color: #fff; }
+.charte-v2 .leviers .eyebrow { color: var(--gold-text); }
+.charte-v2 .leviers h2 { color: #fff; }
+.charte-v2 .leviers-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: rgba(110, 170, 255, .25); border-radius: 22px; overflow: hidden; }
+.charte-v2 .leviers-liste li { background: rgba(4, 11, 82, .55); padding: 26px 24px; display: grid; gap: 8px; align-content: start; }
+.charte-v2 .leviers-num { font: 800 1.9rem/1 var(--font-heading); background: var(--or-texte); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.charte-v2 .leviers-liste h3 { margin: 4px 0 0; color: #fff; font-size: 1.12rem; }
+.charte-v2 .leviers-liste p { margin: 0; color: #dfe5ff; font-size: .93rem; line-height: 1.55; text-align: left !important; }
+@media (min-width: 900px) { .charte-v2 .leviers-liste { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 600px) and (max-width: 899px) { .charte-v2 .leviers-liste { grid-template-columns: repeat(2, 1fr); } }
+.charte-v2 .frise-etape p { text-align: left !important; }
+.charte-v2 .offres-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }

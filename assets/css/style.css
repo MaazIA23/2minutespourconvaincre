@@ -1206,11 +1206,20 @@ html, body { overflow-x: clip; }
 .acc-manifeste-texte { display: flex; flex-direction: column; gap: 16px; max-width: 60ch; }
 .acc-manifeste-texte p { margin: 0; }
 .acc-manifeste-texte .acc-lien { align-self: flex-start; margin-top: 8px; }
+.acc-manifeste-photo { margin: 0; max-width: 460px; border-radius: clamp(16px, 1.8vw, 26px); overflow: hidden; }
+.acc-manifeste-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; }
 .acc-video { margin: clamp(56px, 8vw, 110px) 0 0; display: flex; flex-direction: column; gap: 16px; }
 .acc-video .video-embed { max-width: none; border-radius: clamp(16px, 2vw, 28px); box-shadow: 0 50px 90px -50px rgba(13, 18, 64, .55); }
 .acc-video figcaption { font: 700 clamp(.95rem, .3vw + .88rem, 1.08rem)/1.3 var(--font-heading); color: var(--navy-950); }
 .acc-video figcaption span { color: var(--gold-dark); margin-right: 6px; }
-@media (min-width: 960px) { .acc-manifeste-grille { grid-template-columns: 1.05fr .95fr; } .acc-manifeste-texte { padding-top: 14px; } }
+@media (min-width: 960px) {
+  /* Titre et texte à gauche, photo de l'oratrice à droite sur toute la hauteur : plus de vide d'un côté ou de l'autre */
+  .acc-manifeste-grille { grid-template-columns: 1.1fr .9fr; grid-template-areas: "titre photo" "texte photo"; column-gap: clamp(40px, 5vw, 96px); row-gap: 28px; align-items: start; }
+  .acc-manifeste-titre { grid-area: titre; }
+  .acc-manifeste-texte { grid-area: texte; }
+  .acc-manifeste-photo { grid-area: photo; max-width: none; align-self: stretch; }
+  .acc-manifeste-photo img { height: 100%; aspect-ratio: auto; min-height: 560px; }
+}
 
 /* Chiffres : grands nombres, filets fins, pas de cartes */
 .acc-chiffres { background: var(--navy-950); color: #fff; padding-block: clamp(72px, 9vw, 130px); }
