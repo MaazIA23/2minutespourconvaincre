@@ -33,7 +33,10 @@ ${
   <div class="container">
     <p class="acc-surtitre" data-reveal>Qu'est-ce que Deux Minutes Pour Convaincre ?</p>
     <div class="acc-manifeste-grille">
-      <h2 class="acc-grand" data-reveal ${delai(1)}>Deux minutes.<br>Une thèse imposée.<br><em>Une salle à convaincre.</em></h2>
+      <div class="acc-manifeste-tete">
+        <h2 class="acc-grand" data-reveal ${delai(1)}>Deux minutes.<br>Une thèse imposée.<br><em>Une salle à convaincre.</em></h2>
+        <figure class="acc-manifeste-photo" data-reveal ${delai(2)}><img src="/assets/img/galerie/2eme-edition/photo-17.jpg" alt="La salle comble du public lors de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
+      </div>
       <div class="acc-manifeste-texte" data-reveal ${delai(2)}>
         <p class="acc-chapo">${presentation.titre}</p>
         ${presentation.paragraphes.map((p) => `<p>${p}</p>`).join("\n        ")}
