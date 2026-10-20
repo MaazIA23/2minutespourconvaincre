@@ -473,3 +473,22 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .frise-etape p { text-align: left !important; }
 .charte-v2 .offres-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }
 .charte-v2 .apropos-intro-seul { grid-template-columns: 1fr !important; }
+
+/* Accueil, 300 Voix : bloc épuré (surtitre, titre, accroche, bouton), moins haut sur mobile */
+@media (max-width: 720px) {
+  .charte-v2 .acc-voix { min-height: 520px; }
+  .charte-v2 .acc-voix .acc-pleine-photo { object-position: 70% 20%; }
+  .charte-v2 .acc-voix .acc-pleine-texte { padding-block: 40px 44px; }
+  .charte-v2 .acc-voix h2 { margin-bottom: 12px; }
+  .charte-v2 .acc-voix .acc-chapo { font-size: 1.05rem; }
+}
+/* Grand Prix juste après 300 Voix : fond clair pour éviter deux blocs bleus à la suite */
+.charte-v2 .acc-prix { background: var(--paper-alt, #f9f9f9); color: var(--ink); }
+.charte-v2 .acc-prix h2 { color: var(--navy-950); }
+.charte-v2 .acc-prix h2 em { background: none; -webkit-text-fill-color: currentColor; color: var(--gold-dark); }
+.charte-v2 .acc-prix .acc-surtitre { color: var(--gold-dark); }
+.charte-v2 .acc-prix .acc-chapo { color: var(--ink-soft); }
+.charte-v2 .acc-prix .acc-lien { color: var(--navy-950); }
+.charte-v2 .acc-prix .acc-lien:hover { color: var(--gold-dark); }
+.charte-v2 .acc-prix-photo img { border: 0; }
+.charte-v2 .acc-voix .acc-chapo, .charte-v2 .acc-prix .acc-chapo { text-align: left !important; }

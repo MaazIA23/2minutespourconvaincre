@@ -117,7 +117,6 @@ ${
     <p class="acc-surtitre acc-surtitre-or">${voix.eyebrow}</p>
     <h2>${voix.titre}</h2>
     <p class="acc-chapo">${voix.accroche}</p>
-    <p>${voix.texte}</p>
     <a href="/editions/3eme-edition/#nouveautes" class="btn btn-primary btn-lg">Découvrir 300 Voix</a>
   </div>
 </section>
@@ -128,7 +127,7 @@ ${
     <div class="acc-prix-texte">
       <p class="acc-surtitre" data-reveal>La récompense</p>
       <h2 data-reveal ${delai(1)}>Le Grand Prix<br><em>de la Francophonie</em></h2>
-      <p class="acc-chapo" data-reveal ${delai(2)}>Parce qu'une victoire doit ouvrir une porte : le lauréat de la 3ème édition remporte une semaine en France.</p>
+      <p class="acc-chapo" data-reveal ${delai(2)}>Parce qu'une victoire doit ouvrir une porte&nbsp;: le lauréat de la 3ème édition remporte une semaine en France.</p>
       <a href="/candidature/" class="acc-lien" data-reveal ${delai(3)}>Tout savoir sur la candidature <span aria-hidden="true">→</span></a>
     </div>
   </div>
