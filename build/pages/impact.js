@@ -139,7 +139,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="cta-final">
+<section class="cta-final cta-final-clair">
   <div class="container cta-final-inner" style="grid-template-columns: 1fr; text-align: center;">
     <div class="reveal">
       <h2>Vous souhaitez contribuer à cet impact ?</h2>

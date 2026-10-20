@@ -70,7 +70,10 @@ function render(data) {
     <p class="acc-surtitre acc-surtitre-or">${edition3.programme300Voix.eyebrow}</p>
     <h2>${edition3.programme300Voix.titre}</h2>
     <p class="acc-chapo">${edition3.programme300Voix.accroche}</p>
-    <a href="#competences" class="btn btn-primary btn-lg">Découvrir le programme</a>
+    <div class="acc-voix-actions">
+      <a href="${edition3.programme300Voix.ctaPrincipal.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.ctaPrincipal.label} →</a>
+      <a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="btn btn-ghost">${edition3.programme300Voix.ctaSecondaire.label} ↓</a>
+    </div>
   </div>
 </section>
 
