@@ -16,11 +16,10 @@ function render(data) {
     <div class="section-head reveal">
       <h2>${conceptObjectifs.titre}</h2>
     </div>
-    <div class="apropos-intro">
+    <div class="apropos-intro apropos-intro-seul">
       <div class="prose reveal">
         ${conceptObjectifs.paragraphes.map((p) => `<p>${p}</p>`).join("\n        ")}
       </div>
-      <figure class="apropos-photo reveal"><img src="/assets/img/palmares/2eme-edition/audrey-bonnialy.jpg" alt="Audrey Bonnialy, finaliste, au micro sur la scène de la 2ème édition de Deux Minutes Pour Convaincre" loading="lazy"></figure>
     </div>
     <div class="ambitions-block reveal">
       <p class="ambitions-chapeau">${conceptObjectifs.ambitions.chapeau}</p>
@@ -44,7 +43,7 @@ function render(data) {
     <div class="duel duel-grid reveal" aria-label="Deux orateurs, deux thèses opposées : pour et contre">
       <figure class="duel-cote duel-pour"><img src="/assets/img/palmares/2eme-edition/geovani-de-souza.jpg" alt="Geovani de Souza au micro, 2ème édition" loading="lazy"><figcaption>Pour</figcaption></figure>
       <span class="duel-vs" aria-hidden="true">VS</span>
-      <figure class="duel-cote duel-contre"><img src="/assets/img/palmares/2eme-edition/anita-dadele.jpg" alt="Anita Dadélé au micro, 2ème édition" loading="lazy"><figcaption>Contre</figcaption></figure>
+      <figure class="duel-cote duel-contre"><img src="/assets/img/palmares/2eme-edition/audrey-bonnialy.jpg" alt="Audrey Bonnialy au micro, 2ème édition" loading="lazy"><figcaption>Contre</figcaption></figure>
     </div>
     <p class="duel-legende reveal">Un thème. <strong>Deux thèses.</strong> 120 secondes chacun pour convaincre.</p>
     <div class="prose reveal">

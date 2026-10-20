@@ -11,16 +11,34 @@
     "sousTitreAccent": "120 secondes",
     "date": "08 août 2026",
     "lieu": "Azalaï Hôtel, Cotonou",
-    "cta": { "label": "S'inscrire", "lien": "TODO" }
+    "cta": {
+      "label": "S'inscrire",
+      "lien": "TODO"
+    }
   },
   "chiffresCles": {
     "eyebrow": "Le concours en chiffres",
     "chiffres": [
-      { "valeur": "2", "libelle": "éditions déjà réussies" },
-      { "valeur": "24", "libelle": "orateurs sur scène" },
-      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
-      { "valeur": "24", "libelle": "partenaires mobilisés en 2026" },
-      { "valeur": "300", "libelle": "jeunes visés dès 2027 avec 300 Voix" }
+      {
+        "valeur": "2",
+        "libelle": "éditions déjà réussies"
+      },
+      {
+        "valeur": "24",
+        "libelle": "orateurs sur scène"
+      },
+      {
+        "valeur": "+10M",
+        "libelle": "vues cumulées sur nos réseaux"
+      },
+      {
+        "valeur": "24",
+        "libelle": "partenaires mobilisés en 2026"
+      },
+      {
+        "valeur": "300",
+        "libelle": "jeunes visés dès 2027 avec 300 Voix"
+      }
     ],
     "_source": "2 éditions : editions-index.json. 24 finalistes : 16 orateurs (edition-1.json chiffres) + 8 finalistes (gagnants.json totalFinalistes 2026). +10M vues : qui-sommes-nous.json agence.chiffres (vues cumulées agence, réseaux La Muse Éloquente/Deux Minutes Pour Convaincre confondus). 24 partenaires : partenaires.json nombreAnnonce / accueil.json chiffresEvocateurs (édition 2026 uniquement). 300 jeunes : edition-3.json nouveautes '300 Voix'."
   },
@@ -30,17 +48,29 @@
       "titre": "Quand la parole devient conviction",
       "paragraphes": [
         "Deux Minutes Pour Convaincre est un concours d'improvisation oratoire qui célèbre la puissance de la parole et l'excellence de l'argumentation.",
-        "Dans une atmosphère inclusive, exigeante et bienveillante, il rassemble étudiants, entrepreneurs, professionnels du droit, journalistes et passionnés de la langue française autour d'un format intense, mais accessible à tous. En deux minutes, chaque orateur est appelé à structurer sa pensée, défendre une thèse forte et marquer durablement les esprits.",
+        "Étudiants, entrepreneurs, juristes, journalistes, passionnés de la langue française : tous se retrouvent autour d'un format intense et accessible. En deux minutes, chaque orateur structure sa pensée, défend sa thèse et marque les esprits.",
         "Ici, la parole dépasse l'exercice de style : elle devient un acte d'engagement, un levier d'influence positive et un moteur de transformation."
       ],
-      "cta": { "label": "En savoir plus", "lien": "/a-propos" }
+      "cta": {
+        "label": "Découvrir le concept",
+        "lien": "/a-propos"
+      }
     },
     {
       "id": "stats",
       "chiffres": [
-        { "valeur": "+ 300", "libelle": "Participants" },
-        { "valeur": "8", "libelle": "Finalistes" },
-        { "valeur": "1", "libelle": "Vainqueur" }
+        {
+          "valeur": "+ 300",
+          "libelle": "Participants"
+        },
+        {
+          "valeur": "8",
+          "libelle": "Finalistes"
+        },
+        {
+          "valeur": "1",
+          "libelle": "Vainqueur"
+        }
       ],
       "_note": "Confirmé : 3 cartes (Participants, Finalistes, Vainqueur). Une 4e carte 'Partenaires' est possible plus bas sur la page, à confirmer."
     },
@@ -49,15 +79,42 @@
       "titre": "Des chiffres évocateurs",
       "intro": "Avant d'entrer dans le détail, quelques chiffres méritent d'être mis en lumière parce qu'ils racontent déjà beaucoup :",
       "chiffres": [
-        { "valeur": "25", "libelle": "candidatures reçues au départ" },
-        { "valeur": "12", "libelle": "candidats présélectionnés" },
-        { "valeur": "08", "libelle": "finalistes sur scène à l'hôtel Azalaï" },
-        { "valeur": "03", "libelle": "rounds pour départager les meilleurs : quarts, demi-finales, finale" },
-        { "valeur": "03", "libelle": "premiers prix décernés aux lauréats" },
-        { "valeur": "01", "libelle": "prix du leadership féminin attribué pour la première fois à la prestation féminine la plus impactante" },
-        { "valeur": "500.000 Fcfa", "libelle": "de dotations financières remises aux deux premiers lauréats" },
-        { "valeur": "+200", "libelle": "participants réunis en présentiel, et une quinzaine connectés en streaming" },
-        { "valeur": "24", "libelle": "partenaires et contributeurs mobilisés autour de cette édition" }
+        {
+          "valeur": "25",
+          "libelle": "candidatures reçues au départ"
+        },
+        {
+          "valeur": "12",
+          "libelle": "candidats présélectionnés"
+        },
+        {
+          "valeur": "08",
+          "libelle": "finalistes sur scène à l'hôtel Azalaï"
+        },
+        {
+          "valeur": "03",
+          "libelle": "rounds pour départager les meilleurs : quarts, demi-finales, finale"
+        },
+        {
+          "valeur": "03",
+          "libelle": "premiers prix décernés aux lauréats"
+        },
+        {
+          "valeur": "01",
+          "libelle": "prix du leadership féminin attribué pour la première fois à la prestation féminine la plus impactante"
+        },
+        {
+          "valeur": "500.000 Fcfa",
+          "libelle": "de dotations financières remises aux deux premiers lauréats"
+        },
+        {
+          "valeur": "+200",
+          "libelle": "participants réunis en présentiel, et une quinzaine connectés en streaming"
+        },
+        {
+          "valeur": "24",
+          "libelle": "partenaires et contributeurs mobilisés autour de cette édition"
+        }
       ],
       "_source": "Rapport Général — Des chiffres évocateurs (p.6). Chiffres 12 candidats présélectionnés et +200 participants confirmés (les deux incohérences relevées précédemment sont résolues) par le Dossier de présentation édition 3 (p.10-11)."
     }
