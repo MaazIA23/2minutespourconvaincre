@@ -381,3 +381,11 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .hero-edition .hero-meta { gap: 12px 26px; line-height: 1.5; }
 .charte-v2 .hero-edition .hero-meta span { display: inline-flex; align-items: center; gap: 10px; }
 @media (max-width: 600px) { .charte-v2 .hero-edition .hero-meta { flex-direction: column; gap: 10px; } }
+
+/* À propos : texte d'introduction et photo d'une oratrice côte à côte sur ordinateur */
+.charte-v2 .apropos-intro { display: grid; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.charte-v2 .apropos-intro .prose { margin: 0; }
+.charte-v2 .apropos-photo { margin: 0; border-radius: clamp(16px, 1.8vw, 26px); overflow: hidden; }
+.charte-v2 .apropos-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; }
+@media (min-width: 960px) { .charte-v2 .apropos-intro { grid-template-columns: 1.15fr .85fr; } }
+@media (max-width: 959px) { .charte-v2 .apropos-photo { max-width: 520px; } .charte-v2 .apropos-photo img { aspect-ratio: 4 / 4.2; } }
