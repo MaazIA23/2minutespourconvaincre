@@ -163,7 +163,7 @@ ${
     <p class="acc-surtitre" data-reveal>${impact.temoignages.eyebrow}</p>
     <div class="acc-temoins-liste">
       ${temoins.map((t, i) => `<figure class="acc-temoin" data-reveal ${delai(i + 1)}>
-        <blockquote><p>« ${t.citation} »</p></blockquote>
+        <blockquote><p>« ${t.citationAccueil || t.citation} »</p></blockquote>
         <figcaption><img src="${t.photo}" alt="" loading="lazy"><span><strong>${t.nom}</strong>${t.statut}, ${t.edition}</span></figcaption>
       </figure>`).join("\n      ")}
     </div>
