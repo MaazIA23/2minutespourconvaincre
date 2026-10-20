@@ -1,18 +1,36 @@
 {
   "hero": {
     "titre": "Notre impact",
-    "sousTitre": "Deux Minutes Pour Convaincre est né sur une scène. Son ambition va désormais bien au-delà.",
+    "sousTitre": "Né d'un live TikTok, devenu une scène, Deux Minutes Pour Convaincre sort aujourd'hui de la scène pour aller à la rencontre de la jeunesse.",
     "intro": "Le projet agit à travers cinq leviers : le concours, la transmission, la mise en lumière des talents, le programme 300 Voix et la création d'opportunités."
   },
   "chiffresCles": {
     "eyebrow": "Le concours en chiffres",
     "chiffres": [
-      { "valeur": "2", "libelle": "éditions déjà réussies" },
-      { "valeur": "41", "libelle": "candidatures reçues" },
-      { "valeur": "24", "libelle": "orateurs sur scène" },
-      { "valeur": "+10M", "libelle": "vues cumulées sur nos réseaux" },
-      { "valeur": "+300", "libelle": "participants réunis en présentiel sur les deux éditions" },
-      { "valeur": "300", "libelle": "bénéficiaires visés par 300 Voix dès 2027" }
+      {
+        "valeur": "2",
+        "libelle": "éditions déjà réussies"
+      },
+      {
+        "valeur": "41",
+        "libelle": "candidatures reçues"
+      },
+      {
+        "valeur": "24",
+        "libelle": "orateurs sur scène"
+      },
+      {
+        "valeur": "+10M",
+        "libelle": "vues cumulées sur nos réseaux"
+      },
+      {
+        "valeur": "+300",
+        "libelle": "participants réunis en présentiel sur les deux éditions"
+      },
+      {
+        "valeur": "300",
+        "libelle": "bénéficiaires visés par 300 Voix dès 2027"
+      }
     ],
     "_source": "2 éditions : editions-index.json. 41 candidatures : 16 (1ère édition) + 25 (2ème édition, accueil.json chiffresEvocateurs), confirmé par le client (27/09/2026). 24 finalistes : 16 (edition-1.json) + 8 (gagnants.json). +10M vues : qui-sommes-nous.json agence.chiffres. +300 participants : +100 (edition-1.json) + 200 (accueil.json, édition 2026). 300 bénéficiaires 300 Voix : edition-3.json nouveautes."
   },
@@ -44,9 +62,18 @@
     "eyebrow": "Notre conviction",
     "titre": "Ce que la parole peut changer",
     "blocs": [
-      { "titre": "Révéler", "description": "Identifier des profils à fort potentiel et leur offrir une scène, une visibilité et un réseau." },
-      { "titre": "Former", "description": "Transmettre les clés de la prise de parole, de l'argumentation et de la confiance en soi." },
-      { "titre": "Transformer", "description": "Faire de chaque victoire un levier de transmission et d'opportunités, bien au-delà de la scène." }
+      {
+        "titre": "Révéler",
+        "description": "Identifier des profils à fort potentiel et leur offrir une scène, une visibilité et un réseau."
+      },
+      {
+        "titre": "Former",
+        "description": "Transmettre les clés de la prise de parole, de l'argumentation et de la confiance en soi."
+      },
+      {
+        "titre": "Transformer",
+        "description": "Faire de chaque victoire un levier de transmission et d'opportunités, bien au-delà de la scène."
+      }
     ]
   },
   "temoignages": {
@@ -118,6 +145,61 @@
     "eyebrow": "L'impact 2027",
     "titre": "300 Voix",
     "description": "300 élèves et étudiants bénéficieront d'une formation en art oratoire.",
-    "cta": { "label": "Découvrir 300 Voix →", "lien": "/editions/3eme-edition/#nouveautes" }
+    "cta": {
+      "label": "Découvrir 300 Voix →",
+      "lien": "/editions/3eme-edition/#nouveautes"
+    }
+  },
+  "parcours": {
+    "eyebrow": "Notre histoire",
+    "titre": "Du live à la rencontre",
+    "etapes": [
+      {
+        "repere": "Au commencement",
+        "titre": "Un live TikTok",
+        "description": "Tout commence en ligne : un live TikTok conçu pour transformer les réseaux sociaux en un espace d'apprentissage, d'élévation et d'inspiration autour de la prise de parole."
+      },
+      {
+        "repere": "10 mai 2025",
+        "titre": "La première scène",
+        "description": "À l'Hôtel Azalaï de Cotonou, plus de 100 participants assistent au premier duel oratoire : 16 orateurs en compétition, et Ezéchielle Bouet sacrée Championne de l'Éloquence 2025."
+      },
+      {
+        "repere": "08 août 2026",
+        "titre": "Une scène qui grandit",
+        "description": "La deuxième édition structure et professionnalise le concours : 25 candidatures, 8 finalistes sur scène, et José Pascaël Agbo Grand Champion."
+      },
+      {
+        "repere": "2027",
+        "titre": "Au-delà de la scène",
+        "description": "Avec 300 Voix, le concours sort de la scène pour aller à la rencontre de 300 élèves et étudiants, dans leurs établissements. Et le vainqueur de la 3ème édition remportera le Grand Prix de la Francophonie."
+      }
+    ]
+  },
+  "leviers": {
+    "eyebrow": "Comment nous agissons",
+    "titre": "Cinq leviers d'impact",
+    "liste": [
+      {
+        "titre": "Le concours",
+        "description": "Un format exigeant, deux minutes et deux thèses opposées, qui pousse chaque orateur à penser vite, structurer ses idées et convaincre."
+      },
+      {
+        "titre": "La transmission",
+        "description": "Coaching, accompagnement et sessions de formation : les candidats présélectionnés sont préparés avant d'affronter les demi-finales et la finale."
+      },
+      {
+        "titre": "La mise en lumière des talents",
+        "description": "Une scène, un public, un jury et des milliers de personnes sur nos réseaux : les orateurs gagnent en visibilité et en réseau."
+      },
+      {
+        "titre": "300 Voix",
+        "description": "Des sessions de prise de parole, d'argumentation et de confiance en soi pour 300 élèves et étudiants, là où ils étudient."
+      },
+      {
+        "titre": "La création d'opportunités",
+        "description": "Trophées, enveloppes financières, attestations officielles et, dès 2027, une semaine en France pour le lauréat du Grand Prix de la Francophonie."
+      }
+    ]
   }
 }

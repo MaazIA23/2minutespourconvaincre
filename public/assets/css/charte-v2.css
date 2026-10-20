@@ -438,3 +438,37 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 @media (max-width: 720px) { .charte-v2 .equipe-piste .people-card { flex-basis: 60%; } .charte-v2 .equipe-fleche { display: none; } .charte-v2 .equipe-piste { padding: 4px 24px 10px; margin: 0 -24px; } }
 .charte-v2 .equipe-piste .people-card p { text-align: left !important; }
 .charte-v2 .apropos-editions { display: flex; justify-content: center; margin: clamp(28px, 4vw, 44px) 0 0; }
+
+/* Bande de chiffres en version claire, quand elle suit un bloc bleu (pages Impact et Partenaires) */
+.charte-v2 .stats-band.stats-band-clair { background: #fff; border-block: 1px solid #eceef4; }
+.charte-v2 .stats-band-clair .eyebrow { color: var(--gold-dark); }
+.charte-v2 .stats-band-clair .acc-chiffres-liste strong { background: linear-gradient(180deg, #0b1fa8, #071487 60%, #040b52); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.charte-v2 .stats-band-clair .acc-chiffres-liste span { color: var(--ink-soft); }
+.charte-v2 .stats-band-clair .acc-chiffres-liste li { border-color: #e3e6f0 !important; }
+.charte-v2 .stats-band-clair .chiffre-reseaux a { color: var(--navy-950); border-color: rgba(7, 20, 135, .25); }
+
+/* Impact : frise « Du live à la rencontre » */
+.charte-v2 .frise { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; counter-reset: frise; }
+.charte-v2 .frise-etape { position: relative; padding: 26px 24px 24px; border-radius: 20px; background: #fff; box-shadow: 0 18px 40px -28px rgba(4, 11, 82, .45); }
+.charte-v2 .frise-etape::before { content: ""; position: absolute; left: 24px; top: 0; width: 56px; height: 4px; border-radius: 0 0 4px 4px; background: var(--gold-grad); }
+.charte-v2 .frise-repere { display: inline-block; font: 700 .78rem/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; }
+.charte-v2 .frise-etape h3 { margin: 0 0 10px; color: var(--navy-950); font-size: 1.25rem; }
+.charte-v2 .frise-etape p { margin: 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.6; }
+@media (min-width: 900px) {
+  .charte-v2 .frise { grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+  .charte-v2 .frise::before { content: ""; position: absolute; left: 4%; right: 4%; top: -18px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+}
+
+/* Impact : cinq leviers, sur fond bleu (entre deux sections claires) */
+.charte-v2 .section.leviers { background: var(--scene); color: #fff; }
+.charte-v2 .leviers .eyebrow { color: var(--gold-text); }
+.charte-v2 .leviers h2 { color: #fff; }
+.charte-v2 .leviers-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: rgba(110, 170, 255, .25); border-radius: 22px; overflow: hidden; }
+.charte-v2 .leviers-liste li { background: rgba(4, 11, 82, .55); padding: 26px 24px; display: grid; gap: 8px; align-content: start; }
+.charte-v2 .leviers-num { font: 800 1.9rem/1 var(--font-heading); background: var(--or-texte); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.charte-v2 .leviers-liste h3 { margin: 4px 0 0; color: #fff; font-size: 1.12rem; }
+.charte-v2 .leviers-liste p { margin: 0; color: #dfe5ff; font-size: .93rem; line-height: 1.55; text-align: left !important; }
+@media (min-width: 900px) { .charte-v2 .leviers-liste { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 600px) and (max-width: 899px) { .charte-v2 .leviers-liste { grid-template-columns: repeat(2, 1fr); } }
+.charte-v2 .frise-etape p { text-align: left !important; }
+.charte-v2 .offres-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }

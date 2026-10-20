@@ -12,10 +12,42 @@ function render(data) {
   </div>
 </section>
 
-<section class="stats-band" id="chiffres">
+<section class="stats-band stats-band-clair" id="chiffres">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${impact.chiffresCles.eyebrow}</p>
     ${listeChiffres(impact.chiffresCles.chiffres)}
+  </div>
+</section>
+
+<section class="section alt-bg" id="histoire">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${impact.parcours.eyebrow}</p>
+      <h2>${impact.parcours.titre}</h2>
+    </div>
+    <ol class="frise frise-grid">
+      ${impact.parcours.etapes
+        .map((e, i) => `<li class="frise-etape reveal" style="--delai:${(i * 0.1).toFixed(2)}s">
+        <span class="frise-repere">${e.repere}</span>
+        <h3>${e.titre}</h3>
+        <p>${e.description}</p>
+      </li>`)
+        .join("\n      ")}
+    </ol>
+  </div>
+</section>
+
+<section class="section leviers" id="leviers">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">${impact.leviers.eyebrow}</p>
+      <h2>${impact.leviers.titre}</h2>
+    </div>
+    <ol class="leviers-liste leviers-grid">
+      ${impact.leviers.liste
+        .map((l, i) => `<li class="reveal"><span class="leviers-num">${String(i + 1).padStart(2, "0")}</span><h3>${l.titre}</h3><p>${l.description}</p></li>`)
+        .join("\n      ")}
+    </ol>
   </div>
 </section>
 

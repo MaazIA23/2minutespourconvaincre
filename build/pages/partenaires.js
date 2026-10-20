@@ -1,3 +1,4 @@
+const { grillePaliers } = require("./sponsoring");
 const { listeChiffres } = require("../chiffres");
 function render(data) {
   const { partenaires, site } = data;
@@ -23,7 +24,7 @@ function render(data) {
     <div class="section-head reveal">
       <p class="eyebrow">${partenaires.pourquoiSoutenir.eyebrow}</p>
     </div>
-    <div class="ambitions-grid">
+    <div class="ambitions-grid ambitions-alternees">
       ${partenaires.pourquoiSoutenir.liste
         .map((b) => `<div class="ambition-card reveal"><h3>${b.titre}</h3><p>${b.description}</p></div>`)
         .join("\n      ")}
@@ -31,7 +32,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="stats-band">
+<section class="stats-band stats-band-clair">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center; margin-bottom:28px;">${partenaires.chiffresCles.eyebrow}</p>
     ${listeChiffres(partenaires.chiffresCles.chiffres)}
@@ -48,11 +49,25 @@ function render(data) {
         .map((f) => `<div class="method-step reveal"><h3>${f.titre}</h3><p>${f.description}</p></div>`)
         .join("\n      ")}
     </div>
-    <p style="text-align:center; margin-top:30px"><a href="/partenaires/sponsoring/" class="btn btn-outline">Découvrir nos offres de sponsoring →</a></p>
   </div>
 </section>
 
-<section class="section" id="ils-nous-font-confiance">
+<section class="section" id="offres-sponsoring">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sponsoring 2027</p>
+      <h2>${data.sponsoring.titre}</h2>
+      <p class="section-lead">${data.sponsoring.sousTitre}</p>
+    </div>
+    ${grillePaliers(data.sponsoring)}
+    <p class="offres-actions reveal">
+      <a href="${data.sponsoring.dossierSponsoringPdf}" class="btn btn-primary btn-lg" download>Télécharger le dossier de sponsoring</a>
+      <a href="#devenir-partenaire" class="btn btn-outline btn-lg">Devenir partenaire →</a>
+    </p>
+  </div>
+</section>
+
+<section class="section alt-bg" id="ils-nous-font-confiance">
   <div class="container">
     <div class="section-head reveal">
       <h2>Ils nous font confiance</h2>
@@ -73,7 +88,7 @@ function render(data) {
   </div>
 </section>
 
-<section class="section alt-bg" id="devenir-partenaire">
+<section class="section" id="devenir-partenaire">
   <div class="container">
     <div class="section-head reveal">
       <h2>${partenaires.formulaire.titre}</h2>

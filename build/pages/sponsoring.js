@@ -18,6 +18,25 @@ function highlightQuantity(text) {
   return `<strong>${match[1]}</strong>${text.slice(match[1].length)}`;
 }
 
+// Grille des six paliers, aussi affichée sur la page Partenaires.
+function grillePaliers(sponsoring) {
+  return `<div class="sponsoring-grid">
+      ${sponsoring.paliers
+        .map(
+          (p) => `<article class="sponsoring-card sponsoring-card-${slugForPalier(p.nom)} reveal">
+        <div class="sponsoring-card-head">
+          <span class="sponsoring-badge">${p.nom}</span>
+          <p class="sponsoring-price">${p.montant}</p>
+        </div>
+        <ul>
+          ${p.avantages.map((a) => `<li>${highlightQuantity(a)}</li>`).join("\n          ")}
+        </ul>
+      </article>`
+        )
+        .join("\n      ")}
+    </div>`;
+}
+
 function render(data) {
   const { sponsoring, partenaires } = data;
 
@@ -43,21 +62,7 @@ ${
 
 <section class="section">
   <div class="container">
-    <div class="sponsoring-grid">
-      ${sponsoring.paliers
-        .map(
-          (p) => `<article class="sponsoring-card sponsoring-card-${slugForPalier(p.nom)} reveal">
-        <div class="sponsoring-card-head">
-          <span class="sponsoring-badge">${p.nom}</span>
-          <p class="sponsoring-price">${p.montant}</p>
-        </div>
-        <ul>
-          ${p.avantages.map((a) => `<li>${highlightQuantity(a)}</li>`).join("\n          ")}
-        </ul>
-      </article>`
-        )
-        .join("\n      ")}
-    </div>
+    ${grillePaliers(sponsoring)}
   </div>
 </section>
 
@@ -78,4 +83,4 @@ ${
 `;
 }
 
-module.exports = { render };
+module.exports = { render, grillePaliers };
