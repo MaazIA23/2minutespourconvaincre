@@ -79,7 +79,7 @@ function donneesStructurees(data) {
     name: "Deux Minutes Pour Convaincre · Grande finale de la 3ème édition", startDate: b.evenement.dateISO,
     eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: { "@type": "Place", name: `${b.evenement.lieu} (${b.evenement.salle})`, address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" } },
-    image: [`${url}/assets/img/partage-2mpc.jpg`],
+    image: [`${url}/assets/img/partage-2mpc-v2.jpg`],
     description: "La grande finale du plus grand concours d'improvisation oratoire du Bénin.",
     organizer: { "@type": "Organization", name: site.organisation.agence, url: site.organisation.siteAgence },
     offers: { "@type": "Offer", url: `${url}/billetterie/`, priceCurrency: "XOF", availability: "https://schema.org/InStock", validFrom: b.ouverture },
