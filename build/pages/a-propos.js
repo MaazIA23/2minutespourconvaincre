@@ -25,7 +25,7 @@ function render(data) {
     </div>
     <div class="ambitions-block reveal">
       <p class="ambitions-chapeau">${conceptObjectifs.ambitions.chapeau}</p>
-      <div class="ambitions-grid">
+      <div class="ambitions-grid ambitions-alternees">
         ${conceptObjectifs.ambitions.liste
           .map(
             (a) => `<div class="ambition-card"><h3>${a.titre}</h3><p>${a.description}</p></div>`

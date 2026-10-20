@@ -389,3 +389,8 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .apropos-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; }
 @media (min-width: 960px) { .charte-v2 .apropos-intro { grid-template-columns: 1.15fr .85fr; } }
 @media (max-width: 959px) { .charte-v2 .apropos-photo { max-width: 520px; } .charte-v2 .apropos-photo img { aspect-ratio: 4 / 4.2; } }
+
+/* À propos : les cartes des ambitions alternent bleu et blanc */
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(7, 20, 135, .14); }
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) h3 { color: var(--navy-950); }
+.charte-v2 .ambitions-alternees .ambition-card:nth-child(even) p { color: var(--ink-soft); }
