@@ -2,7 +2,7 @@
   "edition": "2027",
   "statut": "ouvert",
   "titre": "Candidature",
-  "sousTitre": "Envie de monter sur la scène de « Deux Minutes Pour Convaincre » ? Voici comment ça va se passer pour la 3ème édition.",
+  "sousTitre": "La scène de Deux Minutes Pour Convaincre vous attend. Découvrez comment prendre part à la 3ème édition, de votre candidature jusqu'à la grande finale.",
   "criteres": {
     "eyebrow": "Qui peut candidater ?",
     "titre": "Critères de sélection",
@@ -23,6 +23,7 @@
     "eyebrow": "Votre parcours candidat",
     "titre": "Comment ça se passe",
     "etapes": [
+      { "titre": "J'obtiens mon pass", "description": "Standard ou VIP : ma place pour la finale est garantie." },
       { "titre": "Je candidate", "description": "En vidéo, sur un thème de mon choix." },
       { "titre": "Je suis présélectionné(e)" },
       { "titre": "Je me prépare", "description": "Coaching, accompagnement, sessions de formation." },

@@ -1,5 +1,13 @@
 {
   "_comment": "Billetterie de la 3ème édition. Les prix ne sont PAS ici (dépôt public) : ils sont dans la variable Netlify BILLETTERIE_TARIFS. Heures de Cotonou (UTC+1).",
+  "_candidats": "Avant-première réservée aux candidats (parcours « pass puis candidature ») : un seul pass par commande, tarif pris dans BILLETTERIE_TARIFS à la clé indiquée (« prevente » ou « vente »).",
+  "candidats": {
+    "ouverture": "2027-01-15T00:00:00+01:00",
+    "fermeture": "2027-01-30T23:59:59+01:00",
+    "ouvertureTexte": "vendredi 15 janvier 2027",
+    "fermetureTexte": "samedi 30 janvier 2027 à 23h59",
+    "tarif": "vente"
+  },
   "ouverture": "2027-02-01T00:00:00+01:00",
   "finPrevente": "2027-02-07T23:59:59+01:00",
   "fermeture": "2027-02-28T23:59:59+01:00",
@@ -22,14 +30,25 @@
       "prefixe": "S",
       "sousTitre": "Accès à la grande finale",
       "places": 200,
-      "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge et goodies personnalisés"]
+      "avantages": [
+        "Accès à la grande finale",
+        "Cocktail de clôture",
+        "Badge et goodies personnalisés"
+      ]
     },
     "vip": {
       "nom": "VIP",
       "prefixe": "V",
       "sousTitre": "Entrée dédiée · Espace VIP · Accès aux personnalités",
       "places": 150,
-      "avantages": ["Accès à la grande finale", "Cocktail de clôture", "Badge VIP et goodies personnalisés", "Entrée et file dédiées", "Espace VIP", "Accès privilégié aux panélistes et personnalités"]
+      "avantages": [
+        "Accès à la grande finale",
+        "Cocktail de clôture",
+        "Badge VIP et goodies personnalisés",
+        "Entrée et file dédiées",
+        "Espace VIP",
+        "Accès privilégié aux panélistes et personnalités"
+      ]
     }
   },
   "_places": "Nombre de places par catégorie, invitations comprises (null = pas de limite). Jauge indicative fixée par la cliente : 200 Standard, 150 VIP."

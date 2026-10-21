@@ -40,12 +40,20 @@ function vente(data) {
     <div class="billetterie-etat" id="billetterie-chargement"><p>Chargement de la billetterie…</p></div>
     <div class="billetterie-etat" id="billetterie-avant" hidden>
       <p class="eyebrow">Bientôt</p>
-      <h2>La billetterie ouvre le ${b.ouvertureTexte}.</h2>
+      <h2>La billetterie ouvre au public le ${b.ouvertureTexte}.</h2>
       <p>Une prévente à tarif réduit aura lieu jusqu'au ${b.finPreventeTexte}. Suivez-nous sur nos réseaux pour ne pas manquer l'ouverture.</p>
+      <p id="billetterie-avant-candidats" hidden>Vous souhaitez candidater&nbsp;? Les candidats obtiennent leur pass en avant-première, du ${b.candidats.ouvertureTexte} au ${b.candidats.fermetureTexte}, depuis la page <a href="/candidature/">Candidature</a>.</p>
     </div>
     <div class="billetterie-etat" id="billetterie-fermee" hidden>
       <h2>La billetterie est fermée.</h2>
       <p>Merci à toutes celles et ceux qui ont réservé leur place. Rendez-vous le ${ev.date.toLowerCase()} !</p>
+    </div>
+
+    <div class="billetterie-candidats" id="billetterie-candidats" hidden>
+      <p class="eyebrow">Avant-première candidats</p>
+      <h2>Étape 1 sur 2&nbsp;: votre pass</h2>
+      <p>La candidature est gratuite. Pour participer, il vous suffit d'obtenir votre pass pour la grande finale, Standard ou VIP&nbsp;: votre place est garantie, que vous soyez sélectionné(e) ou non. Dès votre paiement confirmé, vous recevez votre billet par e-mail et vous êtes redirigé(e) vers votre formulaire de candidature.</p>
+      <p class="billetterie-candidats-public">Jusqu'au ${b.candidats.fermetureTexte}, la billetterie est réservée aux candidats. Elle ouvrira au public le ${b.ouvertureTexte}.</p>
     </div>
 
     <form id="billetterie-form" class="billetterie-form" novalidate hidden>
@@ -57,8 +65,8 @@ function vente(data) {
       </fieldset>
 
       <div class="contact-form billetterie-coordonnees">
-        <h2>Vos billets</h2>
-        <div class="form-row">
+        <h2 id="billetterie-coordonnees-titre">Vos billets</h2>
+        <div class="form-row" id="billetterie-quantite-ligne">
           <label for="billet-quantite">Nombre de billets</label>
           <select id="billet-quantite" name="quantite">${options}</select>
         </div>
@@ -69,7 +77,7 @@ function vente(data) {
         <div class="form-row">
           <label for="acheteur-email">Adresse e-mail</label>
           <input type="email" id="acheteur-email" name="email" autocomplete="email" maxlength="120" required>
-          <small class="form-hint">Vos billets y seront envoyés dès le paiement confirmé.</small>
+          <small class="form-hint" id="billetterie-email-aide">Vos billets y seront envoyés dès le paiement confirmé.</small>
         </div>
         <div class="form-row">
           <label for="acheteur-whatsapp">Numéro WhatsApp</label>
@@ -81,7 +89,8 @@ function vente(data) {
           <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
         </div>
         <div id="billetterie-invites"></div>
-        <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</label>
+        <label class="billetterie-cgv" id="billetterie-eligibilite" hidden><input type="checkbox" id="acheteur-eligible"> Je certifie avoir entre 18 et 30 ans et résider au Bénin.</label>
+        <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> <span id="billetterie-cgv-texte">J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</span></label>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
         <p class="form-note" id="billetterie-note" role="status" aria-live="polite"></p>
@@ -173,6 +182,7 @@ function espace() {
     <nav class="outil-onglets" aria-label="Sections">
       <button type="button" data-onglet="tableau" class="actif">Tableau de bord</button>
       <button type="button" data-onglet="billets">Billets</button>
+      <button type="button" data-onglet="candidatures">Candidatures</button>
       <button type="button" data-onglet="entrees">Entrées</button>
       <button type="button" data-onglet="inviter">Inviter</button>
     </nav>
@@ -190,6 +200,15 @@ function espace() {
         <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
       </div>
       <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact et fonction</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+    </div>
+
+    <div class="outil-panneau" data-panneau="candidatures" hidden>
+      <div class="outil-cartes" id="espace-cartes-candidatures"></div>
+      <div class="outil-barre">
+        <input type="search" id="espace-recherche-candidatures" placeholder="Rechercher un nom, un e-mail, un numéro…">
+        <button type="button" class="btn btn-outline" id="espace-export-candidatures">Télécharger en Excel (CSV)</button>
+      </div>
+      <div class="outil-tableau"><table><thead><tr><th>Candidat</th><th>Contact et fonction</th><th>Pass</th><th>Statut</th><th>Vidéo</th><th></th></tr></thead><tbody id="espace-candidatures"></tbody></table></div>
     </div>
 
     <div class="outil-panneau" data-panneau="entrees" hidden>

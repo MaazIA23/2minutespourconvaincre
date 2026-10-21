@@ -9,7 +9,9 @@ exports.handler = async function (event) {
 
   const p = B.periode();
   const t = B.tarifs();
-  if (p === "avant") return B.reponse(400, { error: `La billetterie ouvrira le ${B.config.ouvertureTexte}.` });
+  const candidat = p === "candidats";
+  if (p === "avant") return B.reponse(400, { error: new Date() < new Date(B.config.candidats.ouverture) ? `Les pass candidats seront disponibles le ${B.config.candidats.ouvertureTexte}, et la billetterie ouvrira au public le ${B.config.ouvertureTexte}.` : `La billetterie ouvrira au public le ${B.config.ouvertureTexte}.` });
+  if (candidat && corps.candidature !== true) return B.reponse(400, { error: `Jusqu'au ${B.config.candidats.fermetureTexte}, la billetterie est réservée aux candidats. Elle ouvrira au public le ${B.config.ouvertureTexte}.` });
   if (p === "fermee") return B.reponse(400, { error: "La billetterie est fermée." });
   if (!t || !process.env.FEDAPAY_SECRET_KEY) return B.reponse(500, { error: "La billetterie n'est pas encore configurée." });
 
@@ -18,10 +20,12 @@ exports.handler = async function (event) {
   const a = corps.acheteur || {};
   const acheteur = { prenom: B.propre(a.prenom), nom: B.propre(a.nom), email: B.propre(a.email, 120).toLowerCase(), whatsapp: B.propre(a.whatsapp, 30), fonction: B.propre(a.fonction, 80) };
   if (!categorie) return B.reponse(400, { error: "Merci de choisir une catégorie de billet." });
+  if (candidat && quantite !== 1) return B.reponse(400, { error: "Un seul pass par candidature : il est à votre nom." });
   if (!(quantite >= 1 && quantite <= B.config.maxParCommande)) return B.reponse(400, { error: `Vous pouvez commander de 1 à ${B.config.maxParCommande} billets.` });
   if (!acheteur.prenom || !acheteur.nom) return B.reponse(400, { error: "Merci d'indiquer votre prénom et votre nom." });
   if (!B.emailValide(acheteur.email)) return B.reponse(400, { error: "Merci d'indiquer une adresse e-mail valide : vos billets y seront envoyés." });
   if (corps.cgv !== true) return B.reponse(400, { error: "Merci d'accepter les conditions générales de vente." });
+  if (candidat && corps.eligible !== true) return B.reponse(400, { error: "Merci de confirmer que vous avez entre 18 et 30 ans et que vous résidez au Bénin." });
   if (!acheteur.fonction) return B.reponse(400, { error: "Merci d'indiquer votre fonction ou profession." });
   if (!/^\+[0-9][0-9 ]{6,18}$/.test(acheteur.whatsapp)) return B.reponse(400, { error: "Merci d'indiquer votre numéro WhatsApp avec l'indicatif du pays (ex. +229)." });
 
@@ -40,14 +44,14 @@ exports.handler = async function (event) {
     return B.reponse(409, { error: restantes ? `Il ne reste que ${restantes} billet(s) ${B.config.categories[categorie].nom}.` : `Les billets ${B.config.categories[categorie].nom} sont épuisés.` });
   }
 
-  const prixUnitaire = t[categorie][p];
+  const prixUnitaire = B.prixPeriode(t, categorie, p);
   const montant = prixUnitaire * quantite;
   const id = crypto.randomBytes(12).toString("hex");
   const nomCat = B.config.categories[categorie].nom;
 
   try {
     const creation = await B.fedapay("/transactions", "POST", {
-      description: `${quantite} billet(s) ${nomCat} · Grande finale Deux Minutes Pour Convaincre`,
+      description: candidat ? `Pass candidat ${nomCat} · Grande finale Deux Minutes Pour Convaincre` : `${quantite} billet(s) ${nomCat} · Grande finale Deux Minutes Pour Convaincre`,
       amount: montant,
       currency: { iso: "XOF" },
       callback_url: `${process.env.URL || "https://2minpourconvaincre.com"}/billetterie/merci/?commande=${id}`,
@@ -58,6 +62,7 @@ exports.handler = async function (event) {
     await store.setJSON(`commandes/${id}`, {
       id, statut: "attente", categorie, quantite, tarif: p, prixUnitaire, montant, acheteur, titulaires,
       transactionId: transaction.id, creee: new Date().toISOString(), cgvAcceptees: new Date().toISOString(), test: !!B.modeTest(),
+      ...(candidat ? { candidature: { eligibiliteConfirmee: new Date().toISOString() } } : {}),
     });
     await store.setJSON(`transactions/${transaction.id}`, { commande: id });
     const jeton = await B.fedapay(`/transactions/${transaction.id}/token`, "POST");

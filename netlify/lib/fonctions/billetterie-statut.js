@@ -27,5 +27,10 @@ exports.handler = async function (event) {
     prenom: commande.titulaires[i].prenom, nom: commande.titulaires[i].nom,
     lien: `/billet/?n=${encodeURIComponent(b.numero)}&c=${b.cle}`,
   }));
-  return B.reponse(200, { statut: "payee", email: commande.acheteur.email, prenom: commande.acheteur.prenom, billets });
+  let candidature = null;
+  if (commande.candidature) {
+    const fiche = await store.get(`candidatures/${id}`, { type: "json" });
+    candidature = { deposee: !!(fiche && fiche.statut === "deposee"), lien: `/candidature/?pass=${id}#formulaire` };
+  }
+  return B.reponse(200, { statut: "payee", email: commande.acheteur.email, prenom: commande.acheteur.prenom, billets, candidature });
 };

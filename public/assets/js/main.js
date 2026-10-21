@@ -456,14 +456,63 @@
     }
   });
 
+  /* Candidature : liste d'attente avant l'ouverture, puis étape 1 (le pass) et étape 2 (le formulaire,
+     prérempli à partir du pass reçu dans l'adresse ?pass=…), puis clôture. */
   (function () {
     var gate = document.getElementById("formulaire");
     var before = document.getElementById("candidature-avant-ouverture");
-    var after = document.getElementById("candidature-formulaire-ouvert");
-    if (!gate || !before || !after || !gate.dataset.openDate) return;
-    if (new Date() >= new Date(gate.dataset.openDate)) {
-      before.hidden = true;
-      after.hidden = false;
+    var etape1 = document.getElementById("candidature-etape1");
+    var etape2 = document.getElementById("candidature-formulaire-ouvert");
+    var close = document.getElementById("candidature-close");
+    if (!gate || !before || !etape1 || !etape2 || !close) return;
+    var pass = new URLSearchParams(location.search).get("pass") || "";
+    var maintenant = new Date();
+    if (/^[0-9a-f]{24}$/.test(pass)) { before.hidden = true; etape2.hidden = false; chargerPass(pass); return; }
+    if (maintenant < new Date(gate.dataset.openDate)) {
+      // Mode test de la billetterie (« candidats ») : la page s'ouvre comme pendant l'avant-première.
+      fetch("/.netlify/functions/billetterie-infos").then(function (res) { return res.json(); }).then(function (d) {
+        if (!d || !d.test || d.periode !== "candidats") return;
+        before.hidden = true; etape1.hidden = false;
+        document.getElementById("candidature-test").hidden = false;
+      }).catch(function () {});
+      return;
+    }
+    before.hidden = true;
+    if (maintenant > new Date(gate.dataset.closeDate)) close.hidden = false; else etape1.hidden = false;
+
+    function chargerPass(id) {
+      var texte = document.getElementById("candidature-pass-texte");
+      var form = document.getElementById("candidature-form");
+      var note = document.getElementById("form-note");
+      var bouton = document.getElementById("cand-envoyer");
+      var api = "/.netlify/functions/candidature";
+      fetch(api + "?pass=" + id).then(function (res) { return res.json().then(function (d) { d._ok = res.ok; return d; }); }).then(function (d) {
+        if (!d._ok) { texte.innerHTML = (d.error || "Pass introuvable.") + " Si vous venez de payer, patientez quelques instants puis rechargez la page, ou écrivez-nous à <a href=\"mailto:contact@2minpourconvaincre.com\">contact@2minpourconvaincre.com</a>."; return; }
+        if (d.statut === "deposee") { texte.textContent = "Votre candidature a bien été déposée, merci " + d.prenom + " ! Un e-mail de confirmation vous a été envoyé à " + d.email + "."; return; }
+        if (!d.ouverte) { texte.textContent = "Les candidatures sont closes depuis le " + d.fermeture + ". Votre pass reste valable pour la grande finale."; return; }
+        texte.textContent = "Votre pass " + d.categorie + " est confirmé, merci " + d.prenom + " ! Vérifiez vos informations, puis ajoutez le lien de votre vidéo.";
+        document.getElementById("cand-nom").value = d.nom;
+        document.getElementById("cand-prenom").value = d.prenom;
+        document.getElementById("cand-email").value = d.email;
+        document.getElementById("cand-phone").value = d.whatsapp;
+        document.getElementById("cand-fonction").value = d.fonction || "";
+        form.hidden = false;
+      }).catch(function () { texte.textContent = "Connexion impossible. Vérifiez votre réseau, puis rechargez la page."; });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { note.textContent = "Merci d'indiquer votre fonction, votre pays de résidence, le lien complet de votre vidéo (https://…) et d'accepter les conditions d'utilisation."; return; }
+        bouton.disabled = true;
+        note.textContent = "Envoi de votre candidature…";
+        fetch(api, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+          pass: id, fonction: document.getElementById("cand-fonction").value, pays: document.getElementById("cand-pays").value, videoUrl: document.getElementById("cand-video").value,
+        }) }).then(function (res) { return res.json().then(function (d) { d._ok = res.ok; return d; }); }).then(function (d) {
+          if (!d._ok) { note.textContent = d.error || "Votre envoi n'a pas pu aboutir. Merci de réessayer dans quelques instants."; bouton.disabled = false; return; }
+          form.hidden = true;
+          texte.textContent = "Merci " + d.prenom + ", votre candidature est bien envoyée ! Un e-mail de confirmation vous attend à " + d.email + ". Nous reviendrons vers vous à l'issue de la présélection.";
+          texte.scrollIntoView({ behavior: "smooth", block: "center" });
+        }).catch(function () { note.textContent = "Connexion impossible. Vérifiez votre réseau, puis réessayez."; bouton.disabled = false; });
+      });
     }
   })();
 
@@ -519,7 +568,6 @@
   wireNetlifyForm("waitlist-form-e3", "waitlist-e3-note", "Merci ! Vous êtes inscrit(e). Un e-mail de confirmation vient de vous être envoyé, et nous vous préviendrons le jour de l'ouverture.");
   wireNetlifyForm("waitlist-form-accueil", "waitlist-accueil-note", "Merci ! Vous êtes inscrit(e). Un e-mail de confirmation vient de vous être envoyé, et nous vous préviendrons le jour de l'ouverture.");
   wireNetlifyForm("waitlist-form", "waitlist-form-note", "Merci ! Vous êtes inscrit(e) sur la liste d'attente, nous vous préviendrons dès l'ouverture des candidatures.");
-  wireNetlifyForm("candidature-form", "form-note", "Merci ! Votre candidature a bien été envoyée, nous revenons vers vous rapidement.");
   wireNetlifyForm("partenaire-form", "form-note", "Merci ! Votre demande a bien été enregistrée, nous revenons vers vous rapidement.");
 })();
 

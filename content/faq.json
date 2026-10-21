@@ -1,6 +1,6 @@
 {
   "titre": "Questions fréquentes",
-  "sousTitre": "Tout ce qu'il faut savoir sur le concours et la candidature.",
+  "sousTitre": "Tout ce qu'il faut savoir sur le concours, la candidature et la billetterie.",
   "categories": [
     {
       "titre": "La candidature",
@@ -10,12 +10,36 @@
           "reponse": "Il faut être âgé(e) de 18 à 30 ans, résider sur le territoire béninois, et être passionné(e) par la prise de parole."
         },
         {
+          "question": "Faut-il être de nationalité béninoise pour candidater ?",
+          "reponse": "Non. La candidature est ouverte à toute personne âgée de 18 à 30 ans résidant sur le territoire béninois, quelle que soit sa nationalité."
+        },
+        {
+          "question": "J'habite hors du Bénin, puis-je participer ?",
+          "reponse": "Pour la 3ème édition, la candidature est réservée aux personnes résidant au Bénin. Vous pouvez néanmoins suivre le concours sur nos réseaux sociaux et assister à la finale avec un billet."
+        },
+        {
           "question": "Comment candidater ?",
-          "reponse": "Cette année, la candidature se fait entièrement en vidéo : une prestation de deux minutes sur un thème choisi librement, dans laquelle vous devez nous convaincre comme si vous étiez déjà sur scène."
+          "reponse": "La candidature se fait en deux étapes, depuis la page Candidature. Étape 1 : vous obtenez votre pass pour la grande finale, Standard ou VIP. Étape 2 : dès votre paiement confirmé, vous êtes redirigé(e) vers votre formulaire de candidature, déjà prérempli, et vous y ajoutez le lien de votre vidéo. Cette vidéo est une prestation de deux minutes sur un thème que vous choisissez librement, dans laquelle vous devez nous convaincre comme si vous étiez déjà sur scène. Sur scène, en revanche, la thématique est dévoilée sur le moment : c'est tout l'art de l'improvisation."
         },
         {
           "question": "Comment envoyer ma vidéo de candidature ?",
           "reponse": "Publiez votre vidéo sur Facebook ou TikTok avec le hashtag #DeuxMinutesPourConvaincre, en taguant notre page, puis partagez-nous le lien dans le formulaire de candidature."
+        },
+        {
+          "question": "Puis-je envoyer plusieurs vidéos ?",
+          "reponse": "Non. Chaque candidat ne peut présenter qu'une seule vidéo, et une seule candidature est possible par pass : choisissez celle qui vous représente le mieux."
+        },
+        {
+          "question": "La candidature est-elle gratuite ?",
+          "reponse": "Oui. Pour participer, il vous suffit d'obtenir votre pass pour la grande finale, Standard ou VIP au choix : c'est votre billet nominatif, et votre place est garantie, que vous soyez sélectionné(e) ou non. Les candidats obtiennent leur pass en avant-première, du 15 au 30 janvier 2027, avant l'ouverture de la billetterie au public."
+        },
+        {
+          "question": "Et si je ne suis pas sélectionné(e) ?",
+          "reponse": "Votre place pour la grande finale reste garantie : votre pass Standard ou VIP vous donne accès à la soirée, que vous soyez sélectionné(e) ou non. Le pass n'est pas remboursable, sauf en cas d'annulation de l'événement par l'organisateur."
+        },
+        {
+          "question": "J'ai payé mon pass mais je n'ai pas terminé ma candidature, que faire ?",
+          "reponse": "Pas d'inquiétude : l'e-mail contenant votre billet comporte un bouton « Déposer ma candidature ». Il vous ramène à votre formulaire, jusqu'au 30 janvier 2027 à 23h59."
         },
         {
           "question": "Quelle est la date limite pour candidater ?",
@@ -24,6 +48,10 @@
         {
           "question": "Que se passe-t-il après l'envoi de ma candidature ?",
           "reponse": "Les candidats présélectionnés bénéficient d'une préparation (coaching, accompagnement, sessions de formation) avant d'affronter une demi-finale, puis la finale."
+        },
+        {
+          "question": "Mes frais de déplacement sont-ils pris en charge ?",
+          "reponse": "Non. Les frais de déplacement des candidats pour la préparation, la demi-finale et la finale restent à leur charge."
         },
         {
           "question": "Qu'est-ce que je peux gagner ?",
@@ -36,11 +64,15 @@
       "questions": [
         {
           "question": "Qu'est-ce que Deux Minutes Pour Convaincre ?",
-          "reponse": "Un concours d'improvisation oratoire : deux orateurs s'affrontent autour d'une même thématique, mais avec des thèses opposées, et seulement deux minutes chacun pour convaincre l'assemblée de la justesse de leur point de vue."
+          "reponse": "Un concours d'improvisation oratoire : deux orateurs s'affrontent autour d'une même thématique, dévoilée sur le moment, mais avec des thèses opposées, et seulement deux minutes chacun pour convaincre l'assemblée de la justesse de leur point de vue."
         },
         {
           "question": "Où et quand se déroule la 3ème édition ?",
           "reponse": "À Cotonou, en mars 2027. La date précise sera communiquée dès qu'elle sera confirmée."
+        },
+        {
+          "question": "Combien de temps dure la finale ?",
+          "reponse": "La finale se déroule sur une soirée."
         },
         {
           "question": "Qui organise Deux Minutes Pour Convaincre ?",
@@ -51,10 +83,40 @@
           "reponse": "Toutes les offres de partenariat et de sponsoring sont détaillées sur notre page Partenaires — vous pouvez aussi nous contacter directement sur WhatsApp."
         }
       ]
+    },
+    {
+      "titre": "La billetterie",
+      "questions": [
+        {
+          "question": "Qui peut assister à la finale ?",
+          "reponse": "L'événement est ouvert à tous, sans condition d'âge, avec un billet Standard ou VIP."
+        },
+        {
+          "question": "Comment se présente mon billet ?",
+          "reponse": "Chaque billet porte le prénom et le nom de son titulaire, ainsi qu'un QR code unique, à présenter à l'entrée."
+        },
+        {
+          "question": "J'ai perdu mon billet ou je ne l'ai pas reçu, que faire ?",
+          "reponse": "Rendez-vous sur la page <a href=\"/billetterie/retrouver/\">Retrouver mes billets</a> ou écrivez-nous à contact@2minpourconvaincre.com."
+        },
+        {
+          "question": "Puis-je changer le nom inscrit sur mon billet ?",
+          "reponse": "Oui, gratuitement et une seule fois, sur demande écrite envoyée à contact@2minpourconvaincre.com."
+        },
+        {
+          "question": "Puis-je être remboursé ?",
+          "reponse": "Les billets ne sont ni remboursables ni échangeables, sauf en cas d'annulation de l'événement par l'organisateur. En cas de report, les billets restent valables pour la nouvelle date."
+        },
+        {
+          "question": "Serai-je photographié ou filmé ?",
+          "reponse": "Oui, l'événement fait l'objet de photos et de vidéos. Une charte du droit à l'image est adressée à chaque acheteur ; elle précise l'utilisation qui peut être faite des images du public."
+        }
+      ]
     }
   ],
   "_source": "Toutes les réponses reprennent des informations déjà présentes ailleurs sur le site (candidature.json, a-propos.json, site.json, qui-sommes-nous.json) — aucune information nouvelle inventée. Date d'ouverture des candidatures (15 janvier 2027) confirmée par le client le 25/09/2026.",
   "TODO_2027": [
-    "Ajouter d'autres questions au fil des retours réels des candidats/partenaires (ex. candidature payante ou gratuite, durée exacte de l'événement, âge minimum pour assister en tant que spectateur) dès que les réponses seront confirmées par le client — ne jamais inventer."
+    "Mode d'annonce de la présélection : non encore décidé, ne pas publier.",
+    "Parcours candidat construit (21/10/2026) : pass Standard ou VIP en avant-première du 15 au 30 janvier, puis formulaire prérempli. Prix non affichés dans la FAQ (ils ne s'affichent que dans la billetterie)."
   ]
 }

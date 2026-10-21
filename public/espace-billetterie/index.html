@@ -59,6 +59,7 @@
     <nav class="outil-onglets" aria-label="Sections">
       <button type="button" data-onglet="tableau" class="actif">Tableau de bord</button>
       <button type="button" data-onglet="billets">Billets</button>
+      <button type="button" data-onglet="candidatures">Candidatures</button>
       <button type="button" data-onglet="entrees">Entrées</button>
       <button type="button" data-onglet="inviter">Inviter</button>
     </nav>
@@ -76,6 +77,15 @@
         <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
       </div>
       <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact et fonction</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+    </div>
+
+    <div class="outil-panneau" data-panneau="candidatures" hidden>
+      <div class="outil-cartes" id="espace-cartes-candidatures"></div>
+      <div class="outil-barre">
+        <input type="search" id="espace-recherche-candidatures" placeholder="Rechercher un nom, un e-mail, un numéro…">
+        <button type="button" class="btn btn-outline" id="espace-export-candidatures">Télécharger en Excel (CSV)</button>
+      </div>
+      <div class="outil-tableau"><table><thead><tr><th>Candidat</th><th>Contact et fonction</th><th>Pass</th><th>Statut</th><th>Vidéo</th><th></th></tr></thead><tbody id="espace-candidatures"></tbody></table></div>
     </div>
 
     <div class="outil-panneau" data-panneau="entrees" hidden>

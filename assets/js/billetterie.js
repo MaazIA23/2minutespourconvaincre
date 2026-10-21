@@ -30,6 +30,7 @@
     var invites = $("billetterie-invites");
     var note = $("billetterie-note");
     var bouton = $("billetterie-payer");
+    var candidat = false;
 
     function categorie() { var c = form.querySelector('input[name="categorie"]:checked'); return c ? c.value : "standard"; }
 
@@ -54,8 +55,10 @@
       var n = parseInt(quantite.value, 10) || 1;
       var c = infos.categories[categorie()];
       var total = c.prix * n;
-      $("billetterie-total").innerHTML = n + " billet" + (n > 1 ? "s" : "") + " " + echappe(c.nom) + " × " + fcfa(c.prix) + " = <strong>" + fcfa(total) + "</strong>";
-      bouton.textContent = "Payer " + fcfa(total);
+      $("billetterie-total").innerHTML = candidat
+        ? "Pass " + echappe(c.nom) + " : <strong>" + fcfa(c.prix) + "</strong>"
+        : n + " billet" + (n > 1 ? "s" : "") + " " + echappe(c.nom) + " × " + fcfa(c.prix) + " = <strong>" + fcfa(total) + "</strong>";
+      bouton.textContent = (candidat ? "Payer mon pass " : "Payer ") + fcfa(total);
     }
 
     appel("billetterie-infos").then(function (d) {
@@ -63,10 +66,21 @@
       infos = d;
       $("billetterie-chargement").hidden = true;
       if (d.test) $("billetterie-test").hidden = false;
-      if (d.periode === "avant") { $("billetterie-avant").hidden = false; return; }
+      if (d.periode === "avant") { $("billetterie-avant").hidden = false; $("billetterie-avant-candidats").hidden = !d.avantCandidats; return; }
       if (d.periode === "fermee" || !d.ouverte) { $("billetterie-fermee").hidden = false; return; }
       form.hidden = false;
       if (d.periode === "prevente") $("billetterie-prevente").hidden = false;
+      if (d.periode === "candidats") {
+        // Avant-première : un pass à son nom, éligibilité confirmée, puis redirection vers la candidature.
+        candidat = true;
+        $("billetterie-candidats").hidden = false;
+        $("billetterie-quantite-ligne").hidden = true; quantite.value = "1";
+        $("billetterie-coordonnees-titre").textContent = "Vos coordonnées";
+        $("billetterie-email-aide").textContent = "Votre pass y sera envoyé dès le paiement confirmé, avec le lien vers votre candidature.";
+        $("billetterie-eligibilite").hidden = false; $("acheteur-eligible").required = true;
+        $("billetterie-cgv-texte").innerHTML = 'J\'ai lu et j\'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a>. Mon pass est mon billet nominatif pour la grande finale : ma place est garantie, que je sois sélectionné(e) ou non, et il n\'est pas remboursable, sauf annulation de l\'événement.';
+        form.querySelectorAll(".formule-choix").forEach(function (s) { s.textContent = s.textContent.replace("Choisir", "Choisir le pass"); });
+      }
       Object.keys(d.categories).forEach(function (cle) {
         var c = d.categories[cle];
         var prix = form.querySelector('[data-prix="' + cle + '"]');
@@ -95,7 +109,9 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
-        note.textContent = "Merci de remplir tous les champs et d'accepter les conditions de vente : votre fonction, une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
+        note.textContent = candidat
+          ? "Merci de remplir tous les champs et de cocher les deux cases : votre fonction, une adresse e-mail valide et un numéro WhatsApp avec l'indicatif du pays (ex. +229)."
+          : "Merci de remplir tous les champs et d'accepter les conditions de vente : votre fonction, une adresse e-mail valide, un numéro WhatsApp avec l'indicatif du pays (ex. +229) et le nom de chaque titulaire.";
         return;
       }
       bouton.disabled = true;
@@ -105,6 +121,8 @@
         quantite: parseInt(quantite.value, 10),
         acheteur: { prenom: $("acheteur-prenom").value, nom: $("acheteur-nom").value, email: $("acheteur-email").value, whatsapp: $("acheteur-whatsapp").value, fonction: $("acheteur-fonction").value },
         cgv: $("acheteur-cgv").checked,
+        candidature: candidat,
+        eligible: $("acheteur-eligible").checked,
         invites: Array.prototype.map.call(invites.querySelectorAll(".invite"), function (d) {
           return { prenom: d.querySelector("[data-prenom]").value, nom: d.querySelector("[data-nom]").value };
         }),
@@ -128,6 +146,13 @@
     var essais = 0;
     function verifier() {
       appel("billetterie-statut?commande=" + encodeURIComponent(commande)).then(function (r) {
+        if (r.statut === "payee" && r.candidature && !r.candidature.deposee) {
+          titre.textContent = "Paiement confirmé, merci " + r.prenom + " !";
+          texte.textContent = "Votre pass a été envoyé à " + r.email + ". Patientez un instant, nous vous redirigeons vers votre formulaire de candidature…";
+          zone.innerHTML = '<p class="billetterie-actions" style="justify-self:center"><a class="btn btn-primary btn-lg" href="' + r.candidature.lien + '">Déposer ma candidature maintenant</a></p>';
+          setTimeout(function () { location.href = r.candidature.lien; }, 4000);
+          return;
+        }
         if (r.statut === "payee") {
           titre.textContent = "Merci " + r.prenom + ", c'est réservé !";
           texte.textContent = (r.billets.length > 1 ? "Vos billets ont été envoyés" : "Votre billet a été envoyé") + " à " + r.email + ". Vous pouvez aussi les ouvrir ici.";
@@ -327,7 +352,8 @@
     var donnees = null, minuterie = null;
     var heure = function (iso) { return new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }); };
     var jour = function (iso) { return new Date(iso).toLocaleString("fr-FR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); };
-    var libelle = { prevente: "Prévente", vente: "Plein tarif", invitation: "Invitation" };
+    var libelle = { candidats: "Pass candidat", prevente: "Prévente", vente: "Plein tarif", invitation: "Invitation" };
+    var candidatures = null;
     var motifs = { inconnu: "Billet inconnu", deja: "Déjà utilisé", annule: "Billet annulé", test: "Billet de test" };
 
     function charger() {
@@ -358,7 +384,7 @@
       var encaisse = reels.filter(function (b) { return b.type === "vente"; }).reduce(function (s, b) { return s + (b.prix || 0); }, 0);
       html += carte("Montant encaissé", fcfa(encaisse), "hors frais FedaPay");
       html += carte("Entrées", reels.filter(function (b) { return b.entree; }).length + " / " + reels.length, "personnes entrées / billets émis");
-      html += carte("Période", { avant: "Avant l'ouverture", prevente: "Prévente", vente: "Plein tarif", fermee: "Billetterie fermée" }[d.periode], "");
+      html += carte("Période", { avant: "Avant l'ouverture", candidats: "Avant-première candidats", prevente: "Prévente", vente: "Plein tarif", fermee: "Billetterie fermée" }[d.periode], "");
       $("espace-cartes").innerHTML = html;
       $("espace-maj").textContent = "Mis à jour à " + heure(new Date().toISOString()) + " · actualisation automatique toutes les 20 secondes.";
 
@@ -398,10 +424,39 @@
       }).join("") || '<tr><td colspan="7">Aucun billet pour le moment.</td></tr>';
     }
 
+    /* Candidatures : pass achetés pendant l'avant-première, avec ou sans vidéo déposée. */
+    function chargerCandidatures() {
+      return appel("billetterie-admin", { motdepasse: mdp, action: "candidatures" }).then(function (d) {
+        if (!d._ok) throw new Error(d.error || "Erreur");
+        candidatures = d; afficherCandidatures();
+      });
+    }
+
+    function afficherCandidatures() {
+      var liste = candidatures.candidatures.filter(function (c) { return !c.test || donnees.test; });
+      var deposees = liste.filter(function (c) { return c.statut === "deposee"; }).length;
+      $("espace-cartes-candidatures").innerHTML = carte("Pass candidats", liste.length, "payés") + carte("Candidatures déposées", deposees, "vidéo envoyée") +
+        carte("À relancer", liste.length - deposees, "pass payé, vidéo pas encore déposée · clôture le " + echappe(candidatures.fermeture));
+      var q = $("espace-recherche-candidatures").value.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+      $("espace-candidatures").innerHTML = liste.filter(function (c) {
+        return !q || (c.prenom + " " + c.nom + " " + c.email + " " + c.whatsapp + " " + c.billet + " " + (c.fonction || "")).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().indexOf(q) >= 0;
+      }).map(function (c) {
+        var relance = c.whatsapp ? "https://wa.me/" + c.whatsapp.replace(/[^\d]/g, "") + "?text=" + encodeURIComponent("Bonjour " + c.prenom + ", votre pass pour Deux Minutes Pour Convaincre est bien enregistré. Il ne vous reste plus qu'à déposer votre candidature avant le " + candidatures.fermeture + " : " + c.lienDepot) : "";
+        return "<tr><td>" + echappe(c.prenom + " " + c.nom.toUpperCase()) + (c.test ? " <small>TEST</small>" : "") + "<br><small>Pass payé le " + jour(c.payeLe) + "</small></td>" +
+          "<td>" + echappe(c.email) + "<br>" + echappe(c.whatsapp) + (c.fonction ? "<br><small>" + echappe(c.fonction) + "</small>" : "") + (c.pays ? "<br><small>" + echappe(c.pays) + "</small>" : "") + "</td>" +
+          "<td>" + echappe(c.categorie) + "<br><small>" + echappe(c.billet) + "</small></td>" +
+          "<td>" + (c.statut === "deposee" ? "Déposée<br><small>" + jour(c.deposeeLe) + "</small>" : "<strong>À déposer</strong>") + "</td>" +
+          "<td>" + (c.videoUrl ? '<a href="' + echappe(c.videoUrl) + '" target="_blank" rel="noopener">Voir la vidéo</a>' : "–") + "</td>" +
+          '<td class="outil-actions">' + (c.statut !== "deposee" && relance ? '<a href="' + relance + '" target="_blank" rel="noopener">Relancer sur WhatsApp</a>' : "") + "</td></tr>";
+      }).join("") || '<tr><td colspan="6">Aucun pass candidat pour le moment.</td></tr>';
+    }
+
     function entrer() {
       connexion.hidden = true; $("espace").hidden = false;
       charger().catch(function (e) { $("espace-alertes").textContent = e.message; $("espace-alertes").hidden = false; });
-      minuterie = setInterval(function () { charger().catch(function () {}); }, 20000);
+      minuterie = setInterval(function () {
+        charger().then(function () { if (!document.querySelector('[data-panneau="candidatures"]').hidden) return chargerCandidatures(); }).catch(function () {});
+      }, 20000);
     }
 
     connexion.addEventListener("submit", function (e) {
@@ -418,7 +473,19 @@
       b.addEventListener("click", function () {
         document.querySelectorAll("[data-onglet]").forEach(function (x) { x.classList.toggle("actif", x === b); });
         document.querySelectorAll("[data-panneau]").forEach(function (p) { p.hidden = p.getAttribute("data-panneau") !== b.getAttribute("data-onglet"); });
+        if (b.getAttribute("data-onglet") === "candidatures" && donnees) chargerCandidatures().catch(function (e) { window.alert(e.message); });
       });
+    });
+    $("espace-recherche-candidatures").addEventListener("input", function () { if (candidatures) afficherCandidatures(); });
+    $("espace-export-candidatures").addEventListener("click", function () {
+      if (!candidatures) return;
+      var col = ["Prénom", "Nom", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
+      var cell = function (v) { v = String(v == null ? "" : v); return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+      var lignes = candidatures.candidatures.map(function (c) {
+        return [c.prenom, c.nom, c.email, c.whatsapp, c.fonction || "", c.pays || "", c.categorie, c.billet, jour(c.payeLe), c.statut === "deposee" ? "Déposée" : "À déposer", c.deposeeLe ? jour(c.deposeeLe) : "", c.videoUrl || "", c.test ? "oui" : ""].map(cell).join(";");
+      });
+      var blob = new Blob(["﻿" + [col.join(";")].concat(lignes).join("\r\n")], { type: "text/csv;charset=utf-8" });
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "candidatures-2mpc-" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();
     });
     $("espace-recherche").addEventListener("input", function () { if (donnees) afficherBillets(); });
 
