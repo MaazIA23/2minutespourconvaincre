@@ -49,6 +49,18 @@ exports.handler = async function (event) {
   const id = crypto.randomBytes(12).toString("hex");
   const nomCat = B.config.categories[categorie].nom;
 
+  // Essai du parcours sans paiement, réservé à l'équipe (mot de passe de l'espace billetterie) : billet marqué TEST.
+  if (corps.essai) {
+    if (!B.egal(corps.essai, process.env.BILLETTERIE_MOT_DE_PASSE)) return B.reponse(401, { error: "Essai sans paiement réservé à l'équipe." });
+    await store.setJSON(`commandes/${id}`, {
+      id, statut: "attente", categorie, quantite, tarif: p, prixUnitaire, montant, acheteur, titulaires, transactionId: `essai-${id}`,
+      creee: new Date().toISOString(), cgvAcceptees: new Date().toISOString(), test: true, essai: true,
+      ...(candidat ? { candidature: { eligibiliteConfirmee: new Date().toISOString() } } : {}),
+    });
+    await B.finaliserCommande(store, id, { id: `essai-${id}`, status: "approved", amount: montant });
+    return B.reponse(200, { url: `/billetterie/merci/?commande=${id}` });
+  }
+
   try {
     const creation = await B.fedapay("/transactions", "POST", {
       description: candidat ? `Pass candidat ${nomCat} · Grande finale Deux Minutes Pour Convaincre` : `${quantite} billet(s) ${nomCat} · Grande finale Deux Minutes Pour Convaincre`,

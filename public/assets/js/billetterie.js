@@ -106,8 +106,14 @@
     quantite.addEventListener("change", majInvites);
     form.addEventListener("change", function (e) { if (e.target.name === "categorie") majTotal(); });
 
+    // Essai du parcours sans paiement : seulement après connexion à l'espace billetterie, dans le même onglet.
+    var essai = memoire("2mpc-espace");
+    if (essai) $("billetterie-essai").hidden = false;
+    $("billetterie-essai").addEventListener("click", function () { form.dataset.essai = "1"; form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit", { cancelable: true })); });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var sansPaiement = form.dataset.essai === "1"; form.dataset.essai = "";
       if (!form.checkValidity()) {
         note.textContent = candidat
           ? "Merci de remplir tous les champs et de cocher les deux cases : votre fonction, une adresse e-mail valide et un numéro WhatsApp avec l'indicatif du pays (ex. +229)."
@@ -115,7 +121,7 @@
         return;
       }
       bouton.disabled = true;
-      note.textContent = "Redirection vers le paiement sécurisé…";
+      note.textContent = sansPaiement ? "Essai sans paiement : création de votre billet…" : "Redirection vers le paiement sécurisé…";
       appel("billetterie-commande", {
         categorie: categorie(),
         quantite: parseInt(quantite.value, 10),
@@ -123,6 +129,7 @@
         cgv: $("acheteur-cgv").checked,
         candidature: candidat,
         eligible: $("acheteur-eligible").checked,
+        essai: sansPaiement ? essai : undefined,
         invites: Array.prototype.map.call(invites.querySelectorAll(".invite"), function (d) {
           return { prenom: d.querySelector("[data-prenom]").value, nom: d.querySelector("[data-nom]").value };
         }),
@@ -433,7 +440,7 @@
     }
 
     function afficherCandidatures() {
-      var liste = candidatures.candidatures.filter(function (c) { return !c.test || donnees.test; });
+      var liste = candidatures.candidatures;
       var deposees = liste.filter(function (c) { return c.statut === "deposee"; }).length;
       $("espace-cartes-candidatures").innerHTML = carte("Pass candidats", liste.length, "payés") + carte("Candidatures déposées", deposees, "vidéo envoyée") +
         carte("À relancer", liste.length - deposees, "pass payé, vidéo pas encore déposée · clôture le " + echappe(candidatures.fermeture));

@@ -105,8 +105,8 @@ const propre = (s, max = 60) => String(s || "").replace(/[\u0000-\u001f<>]/g, ""
 const emailValide = (e) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e);
 
 // Crée des billets (numéros réservés en une seule écriture de l'index), puis leurs fiches complètes.
-async function creerBillets(store, { categorie, type, tarif, prix, titulaires, contact, commande }) {
-  const test = !!modeTest();
+async function creerBillets(store, { categorie, type, tarif, prix, titulaires, contact, commande, essai = false }) {
+  const test = !!modeTest() || essai;
   const prefixe = (type === "invitation" ? "I" : "") + config.categories[categorie].prefixe;
   const maintenant = new Date().toISOString();
   const billets = titulaires.map((t) => ({
@@ -246,7 +246,7 @@ async function finaliserCommande(store, idCommande, transaction) {
   try {
     const billets = await creerBillets(store, {
       categorie: commande.categorie, type: "vente", tarif: commande.tarif, prix: commande.prixUnitaire,
-      titulaires: commande.titulaires, contact: commande.acheteur, commande: idCommande,
+      titulaires: commande.titulaires, contact: commande.acheteur, commande: idCommande, essai: !!commande.essai,
     });
     commande.statut = "payee";
     commande.payeeLe = new Date().toISOString();
@@ -259,7 +259,7 @@ async function finaliserCommande(store, idCommande, transaction) {
       });
     }
     await envoyerEmail({ to: [commande.acheteur.email], ...emailBillets(billets, { candidature: commande.candidature ? idCommande : null }) });
-    await notifierEquipe(`Billetterie : ${billets.length} ${commande.candidature ? "pass candidat" : "billet(s)"} ${config.categories[commande.categorie].nom} vendu(s)${modeTest() ? " [TEST]" : ""}`, [
+    await notifierEquipe(`Billetterie : ${billets.length} ${commande.candidature ? "pass candidat" : "billet(s)"} ${config.categories[commande.categorie].nom} vendu(s)${modeTest() || commande.essai ? " [TEST]" : ""}`, [
       `Acheteur : ${commande.acheteur.prenom} ${commande.acheteur.nom} (${commande.acheteur.email}, ${commande.acheteur.whatsapp})`,
       `Fonction : ${commande.acheteur.fonction || "non indiquée"}`,
       `Billets : ${billets.map((b) => `${b.numero} ${b.prenom} ${b.nom}`).join(", ")}`,
