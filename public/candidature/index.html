@@ -151,47 +151,54 @@
       <li class="timeline-item reveal">
         <div class="timeline-marker">01</div>
         <div class="timeline-content">
+          <h3>J'obtiens mon pass</h3>
+          <p>Standard ou VIP : ma place pour la finale est garantie.</p>
+        </div>
+      </li>
+      <li class="timeline-item reveal">
+        <div class="timeline-marker">02</div>
+        <div class="timeline-content">
           <h3>Je candidate</h3>
           <p>En vidéo, sur un thème de mon choix.</p>
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">02</div>
+        <div class="timeline-marker">03</div>
         <div class="timeline-content">
           <h3>Je suis présélectionné(e)</h3>
           
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">03</div>
+        <div class="timeline-marker">04</div>
         <div class="timeline-content">
           <h3>Je me prépare</h3>
           <p>Coaching, accompagnement, sessions de formation.</p>
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">04</div>
+        <div class="timeline-marker">05</div>
         <div class="timeline-content">
           <h3>Je passe la demi-finale</h3>
           
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">05</div>
+        <div class="timeline-marker">06</div>
         <div class="timeline-content">
           <h3>Je suis retenu(e) pour la finale</h3>
           
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">06</div>
+        <div class="timeline-marker">07</div>
         <div class="timeline-content">
           <h3>Je me prépare à monter sur scène</h3>
           
         </div>
       </li>
       <li class="timeline-item reveal">
-        <div class="timeline-marker">07</div>
+        <div class="timeline-marker">08</div>
         <div class="timeline-content">
           <h3>Je peux remporter le Grand Prix</h3>
           
@@ -300,7 +307,7 @@
   </div>
 </section>
 
-<section class="section" id="formulaire" data-open-date="2027-01-15T00:00:00">
+<section class="section" id="formulaire" data-open-date="2027-01-15T00:00:00+01:00" data-close-date="2027-01-30T23:59:59+01:00">
   <div class="container">
     <div id="candidature-avant-ouverture">
       <div class="todo-banner reveal">
@@ -336,56 +343,76 @@
       </form>
     </div>
 
-    <div id="candidature-formulaire-ouvert" hidden>
+    <div id="candidature-etape1" hidden>
       <div class="todo-banner reveal">
         <svg class="ico-meta" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg> Candidatures ouvertes du <strong>15 janvier 2027</strong> au <strong>30 janvier 2027 à 23h59</strong>
       </div>
-      <form class="contact-form reveal" id="candidature-form" data-netlify="true" name="candidature" netlify-honeypot="societe" novalidate>
-        <input type="hidden" name="form-name" value="candidature">
-        <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
-          <label for="cand-societe">Ne pas remplir</label>
-          <input type="text" id="cand-societe" name="societe" tabindex="-1" autocomplete="off">
-        </p>
+      <div class="candidature-etape reveal">
+        <p class="eyebrow">Étape 1 sur 2</p>
+        <h2>Obtenez votre pass</h2>
+        <p>La candidature est gratuite. Pour participer, il vous suffit d'obtenir votre pass pour la grande finale, Standard ou VIP, au choix&nbsp;: votre place est garantie, que vous soyez sélectionné(e) ou non. Les candidats l'obtiennent en avant-première, avant l'ouverture de la billetterie au public.</p>
+        <p>Dès votre paiement confirmé, vous recevez votre billet par e-mail et vous êtes redirigé(e) vers l'étape 2&nbsp;: votre formulaire de candidature, déjà prérempli. Il ne vous restera qu'à y ajouter le lien de votre vidéo.</p>
+        <a href="/billetterie/" class="btn btn-primary btn-lg">Obtenir mon pass <span aria-hidden="true">→</span></a>
+        <p class="candidature-etape-note">Vous avez déjà votre pass&nbsp;? Le lien pour déposer votre candidature figure dans l'e-mail de votre billet.</p>
+      </div>
+    </div>
+
+    <div id="candidature-formulaire-ouvert" hidden>
+      <div class="todo-banner reveal">
+        <svg class="ico-meta" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg> Candidatures ouvertes jusqu'au <strong>30 janvier 2027 à 23h59</strong>
+      </div>
+      <div class="candidature-etape" id="candidature-etape2-entete">
+        <p class="eyebrow">Étape 2 sur 2</p>
+        <h2>Déposez votre candidature</h2>
+        <p id="candidature-pass-texte">Vérification de votre pass…</p>
+      </div>
+      <form class="contact-form" id="candidature-form" novalidate hidden>
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-nom">Nom</label>
-            <input type="text" id="cand-nom" name="nom" required>
+            <input type="text" id="cand-nom" readonly>
           </div>
           <div class="form-row">
             <label for="cand-prenom">Prénom</label>
-            <input type="text" id="cand-prenom" name="prenom" required>
-          </div>
-        </div>
-        <div class="form-row-pair">
-          <div class="form-row">
-            <label for="cand-fonction">Fonction ou profession</label>
-            <input type="text" id="cand-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
-          </div>
-          <div class="form-row">
-            <label for="cand-pays">Pays de résidence</label>
-            <input type="text" id="cand-pays" name="pays" placeholder="Bénin" required>
+            <input type="text" id="cand-prenom" readonly>
           </div>
         </div>
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-email">Adresse e-mail</label>
-            <input type="email" id="cand-email" name="email" required>
+            <input type="email" id="cand-email" readonly>
           </div>
           <div class="form-row">
             <label for="cand-phone">Numéro WhatsApp</label>
-            <input type="tel" id="cand-phone" name="whatsapp" autocomplete="tel" placeholder="+229 01 23 45 67 89" pattern="\+[0-9][0-9 ]{6,18}" required>
-            <small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small>
+            <input type="tel" id="cand-phone" readonly>
+          </div>
+        </div>
+        <small class="form-hint candidature-pass-hint">Ces informations sont celles de votre pass. Une erreur&nbsp;? Écrivez-nous à contact@2minpourconvaincre.com.</small>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="cand-fonction">Fonction ou profession</label>
+            <input type="text" id="cand-fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
+          </div>
+          <div class="form-row">
+            <label for="cand-pays">Pays de résidence</label>
+            <input type="text" id="cand-pays" maxlength="60" value="Bénin" required>
           </div>
         </div>
         <div class="form-row">
           <label for="cand-video">Lien de votre vidéo</label>
           <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft); text-align: left;">Publiez votre vidéo sur Facebook ou TikTok avec le hashtag #DeuxMinutesPourConvaincre, en taguant notre page, puis partagez-nous le lien ci-dessous.</p>
-          <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
+          <input type="url" id="cand-video" maxlength="300" placeholder="https://..." required>
         </div>
-        <label class="form-case"><input type="checkbox" name="majeur" value="oui" required> Je certifie avoir au moins 18 ans et j'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>.</label>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer ma candidature</button>
+        <label class="form-case"><input type="checkbox" id="cand-cgu" required> <span>J'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>. Une seule candidature est possible par pass.</span></label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="cand-envoyer">Envoyer ma candidature</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
+    </div>
+
+    <div id="candidature-close" class="candidature-etape" hidden>
+      <h2>Les candidatures sont closes</h2>
+      <p>Merci à toutes celles et ceux qui ont candidaté à la 3ème édition. Rendez-vous à la grande finale&nbsp;: la billetterie ouvre au public le lundi 1er février 2027.</p>
+      <a href="/billetterie/" class="btn btn-outline">Découvrir la billetterie</a>
     </div>
 
     <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">

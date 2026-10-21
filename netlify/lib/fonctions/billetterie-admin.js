@@ -23,6 +23,17 @@ exports.handler = async function (event) {
     });
   }
 
+  // Pass achetés pendant l'avant-première des candidats, avec ou sans candidature déposée.
+  if (corps.action === "candidatures") {
+    const { blobs } = await store.list({ prefix: "candidatures/" });
+    const fiches = (await Promise.all(blobs.map((b) => store.get(b.key, { type: "json" })))).filter(Boolean);
+    fiches.sort((a, b) => ((a.deposeeLe || a.payeLe) < (b.deposeeLe || b.payeLe) ? 1 : -1));
+    return B.reponse(200, {
+      fermeture: B.config.candidats.fermetureTexte,
+      candidatures: fiches.map((f) => ({ ...f, categorie: B.config.categories[f.categorie].nom, lienDepot: B.lienDepot(f.pass) })),
+    });
+  }
+
   if (corps.action === "inviter") {
     const categorie = B.CATEGORIES.includes(corps.categorie) ? corps.categorie : null;
     const prenom = B.propre(corps.prenom), nom = B.propre(corps.nom);

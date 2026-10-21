@@ -86,12 +86,20 @@
     <div class="billetterie-etat" id="billetterie-chargement"><p>Chargement de la billetterie…</p></div>
     <div class="billetterie-etat" id="billetterie-avant" hidden>
       <p class="eyebrow">Bientôt</p>
-      <h2>La billetterie ouvre le lundi 1er février 2027.</h2>
+      <h2>La billetterie ouvre au public le lundi 1er février 2027.</h2>
       <p>Une prévente à tarif réduit aura lieu jusqu'au dimanche 7 février 2027. Suivez-nous sur nos réseaux pour ne pas manquer l'ouverture.</p>
+      <p id="billetterie-avant-candidats" hidden>Vous souhaitez candidater&nbsp;? Les candidats obtiennent leur pass en avant-première, du vendredi 15 janvier 2027 au samedi 30 janvier 2027 à 23h59, depuis la page <a href="/candidature/">Candidature</a>.</p>
     </div>
     <div class="billetterie-etat" id="billetterie-fermee" hidden>
       <h2>La billetterie est fermée.</h2>
       <p>Merci à toutes celles et ceux qui ont réservé leur place. Rendez-vous le samedi 20 mars 2027 !</p>
+    </div>
+
+    <div class="billetterie-candidats" id="billetterie-candidats" hidden>
+      <p class="eyebrow">Avant-première candidats</p>
+      <h2>Étape 1 sur 2&nbsp;: votre pass</h2>
+      <p>La candidature est gratuite. Pour participer, il vous suffit d'obtenir votre pass pour la grande finale, Standard ou VIP&nbsp;: votre place est garantie, que vous soyez sélectionné(e) ou non. Dès votre paiement confirmé, vous recevez votre billet par e-mail et vous êtes redirigé(e) vers votre formulaire de candidature.</p>
+      <p class="billetterie-candidats-public">Jusqu'au samedi 30 janvier 2027 à 23h59, la billetterie est réservée aux candidats. Elle ouvrira au public le lundi 1er février 2027.</p>
     </div>
 
     <form id="billetterie-form" class="billetterie-form" novalidate hidden>
@@ -135,8 +143,8 @@
       </fieldset>
 
       <div class="contact-form billetterie-coordonnees">
-        <h2>Vos billets</h2>
-        <div class="form-row">
+        <h2 id="billetterie-coordonnees-titre">Vos billets</h2>
+        <div class="form-row" id="billetterie-quantite-ligne">
           <label for="billet-quantite">Nombre de billets</label>
           <select id="billet-quantite" name="quantite"><option value="1">1 billet</option><option value="2">2 billets</option><option value="3">3 billets</option><option value="4">4 billets</option><option value="5">5 billets</option><option value="6">6 billets</option><option value="7">7 billets</option><option value="8">8 billets</option><option value="9">9 billets</option><option value="10">10 billets</option></select>
         </div>
@@ -147,7 +155,7 @@
         <div class="form-row">
           <label for="acheteur-email">Adresse e-mail</label>
           <input type="email" id="acheteur-email" name="email" autocomplete="email" maxlength="120" required>
-          <small class="form-hint">Vos billets y seront envoyés dès le paiement confirmé.</small>
+          <small class="form-hint" id="billetterie-email-aide">Vos billets y seront envoyés dès le paiement confirmé.</small>
         </div>
         <div class="form-row">
           <label for="acheteur-whatsapp">Numéro WhatsApp</label>
@@ -159,7 +167,8 @@
           <input type="text" id="acheteur-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
         </div>
         <div id="billetterie-invites"></div>
-        <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</label>
+        <label class="billetterie-cgv" id="billetterie-eligibilite" hidden><input type="checkbox" id="acheteur-eligible"> Je certifie avoir entre 18 et 30 ans et résider au Bénin.</label>
+        <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> <span id="billetterie-cgv-texte">J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</span></label>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
         <p class="form-note" id="billetterie-note" role="status" aria-live="polite"></p>

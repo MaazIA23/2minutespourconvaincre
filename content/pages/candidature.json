@@ -23,6 +23,7 @@
     "eyebrow": "Votre parcours candidat",
     "titre": "Comment ça se passe",
     "etapes": [
+      { "titre": "J'obtiens mon pass", "description": "Standard ou VIP : ma place pour la finale est garantie." },
       { "titre": "Je candidate", "description": "En vidéo, sur un thème de mon choix." },
       { "titre": "Je suis présélectionné(e)" },
       { "titre": "Je me prépare", "description": "Coaching, accompagnement, sessions de formation." },

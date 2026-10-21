@@ -164,7 +164,7 @@ ${
   </div>
 </section>
 
-<section class="section" id="formulaire" data-open-date="${candidature.dateOuvertureCandidaturesISO}">
+<section class="section" id="formulaire" data-open-date="${data.billetterie.candidats.ouverture}" data-close-date="${data.billetterie.candidats.fermeture}">
   <div class="container">
     <div id="candidature-avant-ouverture">
       <div class="todo-banner reveal">
@@ -200,56 +200,76 @@ ${
       </form>
     </div>
 
-    <div id="candidature-formulaire-ouvert" hidden>
+    <div id="candidature-etape1" hidden>
       <div class="todo-banner reveal">
         ${icoDate} Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
       </div>
-      <form class="contact-form reveal" id="candidature-form" data-netlify="true" name="candidature" netlify-honeypot="societe" novalidate>
-        <input type="hidden" name="form-name" value="candidature">
-        <p class="form-row" style="position:absolute; left:-9999px;" aria-hidden="true">
-          <label for="cand-societe">Ne pas remplir</label>
-          <input type="text" id="cand-societe" name="societe" tabindex="-1" autocomplete="off">
-        </p>
+      <div class="candidature-etape reveal">
+        <p class="eyebrow">Étape 1 sur 2</p>
+        <h2>Obtenez votre pass</h2>
+        <p>La candidature est gratuite. Pour participer, il vous suffit d'obtenir votre pass pour la grande finale, Standard ou VIP, au choix&nbsp;: votre place est garantie, que vous soyez sélectionné(e) ou non. Les candidats l'obtiennent en avant-première, avant l'ouverture de la billetterie au public.</p>
+        <p>Dès votre paiement confirmé, vous recevez votre billet par e-mail et vous êtes redirigé(e) vers l'étape 2&nbsp;: votre formulaire de candidature, déjà prérempli. Il ne vous restera qu'à y ajouter le lien de votre vidéo.</p>
+        <a href="/billetterie/" class="btn btn-primary btn-lg">Obtenir mon pass <span aria-hidden="true">→</span></a>
+        <p class="candidature-etape-note">Vous avez déjà votre pass&nbsp;? Le lien pour déposer votre candidature figure dans l'e-mail de votre billet.</p>
+      </div>
+    </div>
+
+    <div id="candidature-formulaire-ouvert" hidden>
+      <div class="todo-banner reveal">
+        ${icoDate} Candidatures ouvertes jusqu'au <strong>${candidature.dateLimiteCandidatures}</strong>
+      </div>
+      <div class="candidature-etape" id="candidature-etape2-entete">
+        <p class="eyebrow">Étape 2 sur 2</p>
+        <h2>Déposez votre candidature</h2>
+        <p id="candidature-pass-texte">Vérification de votre pass…</p>
+      </div>
+      <form class="contact-form" id="candidature-form" novalidate hidden>
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-nom">Nom</label>
-            <input type="text" id="cand-nom" name="nom" required>
+            <input type="text" id="cand-nom" readonly>
           </div>
           <div class="form-row">
             <label for="cand-prenom">Prénom</label>
-            <input type="text" id="cand-prenom" name="prenom" required>
-          </div>
-        </div>
-        <div class="form-row-pair">
-          <div class="form-row">
-            <label for="cand-fonction">Fonction ou profession</label>
-            <input type="text" id="cand-fonction" name="fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
-          </div>
-          <div class="form-row">
-            <label for="cand-pays">Pays de résidence</label>
-            <input type="text" id="cand-pays" name="pays" placeholder="Bénin" required>
+            <input type="text" id="cand-prenom" readonly>
           </div>
         </div>
         <div class="form-row-pair">
           <div class="form-row">
             <label for="cand-email">Adresse e-mail</label>
-            <input type="email" id="cand-email" name="email" required>
+            <input type="email" id="cand-email" readonly>
           </div>
           <div class="form-row">
             <label for="cand-phone">Numéro WhatsApp</label>
-            <input type="tel" id="cand-phone" name="whatsapp" autocomplete="tel" placeholder="+229 01 23 45 67 89" pattern="\\+[0-9][0-9 ]{6,18}" required>
-            <small class="form-hint">Avec l'indicatif du pays, par exemple +229 pour le Bénin.</small>
+            <input type="tel" id="cand-phone" readonly>
+          </div>
+        </div>
+        <small class="form-hint candidature-pass-hint">Ces informations sont celles de votre pass. Une erreur&nbsp;? Écrivez-nous à contact@2minpourconvaincre.com.</small>
+        <div class="form-row-pair">
+          <div class="form-row">
+            <label for="cand-fonction">Fonction ou profession</label>
+            <input type="text" id="cand-fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
+          </div>
+          <div class="form-row">
+            <label for="cand-pays">Pays de résidence</label>
+            <input type="text" id="cand-pays" maxlength="60" value="Bénin" required>
           </div>
         </div>
         <div class="form-row">
           <label for="cand-video">Lien de votre vidéo</label>
           <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft); text-align: left;">${candidature.formulaire.videoInstructions}</p>
-          <input type="url" id="cand-video" name="videoUrl" placeholder="https://..." required>
+          <input type="url" id="cand-video" maxlength="300" placeholder="https://..." required>
         </div>
-        <label class="form-case"><input type="checkbox" name="majeur" value="oui" required> Je certifie avoir au moins 18 ans et j'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>.</label>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">${candidature.ctaSubmit}</button>
+        <label class="form-case"><input type="checkbox" id="cand-cgu" required> <span>J'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>. Une seule candidature est possible par pass.</span></label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="cand-envoyer">${candidature.ctaSubmit}</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
+    </div>
+
+    <div id="candidature-close" class="candidature-etape" hidden>
+      <h2>Les candidatures sont closes</h2>
+      <p>Merci à toutes celles et ceux qui ont candidaté à la 3ème édition. Rendez-vous à la grande finale&nbsp;: la billetterie ouvre au public le ${data.billetterie.ouvertureTexte}.</p>
+      <a href="/billetterie/" class="btn btn-outline">Découvrir la billetterie</a>
     </div>
 
     <p style="text-align:center; margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">

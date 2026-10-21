@@ -5,11 +5,13 @@
 //   commandes/<id>         commande en attente ou payée
 //   transactions/<id>      transaction FedaPay → commande
 //   verrous/<commande>     garantit qu'une commande payée ne génère ses billets qu'une seule fois
+//   candidatures/<commande> pass acheté pendant l'avant-première des candidats, puis candidature déposée (une seule par pass)
+//   depots/<commande>      garantit qu'un pass ne sert qu'à une seule candidature
 // Variables d'environnement Netlify :
 //   BILLETTERIE_TARIFS        prix en FCFA, ex. {"standard":{"prevente":8000,"vente":10000},"vip":{"prevente":18000,"vente":20000}}
 //   BILLETTERIE_MOT_DE_PASSE  mot de passe de l'espace billetterie
 //   BILLETTERIE_CODE_ACCUEIL  code de la page de contrôle (équipe d'accueil)
-//   BILLETTERIE_TEST          « prevente » ou « vente » : ouvre la billetterie hors dates, billets marqués TEST
+//   BILLETTERIE_TEST          « candidats », « prevente » ou « vente » : ouvre la billetterie hors dates, billets marqués TEST
 //   FEDAPAY_SECRET_KEY, FEDAPAY_ENV, RESEND_API_KEY, NOTIFICATION_FROM_EMAIL, NOTIFICATION_EMAIL (déjà utilisées pour les dons)
 const crypto = require("crypto");
 const { getStore, connectLambda } = globalThis.__2mpcBlobs || require("@netlify/blobs");
@@ -44,18 +46,25 @@ function tarifs() {
   } catch (err) { return null; }
 }
 
-const modeTest = () => (["prevente", "vente"].includes(process.env.BILLETTERIE_TEST) ? process.env.BILLETTERIE_TEST : null);
+const modeTest = () => (["candidats", "prevente", "vente"].includes(process.env.BILLETTERIE_TEST) ? process.env.BILLETTERIE_TEST : null);
 
-// « avant », « prevente », « vente » ou « fermee ».
+// « avant », « candidats » (avant-première réservée aux candidats), « prevente », « vente » ou « fermee ».
 function periode(maintenant = new Date()) {
   if (modeTest()) return modeTest();
+  if (maintenant < new Date(config.candidats.ouverture)) return "avant";
+  if (maintenant <= new Date(config.candidats.fermeture)) return "candidats";
   if (maintenant < new Date(config.ouverture)) return "avant";
   if (maintenant <= new Date(config.finPrevente)) return "prevente";
   if (maintenant <= new Date(config.fermeture)) return "vente";
   return "fermee";
 }
 
-const libelleTarif = { prevente: "Prévente", vente: "Plein tarif", invitation: "Invitation" };
+const libelleTarif = { candidats: "Pass candidat", prevente: "Prévente", vente: "Plein tarif", invitation: "Invitation" };
+
+// Prix unitaire d'une catégorie pour la période ; l'avant-première des candidats reprend un tarif existant.
+const prixPeriode = (t, categorie, p) => t[categorie][p === "candidats" ? config.candidats.tarif : p];
+
+const lienDepot = (idCommande) => `${SITE_URL}/candidature/?pass=${idCommande}#formulaire`;
 
 function lienBillet(b) {
   return `${SITE_URL}/billet/?n=${encodeURIComponent(b.numero)}&c=${b.cle}`;
@@ -137,7 +146,18 @@ function blocBillet(b) {
   </table></td></tr>`;
 }
 
-function emailBillets(billets, { invitation = false } = {}) {
+function blocDepot(idCommande) {
+  return `<tr><td style="padding:8px 32px 14px">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#071487;border-radius:14px">
+    <tr><td style="padding:18px 20px;font-family:Arial,Helvetica,sans-serif;color:#ffffff">
+      <p style="margin:0;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#e3c35a;font-weight:700">Étape 2 sur 2</p>
+      <p style="margin:6px 0 10px;font-size:18px;font-weight:700;line-height:1.35">Déposez votre candidature avant le ${config.candidats.fermetureTexte}.</p>
+      <a href="${lienDepot(idCommande)}" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#e3c35a;color:#10154a;font-size:15px;font-weight:700;text-decoration:none">Déposer ma candidature</a>
+    </td></tr>
+  </table></td></tr>`;
+}
+
+function emailBillets(billets, { invitation = false, candidature = null } = {}) {
   const premier = billets[0];
   const prenom = echappe(premier.prenom);
   const ev = config.evenement;
@@ -156,6 +176,7 @@ function emailBillets(billets, { invitation = false } = {}) {
           ? `Voici vos ${billets.length} billets nominatifs. Chaque billet est valable pour une personne et une seule entrée : transmettez à chacun de vos invités le lien de son billet.`
           : `Voici votre billet nominatif. Présentez-le à l'accueil, sur votre téléphone ou imprimé : il suffit de scanner le QR code.`,
       ];
+  if (candidature) paragraphes.splice(1, 0, `Votre pass vous garantit votre place à la grande finale, que vous soyez sélectionné(e) ou non. Il ne vous reste plus qu'à déposer votre candidature : le lien est ci-dessous, il ne sert qu'une fois.`);
   const sujet = invitation
     ? `Votre invitation · Grande finale de Deux Minutes Pour Convaincre`
     : `${plusieurs ? "Vos billets" : "Votre billet"} · Grande finale de Deux Minutes Pour Convaincre`;
@@ -163,8 +184,8 @@ function emailBillets(billets, { invitation = false } = {}) {
   return {
     subject: sujet,
     ...gabarit(titre, paragraphes, null, "Deux minutes. Une scène. Des voix qui se révèlent.", {
-      blocs: billets.map(blocBillet).join(""),
-      texteBlocs: "\n" + texteBlocs + "\n",
+      blocs: (candidature ? blocDepot(candidature) : "") + billets.map(blocBillet).join(""),
+      texteBlocs: (candidature ? `\nDéposer ma candidature (avant le ${config.candidats.fermetureTexte}) : ${lienDepot(candidature)}\n` : "") + "\n" + texteBlocs + "\n",
       mention: invitation ? "Vous recevez cet e-mail car La Muse Éloquente vous a invité(e) via" : "Vous recevez cet e-mail suite à votre achat sur",
     }),
   };
@@ -231,8 +252,14 @@ async function finaliserCommande(store, idCommande, transaction) {
     commande.payeeLe = new Date().toISOString();
     commande.billets = billets.map((b) => ({ numero: b.numero, cle: b.cle }));
     await store.setJSON(`commandes/${idCommande}`, commande);
-    await envoyerEmail({ to: [commande.acheteur.email], ...emailBillets(billets) });
-    await notifierEquipe(`Billetterie : ${billets.length} billet(s) ${config.categories[commande.categorie].nom} vendu(s)${modeTest() ? " [TEST]" : ""}`, [
+    if (commande.candidature) {
+      await store.setJSON(`candidatures/${idCommande}`, {
+        pass: idCommande, statut: "a-deposer", ...commande.acheteur, categorie: commande.categorie, billet: billets[0].numero,
+        payeLe: commande.payeeLe, test: !!commande.test,
+      });
+    }
+    await envoyerEmail({ to: [commande.acheteur.email], ...emailBillets(billets, { candidature: commande.candidature ? idCommande : null }) });
+    await notifierEquipe(`Billetterie : ${billets.length} ${commande.candidature ? "pass candidat" : "billet(s)"} ${config.categories[commande.categorie].nom} vendu(s)${modeTest() ? " [TEST]" : ""}`, [
       `Acheteur : ${commande.acheteur.prenom} ${commande.acheteur.nom} (${commande.acheteur.email}, ${commande.acheteur.whatsapp})`,
       `Fonction : ${commande.acheteur.fonction || "non indiquée"}`,
       `Billets : ${billets.map((b) => `${b.numero} ${b.prenom} ${b.nom}`).join(", ")}`,
@@ -247,6 +274,6 @@ async function finaliserCommande(store, idCommande, transaction) {
 }
 
 module.exports = {
-  config, CATEGORIES, magasin, reponse, lireCorps, egal, tarifs, modeTest, periode, libelleTarif, lienBillet,
+  config, CATEGORIES, magasin, reponse, lireCorps, egal, tarifs, modeTest, periode, libelleTarif, prixPeriode, lienDepot, lienBillet, notifierEquipe,
   majIndex, lireIndex, placesRestantes, propre, emailValide, creerBillets, emailBillets, envoyerEmail, fedapay, finaliserCommande,
 };

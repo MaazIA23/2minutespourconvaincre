@@ -513,3 +513,12 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .cta-final-clair p { color: var(--ink-soft); }
 /* Boutons dorés : le dégradé couvre aussi la bordure transparente (sinon un liseré foncé apparaît à gauche) */
 .charte-v2 .btn-primary, .charte-v2 .btn-primary:hover, .charte-v2 .btn-blanc:hover, .charte-v2 .chiffre-reseaux a { background-origin: border-box; }
+/* Candidature en deux étapes : le pass, puis le formulaire */
+.charte-v2 .candidature-etape { max-width: 760px; margin: 28px auto 0; text-align: center; }
+.charte-v2 .candidature-etape h2 { color: var(--navy-950); }
+.charte-v2 .candidature-etape p { text-align: justify; }
+.charte-v2 .candidature-etape .btn { margin-top: 10px; }
+.charte-v2 .candidature-etape .candidature-etape-note { margin-top: 18px; font-size: .9rem; color: var(--ink-soft); text-align: center !important; }
+.charte-v2 #candidature-form { margin-top: 24px; }
+.charte-v2 #candidature-form input[readonly] { background: #f3f4f8; color: var(--ink-soft); }
+.charte-v2 .candidature-pass-hint { display: block; margin: -6px 0 16px; }
