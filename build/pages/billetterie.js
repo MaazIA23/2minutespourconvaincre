@@ -93,6 +93,7 @@ function vente(data) {
         <label class="billetterie-cgv"><input type="checkbox" id="acheteur-cgv" required> <span id="billetterie-cgv-texte">J'ai lu et j'accepte les <a href="/conditions-de-vente/" target="_blank" rel="noopener">conditions générales de vente</a> : billets nominatifs, non remboursables sauf annulation de l'événement.</span></label>
         <p class="billetterie-total" id="billetterie-total"></p>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="billetterie-payer">Payer</button>
+        <button type="button" class="btn btn-outline btn-block billetterie-essai" id="billetterie-essai" hidden>Essai sans paiement (visible par l'équipe uniquement)</button>
         <p class="form-note" id="billetterie-note" role="status" aria-live="polite"></p>
         <p class="billetterie-rassurance">Paiement sécurisé par FedaPay : MTN Mobile Money, Moov Money ou carte bancaire. Chaque billet est nominatif, valable pour une personne et une seule entrée.</p>
       </div>
@@ -185,6 +186,7 @@ function espace() {
       <button type="button" data-onglet="candidatures">Candidatures</button>
       <button type="button" data-onglet="entrees">Entrées</button>
       <button type="button" data-onglet="inviter">Inviter</button>
+      <a class="outil-essai" href="/candidature/">Tester le parcours candidat sans payer →</a>
     </nav>
     <p class="outil-alerte" id="espace-alertes" hidden></p>
 
