@@ -64,14 +64,14 @@ function render(data) {
   </div>
 </section>
 
-<section class="voix-hero" id="300-voix" style="background-image: linear-gradient(100deg, rgba(4,11,82,.92) 0%, rgba(4,11,82,.72) 45%, rgba(4,11,82,.4) 80%), url('${edition3.programme300Voix.photo}')">
-  <div class="container voix-hero-inner">
-    <p class="eyebrow reveal">${edition3.programme300Voix.eyebrow}</p>
-    <h2 class="reveal">${edition3.programme300Voix.titre}</h2>
-    <p class="voix-hero-accroche reveal">« ${edition3.programme300Voix.accroche} »</p>
-    <p class="reveal">${edition3.programme300Voix.texte}</p>
-    <div class="hero-ctas reveal">
-      <a href="${edition3.programme300Voix.ctaPrincipal.lien}" class="btn btn-primary">${edition3.programme300Voix.ctaPrincipal.label} →</a>
+<section class="acc-pleine acc-voix" id="300-voix">
+  <img src="${edition3.programme300Voix.photo}" alt="Une jeune femme prend la parole devant ses camarades" loading="lazy" class="acc-pleine-photo">
+  <div class="container acc-pleine-texte" data-reveal>
+    <p class="acc-surtitre acc-surtitre-or">${edition3.programme300Voix.eyebrow}</p>
+    <h2>${edition3.programme300Voix.titre}</h2>
+    <p class="acc-chapo">${edition3.programme300Voix.accroche}</p>
+    <div class="acc-voix-actions">
+      <a href="${edition3.programme300Voix.ctaPrincipal.lien}" class="btn btn-primary btn-lg">${edition3.programme300Voix.ctaPrincipal.label} →</a>
       <a href="${edition3.programme300Voix.ctaSecondaire.lien}" class="btn btn-ghost">${edition3.programme300Voix.ctaSecondaire.label} ↓</a>
     </div>
   </div>

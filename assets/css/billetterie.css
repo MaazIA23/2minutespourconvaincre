@@ -27,7 +27,7 @@
 .formule-avantages li.absent { color: rgba(255, 255, 255, .45); }
 .formule-avantages li.absent span { width: 18px; text-align: center; flex: none; }
 .formule-choix { margin-top: auto; display: block; text-align: center; padding: 12px; border-radius: 999px; border: 1.5px solid var(--gold); font-weight: 600; }
-.formule input:checked + .formule-carte .formule-choix { background: var(--gold-grad); color: #10154a; border-color: transparent; }
+.formule input:checked + .formule-carte .formule-choix { background: var(--gold-grad) border-box; color: #10154a; border-color: transparent; }
 .formule input:checked + .formule-carte .formule-choix::before { content: "✓ "; }
 .billetterie-coordonnees { max-width: 640px; margin: 0 auto; }
 .billetterie-coordonnees h2 { margin: 0 0 18px; color: var(--navy-950); font-size: 1.6rem; }

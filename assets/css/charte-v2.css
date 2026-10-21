@@ -501,3 +501,15 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 .acc-prix-badge span { font: 600 .72rem/1 var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); }
 @media (min-width: 900px) { .charte-v2 .acc-prix-grille { grid-template-columns: .9fr 1.1fr; } .charte-v2 .acc-prix-photo { max-width: 470px; justify-self: center; } }
 @media (max-width: 899px) { .charte-v2 .acc-prix-photo img { aspect-ratio: 1 / 1; } .charte-v2 .acc-prix-photo { margin: 0 6px; } }
+
+/* 300 Voix (page 3ème édition) : deux boutons côte à côte */
+.charte-v2 .acc-voix-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.charte-v2 .acc-voix .btn-ghost { color: rgba(255, 255, 255, .85); }
+.charte-v2 .acc-voix .btn-ghost:hover { color: #fff; }
+/* Appel final sur fond clair (page Impact, après le bloc bleu 300 Voix) */
+.charte-v2 .cta-final-clair { background: var(--paper-alt, #f9f9f9); color: var(--ink); }
+.charte-v2 .cta-final-clair::before, .charte-v2 .cta-final-clair::after { display: none; }
+.charte-v2 .cta-final-clair h2 { background: none; -webkit-text-fill-color: currentColor; color: var(--navy-950); }
+.charte-v2 .cta-final-clair p { color: var(--ink-soft); }
+/* Boutons dorés : le dégradé couvre aussi la bordure transparente (sinon un liseré foncé apparaît à gauche) */
+.charte-v2 .btn-primary, .charte-v2 .btn-primary:hover, .charte-v2 .btn-blanc:hover, .charte-v2 .chiffre-reseaux a { background-origin: border-box; }
