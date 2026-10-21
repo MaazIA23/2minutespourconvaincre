@@ -30,6 +30,14 @@
           "reponse": "Non. Chaque candidat ne peut présenter qu'une seule vidéo : choisissez celle qui vous représente le mieux."
         },
         {
+          "question": "La candidature est-elle payante ?",
+          "reponse": "La candidature se fait avec le Pass Candidat, au prix de 10 000 FCFA, réglé au moment de la candidature. C'est le prix d'une place Standard : le Pass Candidat est avant tout votre billet pour la finale, et votre candidature est offerte."
+        },
+        {
+          "question": "Et si je ne suis pas sélectionné(e) ?",
+          "reponse": "Votre place pour la finale reste garantie : que vous soyez sélectionné(e) ou non, le Pass Candidat vous donne accès à la soirée avec une place Standard. Le Pass Candidat n'est pas remboursable, sauf en cas d'annulation de l'événement par l'organisateur."
+        },
+        {
           "question": "Quelle est la date limite pour candidater ?",
           "reponse": "Les candidatures pour la 3ème édition sont ouvertes du 15 au 30 janvier 2027, 23h59."
         },
@@ -104,7 +112,7 @@
   ],
   "_source": "Toutes les réponses reprennent des informations déjà présentes ailleurs sur le site (candidature.json, a-propos.json, site.json, qui-sommes-nous.json) — aucune information nouvelle inventée. Date d'ouverture des candidatures (15 janvier 2027) confirmée par le client le 25/09/2026.",
   "TODO_2027": [
-    "Gratuité de la candidature : NON (confirmé 21/10/2026), modèle Pass Candidat à confirmer pour la 3ème édition avant publication.",
-    "Mode d'annonce de la présélection : non encore décidé, ne pas publier."
+    "Mode d'annonce de la présélection : non encore décidé, ne pas publier.",
+    "Pass Candidat 10 000 FCFA = place Standard (confirmé 21/10/2026). Relier le paiement FedaPay au formulaire de candidature (case à cocher éligibilité + non-remboursable, billet QR envoyé après paiement)."
   ]
 }
