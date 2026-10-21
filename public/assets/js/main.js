@@ -468,7 +468,15 @@
     var pass = new URLSearchParams(location.search).get("pass") || "";
     var maintenant = new Date();
     if (/^[0-9a-f]{24}$/.test(pass)) { before.hidden = true; etape2.hidden = false; chargerPass(pass); return; }
-    if (maintenant < new Date(gate.dataset.openDate)) return;
+    if (maintenant < new Date(gate.dataset.openDate)) {
+      // Mode test de la billetterie (« candidats ») : la page s'ouvre comme pendant l'avant-première.
+      fetch("/.netlify/functions/billetterie-infos").then(function (res) { return res.json(); }).then(function (d) {
+        if (!d || !d.test || d.periode !== "candidats") return;
+        before.hidden = true; etape1.hidden = false;
+        document.getElementById("candidature-test").hidden = false;
+      }).catch(function () {});
+      return;
+    }
     before.hidden = true;
     if (maintenant > new Date(gate.dataset.closeDate)) close.hidden = false; else etape1.hidden = false;
 

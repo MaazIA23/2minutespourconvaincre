@@ -201,6 +201,7 @@ ${
     </div>
 
     <div id="candidature-etape1" hidden>
+      <p class="billetterie-test" id="candidature-test" hidden>Mode test : parcours ouvert comme au 15 janvier. Les billets émis portent la mention TEST et ne sont pas valables le jour J.</p>
       <div class="todo-banner reveal">
         ${icoDate} Candidatures ouvertes du <strong>${candidature.dateOuvertureCandidatures}</strong> au <strong>${candidature.dateLimiteCandidatures}</strong>
       </div>

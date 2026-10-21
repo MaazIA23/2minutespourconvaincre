@@ -522,3 +522,4 @@ body.charte-v2 .form-hint { display: block; margin-top: 6px; font-size: .82rem; 
 .charte-v2 #candidature-form { margin-top: 24px; }
 .charte-v2 #candidature-form input[readonly] { background: #f3f4f8; color: var(--ink-soft); }
 .charte-v2 .candidature-pass-hint { display: block; margin: -6px 0 16px; }
+.charte-v2 #candidature-test { max-width: 760px; margin: 0 auto 20px; padding: 12px 18px; border-radius: 12px; background: #fff4e5; color: #8a4b00; font-weight: 600; text-align: center !important; }
