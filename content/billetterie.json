@@ -2,7 +2,7 @@
   "_comment": "Billetterie de la 3ème édition. Les prix ne sont PAS ici (dépôt public) : ils sont dans la variable Netlify BILLETTERIE_TARIFS. Heures de Cotonou (UTC+1).",
   "_candidats": "Avant-première réservée aux candidats (parcours « pass puis candidature ») : un seul pass par commande, tarif pris dans BILLETTERIE_TARIFS à la clé indiquée (« prevente » ou « vente »).",
   "candidats": {
-    "ouverture": "2027-01-15T00:00:00+01:00",
+    "ouverture": "2026-10-21T00:00:00+01:00",
     "fermeture": "2027-01-30T23:59:59+01:00",
     "ouvertureTexte": "vendredi 15 janvier 2027",
     "fermetureTexte": "samedi 30 janvier 2027 à 23h59",
