@@ -61,6 +61,16 @@ exports.handler = async function (event) {
     return B.reponse(200, { billets: numeros.length, candidatures: commandes.size });
   }
 
+  // Remise à zéro complète (billets, commandes, candidatures, numérotation), demandée par la cliente le 22/10/2026 :
+  // possible seulement avant l'ouverture des candidatures, hors mode test, avec la confirmation « TOUT EFFACER ».
+  if (corps.action === "tout-effacer") {
+    if (B.periode() !== "avant" || B.modeTest()) return B.reponse(400, { error: "La remise à zéro n'est possible qu'avant l'ouverture des candidatures, hors mode test." });
+    if (corps.confirmation !== "TOUT EFFACER") return B.reponse(400, { error: "Confirmation incorrecte : tapez TOUT EFFACER." });
+    const { blobs } = await store.list();
+    for (const b of blobs) await store.delete(b.key);
+    return B.reponse(200, { effaces: blobs.length });
+  }
+
   if (corps.action === "inviter") {
     const categorie = B.CATEGORIES.includes(corps.categorie) ? corps.categorie : null;
     const prenom = B.propre(corps.prenom), nom = B.propre(corps.nom);

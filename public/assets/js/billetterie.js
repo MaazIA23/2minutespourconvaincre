@@ -484,6 +484,15 @@
       });
     });
     $("espace-recherche-candidatures").addEventListener("input", function () { if (candidatures) afficherCandidatures(); });
+    $("espace-tout-effacer").addEventListener("click", function () {
+      var saisie = window.prompt("Remise à zéro complète : TOUS les billets (payés, invitations, essais), les commandes et les candidatures seront effacés définitivement, et la numérotation repartira de 0001. Les paiements déjà encaissés ne sont pas remboursés automatiquement.\n\nPour confirmer, tapez : TOUT EFFACER");
+      if (saisie === null) return;
+      appel("billetterie-admin", { motdepasse: mdp, action: "tout-effacer", confirmation: saisie.trim().toUpperCase() }).then(function (r) {
+        if (!r._ok) { window.alert(r.error || "Action impossible."); return; }
+        window.alert("Remise à zéro effectuée : la billetterie est vide.");
+        return charger().then(chargerCandidatures);
+      }).catch(function () { window.alert("Connexion impossible."); });
+    });
     $("espace-effacer-essais").addEventListener("click", function () {
       if (!window.confirm("Effacer définitivement tous les essais (billets et candidatures marqués TEST) ? Les vrais billets et les vraies candidatures ne sont pas touchés.")) return;
       appel("billetterie-admin", { motdepasse: mdp, action: "effacer-essais" }).then(function (r) {
