@@ -391,8 +391,8 @@
         <small class="form-hint candidature-pass-hint">Ces informations sont celles de votre pass. Une erreur&nbsp;? Écrivez-nous à contact@2minpourconvaincre.com.</small>
         <div class="form-row-pair">
           <div class="form-row">
-            <label for="cand-fonction">Fonction ou profession</label>
-            <input type="text" id="cand-fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
+            <label for="cand-age">Votre âge</label>
+            <input type="number" id="cand-age" min="18" max="30" step="1" inputmode="numeric" placeholder="Entre 18 et 30 ans" required>
           </div>
           <div class="form-row">
             <label for="cand-pays">Pays de résidence</label>
@@ -400,11 +400,15 @@
           </div>
         </div>
         <div class="form-row">
+            <label for="cand-fonction">Fonction ou profession</label>
+            <input type="text" id="cand-fonction" autocomplete="organization-title" maxlength="80" placeholder="Par exemple : juriste, étudiant(e)" required>
+        </div>
+        <div class="form-row">
           <label for="cand-video">Lien de votre vidéo</label>
           <p style="margin: 0 0 8px; font-size: 0.85rem; color: var(--ink-soft); text-align: left;">Publiez votre vidéo sur Facebook ou TikTok avec le hashtag #DeuxMinutesPourConvaincre, en taguant notre page, puis partagez-nous le lien ci-dessous.</p>
           <input type="url" id="cand-video" maxlength="300" placeholder="https://..." required>
         </div>
-        <label class="form-case"><input type="checkbox" id="cand-cgu" required> <span>J'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>. Une seule candidature est possible par pass.</span></label>
+        <label class="form-case"><input type="checkbox" id="cand-cgu" required> <span>J'accepte les <a href="/cgu/" target="_blank" rel="noopener">conditions d'utilisation</a>. Une seule candidature est possible par pass. Je sais qu'une pièce d'identité sera demandée si je suis présélectionné(e) et que toute fausse déclaration entraîne mon exclusion du concours.</span></label>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="cand-envoyer">Envoyer ma candidature</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>

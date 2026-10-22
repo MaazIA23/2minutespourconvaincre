@@ -40,6 +40,8 @@ exports.handler = async function (event) {
   const pays = B.propre(corps.pays, 60);
   const fonction = B.propre(corps.fonction, 80);
   const videoUrl = B.propre(corps.videoUrl, 300);
+  const age = Number(corps.age);
+  if (!Number.isInteger(age) || age < 18 || age > 30) return B.reponse(400, { error: "La candidature est ouverte aux personnes âgées de 18 à 30 ans : merci d'indiquer votre âge." });
   if (!pays) return B.reponse(400, { error: "Merci d'indiquer votre pays de résidence." });
   if (!fonction) return B.reponse(400, { error: "Merci d'indiquer votre fonction ou profession." });
   if (!/^https?:\/\/[^\s/]+\.[^\s]+$/i.test(videoUrl)) return B.reponse(400, { error: "Merci d'indiquer le lien complet de votre vidéo (il commence par https://)." });
@@ -50,7 +52,7 @@ exports.handler = async function (event) {
   const verrou = await store.setJSON(`depots/${id}`, { le: new Date().toISOString() }, { onlyIfNew: true });
   if (!verrou.modified) return B.reponse(409, { error: "Une candidature a déjà été déposée avec ce pass." });
 
-  Object.assign(fiche, { statut: "deposee", pays, fonction, videoUrl, deposeeLe: new Date().toISOString() });
+  Object.assign(fiche, { statut: "deposee", age, pays, fonction, videoUrl, deposeeLe: new Date().toISOString() });
   try {
     await store.setJSON(`candidatures/${id}`, fiche);
   } catch (err) {
@@ -60,7 +62,7 @@ exports.handler = async function (event) {
   await B.envoyerEmail({ to: [fiche.email], ...emailCandidature(fiche) }).catch(() => {});
   await B.notifierEquipe(`Candidature déposée : ${fiche.prenom} ${fiche.nom}${fiche.test ? " [TEST]" : ""}`, [
     `Candidat : ${fiche.prenom} ${fiche.nom} (${fiche.email}, ${fiche.whatsapp})`,
-    `Fonction : ${fonction} · Pays de résidence : ${pays}`,
+    `Âge : ${age} ans · Fonction : ${fonction} · Pays de résidence : ${pays}`,
     `Vidéo : ${videoUrl}`,
     `Pass : ${B.config.categories[fiche.categorie].nom}, billet ${fiche.billet}`,
   ]);

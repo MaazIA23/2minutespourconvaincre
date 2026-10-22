@@ -450,7 +450,7 @@
       }).map(function (c) {
         var relance = c.whatsapp ? "https://wa.me/" + c.whatsapp.replace(/[^\d]/g, "") + "?text=" + encodeURIComponent("Bonjour " + c.prenom + ", votre pass pour Deux Minutes Pour Convaincre est bien enregistré. Il ne vous reste plus qu'à déposer votre candidature avant le " + candidatures.fermeture + " : " + c.lienDepot) : "";
         return "<tr><td>" + echappe(c.prenom + " " + c.nom.toUpperCase()) + (c.test ? " <small>TEST</small>" : "") + "<br><small>Pass payé le " + jour(c.payeLe) + "</small></td>" +
-          "<td>" + echappe(c.email) + "<br>" + echappe(c.whatsapp) + (c.fonction ? "<br><small>" + echappe(c.fonction) + "</small>" : "") + (c.pays ? "<br><small>" + echappe(c.pays) + "</small>" : "") + "</td>" +
+          "<td>" + echappe(c.email) + "<br>" + echappe(c.whatsapp) + (c.age ? "<br><small>" + c.age + " ans</small>" : "") + (c.fonction ? "<br><small>" + echappe(c.fonction) + "</small>" : "") + (c.pays ? "<br><small>" + echappe(c.pays) + "</small>" : "") + "</td>" +
           "<td>" + echappe(c.categorie) + "<br><small>" + echappe(c.billet) + "</small></td>" +
           "<td>" + (c.statut === "deposee" ? "Déposée<br><small>" + jour(c.deposeeLe) + "</small>" : "<strong>À déposer</strong>") + "</td>" +
           "<td>" + (c.videoUrl ? '<a href="' + echappe(c.videoUrl) + '" target="_blank" rel="noopener">Voir la vidéo</a>' : "–") + "</td>" +
@@ -494,10 +494,10 @@
     });
     $("espace-export-candidatures").addEventListener("click", function () {
       if (!candidatures) return;
-      var col = ["Prénom", "Nom", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
+      var col = ["Prénom", "Nom", "Âge", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
       var cell = function (v) { v = String(v == null ? "" : v); return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
       var lignes = candidatures.candidatures.map(function (c) {
-        return [c.prenom, c.nom, c.email, c.whatsapp, c.fonction || "", c.pays || "", c.categorie, c.billet, jour(c.payeLe), c.statut === "deposee" ? "Déposée" : "À déposer", c.deposeeLe ? jour(c.deposeeLe) : "", c.videoUrl || "", c.test ? "oui" : ""].map(cell).join(";");
+        return [c.prenom, c.nom, c.age || "", c.email, c.whatsapp, c.fonction || "", c.pays || "", c.categorie, c.billet, jour(c.payeLe), c.statut === "deposee" ? "Déposée" : "À déposer", c.deposeeLe ? jour(c.deposeeLe) : "", c.videoUrl || "", c.test ? "oui" : ""].map(cell).join(";");
       });
       var blob = new Blob(["﻿" + [col.join(";")].concat(lignes).join("\r\n")], { type: "text/csv;charset=utf-8" });
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "candidatures-2mpc-" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();
