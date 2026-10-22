@@ -484,6 +484,14 @@
       });
     });
     $("espace-recherche-candidatures").addEventListener("input", function () { if (candidatures) afficherCandidatures(); });
+    $("espace-effacer-essais").addEventListener("click", function () {
+      if (!window.confirm("Effacer définitivement tous les essais (billets et candidatures marqués TEST) ? Les vrais billets et les vraies candidatures ne sont pas touchés.")) return;
+      appel("billetterie-admin", { motdepasse: mdp, action: "effacer-essais" }).then(function (r) {
+        if (!r._ok) { window.alert(r.error || "Action impossible."); return; }
+        window.alert(r.billets + " billet(s) d'essai et " + r.candidatures + " candidature(s) d'essai effacés.");
+        return charger().then(chargerCandidatures);
+      }).catch(function () { window.alert("Connexion impossible."); });
+    });
     $("espace-export-candidatures").addEventListener("click", function () {
       if (!candidatures) return;
       var col = ["Prénom", "Nom", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
