@@ -450,7 +450,7 @@
       }).map(function (c) {
         var relance = c.whatsapp ? "https://wa.me/" + c.whatsapp.replace(/[^\d]/g, "") + "?text=" + encodeURIComponent("Bonjour " + c.prenom + ", votre pass pour Deux Minutes Pour Convaincre est bien enregistré. Il ne vous reste plus qu'à déposer votre candidature avant le " + candidatures.fermeture + " : " + c.lienDepot) : "";
         return "<tr><td>" + echappe(c.prenom + " " + c.nom.toUpperCase()) + (c.test ? " <small>TEST</small>" : "") + "<br><small>Pass payé le " + jour(c.payeLe) + "</small></td>" +
-          "<td>" + echappe(c.email) + "<br>" + echappe(c.whatsapp) + (c.fonction ? "<br><small>" + echappe(c.fonction) + "</small>" : "") + (c.pays ? "<br><small>" + echappe(c.pays) + "</small>" : "") + "</td>" +
+          "<td>" + echappe(c.email) + "<br>" + echappe(c.whatsapp) + (c.age ? "<br><small>" + c.age + " ans</small>" : "") + (c.fonction ? "<br><small>" + echappe(c.fonction) + "</small>" : "") + (c.pays ? "<br><small>" + echappe(c.pays) + "</small>" : "") + "</td>" +
           "<td>" + echappe(c.categorie) + "<br><small>" + echappe(c.billet) + "</small></td>" +
           "<td>" + (c.statut === "deposee" ? "Déposée<br><small>" + jour(c.deposeeLe) + "</small>" : "<strong>À déposer</strong>") + "</td>" +
           "<td>" + (c.videoUrl ? '<a href="' + echappe(c.videoUrl) + '" target="_blank" rel="noopener">Voir la vidéo</a>' : "–") + "</td>" +
@@ -484,12 +484,29 @@
       });
     });
     $("espace-recherche-candidatures").addEventListener("input", function () { if (candidatures) afficherCandidatures(); });
+    $("espace-tout-effacer").addEventListener("click", function () {
+      var saisie = window.prompt("Remise à zéro complète : TOUS les billets (payés, invitations, essais), les commandes et les candidatures seront effacés définitivement, et la numérotation repartira de 0001. Les paiements déjà encaissés ne sont pas remboursés automatiquement.\n\nPour confirmer, tapez : TOUT EFFACER");
+      if (saisie === null) return;
+      appel("billetterie-admin", { motdepasse: mdp, action: "tout-effacer", confirmation: saisie.trim().toUpperCase() }).then(function (r) {
+        if (!r._ok) { window.alert(r.error || "Action impossible."); return; }
+        window.alert("Remise à zéro effectuée : la billetterie est vide.");
+        return charger().then(chargerCandidatures);
+      }).catch(function () { window.alert("Connexion impossible."); });
+    });
+    $("espace-effacer-essais").addEventListener("click", function () {
+      if (!window.confirm("Effacer définitivement tous les essais (billets et candidatures marqués TEST) ? Les vrais billets et les vraies candidatures ne sont pas touchés.")) return;
+      appel("billetterie-admin", { motdepasse: mdp, action: "effacer-essais" }).then(function (r) {
+        if (!r._ok) { window.alert(r.error || "Action impossible."); return; }
+        window.alert(r.billets + " billet(s) d'essai et " + r.candidatures + " candidature(s) d'essai effacés.");
+        return charger().then(chargerCandidatures);
+      }).catch(function () { window.alert("Connexion impossible."); });
+    });
     $("espace-export-candidatures").addEventListener("click", function () {
       if (!candidatures) return;
-      var col = ["Prénom", "Nom", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
+      var col = ["Prénom", "Nom", "Âge", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];
       var cell = function (v) { v = String(v == null ? "" : v); return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
       var lignes = candidatures.candidatures.map(function (c) {
-        return [c.prenom, c.nom, c.email, c.whatsapp, c.fonction || "", c.pays || "", c.categorie, c.billet, jour(c.payeLe), c.statut === "deposee" ? "Déposée" : "À déposer", c.deposeeLe ? jour(c.deposeeLe) : "", c.videoUrl || "", c.test ? "oui" : ""].map(cell).join(";");
+        return [c.prenom, c.nom, c.age || "", c.email, c.whatsapp, c.fonction || "", c.pays || "", c.categorie, c.billet, jour(c.payeLe), c.statut === "deposee" ? "Déposée" : "À déposer", c.deposeeLe ? jour(c.deposeeLe) : "", c.videoUrl || "", c.test ? "oui" : ""].map(cell).join(";");
       });
       var blob = new Blob(["﻿" + [col.join(";")].concat(lignes).join("\r\n")], { type: "text/csv;charset=utf-8" });
       var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "candidatures-2mpc-" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();

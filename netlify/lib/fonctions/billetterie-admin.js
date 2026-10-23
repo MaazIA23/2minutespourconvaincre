@@ -34,6 +34,43 @@ exports.handler = async function (event) {
     });
   }
 
+  // Efface les essais : billets marqués TEST, leurs commandes et les candidatures d'essai.
+  if (corps.action === "effacer-essais") {
+    let numeros = [];
+    await B.majIndex(store, (index) => {
+      numeros = Object.keys(index.billets).filter((n) => index.billets[n].test);
+      numeros.forEach((n) => { delete index.billets[n]; });
+      index.refus = (index.refus || []).filter((r) => !numeros.includes(r.numero));
+    });
+    const commandes = new Set();
+    for (const n of numeros) {
+      const billet = await store.get(`billets/${n}`, { type: "json" });
+      if (billet && billet.commande) commandes.add(billet.commande);
+      await store.delete(`billets/${n}`);
+    }
+    const { blobs } = await store.list({ prefix: "candidatures/" });
+    for (const b of blobs) {
+      const fiche = await store.get(b.key, { type: "json" });
+      if (fiche && fiche.test) commandes.add(fiche.pass);
+    }
+    for (const id of commandes) {
+      const commande = await store.get(`commandes/${id}`, { type: "json" });
+      if (commande && commande.transactionId) await store.delete(`transactions/${commande.transactionId}`);
+      await Promise.all([`commandes/${id}`, `candidatures/${id}`, `depots/${id}`, `verrous/${id}`].map((k) => store.delete(k)));
+    }
+    return B.reponse(200, { billets: numeros.length, candidatures: commandes.size });
+  }
+
+  // Remise à zéro complète (billets, commandes, candidatures, numérotation), demandée par la cliente le 22/10/2026 :
+  // possible seulement avant l'ouverture des candidatures, hors mode test, avec la confirmation « TOUT EFFACER ».
+  if (corps.action === "tout-effacer") {
+    if (B.periode() !== "avant" || B.modeTest()) return B.reponse(400, { error: "La remise à zéro n'est possible qu'avant l'ouverture des candidatures, hors mode test." });
+    if (corps.confirmation !== "TOUT EFFACER") return B.reponse(400, { error: "Confirmation incorrecte : tapez TOUT EFFACER." });
+    const { blobs } = await store.list();
+    for (const b of blobs) await store.delete(b.key);
+    return B.reponse(200, { effaces: blobs.length });
+  }
+
   if (corps.action === "inviter") {
     const categorie = B.CATEGORIES.includes(corps.categorie) ? corps.categorie : null;
     const prenom = B.propre(corps.prenom), nom = B.propre(corps.nom);

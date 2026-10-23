@@ -501,11 +501,11 @@
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (!form.checkValidity()) { note.textContent = "Merci d'indiquer votre fonction, votre pays de résidence, le lien complet de votre vidéo (https://…) et d'accepter les conditions d'utilisation."; return; }
+        if (!form.checkValidity()) { note.textContent = "Merci d'indiquer votre âge (de 18 à 30 ans), votre pays de résidence, votre fonction, le lien complet de votre vidéo (https://…) et d'accepter les conditions d'utilisation."; return; }
         bouton.disabled = true;
         note.textContent = "Envoi de votre candidature…";
         fetch(api, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
-          pass: id, fonction: document.getElementById("cand-fonction").value, pays: document.getElementById("cand-pays").value, videoUrl: document.getElementById("cand-video").value,
+          pass: id, age: document.getElementById("cand-age").value, fonction: document.getElementById("cand-fonction").value, pays: document.getElementById("cand-pays").value, videoUrl: document.getElementById("cand-video").value,
         }) }).then(function (res) { return res.json().then(function (d) { d._ok = res.ok; return d; }); }).then(function (d) {
           if (!d._ok) { note.textContent = d.error || "Votre envoi n'a pas pu aboutir. Merci de réessayer dans quelques instants."; bouton.disabled = false; return; }
           form.hidden = true;
