@@ -208,7 +208,7 @@ ${
     </div>
     <div class="acc-devenir" data-reveal ${delai(2)}>
       <h2>Associez votre marque à la 3ème édition</h2>
-      <p>Visibilité, engagement jeunesse et impact mesurable : six niveaux de partenariat, de 200 000 à 5 000 000 FCFA.</p>
+      <p>Visibilité, engagement jeunesse et impact mesurable : six niveaux de partenariat, de 200 000 à 7 500 000 FCFA.</p>
       <div class="acc-devenir-actions">
         <a href="/partenaires/#devenir-partenaire" class="btn btn-primary btn-lg">Devenir partenaire</a>
         <a href="/assets/documents/dossier-sponsoring-2mpc-2027.pdf" class="acc-lien" download>Télécharger le dossier de sponsoring <span aria-hidden="true">↓</span></a>
