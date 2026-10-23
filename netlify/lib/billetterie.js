@@ -183,7 +183,7 @@ function emailBillets(billets, { invitation = false, candidature = null } = {}) 
   const texteBlocs = billets.map((b) => `${b.type === "invitation" ? "Invitation" : "Billet"} ${config.categories[b.categorie].nom} · ${b.prenom} ${b.nom} · n° ${b.numero}\n${lienBillet(b)}`).join("\n\n");
   return {
     subject: sujet,
-    ...gabarit(titre, paragraphes, null, "Deux minutes. Une scène. Des voix qui se révèlent.", {
+    ...gabarit(titre, paragraphes, null, "La scène qui révèle les orateurs.", {
       blocs: (candidature ? blocDepot(candidature) : "") + billets.map(blocBillet).join(""),
       texteBlocs: (candidature ? `\nDéposer ma candidature (avant le ${config.candidats.fermetureTexte}) : ${lienDepot(candidature)}\n` : "") + "\n" + texteBlocs + "\n",
       mention: invitation ? "Vous recevez cet e-mail car La Muse Éloquente vous a invité(e) via" : "Vous recevez cet e-mail suite à votre achat sur",
