@@ -641,14 +641,20 @@
 
 })();
 
-/* Bandeau cookies : la mesure d'audience ne se charge qu'après « Accepter » ; le choix est gardé
-   dans le navigateur et peut être changé à tout moment par « Gérer les cookies » (pied de page). */
+/* Bandeau cookies (RGPD) : rien d'autre que l'essentiel avant le choix de l'internaute.
+   Choix par catégorie (mesure d'audience, vidéos), gardé six mois dans le navigateur,
+   modifiable à tout moment par « Gérer les cookies » (pied de page). */
 (function () {
   var bandeau = document.getElementById("cookies");
   if (!bandeau) return;
-  var CLE = "2mpc-cookies";
-  function lire() { try { return localStorage.getItem(CLE); } catch (e) { return null; } }
-  function ecrire(v) { try { localStorage.setItem(CLE, v); } catch (e) {} }
+  var CLE = "2mpc-consentement";
+  var choixBloc = document.getElementById("cookies-choix");
+  var caseMesure = document.getElementById("cookies-mesure");
+  var caseVideos = document.getElementById("cookies-videos");
+  var btnPerso = document.getElementById("cookies-personnaliser");
+  var btnEnregistrer = document.getElementById("cookies-enregistrer");
+  try { localStorage.removeItem("2mpc-cookies"); } catch (e) {}
+  function lire() { return window.lireConsentement ? window.lireConsentement() : null; }
   function effacerCookiesMesure() {
     document.cookie.split(";").forEach(function (c) {
       var nom = c.split("=")[0].trim();
@@ -660,21 +666,60 @@
       }
     });
   }
-  function montrer() { bandeau.hidden = false; requestAnimationFrame(function () { bandeau.classList.add("est-visible"); }); }
+  function personnaliser(ouvert) {
+    choixBloc.hidden = !ouvert;
+    btnPerso.hidden = ouvert;
+    btnEnregistrer.hidden = !ouvert;
+  }
+  function montrer() {
+    var c = lire();
+    caseMesure.checked = !!(c && c.mesure);
+    caseVideos.checked = !!(c && c.videos);
+    personnaliser(false);
+    bandeau.hidden = false;
+    requestAnimationFrame(function () { bandeau.classList.add("est-visible"); });
+  }
   function cacher() { bandeau.classList.remove("est-visible"); bandeau.hidden = true; }
-  if (!lire()) montrer();
+  function enregistrer(mesure, videos) {
+    var avant = lire();
+    try { localStorage.setItem(CLE, JSON.stringify({ mesure: mesure, videos: videos, date: Date.now() })); } catch (e) {}
+    cacher();
+    if (mesure && window.chargerMesureAudience) window.chargerMesureAudience();
+    if (videos) chargerVideos();
+    var retrait = avant && ((avant.mesure && !mesure) || (avant.videos && !videos));
+    if (!mesure) effacerCookiesMesure();
+    if (retrait) location.reload();
+  }
   bandeau.querySelectorAll("[data-cookies]").forEach(function (b) {
     b.addEventListener("click", function () {
-      var choix = b.getAttribute("data-cookies");
-      var avant = lire();
-      ecrire(choix);
-      cacher();
-      if (choix === "acceptes" && window.chargerMesureAudience) window.chargerMesureAudience();
-      if (choix === "refuses") { effacerCookiesMesure(); if (avant === "acceptes") location.reload(); }
+      var tout = b.getAttribute("data-cookies") === "tout";
+      enregistrer(tout, tout);
     });
   });
-  var gerer = document.getElementById("gerer-cookies");
-  if (gerer) gerer.addEventListener("click", montrer);
+  btnPerso.addEventListener("click", function () { personnaliser(true); caseMesure.focus(); });
+  btnEnregistrer.addEventListener("click", function () { enregistrer(caseMesure.checked, caseVideos.checked); });
+  document.querySelectorAll("#gerer-cookies, [data-ouvrir-cookies]").forEach(function (b) { b.addEventListener("click", montrer); });
+
+  /* Vidéos YouTube : chargées seulement avec l'accord « Vidéos », ou au clic sur « Regarder la vidéo ». */
+  function chargerVideo(bloc, lecture) {
+    if (!bloc.classList.contains("video-attente")) return;
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + bloc.getAttribute("data-youtube") + (lecture ? "?autoplay=1" : "");
+    f.title = bloc.getAttribute("data-titre") || "Vidéo";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.allowFullscreen = true;
+    bloc.innerHTML = "";
+    bloc.appendChild(f);
+    bloc.classList.remove("video-attente");
+  }
+  function chargerVideos() { document.querySelectorAll(".video-attente").forEach(function (b) { chargerVideo(b, false); }); }
+  document.querySelectorAll(".video-attente [data-video-lancer]").forEach(function (b) {
+    b.addEventListener("click", function () { chargerVideo(b.closest(".video-attente"), true); });
+  });
+
+  var c = lire();
+  if (!c) montrer();
+  else if (c.videos) chargerVideos();
 })();
 
 /* Qui sommes-nous : flèches de l'équipe qui défile (ordinateur et tablette) */

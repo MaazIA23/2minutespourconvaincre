@@ -160,6 +160,21 @@
         "nom": "Lolita Ouinsavi",
         "role": "Chargée des relations extérieures",
         "photo": "/assets/img/equipe/lolita-ouinsavi.jpg"
+      },
+      {
+        "nom": "Audrey Bonnialy",
+        "role": "Chargée des Partenariats & du Mécénat",
+        "photo": "/assets/img/equipe/audrey-bonnialy.jpg"
+      },
+      {
+        "nom": "José Pascaël Agbo",
+        "role": "Coordinateur du Cercle des Lauréats",
+        "photo": "/assets/img/equipe/jose-pascael-agbo.jpg"
+      },
+      {
+        "nom": "Ezékias Gbessé",
+        "role": "Ambassadeur Jeunesse & 300 Voix",
+        "photo": "/assets/img/equipe/ezekias-gbesse.jpg"
       }
     ]
   },

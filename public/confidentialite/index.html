@@ -35,7 +35,16 @@
     var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
     gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
   };
-  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
+  // Choix enregistré par le bandeau : { mesure, videos, date }, valable six mois.
+  window.lireConsentement = function () {
+    try {
+      var c = JSON.parse(localStorage.getItem("2mpc-consentement"));
+      if (c && Date.now() - c.date < 182 * 864e5) return c;
+    } catch (e) {}
+    return null;
+  };
+  var consentement = window.lireConsentement();
+  if (consentement && consentement.mesure) window.chargerMesureAudience();
 </script>
 </head>
 <body class="charte-v2">
@@ -99,18 +108,18 @@
       <h3>Destinataires et prestataires</h3>
       <p>Vos données sont destinées aux seules personnes habilitées de l'équipe de La Muse Éloquente. Elles ne sont jamais vendues. Pour faire fonctionner le Site, nous faisons appel aux prestataires suivants, qui n'utilisent vos données que pour nous rendre ce service :</p>
       
-      <ul><li><strong>Netlify</strong> : hébergement du Site, réception des formulaires et stockage des données de la billetterie</li><li><strong>FedaPay</strong> : paiement des billets et des dons</li><li><strong>Resend</strong> : envoi des e-mails (confirmations, billets, informations)</li><li><strong>Google Analytics</strong> : mesure d'audience, uniquement après votre accord</li><li><strong>WhatsApp</strong> : lorsque nous vous contactons sur le numéro que vous nous avez indiqué</li></ul>
+      <ul><li><strong>Netlify</strong> : hébergement du Site, réception des formulaires et stockage des données de la billetterie</li><li><strong>FedaPay</strong> : paiement des billets et des dons</li><li><strong>Resend</strong> : envoi des e-mails (confirmations, billets, informations)</li><li><strong>Google Analytics</strong> : mesure d'audience, uniquement après votre accord</li><li><strong>YouTube</strong> : lecture de la vidéo de présentation, uniquement après votre accord ou lorsque vous lancez la vidéo</li><li><strong>WhatsApp</strong> : lorsque nous vous contactons sur le numéro que vous nous avez indiqué</li></ul>
       <p>Certains de ces prestataires sont établis hors du Bénin, notamment aux États-Unis et dans l'Union européenne. Ils sont choisis pour les garanties de sécurité qu'ils offrent.</p>
       <h3>Durée de conservation</h3>
       
       
       <ul><li>données de commande et de billetterie : le temps de l'événement, puis la durée légale de conservation comptable</li><li>données de candidature : la durée de l'édition, puis un archivage limité pour le suivi des éditions</li><li>liste d'attente : jusqu'à l'ouverture des candidatures de l'édition concernée, ou jusqu'à votre demande de suppression</li><li>données de navigation : 14 mois au plus</li></ul>
       
-      <h3>Cookies</h3>
-      <p>Les cookies de mesure d'audience (Google Analytics) ne sont déposés qu'après votre accord, donné dans le bandeau qui s'affiche lors de votre première visite. Vous pouvez changer d'avis à tout moment grâce au lien « Gérer les cookies » en bas de chaque page, ou refuser les cookies dans les réglages de votre navigateur.</p>
+      <h3 id="cookies">Cookies</h3>
+      <p>Un cookie est un petit fichier déposé sur votre appareil lorsque vous consultez un site. Lors de votre première visite, un bandeau vous permet d'accepter, de refuser ou de choisir les cookies, catégorie par catégorie. Refuser est aussi simple qu'accepter, et n'empêche pas d'utiliser le Site.</p>
       
-      
-      
+      <ul><li><strong>Cookies essentiels</strong> : toujours actifs. Ils sont nécessaires au fonctionnement du Site, par exemple pour mémoriser vos choix sur le bandeau ou le déroulement d'une commande. Ils ne servent pas à vous suivre.</li><li><strong>Mesure d'audience (Google Analytics)</strong> : uniquement avec votre accord. Ils collectent des données de navigation (pages consultées, durée de visite, type d'appareil et de navigateur, localisation approximative) pour comprendre l'usage du Site et l'améliorer.</li><li><strong>Vidéos (YouTube)</strong> : uniquement avec votre accord, ou lorsque vous lancez vous-même la vidéo. YouTube, service de Google, peut alors déposer ses propres cookies.</li></ul>
+      <p>Votre choix est conservé six mois, puis le bandeau vous est présenté à nouveau. Vous pouvez changer d'avis à tout moment grâce au lien « Gérer les cookies » en bas de chaque page, ou refuser les cookies dans les réglages de votre navigateur.</p>
       <h3>Vos droits</h3>
       <p>Conformément à la loi béninoise (Code du numérique), vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition au traitement de vos données, ainsi que du droit de retirer votre consentement à tout moment.</p>
       <p>Pour exercer ces droits, écrivez à contact@2minpourconvaincre.com ou à l'adresse postale : Cinéma Concorde, Cotonou – Bénin. Une preuve d'identité peut vous être demandée.</p>
@@ -184,11 +193,22 @@
     <p class="footer-signature">Une création de <a href="https://www.lamuseeloquente.fr/" target="_blank" rel="noopener">La Muse Éloquente</a>.</p>
   </div>
 </footer>
-<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
-  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" aria-describedby="cookies-texte" hidden>
+  <div class="cookies-tete">
+    <p class="cookies-titre" id="cookies-titre">Vos données, vos choix</p>
+    <button type="button" class="cookies-continuer" data-cookies="essentiels">Continuer sans accepter</button>
+  </div>
+  <p id="cookies-texte">Ce site utilise des cookies. Les cookies essentiels le font fonctionner et retiennent vos choix. Avec votre accord, d'autres cookies collectent des données personnelles : Google Analytics mesure l'audience (pages consultées, durée de visite, type d'appareil, localisation approximative) et YouTube affiche notre vidéo. Vous pouvez changer d'avis à tout moment avec « Gérer les cookies », en bas de chaque page. <a href="/confidentialite/#cookies">En savoir plus</a></p>
+  <div class="cookies-choix" id="cookies-choix" hidden>
+    <label class="cookies-cat"><input type="checkbox" checked disabled><span><b>Essentiels</b>Toujours actifs. Nécessaires au fonctionnement du site.</span></label>
+    <label class="cookies-cat"><input type="checkbox" id="cookies-mesure"><span><b>Mesure d'audience</b>Google Analytics : statistiques de visite pour améliorer le site.</span></label>
+    <label class="cookies-cat"><input type="checkbox" id="cookies-videos"><span><b>Vidéos</b>YouTube : lecture des vidéos intégrées au site.</span></label>
+  </div>
   <div class="cookies-actions">
-    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
-    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+    <button type="button" class="btn btn-outline" data-cookies="essentiels">Essentiels uniquement</button>
+    <button type="button" class="btn btn-outline" id="cookies-personnaliser">Personnaliser</button>
+    <button type="button" class="btn btn-outline" id="cookies-enregistrer" hidden>Enregistrer mes choix</button>
+    <button type="button" class="btn btn-primary" data-cookies="tout">Tout accepter</button>
   </div>
 </div>
 
