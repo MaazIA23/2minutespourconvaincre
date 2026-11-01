@@ -35,7 +35,16 @@
     var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-F9NTNXR5N3"; document.head.appendChild(s);
     gtag('js', new Date()); gtag('config', 'G-F9NTNXR5N3');
   };
-  try { if (localStorage.getItem("2mpc-cookies") === "acceptes") window.chargerMesureAudience(); } catch (e) {}
+  // Choix enregistré par le bandeau : { mesure, videos, date }, valable six mois.
+  window.lireConsentement = function () {
+    try {
+      var c = JSON.parse(localStorage.getItem("2mpc-consentement"));
+      if (c && Date.now() - c.date < 182 * 864e5) return c;
+    } catch (e) {}
+    return null;
+  };
+  var consentement = window.lireConsentement();
+  if (consentement && consentement.mesure) window.chargerMesureAudience();
 </script>
 </head>
 <body class="charte-v2">
@@ -486,11 +495,22 @@
     <p class="footer-signature">Une création de <a href="https://www.lamuseeloquente.fr/" target="_blank" rel="noopener">La Muse Éloquente</a>.</p>
   </div>
 </footer>
-<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" hidden>
-  <p id="cookies-titre"><strong>Cookies</strong> Nous utilisons des cookies de mesure d'audience (Google Analytics) pour comprendre comment le site est utilisé et l'améliorer. Vous pouvez les accepter ou les refuser. <a href="/confidentialite/">En savoir plus</a></p>
+<div class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" aria-describedby="cookies-texte" hidden>
+  <div class="cookies-tete">
+    <p class="cookies-titre" id="cookies-titre">Vos données, vos choix</p>
+    <button type="button" class="cookies-continuer" data-cookies="essentiels">Continuer sans accepter</button>
+  </div>
+  <p id="cookies-texte">Ce site utilise des cookies. Les cookies essentiels le font fonctionner et retiennent vos choix. Avec votre accord, d'autres cookies collectent des données personnelles : Google Analytics mesure l'audience (pages consultées, durée de visite, type d'appareil, localisation approximative) et YouTube affiche notre vidéo. Vous pouvez changer d'avis à tout moment avec « Gérer les cookies », en bas de chaque page. <a href="/confidentialite/#cookies">En savoir plus</a></p>
+  <div class="cookies-choix" id="cookies-choix" hidden>
+    <label class="cookies-cat"><input type="checkbox" checked disabled><span><b>Essentiels</b>Toujours actifs. Nécessaires au fonctionnement du site.</span></label>
+    <label class="cookies-cat"><input type="checkbox" id="cookies-mesure"><span><b>Mesure d'audience</b>Google Analytics : statistiques de visite pour améliorer le site.</span></label>
+    <label class="cookies-cat"><input type="checkbox" id="cookies-videos"><span><b>Vidéos</b>YouTube : lecture des vidéos intégrées au site.</span></label>
+  </div>
   <div class="cookies-actions">
-    <button type="button" class="btn btn-outline" data-cookies="refuses">Refuser</button>
-    <button type="button" class="btn btn-primary" data-cookies="acceptes">Accepter</button>
+    <button type="button" class="btn btn-outline" data-cookies="essentiels">Essentiels uniquement</button>
+    <button type="button" class="btn btn-outline" id="cookies-personnaliser">Personnaliser</button>
+    <button type="button" class="btn btn-outline" id="cookies-enregistrer" hidden>Enregistrer mes choix</button>
+    <button type="button" class="btn btn-primary" data-cookies="tout">Tout accepter</button>
   </div>
 </div>
 

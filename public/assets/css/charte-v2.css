@@ -309,7 +309,22 @@
 .charte-v2 .cookies p { margin: 0; color: #e6eaff; font-size: .9rem; line-height: 1.5; text-align: left; }
 .charte-v2 .cookies p strong { display: block; color: var(--gold-text); font-size: 1rem; margin-bottom: 4px; }
 .charte-v2 .cookies a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-.charte-v2 .cookies-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.charte-v2 .cookies-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.charte-v2 .cookies-tete { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.charte-v2 .cookies .cookies-titre { color: var(--gold-text); font-size: 1rem; font-weight: 700; }
+.charte-v2 .cookies-continuer { background: none; border: 0; padding: 0; font: inherit; font-size: .82rem; color: #e6eaff; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; white-space: nowrap; }
+.charte-v2 .cookies-continuer:hover { color: #fff; }
+.charte-v2 .cookies-choix { display: grid; gap: 8px; }
+.charte-v2 .cookies-choix[hidden] { display: none; }
+.charte-v2 .cookies-cat { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, .07); font-size: .85rem; line-height: 1.45; color: #e6eaff; cursor: pointer; }
+.charte-v2 .cookies-cat input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--gold); flex: none; }
+.charte-v2 .cookies-cat b { display: block; color: #fff; }
+.charte-v2 .cookies-actions .btn[hidden] { display: none; }
+.charte-v2 .video-attente { position: relative; background: #040b52; }
+.charte-v2 .video-attente img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45; }
+.charte-v2 .video-consent { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; text-align: center; }
+.charte-v2 .video-consent p { margin: 0; color: #fff; font-size: .85rem; max-width: 34ch; }
+.charte-v2 .video-consent .lien-cookies { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .charte-v2 .cookies-actions .btn { padding: 10px 22px; font-size: .9rem; }
 .charte-v2 .cookies .btn-outline { color: #fff; border-color: var(--gold); }
 @media (min-width: 900px) { .charte-v2 .cookies { left: 24px; right: auto; bottom: 24px; margin: 0; } }

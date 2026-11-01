@@ -30,7 +30,7 @@ function renderLegalContent(title, content) {
       ${(content.intro || []).map((p) => `<p>${p}</p>`).join("\n      ")}
       ${content.sections
         .map(
-          (s) => `<h3>${s.heading}</h3>
+          (s) => `<h3${s.id ? ` id="${s.id}"` : ""}>${s.heading}</h3>
       ${(s.paragraphs || []).map((p) => `<p>${p}</p>`).join("\n      ")}
       ${
         s.champs

@@ -44,9 +44,12 @@ ${
     ${
       accueil.videoPresentation
         ? `<figure class="acc-video" id="video" data-reveal>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/${accueil.videoPresentation.youtubeId}" title="${accueil.videoPresentation.titre}" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="video-embed video-attente" data-youtube="${accueil.videoPresentation.youtubeId}" data-titre="${accueil.videoPresentation.titre}">
+        <img src="/assets/img/hero/accueil.jpg" alt="" loading="lazy">
+        <div class="video-consent">
+          <button type="button" class="btn btn-primary" data-video-lancer><span aria-hidden="true">▶</span> Regarder la vidéo</button>
+          <p>La lecture charge YouTube, qui peut déposer des cookies. <button type="button" class="lien-cookies" data-ouvrir-cookies>Gérer les cookies</button></p>
+        </div>
       </div>
       <figcaption><span aria-hidden="true">▶</span> ${accueil.videoPresentation.titre}</figcaption>
     </figure>`
