@@ -69,6 +69,7 @@
       <button type="button" data-onglet="tableau" class="actif">Tableau de bord</button>
       <button type="button" data-onglet="billets">Billets</button>
       <button type="button" data-onglet="candidatures">Candidatures</button>
+      <button type="button" data-onglet="vote">Vote</button>
       <button type="button" data-onglet="entrees">Entrées</button>
       <button type="button" data-onglet="inviter">Inviter</button>
       <a class="outil-essai" href="/candidature/">Tester le parcours candidat sans payer →</a>
@@ -87,6 +88,19 @@
         <button type="button" class="btn btn-outline" id="espace-imprimer">Liste imprimable de secours</button>
       </div>
       <div class="outil-tableau"><table><thead><tr><th>Billet</th><th>Titulaire</th><th>Catégorie</th><th>Tarif</th><th>Contact et fonction</th><th>Entrée</th><th></th></tr></thead><tbody id="espace-billets"></tbody></table></div>
+    </div>
+
+    <div class="outil-panneau" data-panneau="vote" hidden>
+      <p class="outil-maj" id="espace-vote-etat"></p>
+      <div class="outil-cartes" id="espace-cartes-vote"></div>
+      <div class="outil-barre">
+        <button type="button" class="btn btn-outline" id="espace-export-vote">Télécharger les voix en Excel (CSV)</button>
+        <button type="button" class="btn btn-outline" id="espace-effacer-votes-essai">Effacer les voix d'essai (TEST)</button>
+        <a class="btn btn-outline" href="/vote/" target="_blank" rel="noopener">Voir la page du vote</a>
+      </div>
+      <div class="outil-tableau"><table><thead><tr><th>Rang</th><th>Finaliste</th><th>Voix</th><th>Part</th></tr></thead><tbody id="espace-vote-finalistes"></tbody></table></div>
+      <div class="outil-tableau"><table><thead><tr><th>Pays</th><th>Voix</th><th>Votants</th></tr></thead><tbody id="espace-vote-pays"></tbody></table></div>
+      <div class="outil-tableau"><table><thead><tr><th>Jour</th><th>Voix</th></tr></thead><tbody id="espace-vote-jours"></tbody></table></div>
     </div>
 
     <div class="outil-panneau" data-panneau="candidatures" hidden>

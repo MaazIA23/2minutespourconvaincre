@@ -481,6 +481,7 @@
         document.querySelectorAll("[data-onglet]").forEach(function (x) { x.classList.toggle("actif", x === b); });
         document.querySelectorAll("[data-panneau]").forEach(function (p) { p.hidden = p.getAttribute("data-panneau") !== b.getAttribute("data-onglet"); });
         if (b.getAttribute("data-onglet") === "candidatures" && donnees) chargerCandidatures().catch(function (e) { window.alert(e.message); });
+        if (b.getAttribute("data-onglet") === "vote") chargerVote().catch(function (e) { window.alert(e.message); });
       });
     });
     $("espace-recherche-candidatures").addEventListener("input", function () { if (candidatures) afficherCandidatures(); });
@@ -501,6 +502,60 @@
         return charger().then(chargerCandidatures);
       }).catch(function () { window.alert("Connexion impossible."); });
     });
+    /* Vote « Coup de cœur du public » : résultats (secrets jusqu'à la finale), pays et jours, export des voix. */
+    var vote = null;
+    function chargerVote() {
+      return appel("billetterie-admin", { motdepasse: mdp, action: "vote" }).then(function (d) {
+        if (!d._ok) throw new Error(d.error || "Erreur");
+        vote = d; afficherVote();
+      });
+    }
+    function afficherVote() {
+      var voix = vote.voix, votants = {}, parFinaliste = {}, parPays = {}, parJour = {}, abonnes = 0;
+      voix.forEach(function (v) {
+        if (!votants[v.votant]) { votants[v.votant] = true; if (v.actualites) abonnes++; }
+        parFinaliste[v.finaliste] = (parFinaliste[v.finaliste] || 0) + 1;
+        var p = v.pays || "Non indiqué";
+        parPays[p] = parPays[p] || { voix: 0, votants: {} }; parPays[p].voix++; parPays[p].votants[v.votant] = true;
+        parJour[v.jour] = (parJour[v.jour] || 0) + 1;
+      });
+      var nbVotants = Object.keys(votants).length;
+      var etat = { avant: "Le vote ouvre le " + vote.ouverture + ".", ouvert: "Vote ouvert jusqu'au " + vote.fermeture + ".", ferme: "Vote clos depuis le " + vote.fermeture + "." }[vote.periode];
+      $("espace-vote-etat").textContent = etat + (vote.essai ? " Mode essai activé : les voix sont marquées TEST." : "") + (vote.finalistes.length ? "" : " Aucun finaliste n'est encore inscrit dans content/vote.json.");
+      $("espace-cartes-vote").innerHTML = carte("Voix", voix.length, "toutes journées confondues") + carte("Votants", nbVotants, "adresses e-mail confirmées") +
+        carte("Voix par votant", nbVotants ? (voix.length / nbVotants).toFixed(1).replace(".", ",") : "0", "fidélité au vote quotidien") +
+        carte("Pays", Object.keys(parPays).length, "") + carte("Actualités", abonnes, "votants d'accord pour les recevoir");
+      var classement = vote.finalistes.map(function (f) { return { nom: f.nom, n: parFinaliste[f.id] || 0 }; }).sort(function (a, b) { return b.n - a.n; });
+      $("espace-vote-finalistes").innerHTML = classement.map(function (f, i) {
+        return "<tr><td>" + (i + 1) + "</td><td>" + echappe(f.nom) + "</td><td>" + f.n + "</td><td>" + (voix.length ? Math.round(f.n * 100 / voix.length) + " %" : "") + "</td></tr>";
+      }).join("") || '<tr><td colspan="4">Aucun finaliste pour l\'instant.</td></tr>';
+      $("espace-vote-pays").innerHTML = Object.keys(parPays).sort(function (a, b) { return parPays[b].voix - parPays[a].voix; }).map(function (p) {
+        return "<tr><td>" + echappe(p) + "</td><td>" + parPays[p].voix + "</td><td>" + Object.keys(parPays[p].votants).length + "</td></tr>";
+      }).join("") || '<tr><td colspan="3">Aucune voix pour l\'instant.</td></tr>';
+      $("espace-vote-jours").innerHTML = Object.keys(parJour).sort().reverse().map(function (j) {
+        return "<tr><td>" + j.split("-").reverse().join("/") + "</td><td>" + parJour[j] + "</td></tr>";
+      }).join("") || '<tr><td colspan="2">Aucune voix pour l\'instant.</td></tr>';
+    }
+    $("espace-export-vote").addEventListener("click", function () {
+      if (!vote) return;
+      var noms = {}; vote.finalistes.forEach(function (f) { noms[f.id] = f.nom; });
+      var col = ["Jour", "Heure", "Finaliste", "Prénom", "Nom", "E-mail", "Pays", "Actualités", "Mode", "Test"];
+      var cell = function (v) { v = String(v == null ? "" : v); return /[;"\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+      var lignes = vote.voix.map(function (v) {
+        return [v.jour.split("-").reverse().join("/"), heure(v.le), noms[v.finaliste] || v.finaliste, v.prenom, v.nom, v.email, v.pays, v.actualites ? "oui" : "", v.via === "appareil" ? "revote en un clic" : "lien e-mail", v.test ? "oui" : ""].map(cell).join(";");
+      });
+      var blob = new Blob(["\ufeff" + [col.join(";")].concat(lignes).join("\r\n")], { type: "text/csv;charset=utf-8" });
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "vote-coup-de-coeur-" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();
+    });
+    $("espace-effacer-votes-essai").addEventListener("click", function () {
+      if (!window.confirm("Effacer définitivement toutes les voix d'essai (marquées TEST) ? Les vraies voix ne sont pas touchées.")) return;
+      appel("billetterie-admin", { motdepasse: mdp, action: "effacer-votes-essai" }).then(function (r) {
+        if (!r._ok) throw new Error(r.error || "Erreur");
+        window.alert(r.voix + " voix d'essai effacée(s).");
+        return chargerVote();
+      }).catch(function (e) { window.alert(e.message); });
+    });
+
     $("espace-export-candidatures").addEventListener("click", function () {
       if (!candidatures) return;
       var col = ["Prénom", "Nom", "Âge", "E-mail", "WhatsApp", "Fonction", "Pays de résidence", "Pass", "Billet", "Pass payé le", "Statut", "Déposée le", "Vidéo", "Test"];

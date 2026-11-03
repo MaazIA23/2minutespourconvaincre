@@ -1,6 +1,7 @@
 // Espace billetterie (page /espace-billetterie/, mot de passe BILLETTERIE_MOT_DE_PASSE) :
-// tableau de bord, liste des billets et des entrées, invitations, renvoi et annulation de billets.
+// tableau de bord, liste des billets et des entrées, invitations, renvoi et annulation de billets, résultats du vote.
 const B = require("../billetterie");
+const V = require("../vote");
 
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") return B.reponse(405, { error: "Méthode non autorisée" });
@@ -69,6 +70,32 @@ exports.handler = async function (event) {
     const { blobs } = await store.list();
     for (const b of blobs) await store.delete(b.key);
     return B.reponse(200, { effaces: blobs.length });
+  }
+
+  // Vote « Coup de cœur du public » : résultats par finaliste, par pays et par jour, et liste des votants.
+  if (corps.action === "vote" || corps.action === "effacer-votes-essai") {
+    const urne = V.magasin(event);
+    const { blobs } = await urne.list({ prefix: "voix/" });
+    const voix = (await Promise.all(blobs.map(async (b) => ({ cle: b.key, ...(await urne.get(b.key, { type: "json" })) })))).filter((v) => v.finaliste);
+    if (corps.action === "effacer-votes-essai") {
+      const essais = voix.filter((v) => v.test);
+      await Promise.all(essais.map((v) => urne.delete(v.cle)));
+      const { blobs: fiches } = await urne.list({ prefix: "votants/" });
+      for (const b of fiches) { const f = await urne.get(b.key, { type: "json" }); if (f && f.test) await urne.delete(b.key); }
+      await urne.set("total", String(voix.length - essais.length));
+      return B.reponse(200, { ok: true, voix: essais.length });
+    }
+    const { blobs: fiches } = await urne.list({ prefix: "votants/" });
+    const votants = Object.fromEntries(await Promise.all(fiches.map(async (b) => [b.key.slice(8), await urne.get(b.key, { type: "json" })])));
+    return B.reponse(200, {
+      periode: V.periode(), essai: !!V.config.essai, ouverture: V.config.ouvertureTexte, fermeture: V.config.fermetureTexte,
+      finalistes: V.config.finalistes.map((f) => ({ id: f.id, nom: V.nomFinaliste(f) })),
+      voix: voix.map((v) => {
+        const [, jour, id] = v.cle.split("/");
+        const p = votants[id] || {};
+        return { jour, le: v.le, finaliste: v.finaliste, pays: v.pays || p.pays || "", via: v.via, test: !!v.test, votant: id, prenom: p.prenom || "", nom: p.nom || "", email: p.email || "", actualites: !!p.actualites };
+      }),
+    });
   }
 
   if (corps.action === "inviter") {

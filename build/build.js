@@ -35,6 +35,7 @@ function loadData() {
     faq: readJson("faq.json"),
     legalPages: readJson("pages/legal.json"),
     soutenir: readJson("pages/soutenir.json"),
+    vote: readJson("vote.json"),
     billetterie: readJson("billetterie.json"),
   };
 }
@@ -263,6 +264,22 @@ function main() {
       bodyHtml: soutenirMerci.render(),
     })
   );
+
+  // Vote « Coup de cœur du public » : absent du menu ; indexé seulement une fois les finalistes annoncés.
+  const vote = require("./pages/vote.js");
+  writePage(
+    "vote",
+    renderLayout(data, {
+      title: "Vote Coup de cœur du public",
+      activeSlug: "vote",
+      description: `Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au ${data.vote.fermetureTexte}.`,
+      robots: data.vote.finalistes.length ? "" : "noindex, nofollow",
+      styles: ["/assets/css/vote.css"],
+      scripts: ["/assets/js/vote.js"],
+      bodyHtml: vote.render(data),
+    })
+  );
+  if (!data.vote.finalistes.length) pagesEcrites.pop(); // pas dans le plan du site avant l'annonce des finalistes
 
   // Billetterie : pages en noindex, absentes du menu et du plan du site.
   const billetterie = require("./pages/billetterie.js");
