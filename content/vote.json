@@ -5,6 +5,25 @@
   "fermeture": "2027-03-18T23:59:59+01:00",
   "ouvertureTexte": "lundi 22 février 2027",
   "fermetureTexte": "jeudi 18 mars 2027 à 23h59",
-  "essai": false,
-  "finalistes": []
+  "essai": true,
+  "finalistes": [
+    {
+      "id": "test-1",
+      "prenom": "Finaliste",
+      "nom": "Test 1",
+      "photo": "/assets/img/palmares/2eme-edition/anita-dadele.jpg"
+    },
+    {
+      "id": "test-2",
+      "prenom": "Finaliste",
+      "nom": "Test 2",
+      "photo": "/assets/img/palmares/2eme-edition/geovani-de-souza.jpg"
+    },
+    {
+      "id": "test-3",
+      "prenom": "Finaliste",
+      "nom": "Test 3",
+      "photo": "/assets/img/palmares/2eme-edition/liliane-agyemang.jpg"
+    }
+  ]
 }

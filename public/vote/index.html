@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vote Coup de cœur du public | Deux Minutes Pour Convaincre</title>
 <meta name="description" content="Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au jeudi 18 mars 2027 à 23h59.">
-<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://2minpourconvaincre.com/vote/">
 <meta name="theme-color" content="#071487">
 <meta property="og:type" content="website">
@@ -90,14 +89,34 @@
   </div>
 </section>
 
-<section class="section vote-section" id="vote" data-ouverture="2027-02-22T00:00:00+01:00" data-fermeture="2027-03-18T23:59:59+01:00" data-essai="">
+<section class="section vote-section" id="vote" data-ouverture="2027-02-22T00:00:00+01:00" data-fermeture="2027-03-18T23:59:59+01:00" data-essai="1">
   <div class="container">
-    <p class="vote-etat" id="vote-avant">Le vote ouvrira le <strong>lundi 22 février 2027</strong>, dès l'annonce des huit finalistes. Revenez nous voir à cette date !</p>
+    <p class="vote-etat" id="vote-avant" hidden>Le vote ouvrira le <strong>lundi 22 février 2027</strong>, dès l'annonce des huit finalistes. Revenez nous voir à cette date !</p>
     <p class="vote-etat" id="vote-ferme" hidden>Le vote est clos depuis le jeudi 18 mars 2027 à 23h59. Merci pour votre participation ! Le Coup de cœur du public sera révélé lors de la grande finale.</p>
     <p class="vote-etat vote-essai" id="vote-essai" hidden>Mode essai : les voix sont marquées TEST et seront effacées avant l'ouverture.</p>
 
-    <div class="vote-grille" id="vote-grille" hidden>
+    <div class="vote-grille" id="vote-grille">
+      <article class="vote-carte" id="finaliste-test-1" data-finaliste="test-1" data-nom="Finaliste Test 1" data-prenom="Finaliste">
+      <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/anita-dadele.jpg" alt="Finaliste Test 1" loading="lazy"></div>
+      <p class="vote-prenom">Finaliste</p>
+      <p class="vote-nom">Test 1</p>
       
+      <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
+    </article>
+      <article class="vote-carte" id="finaliste-test-2" data-finaliste="test-2" data-nom="Finaliste Test 2" data-prenom="Finaliste">
+      <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/geovani-de-souza.jpg" alt="Finaliste Test 2" loading="lazy"></div>
+      <p class="vote-prenom">Finaliste</p>
+      <p class="vote-nom">Test 2</p>
+      
+      <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
+    </article>
+      <article class="vote-carte" id="finaliste-test-3" data-finaliste="test-3" data-nom="Finaliste Test 3" data-prenom="Finaliste">
+      <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/liliane-agyemang.jpg" alt="Finaliste Test 3" loading="lazy"></div>
+      <p class="vote-prenom">Finaliste</p>
+      <p class="vote-nom">Test 3</p>
+      
+      <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
+    </article>
     </div>
 
     <div class="vote-regles">
