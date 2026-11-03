@@ -1,0 +1,10 @@
+{
+  "_aide": "Vote « Coup de cœur du public » (règlement, article 7.2). Ajouter les 8 finalistes dans « finalistes » dès leur annonce : id (sans accent ni espace), prenom, nom, photo (chemin dans /assets/img/), video (lien YouTube facultatif). « essai »: true ouvre le vote hors dates pour tester ; les voix sont alors marquées TEST et peuvent être effacées depuis l'espace billetterie.",
+  "titre": "Coup de cœur du public",
+  "ouverture": "2027-02-22T00:00:00+01:00",
+  "fermeture": "2027-03-18T23:59:59+01:00",
+  "ouvertureTexte": "lundi 22 février 2027",
+  "fermetureTexte": "jeudi 18 mars 2027 à 23h59",
+  "essai": false,
+  "finalistes": []
+}

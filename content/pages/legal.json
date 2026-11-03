@@ -210,12 +210,14 @@
           "<strong>Billetterie</strong> : catégorie et nombre de billets, nom de chaque titulaire, tarif, montant, référence du paiement FedaPay, heure d'entrée le jour de l'événement",
           "<strong>Candidature</strong> : informations du formulaire et lien de votre vidéo",
           "<strong>Liste d'attente</strong> : prénom, nom, e-mail et WhatsApp",
+          "<strong>Vote Coup de cœur du public</strong> : prénom, nom, e-mail, pays, finaliste choisi, date de chaque voix et, si vous l'acceptez, votre accord pour recevoir nos actualités",
           "<strong>Dons</strong> : montant et, si vous ne donnez pas anonymement, prénom, nom et e-mail",
           "<strong>Navigation</strong> : pages visitées, appareil et navigateur, uniquement si vous acceptez la mesure d'audience"
         ],
         "apresListe": [
           "Nous ne collectons jamais vos coordonnées bancaires ni votre code Mobile Money : ils sont saisis directement chez FedaPay."
-        ]
+        ],
+        "id": "vote"
       },
       {
         "heading": "Finalités",
@@ -226,6 +228,8 @@
           "gérer vos commandes, émettre et envoyer vos billets, contrôler l'accès le jour de l'événement",
           "étudier les candidatures au concours et vous informer de la suite donnée",
           "vous prévenir de l'ouverture des candidatures si vous vous êtes inscrit(e) à la liste d'attente",
+          "organiser le vote Coup de cœur du public : vérifier chaque voix (une par jour et par adresse e-mail), écarter les votes frauduleux et établir des statistiques de participation, notamment par pays",
+          "vous envoyer nos actualités, si vous l'avez accepté lors du vote",
           "vous adresser les informations pratiques liées à l'événement (confirmation, rappel, changement éventuel)",
           "traiter vos dons et vous remercier",
           "répondre à vos demandes",
@@ -261,6 +265,7 @@
           "données de commande et de billetterie : le temps de l'événement, puis la durée légale de conservation comptable",
           "données de candidature : la durée de l'édition, puis un archivage limité pour le suivi des éditions",
           "liste d'attente : jusqu'à l'ouverture des candidatures de l'édition concernée, ou jusqu'à votre demande de suppression",
+          "vote Coup de cœur du public : la durée de l'édition ; les statistiques peuvent être conservées sous une forme qui ne permet plus de vous identifier",
           "données de navigation : 14 mois au plus"
         ]
       },
