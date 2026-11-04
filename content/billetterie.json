@@ -14,6 +14,7 @@
   "ouvertureTexte": "lundi 1er février 2027",
   "finPreventeTexte": "dimanche 7 février 2027",
   "fermetureTexte": "dimanche 28 février 2027",
+  "_places": "Salle de 300 places : 200 Standard (50 pass candidats + 150 billets) et 100 VIP (50 billets + environ 50 invitations, qui comptent dans les places de leur catégorie).",
   "maxParCommande": 10,
   "_ficheGoogle": "Mettre ficheGoogleActive à true quand la date et le lieu sont officiels : la fiche « Événement » (date, lieu, billetterie) est alors ajoutée à l'accueil et à la billetterie pour Google.",
   "ficheGoogleActive": false,
@@ -40,7 +41,7 @@
       "nom": "VIP",
       "prefixe": "V",
       "sousTitre": "Entrée dédiée · Espace VIP · Accès aux personnalités",
-      "places": 150,
+      "places": 100,
       "avantages": [
         "Accès à la grande finale",
         "Cocktail de clôture",
