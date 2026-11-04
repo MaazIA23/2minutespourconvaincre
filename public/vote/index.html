@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vote Coup de cœur du public | Deux Minutes Pour Convaincre</title>
-<meta name="description" content="Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au jeudi 18 mars 2027 à 23h59.">
+<meta name="description" content="Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au samedi 20 mars 2027 à 19h.">
 <link rel="canonical" href="https://2minpourconvaincre.com/vote/">
 <meta name="theme-color" content="#071487">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Deux Minutes Pour Convaincre">
 <meta property="og:title" content="Vote Coup de cœur du public | Deux Minutes Pour Convaincre">
-<meta property="og:description" content="Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au jeudi 18 mars 2027 à 23h59.">
+<meta property="og:description" content="Votez gratuitement pour votre finaliste préféré de Deux Minutes Pour Convaincre, une voix par jour jusqu'au samedi 20 mars 2027 à 19h.">
 <meta property="og:url" content="https://2minpourconvaincre.com/vote/">
 <meta property="og:image" content="https://2minpourconvaincre.com/assets/img/partage-2mpc-v2.jpg">
 <meta property="og:image:width" content="1200">
@@ -84,15 +84,16 @@
   <div class="container">
     <p class="eyebrow">3<sup>ème</sup>&nbsp;Édition · Vote en ligne gratuit</p>
     <h1>Coup de cœur du public</h1>
-    <p class="page-hero-lead">Votez pour le finaliste qui vous a le plus convaincu. Vous disposez d'une voix par jour, jusqu'au jeudi 18 mars 2027 à 23h59. Le trophée « Coup de cœur du public » sera remis lors de la grande finale.</p>
+    <p class="page-hero-lead">Votez pour le finaliste qui vous a le plus convaincu. Vous disposez d'une voix par jour, jusqu'au samedi 20 mars 2027 à 19h. Le trophée « Coup de cœur du public » sera remis lors de la grande finale.</p>
     <p class="vote-compteur" id="vote-compteur" hidden><strong id="vote-total">0</strong> voix déjà exprimées</p>
   </div>
 </section>
 
-<section class="section vote-section" id="vote" data-ouverture="2027-02-22T00:00:00+01:00" data-fermeture="2027-03-18T23:59:59+01:00" data-essai="1">
+<section class="section vote-section" id="vote" data-ouverture="2027-02-22T00:00:00+01:00" data-fermeture="2027-03-20T19:00:00+01:00" data-essai="1">
   <div class="container">
     <p class="vote-etat" id="vote-avant" hidden>Le vote ouvrira le <strong>lundi 22 février 2027</strong>, dès l'annonce des huit finalistes. Revenez nous voir à cette date !</p>
-    <p class="vote-etat" id="vote-ferme" hidden>Le vote est clos depuis le jeudi 18 mars 2027 à 23h59. Merci pour votre participation ! Le Coup de cœur du public sera révélé lors de la grande finale.</p>
+    <p class="vote-etat" id="vote-ferme" hidden>Le vote est clos depuis le samedi 20 mars 2027 à 19h. Merci pour votre participation ! Le Coup de cœur du public sera révélé lors de la grande finale.</p>
+    <p class="vote-etat" id="vote-masques" hidden>Les scores sont désormais masqués : le Coup de cœur du public sera révélé le soir de la grande finale. Le vote reste ouvert jusqu'au samedi 20 mars 2027 à 19h !</p>
     <p class="vote-etat vote-essai" id="vote-essai" hidden>Mode essai : les voix sont marquées TEST et seront effacées avant l'ouverture.</p>
 
     <div class="vote-grille" id="vote-grille">
@@ -100,6 +101,7 @@
       <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/anita-dadele.jpg" alt="Finaliste Test 1" loading="lazy"></div>
       <p class="vote-prenom">Finaliste</p>
       <p class="vote-nom">Test 1</p>
+      <p class="vote-score" hidden><strong>0</strong> voix</p>
       
       <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
     </article>
@@ -107,6 +109,7 @@
       <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/geovani-de-souza.jpg" alt="Finaliste Test 2" loading="lazy"></div>
       <p class="vote-prenom">Finaliste</p>
       <p class="vote-nom">Test 2</p>
+      <p class="vote-score" hidden><strong>0</strong> voix</p>
       
       <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
     </article>
@@ -114,6 +117,7 @@
       <div class="vote-photo"><img src="/assets/img/palmares/2eme-edition/liliane-agyemang.jpg" alt="Finaliste Test 3" loading="lazy"></div>
       <p class="vote-prenom">Finaliste</p>
       <p class="vote-nom">Test 3</p>
+      <p class="vote-score" hidden><strong>0</strong> voix</p>
       
       <button type="button" class="btn btn-primary vote-choisir">Voter pour Finaliste</button>
     </article>
@@ -125,6 +129,7 @@
         <li><strong>Choisissez votre finaliste</strong> et indiquez votre prénom, votre nom, votre e-mail et votre pays.</li>
         <li><strong>Confirmez votre vote</strong> grâce au lien reçu par e-mail. Votre voix compte dès que vous cliquez.</li>
         <li><strong>Revenez chaque jour</strong> : depuis le même appareil, vous revotez en un clic, sans nouvelle confirmation.</li>
+        <li><strong>Suivez les scores</strong> jusqu'au mercredi 17 mars 2027 : ils sont ensuite masqués jusqu'à la révélation, le soir de la grande finale.</li>
       </ol>
       <p class="vote-note">Le vote en ligne est distinct du vote du public en salle et n'entre pas dans les notes du jury. Les voix obtenues de manière frauduleuse (votes automatisés, adresses fictives ou multiples) sont annulées.</p>
     </div>

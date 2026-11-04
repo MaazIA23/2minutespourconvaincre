@@ -5,6 +5,7 @@
 //   voix/<jour>/<votant>        une voix, le jour J (heure du Bénin) ; <votant> = empreinte de l'adresse e-mail
 //   votants/<votant>            fiche du votant : prénom, nom, e-mail, pays, accord pour les actualités
 //   total                       nombre de voix affiché sur le site
+//   compte/<finaliste>          nombre de voix de chaque finaliste (affiché jusqu'à la date de masquage)
 //   limites/<jour>/<ip>         nombre de demandes par connexion et par jour, contre les robots
 const crypto = require("crypto");
 const { getStore, connectLambda } = globalThis.__2mpcBlobs || require("@netlify/blobs");
@@ -55,21 +56,34 @@ async function lireTotal(store) {
   return Number(await store.get("total", { type: "text" })) || 0;
 }
 
-// Compteur public : écriture avec contrôle de version, pour ne perdre aucune voix quand plusieurs arrivent en même temps.
-// En cas d'affluence extrême, le compteur est recalculé à partir des voix elles-mêmes, qui font foi.
-async function incrementerTotal(store) {
+// Scores par finaliste visibles jusqu'à la date de masquage (le suspense est gardé pour la finale).
+const scoresMasques = (maintenant = new Date()) => !!config.masquage && maintenant >= new Date(config.masquage);
+
+async function lireScores(store) {
+  const scores = {};
+  for (const f of config.finalistes) scores[f.id] = Number(await store.get(`compte/${f.id}`, { type: "text" })) || 0;
+  return scores;
+}
+
+// Compteurs publics : écriture avec contrôle de version, pour ne perdre aucune voix quand plusieurs arrivent en même temps.
+// En cas d'affluence extrême, les compteurs sont recalculés à partir des voix elles-mêmes, qui font foi.
+async function incrementer(store, cle) {
   for (let essai = 0; essai < 12; essai++) {
-    const lu = await store.getWithMetadata("total", { type: "text" });
+    const lu = await store.getWithMetadata(cle, { type: "text" });
     const valeur = (lu ? Number(lu.data) || 0 : 0) + 1;
-    const res = lu ? await store.set("total", String(valeur), { onlyIfMatch: lu.etag }) : await store.set("total", String(valeur), { onlyIfNew: true });
+    const res = lu ? await store.set(cle, String(valeur), { onlyIfMatch: lu.etag }) : await store.set(cle, String(valeur), { onlyIfNew: true });
     if (res.modified) return valeur;
     await new Promise((r) => setTimeout(r, 20 + Math.random() * 80 * (essai + 1)));
   }
-  return recompter(store);
+  return null;
 }
 
 async function recompter(store) {
   const { blobs } = await store.list({ prefix: "voix/" });
+  const voix = await Promise.all(blobs.map((b) => store.get(b.key, { type: "json" })));
+  const comptes = {};
+  for (const v of voix) if (v && v.finaliste) comptes[v.finaliste] = (comptes[v.finaliste] || 0) + 1;
+  for (const f of config.finalistes) await store.set(`compte/${f.id}`, String(comptes[f.id] || 0));
   await store.set("total", String(blobs.length));
   return blobs.length;
 }
@@ -91,10 +105,12 @@ async function enregistrerVoix(store, idVotant, fiche, idFinaliste, via) {
     finaliste: idFinaliste, pays: fiche.pays, le: new Date().toISOString(), via, test: !!config.essai,
   }, { onlyIfNew: true });
   if (!res.modified) return null;
-  return incrementerTotal(store);
+  const parFinaliste = await incrementer(store, `compte/${idFinaliste}`);
+  const total = await incrementer(store, "total");
+  return parFinaliste === null || total === null ? recompter(store) : total;
 }
 
 module.exports = {
-  config, magasin, periode, jourDuVote, votant, signer, verifierJeton, lireTotal, limiter, finaliste, nomFinaliste,
+  config, magasin, periode, jourDuVote, votant, signer, verifierJeton, lireTotal, scoresMasques, lireScores, recompter, limiter, finaliste, nomFinaliste,
   enregistrerVoix, VALIDITE_ATTENTE,
 };

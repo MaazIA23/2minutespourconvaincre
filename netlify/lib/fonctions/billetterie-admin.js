@@ -82,7 +82,9 @@ exports.handler = async function (event) {
       await Promise.all(essais.map((v) => urne.delete(v.cle)));
       const { blobs: fiches } = await urne.list({ prefix: "votants/" });
       for (const b of fiches) { const f = await urne.get(b.key, { type: "json" }); if (f && f.test) await urne.delete(b.key); }
-      await urne.set("total", String(voix.length - essais.length));
+      const { blobs: comptes } = await urne.list({ prefix: "compte/" });
+      await Promise.all(comptes.map((b) => urne.delete(b.key)));
+      await V.recompter(urne);
       return B.reponse(200, { ok: true, voix: essais.length });
     }
     const { blobs: fiches } = await urne.list({ prefix: "votants/" });
