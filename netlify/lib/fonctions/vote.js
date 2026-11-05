@@ -1,5 +1,5 @@
 // Vote « Coup de cœur du public » :
-//   GET                                   état du vote (ouvert ou non) et nombre total de voix
+//   GET                                   état du vote (ouvert ou non), nombre total de voix et, avant la date de masquage, voix de chaque finaliste
 //   POST { action: "voter", finaliste, prenom, nom, email, pays, actualites, jeton? }
 //        avec un jeton valide (votant déjà confirmé sur cet appareil) : la voix compte tout de suite ;
 //        sinon : un e-mail de confirmation est envoyé, la voix compte au clic sur le lien.
@@ -36,7 +36,11 @@ exports.handler = async function (event) {
   const store = V.magasin(event);
 
   if (event.httpMethod === "GET") {
-    return B.reponse(200, { periode: V.periode(), total: await V.lireTotal(store), jour: V.jourDuVote(), essai: !!V.config.essai });
+    const masques = V.scoresMasques();
+    return B.reponse(200, {
+      periode: V.periode(), total: await V.lireTotal(store), jour: V.jourDuVote(), essai: !!V.config.essai,
+      masques, scores: masques ? null : await V.lireScores(store),
+    });
   }
   if (event.httpMethod !== "POST") return B.reponse(405, { error: "Méthode non autorisée" });
   const corps = B.lireCorps(event);

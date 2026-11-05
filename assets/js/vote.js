@@ -31,6 +31,15 @@
     $("vote-total").textContent = String(total).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f");
     $("vote-compteur").hidden = false;
   }
+  function afficherScores(scores) {
+    if (!scores) return;
+    document.querySelectorAll(".vote-carte").forEach(function (c) {
+      var n = scores[c.getAttribute("data-finaliste")] || 0, el = c.querySelector(".vote-score");
+      if (!el) return;
+      el.querySelector("strong").textContent = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f");
+      el.hidden = false;
+    });
+  }
   function lienPartage(id) { return location.origin + "/vote/" + (id ? "?f=" + id : ""); }
 
   // État du vote (dates et mode essai vérifiés aussi par le serveur).
@@ -38,6 +47,7 @@
   appel().then(function (d) {
     if (!d._ok) return;
     afficherTotal(d.total);
+    if (d.masques && d.periode === "ouvert") $("vote-masques").hidden = false; else afficherScores(d.scores);
     if (d.essai) $("vote-essai").hidden = false;
     if (d.periode === "ferme") { $("vote-ferme").hidden = false; $("vote-grille").hidden = true; ouvert = false; }
     if (d.periode === "avant") { $("vote-avant").hidden = false; $("vote-grille").hidden = true; ouvert = false; }
@@ -62,6 +72,7 @@
     $("vote-rapide").hidden = true;
     message.innerHTML = "<strong>Merci&nbsp;! Votre voix pour " + d.nomFinaliste + " est bien comptée.</strong><br>Revenez demain pour voter à nouveau&nbsp;: vous disposez d'une voix par jour.";
     afficherTotal(d.total);
+    appel().then(function (e) { if (e._ok && !e.masques) afficherScores(e.scores); }).catch(function () {});
     var lien = lienPartage(choix.id);
     var texte = "Je viens de voter pour " + choix.nom + ", finaliste de Deux Minutes Pour Convaincre. Votez vous aussi pour le Coup de cœur du public, c'est gratuit : ";
     dialogue.querySelector('[data-partage="whatsapp"]').href = "https://wa.me/?text=" + encodeURIComponent(texte + lien);
