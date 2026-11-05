@@ -62,6 +62,12 @@ const scoresMasques = (maintenant = new Date()) => !!config.masquage && maintena
 async function lireScores(store) {
   const scores = {};
   for (const f of config.finalistes) scores[f.id] = Number(await store.get(`compte/${f.id}`, { type: "text" })) || 0;
+  // Compteurs incomplets (voix antérieures aux compteurs, écriture interrompue) : recalcul à partir des voix.
+  const somme = Object.values(scores).reduce((a, b) => a + b, 0);
+  if (somme !== (await lireTotal(store))) {
+    await recompter(store);
+    for (const f of config.finalistes) scores[f.id] = Number(await store.get(`compte/${f.id}`, { type: "text" })) || 0;
+  }
   return scores;
 }
 
@@ -83,9 +89,11 @@ async function recompter(store) {
   const voix = await Promise.all(blobs.map((b) => store.get(b.key, { type: "json" })));
   const comptes = {};
   for (const v of voix) if (v && v.finaliste) comptes[v.finaliste] = (comptes[v.finaliste] || 0) + 1;
-  for (const f of config.finalistes) await store.set(`compte/${f.id}`, String(comptes[f.id] || 0));
-  await store.set("total", String(blobs.length));
-  return blobs.length;
+  // Seules les voix pour un finaliste de la liste comptent dans le total affiché.
+  let total = 0;
+  for (const f of config.finalistes) { total += comptes[f.id] || 0; await store.set(`compte/${f.id}`, String(comptes[f.id] || 0)); }
+  await store.set("total", String(total));
+  return total;
 }
 
 async function limiter(store, ip) {
