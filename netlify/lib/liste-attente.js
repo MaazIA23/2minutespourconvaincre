@@ -57,7 +57,9 @@ function emailConfirmation(prenom) {
     subject: "Votre place est réservée · 3ème édition de Deux Minutes Pour Convaincre",
     ...gabarit(p ? `${p}, votre place est réservée.` : "Votre place est réservée.", [
       `Merci d'avoir rejoint la liste d'attente de la 3ème édition de Deux Minutes Pour Convaincre, la scène qui révèle les orateurs.`,
-      `Le <strong>${candidature.dateOuvertureCandidatures}</strong>, les candidatures ouvriront. Vous serez parmi les premiers à le savoir : nous vous écrirons ce jour-là.`,
+      site.pause && site.pause.actif
+        ? "Les dates de candidature seront annoncées très prochainement. Vous serez parmi les premiers à le savoir : nous vous écrirons le jour de l'ouverture."
+        : `Le <strong>${candidature.dateOuvertureCandidatures}</strong>, les candidatures ouvriront. Vous serez parmi les premiers à le savoir : nous vous écrirons ce jour-là.`,
       `D'ici là, commencez à préparer votre voix. Cette année, tout commence en vidéo : deux minutes, un thème de votre choix, et une seule mission, convaincre.`,
     ], { texte: "Découvrir la candidature", lien: PAGE_CANDIDATURE, image: "bouton-decouvrir-la-candidature.png", largeur: 291 },
     "Et si la prochaine voix révélée était la vôtre ?"),

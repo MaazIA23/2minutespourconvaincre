@@ -546,7 +546,7 @@
       var champEmail = form.querySelector('input[name="email"]');
       var email = champEmail ? champEmail.value.trim().toLowerCase() : "";
       if (listeAttente && email && adressesInscrites().indexOf(email) !== -1) {
-        note.textContent = "Vous êtes déjà inscrit(e) sur la liste d'attente avec cette adresse e-mail. Nous vous préviendrons le 15 janvier 2027, jour de l'ouverture des candidatures.";
+        note.textContent = "Vous êtes déjà inscrit(e) sur la liste d'attente avec cette adresse e-mail. Nous vous préviendrons dès l'ouverture des candidatures.";
         return;
       }
       var body = new URLSearchParams(new FormData(form)).toString();

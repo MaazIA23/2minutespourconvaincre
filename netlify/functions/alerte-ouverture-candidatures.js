@@ -2,8 +2,11 @@
 // Exécution le 15 janvier à 7h UTC (8h à Cotonou). Elle peut aussi être lancée à la main depuis Netlify
 // (« Run now ») : elle n'envoie rien en dehors de la période de candidature.
 const { candidature, emailOuverture, envoyer, inscrits } = require("../lib/liste-attente");
+const site = require("../../content/site.json");
 
 exports.handler = async () => {
+  // Pause de la 3ème édition (content/site.json) : aucune alerte envoyée.
+  if (site.pause && site.pause.actif) { console.log("Pause de la 3ème édition : aucun envoi."); return { statusCode: 200, body: "pause" }; }
   const ouverture = new Date(candidature.dateOuvertureCandidaturesISO + "+01:00");
   const maintenant = new Date();
   const fin = new Date(ouverture.getTime() + 16 * 24 * 3600 * 1000); // jusqu'à la date limite (30 janvier) incluse
