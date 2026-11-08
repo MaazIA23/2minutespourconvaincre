@@ -44,6 +44,7 @@ const SITE_URL = "https://2minpourconvaincre.com";
 const pagesEcrites = [];
 
 function writePage(slug, html) {
+  html = require("./pause").transformer(html, slug);
   const url = `${SITE_URL}/${slug ? slug.replace(/\/$/, "") + "/" : ""}`;
   html = html.split("__URL_PAGE__").join(url);
   // Titres : espace insécable avant « ? ! : ; » et après « (la ponctuation ne passe jamais seule à la ligne).

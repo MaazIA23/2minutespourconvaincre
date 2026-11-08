@@ -1,4 +1,8 @@
 {
+  "pause": {
+    "_aide": "Pause de la 3ème édition : true = pré-inscriptions fermées, dates précises masquées, aucune ouverture automatique (candidatures, billetterie, alerte). Remettre false et republier pour tout rétablir.",
+    "actif": true
+  },
   "_comment": "Infos globales du site. Champs à revoir en priorité pour l'édition 2027 sont marqués TODO_2027.",
   "edition": {
     "numero": 3,

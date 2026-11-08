@@ -16,6 +16,7 @@
 const crypto = require("crypto");
 const { getStore, connectLambda } = globalThis.__2mpcBlobs || require("@netlify/blobs");
 const config = require("../../content/billetterie.json");
+const site = require("../../content/site.json");
 const { gabarit, echappe, SITE_URL } = require("./liste-attente");
 
 const CATEGORIES = Object.keys(config.categories);
@@ -51,6 +52,8 @@ const modeTest = () => (["candidats", "prevente", "vente"].includes(process.env.
 // « avant », « candidats » (avant-première réservée aux candidats), « prevente », « vente » ou « fermee ».
 function periode(maintenant = new Date()) {
   if (modeTest()) return modeTest();
+  // Pause de la 3ème édition (content/site.json) : rien ne s'ouvre automatiquement.
+  if (site.pause && site.pause.actif) return "avant";
   if (maintenant < new Date(config.candidats.ouverture)) return "avant";
   if (maintenant <= new Date(config.candidats.fermeture)) return "candidats";
   if (maintenant < new Date(config.ouverture)) return "avant";
